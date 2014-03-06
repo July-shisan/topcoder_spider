@@ -1,0 +1,888 @@
+date,href,match_id,name
+2010.04.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14183,14183,Member SRM 468
+2010.04.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14151,14151,SRM 467
+2010.04.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14150,14150,SRM 466
+2010.03.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14182,14182,Member SRM 465
+2010.03.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14149,14149,SRM 464
+2010.03.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14148,14148,SRM 463
+2010.02.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14147,14147,SRM 462
+2010.02.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14181,14181,Member SRM 461
+2010.02.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14146,14146,SRM 460
+2010.01.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14145,14145,SRM 459
+2010.01.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14180,14180,Member SRM 458
+2010.01.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14144,14144,SRM 457
+2009.12.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13909,13909,SRM 456
+2009.12.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14179,14179,Member SRM 455
+2009.12.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13908,13908,SRM 454
+2009.11.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14174,14174,SRM 453.5
+2009.11.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13907,13907,SRM 453
+2009.11.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13906,13906,SRM 452
+2009.10.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13905,13905,SRM 451
+2009.10.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13904,13904,SRM 450
+2009.09.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13952,13952,Pilot 2
+2009.09.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13903,13903,SRM 449
+2009.09.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13902,13902,SRM 448
+2009.08.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13901,13901,SRM 447
+2009.08.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13935,13935,Member Beta
+2009.08.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13900,13900,SRM 446
+2009.07.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13899,13899,SRM 445
+2009.07.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13898,13898,SRM 444
+2009.06.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13751,13751,SRM 443
+2009.06.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13750,13750,SRM 442
+2009.06.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13765,13765,TCO09 Championship
+2009.06.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13764,13764,TCO09 Semifinal
+2009.05.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13749,13749,SRM 441
+2009.05.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13748,13748,SRM 440
+2009.04.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13747,13747,SRM 439
+2009.04.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13803,13803,SRM 438
+2009.04.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13763,13763,TCO09 Round 5
+2009.03.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13762,13762,TCO09 Round 4
+2014.03.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15844,15844,SRM 611
+2014.02.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15843,15843,SRM 610
+2014.02.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15842,15842,SRM 609
+2014.02.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15841,15841,SRM 608
+2014.02.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15840,15840,SRM 607
+2014.01.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15839,15839,SRM 606
+2014.01.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15838,15838,SRM 605
+2014.01.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15837,15837,SRM 604
+2014.01.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15836,15836,SRM 603
+2013.12.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15820,15820,SRM 602
+2013.12.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15713,15713,SRM 601
+2013.12.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15828,15828,SRM 600.5
+2013.12.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15712,15712,SRM 600
+2013.12.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15711,15711,SRM 599
+2013.11.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15710,15710,SRM 598
+2013.11.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15709,15709,SRM 597
+2013.11.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15814,15814,TCO13 Championship Round
+2013.11.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15812,15812,TCO13 Wildcard Round
+2013.11.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15809,15809,TCO13 Semifinal 2
+2013.11.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15808,15808,TCO13 Semifinal 1
+2013.11.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15708,15708,SRM 596
+2013.10.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15707,15707,SRM 595
+2013.10.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15706,15706,SRM 594
+2007.01.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10657,10657,SRM 333
+2006.12.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10012,10012,SRM 332
+2006.12.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10011,10011,SRM 331
+2006.12.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10010,10010,SRM 330
+2006.12.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10009,10009,SRM 329
+2006.11.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10008,10008,SRM 328
+2006.11.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10007,10007,SRM 327
+2006.11.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10136,10136,TCCC06 Finals
+2006.11.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10135,10135,TCCC06 Wildcard
+2006.11.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10134,10134,TCCC06 Semi 3
+2006.11.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10133,10133,TCCC06 Semi 2
+2006.11.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10132,10132,TCCC06 Semi 1
+2006.11.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10006,10006,SRM 326
+2006.11.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10005,10005,SRM 325
+2006.10.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10004,10004,SRM 324
+2006.10.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10003,10003,SRM 323
+2006.10.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10120,10120,TCCC06 Sponsor 3
+2006.10.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10111,10111,TCCC06 Round 3
+2006.10.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10119,10119,TCCC06 Sponsor 2
+2006.10.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10113,10113,TCCC06 Round 2C
+2006.10.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10002,10002,SRM 322
+2006.10.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10112,10112,TCCC06 Round 2B
+2006.10.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10110,10110,TCCC06 Round 2A
+2006.10.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10001,10001,SRM 321
+2009.03.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13699,13699,SRM 437
+2009.03.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13761,13761,TCO09 Round 3
+2009.03.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13760,13760,TCO09 Round 2
+2009.03.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13698,13698,SRM 436
+2009.03.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13759,13759,TCO09 Round 1
+2009.03.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13758,13758,TCO09 Qual 3
+2009.02.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13757,13757,TCO09 Qual 2
+2009.02.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13742,13742,TCO09 Qual 1
+2009.02.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13697,13697,SRM 435
+2009.02.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13696,13696,SRM 434
+2009.01.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13695,13695,SRM 433
+2009.01.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13694,13694,SRM 432
+2008.12.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13522,13522,SRM 431
+2008.12.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13521,13521,SRM 430
+2008.12.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13678,13678,TC China 08 - Finals
+2008.12.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13677,13677,TC China 08 - 1E
+2008.12.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13520,13520,SRM 429
+2008.12.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13676,13676,TC China 08 - 1D
+2008.12.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13675,13675,TC China 08 - 1C
+2008.12.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13519,13519,SRM 428
+2008.11.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13674,13674,TC China 08 - 1B
+2008.11.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13518,13518,SRM 427
+2013.10.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15705,15705,SRM 593
+2013.09.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15704,15704,SRM 592
+2013.09.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15703,15703,SRM 591
+2013.09.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15702,15702,SRM 590
+2013.08.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15701,15701,SRM 589
+2013.08.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15700,15700,SRM 588
+2013.08.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15699,15699,SRM 587
+2013.07.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15698,15698,SRM 586
+2013.07.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15697,15697,SRM 585
+2013.07.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15696,15696,SRM 584
+2013.06.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15694,15694,TCO13 Parallel Round 3B
+2013.06.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15693,15693,TCO13 Round 3B
+2013.06.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15503,15503,SRM 583
+2013.06.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15502,15502,SRM 582
+2013.06.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15686,15686,TCO13 Round 3A
+2013.06.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15501,15501,SRM 581
+2013.05.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15500,15500,SRM 580
+2013.05.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15499,15499,SRM 579
+2006.09.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10000,10000,SRM 320
+2006.09.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10106,10106,TCCC06 Spon 1
+2006.09.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10104,10104,TCCC06 Round 1C
+2006.09.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10100,10100,TCCC06 Round 1B
+2006.09.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10097,10097,TCCC06 Round 1A
+2006.09.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9999,9999,SRM 319
+2006.09.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10103,10103,TCCC06 Sponsor Qual
+2006.09.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10095,10095,TCCC06 Qual 3
+2006.09.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10094,10094,TCCC06 Qual 2
+2006.09.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10093,10093,TCCC06 Qual 1
+2006.08.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9998,9998,SRM 318
+2006.08.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9996,9996,SRM 316
+2006.08.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9995,9995,SRM 315
+2006.08.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9994,9994,SRM 314
+2008.11.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13673,13673,TC China 08 - 1A
+2008.11.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13517,13517,SRM 426
+2008.11.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13516,13516,SRM 425
+2008.11.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13515,13515,SRM 424
+2008.10.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13514,13514,SRM 423
+2008.10.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13513,13513,SRM 422
+2008.10.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13512,13512,SRM 421
+2008.10.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13511,13511,SRM 420
+2008.09.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13510,13510,SRM 419
+2008.09.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13509,13509,SRM 418
+2008.09.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13508,13508,SRM 417
+2008.09.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13507,13507,SRM 416
+2008.08.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13506,13506,SRM 415
+2008.08.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13505,13505,SRM 414
+2008.08.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13504,13504,SRM 413
+2008.07.31,http://community.topcoder.com/stat?c=round_overview&er=5&rd=13503,13503,SRM 412
+2008.07.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12183,12183,SRM 411
+2008.07.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12182,12182,SRM 410
+2008.07.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12181,12181,SRM 409
+2008.07.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12180,12180,SRM 408
+2008.06.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12179,12179,SRM 407
+2008.06.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12178,12178,SRM 406
+2013.05.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15656,15656,TCO13 Parallel Round 2C
+2013.05.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15653,15653,TCO13 Round 2C
+2013.05.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15498,15498,SRM 578
+2013.04.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15497,15497,SRM 577
+2013.04.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15634,15634,TCO13 Parallel Round 2B
+2013.04.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15633,15633,TCO13 Round 2B
+2013.04.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15496,15496,SRM 576
+2013.04.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15495,15495,SRM 575
+2013.03.31,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15594,15594,TCO13 Round 2A
+2013.03.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15494,15494,SRM 574
+2013.03.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15493,15493,SRM 573
+2013.03.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15585,15585,TCO13 Round 1C
+2013.03.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15492,15492,SRM 572
+2006.07.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9993,9993,SRM 313
+2006.07.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9992,9992,SRM 312
+2006.07.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9991,9991,SRM 311
+2006.07.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9990,9990,SRM 310
+2006.06.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9989,9989,SRM 309
+2008.06.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12177,12177,SRM 405
+2008.06.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12176,12176,SRM 404
+2008.05.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12175,12175,SRM 403
+2008.05.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12174,12174,SRM 402
+2008.05.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12019,12019,TCO08 Championship
+2008.05.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12018,12018,TCO08 Wildcard
+2008.05.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12017,12017,TCO08 Semifinal 3
+2008.05.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12016,12016,TCO08 Semifinal 2
+2008.05.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12015,12015,TCO08 Semifinal 1
+2008.05.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12173,12173,SRM 401
+2008.05.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12172,12172,SRM 400
+2008.04.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12171,12171,SRM 399
+2008.04.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12170,12170,SRM 398
+2008.04.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12169,12169,SRM 397
+2008.04.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12168,12168,SRM 396
+2008.03.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=11129,11129,SRM 395
+2008.03.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=11128,11128,SRM 394
+2008.03.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=11127,11127,SRM 393
+2008.03.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12014,12014,TCO08 Round 4
+2008.03.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=11126,11126,SRM 392
+2008.03.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12013,12013,TCO08 Round 3
+2008.02.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=11125,11125,SRM 391
+2008.02.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12012,12012,TCO08 Round 2
+2008.02.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12011,12011,TCO08 Round 1
+2013.03.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15580,15580,TCO13 Round 1B
+2013.02.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15571,15571,TCO13 Round 1A
+2013.02.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15491,15491,SRM 571
+2013.02.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15490,15490,SRM 570
+2013.02.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15489,15489,SRM 569
+2013.01.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15488,15488,SRM 568
+2013.01.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15487,15487,SRM 567
+2013.01.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15486,15486,SRM 566
+2012.12.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15187,15187,SRM 565
+2012.12.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15186,15186,SRM 564
+2012.12.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15185,15185,SRM 563
+2012.11.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15184,15184,SRM 562
+2012.11.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15183,15183,SRM 561
+2012.11.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15182,15182,SRM 560
+2006.06.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9988,9988,SRM 308
+2006.06.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9987,9987,SRM 307
+2006.06.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9986,9986,SRM 306
+2006.05.31,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9826,9826,SRM 305
+2006.05.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9825,9825,SRM 304
+2006.05.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9824,9824,SRM 303
+2006.05.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9823,9823,SRM 302
+2006.05.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9822,9822,SRM 301
+2006.05.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9984,9984,TCO06 Finals
+2006.05.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9983,9983,TCO06 Wildcard
+2006.05.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9982,9982,TCO06 Semi 3
+2006.05.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9981,9981,TCO06 Semi 2
+2006.05.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9980,9980,TCO06 Semi 1
+2006.04.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9821,9821,SRM 300
+2006.04.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9820,9820,SRM 299
+2008.02.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12058,12058,TCO08 Qual 3
+2008.02.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12008,12008,TCO08 Qual 2
+2008.02.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=12007,12007,TCO08 Qual 1
+2008.02.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=11124,11124,SRM 390
+2008.01.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=11123,11123,SRM 389
+2008.01.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=11122,11122,SRM 388
+2008.01.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=11121,11121,SRM 387
+2008.01.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=11120,11120,SRM 386
+2007.12.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10810,10810,SRM 385
+2007.12.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10808,10808,SRM 384
+2007.12.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10806,10806,SRM 383
+2007.12.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10805,10805,SRM 382
+2007.12.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10804,10804,SRM 381
+2007.12.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10802,10802,SRM 380
+2007.11.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10800,10800,SRM 379
+2007.11.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10798,10798,SRM 378
+2007.11.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10796,10796,SRM 376
+2007.11.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10794,10794,SRM 375
+2007.11.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10793,10793,SRM 374
+2007.11.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10980,10980,TCCC07 Finals
+2007.11.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10979,10979,TCCC07 Wildcard
+2007.11.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10958,10958,TCCC07 Semi 3
+2012.10.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15181,15181,SRM 559
+2012.10.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15180,15180,SRM 558
+2012.10.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15179,15179,SRM 557
+2012.10.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15378,15378,TCO12 Championship Round
+2012.10.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15152,15152,TCO12 Wildcard Round
+2012.10.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15151,15151,TCO12 Semifinal 2
+2006.04.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9819,9819,SRM 298
+2006.04.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9818,9818,SRM 297
+2006.04.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9817,9817,SRM 296
+2006.03.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9816,9816,SRM 295
+2006.03.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9815,9815,SRM 294
+2006.03.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9925,9925,TCO06 Round 4
+2006.03.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9814,9814,SRM 293
+2006.03.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9922,9922,TCO06 Round 3
+2006.03.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9891,9891,TCO06 Round 2
+2006.03.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9923,9923,TCO06 Sponsor 2
+2006.03.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9813,9813,SRM 292
+2006.03.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9918,9918,TCO06 Sponsor 1
+2006.03.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9917,9917,TCO06 Round 1
+2007.10.31,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10957,10957,TCCC07 Semi 2
+2007.10.31,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10956,10956,TCCC07 Semi 1
+2007.10.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10791,10791,SRM 373
+2007.10.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10789,10789,SRM 372
+2007.10.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10787,10787,SRM 371
+2007.10.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10786,10786,SRM 370
+2007.10.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10785,10785,SRM 369
+2007.10.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10936,10936,SRM 368
+2007.09.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10783,10783,SRM 367
+2007.09.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10934,10934,TCCC07 Sponsor 4
+2007.09.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10924,10924,TCCC07 Round 4
+2007.09.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10781,10781,SRM 366
+2007.09.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10922,10922,TCCC07 Sponsor 3
+2007.09.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10908,10908,TCCC07 Round 3
+2007.09.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10780,10780,SRM 365
+2007.09.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10917,10917,TCCC07 Sponsor 2
+2007.09.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10891,10891,TCCC07 Round 2
+2007.09.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10778,10778,SRM 364
+2007.09.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10906,10906,TCCC07 Sponsor 1
+2007.09.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10899,10899,TCCC07 Round 1C
+2007.08.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10897,10897,TCCC07 Round 1B
+2007.08.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10898,10898,TCCC07 Round 1A
+2012.10.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15150,15150,TCO12 Semifinal 1
+2012.09.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15178,15178,SRM 556
+2012.09.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15177,15177,SRM 555
+2012.09.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15176,15176,SRM 554
+2012.08.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15175,15175,SRM 553
+2012.08.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15174,15174,SRM 552
+2012.08.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15173,15173,SRM 551
+2012.07.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15172,15172,SRM 550
+2012.07.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15171,15171,SRM 549
+2012.07.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15304,15304,TCO12 Parallel Round 3B
+2012.07.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15097,15097,TCO12 Round 3B
+2012.07.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15170,15170,SRM 548
+2012.06.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14739,14739,SRM 547
+2006.02.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9916,9916,TCO06 Sponsor 5
+2006.02.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9915,9915,TCO06 Sponsor 4
+2006.02.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9914,9914,TCO06 Sponsor 3
+2006.02.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9913,9913,TCO06 Sponsor 2
+2006.02.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9912,9912,TCO06 Sponsor 1
+2006.02.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9903,9903,TCO06 Qual 7/9/14
+2006.02.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9901,9901,TCO06 Qual 5/6/12
+2006.02.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9900,9900,TCO06 Qual 4/11/15
+2006.02.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9898,9898,TCO06 Qual 2/10/13
+2006.02.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9897,9897,TCO06 Qual 1/3/8
+2006.02.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9812,9812,SRM 291
+2006.02.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9811,9811,SRM 290
+2006.02.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9810,9810,SRM 289
+2006.02.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9809,9809,SRM 288
+2006.02.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=9808,9808,SRM 287
+2006.01.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8083,8083,SRM 286
+2006.01.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8082,8082,SRM 285
+2006.01.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8081,8081,SRM 284
+2006.01.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8080,8080,SRM 283
+2006.01.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8078,8078,SRM 281
+2005.12.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8077,8077,SRM 280
+2007.08.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10889,10889,TCCC07 Qual 3
+2007.08.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10881,10881,TCCC07 Qual 2
+2007.08.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10888,10888,TCCC07 Qual 1
+2007.08.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10777,10777,SRM 363
+2007.08.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10775,10775,SRM 362
+2007.08.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10773,10773,SRM 361
+2007.07.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10772,10772,SRM 360
+2007.07.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10770,10770,SRM 359
+2007.07.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10768,10768,SRM 358
+2007.07.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10766,10766,SRM 357
+2012.06.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15096,15096,TCO12 Round 3A
+2012.06.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14738,14738,SRM 546
+2012.06.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14737,14737,SRM 545
+2012.06.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15156,15156,TCO12 Parallel Round 2C
+2012.06.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15095,15095,Round 2C
+2012.05.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14736,14736,SRM 544
+2012.05.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14735,14735,SRM 543
+2012.05.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15135,15135,TCO12 Parallel Round 2B
+2012.05.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15094,15094,TCO12 Round 2B
+2005.12.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8076,8076,SRM 279
+2005.12.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8075,8075,SRM 278
+2005.12.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8074,8074,SRM 277
+2005.12.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8073,8073,SRM 276
+2005.11.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8072,8072,SRM 275
+2005.11.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8071,8071,SRM 274
+2005.11.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8070,8070,SRM 273
+2005.11.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8069,8069,SRM 272
+2005.11.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8068,8068,SRM 271
+2005.11.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8067,8067,SRM 270
+2005.10.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8002,8002,SRM 269
+2005.10.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8001,8001,SRM 268
+2005.10.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8096,8096,TCO05 Finals
+2005.10.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8095,8095,TCO05 Wildcard
+2005.10.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8093,8093,TCO05 Semi 3
+2005.10.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8098,8098,TCO05 Semi 1
+2005.10.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8092,8092,TCO05 Semi 2
+2005.10.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8000,8000,SRM 267
+2005.10.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7999,7999,SRM 266
+2005.09.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8007,8007,SRM 265
+2007.07.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10765,10765,SRM 356
+2007.06.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10843,10843,TCO07 Finals
+2007.06.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10842,10842,TCO07 Wildcard
+2007.06.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10841,10841,TCO07 Semi 3
+2007.06.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10840,10840,TCO07 Semi 2
+2007.06.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10839,10839,TCO07 Semi 1
+2007.06.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10712,10712,SRM 355
+2007.06.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10711,10711,SRM 354
+2007.06.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10710,10710,SRM 353
+2007.06.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10709,10709,SRM 352
+2007.05.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10675,10675,SRM 351
+2007.05.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10674,10674,SRM 350
+2007.05.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10673,10673,SRM 349
+2007.05.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10672,10672,SRM 348
+2007.05.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10671,10671,SRM 347
+2007.04.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10759,10759,TCO07 Round 4
+2007.04.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10670,10670,SRM 346
+2007.04.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10751,10751,TCO07 Round 3
+2007.04.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10669,10669,SRM 345
+2007.04.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10752,10752,TCO07 Sponsor 2
+2012.05.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14734,14734,SRM 542
+2012.04.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14733,14733,SRM 541
+2012.04.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15093,15093,TCO12 Round 2A
+2012.04.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15092,15092,TCO12 Round 1C
+2012.04.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14732,14732,SRM 540
+2012.04.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15091,15091,TCO12 Round 1B
+2012.04.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14731,14731,SRM 539
+2012.03.31,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15090,15090,TCO12 Round 1A
+2012.03.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14729,14729,SRM 538
+2012.03.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14730,14730,SRM 537
+2012.03.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14728,14728,SRM 536
+2012.03.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=15037,15037,SRM 535
+2005.09.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7998,7998,SRM 264
+2005.09.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7997,7997,SRM 263
+2005.09.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7996,7996,SRM 262
+2005.09.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8059,8059,TCO05 Sponsor 4
+2005.09.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8036,8036,TCO05 Round 4
+2005.08.31,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8016,8016,TCO05 Round 3
+2005.08.31,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8058,8058,TCO05 Sponsor 3
+2005.08.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7995,7995,SRM 261
+2005.08.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7994,7994,SRM 260
+2005.08.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8057,8057,TCO05 Sponsor 2
+2005.08.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8017,8017,TCO05 Round 2
+2005.08.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8012,8012,SRM 259
+2005.08.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8035,8035,TCO05 Sponsor Rd 1
+2005.08.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8019,8019,TCO05 Round 1
+2005.08.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8034,8034,TCO05 Sponsor5
+2005.08.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8033,8033,TCO05 Sponsor4
+2005.08.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8032,8032,TCO05 Sponsor3
+2005.08.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8031,8031,TCO05 Sponsor2
+2005.08.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8030,8030,TCO05 Sponsor1
+2005.08.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8026,8026,TCO05 Qual 7/8
+2005.08.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8024,8024,TCO05 Qual 5/10
+2007.04.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10749,10749,TCO07 Round 2
+2007.04.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10743,10743,TCO07 Round 1C
+2012.02.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14727,14727,SRM 534
+2012.02.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14726,14726,SRM 533
+2012.02.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14725,14725,SRM 532
+2012.01.31,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14724,14724,SRM 531
+2012.01.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14723,14723,SRM 530
+2012.01.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14722,14722,SRM 529
+2011.12.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14553,14553,SRM 528
+2011.12.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14762,14762,SRM 526.5
+2011.12.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14552,14552,SRM 527
+2011.12.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14551,14551,SRM 526
+2011.11.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14550,14550,SRM 525
+2011.11.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14549,14549,SRM 524
+2011.11.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14548,14548,SRM 523
+2011.10.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14547,14547,SRM 522
+2011.10.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14546,14546,SRM 521
+2011.10.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14545,14545,SRM 520
+2011.09.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14655,14655,TCO11 Championship Round
+2005.08.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8023,8023,TCO05 Qual 4/6
+2005.08.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8021,8021,TCO05 Qual 2/9
+2005.08.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8020,8020,TCO05 Qual 1/3
+2005.08.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7993,7993,SRM 258
+2005.08.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8005,8005,SRM 257
+2005.08.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7992,7992,SRM 256
+2005.07.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7228,7228,SRM 255
+2005.07.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=8006,8006,SRM 254
+2005.07.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7227,7227,SRM 253
+2005.07.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7226,7226,SRM 251
+2005.07.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7225,7225,SRM 250
+2005.06.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7224,7224,SRM 249
+2005.06.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7223,7223,SRM 248
+2005.06.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7222,7222,SRM 247
+2005.06.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7221,7221,SRM 246
+2005.06.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7220,7220,SRM 245
+2005.05.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7219,7219,SRM 244
+2005.05.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7218,7218,SRM 243
+2005.05.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7217,7217,SRM 242
+2007.04.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10750,10750,TCO07 Sponsor 1
+2007.04.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10742,10742,TCO07 Round 1B
+2007.04.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10738,10738,TCO07 Round 1A
+2007.04.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10746,10746,TCO07 Sponsor Qual
+2007.04.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10735,10735,TCO07 Qual 3
+2007.03.31,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10731,10731,TCO07 Qual 2
+2007.03.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10730,10730,TCO07 Qual 1
+2007.03.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10668,10668,SRM 344
+2007.03.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10667,10667,SRM 343
+2007.03.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10666,10666,SRM 342
+2007.03.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10665,10665,SRM 341
+2007.02.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10664,10664,SRM 340
+2007.02.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10663,10663,SRM 339
+2011.09.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14651,14651,TCO11 Wildcard Round
+2011.09.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14650,14650,TCO11 Semifinal 2
+2011.09.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14649,14649,TCO11 Semifinal 1
+2011.09.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14544,14544,SRM 519
+2011.09.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14543,14543,SRM 518
+2011.09.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14542,14542,SRM 517
+2011.08.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14541,14541,SRM 516
+2011.08.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14540,14540,SRM 515
+2011.08.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14539,14539,SRM 514
+2011.08.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14569,14569,TCO11 Round 5
+2011.07.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14538,14538,SRM 513
+2011.07.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14568,14568,TCO11 Round 4
+2011.07.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14537,14537,SRM 512
+2011.07.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14567,14567,TCO11 Round 3
+2011.07.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14536,14536,SRM 511
+2011.06.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14566,14566,TCO11 Round 2
+2011.06.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14439,14439,SRM 510
+2011.06.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14560,14560,TCO11 Round 1
+2011.06.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14438,14438,SRM 509
+2011.06.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14437,14437,SRM 508
+2011.05.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14436,14436,SRM 507
+2011.05.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14531,14531,TCO11 Qual 3
+2005.05.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=7216,7216,SRM 241
+2005.04.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6539,6539,SRM 240
+2005.04.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6538,6538,SRM 239
+2005.04.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6537,6537,SRM 238
+2005.04.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6536,6536,SRM 237
+2005.04.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6535,6535,SRM 236
+2005.03.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6534,6534,SRM 235
+2005.03.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6533,6533,SRM 234
+2005.03.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6554,6554,TCCC05 Finals
+2005.03.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6553,6553,TCCC05 Wildcard
+2005.03.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6552,6552,TCCC05 Semi 3
+2007.02.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10662,10662,SRM 338
+2007.02.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10661,10661,SRM 337
+2007.01.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10660,10660,SRM 336
+2007.01.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10659,10659,SRM 335
+2007.01.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=10658,10658,SRM 334
+2011.05.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14530,14530,TCO11 Qual 2
+2011.05.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14514,14514,SRM 504.5
+2011.05.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14524,14524,TCO11 Qual 1
+2011.05.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14435,14435,SRM 506
+2011.05.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14434,14434,Member SRM 505
+2011.04.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14433,14433,SRM 504
+2011.04.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14432,14432,Member SRM 503
+2011.04.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14431,14431,SRM 502
+2011.03.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14430,14430,Member SRM 501
+2005.03.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6551,6551,TCCC05 Semi 2
+2005.03.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6550,6550,TCCC05 Semi 1
+2005.03.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6532,6532,SRM 233
+2005.02.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6521,6521,SRM 232
+2005.02.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6520,6520,SRM 231
+2005.02.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6519,6519,SRM 230
+2005.02.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6531,6531,TCCC05 Round 4
+2005.01.31,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6518,6518,SRM 229
+2005.01.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6517,6517,SRM 228
+2005.01.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6530,6530,TCCC05 Round 3
+2005.01.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6516,6516,SRM 227
+2005.01.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6529,6529,TCCC05 Round 2
+2005.01.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6528,6528,TCCC05 Round 1
+2005.01.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6527,6527,TCCC05 Qual 5
+2005.01.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6526,6526,TCCC05 Qual 4
+2005.01.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6525,6525,TCCC05 Qual 3
+2005.01.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6524,6524,TCCC05 Qual 2
+2005.01.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6523,6523,TCCC05 Qual 1
+2005.01.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=6515,6515,SRM 226
+2004.12.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5871,5871,SRM 225
+2004.12.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5870,5870,SRM 224
+2004.12.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5869,5869,SRM 223
+2011.03.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14429,14429,SRM 500
+2011.03.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14428,14428,SRM 499
+2011.02.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14427,14427,SRM 498
+2011.02.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14426,14426,SRM 497
+2011.02.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14425,14425,SRM 496
+2011.01.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14424,14424,SRM 495
+2011.01.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14423,14423,Member SRM 494
+2011.01.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14422,14422,SRM 493
+2010.12.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14245,14245,SRM 492
+2010.12.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14244,14244,Member SRM 491
+2010.12.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14243,14243,SRM 490
+2010.11.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14242,14242,Member SRM 489
+2010.11.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14241,14241,SRM 488
+2010.11.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14240,14240,SRM 487
+2010.10.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14239,14239,SRM 486
+2010.10.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14238,14238,Member SRM 485
+2004.12.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5868,5868,SRM 222
+2004.12.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5867,5867,SRM 221
+2004.11.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5866,5866,SRM 220
+2004.11.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5865,5865,SRM 219
+2004.11.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5886,5886,TCO04 Finals
+2004.11.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5885,5885,TCO04 Wildcard
+2004.11.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5884,5884,TCO04 Semifinal 3
+2004.11.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5883,5883,TCO04 Semifinal 2
+2004.11.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5882,5882,TCO04 Semifinal 1
+2004.11.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5864,5864,SRM 218
+2004.10.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5863,5863,SRM 217
+2004.10.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5862,5862,SRM 216
+2004.10.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5861,5861,SRM 215
+2004.10.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5860,5860,SRM 214
+2004.09.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5881,5881,TCO04 Round 4
+2010.10.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14287,14287,TCO10 Final
+2010.10.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14286,14286,TCO10 Wildcard
+2010.10.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14285,14285,TCO10 Semi 2
+2010.10.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14284,14284,TCO10 Semi 1
+2010.10.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14237,14237,SRM 484
+2010.09.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14236,14236,SRM 483
+2010.09.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14235,14235,Member SRM 482
+2010.09.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14234,14234,SRM 481
+2010.08.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14159,14159,SRM 480
+2010.08.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14158,14158,SRM 479
+2010.08.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14283,14283,TCO10 Round 5
+2010.08.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14187,14187,Member SRM 478
+2010.07.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14157,14157,SRM 477
+2010.07.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14282,14282,TCO10 Round 4
+2010.07.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14186,14186,SRM 476
+2010.07.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14281,14281,TCO10 Round 3
+2010.07.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14156,14156,SRM 475
+2010.06.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14185,14185,Member Single Round Match 474
+2010.06.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14280,14280,TCO10 Round 2
+2010.06.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14279,14279,TCO10 Round 1
+2010.06.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14155,14155,SRM 473
+2010.06.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14154,14154,SRM 472
+2010.05.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14278,14278,TCO10 Qual 3
+2010.05.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14153,14153,SRM 470
+2010.05.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14277,14277,TCO10 Qual 2
+2010.05.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14152,14152,SRM 469
+2010.05.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14294,14294,TCO10 Qual 1
+2010.04.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=14183,14183,Member SRM 468
+2002.03.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4080,4080,SRM 70
+2002.03.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=62,62,TCCC '02 Reg. Semifinal
+2002.02.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4075,4075,SRM 69
+2002.02.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4070,4070,SRM 68
+2002.02.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=61,61,TCCC '02 W/MW Reg. Quart.
+2002.02.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4065,4065,SRM 67
+2002.02.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=60,60,TCCC '02 NE/SE Reg. Quart.
+2002.02.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4060,4060,SRM 66
+2002.02.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4055,4055,SRM 65
+2002.02.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4050,4050,SRM 64
+2002.02.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4045,4045,SRM 63
+2002.01.31,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4033,4033,SRM 62
+2002.01.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4032,4032,SRM 61
+2002.01.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4031,4031,SRM 60
+2002.01.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4030,4030,SRM 59
+2002.01.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4029,4029,SRM 58
+2002.01.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4028,4028,SRM 57
+2002.01.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4027,4027,SRM 56
+2002.01.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4026,4026,SRM 55
+2002.01.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4025,4025,SRM 54
+2001.12.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4024,4024,SRM 53
+2001.12.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4023,4023,SRM 52
+2001.12.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4022,4022,SRM 51
+2001.12.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4021,4021,SRM 50
+2001.12.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4020,4020,SRM 49
+2001.12.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3998,3998,SRM 48
+2001.12.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4018,4018,SRM 47
+2001.11.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4017,4017,SRM 46
+2001.11.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4016,4016,SRM 45
+2001.11.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4015,4015,SRM 44
+2001.11.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4014,4014,SRM 43
+2001.11.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4013,4013,SRM 42
+2001.11.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4012,4012,SRM 41
+2001.11.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4011,4011,SRM 40
+2001.11.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=57,57,TCI '01 Finals
+2001.11.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=56,56,TCI '01 Semifinals 4
+2001.11.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=55,55,TCI '01 Semifinals 3
+2001.11.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=54,54,TCI '01 Semifinals 2
+2001.11.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=53,53,TCI '01 Semifinals 1
+2001.10.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4010,4010,SRM 39
+2001.10.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4009,4009,SRM 38
+2001.10.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4008,4008,SRM 37
+2001.10.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3999,3999,SRM 36
+2001.10.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4007,4007,SRM 35
+2001.10.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4005,4005,SRM 34
+2001.10.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=52,52,TCI '01 Round 3
+2001.10.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=51,51,TCI '01 Round 2
+2001.10.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4003,4003,SRM 33
+2001.09.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4002,4002,SRM 32
+2001.09.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=50,50,TCI '01 Round 1
+2001.09.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4001,4001,SRM 31
+2001.09.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4000,4000,SRM 30
+2001.09.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3028,3028,SRM 29
+2001.09.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3027,3027,SRM 28
+2001.08.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3026,3026,SRM 27
+2001.08.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3025,3025,SRM 26
+2001.08.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3024,3024,SRM 25
+2001.08.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3023,3023,SRM 24
+2001.08.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3021,3021,SRM 22
+2001.08.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3020,3020,SRM 21
+2001.08.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3019,3019,SRM 20
+2001.08.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3018,3018,SRM 19
+2001.07.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3017,3017,SRM 18
+2001.07.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3016,3016,SRM 17
+2001.07.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3015,3015,SRM 16
+2001.07.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3014,3014,SRM 15
+2001.07.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3013,3013,SRM 14
+2001.07.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3012,3012,SRM 13
+2001.07.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3011,3011,SRM 12
+2001.07.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3010,3010,SRM 11
+2001.07.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3009,3009,SRM 10
+2001.06.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3008,3008,SRM 9
+2001.06.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3007,3007,SRM 8
+2001.06.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3006,3006,SRM 7
+2001.06.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3005,3005,SRM 6
+2001.06.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3004,3004,SRM 5
+2001.06.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=2009,2009,TCCC '01 Finals
+2001.06.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=2008,2008,TCCC '01 Semifinals 4
+2001.06.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=2007,2007,TCCC '01 Semifinals 3
+2001.06.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=2006,2006,TCCC '01 Semifinals 2
+2001.06.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=2005,2005,TCCC '01 Semifinals 1
+2001.05.31,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3003,3003,SRM 4
+2001.05.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3002,3002,SRM 3
+2001.05.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3001,3001,SRM 2
+2001.05.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=3000,3000,SRM 1
+2001.04.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=2002,2002,TCCC '01 Round 3
+2001.04.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=2001,2001,TCCC '01 Round 2
+2004.09.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5859,5859,SRM 213
+2004.09.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5858,5858,SRM 212
+2004.09.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5880,5880,TCO04 Round 3
+2004.09.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5879,5879,TCO04 Round 2
+2004.09.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5857,5857,SRM 211
+2004.09.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5878,5878,TCO04 Round 1
+2004.09.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5877,5877,TCO04 Qual 5
+2004.09.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5876,5876,TCO04 Qual 4
+2004.09.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5875,5875,TCO04 Qual 3
+2004.09.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5874,5874,TCO04 Qual 2
+2004.09.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5873,5873,TCO04 Qual 1
+2004.09.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5856,5856,SRM 210
+2004.08.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5855,5855,SRM 209
+2004.08.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5854,5854,SRM 208
+2004.08.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5853,5853,SRM 207
+2004.08.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5852,5852,SRM 206
+2004.07.31,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5851,5851,SRM 205
+2004.07.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5850,5850,SRM 204
+2004.07.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5849,5849,SRM 203
+2004.07.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5848,5848,SRM 202
+2004.06.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5872,5872,SRM 201
+2004.06.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5075,5075,SRM 200
+2004.06.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5074,5074,SRM 199
+2004.06.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5073,5073,SRM 198
+2004.06.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5072,5072,SRM 197
+2004.05.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5071,5071,SRM 196
+2004.05.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5070,5070,SRM 195
+2004.05.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5069,5069,SRM 194
+2004.05.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5068,5068,SRM 193
+2004.04.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4780,4780,SRM 192
+2004.04.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4775,4775,SRM 191
+2004.04.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5080,5080,TCCC '04 Finals
+2004.04.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5079,5079,TCCC '04 Wildcard
+2004.04.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5078,5078,TCCC '04 Semifinals 3
+2004.04.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5077,5077,TCCC '04 Semifinals 2
+2004.04.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5076,5076,TCCC '04 Semifinals 1
+2004.04.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4770,4770,SRM 190
+2004.03.31,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4765,4765,SRM 189
+2004.03.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4760,4760,SRM 188
+2004.03.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5009,5009,TCCC '04 Round 4
+2004.03.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4755,4755,SRM 187
+2004.03.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4750,4750,SRM 186
+2004.03.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5008,5008,TCCC '04 Round 3
+2004.03.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5007,5007,TCCC '04 Round 2
+2004.03.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4745,4745,SRM 185
+2004.02.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5006,5006,TCCC '04 Round 1
+2004.02.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5004,5004,TCCC '04 Qual. 5
+2004.02.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5003,5003,TCCC '04 Qual. 4
+2004.02.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5002,5002,TCCC '04 Qual. 3
+2004.02.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5001,5001,TCCC '04 Qual. 2
+2004.02.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=5000,5000,TCCC '04 Qual. 1
+2004.02.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4740,4740,SRM 184
+2004.02.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4735,4735,SRM 183
+2004.02.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4730,4730,SRM 182
+2004.01.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4725,4725,SRM 181
+2004.01.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4720,4720,SRM 180
+2004.01.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4715,4715,SRM 179
+2004.01.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4710,4710,SRM 178
+2003.12.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4690,4690,SRM 177
+2003.12.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4685,4685,SRM 176
+2003.12.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4680,4680,SRM 175
+2003.12.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4675,4675,SRM 174
+2003.12.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4711,4711,TCO '03 Finals
+2003.12.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4709,4709,TCO '03 Semifinals 4
+2003.12.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4708,4708,TCO '03 Semifinals 3
+2003.12.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4707,4707,TCO '03 Semifinals 2
+2003.12.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4706,4706,TCO '03 Semifinals 1
+2003.11.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4670,4670,SRM 173
+2003.11.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4665,4665,SRM 172
+2003.11.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4664,4664,CRPF Charity Finals
+2003.11.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4660,4660,SRM 171
+2003.11.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4656,4656,CRPF Charity Round 1
+2003.11.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4655,4655,SRM 170
+2003.11.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4705,4705,TCO '03 Round 4
+2003.10.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4704,4704,TCO '03 Round 3
+2003.10.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4650,4650,SRM 169
+2003.10.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4703,4703,TCO '03 Round 2
+2003.10.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4645,4645,SRM 168
+2003.10.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4702,4702,TCO '03 Round 1
+2003.10.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4640,4640,SRM 167
+2003.10.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4701,4701,TCO '03 Qual. Round 2
+2003.10.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4700,4700,TCO '03 Qual. Round 1
+2003.10.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4635,4635,SRM 166
+2003.09.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4630,4630,SRM 165
+2003.09.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4625,4625,SRM 164
+2003.09.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4620,4620,SRM 163
+2003.09.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4615,4615,SRM 162
+2003.08.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4610,4610,SRM 161
+2003.08.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4605,4605,SRM 160
+2003.08.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4600,4600,SRM 159
+2003.08.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4598,4598,SRM 158
+2003.07.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4590,4590,SRM 157
+2003.07.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4585,4585,SRM 156
+2003.07.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4580,4580,SRM 155
+2003.07.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4575,4575,SRM 154
+2003.07.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4570,4570,SRM 153
+2003.06.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4565,4565,SRM 152
+2003.06.17,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4560,4560,SRM 151
+2003.06.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4555,4555,SRM 150
+2003.06.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4550,4550,SRM 149
+2003.05.28,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4545,4545,SRM 148
+2003.05.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4540,4540,SRM 147
+2003.05.14,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4535,4535,SRM 146
+2003.05.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4530,4530,SRM 145
+2003.04.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4515,4515,SRM 144
+2003.04.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4500,4500,SRM 142
+2003.04.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4495,4495,SRM 141
+2003.04.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4497,4497,TCCC '03 Finals
+2003.04.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4494,4494,TCCC '03 Semifinals 4
+2003.04.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4493,4493,TCCC '03 Semifinals 3
+2003.04.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4492,4492,TCCC '03 Semifinals 2
+2003.04.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4491,4491,TCCC '03 Semifinals 1
+2003.03.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4490,4490,SRM 140
+2003.03.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4485,4485,SRM 139
+2003.03.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4482,4482,TCCC '03 Round 4 
+2003.03.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4480,4480,SRM 138
+2003.03.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4475,4475,SRM 137
+2003.03.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4474,4474,TCCC '03 Round 3
+2003.02.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4472,4472,TCCC '03 Round 2
+2003.02.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4470,4470,SRM 136
+2003.02.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4466,4466,TCCC '03 Int'l Regional
+2003.02.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4464,4464,TCCC '03 W/MW Regional
+2003.02.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4462,4462,TCCC '03 NE/SE Regional
+2003.02.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4465,4465,SRM 135
+2003.02.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4457,4457,SRM 134
+2003.02.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4455,4455,SRM 133
+2003.02.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4456,4456,SRM 132
+2003.01.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4450,4450,SRM 131
+2003.01.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4447,4447,SRM 130
+2003.01.06,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4430,4430,SRM 128
+2003.01.02,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4425,4425,SRM 127
+2002.12.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4420,4420,SRM 126
+2002.12.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4415,4415,SRM 125
+2002.12.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4410,4410,SRM 124
+2002.12.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4405,4405,SRM 123
+2002.12.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4400,4400,SRM 122
+2002.11.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4380,4380,SRM 121
+2002.11.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4375,4375,TCI '02 Finals
+2002.11.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4373,4373,TCI '02 Semifinals 4
+2002.11.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4372,4372,TCI '02 Semifinals 3
+2002.11.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4371,4371,TCI '02 Semifinals 2
+2002.11.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4370,4370,TCI '02 Semifinals 1
+2002.11.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4365,4365,SRM 120
+2002.11.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4360,4360,SRM 119
+2002.10.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4355,4355,TCI '02 Round 4
+2002.10.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4350,4350,SRM 118
+2002.10.23,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4345,4345,TCI '02 Round 3
+2002.10.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4340,4340,SRM 117
+2002.10.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4335,4335,TCI '02 Round 2
+2002.10.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4330,4330,SRM 116
+2002.10.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4325,4325,TCI '02 Round 1 B
+2002.10.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4324,4324,TCI '02 Round 1 A
+2002.09.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4290,4290,SRM 115
+2002.09.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4285,4285,SRM 114
+2002.09.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4282,4282,SRM 113
+2002.09.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4280,4280,SRM 112
+2002.09.04,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4275,4275,SRM 111
+2002.08.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4270,4270,SRM 110
+2002.08.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4265,4265,SRM 109
+2002.08.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4260,4260,SRM 108
+2002.08.07,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4255,4255,SRM 107
+2002.08.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4250,4250,SRM 106
+2002.07.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4245,4245,SRM 105
+2002.07.16,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4240,4240,SRM 104
+2002.07.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4235,4235,SRM 103
+2002.07.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4230,4230,SRM 102
+2002.06.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4225,4225,SRM 101
+2002.06.24,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4220,4220,SRM 100
+2002.06.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4210,4210,SRM 98
+2002.06.12,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4205,4205,SRM 97
+2002.06.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4200,4200,SRM 96
+2002.06.05,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4195,4195,SRM 95
+2002.06.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4190,4190,SRM 94
+2002.05.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4185,4185,SRM 93
+2002.05.29,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4180,4180,SRM 92
+2002.05.22,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4175,4175,SRM 91
+2002.05.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4170,4170,SRM 90
+2002.05.18,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4165,4165,SRM 89
+2002.05.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4160,4160,SRM 88
+2002.05.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4155,4155,SRM 87
+2002.05.08,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4150,4150,SRM 86
+2002.05.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4145,4145,SRM 85
+2002.04.30,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4140,4140,SRM 84
+2002.04.27,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4136,4136,SRM 83
+2002.04.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=68,68,TCCC '02 Finals
+2002.04.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=67,67,TCCC '02 Semifinals 4
+2002.04.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=66,66,TCCC '02 Semifinals 3
+2002.04.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=65,65,TCCC '02 Semifinals 2
+2002.04.19,http://community.topcoder.com/stat?c=round_overview&er=5&rd=64,64,TCCC '02 Semifinals 1
+2002.04.15,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4125,4125,SRM 80
+2002.04.10,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4120,4120,SRM 79
+2002.04.09,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4115,4115,SRM 78
+2002.04.03,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4110,4110,SRM 77
+2002.04.01,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4105,4105,SRM 76
+2002.03.26,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4100,4100,SRM 75
+2002.03.25,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4097,4097,SRM 74
+2002.03.21,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4095,4095,SRM 73
+2002.03.20,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4090,4090,SRM 72
+2002.03.13,http://community.topcoder.com/stat?c=round_overview&er=5&rd=63,63,TCCC '02 Reg. Final
+2002.03.11,http://community.topcoder.com/stat?c=round_overview&er=5&rd=4085,4085,SRM 71
