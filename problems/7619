@@ -1,0 +1,35 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">My friend has a "bigital" clock. It displays 12-hour times in the 
+form hh:mm:ss, using 6 columns of 1 watt light bulbs.
+Each column displays its value in binary, where a light is off
+to indicate a 0 and is on to indicate a 1. The clock can display all
+12-hour times, from 01:00:00 to 12:59:59.
+<p>
+For example, 03:22:59 requires 8 lights to be on and looks like this:</p><pre>
+
+    0	0   0	0   0	1
+    0	0   0	0   1	0
+    0	1   1	1   0	0
+    0	1   0	0   1	1
+</pre>
+Given <b>tStart</b> and <b>tEnd</b>, return the total number of kilowatt
+hours used by the clock in displaying all the times from <b>tStart</b> to <b>tEnd</b>,
+inclusive. The start and end time are less than 12 hours apart. 
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Bigital</td></tr><tr><td class="statText">Method:</td><td class="statText">energy</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, String</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double energy(String tStart, String tEnd)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A kilowatt hour is the energy used when using 1000 watts for an hour.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A return value with either an absolute or relative error of less than 1.0E-9 is considered correct.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>tStart</b> and <b>tEnd</b> will each contain exactly 8 characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>tStart</b> and <b>tEnd</b> will each be in the form hh:mm:ss, where hh is between 01 and 12, inclusive, mm is between 00 and 59, inclusive, and ss is between 00 and 59, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"12:00:00"</pre></td></tr><tr><td class="statText"><pre>"12:00:00"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5.555555555555555E-7</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+
+    Two bulbs are on for just one second. This require 2 watt seconds
+   which (60 seconds per minute, 60 minutes per hour, 1000 watts per 
+   kilowatt) is .000000555555555 kilowatt hours of energy.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"12:59:59"</pre></td></tr><tr><td class="statText"><pre>"01:00:00"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3.0555555555555556E-6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    Here the clock is running for 2 seconds, with lots of lights on for
+   the first second and only 1 on for the second second.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre> "12:01:00"</pre></td></tr><tr><td class="statText"><pre>"12:00:00"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.08392277777777778</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    This is almost the full 12 hours.
+</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

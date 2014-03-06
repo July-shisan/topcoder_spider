@@ -1,0 +1,48 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+An unnamed international contest just finished. There were exactly four contestants from each of the participating countries.
+During the contest each of the contestants achieved a non-negative integer score (the higher, the better).
+The contestants were sorted according to their scores and the first part of the overall results (i.e., the best few contestants)
+was announced during the final ceremony.
+The organizers of the contest decided not to publish the remaining, lower part of the results.
+</p>
+
+<p>
+In the Countries Ranklist the countries are ordered (in decreasing order) by the total score of their four contestants. 
+If two or more countries have the same score, they are tied for the best place from the corresponding interval,
+and the places of the lower ranked countries remain unaffected. For example, if the total scores of countries A, B, C and D
+are 100, 90, 90 and 80, respectively, then B and C are tied for second place, and D is fourth. For further 
+clarification, see examples 2 and 4.
+</p>
+
+<p>
+A String[] <b>knownResults</b> will represent the published part of the results, with each of the elements describing one of the announced contestants.
+The elements have the form "<tt>COUNTRY CONTESTANT SCORE</tt>", 
+where <tt>COUNTRY</tt> is the name of the country, <tt>CONTESTANT</tt> is the name of the contestant 
+and <tt>SCORE</tt> is his score. 
+</p>
+
+<p>
+Your task will be to compute the best and the worst possible placement in the Countries Ranklist
+for each of the participating countries.
+You shall assume that from each country at least one contestant was announced and that 
+all contestants <i>not</i> in the available part of the results scored <i>strictly less</i> 
+than the worst contestant in the available part of rankings. (For example, if the worst announced
+contestant scored 47 points, then each of the not announced contestants from each of the participating
+countries could have scored at most 46 points.)
+</p>
+
+<p>
+You are to return a String[] with one element for each country. 
+The form of each element must be "<tt>COUNTRY BEST WORST</tt>", where <tt>COUNTRY</tt> is the name of the country, 
+<tt>BEST</tt> and <tt>WORST</tt> are the best and the worst position this country could possibly have in the Countries Ranklist.
+Order this list so that the country names are given in alphabetical order. Note that country names are case sensitive, and that in alphabetical order all uppercase letters come before lowercase letters. The numbers <tt>BEST</tt> and <tt>WORST</tt> mustn't contain leading zeroes.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CountriesRanklist</td></tr><tr><td class="statText">Method:</td><td class="statText">findPlaces</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] findPlaces(String[] knownPoints)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All scores (even the unknown ones) are non-negative integers.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>knownResults</b> contains between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each of the elements in <b>knownResults</b> is of the form "<tt>COUNTRY CONTESTANT SCORE</tt>".</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each <tt>COUNTRY</tt> and <tt>CONTESTANT</tt> in <b>knownResults</b> are strings containing between 1 and 10 letters ('a'-'z', 'A'-'Z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For each country <b>knownResults</b> contains at most 4 contestants.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each <tt>SCORE</tt> in <b>knownResults</b> is an integer between 1 and 600, inclusive, with no leading zeroes.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Poland Krzysztof 101", "Ukraine Evgeni 30", "Ukraine Ivan 24"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"Poland 1 1", "Ukraine 2 2" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The worst announced contestant is Ivan with 24 points. Each of the contestants that weren't announced had to score strictly less, i.e., at most 23 points. Thus the total score of Ukraine is at most 30+24+23+23 = 100 and Poland surely wins.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Poland Krzysztof 100", "CzechRep Martin 30", "CzechRep Jirka 25"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"CzechRep 1 2", "Poland 1 2" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This time, if the two missing Czech competitors scored 24 points each (and the remaining three from Poland scored 0), Czech Republic could still win. Note the order in which the countries are reported in the output.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Slovakia Marian 270", "Hungary Istvan 24", "Poland Krzysztof 100", 
+ "Hungary Gyula 30", "Germany Tobias 27", "Germany Juergen 27"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"Germany 2 4", "Hungary 2 4", "Poland 2 2", "Slovakia 1 1" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is an interesting case. Slovakia is sure to win, and Poland is sure to be second. But it is possible that Germany, Hungary and Poland have an equal total score of 100. In this case they are all tied for second place.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"usa Jack 14", "USA Jim 10", "USA Jim 10", "USA Jim 10", 
+ "USA Jim 10", "usa Jack 14", "usa Jack 14", "Zimbabwe Jack 10"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"USA 2 2", "Zimbabwe 3 3", "usa 1 1" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Case matters, "USA" and "usa" are two different countries. Contestant names don't matter, i.e., from "USA" there are four different contestants, all named "Jim". </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A a 9", "A b 9", "A c 9", "A d 9", 
+ "B e 9", "B f 9", "B g 8", "B h 8",
+ "C i 9", "C j 9", "C k 9", "C l 7",
+ "D m 1", "D n 1", "D o 1", "D p 1"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"A 1 1", "B 2 2", "C 2 2", "D 4 4" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">All results have been announced, so everything is clear. A is first, B and C are tied for second, and D is fourth.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

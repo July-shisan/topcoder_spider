@@ -1,0 +1,50 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Gomoku, also called go-moku (Japanese: Gomoku Narabe, "five points") is a tic-tac-toe-like game played on a rectangular board divided into unit squares. There are two players, and each of them has an infinite supply of pieces of his color. They alternately place their pieces on the board in an attempt to place five (or more) of their own pieces in a row (horizontally, vertically, or diagonally). As soon as one of the players has reached this goal, the game ends and he is the winner. If and only if no player has reached the goal and the whole board is full, the game is a draw.
+</p>
+
+<p>
+You will be given a String[] <b>board</b> containing a position in the game, with the letter 'X' used to denote pieces of one player, the letter 'O' (not zero!) the pieces of the other player and '.' (period) to denote empty spaces. (Note that you don't know whether the player that started the game used 'O's or 'X's.)
+</p>
+
+<p>
+Your task is to write a function that decides:
+</p>
+
+<ul><li>whether this is a valid position (i.e., one that could arise if both players played according to the rules), and </li>
+<li>whether a player already won. </li>
+</ul><p>
+If the position is not valid, return the string "INVALID". If the position is valid and represents a draw game, return the string "DRAW". If the position is valid and one of the players won, return "X WON" or "O WON" respectively. Otherwise, return the string "IN PROGRESS".
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">GomokuBoardChecker</td></tr><tr><td class="statText">Method:</td><td class="statText">check</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String check(String[] board)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Either of the players could have started the game.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each square of the board may contain at most one piece.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain between 1 and 15 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain between 1 and 15 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain only the characters 'X', 'O' and '.' .</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"O.X..",
+ ".OX..",
+ "X.O..",
+ "X..O.",
+ "....O"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "O WON"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Clearly, player "O" started the game and won.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"O.X..",
+ ".OX..",
+ "X.O..",
+ "X..O.",
+ "...XO"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "O WON"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This time, player "X" started the game, but player "O" won.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"OOOOO",
+ "OOOOO",
+ "OOOOO",
+ "OOOOO",
+ "OOOOX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "INVALID"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is an invalid position because players have to alternate placing the pieces.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"O...",
+ "...X",
+ "....",
+ "...."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "IN PROGRESS"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">According to the problem statement, this is a game in progress (even though nobody can win on a 4x4 board).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"O.X.O.",
+ ".OX.O.",
+ "X.O.O.",
+ "X..OO.",
+ "..XXOX",
+ "XXXXOO"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "O WON"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"O.XX.O",
+ ".OX..O",
+ "X.O..O",
+ "X..O.O",
+ "..XXOO",
+ "XXXX.O"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "INVALID"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXXXO",
+ "OOOOX",
+ "XXXXO",
+ "OOOOX",
+ "XOXOX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "DRAW"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

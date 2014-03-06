@@ -1,0 +1,30 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+You are standing on some arbitrary point in the infinite plane.
+</p>
+<p>
+You are given a String[] <b>commands</b> that contains the commands you have to execute.
+Each character of each element of <b>commands</b> is one command.
+The commands must be executed in the given order: first you execute all commands in the first element of <b>commands</b> one by one, 
+then those in the second element, etc.
+</p>
+<p>
+There are only three types of commands: '<tt>S</tt>' means "step forward", '<tt>L</tt>' means "turn 90 degrees to the left", and '<tt>R</tt>' means "turn 90 degrees to the right". All your steps have the same length.
+</p>
+<p>
+You will be executing the commands forever: after you execute the last character of the last element of <b>commands</b>, you will always start from the beginning again.
+</p>
+<p>
+We say that your path is <i>bounded</i> if there is some positive real number R such that while executing the infinite sequence of steps you will never leave the circle with radius R steps and center at your starting location.
+</p>
+<p>
+Given the String[] <b>commands</b>, your method should determine whether your path will be bounded or not. Return the String "<tt>bounded</tt>" (quotes for clarity) if the path is bounded and "<tt>unbounded</tt>" if it is not.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">SequenceOfCommands</td></tr><tr><td class="statText">Method:</td><td class="statText">whatHappens</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String whatHappens(String[] commands)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>commands</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>commands</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>commands</b> will be one of '<tt>S</tt>', '<tt>L</tt>', and '<tt>R</tt>'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"L"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "bounded"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">You are standing on the same spot forever, and in each step you take a turn 90 degrees to the left. This path is clearly bounded.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"SRSL"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "unbounded"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+Imagine that you start executing the commands facing to the north. While following this sequence you will repeatedly execute the following steps: make a step to the north, rotate right, make a step to the east, and rotate left (to face north again).
+</p>
+<p>
+Given enough time, this path will take you arbitrarily far away from the spot where you started, hence it is unbounded.
+</p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"SSSS","R"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "bounded"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">While executing this sequence of commands, you will be walking along the boundary of a small square.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"SRSL","LLSSSSSSL","SSSSSS","L"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "unbounded"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

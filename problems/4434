@@ -1,0 +1,71 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A satellite image consists of a rectangular grid of 1x1 squares, each having
+a value of 0 or 1. We want to
+identify the longest "blob", where a blob is a collection of 0's that are
+connected orthogonally. The length of a blob is defined to be the maximum 
+Euclidean distance between the centers of any two 0's in the blob. For example,
+in the following image <pre>
+       0010
+       1001
+       0011
+       0111   </pre>
+there are 2 blobs. The length of the big blob is sqrt(1+9), the distance
+between the 0 in the lower left corner and the one in row 0, 
+column 1. The length of the tiny blob is 0.
+<p>
+The difficulty is that the image may contain some noise in the form of 1's 
+that should be 0's. We do not want to underestimate the length of the 
+longest blob.  So we will consider all different ways of choosing up to 4
+different 1's and replacing them with 0's.  Among all these altered images we
+want the length of the longest blob.
+</p><p>
+Create a class LongBlob that contains a method maxLength that is given a 
+String[] <b>image</b> and that return the length of the longest blob when up to
+4 of the 1's in <b>image</b> are regarded as noise.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">LongBlob</td></tr><tr><td class="statText">Method:</td><td class="statText">maxLength</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double maxLength(String[] image)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A return value with either an absolute or relative error of less than 1.0E-9 is considered correct.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>image</b> will contain between 1 and 25 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>image</b> will contain exactly n characters, where n is between 1 and 25 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>image</b> will contain only the characters '0' (zero) and '1' (one).</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0010",
+ "1001",
+ "0011",
+ "0111"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4.242640687119285</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   This is the example given above but now by replacing 4 1's with 0's we can
+   get a blob that includes diagonally opposite corners. The distance between
+   two opposite corners is sqrt(9 + 9).
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"101010101"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   Replace the first 4 1's with 0's. Then there is one long blob, whose length
+   is the distance between the first 0 (that used to be a 1) and the last 0.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"1010101010101010101010101",
+ "0101010101010101010101010",
+ "1010101010101010101010101",
+ "0101010101010101010101010",
+ "1010101010101010101010101",
+ "0101010101010101010101010",
+ "1010101010101010101010101",
+ "0101010101010101010101010",
+ "1010101010101010101010101",
+ "0101010101010101010101010",
+ "1010101010101010101010101",
+ "0101010101010101010101010",
+ "1010101010101010101010101",
+ "0101010101010101010101010",
+ "1010101010101010101010101",
+ "0101010101010101010101010",
+ "1010101010101010101010101",
+ "0101010101010101010101010",
+ "1010101010101010101010101",
+ "0101010101010101010101010",
+ "1010101010101010101010101",
+ "0101010101010101010101010",
+ "1010101010101010101010101",
+ "0101010101010101010101010",
+ "1010101010101010101010101"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8.0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"01011",
+ "11100",
+ "01110",
+ "11111",
+ "01011",
+ "11111"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5.656854249492381</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

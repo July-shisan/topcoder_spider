@@ -1,0 +1,70 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Your friend has set a challenge for you. He took a square piece of paper, on which was drawn a square grid parallel to the sides, and divided it up into 5 pieces by making cuts along the grid-lines. Your challenge is to reconstruct the original square from the pieces.
+<br><br>
+You are given an int <b>L</b> containing the length in grid units of the sides of the original square and 5 String[]s: <b>s1</b>, <b>s2</b>, <b>s3</b>, <b>s4</b> and <b>s5</b>, each containing the details of the shape of one of the pieces of paper. Each character in each shape corresponds to a single square of the grid and will be a '#' if the square is present and a '.' if not. The shapes are given to you in the same orientation that they were in as part of the original square (i.e., they have not been rotated or turned over since they were cut out).
+<br><br>
+Return a String[] containing the reconstructed square. The return value should contain <b>L</b> Strings of length <b>L</b>. Character j of element i of the return value should be a digit containing the number of the shape (i.e., the digit in the supplied variable name) that the grid-square at position (i, j) was a part of. If there are multiple solutions, return the one that comes first lexicographically. The lexicographically earlier of two String[]s is the one with the lexicographically earlier String in the first position at which they differ. If there is no valid way of reconstructing the square, then your friend must be cheating and you should return a String[] containing a single element, "CHEAT" (quotes for clarity).
+<br><br>
+The shapes must not overlap in the reconstructed square or extend outside its boundary.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Shapes</td></tr><tr><td class="statText">Method:</td><td class="statText">reconstructSquare</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, String[], String[], String[], String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] reconstructSquare(int L, String[] s1, String[] s2, String[] s3, String[] s4, String[] s5)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>L</b> will be between 3 and 10, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>s1</b>, <b>s2</b>, <b>s3</b>, <b>s4</b> and <b>s5</b> will each contain between 1 and <b>L</b> elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>s1</b>, <b>s2</b>, <b>s3</b>, <b>s4</b> and <b>s5</b> will contain between 1 and <b>L</b> characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Within each of <b>s1</b>, <b>s2</b>, <b>s3</b>, <b>s4</b> and <b>s5</b>, every element will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>s1</b>, <b>s2</b>, <b>s3</b>, <b>s4</b> and <b>s5</b> will be either a '#' or a '.'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The first and last rows of <b>s1</b>, <b>s2</b>, <b>s3</b>, <b>s4</b> and <b>s5</b> will each contain at least 1 '#' character.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The first and last columns of <b>s1</b>, <b>s2</b>, <b>s3</b>, <b>s4</b> and <b>s5</b> will each contain at least 1 '#' character. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The '#' characters in each of <b>s1</b>, <b>s2</b>, <b>s3</b>, <b>s4</b> and <b>s5</b> will be connected.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>{"#####"}</pre></td></tr><tr><td class="statText"><pre>{"#####"}</pre></td></tr><tr><td class="statText"><pre>{"#####"}</pre></td></tr><tr><td class="statText"><pre>{"#####"}</pre></td></tr><tr><td class="statText"><pre>{"#####"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"11111", "22222", "33333", "44444", "55555" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here your friend cut the paper into strips. There are many ways that the square could be reconstructed, so we choose the lexicographically earliest.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>{"##"
+,"##"}</pre></td></tr><tr><td class="statText"><pre>{"########"
+,"#......#"
+,"#......#"
+,"#......#"
+,"#......#"
+,"#......#"
+,"#......#"
+,"########"}</pre></td></tr><tr><td class="statText"><pre>{"######"
+,"#....#"
+,"#....#"
+,"#....#"
+,"#....#"
+,"######"}</pre></td></tr><tr><td class="statText"><pre>{"####"
+,"#..#"
+,"#..#"
+,"####"}</pre></td></tr><tr><td class="statText"><pre>{"##########"
+,"#........#"
+,"#........#"
+,"#........#"
+,"#........#"
+,"#........#"
+,"#........#"
+,"#........#"
+,"#........#"
+,"##########"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"5555555555",
+"5222222225",
+"5233333325",
+"5234444325",
+"5234114325",
+"5234114325",
+"5234444325",
+"5233333325",
+"5222222225",
+"5555555555" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This time your friend cut up the paper into rings.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>8</pre></td></tr><tr><td class="statText"><pre>{"#....."
+,"######"
+,"######"}</pre></td></tr><tr><td class="statText"><pre>{".###"
+,"####"
+,"####"}</pre></td></tr><tr><td class="statText"><pre>{"###.."
+,"###.."
+,"##..."
+,"####."
+,"#####"
+,".####"}</pre></td></tr><tr><td class="statText"><pre>{".#"
+,".#"
+,".#"
+,"##"
+,"##"}</pre></td></tr><tr><td class="statText"><pre>{"####."
+,"#####"
+,"..###"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"CHEAT" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">These shapes cannot form a square.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>{"#####"}</pre></td></tr><tr><td class="statText"><pre>{"#####"}</pre></td></tr><tr><td class="statText"><pre>{"#####","#####"}</pre></td></tr><tr><td class="statText"><pre>{"#####"}</pre></td></tr><tr><td class="statText"><pre>{"#####"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"CHEAT" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>6</pre></td></tr><tr><td class="statText"><pre>{"##",".#"}</pre></td></tr><tr><td class="statText"><pre>{".#","##","##","##"}</pre></td></tr><tr><td class="statText"><pre>{"##.","###","###","##."}</pre></td></tr><tr><td class="statText"><pre>{"...#..","..##..","######","######"}</pre></td></tr><tr><td class="statText"><pre>{"#"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"331152", "333122", "333422", "334422", "444444", "444444" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>8</pre></td></tr><tr><td class="statText"><pre>{"##.....",".#####.","....###"}</pre></td></tr><tr><td class="statText"><pre>{"#....","####.","####.","####.","#####","..###","..###"}</pre></td></tr><tr><td class="statText"><pre>{".###","..##","...#","####","####",".###",".###",".###"}</pre></td></tr><tr><td class="statText"><pre>{"##","##"}</pre></td></tr><tr><td class="statText"><pre>{"###"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"11555333",
+"21111133",
+"22221113",
+"22223333",
+"22223333",
+"22222333",
+"44222333",
+"44222333" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

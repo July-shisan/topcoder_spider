@@ -1,0 +1,30 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You have N balls, where N is odd.
+The balls are numbered from 0 to N-1.
+In that order, they are arranged into a row going from the left to the right.
+<p></p>
+In addition to the number, each ball has either the word "left" or the word "right" written on it.
+For simplicity, we will use the character '&lt;' instead of "left", and the character '&gt;' instead of "right".
+You are given the labels on all balls as the String <b>label</b>.
+For each i, character i of <b>label</b> represents the word on ball i.
+<p></p>
+You will now repeat the following procedure:
+<ol><li>Choose a ball that is not at either end of the row of balls.</li>
+<li>If the chosen ball has the label '&lt;', remove the chosen ball and also the ball immediately to the left of it.
+    Otherwise, remove the chosen ball and also the ball to the right of it.</li>
+<li>Without reordering the remaining balls, push them together to get rid of the gap created in the previous step.</li>
+</ol>
+The process ends when only one ball remains in the row.
+That ball is called the survivor.
+Note that the numbers on the balls do not change during the process.
+<p></p>
+Find all possible survivors.
+Your method must return a String containing exactly N characters.
+If ball i can be the survivor, character i of the return value must be 'o' (lowercase oh). Otherwise, the corresponding character must be '.' (a period).</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BallRemoval</td></tr><tr><td class="statText">Method:</td><td class="statText">canLeave</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String canLeave(String label)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>label</b> will contain between 3 and 49 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>label</b> will contain an odd number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of <b>label</b> will be either '&gt;' or '&lt;'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"&lt;&lt;&gt;"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "..o"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Initially, you have three balls.
+Since you cannot choose balls at the ends of the row, you have to choose ball 1.
+As its label is '&lt;', you remove balls 0 and 1.
+Hence the only possible survivor is ball 2.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"&gt;&gt;&gt;&lt;&lt;"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "o...o"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">If you choose ball 2 or ball 3 first, you have to choose ball 1 next, and the survivor will be ball 0.
+If you choose ball 1 first, you have to choose ball 3 next, and the survivor will be ball 4.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"&lt;&lt;&gt;&lt;&lt;" </pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "....o"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"&lt;&gt;&lt;&lt;&gt;&lt;&gt;"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "o.....o"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"&gt;&gt;&gt;&lt;&lt;&lt;&gt;&gt;&gt;&gt;&gt;&lt;&lt;&lt;&gt;"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "o.....o.o.....o"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

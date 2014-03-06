@@ -1,0 +1,74 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>In the word game Boggle, a player is presented with a 4x4 grid of letters and has the task of
+finding words hidden among the letters.  A word may start at any location, and each succeeding letter
+of the word must be adjacent to the preceding letter horizontally, vertically, or diagonally.</p>
+
+<p>In our version of the game, a player is restricted to finding words from a given list of
+acceptable words.  The same letter may be used multiple times in the spelling of a word, and it is
+permitted to spell words that are part of longer words.  For instance, in the following example, one
+could form the word SANDS, even though there is only a single S:</p>
+<pre>
+XXXX
+XSAX
+XDNX
+XXXX
+</pre>
+
+<p>Notice that the above configuration would also yield other words, like SAND, AND, and SAD.</p>
+
+<p>If a word can be formed in more than one way, it may be counted more than once; for instance, the
+word EYE may be counted multiple times here since it can be found in different directions (see examples):</p>
+<pre>
+XEYE
+XXXX
+XXXX
+XXXX
+</pre>
+
+<p>Here, the word EYE could still be formed, but only once, since we are allowed to reuse letters:</p>
+<pre>
+XXEY
+XXXX
+XXXX
+XXXX
+</pre>
+
+<p>Here, the word TREE may be formed two different ways (down-right-up or down-diagonal-down):</p>
+<pre>
+TEXX
+REXX
+XXXX
+XXXX
+</pre>
+
+<p>The score for each word is the square of its length.  Thus, three letter words are worth 9 points,
+four letter words are 16 points, etc.</p>
+
+<p>You are given a String[] <b>grid</b> with exactly four elements, with each element
+containing 4 letters, describing the grid of letters you are to search.  You are also given a
+String[] <b>words</b>, each element of which represents an acceptable word.</p>
+
+<p>You are to return a long indicating the maximum score you can achieve after finding
+all possible paths to spell out acceptable words, summing together the scores from each individual word.  Since the maximum score could potentially be quite large, return the result MOD 1E13 (10000000000000).</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BoggleScore</td></tr><tr><td class="statText">Method:</td><td class="statText">bestScore</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long bestScore(String[] grid, String[] words)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>grid</b> will contain exactly four elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>grid</b> will contain exactly four characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of <b>grid</b> will be an uppercase ('A'-'Z') letter.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>words</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>words</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of <b>words</b> will be an uppercase ('A'-'Z') letter.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No two elements of <b>words</b> will be the same.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXEY",
+ "XXXX",
+ "XXXX",
+ "XXXX"}</pre></td></tr><tr><td class="statText"><pre>{"EYE"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">From the problem statement.  There's exactly one way to spell EYE, and it's worth 9 points.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XEYE",
+ "XXXX",
+ "XXXX",
+ "XXXX"}</pre></td></tr><tr><td class="statText"><pre>{"EYE"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 36</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Also from the problem statement.  Here, there are four ways to spell EYE.
+
+If we number the positions in the grid from 0-15 (top to bottom, left to right), then we can spell EYE by going: 123, 121, 321, 323.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"TEXX",
+ "REXX",
+ "XXXX",
+ "XXXX"}</pre></td></tr><tr><td class="statText"><pre>{"TREE"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 32</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Again, from the problem statement.  There are two ways to spell TREE, a word worth 16 points.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXXX",
+ "XSAX",
+ "XDNX",
+ "XXXX"}</pre></td></tr><tr><td class="statText"><pre>{"SANDS", "SAND", "SAD", "AND"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 59</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Each word occurs once, so 25 + 16 + 9 + 9 = 59.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"TREX",
+ "XXXX",
+ "XXXX",
+ "XXXX"}</pre></td></tr><tr><td class="statText"><pre>{"TREE"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">With only a single E on the board, we can't make the word TREE.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,32 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A group of <b>n</b> thieves needs some software to help them divide up their loot.
+A necklace must be divided up as evenly as possible among the gang members.
+The necklace is a circle of gems of different values. 
+<p>
+The requirement is
+that the necklace be divided into <b>n</b> segments by cutting the necklace in <b>n</b> places. 
+Every segment must contain at least one gem. The "inequity" of the division is
+the value of the most-valuable segment minus the value of the least-valuable
+segment. (The value of a segment is the sum of the values of the gems in that
+segment.) We want to minimize the inequity. 
+</p><p>
+Create a class Necklaces that contains a method inequity that is given as input <b>n</b>
+and a int[] <b>gems</b> (the values of each gem in the
+necklace in order). The gems are in a circle, so the last element of <b>gems</b> is
+connected to the first element. The method should find the best way to divide
+the necklace and return the minimum
+possible inequity.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Necklaces</td></tr><tr><td class="statText">Method:</td><td class="statText">inequity</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int inequity(int n, int[] gems)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> will be between 1 and 50 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>gems</b> will contain between <b>n</b> and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>gems</b> will be between 1 and 100,000 inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>{5,12,2,9}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   Cut it once anywhere. There is only one segment, and its value if 28. The
+   difference between the worst and best segment is 0 (28 - 28).
+
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>{5,12,9,2}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   Cut it between the 5 and 12, and also between the 12 and 9. The two resulting
+   segments have values 12 and 9+2+5=16. </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>{100,92,133,201,34,34,34,94,108}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 29</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">   Divide it as follows: 108 100 | 92 133 | 201 | 34 34 34 94.  Then the result is 225 - 196.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

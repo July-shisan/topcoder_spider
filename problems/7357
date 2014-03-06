@@ -1,0 +1,56 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">
+
+We want to construct a stationary crane and place it on a flat roof.
+We will make it by placing beams on top of each other and attaching a weightless
+cable to the end of one of the beams. All the beams have the same
+square cross-section but their lengths vary. Here is a picture
+of a crane (with its load attached to the cable) that could be constructed using 3 beams.
+<pre>
+                cccccccc
+                   bbbbbbbbbbb
+         aaaaaaaaaaaaaaaaa    |
+======================        |
+======================overhang|
+==== building=========        |
+======================        |
+======================        |
+======================      LOAD
+======================  
+                      
+</pre>
+We have already determined the order of the beams:
+the first beam must
+be placed on the roof, the second beam on top of it, etc. During
+construction we can support the crane, but after construction is complete
+and the load is attached to the cable the resulting crane must not fall apart.
+Specifically, a topmost section of the crane will tip and fall if the horizontal position of
+it center of gravity is to the left or right of the beam (the roof for the entire crane) on which it rests. 
+<p>
+We have chosen our units so that each beam's weight is the same as its
+length. Given a int[] <b>beam</b> (the weights or lengths of each beam in order)
+and <b>LOAD</b>, return the maximum overhang that we can achieve. 
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Overhang</td></tr><tr><td class="statText">Method:</td><td class="statText">hang</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double hang(int[] beam, int LOAD)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The center of gravity of a mass is the average location of its weight. The center of gravity of a collection of masses can be computed as the weighted average of the centers of gravity of each mass.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A return value with either an absolute or relative error of less than 1.0E-9 is considered correct.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>beam</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>beam</b> will be between 1 and 20,000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>LOAD</b> will be between 0 and 20,000, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{15}</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7.5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   This one-beam crane can't support anything, but at least it might
+   provide some shade.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{10}</pre></td></tr><tr><td class="statText"><pre>40</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   Using a coordinate system in which the edge of the
+   building is at x=0, the beam's center of gravity is at x=-4 
+   and the load's center of gravity is at x=1 so their combined center of gravity is at 
+   x = 10*(-4) + 40*(1) = 0.
+   The crane is balanced at the edge of
+   the building. 
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{10, 20, 10}</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 11.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   The best crane suspends the weight from the end of the middle beam
+   in this case.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{20,1,1,1,1,1}</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10.000000000000002</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here your can attach the load to the long beam that is resting directly on the roof, 
+and then counterbalance the load by stacking the short beams as far to the left as
+possible. </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1,1,1,1,1,20}</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8.089514476583442</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

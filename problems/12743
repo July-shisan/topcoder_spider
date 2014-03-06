@@ -1,0 +1,94 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Fox Ciel is teaching her friend Jiro to play Go.
+Ciel has just placed some white and some black tokens onto a board.
+She now wants Jiro to find the best possible move.
+(This is defined more precisely below.)<br><br><br>
+You are given a String[] <b>board</b>.
+Character j of element i of <b>board</b> represents the cell (i,j) of the board:
+'o' is a cell with a white token, 'x' a cell with a black token, and '.' is an empty cell.
+At least one cell on the board will be empty.<br><br><br>
+Jiro's move will consist of adding a single black token to the board.
+The token must be placed onto an empty cell.
+Once Jiro places the token, some white tokens will be removed from the board according to the rules described in the next paragraphs.<br><br><br>
+The white tokens on the board can be divided into connected components using the following rules:
+If two white tokens lie in cells that share an edge, they belong to the same component.
+Being in the same component is transitive: if X lies in the same component as Y and Y lies in the same component as Z, then X lies in the same component as Z.<br><br><br>
+Each component of white tokens is processed separately.
+For each component of white tokens we check whether it is adjacent to an empty cell.
+(That is, whether there are two cells that share an edge such that one of them is empty and the other contains a white token from the component we are processing.)
+If there is such an empty cell, the component is safe and its tokens remain on the board.
+If there is no such empty cell, the component is killed and all its tokens are removed from the board.<br><br><br>
+Jiro's score is the total number of white tokens removed from the board after he makes his move.
+Return the maximal score he can get for the given board.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">FoxAndGo</td></tr><tr><td class="statText">Method:</td><td class="statText">maxKill</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int maxKill(String[] board)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The position described by <b>board</b> does not have to be a valid Go position. In particular, there can already be components of white tokens that have no adjacent empty cell.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Please ignore official Go rules. The rules described in the problem statement are slightly different. For example, in this problem the black tokens cannot be killed, and it is allowed to place the black token into any empty cell.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">n will be between 2 and 19, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain exactly n elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>board</b> will contain exactly n characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>board</b> will be 'o', 'x' or '.'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There will be at least one '.' in <b>board</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".....",
+ "..x..",
+ ".xox.",
+ ".....",
+ "....."}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">To kill the only white token, Jiro must place his black token into the cell (3,2). (Both indices are 0-based.)</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ooooo",
+ "xxxxo",
+ "xxxx.",
+ "xxxx.",
+ "ooooo"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">By placing the token to the cell (2,4) Jiro kills 6 white tokens. The other possible move only kills 5 tokens.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".xoxo",
+ "ooxox",
+ "oooxx",
+ "xoxox",
+ "oxoox"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 13</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There is only one possible move. After Jiro makes it, all the white tokens are killed.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".......",
+ ".......",
+ ".......",
+ "xxxx...",
+ "ooox...",
+ "ooox...",
+ "ooox..."}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Regardless of where Jiro moves, the 9 white tokens in the lower left corner will be killed.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".......",
+ ".xxxxx.",
+ ".xooox.",
+ ".xo.ox.",
+ ".xooox.",
+ ".xxxxx.",
+ "......."}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"o.xox.o",
+ "..xox..",
+ "xxxoxxx",
+ "ooo.ooo",
+ "xxxoxxx",
+ "..xox..",
+ "o.xox.o"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 12</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".......",
+ "..xx...",
+ ".xooox.",
+ ".oxxox.",
+ ".oxxxo.",
+ "...oo..",
+ "......."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">7)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".ox....",
+ "xxox...",
+ "..xoox.",
+ "..xoox.",
+ "...xx..",
+ ".......",
+ "......."}
+ </pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">8)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"...................",
+ "...................",
+ "...o..........o....",
+ "................x..",
+ "...............x...",
+ "...................",
+ "...................",
+ "...................",
+ "...................",
+ "...................",
+ "...................",
+ "...................",
+ "...................",
+ "...................",
+ "................o..",
+ "..x................",
+ "...............x...",
+ "...................",
+ "..................."}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

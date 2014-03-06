@@ -1,0 +1,57 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">It's Sunday morning and you decide to take your girlfriend for a romantic trip.  You don't have time to plan anything fancy, so your only option is a trip through a small rectangular forest surrounded by skyscrapers.  You know that somewhere, deep inside the forest, there is a flower.  You are eager to venture with your girlfriend into the heart of the forest and show her your discovery.  Unfortunately, people have left their garbage all over the forest, and you suspect the following about your girlfriend:
+<br><br>
+- She really hates walking through garbage. <br>
+- She doesn't feel very comfortable walking along the garbage either.
+<br><br>
+You know where all the garbage is, so you want to plan out your path ahead of time.  The String[] <b>forest</b> contains the map of the forest, where each character represents a cell.  'S' represents your starting point, 'F' represents the flower's location, 'g' represents a cell filled with garbage, and '.' is a clean empty cell.
+Your goal is to find a path from 'S' to 'F' that contains the fewest possible garbage-filled cells.  You may only move one cell at a time, horizontally or vertically.  
+If there are multiple such paths, you want to choose one from among them with the fewest empty cells that have at least one garbage-filled neighbor.  Two cells are neighbors if they are horizontally or vertically adjacent.  Note that the 'S' and 'F' cells do not count as empty cells.
+
+<br><br>
+Return a int[] containing exactly two elements.  The first element is the number of garbage-filled cells in the path.  The second element is the number of empty cells in the path that have at least one garbage-filled neighbor.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ForestGarbage</td></tr><tr><td class="statText">Method:</td><td class="statText">bestWay</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] bestWay(String[] forest)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>forest</b> will have between 3 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements in <b>forest</b> will have the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>forest</b> will have between 3 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All characters in <b>forest</b> will be either 'S', 'F', 'g' or '.'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There will be exactly one 'S' in forest, and it will be located on one of the edges.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There will be exactly one 'F' in forest, and it will not be located on any of the edges.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"......",
+ "g..F..",
+ "......",
+ "..g...",
+ "......",
+ "...S.g"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0, 0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here we can get to the flower without needing to walk through or along garbage. One solution is to take one step up, one step right, three steps up and finally one step left. The picture below describes the forest map with the "maze" created by the garbage, where 'x' denotes a cell that neighbors at least one 'g' cell.
+<br><pre>
+xx....
+gx.F..
+..x...
+.xgx..
+..x..x
+...Sxg
+</pre>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"....",
+ "..F.",
+ "....",
+ "..S."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0, 0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No garbage to worry about.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".....",
+ "..F..",
+ "..g..",
+ ".....",
+ "ggggg",
+ ".....",
+ "..S.."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1, 2 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The garbage wall cannot be avoided, but we can minimize the number of garbage walk-alongs by moving 2 steps towards one of the corners, then going 5 steps straight up and another 2 to reach the flower. There are 2 cells situated along  garbage cells on our track; one just before entering the garbage wall and one right after.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"........",
+ "g..g...g",
+ "........",
+ ".g...g..",
+ "..g.g..S",
+ ".F.g....",
+ "......g."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0, 3 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"gggggg",
+ "gggFgg",
+ "gggggg",
+ "gggggg",
+ "gggggg",
+ "gggggg",
+ "gSgggg"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {6, 0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">With each move we make, we step in a garbage cell. Taking the shortest path, we visit 6 of these cells.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"S............",
+ "gggggggggggg.",
+ ".............",
+ ".gggggggggggg",
+ ".............",
+ "gggggggggggg.",
+ ".F.g...g...g.",
+ ".....g...g..."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0, 54 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No matter how long it takes to deviate from the normal track and walk along the garbage, it's still better than going right through it!</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

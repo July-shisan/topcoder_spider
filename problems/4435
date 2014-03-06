@@ -1,0 +1,100 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">We are using aerial photography to estimate the number of snakes in a region.
+We have a rectangular image of pixels with values 0 or 1, and we want to count the number
+of snakes in the image. The 0's are background, and the 1's are snake-colored.
+Because of the attributes of this type of snake (not
+gregarious and not likely to curl up tightly),
+we have adopted the following rules for identifying a snake:<ul><li>
+
+    A snake is never adjacent to a snake-colored pixel that is not part of itself, not even diagonally.</li><li>
+
+    There is a sequence of orthogonally adjacent pixels that traces out the entire snake from its head to its tail. </li><li>
+
+    Two pixels of a snake cannot be orthogonally adjacent unless they are 
+    connected in the snake (i.e., are neighbors in the sequence that traces out the snake).</li><li>
+
+    A snake occupies between 3 and 20 pixels, inclusive.</li></ul>
+
+As an example, consider the following picture. There are several ways to trace an orthogonal
+connection from a head to a tail, but it is NOT a snake since whichever way you trace out
+the snake, there are pixels that are orthogonally adjacent to each other but which are not neighbors in the sequence that traced out the snake.<pre>
+
+    11110
+    01110
+</pre><p>
+Create a class SnakeCount that contains a method number that is given a
+String[] <b>image</b> and that returns the number of snakes in the image.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">SnakeCount</td></tr><tr><td class="statText">Method:</td><td class="statText">number</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int number(String[] image)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A pixel is "orthogonally" adjacent to another if it is directly above, below, left or right of the other pixel.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>image</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>image</b> will contain exactly n characters, where n is between 1 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>image</b> will be '0' (zero) or '1' (one).</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"11111111",
+ "00000010",
+ "11100000",
+ "00010001",
+ "10110011"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   The possible snake at the top does not have a head to tail connection that
+   includes all its pixels. The 2 possible snakes of length 3 in the middle of the
+   image are eliminated because each is adjacent to a snake-colored pixel diagonally. The possible snake in
+   the lower left corner is too short. There is a snake in the lower right
+   corner.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"110111",
+ "110101",
+ "000110"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The four pixels in the upper left do not make a snake -- the head of a snake cannot be orthogonally adjacent to its tail. The 7 snake-colored pixels in the right 3 columns do make a legitimate snake.
+  </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"111","101","111"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is not a snake since the head cannot be orthogonally adjacent to the tail.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"11111111111111111111111111111111111111111111111111",
+"00000000000000000000000000000000000000000000000001",
+"11111111111111111111111111111111111111111111111111"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A snake can not occupy more than 20 pixels.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"00000000000000000000000000000000000000000000000000",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"00000000000000000000000000000000000000000000000000",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"00000000000000000000000000000000000000000000000000",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"00000000000000000000000000000000000000000000000000",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"00000000000000000000000000000000000000000000000000",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"00000000000000000000000000000000000000000000000000",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"00000000000000000000000000000000000000000000000000",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"00000000000000000000000000000000000000000000000000",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"00000000000000000000000000000000000000000000000000",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"00000000000000000000000000000000000000000000000000",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"00000000000000000000000000000000000000000000000000",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"10101010101010101010101010101010101010101010101010",
+"00000000000000000000000000000000000000000000000000",
+"11011011011011011011011011011011011011011011011011",
+"10010010010010010010010010010010010010010010010001"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 317</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A lot of snakes.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

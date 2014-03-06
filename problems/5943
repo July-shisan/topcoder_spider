@@ -1,0 +1,29 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>You are given the coordinates of several vertices in space.  Each vertex is colored 'R', 'G' or 'B'.  You are to determine the maximum possible area of a triangle such that all three of its vertices are the same color, or all three of its vertices are different colors.</p>
+
+<p>You are given a String[] <b>points</b> describing the vertices.  Each element of <b>points</b> will be in the form "color x y z", where color is 'R', 'G', or 'B', and x, y, z are integers with no leading zeroes.</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">FindTriangle</td></tr><tr><td class="statText">Method:</td><td class="statText">largestArea</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double largestArea(String[] points)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A triangle with all three vertices colinear, or two vertices overlapping, has area 0.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Returned value must be within 1.0e-9 absolute or relative error.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>points</b> will have between 5 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>points</b> will be formatted as "<i>color</i> <i>x</i> <i>y</i> <i>z</i>" (quotes added for clarity).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each <i>color</i> will be 'R', 'G', or 'B'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each <i>x</i>, <i>y</i> and <i>z</i> will be an integer between 0 and 999, inclusive, with no leading zeros.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"R 0 0 0",
+ "R 0 4 0",
+ "R 0 0 3",
+ "G 92 14 7",
+ "G 12 16 8"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The coloring restrictions mean that we can only consider the first three points, which form a classic 3-4-5 triangle with an area of 6.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"R 0 0 0",
+ "R 0 4 0",
+ "R 0 0 3",
+ "G 0 5 0",
+ "B 0 0 12"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 30.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Our bet here is to take the red point at the origin, the green point, and the blue point.  These actually form a 5-12-13 triangle.  Area = 30.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"R 0 0 0",
+ "R 0 4 0",
+ "R 0 0 3",
+ "R 90 0 3",
+ "G 2 14 7",
+ "G 2 18 7",
+ "G 29 14 3",
+ "B 12 16 8"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 225.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">We have a lot more choices here.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"R 0 0 0",
+ "R 1 1 0",
+ "R 4 4 0",
+ "G 10 10 10",
+ "G 0 1 2"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">All three red points are colinear.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

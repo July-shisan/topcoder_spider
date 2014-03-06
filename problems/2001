@@ -1,0 +1,38 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">The pipe game is played on a grid with three kinds of pipes. The straight pipe <tt>'-'</tt> allows water to flow straight. The elbow pipe <tt>'L'</tt> diverts water either to the left or to the right. The cross pipe <tt>'+'</tt> has the same effect as a straight pipe. Unlike the other two pipes, the cross pipe allows water to flow through it a second time in a direction perpendicular to the first pass. The water source is represented by one of: <tt>'N'</tt>, <tt>'S'</tt>, <tt>'W'</tt> or <tt>'E'</tt> indicating whether the water will begin flowing north, south, west or east respectively. You are allowed to rotate each pipe in the grid by 90 degree increments with the objective of maximizing the number of pipes connected to the water source.
+
+<p>
+Given a String[] <b>pipes</b> that represents the game grid, determine the length of the longest possible flow of water. Each pipe that the water flows through adds one to the total length. A cross pipe through which water passes twice contributes two to the overall length. The starting water source is not a pipe, does not count towards the length, and may not be rotated.
+</p>
+
+<pre>
+
+{"LL-L-",
+ "L+L+L",
+ "--NL-",
+ "L+--L",
+ "LL+L-"}
+</pre>
+
+<p>
+<img src="http://www.topcoder.com/contest/problem/PipePuzzle/unsolved.png"><br>
+This is a graphical representation of the puzzle above.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">PipePuzzle</td></tr><tr><td class="statText">Method:</td><td class="statText">longest</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int longest(String[] pipes)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">In each grid, south is the direction of increasing index within <b>pipes</b>, and north that of decreasing index. East is the direction of increasing index within an element of <b>pipes</b>, and west that of decreasing index.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>pipes</b> will have between 1 and 20 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>pipes</b> will have length between 1 and 20, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Every element of <b>pipes</b> will have the same length.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>pipes</b> will only contain the characters (<tt>'-'</tt>, <tt>'L'</tt>, <tt>'+'</tt>, <tt>'N'</tt>, <tt>'S'</tt>, <tt>'E'</tt>, <tt>'W'</tt>).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>pipes</b> will have exactly one water source.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>pipes</b> will contain between 0 and 20 elbow 'L' pipes, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"LL-L-",
+ "L+L+L",
+ "--NL-",
+ "L+--L",
+ "LL+L-"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 19</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><img src="http://www.topcoder.com/contest/problem/PipePuzzle/solved.png"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ELLL",
+ "LLLL",
+ "LLLL",
+ "LLLL"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 13</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><img src="http://www.topcoder.com/contest/problem/PipePuzzle/elbows.png"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ELLLLL+",
+ "++++++L",
+ "L+++++L",
+ "L+++++L",
+ "L+++++L",
+ "L+++++L",
+ "+LLLLLL"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 71</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"-+-+-+-+-+-+-+-+-+-W"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 19</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"N"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

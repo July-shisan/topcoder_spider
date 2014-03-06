@@ -1,0 +1,23 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Given a string of lowercase letters, I want to split it up into pieces so that
+the letters in each piece are distinct. I want to form as few pieces as possible.
+Given <b>theString</b> return a String[] containing the pieces sorted alphabetically.
+<p>
+If more than one way of splitting is minimal, return the sorted sequence of pieces
+that is first lexicographically. That means that the first element in the sequence that differs is
+earlier alphabetically. 
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">WordSplit</td></tr><tr><td class="statText">Method:</td><td class="statText">pieces</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] pieces(String theString)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>theString</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>theString</b> will be a lowercase letter ('a'-'z').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"facetiously"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"facetiously" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   No splits are required since all the letters are distinct.
+
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"aaaaa"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"a", "a", "a", "a", "a" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   This is the only legal split.
+   </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"aba"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"a", "ab" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   We need one split to separate the 'a's. Our choices are a/ba or ab/a.  
+   We return the one whose pieces form the earlier sequence lexicographically.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

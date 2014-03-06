@@ -1,0 +1,37 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+A <i>substitution cipher</i> is a simple method of encoding text in which all occurrences of each letter are replaced by another.  For example, consider the following substitution table:
+</p>
+
+<pre>
+    original: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+    encoded:  P X M S A C Z E V G I J D K N F O R L H T U W B Y Q
+</pre>
+
+<p>
+The message "REGISTER NOW FOR THE TOPCODER OPEN" would be encoded as "RAZVLHAR KNW CNR HEA HNFMNSAR NFAK" by finding each letter in the top row and replacing it with the letter directly beneath.
+</p>
+
+<p>
+Substitution ciphers are relatively easy to break.  One method takes advantage of the fact that some letters are used more frequently than others.  For example, in English text, the letter 'E' occurs more often than any other.  It is reasonable to guess that the most common letter in the encoded text represents 'E'.
+</p>
+
+<p>
+You will be given the encoded text as a String[] <b>encoded</b>.  You will also be given a String <b>frequencyOrder</b> containing all the letters that occur in the unencoded text sorted in decreasing order by frequency.
+
+You are to attempt to decipher the encoded text by replacing the most frequent letter in <b>encoded</b>
+with <b>frequencyOrder[0]</b>, the second-most frequent letter in <b>encoded</b> with <b>frequencyOrder[1]</b>, and so on.  If some letters occur equally frequently in <b>encoded</b>, replace the letter that occurs first alphabetically with the lower-index character in <b>frequencyOrder</b>.
+</p>
+
+<p>
+Your method should return a String[] with exactly the same number of elements, and characters in each element, as <b>encoded</b>.  Replace only letters, preserving spaces.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Decipher</td></tr><tr><td class="statText">Method:</td><td class="statText">decipher</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] decipher(String[] encoded, String frequencyOrder)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>encoded</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>encoded</b> will be between 0 and 50 characters long, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>encoded</b> will contain only uppercase letters ('A'-'Z') and spaces.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>encoded</b> will contain at least one letter.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>frequencyOrder</b> will contain between 1 and 26 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>frequencyOrder</b> will contain only uppercase letters ('A'-'Z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>frequencyOrder</b> will not have any duplicate letters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>encoded</b> and <b>frequencyOrder</b> will contain the same number of distinct letters.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "ABBBCC" }</pre></td></tr><tr><td class="statText"><pre>"XYZ"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"ZXXXYY" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The most common letter in the encoded text is 'B', so it gets replaced by 'X'.  The second-most common letter is 'C', so it gets replaced by 'Y'.  Finally, the lone 'A' gets replaced by 'Z'.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "RZLW" }</pre></td></tr><tr><td class="statText"><pre>"CEFD"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"EDCF" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">All letters occur equally frequently.  So, the first letter alphabetically, 'L', gets replaced by the first letter in <b>frequencyOrder</b>, 'C'.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "XX YYY Z YYY XX",
+  "WWWWWZWWWWW" }</pre></td></tr><tr><td class="statText"><pre>"ETMQ"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"MM TTT Q TTT MM", "EEEEEQEEEEE" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ " X ",
+  "",
+  " ",
+  "  ",
+  "   " }</pre></td></tr><tr><td class="statText"><pre>"B"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {" B ", "", " ", "  ", "   " }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "RAZVLHAR KNW CNR",
+  "HEA HNFMNSAR NFAK" }</pre></td></tr><tr><td class="statText"><pre>"EORTPNFHSCDIWG"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"REGISTER NOW FOR", "THE TOPCODER OPEN" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

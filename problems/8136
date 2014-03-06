@@ -1,0 +1,40 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Josh's grandfather has a <b>N</b> x <b>N</b> square field. Each cell in the field is a 1 x 1 square and contains a single type of fruit. Josh's grandfather said to Josh: "You can have any square section of my field, but with one condition. The section must not contain more than two different types of fruits and must not contain fruits of type 0 (zero)."<p></p> The field contains a maximum of 8 types of fruits. The content of the field can be determined from the String[] <b>changes</b>. Each element of <b>changes</b> is formatted "X Y L F" (quotes for clarity only), where X and Y are the 0-based coordinates of the upper left corner of a square area, and L is the length of one side of the square (the upper left corner of the field is at (0, 0)). F is the type of fruit that will be planted in that square area. Initially, each cell contains fruit of type 0. The elements of <b>changes</b> should be applied, in order, to determine the final content of the field. Whenever a new type of fruit is planted in a certain area, it will entirely replace any existing fruit that was there before.<p></p>
+	Josh is greedy, so he wants to maximize the area of his section.  Return the area of the largest square section of the field that contains no more than 2 different types of fruits and doesn't contain fruits of type 0. If no section can be chosen, return 0. See examples and constraints for more clarifications.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">GrandpaField</td></tr><tr><td class="statText">Method:</td><td class="statText">getArea</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int getArea(int N, String[] changes)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>N</b> will be between 1 and 1000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>changes</b> will contain between 0 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>changes</b> will be formatted "X Y L F" (quotes for clarity).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">In each element of <b>changes</b>, X and Y will be integers between 0 and <b>N</b>-1, inclusive, with no extra leading zeroes. L will be an integer between 1 and <b>N</b>, inclusive, with no extra leading zeroes.  X+L and Y+L will each be between 1 and <b>N</b>, inclusive. F will be an interger between 0 and 7, inclusive, with no extra leading zeroes.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>{"0 0 3 1"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The field will look like:
+<pre>
+111
+111
+111
+</pre>
+Here, he can choose the whole field, so the answer is 9.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>{"1 1 1 7"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>
+000
+070
+000
+</pre>
+The answer is 1. The chosen square is the square that contains the fruit of type 7.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>7</pre></td></tr><tr><td class="statText"><pre>{"0 0 7 7", "2 2 4 1", "3 5 1 5"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 25</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The field looks like:
+<pre>
+7777777
+7777777
+7711117
+7711157
+7711117
+7711117
+7777777
+</pre>
+The optimal way is to choose the square with the top-right corner at (0,0) and side 5. This square contains fruits of type 7 and fruits of type 1. The answer is 25.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>7</pre></td></tr><tr><td class="statText"><pre>{"0 0 7 7", "2 2 4 1", "3 5 1 5", "1 1 1 5", "5 1 1 5"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 16</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The field looks like:
+<pre>
+7777777
+7577777
+7711117
+7711157
+7711117
+7511117
+7777777
+</pre>
+The biggest square with fruits of type 7 and 5 has area 4, type 7 and 1 has area 9. But the answer is 16 : the square that contains frutis of type 1 and 5 with the corner at (2, 2) is the optimal solution.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1000</pre></td></tr><tr><td class="statText"><pre>{"0 0 1000 0", "20 20 980 1", "40 40 960 0", "60 60 940 2",
+ "80 80 920 0", "100 100 900 3", "120 120 880 0", "140 140 860 4",
+ "160 160 840 0", "180 180 820 5", "200 200 800 0", "250 250 22 1",
+ "250 250 1 0"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 441</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

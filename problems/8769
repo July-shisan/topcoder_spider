@@ -1,0 +1,39 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Several people play with a 6-sided die and take alternating turns. 
+In each turn the player starts by throwing the die, and the player who throws a '6' wins immediately.
+Obviously, each turn entails a one in six chance of winning. 
+As soon as one player wins, the game ends and all other players lose the game.
+</p>
+
+<p>
+The game is not fair. For example, in a two-player version, the first player is expected to win 6 out of 11 games.
+</p>
+
+<p>
+In our problem <b>playerCount</b> mathematicians decided to play a fair version of the
+game. After a while, they came up with a solution -- they will not take alternating turns. Instead,
+they will find and follow a different sequence of turns that will make the game fair.
+(See notes for a precise definition.)
+</p>
+
+<p>
+For simplicity, assume that the players are assigned the first <b>playerCount</b> letters
+of the alphabet. Then the sequence of turns can be represented as an infinite string 
+of letters. Out of all fair sequences we will be interested in the lexicographically
+smallest one.
+</p>
+
+
+<p>
+You are given an int <b>playerCount</b>, and an int <b>turnNumber</b>.
+Your method should find the lexicographically smallest fair sequence of moves for <b>playerCount</b>
+players, and return a one-character String containing the 
+player that has to play in the turn <b>turnNumber</b>. Turns are numbered starting from 1.
+If there is no fair sequence of moves for <b>playerCount</b> players, return an empty string
+instead.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">FairDiceGame</td></tr><tr><td class="statText">Method:</td><td class="statText">getPlayer</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String getPlayer(int playerCount, int turnNumber)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Given two different sequences of turns X and Y, sequence X is lexicographically smaller than Y if and only if at the first place where they differ the character in X is earlier in the alphabet than the one in Y.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">An infinite sequence of turns S is fair if for any player P and for any number of turns T the following sentence is true: If the players take  turns according to the sequence, then the probability that player P wins in one of the first T turns is at most equal to 1/<b>playerCount</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>playerCount</b> will be between 2 and 26, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>turnNumber</b> will be between 1 and 20, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "A"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">For two players, there are many fair sequences of turns. In the lexicographically smallest one, the first player must obviously be A.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "A"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There is at least one fair sequence such that A takes the second turn as well.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "B"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In the lexicographically smallest fair sequence for two players the player A takes the first three turns, and B takes the fourth one.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>17</pre></td></tr><tr><td class="statText"><pre>20</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: ""</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There is no fair sequence of turns for 17 players.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "B"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

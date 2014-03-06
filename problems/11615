@@ -1,0 +1,32 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You are given a 2-dimensional matrix of characters represented by the String[] <b>letterMaze</b>. The i-th character of the j-th element of <b>letterMaze</b>  represents the character at row i and column j. Each of the 26 letters from 'A' to 'Z' appears exactly once in <b>letterMaze</b>, the remaining characters are periods ('.').<br><br>
+An alphabet path is a sequence of 26 elements of the matrix such that:
+<ul><li>The first element contains the letter 'A'.</li>
+<li>The first element and the second element are (horizontally or vertically) adjacent.</li>
+<li>The second element contains the letter 'B'.</li>
+<li>The second element and the third element are (horizontally or vertically) adjacent.</li>
+<li>...</li>
+<li>The 25-th element and the 26-th element are (horizontally or vertically) adjacent.</li>
+<li>The last, 26-th element contains the letter 'Z'.</li>
+</ul><br>
+Given <b>letterMaze</b> return String "YES" if the alphabet path exists in the matrix and "NO" otherwise.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">AlphabetPath</td></tr><tr><td class="statText">Method:</td><td class="statText">doesItExist</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String doesItExist(String[] letterMaze)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Formally, elements (x1,y1) and (x2,y2) are horizontally or vertically adjacent if and only if abs(x1 - x2) + abs(y1 - y2) = 1. </td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>letterMaze</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>letterMaze</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All the elements of <b>letterMaze</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>letterMaze</b> will only contain uppercase letters ('A'-'Z') and periods ('.').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each uppercase letter from 'A' to 'Z' will appear exactly once in <b>letterMaze</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABCDEFGHIJKLMNOPQRSTUVWXYZ"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "YES"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Simply go from left to right.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ADEHI..Z",
+ "BCFGJK.Y",
+ ".PONML.X",
+ ".QRSTUVW"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "YES"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ACBDEFGHIJKLMNOPQRSTUVWXYZ"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "NO"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABC.......",
+ "...DEFGHIJ",
+ "TSRQPONMLK",
+ "UVWXYZ...."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "NO"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The cells marked with C and D are not adjacent, it is impossible to make an alphabet path in this case.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"..............",
+ "..............",
+ "..............",
+ "...DEFGHIJK...",
+ "...C......L...",
+ "...B......M...",
+ "...A......N...",
+ "..........O...",
+ "..ZY..TSRQP...",
+ "...XWVU.......",
+ ".............."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "YES"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

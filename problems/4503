@@ -1,0 +1,31 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You will be given a String[] <b>input</b>.  The value of each character in <b>input</b> is computed as follows:
+<pre>   Value = (Alphabet Position) + (Element of <b>input</b>) + (Position in Element) 
+</pre>
+All positions are 0-based.  'A' has alphabet position 0, 'B' has alphabet position 1, ... The returned hash is the sum of all character values in <b>input</b>. 
+For example, if 
+<pre><b>input</b> = {"CBA",
+         "DDD"}</pre>
+then each character value would be computed as follows: <pre>
+2 =   2 + 0 + 0   :  'C' in element 0 position 0
+2 =   1 + 0 + 1   :  'B' in element 0 position 1
+2 =   0 + 0 + 2   :  'A' in element 0 position 2
+4  =  3 + 1 + 0   :  'D' in element 1 position 0
+5  =  3 + 1 + 1   :  'D' in element 1 position 1
+6  =  3 + 1 + 2   :  'D' in element 1 position 2
+</pre> The final hash would be 2+2+2+4+5+6 = 21.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ArrayHash</td></tr><tr><td class="statText">Method:</td><td class="statText">getHash</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int getHash(String[] input)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>input</b> will contain between 1 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>input</b> will be a capital letter ('A'-'Z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>input</b> will contain between 1 and 50 characters inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>input</b> will contain the same number of characters.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"CBA",
+ "DDD"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 21</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">From the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Z"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 25</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A very small example.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A",
+ "B",
+ "C",
+ "D",
+ "E",
+ "F"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 30</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Tall and narrow.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+ "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+ "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+ "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+ "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+ "ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4290</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ZZZZZZZZZZ"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 295</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

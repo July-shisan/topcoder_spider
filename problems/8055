@@ -1,0 +1,27 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You recently asked your secretary to put some box files into storage for you. He was supposed to sort them with the names of the files in lexicographical order, but an error with the printer caused the names to be printed with the characters in reverse order and he sorted them based on the printed names. You want to know what order the files ended up in.
+<br><br>
+You will be given the original names of the files in a String[] <b>files</b>. Return a String containing the original name of the first file in the order your secretary sorted them.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Secretary</td></tr><tr><td class="statText">Method:</td><td class="statText">wrongOrdering</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String wrongOrdering(String[] files)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>files</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>files</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>files</b> will contain only uppercase letters ('A'-'Z').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"JAMES","PETER","ADAM","JOHN","DAVE","EDWARD"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "EDWARD"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">These are your employee records that the secretary is sorting. The order in which your secretary sorted them is:<br><br>
+DRAWDE - EDWARD<br>
+EVAD - DAVE<br>
+MADA - ADAM<br>
+NHOJ - JOHN<br>
+RETEP - PETER<br>
+SEMAJ - JAMES<br><br>
+"EDWARD" is the first file in the list.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ALGORITHM","DESIGN","DEVELOPMENT","TCHS","STUDIO","MARATHON"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "ALGORITHM"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "A"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ACCOUNTING"
+,"MARKETING"
+,"PERSONNEL"
+,"FINANCE"
+,"SALES"
+,"ADMINISTRATION"
+,"IT"
+,"MANAGEMENT"
+,"OPERATIONS"
+,"LEGAL"
+,"PURCHASING"
+,"LOGISTICS"
+,"TRAINING"
+,"TECHNICAL"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "FINANCE"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AAAAA","AA","AAA"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "AA"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

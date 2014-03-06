@@ -1,0 +1,53 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You are running a local tournament with 8 competitors. 
+The tournament will consist of 3 rounds and will be organized as follows.
+<br>
+In round 1 game i is played between competitors 2*i and 2*i+1 (0&lt;=i&lt;=3). 4 winning competitors advance to round 2.
+<br>
+In round 2 game i is played between the winners of games 2*i and 2*i+1 (0&lt;=i&lt;=1). 2 winning competitors advance to round 3.
+<br>
+Finally, the winners of round 2 games play one game in round 3 to determine the winner of the tournament.
+<br>
+You are given a int[] <b>P</b> describing the percent probabilities of each competitor winning a game against another competitor.  The first 7 elements of <b>P</b> are the probabilities of competitor 0 winning a game against competitors 1 through 7, the next 6 elements are the probabilities of competitor 1 winning a game against competitors 2 through 7, etc.
+<br>
+Return a double[] containing exactly 8 elements, where the i-th element is the probability of competitor i winning the tournament.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TournamentWinner</td></tr><tr><td class="statText">Method:</td><td class="statText">winningProbabilities</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double[] winningProbabilities(int[] P)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The games played in the tournament will not end in a tie.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of your return must have an absolute or relative error less than 1e-9.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>P</b> will contain exactly 28 elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>P</b> will be between 0 and 100, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{5,   0,  10,  15,  20,  25,  30,
+      0,  35,  40,  45,  50,  55,
+         100, 100, 100, 100, 100,
+               60,  65,  70,  75,
+                    80,  85,  90,
+                         95,  50,
+                              50}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Competitor 2 wins a game against any other competitor with probability 1.0, so he will win the tournament, leaving no chances to other competitors.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{100,  25,   0,  25,  25,  25,  25,
+       25,  25,  25,  25,  25,  25,
+             0,  25,  25,  25,  25,
+                 50,  25,  25,  25,
+                     100,  25, 100,
+                           25,  25,
+                                 0}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0.0, 0.0, 0.0, 0.5, 0.5, 0.0, 0.0, 0.0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In round 1, players 0, 3, 4 and 7 win against players 1, 2, 5 and 6, respectively. In round 2, 3 wins against 0 and 4 wins against 7. Finally, both 3 and 4 have a 50% chance to win against the opponent in round 3 and to win the tourney.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{50,  50,  50,  50,  50,  50,  50,
+      50,  50,  50,  50,  50,  50,
+           50,  50,  50,  50,  50,
+                50,  50,  50,  50,
+                     50,  50,  50,
+                          50,  50,
+                               50}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">All competitors have equal chances.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{100, 50,  50,  50,  50,  50,  50,
+       0,  50,  50,  50,  50,  50,
+          100,  50,  50,  50,  50,
+                 0,  50,  50,  50,
+                    100,  50,  50,
+                           0,  50,
+                              100}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0.25, 0.0, 0.25, 0.0, 0.25, 0.0, 0.25, 0.0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Competitors 0, 2, 4 and 6 win their games in round 1 and have equal chances in later rounds.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 50, 50,  50,  50,  50,  50,  50,
+      50,  50,  50,  50,  50,  50,
+           50,  50,  50,  50,  50,
+                50,  50,  50,  50,
+                    100, 100, 100,
+                          10,  20,
+                               30}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0.125, 0.125, 0.125, 0.125, 0.5, 0.0, 0.0, 0.0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Competitor 4 will get to round 3 for sure, while competitors 0, 1, 2 and 3 have equal chances to get to round 3.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{  1,  2,   4,   7,  11,  16,  22,
+       3,   5,   8,  12,  17,  23,
+            6,   9,  13,  18,  24,
+                10,  14,  19,  25,
+                     15,  20,  26,
+                          21,  27,
+                               28}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{6.88919608E-5, 0.009061234459199999, 0.011498979459599998, 0.1853675541204, 0.0328889066112, 0.18542493028680002, 0.17985791390280004, 0.3958315891991999 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

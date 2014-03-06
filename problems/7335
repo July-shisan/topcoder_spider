@@ -1,0 +1,50 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">The members of a committee vote 'Yes' or 'No' on various issues. However, some pairs of 
+committee members have formed alliances, promising
+never to cast opposite votes. No one is willing to vote contrary 
+to her own opinion, so some of the members may need to
+abstain from voting in order to avoid conflict between allies.
+<p>
+We have devised a method to determine who 
+should abstain. Before each issue is voted on, we randomly assign each 
+committee member an identifying number, 1, 2, ..., n. 
+The member will then indicate her opinion on the issue. Then we will calculate
+the smallest collection of abstentions that will avoid conflict.
+</p><p>
+The k-th element of the String[] <b>voter</b> contains the information about the 
+k-th committee member -- the first element describes the member whose id is 1,
+the second describes the member whose id is 2, etc. Each element contains its member's 
+opinion, either 'Y' or 'N', followed by the identifying number of each higher-numbered member 
+who has formed an alliance with its member.
+ Return a int[] 
+containing, in ascending order, the identifying numbers of the minimal collection
+of members who must abstain from voting. If there is more than one minimal collection, 
+return the one that is earliest lexicographically.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">VotingBloc</td></tr><tr><td class="statText">Method:</td><td class="statText">abstainers</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] abstainers(String[] voter)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>voter</b> will contain exactly n elements, where n is between 1 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>voter</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>voter</b> will be the character 'N' or 'Y' followed by a list of numbers.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each number on a list (which may be empty) will be preceded by one space (' ').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The numbers on each list will be distinct, and will have no leading zeroes.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each number on each list will be less than or equal to n.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each number on the k-th list will be greater than the identifier of the k-th committee member. </td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Y 2","N"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   Here there are 2 members (1 and 2) and there is an alliance between them.
+   Since they disagree on the issue, one of them must abstain. 
+   We choose 1 since it is earlier lexicographically.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"N 2","N 3","Y"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {2 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   Member 2 has an alliance with both 1 and 3. If member 3 abstains there
+   will be no conflict since all the remaining members vote N. If member 1 abstains
+   a conflict will remain since 2 and 3 are allies who disagree. If member 2
+   abstains, 1 and 3 are no longer in conflict. So there are two minimal sets
+   of abstainers, and {2} is earlier lexicographically.
+ </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"N 2 3 4","N 3 4","Y 4","Y"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1, 2 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   Each member is allied with all the other members. The only way to avoid conflict is
+   for all those whose opinion is 'Y' to abstain, or for all those whose opinion
+   is 'N' to abstain. Either way it will take 2 abstentions.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"N 2 3 4","N 3 4","Y 4","N"} </pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {3 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    This is the same as the preceding case except that now 3 of the members agree
+    on 'N', so it takes only 1 abstention to avoid conflict.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Y 2 3 4","Y 3 4","Y 4","Y"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    Everyone agrees, so no abstentions are needed.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

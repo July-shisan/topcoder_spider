@@ -1,0 +1,27 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">We have <b>n</b> identical processors and want to build a fixed <b>amount</b> of computers 
+with them.  Each 
+computer is characterized by the number of processors we put into it. We want
+to use all the processors, and we don't mind forming many identical computers,
+but have decided that it would be wasteful to form two different  
+computers that do not differ significantly. We also want all the computers that
+we build to be reasonably powerful.
+<p>
+Create a class Computers that contains a method choices that takes four ints
+as input: <b>n</b> (the number of processors), <b>minDif</b> (the smallest allowable difference between the
+number of processors in different computers), <b>minInComp</b> (the minimum number
+of processors that a computer is allowed to have), and <b>amount</b> (the number of computers we must 
+produce).  The method returns a long value that is the number
+of distinct ways in which we can combine all our processors to form <b>amount</b> computers.
+</p>
+
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Computers</td></tr><tr><td class="statText">Method:</td><td class="statText">choices</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long choices(int n, int minDif, int minInComp, int amount)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> will be between 1 and 1000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>minDif</b> will be between 5 and 1000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>minInComp</b> will be between 1 and 1000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>amount</b> will be between 1 and 1000, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>6</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+The different ways in which we can produce the 2 computers are {5,15}, {6,14}, {7,13}, and {10,10}. Note that {4,16} would not be legal since a computer is not allowed to have less than 5 processors, and that {8,12} would not be legal because these two computers are different but do not differ by at least 6 processors.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>100</pre></td></tr><tr><td class="statText"><pre>500</pre></td></tr><tr><td class="statText"><pre>400</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+Since each computer must have at least 400 processors and we have only 100, it is not possible to build even 1 computer.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1000</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 113420686168080</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

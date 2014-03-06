@@ -1,0 +1,46 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+You will be given some two-dimensional vectors (the i-th element
+of the int[]s <b>dx</b> and <b>dy</b> represent the
+i-th vector (<b>dx</b>[i], <b>dy</b>[i])). Using some (or all) of
+these in some order you may be able to construct a
+polygon by appending them end to end - i.e., represent each vector
+as an arrow, and place the arrows such that each arrow begins
+where the last one ends. In order to get a polygon,
+the last arrow must end at the beginning of the first arrow.
+The image below shows an example with three vectors.
+</p>
+<p>
+<img src="http://www.topcoder.com/contest/problem/VectorPolygon/triangle.png"></p>
+<p>
+The left image shows the three vectors as arrows. We can start
+with the red vector (2, 2), append the green vector (3, -4) and
+finally append the blue vector (-5, 2) and we get the triangle
+in the middle image.
+We can also append them in a different order, starting again with
+the red one, but appending first the blue one and finally the
+green one, getting the triangle in the right image.
+</p>
+<p>
+You are to find the convex polygon that you can
+construct using some (or all) of the given vectors in some
+order that has the maximum area, and return this area. If
+you cannot construct a convex polygon using the given
+vectors, return 0.0.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">VectorPolygon</td></tr><tr><td class="statText">Method:</td><td class="statText">maxArea</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double maxArea(int[] dx, int[] dy)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Your return value must have an absolute or relative error less than 1e-9.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If two or more parallel (or even identical) vectors are given in the input, you are allowed to use them in a row - i.e., the polygon may have 180 degrees angles, see example 6.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>dx</b> and <b>dy</b> will each have between 1 and 8 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>dx</b> and <b>dy</b> will have the same number of elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>dx</b> and <b>dy</b> will be between -100 and 100, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There will be no zero-vector given, i.e., <b>dx</b>[i] and <b>dy</b>[i] will not be both 0 for any i.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{2, 3, -5}</pre></td></tr><tr><td class="statText"><pre>{2, -4, 2}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+The example from the problem statement. Both shown triangles have the
+same area.
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{2, -3, -5}</pre></td></tr><tr><td class="statText"><pre>{2, 4, 2}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+Note that the vectors are directed: this is a similar example as that
+of the problem statement, but with the green arrow pointing in the opposite
+direction. We can not construct a polygon using these vectors.
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{0, 0, 1, -1}</pre></td></tr><tr><td class="statText"><pre>{1, -1, 0, 0}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+We can build a unit square using these four unit vectors.
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{25, 50, 75, 100, -25, -50, -75, -100}</pre></td></tr><tr><td class="statText"><pre>{100, 75, 50, 25, -100, -75, -50, -25}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 31250.0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{100}</pre></td></tr><tr><td class="statText"><pre>{-100}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1, -1, 0}</pre></td></tr><tr><td class="statText"><pre>{0, 1, -1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.5</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{0, 1, 1, -2}</pre></td></tr><tr><td class="statText"><pre>{2, -1, -1, 0}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Note that we can append parallel vectors in a row. If we connect all vectors in the order they are given in the input, we get a right triangle with the hypotenuse consisting of the two (1, -1) vectors appended in a row.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

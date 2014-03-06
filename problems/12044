@@ -1,0 +1,49 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+The amazing flea circus Nehryzma is in town!
+</p>
+<p>
+The most famous act of this flea circus looks as follows:
+On the table there are N marked spots, labeled 0 through N-1.
+Initially, there is a single flee sitting on each of the spots.
+The fleas have cute little t-shirts with numbers.
+For each i, the flea that starts on the spot number i has the number i on its t-shirt.
+During the act, the fleas jump between the spots according to the rules explained below.
+</p>
+<p>
+The fleas are directed by their trainer, Mr. Kocurisko.
+When practicing for the act, Mr. Kocurisko had drawn N arrows onto the table.
+Each arrow started at a marked spot and ended at a marked spot (possibly the same one).
+For each marked spot, there was exactly one arrow leaving it, and one arrow entering it.
+The fleas then had to jump according to the arrows.
+Each time Mr. Kocurisko clicked his tongue, each flea had to jump from her marked spot X to the marked spot at the end of the arrow that leaves the spot X.
+(Note that it is possible that some fleas just jumped on the spot.)
+Obviously, once all fleas landed, there was again exactly one flea on each of the marked spots, so the process could continue in the same way.
+</p>
+<p>
+Once the fleas mastered the routine, Mr. Kocurisko erased the arrows.
+Now the act looked pretty amazing: each time he clicked the tongue, all fleas jumped seemingly at random, and no two of them ever collided.
+What a wonderful trick!
+</p>
+<p>
+Little Julka came to see the show today.
+However, she was standing at the back of a huge crowd, so she only managed to catch a single glimpse of the act.
+</p>
+<p>
+You are given a String[] <b>afterFourClicks</b>.
+Concatenate the elements of <b>afterFourClicks</b> to obtain one long String.
+This String will contain a sequence S, consisting of N nonnegative integers separated by single spaces.
+For each i, the i-th element of S is the number of the flea that was on the marked spot number i after the trainer clicked his tongue four times.
+Count all possible configurations of arrows on the table that correspond to the state described by S.
+In other words, count all possible configurations of fleas after the first click of the tongue (i.e., three clicks before the current one).
+As this number can be huge, return it modulo 1,000,000,009 (10^9 + 9).
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">FleaCircus</td></tr><tr><td class="statText">Method:</td><td class="statText">countArrangements</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int countArrangements(String[] afterFourClicks)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">It is possible that for the given input data no valid configuration of arrows exists. In that case the correct return value is obviously 0.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Note that the constraints imply that N is at most 652.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>afterFourClicks</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>afterFourClicks</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>afterFourClicks</b> will be a digit ('0'-'9') or a space (' ').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The string Z obtained by concatenating all elements of <b>afterFourClicks</b> will contain a sequence S of N nonnegative integers, separated by single spaces.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The string Z will have no leading spaces and no trailing spaces.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The numbers in the string Z will have no unnecessary leading zeroes.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All integers in S will be between 0 and N-1, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All integers in S will be pairwise distinct.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"1 2 0 3"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The only possible configuration of arrows: 0-&gt;1, 1-&gt;2, 2-&gt;0, 3-&gt;3.
+This is what happens to each of the four fleas:
+<ul><li>Flea 0 starts at the spot 0. It jumps to spot 1, then to spot 2, then to spot 0, and finally to spot 1.</li>
+<li>Flea 1 starts at the spot 1. It jumps to spot 2, then to spot 0, then to spot 1, and finally to spot 2.</li>
+<li>Flea 2 starts at the spot 2. It jumps to spot 0, then to spot 1, then to spot 2, and finally to spot 0.</li>
+<li>Flea 3 starts at the spot 3. It makes four jumps on the spot.</li>
+</ul></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"1 2 ", "0 3"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is exactly the same sequence S as in Example 0.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0 1 2"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Either all three fleas jump on the spot, or one of them jumps on the spot and the other two swap places in each turn.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0 1 2 3 5 4"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">If the fleas jump according to the rules in the problem statement, you cannot see this situation after four jumps.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"3 6 7 9 8 2 1", "0 5 1 0 4"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"1 0 7 5 6 3 4 2"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 48</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

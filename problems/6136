@@ -1,0 +1,62 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Given a tree, you are to return a representation of that tree as a String[].  The tree will be specified by a int[], where element i gives the index of the parent of node i (indexed from 0).  Exactly one element of this int[] will be -1, corresponding to the root of the tree.  Element i of the int[] corresponds to element i of <b>names</b>, which gives the name of node i.  <br><br>
+The String[] you return should have the root on the first line.  Following the root, add elements to the return one subtree at a time.  The subtrees should be sorted by the indices of their roots and drawn in the same way as the whole tree.  However, the root of each subtree should be indented two more characters than its parent.  After indenting, each node should be indicated by a plus '+', a minus '-', and then the name of the node from <b>names</b>.  The plusses of siblings should be connected by vertical pipes '|' as shown in the examples.  For example, the tree given by the input:<br><b>parents</b> = {-1,0,1,1,0,0,5,5}<br><b>names</b> = {"Root","SubB","LEAF1","LEAF2","LEAF3","SubA","LEAF4","LEAF5"}<br>
+would result in the following return.
+<pre>
++-Root
+  +-SubB
+  | +-LEAF1
+  | +-LEAF2
+  +-LEAF3
+  +-SubA
+    +-LEAF4
+    +-LEAF5
+</pre>
+See the examples for more illustrations of exactly how this works.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">DrawTree</td></tr><tr><td class="statText">Method:</td><td class="statText">draw</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] draw(int[] parents, String[] names)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>parents</b> will represent a tree: exactly one element will be -1, there will be no cycles, and all but one of the entries will refer to other elements of <b>parents</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>parents</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>parents</b> and <b>names</b> will contain the same number of elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>names</b> will contain between 1 and 50 letters ('a'-'z' and 'A'-'Z'), and digits ('0'-'9').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{-1,0,1,1,0,0,5,5}</pre></td></tr><tr><td class="statText"><pre>{"Root","SubB","LEAF1","LEAF2","LEAF3","SubA","LEAF4","LEAF5"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"+-Root",
+"  +-SubB",
+"  | +-LEAF1",
+"  | +-LEAF2",
+"  +-LEAF3",
+"  +-SubA",
+"    +-LEAF4",
+"    +-LEAF5" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1,2,3,4,5,6,-1}</pre></td></tr><tr><td class="statText"><pre>{"A","B","C","D","E","F","G"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"+-G",
+"  +-F",
+"    +-E",
+"      +-D",
+"        +-C",
+"          +-B",
+"            +-A" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1,2,3,4,6,6,-1}</pre></td></tr><tr><td class="statText"><pre>{"A","B","C","D","E","F","G"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"+-G",
+"  +-E",
+"  | +-D",
+"  |   +-C",
+"  |     +-B",
+"  |       +-A",
+"  +-F" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{6,2,3,4,5,6,-1}</pre></td></tr><tr><td class="statText"><pre>{"A","B","C","D","E","F","G"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"+-G",
+"  +-A",
+"  +-F",
+"    +-E",
+"      +-D",
+"        +-C",
+"          +-B" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{-1,0,1,1,2,2,3,3,0,8,8,9,9,10,10}</pre></td></tr><tr><td class="statText"><pre>{"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"+-A",
+"  +-B",
+"  | +-C",
+"  | | +-E",
+"  | | +-F",
+"  | +-D",
+"  |   +-G",
+"  |   +-H",
+"  +-I",
+"    +-J",
+"    | +-L",
+"    | +-M",
+"    +-K",
+"      +-N",
+"      +-O" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

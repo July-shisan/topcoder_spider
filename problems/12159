@@ -1,0 +1,30 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+John and Brus are building towers using toy bricks.
+They have two types of bricks: red and blue ones.
+The number of red bricks they have is <b>redCount</b> and each of them has a height of <b>redHeight</b>.
+The number of blue bricks they have is <b>blueCount</b> and each of them has a height of <b>blueHeight</b>.
+</p>
+
+<p>
+A tower is built by placing bricks one atop another.
+A brick can be placed either on the ground, or on a brick of a different color.
+(I.e., you are not allowed to put two bricks of the same color immediately on one another.)
+A tower has to consist of at least one brick.
+The height of a tower is the sum of all heights of bricks that form the tower.
+Two towers are considered to be different if they have different heights.
+(Two towers of the same height are considered the same, even if they differ in the number and colors of bricks that form them.)
+</p>
+
+<p>
+You are given the ints <b>redCount</b>, <b>redHeight</b>, <b>blueCount</b> and <b>blueHeight</b>.
+Return the number of different towers that John and Brus can build.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TheBrickTowerEasyDivOne</td></tr><tr><td class="statText">Method:</td><td class="statText">find</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int find(int redCount, int redHeight, int blueCount, int blueHeight)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>redCount</b> will be between 1 and 474,747,474, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>redHeight</b> will be between 1 and 474,747,474, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>blueCount</b> will be between 1 and 474,747,474, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>blueHeight</b> will be between 1 and 474,747,474, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">John and Brus have 1 red brick of height 2 and 3 blue bricks of height 4. Using these bricks, it's possible to build 4 towers:
+<ul><li>red (height 2);</li>
+<li>blue (height 4);</li>
+<li>red, blue (height 6);</li>
+<li>blue, red, blue (height 10).</li></ul></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>7</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 12</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>7</pre></td></tr><tr><td class="statText"><pre>7</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 13</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>47</pre></td></tr><tr><td class="statText"><pre>47</pre></td></tr><tr><td class="statText"><pre>47</pre></td></tr><tr><td class="statText"><pre>47</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 94</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

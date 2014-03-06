@@ -1,0 +1,45 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A rectangular table of strings is formed by giving
+each row and each column a label. Each label consists
+of one or more uppercase letters. The
+string in any row and column of the table is just 
+the column label
+appended to the row label. Here is an example with
+2 rows and 3 columns
+<pre>
+          X    XX   XXX
+
+ABC     ABCX ABCXX ABCXXX
+D       DX   DXX   DXXX
+</pre>
+
+The problem is that we are given the table entries, but
+don't know what the row and column labels are.
+Given a String[] <b>table</b>, return a String[] containing
+the column labels in left to right order, followed by the row labels in top to bottom order.
+If there is no way to assign non-empty labels to the table, 
+or if there are multiple ways to assign them, 
+return a String[] with just one element, 
+"none" or"multiple" (in lowercase, without the quotes).
+<p>
+The i-th element of <b>table</b> will give the i-th row of the table (i=0 is
+the top row), with 
+adjacent entries separated by one or more spaces. It may have leading
+or trailing spaces.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TableLabel</td></tr><tr><td class="statText">Method:</td><td class="statText">labels</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] labels(String[] table)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>table</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>table</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>table</b> will contain only spaces (' ') and uppercase letters ('A'-'Z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>table</b> will contain at least 1 entry.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>table</b> will contain the same number of entries.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"  ABCX ABCXX   ABCXXX  ","DX DXX DXXX    "}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"X", "XX", "XXX", "ABC", "D" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    This is the example given above.
+
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AAA AAA"," AAA   AAA"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"multiple" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    The row labels could both be "A" and the column labels both be "AA",
+    or the row labels could both be "AA" and column labels "A".
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AB CD"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"none" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+  
+    If the row label could be empty we could label this table by giving the
+    columns the labels "AB" and "CD", but that is not allowed.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

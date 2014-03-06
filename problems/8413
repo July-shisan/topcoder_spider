@@ -1,0 +1,30 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+As some of you may know, there is no name better than JOHN. Let's define the rules for comparing names. Each letter has a weight ('A' - 1, 'B' - 2, ..., 'Z' - 26). The weight of a name is the sum of the weights of all its letters. For example, the name MARK has weight 13 + 1 + 18 + 11 = 43.
+</p>
+
+<p>
+When comparing two names, the one with the larger weight is considered better. In case of a tie, the one that comes earlier lexicographically is better. But there is one exception - the name JOHN is the best name of all.
+</p>
+
+<p>
+You are given a String[] <b>names</b>, each element of which contains a single name. Sort the names from best to worst and return the sorted String[].
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TheBestName</td></tr><tr><td class="statText">Method:</td><td class="statText">sort</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] sort(String[] names)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>names</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>names</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>names</b> will contain only uppercase letters ('A'-'Z').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"JOHN", "PETR", "ACRUSH"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"JOHN", "ACRUSH", "PETR" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">PETR has weight 59, ACRUSH has weight 70 and JOHN has a weight of only 47. But nevertheless JOHN is the best name, ACRUSH takes second place and PETR is the last.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"GLUK", "MARGARITKA"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"MARGARITKA", "GLUK" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">MARGARITKA is definitely better than GLUK.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"JOHN", "A", "AA", "AAA", "JOHN", "B", "BB", "BBB", "JOHN", "C", "CC", "CCC", "JOHN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"JOHN",
+"JOHN",
+"JOHN",
+"JOHN",
+"CCC",
+"BBB",
+"CC",
+"BB",
+"AAA",
+"C",
+"AA",
+"B",
+"A" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">AA and B both have the same weight, but AA is better as it comes earlier lexicographically. For the same reason, AAA is better than C and BBB is better than CC.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BATMAN", "SUPERMAN", "SPIDERMAN", "TERMINATOR"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"TERMINATOR", "SUPERMAN", "SPIDERMAN", "BATMAN" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here are some superheroes sorted by their names.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

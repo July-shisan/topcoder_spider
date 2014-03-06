@@ -1,0 +1,45 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">We are keeping a family tree. We update the data by adding information as it 
+becomes available. When information arrives that is not
+consistent with the previous data, we need to recognize that fact immediately.
+We will enforce only the most obvious rules:<ul><li>
+    A person is either male or female.</li><li>
+    A child's parent cannot be the child itself or a descendant of the child </li><li>
+    A child has two parents, one male and the other female.  </li></ul>
+
+(A person is a descendant only of his parents, grandparents, greatgrandparents,
+etc.)
+<p>
+Each piece of data gives either the names of a child and parent or the name of
+a person and that person's gender. All occurrences of a name represent the same person. 
+Create a class FamilyTree that contains a method firstBad that is given a
+String[] <b>data</b>. The method returns the (0-based) index of the first element of <b>data</b> that is inconsistent
+with the previous elements of <b>data</b>, or returns -1 if all the data is consistent.
+</p><p>
+Each element of <b>data</b> will be formatted in one of these two forms:</p><pre>
+      "childname parentname"
+      "name gender" </pre>
+where the two parts are separated by a single space character, each name is all
+uppercase letters 'A'-'Z' and gender is a single lowercase letter, either 'm' or 'f'.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">FamilyTree</td></tr><tr><td class="statText">Method:</td><td class="statText">firstBad</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int firstBad(String[] data)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>data</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>data</b> will be formatted as above.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>data</b> will contain between 3 and 50 characters, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BOB JOHN","BOB JOHN","BOB MARY","BOB m","AL f"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   Repeated data elements just give us more confidence. This data is all
+   consistent. BOB's 2 parents are JOHN and MARY (it is not
+   yet known which is the father and which is the mother), and BOB is male. We 
+   also know that AL is female.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BOB JOHN","BOB MARY","MARY JOHN","JOHN f","MARY f","AL f"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   The first 4 elements are considered consistent. They describe that BOB's 2
+   parents are JOHN and MARY and that (unconventionally) MARY is JOHN's child.
+   JOHN is female. But "MARY f" is inconsistent with this since that makes
+   both of BOB's parents female.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BOB JOHN", "CARLA BOB", "JOHN CARLA"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   After the first 2 elements we know that CARLA is a descendant of JOHN, so
+   "JOHN CARLA" cannot be added.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BOB RICK", "AL RICK", "AL PAULA", "PAULA LINUS", "LINUS BOB","BOB PAULA"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+    The first 5 elements are consistent. BOB's descendant AL was a child of 
+    RICK and PAULA, and RICK is BOB's parent. His other parent could not be 
+    PAULA since PAULA is his descendant so the final element is the first one
+    that is inconsistent.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"JOHN f", "JOHN m"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,49 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You are given an 8 x 8 chessboard, and you must place the minimum possible number of queens onto the board such that all cells are under attack from at least one queen, and no queens attack each other.  Some of the cells on the board are destroyed.  A queen cannot be placed on a destroyed cell, and destroyed cells don't need to be under attack.  A queen attacks a cell if it is in the same row, same column, or same diagonal as that cell (even if there are destroyed cells between them).  Rows are labelled from 1 to 8 and columns from 'A' to 'H'.
+<p>
+You are given a String[] <b>board</b>, where the jth character of the ith element represents the cell at row i, column j.  A '.' denotes an empty cell, and a '#' denotes a destroyed cell.  A solution is represented by a string which concatenates the positions of the queens.  Each queen will be represented by two characters rc, where r is the row label and c is the column label.  For example, if the solution contains one queen at row 1, column H and another at row 5, column C, it can be represented as "1H5C" or "5C1H". If there are several solutions which use the minimal number of queens, return the one that comes first lexicographically.</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">QueenCovering</td></tr><tr><td class="statText">Method:</td><td class="statText">getPlacement</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String getPlacement(String[] board)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will have exactly 8 elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain exactly 8 characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of <b>board</b> will be either '.' or '#'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+  "........",
+  "..######",
+  ".#.#####",
+  ".##.####",
+  ".###.###",
+  ".####.##",
+  ".#####.#",
+  "........"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "1A8B"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">We place one queen on the first row and the first column, and another queen on the last row and on the second column.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+ "#......#",
+ ".#......",
+ "..#...#.",
+ "........",
+ "..#.....",
+ "..#..#..",
+ "#.......",
+ "#...###."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "1B2D3A4C5E"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+ "........",
+ "........",
+ "........",
+ "........",
+ "........",
+ "........",
+ "........",
+ "........"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "1A2C3E4B5D"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+  "..##.##.",
+  ".###..##",
+  "##..###.",
+  "#..#...#",
+  ".#.##.#.",
+  "#...##..",
+  "#..#####",
+  "..#..#.#"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "1A4C5H6B"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+  "########",
+  "########",
+  "########",
+  "########",
+  "########",
+  "########",
+  "########",
+  "########"
+}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: ""</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

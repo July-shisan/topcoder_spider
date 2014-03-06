@@ -1,0 +1,32 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You are working on a program that randomly generates game boards for the well-known game SweepMines. In SweepMines, your goal is to reveal all cells in a 2-dimensional grid that contain mines. Each cell without a mine contains a digit representing the upper bound on the number of mines that may surround that cell, both orthogonally and diagonally. For example, if an empty cell has 3 neighboring cells with mines, it can contain any number between 3 and 9 (but not 0, 1 or 2). If a cell has no neighboring mines at all, it can contain any digit.<br><br>
+
+For instance, the board shown to the left is a valid board, while the one on the right is not because there is a mine adjacent to a cell that contains a 0 (here, '*' represents a mine).<br><br><pre>
+11000          02210
+*2921          1****
+23**1          03332
+*2251          *1000
+</pre>
+<br>
+
+You have already written a subroutine that has filled in the first few randomly chosen cells of the game board, which is given as a String[].  Each cell that your subroutine has generated represents either a blank space or a number representing the maximal number of mines that may surround that cell from the (up to) eight spaces around it.  If a cell contains a blank space, then any number of mines may surround that cell.  You may <i>only</i> place a mine in a blank cell.<br><br>
+
+Since you want the game to be as challenging as possible, you wish to find the maximal number of mines that the board may be filled with such that the resulting board configuration is valid.  Note that a mine configuration is valid if and only if the number of mines surrounding each original non-blank cell is at most the number inside that cell.<br><br></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">MinePut</td></tr><tr><td class="statText">Method:</td><td class="statText">getMines</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int getMines(String[] partialBoard)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">You may not place a mine in a filled cell; only a blank one.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>partialBoard</b> will contain between 1 and 22 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>partialBoard</b> will contain between 1 and 22 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>partialBoard</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>partialBoard</b> will contain at most 22 characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>partialBoard</b> will contain only digits ('0'-'9') and '.' characters.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"0050",
+"0100",
+"0010",
+"3000"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">It's impossible to place any mines.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+".100",
+"1100",
+"0000",
+"0000"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The only possible location for a mine is the upper left corner.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+".....",
+".....",
+".....",
+"....."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 20</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The entire board can be filled with mines.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"3.4..1",
+"2.21..",
+"999999"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,61 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p><i>The problem statement contains an image.</i></p>
+
+<p>
+More and more electronic devices can be connected to the internet. So far, most of them don't support
+wireless networking, which means you have to pull TP (twisted pair) cables in your
+apartment. You also have to use hubs, which split a cable from one connection to four other connections.
+A <i>connection</i> can either be the internet connection, an electronic device or a hub.
+All cables must be pulled on the floor along the walls, and all connections will be at the floor near a wall.
+There will be a single internet connection in the apartment, and all electronic devices (there will always
+be more than one) must be connected to it through one or more hubs. The hubs may be interconnected as well.
+</p>
+
+<p>
+Given the design of an apartment as a top-down view, the number of hubs at your disposal, the location of the internet
+connection and the locations of all electronic devices, determine the least amount of TP cable
+needed. You may place the hubs anywhere along a wall. Several hubs can be placed at the exact
+same location, and hubs can be at the same location as other existing connections.
+</p>
+
+<p>
+Consider the image below, showing the design of an apartment from a top-down view. The red dot marks
+the internet connection, the green dots mark electronic devices, the gray boxes the positions of the hubs,
+and the blue lines TP cable. Note that the dots, boxes and lines are slightly separated from
+the wall on the image, but this is for clarification only.
+</p>
+
+<p>
+<img src="http://www.topcoder.com/contest/problem/CableWoes/CableWoes.gif"></p>
+
+<p>
+The apartment design will be given as a String[] describing the top-down view as
+a simple polygon. All lines in the polgyon will be either horizontal or vertical. Each element will be in the form
+<tt>"&lt;x&gt; &lt;y&gt;"</tt> describing a point in the polygon. The points
+will be given in either clockwise or counter-clockwise order.
+</p>
+
+<p>
+The connections will also be given as a String[], where each element will be in
+the format <tt>"&lt;x&gt; &lt;y&gt;"</tt>. The first element will be the location
+of the internet connection, and the other elements the locations of the electronic devices.
+</p>
+
+<p>
+Create a class CableWoes containing the method leastTPCable which takes a String[]
+<b>design</b>, the apartment design, a String[] <b>connections</b>, the locations
+of the connections, and an int <b>hubs</b>, the number of hubs at your disposal.
+The method should return an int, the least amount of TP cable needed to be pulled.
+If it's not possible to connect all devices to the internet, return -1 (see example 4).
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CableWoes</td></tr><tr><td class="statText">Method:</td><td class="statText">leastTPCable</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int leastTPCable(String[] design, String[] connections, int hubs)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Not all hubs at your disposal need to be used, see example 3.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The coordinates in <b>connections</b> are not necessarily unique, see example 2.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>design</b> will contain between 4 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>connections</b> will contain between 3 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>design</b> and <b>connections</b> will be in the format <tt>"&lt;x&gt; &lt;y&gt;"</tt>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The elements in <b>design</b> will be unique.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>design</b> will describe a simple polygon containing only horizontal and vertical lines. No lines in the polygon will intersect or overlap other lines.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All coordinates in <b>connections</b> will be on a line in the polygon describing the apartment.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each <tt>&lt;x&gt;</tt> and <tt>&lt;y&gt;</tt> in <b>design</b> and <b>connections</b> will be an integer between 0 and 1000, inclusive, and will not contain any leading zeros.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>hubs</b> will be between 1 and 20, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"1 1","6 1","6 5","7 5","7 1","12 1","12 5","8 5",
+ "8 6","10 6","10 8","8 8","8 9","10 9","10 11",
+ "6 11","6 7","5 7","5 11","1 11","1 6","5 6","5 5","1 5"}</pre></td></tr><tr><td class="statText"><pre>{"4 6","1 4","3 1","11 1","10 10","2 11"}</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 66</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example in the picture. Hubs have been placed at "1 4" and "2 11".
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"1 1","6 1","6 5","7 5","7 1","12 1","12 5","8 5",
+ "8 6","10 6","10 8","8 8","8 9","10 9","10 11",
+ "6 11","6 7","5 7","5 11","1 11","1 6","5 6","5 5","1 5"}</pre></td></tr><tr><td class="statText"><pre>{"4 6","1 4","3 1","11 1","10 10","2 11"}</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 59</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Same as above, except that we now have three hubs at our disposal. Even though we don't need three hubs, using them all decreases the cable length a bit. The hubs should be placed at "1 4", "2 11" and "4 6".
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0 0","1 0","1 1000","0 1000"}</pre></td></tr><tr><td class="statText"><pre>{"0 500","1 500","0 500","1 500"}</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2002</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No matter where the hub is placed along the wall, the same amount of cable is needed. Note that the distance between "0 500" and "1 500" is 1001 and not 1, since the cable must go around the whole wall.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0 0","0 10","10 10","10 0"}</pre></td></tr><tr><td class="statText"><pre>{"0 0","0 10","10 10","10 0","0 0","0 10","10 10","10 0"}</pre></td></tr><tr><td class="statText"><pre>15</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 30</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Only 4 of the 15 hubs are needed to get the optimal solution.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0 0","0 10","10 10","10 0"}</pre></td></tr><tr><td class="statText"><pre>{"5 0","5 0","5 0","5 0","5 0","5 0","5 0"}</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

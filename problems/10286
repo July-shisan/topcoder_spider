@@ -1,0 +1,47 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+A diamond mine is a matrix of ones and zeroes with <b>R</b> rows and <b>C</b> columns.
+</p>
+<p>
+A diamond is a pattern of ones forming the boundary of a 45-degree rotated square. The diamonds of size 1, 2, and 3 are shown below.
+</p>
+<pre>
+size 1:   size 2:      size 3:
+                          1
+             1           1 1
+   1        1 1         1   1
+             1           1 1
+                          1
+</pre>
+<p>
+The diamond mine in this problem will be pseudo-randomly generated using the following method:
+</p>
+<p>
+You are given two ints: <b>seed</b> and <b>threshold</b>. Let x<sub>0</sub>=<b>seed</b> 
+and for all i&gt;=0 let x<sub>i+1</sub> = (x<sub>i</sub> * 25173 + 13849) modulo 65536.
+</p>
+<p>
+Process the cells of the matrix in row major order (i.e., first row left to right, second row left to right, etc.).
+Each time you process a cell, look at the next x<sub>i</sub> (starting with x<sub>1</sub> for the upper left corner).
+If it is greater than or equal to <b>threshold</b>, the current cell will contain a 1, otherwise it will contain a 0.
+</p>
+<p>
+Your method shall compute and return the size of the largest diamond that can be found in the mine.
+If there are no diamonds, return 0.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">DiamondMining</td></tr><tr><td class="statText">Method:</td><td class="statText">largestDiamond</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int largestDiamond(int R, int C, int seed, int threshold)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The random generation of the input is only for keeping the input size small. The author's solution does not depend on any properties of the generator, and would work fast enough for any input of allowed dimensions.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>R</b> will be between 1 and 750, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>C</b> will be between 1 and 750, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>seed</b> will be between 0 and 65,535, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>threshold</b> will be between 0 and 65,536, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>47</pre></td></tr><tr><td class="statText"><pre>20598</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The generated pseudo-random sequence is 17332, 39133, 37242, 14235, 656, 12265, 20598, 6471, 51372, 44853, 44210, 45363, 37384, 49857, 49710, 19295, 39588, 22157, 60650, 29643, 24192, 38553, 51430, 63095, and 39324.
+<br>
+The resulting diamond mine looks as follows:
+<pre>0 1 1 0 0
+0 1 0 1 1
+1 1 1 1 1
+0 1 1 1 1
+1 1 1 1 1
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>47</pre></td></tr><tr><td class="statText"><pre>20599</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The pseudo-random sequence is the same, but the threshold is larger. The only change in the resulting diamond mine is that now the cell in row 2, column 2 contains a 0, and therefore there is no diamond of size 3.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>11</pre></td></tr><tr><td class="statText"><pre>65500</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No diamonds at all.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>6</pre></td></tr><tr><td class="statText"><pre>47</pre></td></tr><tr><td class="statText"><pre>15000</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>
+1 1 1 0 0 0
+1 0 1 1 1 1
+1 1 1 1 1 1
+</pre>
+The only diamond of size 2 is located on the left side of the mine.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>200</pre></td></tr><tr><td class="statText"><pre>300</pre></td></tr><tr><td class="statText"><pre>42</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 100</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Regardless of the seed, if the threshold is 0, each cell contains a 1. Therefore the size of the largest diamond is only limited by the dimensions of the mine.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>741</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>16435</pre></td></tr><tr><td class="statText"><pre>65535</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

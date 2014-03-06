@@ -1,0 +1,59 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>Little Dazdraperma likes graphs a lot. Recently she invented a new game for one person with graphs. Given a connected undirected graph with N vertices and a tree with N nodes (see the notes for definitions of all unclear terms from graph theory), she tries to place that tree on the graph in the following way:</p>
+<ul><li>Each node of the tree is put into correspondence with a vertex of the graph. Each node then corresponds to one vertex and each vertex corresponds to one node.</li>
+<li>If there is an edge between two nodes of the tree then there must be an edge between the corresponding vertices in the graph.</li>
+</ul>
+Now Dazdraperma wonders how many ways are there to do such placement. Two placements are considered equal if each node of the tree corresponds to the same vertex of the graph in both placements. Return this number modulo 1000000007.
+<br><br>
+The graph will be represented as String[] <b>graph</b> where j-th character in i-th element will be 'Y' if there is an edge between vertices i and j and 'N' otherwise. The tree will be given in the same way in String[] <b>tree</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">GameWithGraphAndTree</td></tr><tr><td class="statText">Method:</td><td class="statText">calc</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int calc(String[] graph, String[] tree)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For the purpose of this problem, an undirected graph can be treated as a set of vertices and a set of edges, where each edge establishes a bidirectional connection between two different vertices.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A path between two different vertices A and B in a graph G is a sequence of 2 or more vertices v[0] = A, v[1], ..., v[L-1] = B, such that there's an edge in G between each two adjacent vertices in this sequence.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A graph G is connected if there's a path between each two different vertices of G.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A graph G is a tree if it is connected and contains exactly V-1 edges, where V is the total number of vertices in G.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>graph</b> will contain between 1 and 14 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>tree</b> will contain the same number of elements as <b>graph</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>graph</b> will contain the same number of characters as the number of elements in <b>graph</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>tree</b> will contain the same number of characters as the number of elements in <b>tree</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>graph</b> will be either 'Y' or 'N'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>tree</b> will be either 'Y' or 'N'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For each i, i-th character of i-th element in both <b>graph</b> and <b>tree</b> will be equal to 'N'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For each i and j, j-th character of i-th element in <b>graph</b> will be equal to i-th character of j-th element.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For each i and j, j-th character of i-th element in <b>tree</b> will be equal to i-th character of j-th element.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>graph</b> will represent a connected graph.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>tree</b> will represent a tree.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYN",
+ "YNY",
+ "NYN"}</pre></td></tr><tr><td class="statText"><pre>{"NYY",
+ "YNN",
+ "YNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Vertex 1 of the graph must correspond to node 0 of the tree. There remain 2 possible ways to map vertices 0 and 2 of the graph.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYNNN",
+ "YNYYY",
+ "NYNYY",
+ "NYYNY",
+ "NYYYN"}</pre></td></tr><tr><td class="statText"><pre>{"NYNNN", 
+ "YNYNN",
+ "NYNYN",
+ "NNYNY",
+ "NNNYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 12</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In this case vertex 0 of the graph can correspond only to nodes 0 and 4 of the tree. If it corresponds to 0, vertex 1 of the graph must correspond to node 1 of the tree. All other vertices can be mapped in any way, so there are 3! possible mappings. There are also 3! mappings when vertex 0 of the graph corresponds to node 4 of the tree. The total number of mappings is 2*3!=12.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYNNNY",
+ "YNYNNN",
+ "NYNYNN",
+ "NNYNYN", 
+ "NNNYNY",
+ "YNNNYN"}</pre></td></tr><tr><td class="statText"><pre>{"NYNNYN",
+ "YNNYNY",
+ "NNNNYN",
+ "NYNNNN",
+ "YNYNNN",
+ "NYNNNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are no possible mappings in this test case.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYNNYN",
+ "YNNYNY",
+ "NNNNYN",
+ "NYNNNN",
+ "YNYNNN",
+ "NYNNNN"}</pre></td></tr><tr><td class="statText"><pre>{"NNNYYN", 
+ "NNYNNN",
+ "NYNNYY", 
+ "YNNNNN",
+ "YNYNNN",
+ "NNYNNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The graph can also be a tree.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYNNNYNNY",
+ "YNNNNNNYN",
+ "NNNNYYNYY",
+ "NNNNNYNNY",
+ "NNYNNNYNY",
+ "YNYYNNNYN",
+ "NNNNYNNYN",
+ "NYYNNYYNN",
+ "YNYYYNNNN"}</pre></td></tr><tr><td class="statText"><pre>{"NNYNNNYYN",
+ "NNNNYNNNN",
+ "YNNNNNNNN",
+ "NNNNNNYNN",
+ "NYNNNNNYY",
+ "NNNNNNNNY",
+ "YNNYNNNNN",
+ "YNNNYNNNN",
+ "NNNNYYNNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 90</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

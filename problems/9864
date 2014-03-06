@@ -1,0 +1,41 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+	Milena is in a rectangular room with a floor divided into equal square cells. A cell is considered good if it 
+	contains a light bulb and bad if it does not. The j-th character of the i-th element of 
+	the String[] <b>floor</b> is uppercase 'Y' if the cell at row i, column j is good and 'N' if it is bad.
+	At time 0, Milena is at cell (<b>row</b>, <b>col</b>) and all the light bulbs are turned off.
+	Cell (<b>row</b>, <b>col</b>) will always be a bad cell. All row and column indices are 0-based.
+</p>
+<p>
+	Milena will choose one direction (up, down, left or right) and move at most <b>K</b> cells in that direction.
+	She is not allowed to leave the room.	When she steps on a good cell, the light bulb in that cell will turn on, 
+	and the light bulbs in all its neighboring good cells will also turn on. Two cells neighbor each other 
+	only if they share a side. Return the maximal number of light bulbs Milena can turn on.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TurnOnTheLights</td></tr><tr><td class="statText">Method:</td><td class="statText">countLights</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int countLights(String[] floor, int K, int row, int col)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>floor</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>floor</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>floor</b> will be of the same length.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of <b>floor</b> will be an uppercase 'Y' or an uppercase 'N'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>K</b> will be between 1 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>row</b> will be between 0 and (number of elements in <b>floor</b>)-1, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>col</b> will be between 0 and (number of characters in the first element of <b>floor</b>)-1, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Character <b>col</b> of element <b>row</b> of <b>floor</b> will be an uppercase 'N'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"N"}</pre></td></tr><tr><td class="statText"><pre>50</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In this case Milena can't make any steps. Note that Milena doesn't have to make exactly <b>K</b> steps, so making no steps is valid.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"YNNYYYY",
+ "YNYNYYY",
+ "NYYYYYN",
+ "YYNYYYY"}</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Choosing to make 4 steps to the right will allow us to turn on 9 light bulbs. The diagrams below show the configuration of the room after each step ('+' represents a light bulb that is turned on):
+<pre>
+YNNYYYY     YNNYYYY     YNNYYYY     YNNY+YY     YNNY++Y
+YNYNYYY --&gt; YN+NYYY --&gt; YN+NYYY --&gt; YN+N++Y --&gt; YN+N+++
+NYYYYYN     NY+YYYN     NY+YYYN     NY+Y+YN     NY+Y++N 
+YYNYYYY     YYNYYYY     YYNYYYY     YYNYYYY     YYNYYYY
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NNNNY",
+ "NNNNN",
+ "NNNNN"}</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Milena can't step on a good cell, so it doesn't matter which direction to choose.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"YNYNY",
+ "NYNYY",
+ "NNNNN"}</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here it's best to make one step up.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NNNYNN",
+ "NNNNNN",
+ "YNYNNN",
+ "YYYYYY",
+ "YYNYNY",
+ "NNYYYN",
+ "YYYYYY"}</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"YYYYY",
+ "YYYYY",
+ "YYYYN",
+ "YYYYY",
+ "YYYYY"}</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 12</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

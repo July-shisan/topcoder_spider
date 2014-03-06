@@ -1,0 +1,33 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>You are building a house and are about to lay the floorboards in a particular room. Your architect has designed the layout of the floorboards and you now want to know how many boards you need to buy. Each board is 1 unit wide and can be of any positive integer length. The room is rectangular and the boards are to be laid out on a unit-square grid inside the room, parallel to the walls of the room.</p><br><p>You are given a String[] <b>layout</b> describing the layout of the floorboards. Character j of element i of <b>layout</b> describes the grid-square at position (i, j) and will either be a '-' or a '|', depending on which direction the floorboard covering that square is oriented. If two '-' characters are adjacent at the same value of i, then they form part of the same east/west-oriented floorboard. Similarly, if two '|' characters are adjacent at the same value of j, they are part of the same north/south-oriented floorboard. Return an int containing the number of distinct floorboards in the layout.</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">FloorLayout</td></tr><tr><td class="statText">Method:</td><td class="statText">countBoards</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int countBoards(String[] layout)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>layout</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>layout</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>layout</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>layout</b> will be a '-' or a '|'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"----"
+,"----"
+,"----"
+,"----"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This layout contains 4 boards laid east/west.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"-||--||--"
+,"--||--||-"
+,"|--||--||"
+,"||--||--|"
+,"-||--||--"
+,"--||--||-"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 31</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is an aesthetic pattern made up of boards of lengths 1 and 2.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"--------"
+,"|------|"
+,"||----||"
+,"|||--|||"
+,"||----||"
+,"|------|"
+,"--------"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 13</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"||-||-|||-"
+,"||--||||||"
+,"-|-|||||||"
+,"-|-||-||-|"
+,"||--|-||||"
+,"||||||-||-"
+,"|-||||||||"
+,"||||||||||"
+,"||---|--||"
+,"-||-||||||"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 41</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"-||--|"
+,"||||||"
+,"|||-|-"
+,"-||||-"
+,"||||-|"
+,"||-||-"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 19</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

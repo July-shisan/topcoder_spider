@@ -1,0 +1,38 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You want to determine the most popular person in a social network.  To do this, you will count the number of "2-friends" that each person has.  Person A is called a 2-friend of another person B if they are friends with each other or if there exists some person C who is a friend of both A and B.  The most popular person is the person with the highest number of 2-friends.  (There might be more than one if multiple people all have the maximal number of 2-friends.)<br>
+
+You are given a String[] <b>friends</b>, where the j-th character of the i-th element is 'Y' if person i and person j are friends, and 'N' otherwise.  Return the number of 2-friends of the most popular person in this social network.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">FriendScore</td></tr><tr><td class="statText">Method:</td><td class="statText">highestScore</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int highestScore(String[] friends)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>friends</b> will contain between 1 and 50 elements, inclusive. <br></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>friends</b> will contain exactly N characters 'Y' or 'N', where N is the number of elements in <b>friends</b>. <br></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For each i and j, <b>friends</b>[i][j] will be equal to <b>friends</b>[j][i]. <br></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For each i, <b>friends</b>[i][i] will be equal to 'N'. <br></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NNN",
+ "NNN",
+ "NNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here, there are 3 people and none of them are friends, so everybody has zero 2-friends.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYY",
+ "YNY",
+ "YYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Each person has two 2-friends.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYNNN",
+ "YNYNN", 
+ "NYNYN", 
+ "NNYNY", 
+ "NNNYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Persons 0 and 4 have two 2-friends, persons 1 and 3 have three 2-friends. Person 2 is the most popular one - four 2-friends.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NNNNYNNNNN",
+ "NNNNYNYYNN",
+ "NNNYYYNNNN",
+ "NNYNNNNNNN",
+ "YYYNNNNNNY",
+ "NNYNNNNNYN",
+ "NYNNNNNYNN",
+ "NYNNNNYNNN",
+ "NNNNNYNNNN",
+ "NNNNYNNNNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NNNNNNNNNNNNNNY",
+ "NNNNNNNNNNNNNNN",
+ "NNNNNNNYNNNNNNN",
+ "NNNNNNNYNNNNNNY",
+ "NNNNNNNNNNNNNNY",
+ "NNNNNNNNYNNNNNN",
+ "NNNNNNNNNNNNNNN",
+ "NNYYNNNNNNNNNNN",
+ "NNNNNYNNNNNYNNN",
+ "NNNNNNNNNNNNNNY",
+ "NNNNNNNNNNNNNNN",
+ "NNNNNNNNYNNNNNN",
+ "NNNNNNNNNNNNNNN",
+ "NNNNNNNNNNNNNNN",
+ "YNNYYNNNNYNNNNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,45 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+John is a marble collector. He keeps his marbles in boxes. He also likes to keep things in order.
+</p>
+
+<p>
+One day, his younger brother was playing with the marbles.  After he was done, he put all the marbles back in boxes, but he did it randomly, so certain boxes might now contain marbles of different colors. John wants him to regroup the marbles so that the grouping satisfies the following restrictions:
+</p>
+
+<ul><li>At most one box, called the joker box, may contain marbles of different colors. We can choose any box as a joker box.</li>
+<li>Every box except the joker box must either be empty or only contain marbles of the same color.</li>
+<li>All marbles of the same color, except those in the joker box, must be in the same box. It's possible that all marbles of the same color are in the joker box.</li>
+</ul><p>
+You are given a String[] <b>boxes</b>, where the j-th digit of the i-th element is the number of marbles of color j in the i-th box. Return the minimal number of moves necessary to regroup the marbles, where each move consists of taking any number of marbles from one box (not necessarily of the same color) and putting them into another.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">MarblesRegroupingEasy</td></tr><tr><td class="statText">Method:</td><td class="statText">minMoves</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int minMoves(String[] boxes)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>boxes</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>boxes</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>boxes</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>boxes</b> will contain only digits ('0'-'9').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"20",
+ "11"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Let box 1 be the joker box. All marbles of color 0, except those in the joker box, are in box 0. Box 0 contain only marbles of the color 0. So, all restrictions are already satisfied.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"11",
+ "11",
+ "10"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are several possible solutions:
+<ol><li>Move all marbles from box 0 into box 1. Box 1 is the joker box.</li>
+<li>Move all marbles from box 1 into box 0. Box 0 is the joker box.</li>
+<li>Move the marble of color 0 from box 0 into box 1 or 2. Box 1 is the joker box.</li>
+<li>Move the marble of color 0 from box 1 into box 0 or 2. Box 0 is the joker box.</li>
+</ol></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"10",
+ "10",
+ "01",
+ "01"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Let box 0 be the joker box. Now we only need to group all marbles of  color 1 into one box.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"11",
+ "11",
+ "11",
+ "10",
+ "10",
+ "01"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"020008000070",
+ "000004000000",
+ "060000600000",
+ "006000000362",
+ "000720000000",
+ "000040000000", 
+ "004009003000",
+ "000800000000", 
+ "020030003000",
+ "000500200000",
+ "000000300000"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

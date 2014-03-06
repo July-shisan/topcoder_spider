@@ -7,3 +7,4 @@ class Login:
 	
 match_list_url = 'http://community.topcoder.com/tc?module=MatchList&sc=&sd=&nr=200&sr=%d'
 problem_list_url = 'http://community.topcoder.com/tc?module=ProblemArchive&sr=0&er=10000'
+problem_content_path = 'problems'

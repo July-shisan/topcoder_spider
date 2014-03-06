@@ -1,0 +1,31 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>Your mad scientist employer has left you in charge of the lab tonight, and one of her fiendish creations has just escaped its container.  The Greedy Glob is a dangerous organism that grows very quickly.  You need to escape the lab to get help while avoiding being eaten by the Glob.  Luckily, you know the layout of the facility so you can plan your escape route.  The layout will be given to you in the elements of <b>lab</b>, and will look something like this:</p>
+<p> </p>
+<pre>
+***.**
+*S...*
+*..G..
+*.....
+*.****</pre>
+<p> </p>
+<p>'*' characters represent walls you may not pass through while '.' characters are open space.  'S' represents your starting position while the 'G' represents the initial square covered by the Glob.  Your goal is to exit the building by moving to a position outside the grid.  You get to move first, and on each turn you may move one square North, East, South, or West - or you may remain in the same place.</p>
+<p> </p>
+<p>After each of your moves, the Glob grows.  The Glob grows either horizontally or vertically each turn.  When the Glob grows vertically, this means that each non-wall square vertically adjacent to a Glob square becomes a Glob square.  Similarly, horizontal growth means that all non-wall squares horizontally adjacent to a current Glob square become Glob squares.  All squares that were previously Glob squares will also remain covered by Glob.  The Glob chooses to grow horizontally or vertically in a greedy manner - it will choose to grow in the direction that will lead to a greater total number of Glob squares at the end of its current turn.    If this is a tie, it will grow horizontally.  The Glob does not grow beyond the bounds of the grid, and does not count positions outside of the grid when deciding which direction to grow.</p>
+<p> </p>
+<p>You may not enter a Glob square, and if the Glob takes over the square you're on then you are eaten immediately.  Return the minimum number of moves required to escape the lab (by leaving the area covered by the grid), or -1 if no escape is possible.</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">GreedyGlob</td></tr><tr><td class="statText">Method:</td><td class="statText">escapeTime</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int escapeTime(String[] lab)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>lab</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>lab</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>lab</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>lab</b> will contain only the '.', '*', 'S', and 'G' characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Among all elements of <b>lab</b>, there will be exactly one 'S' character and exactly one 'G' character.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"*****",
+"*S...",
+"*****",
+"*.G.*",
+"*****"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The Glob is sealed in the bottom area, leaving you free to walk out to the right.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"**.*",
+"..G*",
+"*S.*",
+"**.*"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">You will move one square up, then the Glob will grow vertically (in order to grow by 2 squares instead of 1).  Then you'll go left, narrowly escaping the Glob which will now grow horizontally.  On your third move, you escape.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"*****",
+"*S...",
+"*..G*",
+"*****"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The Glob will grow vertically on its second move, sealing you in forever!</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

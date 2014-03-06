@@ -1,0 +1,44 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Some languages allow the use of compound words, words that are the concatenation
+of words from the language's dictionary. 
+<p>
+We have defined a language that consists of a dictionary of distinct words.
+We want to know whether we should allow the use of compound words constructed
+by concatenating exactly two distinct dictionary words. The potential problem
+is that a compound word is ambiguous if either (or both) of the following 
+conditions applies:</p><ol><li>
+   the compound word is a dictionary word</li><li>
+   the compound word can be formed in more than one way.</li></ol><p>
+For example, if "am","eat","a", "meat", "hook", and "meathook" were all in the 
+dictionary, then "meathook" would be ambiguous according to the first condition,
+and "ameat" would be ambiguous according to the second condition.
+</p><p>
+Create a class CmpdWords that contains a method ambiguous that is given a
+String[] <b>dictionary</b> and that returns the number of ambiguous words that would
+result from allowing the compounding of distinct pairs of dictionary words.
+An ambiguous word should be counted only once, no matter how many different
+ways it could be formed.
+</p><p>
+Note that compound words are NOT added to the dictionary. So the dictionary {"a",
+"b","c"} does not allow "abc" as a compound word. 
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CmpdWords</td></tr><tr><td class="statText">Method:</td><td class="statText">ambiguous</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int ambiguous(String[] dictionary)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>dictionary</b> will contain between 1 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The elements of <b>dictionary</b> will be distinct.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>dictionary</b> will contain between 1 and 20 characters inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>dictionary</b> will be a lowercase letter 'a'-'z'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"am","eat","a", "meat", "hook","meathook"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   "meathook" and "ameat" are ambiguous
+ as explained above.
+
+
+
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"a","b","c"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   All the compound words are: "ab","ac","bc","ba","ca","cb" and none of these is ambiguous.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"a","aa","aaa"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   The ambiguous words are 
+      "aaa": ("a"+"aa" and "aa"+"a" and "aaa")
+      "aaaa": ("a"+"aaa" and "aaa"+"a")
+      "aaaaa": ("aa"+"aaa" and "aaa"+"aa")
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"abc","bca","bab","a"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   "abc"+"a" = "a"+"bca"
+</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

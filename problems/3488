@@ -1,0 +1,30 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">It is possible to number all the words that could be formed from a specified
+alphabet. One way to do it is to put the words in order based on length, with
+words of common length ordered alphabetically.  Using this scheme, if we use
+the alphabet consisting of just the 3 letters 'a', 'b', and 'c' then
+the words are numbered: <pre>
+   1:a 2:b 3:c 4:aa 5:ab 6:ac 7:ba 8:bb   etc.
+</pre>
+
+There are an infinite number of possible words, but each has its own positive
+number.
+<p>
+We want to be able to find the word that corresponds to any given number.
+Create a class WordNumber that contains a method theWord that is given <b>alpha</b>,
+the number of letters in the alphabet, and <b>n</b>, the number of a word. It 
+returns the String that is the word corresponding to <b>n</b>.
+</p><p>
+The alphabet to be used is the first <b>alpha</b> letters of the normal lowercase alphabet,
+with their usual alphabetical ordering.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">WordNumber</td></tr><tr><td class="statText">Method:</td><td class="statText">theWord</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String theWord(int alpha, int n)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>alpha</b> will be between 2 and 26, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> will be between 1 and 2,000,000,000, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "ab"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   See the table above.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>13</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "aaa"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   Extending the table above, we find that word 12 is "cc" so the next word,
+   word 13, must be the first 3 letter word.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>26</pre></td></tr><tr><td class="statText"><pre>2000000000</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "flhomvx"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>26</pre></td></tr><tr><td class="statText"><pre>456</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "qn"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

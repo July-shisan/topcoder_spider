@@ -1,0 +1,45 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">N rabbits (numbered 0 through N - 1) are going to work together at the new TopCoder office in Rabbitland. 
+<br><br>
+Each pair of rabbits will make a certain profit when they work together. 
+The <i>efficiency</i> of the group of rabbits is defined as follows: 
+Let P be the sum of profits from all pairs of rabbits, and Q be the number of pairs of rabbits. 
+Then the efficiency is the real number P / Q. 
+<br><br>
+You are given a String[] <b>profit</b>, 
+the j-th character of the i-th element of which represents the profit from the fact that rabbits i and j work together. 
+The characters '0', '1', ..., '9' represent the values 0, 1, ..., 9, respectively. 
+Compute and return the efficiency of this TopCoder office. 
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">WorkingRabbits</td></tr><tr><td class="statText">Method:</td><td class="statText">getEfficiency</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double getEfficiency(String[] profit)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The returned value must have an absolute or relative error less than 1e-9. </td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>profit</b> will contain between 2 and 50 elements, inclusive. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>profit</b> will contain exactly N characters, where N is the number of elements in <b>profit</b>. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>profit</b> will be a digit ('0' - '9'). </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For each index i and j, the i-th character of the j-th element of <b>profit</b> will be equal to the j-th character of the i-th element of <b>profit</b>. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For each index i, the i-th character of the i-th element of <b>profit</b> will be '0'. </td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "071", 
+  "702", 
+  "120" }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3.3333333333333335</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are three pairs of rabbits: 
+<ul><li>rabbit 0 and rabbit 1 (profit 7)</li>
+	<li>rabbit 0 and rabbit 2 (profit 1)</li>
+	<li>rabbit 1 and rabbit 2 (profit 2)</li>
+</ul>
+So P = 7 + 1 + 2, Q = 3, and the efficiency is P / Q = 10/3. 
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "00", 
+  "00" }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "0999", 
+  "9099", 
+  "9909", 
+  "9990" }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "013040", 
+  "100010", 
+  "300060", 
+  "000008", 
+  "416000", 
+  "000800" }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.5333333333333334</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "06390061", 
+  "60960062", 
+  "39090270", 
+  "96900262", 
+  "00000212", 
+  "00222026", 
+  "66761201", 
+  "12022610" }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3.2142857142857144</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

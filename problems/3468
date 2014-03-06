@@ -1,0 +1,45 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">
+The spirit of Christmas is most apparent in the exchanging of presents! Santa
+Claus would like software to make this unnecessary. He has already decided
+which present should be given to each person, but he is wondering if he could make 
+adjustments.
+<p> 
+Specifically he has estimated the intrinsic value of each present to each
+person. He wants software to determine if there is a group of people whose 
+total value would be increased by redistributing the gifts within the group.
+Some people might end up with a worse present, but the total value is what
+Santa must consider.  If such a group exists, Santa would like to know the
+size of the smallest such group, and how much the total value of their
+presents can be increased by.
+</p><p>
+The intrinsic value of the presents to each person is given in a String[] <b>value</b>.
+Each character in each element of <b>value</b> is an uppercase letter,
+with 'A' signifying a value of 1,
+'B' a value of 2, etc.  The j-th character in the i-th element of <b>value</b> is the
+value of the j-th present to the i-th person. 
+</p><p>
+The original intent of Santa was to give the first present to the first person, the second present to the second person, etc.
+Create a class SantaClaus that contains a method exchange that is given the String[]
+<b>value</b> and returns a int[] containing two elements: the first element is the size of
+the smallest improvable group, and the second is the amount by which their total value can
+be increased. Report the largest possible increase in value for a group of that
+size.  If there is no improvable group, return 0 in both elements.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">SantaClaus</td></tr><tr><td class="statText">Method:</td><td class="statText">exchange</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] exchange(String[] value)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>value</b> will contain n elements, where n is between 2 and 50 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>value</b> will contain n characters, each being an uppercase letter 'A'-'Z'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABCDE","ABCDE","ABCDE","ABCDE","ABCDE"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0, 0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   Each present has the same value to everybody, so there is no way to increase
+   the total value by reassigning the presents.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABC","BCD","ZAB"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {2, 26 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   The third person would really like the first present. So we could exchange
+   presents between the first person and the third person. Previously, the values
+   were 1 (first person) + 2 (third person) = 3.  After the exchange the values
+   become 3 (first person) + 26 (third person) = 29. So the net gain is 29-3 = 26.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BCAAA","ADEAA","AAXYA","AAAKL","EAAAD"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {3, 1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   The first, fourth, and fifth persons can exchange presents, giving up values
+   of 'B', 'K', and 'D' and acquiring values of 'A', 'L', and 'E'. The first
+   person loses net value of 1, but each of the others gains 1.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"VWAAA","ADEAA","AAXYA","AAAKL","EAAAD"}  </pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {5, 5 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

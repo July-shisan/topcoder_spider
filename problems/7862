@@ -1,0 +1,43 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>Unicode is a standardized set of characters which includes the alphabets from many languages as well as mathematical and other symbols. UTF-8 is a scheme to encode Unicode characters into a byte stream. It has a number of nice features, most importantly backwards compatibility with ASCII, but the encoding is a little complicated. Each Unicode character is represented by between 1 and 4 bytes, inclusive.</p>
+
+<p>For this problem, you will be given a sequence of byte values representing a UTF-8 encoded string, and must decode it to obtain the Unicode character values. However, the string is transmitted by the very unreliable RFC 1149 protocol, so it may contain some extra bytes. RFC 1149 is also very slow, so you must decide whether to accept or reject each byte as soon as it is received, without knowing what the following bytes are, or even if there are any. You should accept a byte if and only if the accepted bytes would then form the start of some UTF-8 encoded string. If you reach the end of the string and have accepted an incomplete character (e.g., only 2 bytes of a 3-byte character), it should also be discarded.</p>
+
+<p>UTF-8 is used to represent Unicode characters between 0 and 1114111 (10FFFF in hex), inclusive. The following pseudo-code will convert a Unicode character into UTF-8 encoding (the output function appends one byte to the encoded string):</p>
+<pre>
+getbits(int value, int firstbit, int numbits):
+  return (value SHIFTRIGHT firstbit) MOD (1 SHIFTLEFT numbits)
+
+convert(int character):
+  if character &lt;= 0x7F:
+    output(character)
+  else if character &lt;= 0x7FF:
+    output(0xC0 + getbits(character, 6, 5))
+    output(0x80 + getbits(character, 0, 6))
+  else if character &lt;= 0xFFFF:
+    output(0xE0 + getbits(character, 12, 4))
+    output(0x80 + getbits(character, 6, 6))
+    output(0x80 + getbits(character, 0, 6))
+  else if character &lt;= 0x10FFFF:
+    output(0xF0 + getbits(character, 18, 3))
+    output(0x80 + getbits(character, 12, 6))
+    output(0x80 + getbits(character, 6, 6))
+    output(0x80 + getbits(character, 0, 6))
+  else:
+    abort - character is out of range
+</pre>
+
+<p>Write a class that accepts a sequence of bytes, in the order that they are received, and returns the sequence of Unicode character values decoded according to the rules above.</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">UTF8Decode</td></tr><tr><td class="statText">Method:</td><td class="statText">decodeString</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] decodeString(int[] bytes)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The UTF-8 representation of a character is never a substring of the UTF-8 representation of any other character.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Different implementations of UTF-8 may allow characters to be encoded in more than one way or may allow characters beyond the range specified here. For this problem, you should consider a byte sequence to be legal if and only if it could have been produced by the pseudo-code above.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>bytes</b> will contain between 0 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>bytes</b> wil be between 0 and 255, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{10,
+ 207, 168,
+ 226, 156, 144,
+ 240, 152, 154, 160}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {10, 1000, 10000, 100000 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">One case for each possible encoding length.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{10, 255,
+ 207, 17, 168, 193,
+ 226, 156, 144,
+ 240, 143, 152, 154, 160,
+ 240, 152, 154}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {10, 1000, 10000, 100000 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The same as the previous case, but with some invalid bytes added.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{191, 192, 193, 245, 255, 128, 129, 130, 189, 190, 191, 1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">None of these bytes except the last can start a UTF-8 encoded character.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{76, 95, 228, 250, 1, 100, 167, 59, 165, 27, 87, 32, 49, 22, 100, 236, 1,
+ 111, 209, 100, 155, 35, 156, 47, 135, 56, 114, 131, 32, 73, 24, 104, 92,
+ 221, 107, 12, 222, 60, 24, 113, 130, 217, 180, 144, 106, 136, 137, 234, 24, 173}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{76, 95, 18917, 27, 87, 32, 49, 22, 100, 50908, 47, 56, 114, 32, 73, 24, 104, 92, 1858, 1652, 106 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{240, 1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">240 is valid as the first byte of a four-byte character, so it must be accepted. Since we don't have enough bytes to complete this character, the output is empty.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

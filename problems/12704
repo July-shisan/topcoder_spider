@@ -1,0 +1,39 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Little Elephant from the Zoo of Lviv likes sequences of integers.
+</p>
+<p>
+</p>
+<p>
+You are given a long <b>A</b> and an int <b>N</b>.
+Little Elephant has the sequence S = (<b>A</b>, <b>A</b>+1, ..., <b>A</b>+<b>N</b>).
+Little Elephant now wants to erase some digits from some of the numbers.
+He may erase multiple digits from the same number, but he will not erase any of the numbers completely.
+After erasing some digits from a number the gaps disappear.
+For example, by erasing the middle digit of the number 147 Little Elephant obtains the number 17 (and not two separate numbers 1 and 7).
+</p>
+<p>
+</p>
+<p>
+It is allowed for some number to contain leading zeroes after erasings.
+For example, from the number 1047 Little Elephant may create, among other possibilities, the number 047 or the number 47.
+These are two different ways of erasing. 
+They are both allowed and the numbers they produce have the same value.
+</p>
+<p>
+</p>
+<p>
+Two ways of erasing the digits are considered different if there is some position in some element of S that was erased in one of the cases and was not erased in the other one.
+For example, if S = (11, 12), there are two different ways to change it to (1, 2).
+(In one of them we erase the first and in the other we erase the second digit of the number 11.)
+</p>
+<p>
+</p>
+<p>
+After erasing the digits, Little Elephant wants to obtain a non-decreasing sequence.
+Let R be the number of different ways to do that.
+Return R modulo 1,000,000,007.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">LittleElephantAndArray</td></tr><tr><td class="statText">Method:</td><td class="statText">getNumber</td></tr><tr><td class="statText">Parameters:</td><td class="statText">long, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int getNumber(long A, int N)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>A</b> will be between 1 and 1,000,000,000,000,000 (10^15), inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>N</b> will be between 0 and 100, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>9</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 15</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4747774</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8369</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>6878542150015</pre></td></tr><tr><td class="statText"><pre>74</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 977836619</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,50 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Little Lisa has been invited to a holiday party with her friends.  So that everyone receives a gift, the host of the party has decided to give presents through a "Yankee swap".
+</p><p>
+In this version of a Yankee swap (which may differ from the version that you are used to), each person begins holding a present; the first person (indexed from 1) holds present 'A', the second person holds present 'B', etc.  Each guest in turn (starting with guest 1 and ending with guest N) decides whether or not he wants to swap presents.  If he decides to swap, he chooses a person to swap with, and the chosen person cannot reject the swap.  When every person has had a turn, the Yankee swap is over, and each person leaves with the gift they are holding.
+</p><p>
+For example, one way that the party (with 3 people) could proceed is as follows:
+</p>
+<pre>
+"ABC" --&amp;gt Person 1 swaps with person 2 --&amp;gt "BAC"
+"BAC" --&amp;gt Person 2 does not swap       --&amp;gt "BAC"
+"BAC" --&amp;gt Person 3 swaps with person 2 --&amp;gt "BCA"
+</pre>
+<p>
+In the above example, person 1 leaves with present B, person 2 leaves with present C, and person 3 leaves with present A.
+</p><p>
+The guests at the party have given you their <b>preferences</b>, where the i-th element corresponds to the preference list of the i-th guest.  If a guest ends up with the gift in the j-th position of his preference list, he will have an unhappiness of j.  Each guest knows the <b>preferences</b> of all other guests.  Each guest will act optimally to minimize his own unhappiness, and knows all other guests will do the same.  If there are multiple ways for a guest to minimize his own unhappiness,
+he will choose not to swap at all if possible; if there are still multiple ways, he will choose to swap with the guest with the lowest index.
+
+</p><p>
+Return a String, the i-th character of which corresponds to the turn of the i-th person. If the i-th person did not swap in his turn, the i-th character of the result must be equal to '-'. If he did swap with the k-th person, the i-th character of the result must be equal to the k-th lowercase letter (so, 'a' corresponds to swapping with the first person, 'b' to the second and so on).
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">YankeeSwap</td></tr><tr><td class="statText">Method:</td><td class="statText">sequenceOfSwaps</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String sequenceOfSwaps(String[] preferences)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>preferences</b> will contain N elements, where N is between 1 and 20 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>preferences</b> will be a permutation of the first N uppercase letters of the alphabet.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BAC",
+ "ACB",
+ "BCA"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "-aa"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This swap will proceed as follows:<br>
+1)  Guest 1 keeps his present.<br>
+2)  Guest 2 swaps with Guest 1.<br>
+3)  Guest 3 swaps with Guest 1.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABC",
+ "BCA",
+ "CAB"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "---"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In this scenario, everyone keeps their own gift.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AECDBF",
+ "BAEDCF",
+ "DEBACF",
+ "BEDCAF",
+ "CEABDF",
+ "CBDEAF"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "-aac-a"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"FDBHMAIELGKNJC",
+ "KGMDJBAFLECNHI",
+ "FKLJCADBEHNGIM",
+ "JMHNICABFKEGDL",
+ "IKFCDNJBLEGAMH",
+ "FDNLJGCKHMBIEA",
+ "MBKJAHDNIGECLF",
+ "KNADLFGBJIMHCE",
+ "AIFMGEBDHKJNCL",
+ "MCDALIJGNKBFHE",
+ "AJHMDLEIFKNCGB",
+ "IJLKBCMDGNHFEA",
+ "EAKFLJBDGMHCIN",
+ "JEMANBDFGICHKL"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "--acacbdcahcja"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

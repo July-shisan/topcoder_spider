@@ -1,0 +1,29 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Our department is sending <b>n</b> faculty members to an academic conference and 
+we are determined to cover as many meetings as possible.
+We have a list of all the meetings, with their start and end times. All the meetings
+are in adjacent rooms so no time is required to travel from one meeting to another.
+This means that if the end time of one meeting is the same as the start time
+of another meeting, a single person could cover both meetings from start to end.
+<p>
+Each element of the String[] <b>meetings</b> gives the start and end time of a meeting, separated
+by a single space. 
+Each time is given in the form hh:mm and represents a time between 08:00 in the
+morning and 08:00 in the evening inclusive.
+</p><p>
+Create a class Conference that contains a method coverage that is given <b>n</b>, the
+number of faculty sent to the conference, and the String[] <b>meetings</b> listing the times
+of all the meetings. The method returns the most meetings that we can cover by having at least one faculty member at the meeting from start to end.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Conference</td></tr><tr><td class="statText">Method:</td><td class="statText">coverage</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int coverage(int n, String[] meetings)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> will be between 1 and 10, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>meetings</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>meetings</b> will contain 11 characters in the form "hh:mm hh:mm"</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each hh:mm will represent a time between 8 am and 8 pm inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each mm will be between 00 and 59, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">In each element of <b>meetings</b> the second time will be strictly later than the first.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>{"08:00 08:00","08:00 08:00","08:00 08:00",
+ "08:00 08:00","08:00 08:00"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+All these meetings last all day long. Nobody can cover more than one.
+ </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>{"09:00 08:00","08:00 12:00","12:00 08:00",
+ "08:00 08:00","08:00 08:00"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+ 
+   One person can cover the 8-12 meeting and the 12-8 meeting. The other person
+can cover one of the all-day meetings.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>{"08:00 01:00","08:25 12:50","12:00 12:30",
+ "12:30 08:00","08:00 08:00"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

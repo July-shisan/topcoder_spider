@@ -1,0 +1,33 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p><i>This problem contains an image that can be viewed in the applet.</i></p>
+<p>A player has four draughts which are placed in the bottom right corner of a 6 x 6 chessboard.  The draughts are arranged in a square with 2 rows and 2 columns (see picture below).  Some cells on the board may contain red flags, and some may contain stones.</p>
+
+<p><img src="http://www.topcoder.com/contest/problem/CornersGame/CornersGame.gif"></p>
+
+<p>The player's goal is to move all the draughts to the top left corner and arrange them in a square using a minimal number of moves.  The draughts are indistinguishable, so their order in the final position doesn't matter.  The target cells are guaranteed to be free.  There are two kinds of moves that can be made by a draught.  The first is to move to any vertically or horizontally adjacent free cell.  The second is to jump over a single vertically or horizontally adjacent draught or stone into a free cell. The player can never move a draught into a cell that contains a flag, stone or other draught and he can never jump over a flag or an empty space.</p>
+
+<p>You will be given a String[] <b>board</b> where each element represents a single row of the chessboard.  The rows are given from top to bottom, and each row is given from left to right.  '.' represents a free cell, 'r' represents a cell with a red flag, and 's' represents a cell with a stone.  Return the minimal number of moves necessary to reach the goal, or -1 if it is impossible.</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CornersGame</td></tr><tr><td class="statText">Method:</td><td class="statText">countMoves</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int countMoves(String[] board)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain exactly 6 elements. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain exactly 6 characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain only the characters 'r', 's', and '.'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain '.' characters at the initial and desired final positions of the draughts.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"......", 
+ "......",
+ "......",
+ "......",
+ "......",
+ "......"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 16</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".....s",
+ "..s.r.",
+ "r.....",
+ ".srs..",
+ "..r...",
+ "......"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 19</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The board shown on the picture above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"......",
+ "......",
+ "....ss",
+ "....ss",
+ "...r..",
+ "...r.."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">We can not make any move.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"...s.r",
+ "..r.s.",
+ "rr.s..",
+ "..s.rr",
+ "s.rr..",
+ ".s.s.."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 54</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

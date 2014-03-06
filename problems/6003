@@ -1,0 +1,28 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+<i>Note: this problem statement contains images that may not display properly if viewed outside the applet.</i>
+</p>
+
+<p>
+You are to calculate the diagonal disproportion of a square matrix.  The diagonal disproportion of a square matrix is the sum of the elements of its main diagonal minus the sum of the elements of its collateral diagonal. The main and collateral diagonals of a square matrix are shown in figures 1 and 2 respectively.
+</p>
+
+<p>
+<img src="http://www.topcoder.com/contest/problem/DiagonalDisproportion/DiagonalDisproportion1.GIF"><img src="http://www.topcoder.com/contest/problem/DiagonalDisproportion/DiagonalDisproportion2.GIF"></p>
+
+<p>
+The elements of the main diagonal are shown in green in figure 1, and the elements of the collateral diagonal are shown in cyan in figure 2.
+</p>
+
+<p>
+Given a String[] <b>matrix</b>, return its diagonal disproportion.  The j'th character of the i'th element of <b>matrix</b> should be treated as the element in the i'th row and j'th column of the matrix.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">DiagonalDisproportion</td></tr><tr><td class="statText">Method:</td><td class="statText">getDisproportion</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int getDisproportion(String[] matrix)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>matrix</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>matrix</b> will contain only digits ('0'-'9').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The number of characters in each element of <b>matrix</b> will be equal to the number of elements in <b>matrix</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"190","828","373"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The sum of the elements of the main diagonal is 1+2+3 = 6.
+The sum of the elements of the collateral diagonal is 0+2+3 = 5.
+So, the answer is 6-5 = 1.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"9000","0120","0000","9000"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"6"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The matrix has only one element, and this element lies on both the main and collateral diagonals.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"7748297018","8395414567","7006199788","5446757413","2972498628",
+"0508396790","9986085827","2386063041","5687189519","7729785238"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -24</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

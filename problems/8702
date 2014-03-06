@@ -1,0 +1,61 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>A small company has recently been growing quickly and has decided that it needs to restructure its organisation. In the past, there were no permanent managers and project teams were formed on an ad-hoc basis depending on which employees were available at the time. This has lead to a situation where many of the employees have managed each other at some time in the past. Now that the company is bigger, it wants to impose a more formal hierarchical structure. The company is to be divided into divisions, each of which will be structured as a tree. One employee in each division will be assigned as the division leader and can be the permanent manager of some other employees. These employees can in turn manage futher employees, and so on. Each employee will belong to exactly one division and each employee in a division other than the division leader will have a permanent manager in the division.</p><br><p>The company knows that such a restructuring may lead to ill-feeling amongst the employees, particularly if an employee ends up being managed permanently by another employee that he or she has managed in the past. It has therefore come up with the following model to try to minimise this ill-feeling. If an employee has managed a person in the past, then he or she feels <i>superior</i> to that person. This is also transitive, so if A has managed B, and B has managed C, then A feels superior to both B and C, even if A has not directly managed C. More formally, an employee <tt>X<sub>0</sub></tt> feels superior to another employee <tt>X<sub>k</sub></tt>, if and only if there exists a sequence of employees <tt>X<sub>0</sub></tt>, <tt>X<sub>1</sub></tt>, <tt>X<sub>2</sub></tt> ... <tt>X<sub>k</sub></tt>, where employeee <tt>X<sub>i</sub></tt> has managed employee <tt>X<sub>i+1</sub></tt> for each value of i &lt; k. This can clearly lead to cases where each one of a pair of employees feels superior to the other and such a pair is termed <i>mutually superior</i>. These pairs of employees tend to spend a lot of time arguing about who is superior, so the company wishes to ensure they are separated in the new company structure. It has put the following restrictions on the structure of the new divisions.</p>
+<ul><li>The new permanent manager of an employee must have managed that employee in the past.</li>
+<li>No employee can feel superior to his or her direct permanent manager.</li>
+<li>No pair of mutually superior employees can have the same direct permanent manager.</li>
+</ul><p>The company wishes to end up with as few divisions as possible. You are given a String[] <b>hasManaged</b>, which details which employees have managed others in the past. Character j of element i will be 'Y' if employee i has managed employee j in the past and 'N' otherwise. Return the minimum number of divisions that the company must create in order to satisfy the above restrictions.</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CompanyRestructuring</td></tr><tr><td class="statText">Method:</td><td class="statText">fewestDivisions</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int fewestDivisions(String[] hasManaged)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>hasManaged</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>hasManaged</b> will contain the same number of characters as there are elements in <b>hasManaged</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of <b>hasManaged</b> will be 'Y' or 'N'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Character i of element i of <b>hasManaged</b> will be 'N'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NNNN","NNYN","NNNN","YYYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are no mutually superior employees here and only a single division is needed. There are 2 possible structures:<br><br><tt>   3<br>
+  / \<br>
+ 0   1<br>
+      \<br>
+       2<br></tt>
+<br>or<br><br><tt>   3<br>
+ / | \<br>
+0  1  2<br></tt></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NNYN","NNYN","YNNN","YYYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This case is similar to case 0), except now employees 0 and 2 are mutually superior, so cannot have the same manager. The second structure shown above is therefore invalid, but the first one is still possible.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYNNN","NNYNN","NNNYN","NNNNY","YNNNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Everybody feels superior to everybody else, so there is no way that any of them can work in the same division.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYNYYYNN"
+,"NNNNYYNN"
+,"NYNNYYNN"
+,"NNYNYYNN"
+,"NNNNNNNN"
+,"NYYNYNNN"
+,"YYNYYYNN"
+,"YYNYYYYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYNYNNYYNYNNNYYNYNYY"
+,"YNNNNNYYNNNYYNYNYNYY"
+,"NNNNNNYYNNNYYNYNNNNY"
+,"YNYNNNNYNNNYNNYNYNNY"
+,"NYNNNNNYYYYNYNYYNNYN"
+,"YYYYNNYNYNNNNNYYNYNY"
+,"NNNNNNNNNNNYYNNNNNYY"
+,"NNNNNNYNNNNYYNYNNNYN"
+,"NYYYNNNYNNNNYYNYYNYY"
+,"NNYNNNYYNNNNYNNNNNYY"
+,"YYNNNYNNYNNNNYNNYNYY"
+,"NNNNNNNYNNNNYNYNNNNY"
+,"NNNNNNYNNNNYNNNNNNNN"
+,"NNYNNNNNNNNYYNYNNYYN"
+,"NNNNNNNNNNNYNNNNNNNY"
+,"YNYYNYYNNNYYNNNNYNYY"
+,"NYNNNNNYNYNYYYYNNNNY"
+,"NNYNNNNYNYNYYYNNNNYY"
+,"NNNNNNNYNNNYNNNNNNNY"
+,"NNNNNNYYNNNYYNYNNNYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NNNYNNNNNNNYNNNNNNNN"
+,"NNNNNNYNNYNNNNNYNYYN"
+,"YNNNNNYNYNNNNNNNNNNY"
+,"YNNNNNNNNNNNNNNNNNNN"
+,"NNYNNNYNYNNYNNYNNNNY"
+,"NNNYNNNNNNNYNNYYYNYY"
+,"NNYYNNNNYNNNNNNNNNNY"
+,"NYNNNYNNYNNNYNYNYNNN"
+,"NNNNNNNNNNNNNNNNNNNN"
+,"YNNNNNNNNNNYNNYYNNYN"
+,"NNYYNYNNYYNNNNYYNYNN"
+,"NNNNNNNNYNNNNNNNNNNN"
+,"NNNYYNYNYYYYNNNNYNYY"
+,"NNYYNYNNYYYYNNNNNYNY"
+,"NNYYYNNNYNNNNNNNNNNN"
+,"YNNYYYNNNNNNNNYNYNYY"
+,"NNNNYNYNNNNYNNYNNNNN"
+,"YNNYYYYNNYNNYNNNYNYN"
+,"YNNYYYYNYNNYNNYYYNNY"
+,"YNYNNNNNYNNYNNNNNNNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NNNNN","NNNNN","NNNNN","NNNNN","NNNNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Nobody has managed anybody in the past, so nobody can be a manager in the new structure either.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

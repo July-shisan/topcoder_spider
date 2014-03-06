@@ -1,0 +1,39 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You are developing an application for online transactions and you want to accept several credit cards. Card numbers, however, are usually long, so it's easy to make mistakes when typing them in. You want to create a method that will verify the numbers entered by users.
+<br><br>
+You know that the Luhn formula applies for all the acceptable card numbers.<br><br>
+The Luhn formula works as follows.
+<br>
+First, separate the individual digits of the credit card number.  For example:
+<br><br>
+21378 becomes<br>
+2 1 3 7 8
+<br><br>
+If there is an even number of digits, multiply each digit in an odd position by 2. Otherwise, multiply each digit in an even position by 2. Positions are 1-indexed, so the first digit is at position 1. The example number above contains an odd number of digits, so we multiply each digit in an even position by 2:
+<br><br>
+2 1 3 7 8 becomes<br>
+2 2 3 14 8
+<br><br>
+Note that the even positions refer to the original number so they don't change even when a 2-digit number appears.
+<br><br>
+Finally, take the sum of all the digits (for 2-digit numbers insert both the digits separately into the sum):
+<br><br>
+2+2+3+1+4+8 = 20
+<br><br>
+If the sum is a multiple of 10, the number is valid. Otherwise, it is invalid.
+<br><br>
+Given a String <b>cardNumber</b> containing the credit card number, return "VALID" if the card number is valid, or "INVALID" if it is invalid (all quotes for clarity).
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">VerifyCreditCard</td></tr><tr><td class="statText">Method:</td><td class="statText">checkDigits</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String checkDigits(String cardNumber)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>cardNumber</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>cardNumber</b> will be a digit ('0'-'9').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"21378"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "VALID"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This number has 5 digits, which is an odd number, so we multiply the digits in even positions by 2 to get:
+<br><br>
+2 2 3 14 8
+<br><br>
+The sum of the digits is 20, which is a multiple of 10, meaning it's a valid number.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"31378"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "INVALID"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">When we apply the Luhn formula here, the sum of the digits is 21, so the number is invalid.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"11111101"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "VALID"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">We multiply the digits in odd positions by 2 to get:
+<br><br>
+2 1 2 1 2 1 0 1
+<br><br>
+The sum of the digits is 10, so it's a valid card.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"50005"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "VALID"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">All the digits in even positions are 0 so multiplying by 2 doesn't change the number. The sum of the digits is 10, so it's a valid card.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"542987223412"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "INVALID"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,74 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+<i>
+NOTE: This problem statement contains subscripts and superscripts that may not appear correct when viewed outside of the contest applet.
+</i>
+</p>
+
+<p>
+You are playing a game with a flat board on top of a thin post.
+On this board are items of various weights, placed in a such a manner that the board balances on top of the post.
+You and your opponent take turns removing items from the board.
+If at any time the board falls off the post, whoever removed the last item causing the board to fall loses.
+If all objects are removed without the board falling, the player who moved first loses.
+</p>
+
+<p>
+The board balances if the magnitude of the total torque due to the weight of all objects upon it does not exceed a given <b>threshold</b>.
+The torque due to a single object is a vector in the plane of the board, computed as:
+</p>
+
+<pre>
+
+    (Tx,Ty) = (-y*w,x*w)
+</pre>
+
+<p>
+Where x and y are the position of the object, and w is its weight.
+Assume the board is centered on the post, and that the torque due to its own weight is zero.
+The total torque is the sum of the torque vectors for each object,
+and the magnitude is the length of that sum.
+</p>
+
+<p>
+The position and weight of the objects will be given by three int[] parameters: <b>x</b>, <b>y</b>, and <b>w</b>.
+<b>x</b>[i], <b>y</b>[i] gives the position of object i, and <b>w</b> gives its weight.
+The x,y coordinates are relative to the origin, the point where the board rests on the post.
+Multiple objects can not have the same position on the board.
+</p>
+
+<p>
+Return a list of all the objects that the first player could remove on his first turn in order to win the game,
+assuming that both players play optimally.
+The return value should be a int[], where each element corresponds to an entry in the
+<b>x</b>, <b>y</b>, and <b>w</b> int[]s.
+The elements should be sorted in ascending order.
+If there are no possible winning moves, return an empty int[].
+</p>
+
+<p>
+If the initial state of the board is unbalanced, it will fall before the first player has a chance to make a move.
+In this case, return { -1 }.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BalancingGame</td></tr><tr><td class="statText">Method:</td><td class="statText">winningMoves</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[], int[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] winningMoves(int[] x, int[] y, int[] w, int threshold)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">(x<sub>1</sub>, y<sub>1</sub>) + (x<sub>2</sub>, y<sub>2</sub>) = (x<sub>1</sub> + x<sub>2</sub>, y<sub>1</sub> + y<sub>2</sub>).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The square of the length of (x, y) is x<sup>2</sup> + y<sup>2</sup>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>x</b> will contain between 1 and 20 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>x</b>, <b>y</b>, and <b>w</b> will all contain the same number of elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>x</b> and <b>y</b> will be between -100 and 100, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>w</b> will be between 1 and 100, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>threshold</b> will be between 0 and 1000000000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No two objects will occupy the same position.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ -10, 0, 10 }</pre></td></tr><tr><td class="statText"><pre>{ 0, 0, 0 }</pre></td></tr><tr><td class="statText"><pre>{ 5, 5, 5 }</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+There are three objects, one in the center of the board and two others at equal distances and opposite directions from the center.  If the first player removes the center object first, the board will continue to balance perfectly.  But, the board will fall if the second player removes either of the remaining objects.  Therefore, this is a winning move for the first player.
+</p>
+
+<p>
+The other two possible moves for the first player are losing moves, because the board will fall immediatly if either of the other two objects are removed first.
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 1, -1, 1, -1 }</pre></td></tr><tr><td class="statText"><pre>{ -1, -1, 1, 1 }</pre></td></tr><tr><td class="statText"><pre>{ 2, 3, 4, 5 }</pre></td></tr><tr><td class="statText"><pre>10000</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">With such a high threshold, the objects can be removed in any order without the board ever falling.  Since all moves lead to an empty board, the first player always loses.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 0 }</pre></td></tr><tr><td class="statText"><pre>{ 10 }</pre></td></tr><tr><td class="statText"><pre>{ 50 }</pre></td></tr><tr><td class="statText"><pre>15</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {-1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ -20, -21, 60 }</pre></td></tr><tr><td class="statText"><pre>{ 0, 0, 0 }</pre></td></tr><tr><td class="statText"><pre>{ 20, 20, 10 }</pre></td></tr><tr><td class="statText"><pre>300</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0, 1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+The initial torque on the board is the sum of the vectors (0,-400) + (0,-420) + (0,600) = (0,-220).  The magnitude of the torque, 220, is less than the threshold, so the board initially balances.
+</p>
+
+<p>
+If the first player removes either of the objects with a weight of 20, the resulting torque will be (0,180) or (0,200), which also balances.  The second player loses, because removing either of the two remaining objects causes the board to fall.
+</p>
+
+<p>
+If the first player removes the object with a weight of 10, the resulting torque will be (0,-820), and the board will fall.
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ -3, -30, 0, 0, 3, 30 }</pre></td></tr><tr><td class="statText"><pre>{ -2, 20, 3, -30, -2, 20 }</pre></td></tr><tr><td class="statText"><pre>{ 6, 50, 7, 51, 8, 52 }</pre></td></tr><tr><td class="statText"><pre>1000</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0, 2, 4 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

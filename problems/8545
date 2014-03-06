@@ -1,0 +1,59 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Musical notes are are given the following 12 names, in ascending order:
+</p>
+
+<pre>
+
+    A, A#, B, C, C#, D, D#, E, F, F#, G, G#
+</pre>
+
+<p>
+The names repeat for higher and lower notes,
+so the note one step higher than "G#" is "A"
+and the note 5 steps lower than "B" is "F#".
+Notes that are a multiple of 12 steps apart have the same name, and for our purposes we will consider them equivalent.
+</p>
+
+<p>
+Guitars have a number of strings, and each string is tuned to sound one of the 12 notes.
+The note each string sounds is called its "open" note.
+Underneath the strings are <i>frets</i>, numbered starting at 1, which are used to change the note a string sounds.
+If you press a string against the i-th fret with your finger, the note will be i steps higher than the string's open note.
+(i.e., if you press a string tuned to "C#" against the 3rd fret, it will sound the note "E").
+</p>
+
+<p>
+<i>Chords</i> are sets of notes played at the same time.
+To play a chord on a guitar, each string must sound one of the notes in the chord,
+and each note in the chord must be played on at least one string.
+</p>
+
+<p>
+There can be many ways to play the same chord.
+We measure the difficulty of one way to play a chord as the amount you must stretch your fingers to reach the required frets.
+Calculate this as the lowest fret used subtracted from the highest fret used, plus 1.
+Only consider the strings which are pressed against frets -- the strings that are not pressed against frets (and, thus, sound their open note) do not affect the difficultly of a chord.
+If a chord can be played without using any frets at all, its difficulty is zero.
+</p>
+
+<p>
+You are given a String[] strings, each element of which is the open note of one string on the guitar,
+and a String[] chord, each element of which is one note in a chord.
+Return the lowest possible difficulty value necessary to play that chord.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">GuitarChords</td></tr><tr><td class="statText">Method:</td><td class="statText">stretch</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int stretch(String[] strings, String[] chord)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>strings</b> and <b>chord</b> will each contain between 1 and 6 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>chord</b> will not contain more elements than <b>strings</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>strings</b> and <b>chord</b> will be one of the 12 note names given in the problem statement.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>chord</b> will not contain any duplicate elements.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "A", "C", "F" }</pre></td></tr><tr><td class="statText"><pre>{ "C#", "F#", "A#" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The three notes in the chord are each one step higher than the notes played by the three strings.  So, you can play this chord by putting your finger on the 1st fret on all three strings.  The answer is therefore: (1-1)+1.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "E", "A", "D", "G", "B", "E" }</pre></td></tr><tr><td class="statText"><pre>{ "E", "G#", "B" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The best way to play this chord is with your fingers on the following frets:
+
+<pre>
+string 0, "E": no fret, plays note "E"
+string 1, "A": fret #2, plays note "B"
+string 2, "D": fret #2, plays note "E"
+string 3, "G": fret #1, plays note "G#"
+string 4, "B": no fret, plays note "B"
+string 5, "E": no fret, plays note "E"
+</pre>
+
+All strings are playing a note in the chord, and each note in the chord is played on at least one string.  The largest-numbered fret is 2, and the smallest is 1.  Therefore the answer is (2-1)+1.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "D#" }</pre></td></tr><tr><td class="statText"><pre>{ "D#" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "E", "F" }</pre></td></tr><tr><td class="statText"><pre>{ "F#", "D#" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">You can play this chord with the 11th fret of the "E" string (playing the note "D#") and the 13th fret of the "F" string (playing the note "F#").  (13-11)+1 = 3. </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "C", "C", "C" }</pre></td></tr><tr><td class="statText"><pre>{ "C", "E", "G" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

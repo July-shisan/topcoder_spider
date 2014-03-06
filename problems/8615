@@ -1,0 +1,49 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You are given an image represented as a String[] <b>alteredImage</b>. <b>alteredImage</b> contains only '.' and '#' characters, representing white and black pixels, respectively. For the purposes of this problem, two black pixels are directly connected if they share a common edge. Two black pixels A and B are connected indirectly if there exists a path of black pixels A = P<sub>0</sub>, P<sub>1</sub>, ..., P<sub>k</sub> = B, such that P<sub>i</sub> and P<sub>i + 1</sub> are directly connected for all i. A block is a set of black pixels where every two pixels in the set are directly or indirectly connected, and no other black pixel can be added to the block while maintaining that property.  A block is considered smooth if for each pair of pixels A and B in the block, there exists a path of black pixels between A and B with length equal to the manhattan distance between A and B.<br><br>
+The manhattan distance between two pixels A and B with coordinates (xA, yA) and (xB, yB), respectively, is the sum of the (absolute) differences of their coordinates(i.e. |xA - xB| + |yA - yB|).<br><br>
+Our friend sent us an image where all the black blocks are smooth. Due to some transmission errors, some black pixels were transmitted as white (but all white pixels remained white). Your task is to retrieve the original image. Find the minimum number of pixels you have to change from white to black so that every black block is smooth and return the original image in the same format as the altered one. The solution with the minimum number of changes will always be unique.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">FixImage</td></tr><tr><td class="statText">Method:</td><td class="statText">originalImage</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] originalImage(String[] alteredImage)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>alteredImage</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>alteredImage</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>alteredImage</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>alteredImage</b> will contain only the characters '.' and '#'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"....",
+ ".##.",
+ ".##.",
+ "...."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"....", ".##.", ".##.", "...." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This block is smooth.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".....",
+ ".###.",
+ ".#.#.",
+ ".###.",
+ "....."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {".....", ".###.", ".###.", ".###.", "....." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This block is not smooth.  We need to make the center pixel black.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".......",
+ ".###...",
+ ".#..##.",
+ ".###.#.",
+ ".....#."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {".......", ".###...", ".#####.", ".#####.", ".....#." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This image consists of two blocks. The right one is smooth. We make the left one smooth by changing the white pixels inside it, but now our image consists of only one block which is not smooth. To make it smooth we need to change one more white square.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre> {".................",
+ "#####.#..#..#####",
+ "..#...#..#....#..",
+ "..#...#..###..#..",
+ "................."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{".................",
+"#####.#..#..#####",
+"..#...#..#....#..",
+"..#...#..###..#..",
+"................." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">These smooth blocks spell out the word "TILT".</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre> {"###.####",
+  "#.#.#..#",
+  ".#...#.#",
+  ".#####.#",
+  "......#.",
+  "########"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"########", "########", "########", "########", "########", "########" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"..###..",
+ "..#.#..",
+ "##...##",
+ "#.....#",
+ "#.....#",
+ "#.....#",
+ "##...##",
+ "..#.#..",
+ "..###.."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"..###..",
+"..###..",
+"##...##",
+"##...##",
+"##...##",
+"##...##",
+"##...##",
+"..###..",
+"..###.." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

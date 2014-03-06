@@ -1,0 +1,42 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Cat Upper has a rectangular black box.
+On the bottom of the box there is a grid that divides the box into identical square cells.
+There are <b>N</b> rows of cells, each containing <b>M</b> cells.
+There are no walls between the cells.
+The sides of the box are transparent.
+<br><br>
+Each cell contains a single mirror.
+Seen from above, the mirror is a segment that connects two opposite corners of the cell.
+The mirror surface is on both sides of the segment.
+(Note that for each cell there are two possible positions of the mirror.)
+<br><br>
+Cat Upper has a laser which can be used to cast rays.
+When casting a ray, the following rules must be obeyed:
+<ul><li>The ray must be cast from outside of the black box.</li>
+<li>The ray must enter the box exactly in the middle of a side of a cell.</li>
+<li>The ray must enter the box in the direction perpendicular to the side of the box it enters through.</li>
+</ul><br>
+Once inside the box, the laser follows the laws of reflection: it travels in a straight line through open space, and it reflects whenever it hits a mirror.
+(Note that this means that the laser will always travel in a direction parallel to one of the sides of the box.)
+<br><br>
+The process ends when the ray exits the black box.
+(Note that this always has to happen, and that the ray will necessarily leave through the middle of some other cell wall.)
+<br><br>
+Cat Upper used the laser to cast a ray through each of the 2<b>N</b>+2<b>M</b> cell sides that were visible from the outside.
+For each cell side C, Upper recorded where the laser that entered through C exited the black box.
+<br><br>
+Afterwards, Upper removed a single mirror from the grid and repeated the entire experiment.
+Surprisingly, the results were completely identical to the first experiment.
+<br><br>
+Cat Upper has lost the black box and he does not remember the cell from which he removed the mirror.
+The only thing he remembers are the dimensions of the black box.
+<br><br>
+You are given the two ints <b>N</b> and <b>M</b>.
+Return the number of possible initial states of the black box, modulo 1,000,000,007.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BlackBoxDiv1</td></tr><tr><td class="statText">Method:</td><td class="statText">count</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int count(int N, int M)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>N</b> will be between 1 and 200, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>M</b> will be between 1 and 200, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are 5 possible patterns.
+<br><br><img src="http://community.topcoder.com/contest/problem/BlackBoxDiv1/blackbox.png"><br><br>
+In the leftmost configuration Upper could remove any of the four mirrors. In each of the other four configurations, Upper can remove the mirror that does not touch the other three mirrors.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 32478</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>194</pre></td></tr><tr><td class="statText"><pre>197</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 647560542</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

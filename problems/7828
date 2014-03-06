@@ -1,0 +1,60 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+At the end of a popular television game show, contestants spin large wheels with various numbers on them to determine who wins the big prize.
+Adjacent to each wheel is an arrow, used to indicate the resulting value when the wheel stops spinning.
+Each contestant has their own wheel, possibly with a different set of numbers.
+Each wheel is "fair", meaning that when a wheel with K numbers is spun, there is a 1/K chance that the wheel will stop on any given value.
+Successive spins of the same wheel are independent.
+</p>
+
+<p>
+Each contestant will spin their own wheel one or two times.
+If they spin once, their score is simply the value indicated by the arrow.
+If they choose to spin twice, their score is the sum of the values from their two spins,
+but if their total score is greater than the largest value on their wheel, they are eliminated.
+Each contestant can wait to see the result of their first spin before deciding if they want to spin a second time.
+Whoever ends up with the highest score wins the big prize, and the others go home empty handed.
+If multiple players have the same highest score, the player who went first among them will be declared the winner.
+</p>
+
+<p>
+The contestants complete their turn (one or two spins) in a pre-determined order.
+This gives the later contestants the advantage of knowing the previous contestants' scores,
+helping them decide if they want to spin their wheel a second time.
+You are the first player, and want to optimize your probability of winning the game.
+Write a method to determine, for each value on your wheel, if you should stop if you got that value
+on your first spin or if you should spin a second time.
+Assume that the players following you will also play with a strategy that will optimize their own probability of winning.
+If a player is guaranteed to lose after their first spin, they will always spin again just for fun.
+</p>
+
+<p>
+You will be given the contestants' wheels as a String[] <b>wheels</b>,
+where each element is a space-separated list of integers giving the various values on one player's wheel.
+The number of elements in <b>wheel</b> indicates the number of contestants,
+and the elements are given in the order that the players will take their turns.
+The first element in <b>wheels</b> is your wheel, and the last element is the last player's wheel.
+Return all the values on your wheel that you should stop with as a int[], in ascending order without duplicates.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BigWheels</td></tr><tr><td class="statText">Method:</td><td class="statText">enough</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] enough(String[] wheels)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>wheels</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The length of each element of <b>wheels</b> will be between 1 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>wheels</b> will be a single-space-separated list of integers, with no leading zeros.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each integer in <b>wheels</b> will be between 0 and 100, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The probability of a contestant winning in any situation will always be at least 1e-9, unless it is zero.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The probabilities of a contestant winning if they decide to stop or spin again will differ by at least 1e-6, unless both probabilities are zero.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "1 100 100",
+  "2 100",
+  "3 100" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {100 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">If you first spin a 1, you are guaranteed to lose, and will spin again just for fun.
+If you first spin a 100, you are guaranteed to win, and will not spin again.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "1 2", "2 1" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {2 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">First consider the case when your first spin is a 1.
+If you do not spin again, your opponent must get a 2 to win.
+There is a 75% chance that he will be able to do this in one or two spins,
+so there is a 25% chance that you will win.
+However, if you spin again, there is a 50% chance that you will have an unbeatable score of 2,
+and a 50% chance that you will have a score of 3 and be eliminated
+(because 3 is greater than the maximum value of 2 on your wheel).
+Therefore you would choose to spin again, because that increases your chance of winning from 25% to 50%.
+<br><br>
+On the other hand, if your first spin resulted in a 2, you would definitely stop.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "8 2 4",
+  "0 7 7 7 7" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {2, 8 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">If your first spin is a 2, there is no reason to spin again.  A 2 or 4 on your second spin cannot help you, and an 8 would cause you to be eliminated.  However, if your first spin is a 4, you have a 1/25 chance of winning if you stop, but slightly better than a 1/3 chance of winning if you spin again.
+
+Therefore, you should not spin again if your first spin is a 2 or 8.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20",
+  "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20",
+  "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20" }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {14, 15, 16, 17, 18, 19, 20 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">These numbers are proportional to the numbers used in an actual game show, with 3 contestants who all spin the same wheel.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "5" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {5 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "4 4 4", "7 6" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

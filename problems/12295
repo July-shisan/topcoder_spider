@@ -1,0 +1,41 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><i>This problem statement contains images. It may not display properly outside the applet.</i>
+<br><br><p>
+Once upon a time, Little Wojtek had drawn a number of points with integer coordinates onto a sheet of paper.
+Then he made zero or more steps.
+Each step looked as follows:
+Let's call all the points on Wojtek's paper <i>old points</i>.
+For every four old points that formed the vertices of a 1x1 square, Wojtek would draw a point in the middle of that square.
+Once he had drawn all such new points, he took an eraser and erased all the old points.
+</p>
+<br><p>
+An example is shown in the picture below.
+On the left is Wojtek's original paper.
+In the middle is the same paper with the new points filled in.
+(For clarity, the old points are black and the new ones are red.)
+On the right is the paper after the old points were erased.
+</p>
+<br><p>
+<img src="http://www.topcoder.com/contest/problem/DrawingPointsDivOne/DrawingPoints1.png"> 
+<img src="http://www.topcoder.com/contest/problem/DrawingPointsDivOne/DrawingPoints22.png"> 
+<img src="http://www.topcoder.com/contest/problem/DrawingPointsDivOne/DrawingPoints3.png"></p>
+<br><p>
+He has been playing for a while when he was called downstairs to dinner.
+He looked at the paper with a surprised face and wondered how many steps he had made.
+</p>
+<br><p>
+You are given two int[]s <b>x</b>, <b>y</b> of some equal length n. They describe all of the points that were drawn by Wojtek in the last step of his play. More precisely, you may assume that there are real numbers (not necessarily integers) dy and dx such that the following holds:
+</p><ul><li>For each i between 0 and n-1, there is a point at coordinates (dx+<b>x</b>[i], dy+<b>y</b>[i]).</li>
+<li>There are no other points anywhere on the paper, only those that follow from the previous statement.</li>
+</ul><br><p>
+Return the maximum number of steps Wojtek could have made.
+If there is no maximum (that is, if the number of steps can be arbitrarily large), return -1 instead.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">DrawingPointsDivOne</td></tr><tr><td class="statText">Method:</td><td class="statText">maxSteps</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int maxSteps(int[] x, int[] y)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Note that the points drawn by Wojtek in the last step of his play could have non-integer coordinates.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The paper used by Wojtek could have been arbitrarily large. In other words, ignore the paper size, it does not limit the number of steps in any way.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>x</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>x</b> and <b>y</b> will contain the same number of elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>x</b> will be between -70 and 70, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>y</b> will be between -70 and 70, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No two points described by <b>x</b> and <b>y</b> will be the same.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{0, 3}</pre></td></tr><tr><td class="statText"><pre>{0, 0}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">An example scenario:
+<br><ul><li>Wojtek draws the initial points at locations (100, 100), (100, 101), (101, 100), (101, 101), (103, 100), (104, 100), (103, 101), (104, 101), (315, 714).</li>
+<li>In the first and only step, Wojtek draws points at locations (100.5, 100.5) and (103.5, 100.5). These locations correspond to <b>x</b> and <b>y</b> in this test case.</li>
+</ul></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{0,2}</pre></td></tr><tr><td class="statText"><pre>{0,0}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{-70}</pre></td></tr><tr><td class="statText"><pre>{3}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{-41,-40,1,-11,-32,-7,24,-11,49,-15,-22,20,-8,54,54,69,16,-30,36,-6,-30,40,64,20,-66,
+ -37,-33,-18,-35,36,9,61,-43,45,5,60,-8,-58,65,-66,41,12,34,-11,-57,-38,46,63,-55,3}</pre></td></tr><tr><td class="statText"><pre>{5,-24,-2,-4,23,14,1,70,-26,45,15,48,32,-41,54,-47,-67,-46,-9,-53,54,28,-61,11,53,68,
+ -33,62,37,-8,-17,-17,48,19,-49,56,-41,16,17,-50,28,59,10,50,23,-16,56,31,-70,-44}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

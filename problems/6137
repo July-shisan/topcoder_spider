@@ -1,0 +1,51 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">The X game is a two person game. The board is just a sequence of
+boxes, some of which are randomly marked with an X before the game begins. 
+The two players
+alternate turns. On each turn the player whose turn it is marks 1 or more
+previously unmarked boxes. All her marks on the turn must be adjacent (with no wrap-around
+at the ends) to each
+other. The game continues until all the boxes are marked.
+<p>
+The number of points scored by a player on his turn is equal to the number of boxes 
+he marked on that turn times a multiplier. The multiplier gets bigger and 
+bigger as the game goes on:</p><ul><li>
+
+         first turn    Player 1      multiplier=0</li><li>
+         second turn   Player 2      multiplier=1</li><li>
+         third turn    Player 1      multiplier=2</li><li>
+         fourth turn   Player 2      multiplier=4</li><li>
+         fifth turn    Player 1      multiplier=8</li><li>
+         ...   etc.</li></ul>
+
+A players wins the game if the sum of the points scored on all her turns is strictly greater than 
+her opponent's sum.
+Create a class TheXGame that contains a method firstMove that is given a String
+<b>board</b> indicating how many boxes there are, and which ones are marked with X before the
+game begins. 
+The method returns the smallest number of Xs that the first player can mark on 
+her first turn (somewhere on the board) that will allow her to win the game if she
+plays optimally thereafter. If no first 
+move puts the first player into a winning position, the method returns -1.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TheXGame</td></tr><tr><td class="statText">Method:</td><td class="statText">firstMove</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int firstMove(String board)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>board</b> will be 'X' or '-'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain at least one '-'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"X---X-X-"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   There are 8 boxes, 3 of them marked with X before the game begins.
+   The first player can win by marking the third box. After that each player will only
+   be able to mark one box one each turn, and the scoring will be:
+     P1: 0*1; P2: 1*1; P1: 2*1; P2: 4*1; P1: 8*1 and player 1 wins with a score of
+   10 versus player 2's score of 5.
+
+
+
+
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"----"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   The first player can win by marking the middle two spaces.  After that,
+   each player will mark one on each turn so player 1 wins by a score of 2 to 1. If the first player just marked one of the middle spaces, then the second player would mark 2 and the first player would mark 1 leaving the game tied (2 to 2).
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"--XXX" </pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   The first player cannot win by marking both of them, since her first turn
+   multiplier is 0!</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"--------X-----X----X"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

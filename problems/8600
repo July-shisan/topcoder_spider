@@ -1,0 +1,31 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Given a positive integer N with at least two digits, we can define magic(N) as follows:
+Write N as a string of decimal digits. Now, for each two consecutive digits, compute their difference
+(a non-negative number less than ten), and write it down. In this way you'll obtain a new number,
+possibly with leading zeroes. Drop unnecessary leading zeroes if there are any.
+</p>
+
+<p>
+For example, magic(5913)=482, magic(1198)=081=81, and magic(666)=00=0.
+</p>
+
+<p>
+For any number N the sequence: N, magic(N), magic(magic(N)), ... will sooner or later terminate with a single-digit number.
+This final value is called the magic fingerprint of N.
+</p>
+
+<p>
+For example, for N=5913 we get the sequence: 5913, 482, 46, 2. Therefore the magic fingerprint of 5913 is 2.
+</p>
+
+<p>
+There are not too many numbers with the magic fingerprint seven (7). These numbers are considered lucky.
+</p>
+
+<p>
+Write a method that will compute the count of lucky numbers between <b>A</b> and <b>B</b>, inclusive.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">MagicFingerprint</td></tr><tr><td class="statText">Method:</td><td class="statText">countLuckyNumbers</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int countLuckyNumbers(int A, int B)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>B</b> will be between 1 and 1,000,000,000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>A</b> will be between 1 and <b>B</b>, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>9</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The only single-digit lucky number is, of course, the lucky number seven.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>100</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are five two-digit lucky numbers: 18, 29, 70, 81, and 92.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1198</pre></td></tr><tr><td class="statText"><pre>1198</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The number 1198 is lucky. The corresponding sequence is: 1198, 81, 7.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1223</pre></td></tr><tr><td class="statText"><pre>1299</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This range contains no lucky numbers.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>999999930</pre></td></tr><tr><td class="statText"><pre>1000000000</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The two lucky numbers in this range are 999,999,980 and 999,999,992.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>100000</pre></td></tr><tr><td class="statText"><pre>1000000000</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 159720</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The largest output is obviously not much larger.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

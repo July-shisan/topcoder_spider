@@ -1,0 +1,62 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>Fans of the game X-ball frequently use the official players' stats.  These stats are presented as a list of players' names and the positions they can play.  If a player can play at several positions, he is shown in the list once for each position.</p>
+
+<p>The fans want to get the statistics in a new format.  In the old format, each element of the list contained a single player and a single position played by that player.  In the new format, each element of the list will contain a single player and all the positions that the player can play.  The new list must contain the same number of elements as the old one, and players must appear in the same order as before.  Each element of the new list must contain the name of the player, a '-' character, and a comma-separated list of all the positions the player can play.  The first position must be the same position that was in the corresponding element of the old list, and the other positions must be sorted in alphabetical order.
+</p>
+<pre>
+<b>Old format stats:</b>  |  <b>New format stats:</b>
+John-DH            |  John-DH,RP,SP         
+Jack-SP            |  Jack-SP               
+Sam-OF             |  Sam-OF                
+John-SP            |  John-SP,DH,RP         
+John-RP	           |  John-RP,DH,SP         
+</pre>
+<p>
+You will be given a String[] <b>placeboard</b> containing the statistics in the old format.  Each element will contain a player's name and an abbreviation of the player's position in the form "Name-Position" (quotes for clarity).  Return the list after converting it to the new format.
+</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">XBallGame</td></tr><tr><td class="statText">Method:</td><td class="statText">newStatistics</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] newStatistics(String[] placeboard)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Note that the names of the players are case-sensitive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>placeboard</b> will contain between 1 and 50 elements, inclusive. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>placeboard</b> will contain between 4 and 23 characters, inclusive. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>placeboard</b> will be in the format "Name-Position" without any leading or trailing spaces.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Position will consist of two upper-case letters ('A'-'Z'). </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Name will contain between 1 and 20 letters ('A'-'Z', 'a'-'z'), inclusive. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>placeboard</b> will be distinct.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"John-DH", 
+ "Jack-SP", 
+ "Sam-OF", 
+ "John-SP", 
+ "John-RP"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"John-DH,RP,SP", "Jack-SP", "Sam-OF", "John-SP,DH,RP", "John-RP,DH,SP" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"John-DH", 
+ "Jack-SP", 
+ "Sam-OF", 
+ "John-SP", 
+ "John-RP", 
+ "John-RA", 
+ "John-RZ", 
+ "Jack-OF", 
+ "Sam-SP"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"John-DH,RA,RP,RZ,SP",
+"Jack-SP,OF",
+"Sam-OF,SP",
+"John-SP,DH,RA,RP,RZ",
+"John-RP,DH,RA,RZ,SP",
+"John-RA,DH,RP,RZ,SP",
+"John-RZ,DH,RA,RP,SP",
+"Jack-OF,SP",
+"Sam-SP,OF" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"PFwL-GE", "PFwL-EV","agXL-SR", "PFwL-CS", "PFwL-FE", "PFwL-MS", "agXL-VS", "agXL-AL", "PFwL-BI", "PFwL-DK", 
+ "PFwL-MW", "PFwL-DS", "agXL-XJ", "agXL-PJ", "agXL-CK", "PFwL-KI", "agXL-KP", "agXL-EL", "PFwL-EA"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"PFwL-GE,BI,CS,DK,DS,EA,EV,FE,KI,MS,MW",
+"PFwL-EV,BI,CS,DK,DS,EA,FE,GE,KI,MS,MW",
+"agXL-SR,AL,CK,EL,KP,PJ,VS,XJ",
+"PFwL-CS,BI,DK,DS,EA,EV,FE,GE,KI,MS,MW",
+"PFwL-FE,BI,CS,DK,DS,EA,EV,GE,KI,MS,MW",
+"PFwL-MS,BI,CS,DK,DS,EA,EV,FE,GE,KI,MW",
+"agXL-VS,AL,CK,EL,KP,PJ,SR,XJ",
+"agXL-AL,CK,EL,KP,PJ,SR,VS,XJ",
+"PFwL-BI,CS,DK,DS,EA,EV,FE,GE,KI,MS,MW",
+"PFwL-DK,BI,CS,DS,EA,EV,FE,GE,KI,MS,MW",
+"PFwL-MW,BI,CS,DK,DS,EA,EV,FE,GE,KI,MS",
+"PFwL-DS,BI,CS,DK,EA,EV,FE,GE,KI,MS,MW",
+"agXL-XJ,AL,CK,EL,KP,PJ,SR,VS",
+"agXL-PJ,AL,CK,EL,KP,SR,VS,XJ",
+"agXL-CK,AL,EL,KP,PJ,SR,VS,XJ",
+"PFwL-KI,BI,CS,DK,DS,EA,EV,FE,GE,MS,MW",
+"agXL-KP,AL,CK,EL,PJ,SR,VS,XJ",
+"agXL-EL,AL,CK,KP,PJ,SR,VS,XJ",
+"PFwL-EA,BI,CS,DK,DS,EV,FE,GE,KI,MS,MW" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"a-AA", "a-ZZ"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"a-AA,ZZ", "a-ZZ,AA" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

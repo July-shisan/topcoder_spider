@@ -1,0 +1,32 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Imagine a skyscraper with 10^<b>N</b> floors, numbered 0 to 10^<b>N</b>-1. The floor indicator in the elevator shows the floor number using exactly <b>N</b> digits, padding it with leading zeroes if necessary. Each digit is shown as a 5x3 field of small lamps, some of which are lit and some of which are unlit. Here is a representation of all the digits from 0 to 9 ('#' represents lit lamps and '.' represents unlit lamps) :
+<br><p><tt>
+###...#.###.###.#.#.###.###.###.###.###<br>
+#.#...#...#...#.#.#.#...#.....#.#.#.#.#<br>
+#.#...#.###.###.###.###.###...#.###.###<br>
+#.#...#.#.....#...#...#.#.#...#.#.#...#<br>
+###...#.###.###...#.###.###...#.###.###<br></tt></p>
+<br>
+Here, as in the actual floor indicator, consecutive digits are separated by a single column of unlit lamps.
+
+Some of the lamps in the floor indicator are malfunctioning and always remain unlit.  Imagine that you are stuck in this elevator and you want to know the current floor number.  You decide to calculate it as the average value of all floor numbers that could possibly be represented by the current state of the indicator, assuming that any number of the unlit lamps might be malfunctioning.  You are given the state of the indicator as a String[] where each element represents a row of lamps, and rows are given from top to bottom.  Return the average that you calculate, or -1 if no valid floor number could possibly be represented by the indicator.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">FloorIndicator</td></tr><tr><td class="statText">Method:</td><td class="statText">averageFloor</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double averageFloor(int N, String[] indicator)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The returned value must be accurate to within a relative or absolute value of 1E-9.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>N</b> will be between 1 and 9, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>indicator</b> will contain exactly 5 elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>indicator</b> will contain exactly 4*<b>N</b> - 1 characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>indicator</b> will be either '#' or '.' (dot).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All characters corresponding to lamps in separating columns will be '.' (dots).</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>{"###",
+ "#.#",
+ "###",
+ "#.#",
+ "###"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This digit is clearly "8", so it is the only possible floor.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>{"###.###",
+ "#.#.#.#",
+ "#.#.###",
+ "#.#...#",
+ "###.###"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 48.5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Although the indicator shows "09", both digits can also be partially lit "8", so the possible floor numbers are:
+08,09,88,89. This results in average floor number (8+9+88+89)/4 = 48.5.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>{".......",
+ ".......",
+ ".......",
+ ".......",
+ "......."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 49.5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This indicator is completely broken, so any floor number between 0 and 99 is possible.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>{"...",
+ ".#.",
+ "...",
+ "...",
+ "..."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No digit fits here.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

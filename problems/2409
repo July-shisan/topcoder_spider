@@ -1,0 +1,103 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+You are a forensic technician examining a fragment of a hundred-dollar
+bill that was found at a crime scene. There may be a match between this
+target fragment and several candidate fragments that were brought in
+by detectives.
+</p>
+<p>
+Each fragment is described by a 7-by-7 square of characters. The square
+is flattened into a String by concatenating its rows from
+top to bottom. For example, the fragment
+</p>
+<pre>
+    XXXXXXX
+    .XXXXXX
+    .XX.XXX
+    .XX.X.X
+    .X..X..
+    ....X..
+    .......
+</pre>
+<p>
+is flattened into the String
+</p>
+<pre>
+    XXXXXXX.XXXXXX.XX.XXX.XX.X.X.X..X......X.........
+</pre>
+<p>
+while the fragment
+</p>
+<pre>
+    .XXXXXX
+    .....XX
+    ....XXX
+    ..XXXXX
+    ......X
+    ...XXXX
+    ....XXX
+</pre>
+<p>
+is flattened into the following.
+</p>
+<pre>
+    .XXXXXX.....XX....XXX..XXXXX......X...XXXX....XXX
+</pre>
+<p>
+A fragment contains 7 horizontal or vertical consecutive sequences of 'X' characters
+that all begin at the same edge of the square, which can be the top,
+right, bottom, or left edge, depending on the orientation of the
+fragment. If a fragment has top orientation, then in each column, a
+consecutive sequence of between 1 and 6 'X' characters, inclusive, begins at the
+top edge and extends toward the bottom. Similar constraints apply to a
+fragment of right, bottom, or left orientation. For example, the two fragments presented above
+have top and right orientations.
+</p>
+<p>
+A pair of fragments are said to match if they can be fitted together,
+possibly after rotation and/or reflection, to make a solid 7-by-7 square
+of 'X' characters without overlap. For instance, the two fragments shown
+above are matched in this way. To see this, rotate the second fragment 90 degrees clockwise
+and reflect it to obtain:
+</p>
+<pre>
+    .......
+    X......
+    X..X...
+    X..X.X.
+    X.XX.XX
+    XXXX.XX
+    XXXXXXX
+</pre>
+<p>
+Now these 2 fragments can be fitted together.
+</p>
+<pre>
+    XXXXXXX     .......     XXXXXXX
+    .XXXXXX     X......     XXXXXXX
+    .XX.XXX     X..X...     XXXXXXX
+    .XX.X.X  +  X..X.X.  =  XXXXXXX
+    .X..X..     X.XX.XX     XXXXXXX
+    ....X..     XXXX.XX     XXXXXXX
+    .......     XXXXXXX     XXXXXXX
+</pre>
+<p>
+You are given a String <b>targetFragment</b> representing the target fragment and a String[]
+<b>candidateFragments</b> each element of which represents one of the candidate fragments.
+If the target fragment fails to match any of the candidate fragments,
+return the error code -1. If there are several matches, return
+-2. Otherwise, return the zero-based index of the unique candidate
+fragment that matches the target fragment.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CrimeLab</td></tr><tr><td class="statText">Method:</td><td class="statText">matchFragment</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int matchFragment(String targetFragment, String[] candidateFragments)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>candidateFragments</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>candidateFragments</b> will satisfy the same constraints as <b>targetFragment</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>targetFragment</b> will contain exactly 49 characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>targetFragment</b> will be either 'X' or '.'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">When formed into a 7-by-7 square, <b>targetFragment</b> will make a fragment of top, right, bottom, or left orientation, as described in the problem statement.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"XXXXXXX.XXXXXX.XX.XXX.XX.X.X.X..X......X........."</pre></td></tr><tr><td class="statText"><pre>{"XXX....XX.....XXX....XXX....XXXXXX.X......XXXX...",
+ ".XXXXXX.....XX....XXX..XXXXX......X...XXXX....XXX",
+ ".......X...X..X..XX..X..XX.XX..XX.XXX.XX.XXXXXXXX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example shown in the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"XXXXXXX.XXXXXX.XX.XXX.XX.X.X.X..X......X........."</pre></td></tr><tr><td class="statText"><pre>{"XXX....XX.....XXX....XXX....XXXXXX.X......XXXX...",
+ ".XXXXXX.....XX....XXX..XXXXX.....XX...XXXX....XXX",
+ "XXXXXXX.XXXXXX.XX.XXX.XX.X.X.X..X................",
+ ".......X...X..X..XX..X..XX.XX..XX.XXX.XX.XXXXXXXX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The target fragment doesn't match any of the candidate fragments.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"XXXXXXX.XXXXXX.XX.XXX.XX.X.X.X..X......X........."</pre></td></tr><tr><td class="statText"><pre>{"XXX....XX.....XXX....XXX....XXXXXX.X......XXXX...",
+ ".XXXXXX.....XX....XXX..XXXXX......X...XXXX....XXX",
+ ".......X...X..X..XX..X..XX.XX..XX.XXX.XX.XXXXXXXX",
+ "XXX....XXXX...X......XXXXX..XXX....XX.....XXXXXX."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The target fragment matches two of the candidate fragments.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.XXXXXX......."</pre></td></tr><tr><td class="statText"><pre>{".........................................XXXXXXXX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"XXXX...X......XXX....XXXX...X......XX.....XXX...."</pre></td></tr><tr><td class="statText"><pre>{"XXXXXXXXXXXXXXXXXXXXX.XXXX.X.X..X.X.X..X.........",
+ "...XXXX...XXXX.XXXXXX....XXX..XXXXX....XXX.XXXXXX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

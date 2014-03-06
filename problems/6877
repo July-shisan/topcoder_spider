@@ -1,0 +1,30 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Your new graphical programming language Honu contains the primitives 'L' (turn left),
+'R' (turn right), 'U' (turn up), 'D' (turn down), and 'F' (move forward), to describe the
+actions of a trail-leaving turtle in the three-dimensional sea.
+Only the 'F' command actually moves
+the turtle, and it always moves it one unit forward.  All other commands simply
+change the orientation of the turtle.  The turn commands all are with respect to
+the turtle's current orientation.  That is, 'R' means the turtle turns towards its
+current right side; 'U' means the turtle turns towards where its shell is facing.
+</p><p>
+In addition, commands can be repeated if they are immediately followed by a
+single digit from 1 to 9.  So "F3" moves forward 3 units.  There will not be
+adjacent digits in the command string.  Digits may only follow the characters
+'U', 'D', 'R', 'L', 'F', or ')'.  The repeat count only applies to the
+immediately previous command, so "FF3" only advances four units.
+</p><p>
+Commands can also be grouped by parentheses.  So "(FRFL)5" traces a zig-zag
+line, repeating "FRFL" five times.
+</p><p>
+Parentheses can be nested, so "((F2)2)2" moves forward 8 units.
+</p><p>
+Given a sequence of these commands, your method must return the
+Euclidean distance from where the
+turtle began to where it ended up.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TurtleGraphics</td></tr><tr><td class="statText">Method:</td><td class="statText">distance</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double distance(String command)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Your return value must have an absolute or relative error less than 1e-9.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>command</b> will contain between 0 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>command</b> will consist only of the characters 'R', 'L', 'U', 'D', and 'F', '(', ')', and the digits '1'-'9'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>command</b> will be properly formatted according to the description above.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"FRF"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.4142135623730951</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Going forward, turning right, and then going forward again leaves the turtle at a distance of the square root of two.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"FUFUFUF"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The turtle traces a vertical square and ends up where he started.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"FRFUF"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.7320508075688772</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"F(((D)4)4)9F"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

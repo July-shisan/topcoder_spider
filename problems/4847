@@ -1,0 +1,72 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">We write programs in a script language which are embedded in HTML files and 
+downloaded over the internet. To speed up our downloads, we would like to 
+"smoosh" our source code, reducing its size without destroying the program.
+<p>
+One smooshing technique that we are interested in analyzing is to replace all
+the nice meaningful identifiers in our code with shorter names. This script 
+language is case sensitive, and an identifier
+in this language consists of (a maximal sequence of) letters. In order to avoid
+smooshing identifiers that are reserved words, we will encourage our programmers
+to start their identifiers with an uppercase letter (since all the reserved words
+start with a lowercase letter) and we will only smoosh identifiers that start
+with an uppercase letter. 
+</p><p>
+Here is the proposed smooshing algorithm. Find the most frequent identifier that
+begins with an uppercase letter and
+replace all its occurrences by its first letter. Continue with the next most 
+frequent identifier, etc. Whenever a one letter abbreviation conflicts by matching an 
+already assigned abbreviation, use the first two letters. If that still gives a conflict,
+then try the first three letters. If even after using all the letters of the identifier there is still
+a conflict, continue adding letters to the abbreviation by circling around to the front 
+of the identifier. So it is 
+possible that the abbreviation(!?) for "Car" might be "CarCarCa".
+
+When several identifiers appear with the same frequency, they are given abbreviations in the order that they first appear in the program.
+</p><p>
+Create a class Smooshing that contains a method savings that is given a String[]
+<b>program</b> that contains the lines of source code. It calculates the number of
+characters by which the source code would be reduced by smooshing it. 
+</p><p>
+Note that lines of
+source code are distinct -- an identifier cannot cross line boundaries and the smooshed code
+will have the same number of lines as the original code.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Smooshing</td></tr><tr><td class="statText">Method:</td><td class="statText">savings</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int savings(String[] program)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>program</b> contains between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>program</b> contains between 0 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>program</b> is between ASCII 32 and ASCII 126, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"MyInt = YrInt; if(MyInt==2*That) MyInt++;",
+    "while(MyInt&gt;3){",
+    "    MyDouble = MyShort+MyLong;",
+    "}",
+    "return MyDouble;",
+    "end" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 42</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+    MyInt is most frequent and so is smooshed to M.
+    MyDouble is next most frequent and is smooshed to My.
+    YrInt, That, MyShort, and MyLong all have the same frequency 
+    and first appear in the order given, so they are smooshed 
+    to Y, T, MyS, and MyL.
+
+    The smooshed program is<pre>
+    M = Y; if(M==2*T) M++;
+    while(M&gt;3){
+        My = MyS+MyL;
+    },
+    return My;
+    end
+</pre>
+
+    The length of the smooshed program is 42 characters less than the length of
+    the original program.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"MyInt3 = MyInt","MyIntMyInt"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 16</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This smooshes to <pre>
+   M3 = M
+   My
+</pre>
+which is 8 characters versus the original 24 (not counting the end-of-line characters which are never affected by this kind of smooshing).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"C = Cda; CdC=CdCd+2*Cd;"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here there are 5 different identifiers, each appearing once. The code is  smooshed as follows, showing the code after each abbreviation has been performed:<pre>
+   C   abbrev: C     =&gt; "C = Cda; CdC=CdCd+2*Cd;"
+   Cda abbrev: Cd    =&gt; "C = Cd; CdC=CdCd+2*Cd;"
+   CdC abbrev: CdC   =&gt; "C = Cd; CdC=CdCd+2*Cd;"
+   CdCd abbrev: CdCd =&gt; "C = Cd; CdC=CdCd+2*Cd;"
+   Cd abbrev: CdCdC  =&gt; "C = Cd; CdC=CdCd+2*CdCdC;"</pre>
+<p> Notice that when Cd is assigned its
+abbreviation the first Cd in the code at that point is not replaced because it was placed there as an abbreviation at an earlier step.
+</p></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

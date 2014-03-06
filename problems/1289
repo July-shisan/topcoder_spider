@@ -1,0 +1,64 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Given the dimensions of a board, and a place to start, you will draw a spiral repeating sequence.  The repeating sequence is: <br>
+0,1,2,3,4,5,6,7,8,9,0,1,2,...<br>
+First you will draw a '0' at the start position. The spiral is drawn starting right, then down, then left, then up, then right, ... repeating until no more can be drawn, making the tightest spiral possible.  For example:<pre>
+<b>width</b> = 5
+<b>height</b> = 5
+<b>startx</b> = 2
+<b>starty</b> = 2
+
+Beginning    Second      Later     Even Later  Finally
+  01234       01234       01234       01234      01234
+
+0 .....       .....       .....       012..      01234
+1 .....       .....       .678.       96789      96789 
+2 ..0..       ..01.       .501.       85010      85010
+3 .....       .....       .432.       74321      74321
+4 .....       .....       .....       65432      65432</pre>
+If there is no place to go, stop drawing and put '.' characters in all the unreached spots:<pre>
+<b>width</b> = 5
+<b>height</b> = 6
+<b>startx</b> = 1
+<b>starty</b> = 1
+
+Beginning    Second      Later     Even Later  Finally
+  01234       01234       01234       01234      01234
+
+0 .....       .....       678..       6789.      6789.
+1 .0...       .01..       501..       5010.      5010. 
+2 .....       .....       432..       4321.      4321.
+3 .....       .....       .....       ..32.      5432.
+4 .....       .....       .....       .....      .....
+5 .....       .....       .....       .....      .....</pre>
+
+Return the resulting drawing as a String[].  The parameters <b>height</b> and <b>width</b> represent the number of elements, and the number of characters per element in the returned String[], respectively.  <b>startx</b> and <b>starty</b> are the column and row (both 0-indexed from the upper left corner) at which the sequence should begin.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Spirals</td></tr><tr><td class="statText">Method:</td><td class="statText">draw</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] draw(int width, int height, int startx, int starty)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>width</b> must be between 1 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>height</b> must be between 1 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>startx</b> must be between 0 and <b>width</b>-1, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>starty</b> must be between 0 and <b>height</b>-1, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"01234", "96789", "85010", "74321", "65432" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The first example in the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>6</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"6789.", "5010.", "4321.", "5432.", ".....", "....." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The second example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"01........",
+"32........",
+"..........",
+"..........",
+"..........",
+"..........",
+"..........",
+"..........",
+"..........",
+".........." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>9</pre></td></tr><tr><td class="statText"><pre>9</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"..........",
+"..........",
+"..........",
+"..........",
+"..........",
+"..........",
+"..........",
+"..........",
+"..........",
+".........0" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {".", ".", ".", ".", ".", "0", ".", ".", ".", "." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>11</pre></td></tr><tr><td class="statText"><pre>7</pre></td></tr><tr><td class="statText"><pre>8</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"...........",
+"......01234",
+"......96789",
+"......85010",
+"......74321",
+"......65432",
+"..........." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

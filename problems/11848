@@ -1,0 +1,47 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">There are N fish and N+1 buoys in a small pond. Mr. Jeipouju wants to capture some of the fish.
+<p></p>
+In this problem, regard the pond as a 2-dimensional Cartesian plane (as seen from above). Each fish and each buoy is a point on the plane.
+The buoys are lined up on x axis and numbered 0 to N from left to right.
+There is exactly one fish between each two neighboring buoys.  The fish are numbered 0 to N-1 from left to right.
+For the purpose of this problem we will assume that the fish are staying on their spots without any movement.
+The exact coordinates of the fish and the buoys do not matter.  See the following image for clarity.
+<p></p>
+<img src="http://community.topcoder.com/contest/problem/CaptureFish/fishkun_1.png"><p></p>
+You are given a String <b>fish</b> with N characters. Each character of <b>fish</b> is either letter 'O' or 'X' or '*'. If <b>fish</b>[i] is 'O', it represents that he must capture fish i. If <b>fish</b>[i] is 'X', he must not capture fish i. If <b>fish</b>[i] is '*', he does not care whether he capture fish i or not.
+<p></p>
+To capture the fish, Mr. Jeipouju wants to set up a net in the pond so that the net will separate the caught fishes from the uncaught ones.
+From above, the net must be a closed curve in our plane.
+Furthermore, this closed curve must satisfy the following conditions:
+
+<ul><li>The net is not allowed to pass through any of the fish.</li>
+  <li>The net is not allowed to touch or intersect itself.</li>
+  <li>The net may only cross the x axis at points that contain the buoys. The net is not allowed to touch the x axis without crossing it.</li>
+  <li>The net must cross the x axis at least twice.</li>
+  <li>The fish Mr. Jeipouju wants to capture and the fish he wants not to capture must be separated by the net.
+  That is, either all fish marked with 'X' are to be inside the net and all fish marked with 'O' outside, or vice versa. 
+  The fish marked '*' may be anywhere, possibly some of them inside and some outside the net.</li>
+</ul>
+
+The following image shows some examples of valid and invalid net placements: 4 nets to the left are valid and 5 nets to the right are invalid.
+<p></p>
+<img src="http://community.topcoder.com/contest/problem/CaptureFish/fishkun_10a.png"><p></p>
+A net can be encoded into a sequence using the following algorithm:
+<ul><li>Start anywhere on the net, but not on a buoy.</li>
+  <li>Walk along the net until you reach your starting point again.</li>
+  <li>During the walk, each time you encounter a buoy, write down its number and the halfplane in which you are moving away from the x axis. (The halfplane is "+" if after visiting the buoy your y coordinate is positive and "-" if it is negative.)</li>
+</ul>
+In this way you will obtain some sequence (buoy1,side1,...,buoyK,sideK).
+Two nets are considered the same if they can be encoded to the same sequence.
+<p></p>
+Mr. Jeipouju wants to know whether the number of different nets is odd or even.
+Your method must return the number of different nets, modulo 2.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CaptureFish</td></tr><tr><td class="statText">Method:</td><td class="statText">getParity</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int getParity(String fish)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>fish</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of <b>fish</b> will be either letter 'O' or 'X' or '*'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>fish</b> will contain at least one 'O' character.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"OXOXO"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In this case, there are 5 fish. There are 8 ways to separate them.
+<br><img src="http://community.topcoder.com/contest/problem/CaptureFish/fishkun_3.png"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"OO"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There is only one valid net and it looks as follows:
+<br><img src="http://community.topcoder.com/contest/problem/CaptureFish/fishkun_4.png"><br>
+Two things to notice:
+First, the net does not have to pass through <i>all</i> the buoys.
+Second, it is allowed to have no fish at all at either side of the net.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"**OX**"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"O***O***O***O"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

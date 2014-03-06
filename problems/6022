@@ -1,0 +1,39 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+You have reached the final round of a game show, and it is time to determine the amount of your prize.
+The number of digits, <i>n</i>, in the amount has been determined based on your earlier performance during the game.
+You will be presented with a board containing <i>n</i> blank spaces and given <i>n</i> randomly-generated digits.
+You will be allowed to place each digit, one at a time, in any unoccupied space you want.
+You must decide where to place each digit before you see the next, and once you place a digit you
+cannot move it.
+After all <i>n</i> digits have been placed, the resulting <i>n</i>-digit number will be the value of your prize.
+</p>
+<p>
+For example, assume you have earned a three-digit prize.
+If the first digit generated were a 2, you might choose to place that in the rightmost space,
+hoping that the next two digits will be larger.
+If the second digit were a 8, you might choose to place that in the leftmost space,
+because you would only regret that decision in the relatively unlikely event that the final digit is a 9.
+If the third digit were a 6, you would place that in the last remaining space (the middle), and your
+final prize would be 862.
+</p>
+<p>
+You will be given the state of the number you are forming digit-by-digit as a String <b>digits</b>,
+possibly already in progress.
+This String will contain one character for each space on the board: '0' through '9', inclusive, indicate digits that have already been placed, and a '_' indicates a blank space on the board.
+Assuming you play optimally in order to maximize your expected winnings, return the expected value of the prize you will win.
+</p>
+<p>
+At each step, each of the digits 0 through 9 will be presented to you with equal probability.
+Note that the digits already placed may not be the result of optimal play, but you should assume that
+you will play to maximize your expected winnings from this point forward.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">DigitByDigit</td></tr><tr><td class="statText">Method:</td><td class="statText">expectedScore</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double expectedScore(String digits)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Your return value must have an absolute or relative error less than 1e-9.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>digits</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>digits</b> will contain only the characters '_' and '0' through '9', inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"_0"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 45.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There is only one blank space, so you will only have one more digit to place.  The final result will either be 0, 10, 20, 30, 40, 50, 60, 70, 80, or 90.  The expected value, 45, is the average of these.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"__"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 60.75</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The highest expected value is achieved by putting the first digit in the left spot if it is 5, 6, 7, 8, or 9, and putting it in the right spot if it is 0, 1, 2, 3, or 4.  The expected value can be computed as:
+<pre>
+    5/10 * ((5+6+7+8+9)/5 * 10 + 4.5          ) +
+    5/10 * (4.5           * 10 + (0+1+2+3+4)/5)
+</pre>
+Any deviation from this strategy would result in a lower expected value.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"_55_"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6303.25</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"____0000000000000000"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7.482735000000001E19</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"___6__3___"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8.604871517066002E9</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"__________"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8.882477600592714E9</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,26 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Regular expressions are simple but powerful ways of describing patterns for
+strings of symbols. We will restrict our attention to describing binary strings 
+using only the special symbol * which means "zero or more occurrences". 
+So our simple regular expression will be a sequence of characters, all of which 
+are '0', '1' or '*'. Furthermore, each '*' will be preceded by a '0' or a '1' 
+and will apply to that single character.
+<p>
+For example,  "01*00*"  describes all strings that start with '0', then have
+zero or more '1's, then have a '0', and then have zero or more '0's. The
+shortest string that satisfies this description is "00".
+</p><p>
+Create a class Regulars that contains a method stringCt that is given a simple
+regular expression <b>regex</b> and an int <b>maxLen</b> and that returns the number of distinct 
+strings that satisfy <b>regex</b> and contain between 0 and <b>maxLen</b> characters, inclusive.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Regulars</td></tr><tr><td class="statText">Method:</td><td class="statText">stringCt</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long stringCt(String regex, int maxLen)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>regex</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>regex</b> will be '0' (zero), '1' (one), or '*'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each '*' in <b>regex</b> will be immediately preceded by '0' or '1'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>maxLen</b> will be between 1 and 50, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"0*"</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   "","0","00","000","0000","00000" are the legal strings.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"01*1*1*"</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   "0","01","011" are the legal strings.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"0*1*0*1*0*1*0*1*0*1*0*1*0*1*0*1*0*1*0*1*0*1*0*1*0*"</pre></td></tr><tr><td class="statText"><pre>50</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1125899906842623</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,56 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A tree is a connected graph with no cycles.  
+Starting from a connected tree with positive integral edge lengths, we take a subset of the nodes of that tree.  Next, we compute the lengths of the shortest paths between all pairs of nodes in the subset (in the original tree).  This gives us a symmetric N*N distance matrix where N is the number of nodes in the subset.<br><br>
+Your task is to reverse this process.  Given a N*N distance matrix, you are to reconstruct a tree, if possible.  Since there may be many reconstructions, you should return the minimum number of nodes in any reconstruction that agrees with the distance matrix (this will be at least N).  If no reconstruction is possible, return -1.<br><br>
+The distance between nodes i and j (indexed from 0) can be found by treating <b>g1</b>[i][j] and <b>g2</b>[i][j] as hexadecimal digits.  Putting the two digits together gives the distance (<b>g1</b> has the more significant digits).</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TreeReconstruct</td></tr><tr><td class="statText">Method:</td><td class="statText">reconstruct</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int reconstruct(String[] g1, String[] g2)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>g1</b> and <b>g2</b> will each contain exactly N elements, where N is between 2 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>g1</b> and <b>g2</b> will contain exactly N hex digits ('0'-'9' and 'A'-'F').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The distance between each pair of distinct nodes will be positive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The diagonal entries of <b>g1</b> and <b>g2</b> will be '0'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>g1</b> and <b>g2</b> will each be symmetric.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0000",
+ "0000",
+ "0000",
+ "0000"}
+</pre></td></tr><tr><td class="statText"><pre>{"0444",
+ "4044",
+ "4404",
+ "4440"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The original tree could have been a star: one central node, with 4 nodes connected to it, each by an edge of length 2.  The subset of selected nodes are the 4 non-central nodes.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0000",
+ "0000",
+ "0000",
+ "0000"}
+</pre></td></tr><tr><td class="statText"><pre>{"0233",
+ "2033",
+ "3302",
+ "3320"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"00001",
+ "00001",
+ "00011",
+ "00100",
+ "11100"}
+</pre></td></tr><tr><td class="statText"><pre>{"066C6",
+ "60CA4",
+ "6C02C",
+ "CA20A",
+ "64CA0"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"00000",
+ "00000",
+ "00001",
+ "00000",
+ "00100"}</pre></td></tr><tr><td class="statText"><pre>{"06839",
+ "60E7B",
+ "8E0B1",
+ "37B0A",
+ "9B1A0"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"023825",
+ "202704",
+ "320633",
+ "876084",
+ "203805",
+ "543450"}</pre></td></tr><tr><td class="statText"><pre>{"0198AA",
+ "10ED9F",
+ "9E0D7F",
+ "8DD06E",
+ "A97608",
+ "AFFE80"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0000",
+ "0000",
+ "0000",
+ "0000"}</pre></td></tr><tr><td class="statText"><pre>{"0121",
+ "1012",
+ "2101",
+ "1210"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

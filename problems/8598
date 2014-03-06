@@ -1,0 +1,95 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+We have a box that consists of (<b>sizeX</b> x <b>sizeY</b> x <b>sizeZ</b>) = N unit cubes.
+These cubes have coordinates ranging from (1,1,1) to (<b>sizeX</b>,<b>sizeY</b>,<b>sizeZ</b>).
+</p>
+
+<p>
+We want to number the unit cubes, using integers from 1 to N. We will do this algorithmically.
+</p>
+
+<p>
+We will call a box "1-dimensional (1D)" if at least two of its dimensions are 1, "2-dimensional (2D)" if exactly one of its
+dimensions is 1, and "3-dimensional (3D)" otherwise.
+</p>
+
+<p>
+The algorithm used to number a 1-dimensional box is simple: order the cubes according to the sums of
+their coordinates (in ascending order), and number them in this order.
+</p>
+
+<p>
+To number a 2-dimensional box, we follow this algorithm:
+</p><ul><li>If X size is greater than 1, consider all cubes with both Y and Z coordinates minimal, number them as a 1D box, and throw them away.</li>
+<li>If we still have a 2D box, if Y size is greater than 1, consider all cubes with both X and Z coordinates minimal, number them as a 1D box, and throw them away.</li>
+<li>If we still have a 2D box, if Z size is greater than 1, consider all cubes with both X and Y coordinates minimal, number them as a 1D box, and throw them away.</li>
+<li>Recursively number the rest of the box.</li>
+</ul><p>
+For example, a 4x5x1 box filled using this algorithm looks as follows:
+</p>
+
+<pre>
+z=1
+   x:1  2  3  4
+ y:+--+--+--+--+
+  1| 1| 2| 3| 4|
+   +--+--+--+--+
+  2| 5| 9|10|11|
+   +--+--+--+--+
+  3| 6|12|15|16|
+   +--+--+--+--+
+  4| 7|13|17|19|
+   +--+--+--+--+
+  5| 8|14|18|20|
+   +--+--+--+--+
+</pre>
+
+<p>
+To number a 3-dimensional box, we follow this algorithm:
+</p><ul><li>Consider all cubes with the Z coordinate minimal, number them as a 2D box, and throw them away.</li>
+<li>If we still have a 3D box, consider all cubes with the Y coordinate minimal, number them as a 2D box, and throw them away.</li>
+<li>If we still have a 3D box, consider all cubes with the X coordinate minimal, number them as a 2D box, and throw them away.</li>
+<li>Recursively number the rest of the box.</li>
+</ul><p>
+For example, a 4x3x3 box filled using this algorithm looks as follows:
+</p>
+
+<pre>
+z=1
+   x:1  2  3  4
+ y:+--+--+--+--+
+  1| 1| 2| 3| 4|
+   +--+--+--+--+
+  2| 5| 7| 8| 9|
+   +--+--+--+--+
+  3| 6|10|11|12|
+   +--+--+--+--+
+
+z=2
+   x:1  2  3  4
+ y:+--+--+--+--+
+  1|13|14|15|16|
+   +--+--+--+--+
+  2|21|25|26|27|
+   +--+--+--+--+
+  3|22|28|29|30|
+   +--+--+--+--+
+
+z=3
+   x:1  2  3  4
+ y:+--+--+--+--+
+  1|17|18|19|20|
+   +--+--+--+--+
+  2|23|31|32|33|
+   +--+--+--+--+
+  3|24|34|35|36|
+   +--+--+--+--+
+</pre>
+
+<p>
+You will be given the box dimensions <b>sizeX</b>, <b>sizeY</b>, and <b>sizeZ</b>, and the coordinates of a single cube (<b>cubeX</b>,<b>cubeY</b>,<b>cubeZ</b>). Write a method that will compute the number assigned to the cube at the given coordinates,
+when using the algorithm described above.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BoxFilling</td></tr><tr><td class="statText">Method:</td><td class="statText">getNumber</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int, int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long getNumber(int sizeX, int sizeY, int sizeZ, int cubeX, int cubeY, int cubeZ)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Note that the box described by <b>sizeX</b>, <b>sizeY</b>, and <b>sizeZ</b> is not necessarily a 3D box.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>sizeX</b>, <b>sizeY</b> and <b>sizeZ</b> will be between 1 and 10<sup>9</sup>, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The volume of the box will not exceed 10<sup>18</sup>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>cubeX</b> will be between 1 and <b>sizeX</b>, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>cubeY</b> will be between 1 and <b>sizeY</b>, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>cubeZ</b> will be between 1 and <b>sizeZ</b>, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 13</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the box from the first example in the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 25</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the box from the second example in the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Same box, different cube coordinates.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>43633</pre></td></tr><tr><td class="statText"><pre>35453</pre></td></tr><tr><td class="statText"><pre>34533</pre></td></tr><tr><td class="statText"><pre>2344</pre></td></tr><tr><td class="statText"><pre>32442</pre></td></tr><tr><td class="statText"><pre>34221</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9416237809215</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 14</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 28</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

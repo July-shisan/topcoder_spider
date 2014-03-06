@@ -1,0 +1,28 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p><i>This problem statement contains superscipts that may not display properly outside the applet.</i></p>
+<br>
+Lun the dog loves very large integers. Her favorite is <b>A</b><sup><b>B</b></sup> (<b>A</b> to the power of <b>B</b>).
+<br><br>
+She has an integer variable X. Initially, the value of X is set to 1. She can perform the following two kinds of operations in any order, any number of times.
+<ul><li>Operation 1: choose a prime number p, then multiply X by p.</li>
+<li>Operation 2: choose a positive divisor d of the value of X at that point, then multiply X by d.</li>
+</ul><br><br>
+You are given two ints <b>A</b> and <b>B</b>. Return the minimum number of operations Lun needs to perform
+in order to obtain X = <b>A</b><sup><b>B</b></sup> from the initial state X = 1.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BigFatInteger</td></tr><tr><td class="statText">Method:</td><td class="statText">minOperations</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int minOperations(int A, int B)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>A</b> will be between 2 and 1,000,000 (10<sup>6</sup>), inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>B</b> will be between 1 and 1,000,000 (10<sup>6</sup>), inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>6</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here, <b>A</b><sup><b>B</b></sup> = 6<sup>1</sup> = 6. Here is one of the optimal sequences of operations:
+<ol><li>Perform operation 1 by choosing p=2. X is now 1*2 = 2.</li>
+<li>Perform operation 1 by choosing p=3. X is now 2*3 = 6.</li>
+</ol></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>162</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">One of the optimal sequences of operations:
+<ol><li>Perform operation 1 by choosing p=3. X is now 1*3 = 3.</li>
+<li>Perform operation 1 by choosing p=3. X is now 3*3 = 9.</li>
+<li>Perform operation 2 by choosing d=9. X is now 9*9 = 81.</li>
+<li>Perform operation 1 by choosing p=2. X is now 81*2 = 162.</li>
+</ol></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>999983</pre></td></tr><tr><td class="statText"><pre>9</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here, <b>A</b> is prime. One of the optimal sequences of operations:
+<ol><li>Perform operation 1 by choosing p=<b>A</b>. X is now <b>A</b>.</li>
+<li>Perform operation 1 by choosing p=<b>A</b>. X is now <b>A</b><sup>2</sup>.</li>
+<li>Perform operation 1 by choosing p=<b>A</b>. X is now <b>A</b><sup>3</sup>.</li>
+<li>Perform operation 2 by choosing d=<b>A</b><sup>3</sup>. X is now <b>A</b><sup>6</sup>.</li>
+<li>Perform operation 2 by choosing d=<b>A</b><sup>3</sup>. X is now <b>A</b><sup>9</sup>.</li>
+</ol></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>360</pre></td></tr><tr><td class="statText"><pre>8</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

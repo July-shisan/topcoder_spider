@@ -1,0 +1,55 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Your task is to place a monster inside a labyrinth, and prevent it from escaping by placing force
+fields around it. A force field creates a barrier that fills an entire row or column, so that the monster cannot enter it.
+There is no interference between walls and force fields, so force fields freely cross through
+the labyrinth walls. The labyrinth consists of empty spaces, denoted by '.', and walls, denoted by '#'.
+Locations where you can initially place the monster are denoted by '^', and otherwise behave like empty
+space.
+</p>
+
+<p>
+The monster can move up, down, left, and right, but not diagonally. If there is a path the monster can follow that ends outside of the map and does not go through any fields occupied by a wall or a force field, the monster will escape. Given that you get to choose the initial location of the monster, as well as the positions
+of the force fields, return the minimum number of force fields needed to prevent the monster from escaping from the labyrinth, or return
+-1 if the task is impossible. Note that force fields cannot cross through the initial position of the
+monster, and also cannot be created outside of the map (see Example 2).
+</p>
+<p>
+For example, consider the labyrinth below:
+</p>
+<pre>
+.######..
+.#^^^^#..
+.#^^^^#..
+.#^^^^#..
+.##^^##..
+...^^....
+</pre>
+<p>
+One way to contain the monster using only one force field is to position the monster as denoted by M, and
+create the force field denoted by F's:
+</p>
+<pre>
+.######..
+.#....#..
+.#.M..#..
+.#....#..
+FFFFFFFFF
+.........
+</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CageTheMonster</td></tr><tr><td class="statText">Method:</td><td class="statText">capture</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int capture(String[] labyrinth)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>labyrinth</b> will contain between 1 and 40 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>labyrinth</b> will contain between 1 and 40 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>labyrinth</b> will be of the same length.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>labyrinth</b> will consist only of characters '.', '#' and '^'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>labyrinth</b> will contain at least one '^' character.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+".######..",
+".#^^^^#..",
+".#^^^^#..",
+".#^^^^#..",
+".##^^##..",
+"...^^...."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+".....",
+".^#^.",
+".#^#.",
+"..#.."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">We can contain the monster by simply placing it in between the four walls.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"#....",
+"^#...",
+"#...."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Since we cannot create a force field in column -1, we cannot prevent the monster from escaping.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,46 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">There is a community of art lovers who meet from time to time and trade images with each other.  Each image transaction must obey the following rules:
+<ol><li>The price at which the image is sold must be greater than or equal to the price at which it was bought.</li>
+<li>No trader is allowed to buy the same image more than once.</li>
+</ol>
+
+A new image has just appeared on the market.  Trader 0 bought it from an unknown artist for the price of '0', and he is now ready to trade it among his fellow art lovers.  You are given a String[] <b>price</b>, where the <i>j</i>-th character of the <i>i</i>-th element is a digit representing the price at which trader <i>j</i> will buy the image from trader <i>i</i>.  '0' is the lowest price, and '9' is the highest.  Assuming all transactions obey the rules mentioned above, determine the longest possible sequence of transactions involving the new image.  After all the transactions are done, return the number of people who have owned the image at some point in time, including both the final owner and trader 0.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ImageTraders</td></tr><tr><td class="statText">Method:</td><td class="statText">maxOwners</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int maxOwners(String[] price)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>price</b> will contain exactly N elements, where N is between 2 and 15, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>price</b> will contain exactly N characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>price</b> will contain only digits ('0'-'9').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"01",
+"10"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Trader 0 can sell the image to trader 1 for the price of '1'.  Both traders were owners of the image, so the answer is 2.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"022",
+"101",
+"110"
+}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">We have 3 traders here. Trader 0 can sell the image to either trader 1 or trader 2 for the price of '2'.  In both cases, the buyer would have to sell the image for a price of at least '2', which is impossible.  Therefore, the maximal number of owners is 2.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"01231",
+"00231",
+"00031",
+"00002",
+"00000"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here the image can have 4 owners:
+<ul><li>Trader 0 sells the image to trader 1 for the price of '1'.</li>
+<li>Trader 1 sells the image to trader 2 for the price of '2'.</li>
+<li>Trader 2 sells the image to trader 3 for the price of '3'.</li>
+</ul></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"15555",
+"11111",
+"15111",
+"11111",
+"11111"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Trader 0 can sell the image to trader 2 for the price of '5'.  Then, trader 2 can sell it to trader 1.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"0100000000",
+"0020000000",
+"0003000000",
+"0000400000",
+"0000050000",
+"0000006000",
+"0000000700",
+"0000000080",
+"0000000009",
+"1111111111"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The image can be traded among all the traders in the following sequence: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

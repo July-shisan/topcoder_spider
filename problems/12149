@@ -1,0 +1,46 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>Alice and Bob are playing a famous game called Nim.
+In this game, they first set up <b>n</b> piles of stones.
+The piles are labeled 1 through <b>n</b>.
+For each i, the number of stones on the i-th pile is between 1 and <b>m</b>, inclusive.
+Once the piles are set up, Alice and Bob alternate in taking turns.
+In their turn, each player chooses one of the piles and removes some stones from the pile (at least one, possibly all of them).
+The game ends when all piles are empty.
+The player unable to make a valid move loses.
+(In other words, the player who removed the very last stone wins.)</p>
+
+<p>Since Alice and Bob are both brilliant, they soon learned how to play Nim and both started playing it optimally.
+Nowadays, they don't even need to play the game.
+They simply look at the initial setup of piles and compute who will win the game.
+It is no surprise that this gets a bit boring after some time.</p>
+
+<p>Therefore they came up with an improved version of the game.
+The new version looks as follows:</p>
+<ol><li>They both agree on the values <b>n</b>, <b>m</b> (with meanings as mentioned above), and <b>k</b> (explained below). For convenience, <b>m</b>+1 will always be a power of 2.</li>
+<li>Alice picks the sizes of the <b>n</b> piles.</li>
+<li>Bob selects exactly <b>k</b> consecutive piles and throws the remaining piles away. That is, for some i, Bob selects the piles i through i+<b>k</b>-1.</li>
+<li>Alice may remove some of the piles. (She is allowed to remove as many as she wants, but not all of them. She is allowed to remove no piles. The piles she removes do not have to be consecutive.)</li>
+<li>With the remaining piles Bob and Alice play a game of Nim. In this game, Bob takes the first turn.</li>
+</ol><p>Alice wants to win the game.
+Clearly, the key to winning the game is picking a good sequence of pile sizes in the second step of the above description.
+You are given the ints <b>n</b>, <b>m</b>, and <b>k</b>.
+Your goal is to count all sequences of pile sizes with the following property:
+If Alice picks the sequence in step 2, and then both Alice and Bob play the rest of the game optimally, Alice will win.
+As this count can be a huge number, return its remainder modulo 1,000,000,007.</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">YetAnotherNim</td></tr><tr><td class="statText">Method:</td><td class="statText">solve</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int solve(int n, int m, int k)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Two sequences of pile sizes are considered different if there is some i such that the number of stones on the i-th pile differs. For example, the sequences (2,5,7) and (2,7,5) are considered different.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> will be between 1 and 1,000,000,000 (10^9), inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>m</b> will be between 1 and 1,000,000,000 (10^9), inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>m</b> + 1 will be a power of 2.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>k</b> will be between 1 and <b>n</b>, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>100</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>30</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There is only one valid setup: 100 piles with one stone each.
+In step 3, Bob will select exactly 30 of these piles.
+(It does not matter which 30, as they all look the same.)
+In step 4, Alice will remove 28 of them, leaving Bob with two piles, each with one stone.
+In the game of Nim, Bob takes one of the stones, Alice the other one, and she wins.
+Hence there is one setup such that Alice wins the game.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>100</pre></td></tr><tr><td class="statText"><pre>15</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Regardless of what Alice does in step 2, after step 3 there will only be one pile of stones.
+Nothing will happen in step 4, as Alice has to leave at least one pile of stones.
+In the game of Nim, Bob will simply take all the stones from that pile and win the game.
+So there are no setups such that Alice wins.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>100</pre></td></tr><tr><td class="statText"><pre>15</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 15</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In step 3, Bob will pick two of the 100 piles.
+Alice cannot throw anything away in step 4, because if she does, only one pile will remain and Bob easily wins the game of Nim.
+So the game of Nim will be played with the two piles Bob selected.
+Bob wins the game of Nim if and only if the piles have different sizes.
+So in order to win the game, Alice has to make sure that Bob picks two equal piles in step 3.
+The only way to force this is by choosing the same size for each of the 100 piles in step 2.
+As the maximal pile size is 15, there are exactly 15 winning setups.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>100</pre></td></tr><tr><td class="statText"><pre>31</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 908629681</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

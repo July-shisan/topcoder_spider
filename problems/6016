@@ -1,0 +1,44 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">My company has given me a list containing the name 
+of each employee along with the name of his supervisor (who is also an employee) if
+he has one.
+The company wants to know whether the list is consistent and, if so, how many
+of the employees are supervisors (supervise at least one employee).
+"Consistent" means that there is no supervision cycle in which A supervises himself or A supervises B who 
+supervises C ... who supervises A. It is permissible to have multiple employees who
+have no supervisor.
+<p>
+But ... we have Bob trouble. All the employees have distinct names, except that there 
+may be multiple distinct employees whose names are "BOB". So there may be multiple
+ways to put together the supervision hierarchy. We want to construct the 
+hierarchy so as to minimize the number of supervisors.
+</p><p>
+Create a class BobTrouble that contains a method minSupers that is given a String[]
+<b>name</b> and a String[] <b>bossName</b> giving the names of all the employees and their bosses.
+It returns the minimum number of supervisors that can appear in the supervision
+hierarchy. If no supervision hierarchy is consistent, it returns -1.
+</p><p>
+Each element of <b>name</b> refers to a distinct employee, and the supervisor of the
+i-th element is given by the i-th element of <b>bossName</b> ("*" indicates
+that the employee has no supervisor). Every employee is listed in <b>name</b>.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BobTrouble</td></tr><tr><td class="statText">Method:</td><td class="statText">minSupers</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int minSupers(String[] name, String[] bossName)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>name</b> contains between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>name</b> contains between 1 and 10 uppercase letters ('A'-'Z'), inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The elements of <b>name</b> are distinct, except that "BOB" may appear more than once.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>bossName</b> contains the same number of elements as <b>name</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>bossName</b> is "*" or matches at least one element of <b>name</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BOB","BOB","BOB"}</pre></td></tr><tr><td class="statText"><pre>{"BOB","*","BOB"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   There are 3 possible supervisory hierarchies: 1) the middle BOB supervises
+   the first BOB who supervises the last BOB, 2) the middle BOB supervises the
+   last BOB who supervises the first BOB, and 3) the middle BOB supervises the
+   first BOB and also supervises the last BOB. This last choice gives the 
+   fewest supervisors.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"JOHN","AL","DON","BOB"}</pre></td></tr><tr><td class="statText"><pre>{"*","*","*","*"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   All the employees are unsupervised, so there are no supervisors.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BOB","BOB","BOB"}</pre></td></tr><tr><td class="statText"><pre>{"*","*","BOB"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   There are 2 possible hierarchies (the third BOB can be supervised by either
+   of the other BOBs). Either way, exactly one of the BOBs is a supervisor.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BOB", "BOB", "JACK"}</pre></td></tr><tr><td class="statText"><pre>{"BOB", "BOB", "*"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The first BOB must be supervised by the second BOB (it is illegal to supervise yourself) and the second BOB
+must be supervised by the first BOB. But this is a supervision cycle,
+so there is no legal hierarchy satisfying this data.
+ </td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

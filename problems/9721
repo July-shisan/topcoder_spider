@@ -1,0 +1,36 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+There are <i>n</i> cities in the Kingdom. Some pairs of cities are connected by bidirectional roads, and there exists a path between every pair of cities.
+</p>
+<p>
+The King thinks that supporting so many roads is very expensive, so he decided to close some of them.
+He wants to close as many roads as possible, but, of course, he still wants each city to be reachable from any other city.
+</p>
+<p>
+A city is a dead end if it is connected to only one other city by a direct road. You will be given a String[] <b>roads</b>, with the j-th character of the i-th element of <b>roads</b> being '1' (one) if the i-th and j-th cities are connected by a direct road, and '0' (zero) otherwise. Return the maximal number of dead ends the Kingdom may have after the reform.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">RoadReform</td></tr><tr><td class="statText">Method:</td><td class="statText">findMaxDeadendCount</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int findMaxDeadendCount(String[] roads)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>roads</b> will contain between 2 and 15 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>roads</b> will contain exactly <i>n</i> characters, where <i>n</i> is the number of elements in <b>roads</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>roads</b> will contain digits '0' and '1' only.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The j-th character in the i-th element of <b>roads</b> will be equal to the i-th character in the j-th element.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The i-th character in the i-th element of <b>roads</b> will be '0'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each pair of cities in the input will be connected by a path.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"01",
+ "10"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Two cities are connected by a road. The King can't close this road and both cities will still be dead ends.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"01000", 
+ "10100",
+ "01010",
+ "00101",
+ "00010"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The cities of the Kingdom are aligned in a chain. As in example 0, no road can be closed without splitting the Kingdom.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"01111",
+ "10000",
+ "10000",
+ "10000",
+ "10000"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0111",
+ "1011",
+ "1101",
+ "1110"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Each pair of cities is connected by a direct road. The King can close roads 1&lt;-&gt;2, 2&lt;-&gt;3 and 1&lt;-&gt;3, thus making cities 1, 2 and 3 dead ends.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0100000001",
+ "1010000000",
+ "0101000000",
+ "0010100000",
+ "0001010000",
+ "0000101000",
+ "0000010100",
+ "0000001010",
+ "0000000101",
+ "1000000010"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

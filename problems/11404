@@ -1,0 +1,69 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><i>NOTE: This problem statement contains images that may not display properly if viewed outside of the applet.</i><br><br>
+Cat Taro has the following building blocks:<br><ul><li><b>cubes</b>[0] red unit cubes,</li>
+<li><b>cubes</b>[1] yellow unit cubes,</li>
+<li><b>cubes</b>[2] blue unit cubes,</li>
+<li><b>B</b> black rectangular prisms with dimensions 2x1x1.</li>
+</ul><br>
+
+Cat Taro is using the blocks to build <b>w</b> adjacent towers of blocks (some possibly empty), as shown on the right side of the picture below. Taro will always place the rectangular prisms vertically. In other words, each prism will look like two black unit cubes placed one on top of the other. Taro is not required to use all of the blocks when building the towers. (In fact, he may even decide not to use any blocks at all.)<br><br><img src="http://community.topcoder.com/contest/problem/SkewedPerspectives/pniub.jpg"><br><br>
+Rabbit Hanako is looking at Taro's towers from the left side of the room. To him, the towers seem as a single tower which we will call a <i>view</i>, as shown on the left side of the picture above. More precisely, at each height i Hanako sees the color of the block at height i in the leftmost tower that has such a block. Hanako's view can be described as a string of characters, giving the colors of each 1x1 square seen by Hanako in the order from bottom to top.
+Black squares will be denoted 'b', and colored squares will be denoted '0', '1', and '2' (in the same order used in <b>cubes</b>).<br><br>
+You are given the int[] <b>cubes</b>, the int <b>B</b>, the int <b>w</b>, and a String[] <b>views</b>.
+Each element of <b>views</b> specifies one view Taro wants Hanako to see, in the format specified above.
+Return a String[] with the same number of elements as <b>views</b>.
+If Taro can build the towers in such a way that Hanako will see the view <b>views</b>[i], the i-th element of the return value should be "valid", otherwise it should be "invalid" (quotes for clarity).</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">SkewedPerspectives</td></tr><tr><td class="statText">Method:</td><td class="statText">areTheyPossible</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int, int, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] areTheyPossible(int[] cubes, int B, int w, String[] views)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>w</b> will be between 1 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>cubes</b> will contain exactly 3 elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>cubes</b> will be between 0 and 100, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>B</b> will be between 0 and 100, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>views</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>views</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>views</b> will be one of 'b', '0', '1', and '2'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1,1,1}</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>{ "012", "012bb", "bb0", "21bb", "21b", "1bb20" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"valid", "valid", "valid", "valid", "valid", "valid" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The following picture shows a way to achieve each of the given views.<br><img src="http://community.topcoder.com/contest/problem/SkewedPerspectives/vqsa6c.jpg"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{0,1,0}</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>{"b","bb","bbb","bbbb","bbbbb","bbbbbb",
+ "1", "1b","1bb","1bbb","1bbbb","1bbbbb","1bbbbbb",
+ "b1","b1b","b1bb","b1bbb","b1bbbb","b1bbbbb",
+ "bb1","bb1b","bb1bb","bb1bbb","bb1bbbb",
+ "bbb1","bbb1b","bbb1bb","bbb1bbb",
+ "bbbb1","bbbb1b","bbbb1bb",
+ "bbbbb1","bbbbb1b",
+ "bbbbbb1" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"invalid",
+"valid",
+"valid",
+"valid",
+"valid",
+"valid",
+"valid",
+"valid",
+"valid",
+"valid",
+"valid",
+"valid",
+"valid",
+"invalid",
+"invalid",
+"invalid",
+"invalid",
+"invalid",
+"invalid",
+"valid",
+"valid",
+"valid",
+"invalid",
+"valid",
+"invalid",
+"invalid",
+"invalid",
+"invalid",
+"valid",
+"invalid",
+"valid",
+"invalid",
+"invalid",
+"valid" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{100,0,0}</pre></td></tr><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>{"00000000000000000000000000000000000000000000000000",
+ "00000000000000000000000000000000000b00000000000000",
+ "0000000000000000000000000000000000000000000000000b",
+ "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb0000000000000"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"valid", "valid", "valid", "valid" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{5,6,3}</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>{"00000111111222", "0000111111222", "0000011111222", "000001111111222", "0000011111122", "b"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"valid", "valid", "valid", "invalid", "valid", "invalid" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{100,100,100}</pre></td></tr><tr><td class="statText"><pre>100</pre></td></tr><tr><td class="statText"><pre>50</pre></td></tr><tr><td class="statText"><pre>{"2",
+ "bb1b012012012012012012012",
+ "bb1b012012012012012012012b",
+ "bb1b012012012b012b012b012012b",
+ "bb1b0b1b2b0b1b2b0b1b2bb012b012b012012b",
+ "b1b0b1b2b0b1b2b0b1b2bb012b012b012012b",
+ "bbb1b012012012012012012012"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"valid", "valid", "valid", "valid", "valid", "invalid", "valid" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{0,0,0}</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>{"0", "bb"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"invalid", "invalid" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Taro has no cubes and no prisms, therefore he cannot create any non-empty view.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{3,0,0}</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>{"00b0b", "bbbbbbbb", "000b"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"invalid", "valid", "valid" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,38 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Magic Board is a lock that has the shape of a rectangular board, divided into a grid of n × m unit squares.
+Some of the unit squares contain a Magic Diamond.
+You are given the contents of the Magic Board as a String[] <b>board</b>. The number of elements in <b>board</b> is n, and the length of each element is m. Empty squares are denoted by periods ('.'), squares with a Magic Diamond are denoted by '#'.
+<br><br><br>
+Let S = (S[0], S[1], ...) be a sequence of cells on the board.
+We will consider the cells in S one after another, picking up a Magic Diamond from each of them.
+Doing this will unlock the Magic Board if and only if S has the following properties:
+<ul><li>S contains each cell with a Magic Diamond exactly once.</li>
+<li>S does not contain any other cells.</li>
+<li>For each even i, S[i] and S[i+1] are in the same row of <b>board</b>.</li>
+<li>For each odd i, S[i] and S[i+1] are in the same column of <b>board</b>.</li>
+</ul><br><br><br>
+You are given the String[] <b>board</b>. Determine whether this Magic Board can be unlocked. Return "YES" (quotes for clarity) if it can be unlocked and "NO" otherwise.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">MagicBoard</td></tr><tr><td class="statText">Method:</td><td class="statText">ableToUnlock</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String ableToUnlock(String[] board)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b>[0] will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>board</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>board</b> will be either '.' or '#'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain at least one '#'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"##",
+ ".#"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "YES"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The only solution: Start in the upper left corner, then move to the right, and finally move down.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"#.",
+ ".#"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "NO"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In this case there is no solution. Regardless of which Magic Diamond we start with, we will not be allowed to take the other one, as it is not in the same row.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"##",
+ "##",
+ "##"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "YES"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"###",
+ "###",
+ "###"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "NO"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"###",
+ "..#",
+ "###",
+ "#..",
+ "###"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "NO"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"................",
+ ".######..######.",
+ ".######..######.",
+ ".##......##..##.",
+ ".##......##..##.",
+ ".######..######.",
+ ".######..######.",
+ ".....##..##..##.",
+ ".....##..##..##.",
+ ".######..######.",
+ ".######..######.",
+ "................"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "YES"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"#"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "YES"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

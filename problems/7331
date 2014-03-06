@@ -1,0 +1,32 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>In the process of constructing a computer science building at a university, it was
+decided that a hidden message would be included in the brick patterns.</p>
+
+<p>Each character in the message will be represented by a row of nine
+slots. Each slot will either contain a brick or remain empty. 
+The first and last slots in a row will always be empty. 
+The other seven slots will represent the
+character's 7-bit ASCII value in binary (most significant digit first), 
+with empty slots where a binary 1 would be written.</p>
+
+<p>Additionally, for increased aesthetic value, a character with ASCII
+value zero is added before and after the message .</p>
+
+<p>The characters will be arranged sequentially from
+the top: the first character in the topmost row, the second right below it, etc.</p>
+
+<p>Given a String <b>message</b>, return the pattern as 
+a String[], where each String
+represents one row and each character in the strings is
+either 'x' (empty) or '.' (brick). The rows in the return should be ordered top to bottom.</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BrickMystery</td></tr><tr><td class="statText">Method:</td><td class="statText">createPattern</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] createPattern(String message)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>message</b> will contain between 0 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>message</b> will have ASCII value between 32 and 126, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"L"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"x.......x", "xx..xx..x", "x.......x" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The ASCII value of the uppercase letter L is 76, which is 1001100 in binary. This translates to "<tt>x..xx..</tt>" in our code.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"P=NP?"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"x.......x",
+"xx.x....x",
+"x.xxxx.xx",
+"xx..xxx.x",
+"xx.x....x",
+"x.xxxxxxx",
+"x.......x" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>""</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"x.......x", "x.......x" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

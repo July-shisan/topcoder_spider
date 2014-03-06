@@ -1,0 +1,95 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Mrs. Jeipouju is planning to practice orienteering.
+The area where she'll practice is a rectangular field divided into unit squares.
+You are given its description as a String[] <b>field</b>.
+Each character in field is '.' (a period), '*' (an asterisk), or '#' (a number sign).
+Each '.' represents a passable square without a checkpoint, each '*' represents a passable square with a checkpoint, and each '#' represents an impassable obstacle.
+It is guaranteed that all passable squares (i.e., all '.'s and '*'s) form a 4-connected tree (see notes for formal definition).
+The number of checkpoints is at most 300.
+<br><br>
+In order to practice, Mrs. Jeipouju chooses <b>K</b> of the checkpoints uniformly at random.
+Afterwards, she will find the <i>shortest</i> sequence of squares that passes through all chosen checkpoints.
+The sequence can start at any square, end at any square (possibly other than the starting one), and visit each square any number of times.
+Each pair of consecutive squares in the sequence must have a common side.
+The <i>length</i> of the sequence is the number of moves Mrs. Jeipouju will have to make.
+(So, for example, a sequence that consists of 7 squares has length 6.)
+<br><br>
+You are given the String[] <b>field</b> and the int <b>K</b>.
+Return the expected length of Mrs. Jeipouju's sequence.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Orienteering</td></tr><tr><td class="statText">Method:</td><td class="statText">expectedLength</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double expectedLength(String[] field, int K)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A set S of squares is said to form a 4-connected tree if for any two squares A and B from S, there exists exactly one way to walk from A to B while visiting only the squares from S and not visiting the same square more than once. From a given square, it is possible to walk into any square that shares a common side with it.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>field</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>field</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>field</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>field</b> will be '*', '.', or '#'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">'*' and '.' form a 4-connected tree.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>K</b> will be between 2 and 300, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>field</b> will contain between <b>K</b> and 300 '*', inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"*#..#",
+ ".#*#.",
+ "*...*"}</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3.8333333333333353</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Let (i,j) be the square represented by the j-th character of the i-th element of <b>field</b> (both numbers are 0-based).
+<br><ul><li>If she chooses (0,0) and (1,2), one of the optimal sequences is (0,0) -&gt; (1,0) -&gt; (2,0) -&gt; (2,1) -&gt; (2,2) -&gt; (1,2).</li>
+<li>If she chooses (0,0) and (2,0), one of the optimal sequences is (0,0) -&gt; (1,0) -&gt; (2,0).</li>
+<li>If she chooses (0,0) and (2,4), one of the optimal sequences is (0,0) -&gt; (1,0) -&gt; (2,0) -&gt; (2,1) -&gt; (2,2) -&gt; (2,3) -&gt; (2,4).</li>
+<li>If she chooses (1,2) and (2,0), one of the optimal sequences is (1,2) -&gt; (2,2) -&gt; (2,1) -&gt; (2,0).</li>
+<li>If she chooses (1,2) and (2,4), one of the optimal sequences is (1,2) -&gt; (2,2) -&gt; (2,3) -&gt; (2,4).</li>
+<li>If she chooses (2,0) and (2,4), one of the optimal sequences is (2,0) -&gt; (2,1) -&gt; (2,2) -&gt; (2,3) -&gt; (2,4).</li>
+</ul>
+So the expected length of her sequences is (5 + 2 + 6 + 3 + 3 + 4) / 6 = 23 / 6.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"*#..#",
+ ".#*#.",
+ "*...*"}</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Mrs. Jeipouju chooses all four checkpoints. One of the shortest sequences is (0,0) -&gt; (1,0) -&gt; (2,0) -&gt; (2,1) -&gt; (2,2) -&gt; (1,2) -&gt; (2,2) -&gt; (2,3) -&gt; (2,4).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"#.#**",
+ "....#",
+ "#*#**",
+ "**#*#",
+ "#..##",
+ "*#..#",
+ ".#.#.",
+ "....*"}</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10.825000000000024</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"###################",
+ "#*###############*#",
+ "#.....#######.....#",
+ "#*###*.#.*.#.*###*#",
+ "#*####*.*#*.*####*#",
+ "#*#####*###*#####*#",
+ "###################"}</pre></td></tr><tr><td class="statText"><pre>9</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 30.272233648704244</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"**##*.**#..#.*...*#...*#..#.##..#..#.#*...#.##*##.",
+ ".#..###..#..#.#.##..#.#.*#.*..#..#.#*..##.#*...*..",
+ "..#.....###.#*.##..#.#.#*..#.#..#....#..#...#*####",
+ ".#.##*#.*#..#*#*.#.#...*.#.*#.#.##.#*.##.#.#..*...",
+ "..*.*#*.###.#..#.#..##.##.*#..#.....#.....#..#.#.#",
+ ".#.##.#..##..*#..#.#...#*##*#*..#.#.#.#.##.##.#.#*",
+ "..##....#..#.#*#...*.##...#.#.####...#.#*.....#...",
+ ".#.*#.##.*#*.#*.#.#.#..#.#..#.#*#.###..##.##.#.##*",
+ ".*.#*..*.#.#...#.*##.#.**.#.*...**..*#..#.#.#*.#..",
+ ".#*.#*##....##.#.#*..*.###.#.##.##.#.#.#....#.#*.#",
+ "*.#..#*#.#*#*....#.#.#..*#**...##.#.#.**#*##.*.#..",
+ ".#*.##..##..##.#.#..#.#.###.###...#...#*#..##*#.#.",
+ "#..#*.#..*.###..#.#...#.###.#.#*#.#.#**##.#...*.#*",
+ "..#..#.#.##.#..#.**.##*#.#**.**..#.#..#...#.##*#..",
+ ".#*#.#.*..#.*#...#.#...#...#.##.#..*#*.##*....###.",
+ ".*.#.#.#.#*#..*##.**.##*##..#.*#.#*###..*.#.##.#..",
+ ".#......#...#.#.*#.#.#..#..#.#*#....#*.#*#.*#..*.#",
+ "#..####..#*#...#*.#..#.###...#.#.#.###*#..##*##.#.",
+ ".#.*..#.#...#.#..#.##...#..#.#.#.#.###..##..*.*.*.",
+ ".#.#.#.#..##.*..#.*.#.##.#..##*...#.#..#.#.##.#.##",
+ ".#..#*.#.#..#.##..##..#.*..#.*#.#...##....#...###.",
+ ".#.#.#.#*.#.#..#.#..#..#.#.*#...#.##...#.##.##.*..",
+ ".#...#.#.##.#.#..*#.*#..###..#.#.#*###.##...#*.##.",
+ ".#.##.*.......*.#.*#.#.#*###..*...*..#.*.##.#.#..#",
+ "...###*####*#.#..##*...#..#..##.#.#.#..##*#*.*.*#.",
+ "#.#.#....*#..#.#.#.#.##..#*.#...#..#.#*#...#.##.*.",
+ "..*.#*##.#.#*#.###...#..##.#.#.#*###*#.*#.#.*###.#",
+ "##*##..##...#.....##.#.#.**#..#*.....##.#..#*.#.*.",
+ ".....#.*.##..##.##*.*#...#.#.#.##.#*#.**..#..#.#.#",
+ "##.#.#*##.#.#.*.*.#.#*#.#.#....*...#*##*##.#....#.",
+ "*.**#**....*..##.#*.*.**..##.###.##.....##...##.**",
+ "#.####.##*#*##..#.*#*#.##*...#.##..#.##....#*..##.",
+ "....#...##.#...#*.#..##.##.#*..*.#....##.#.*##...#",
+ "#.#..*##*..#.#..#..#..#*....#.##..##.#*##.##.*##..",
+ "..#.#*.*.##.#.#*#.#*##.###.##...#............#*.#.",
+ "#.#.##.#....*....*..##..*#.#.#.###.#.#.#.###..#..#",
+ ".#**..#*#.#*#*#.#.#...*##....##.#*..#..#*..*#..#..",
+ "...#*#.....#..#.#..#*#.*##.#..#.#.##..#.*#*#.#...#",
+ ".#*.###.#.#.#.#.*#*##.##..#.#*..#...#.#.#..#*.*#..",
+ "#*.#.#.#..#..#..#....*#.*##..##.#.#..#...##.#.#..#",
+ "*.#..#..#...#..##.#*#..#.#*#.#.#.###..#.#*...#.#..",
+ "#...#.#...#.#.#..#.*.#*.....**.*..#*##.#*.##....##",
+ "#*#....#*#..#.*.###*#..#*##.##.#.#...#.*.##.##.##.",
+ "..##*##*..#*#.#..#*.*##*.##.#...#.#.#.#.#..*#.##..",
+ "#...#*##.#*#**.##.*#.*.##..*.#*#**....#**##...*.*#",
+ "*#.##......*#.##.#.#.##**.#.#.#.#.#.##..#...#*#*#*",
+ "*....##.#.#..#.....#..##.#....*....#.#.##.#.#.##**",
+ "#.##*#...#..#.#.##..#..##.##.##.##........##.#*#.#",
+ "..#...#.#*#*..*#..*#.*#.#......##.#.#.#*#..#..****",
+ ".###.#..#...#.#..#..#.#...#.#.#...**.#..*#*.*##*#."}</pre></td></tr><tr><td class="statText"><pre>150</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1309.4951033725558</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

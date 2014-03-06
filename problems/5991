@@ -1,0 +1,35 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+You have a string <b>s</b> containing only ones and zeroes. Your goal is to make all the characters in <b>s</b> equal using a minimal number of operations. A single operation consists of inverting all the characters in a contiguous substring of <b>s</b>. Inverting a character means transforming a one into a zero, and vice versa.
+</p>
+
+<p>
+For example, consider the string "0001100" (quotes for clarity). We can transform this string into all ones using 2 operations:
+</p><ol><li>
+Invert the entire string: 0001100 -&gt; <i>1110011</i>.
+</li>
+<li>
+Invert the substring from the 4th character to the 5th character, inclusive: 1110011 -&gt; 111<i>11</i>11.
+</li>
+</ol><p>
+We can transform the same string into all zeros using just 1 operation:
+</p><ol><li>
+Invert the substring from the 4th character to the 5th character, inclusive: 0001100 -&gt; 000<i>00</i>00.
+</li>
+</ol>
+Thus, the answer for s="0001100" is 1.
+
+
+<p>
+You are given <b>s</b> as a String[]. Concatenate the elements of <b>s</b> to obtain the actual string, and return the minimal number of operations necessary to transform <b>s</b> into all ones or all zeroes.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">SwitchingBits</td></tr><tr><td class="statText">Method:</td><td class="statText">minSwitches</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int minSwitches(String[] s)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>s</b> will contain between 1 to 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>s</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>s</b> will contain only ones ('1') and zeroes ('0').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0001100"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Invert the two ones in the middle.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"11111"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Already all ones.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"00000001"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are two possibilities here: invert the one, or invert all the zeroes. Either way, only 1 operation is needed.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"1100110011001100","000","1"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"11","101","101"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are several ways.
+For example:
+11101101 -&gt; 111<i>1001</i>1 -&gt; 1111<i>11</i>11
+or
+11101101 -&gt; 111<i>1</i>1101 -&gt; <i>111111<i>1</i>1</i>
+
+</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

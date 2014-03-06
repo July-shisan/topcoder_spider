@@ -1,0 +1,32 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You are creating a simple one-player computer game. 
+The player must first choose and enter a string of length <b>k</b>, 
+where each character is 'A', 'B', 'C' or 'D'. 
+Each possible string of length <b>k</b> maps to a color, 
+and these mappings will be predetermined by you. 
+To win the game, the player must perform a series of transformations on the string 
+until it is different from the original, but maps to the same color. 
+Only the following two transformations are allowed at each step:
+<ol><li>Swap two adjacent characters. </li>
+	<li>Replace an occurrence of <b>before</b>[i] in the string with <b>after</b>[i], for some index i. </li>
+</ol>
+You want to create an "Impossible Mode", in which the player can never win. 
+Return the minimum number of colors required to make the game impossible. 
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ImpossibleGame</td></tr><tr><td class="statText">Method:</td><td class="statText">getMinimum</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long getMinimum(int k, String[] before, String[] after)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>k</b> will be between 1 and 30, inclusive. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>before</b> will contain between 1 and 50 elements, inclusive. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>before</b> and <b>after</b> will contain the same number of elements. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>before</b> will contain between 1 and <b>k</b> characters, inclusive. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For each index i, <b>before</b>[i] and <b>after</b>[i] will contain the same number of characters. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>before</b> and <b>after</b> will be 'A', 'B', 'C' or 'D'. </td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>{ "A" }
+</pre></td></tr><tr><td class="statText"><pre>{ "B" }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">If "A" and "B" are assigned the same color, 
+the player can win by starting with "A" and replacing it with "B". 
+So at least two colors are needed. 
+<br><br>
+Two colors are enough to make the game impossible. 
+For example, you can assign red to "A" and "C", and blue to "B" and "D". 
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>{ "A", "A", "D" }
+</pre></td></tr><tr><td class="statText"><pre>{ "B", "C", "D" }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>{ "B", "C", "D" }
+</pre></td></tr><tr><td class="statText"><pre>{ "C", "D", "B" }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>6</pre></td></tr><tr><td class="statText"><pre>{ "AABBC", "AAAADA", "AAACA", "CABAA", "AAAAAA", "BAAAA" }
+</pre></td></tr><tr><td class="statText"><pre>{ "AACCB", "DAAABC", "AAAAD", "ABCBA", "AABAAA", "AACAA" }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 499</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

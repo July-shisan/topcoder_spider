@@ -1,0 +1,49 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+
+In the game of Musical Chairs, <i>n</i> players walk around a circle of
+<i>n-1</i> chairs while music plays on the stereo. When the music stops,
+everyone hurries to claim a chair. The player who is left standing gets
+knocked out of the game.
+
+</p><p>
+
+You are given a String[] <b>playerNames</b> containing the names of the players, ordered according to
+their position at the start of the game, such as the following.
+
+</p>
+<pre>
+  {"Emma Sue", "Billy Bob Thornton", "Joe", "Cassius Clay"}
+</pre>
+<p>
+You are also given a String <b>chairs</b> describing the arrangement of
+chairs with an 'h' (lowercase letter H) for each chair and exactly one
+'.' (period) indicating a gap. The i-th character of <b>chairs</b> corresponds to the i-th element
+of <b>playerNames</b>. For instance, the chairs might be arranged
+as follows.
+
+</p>
+<pre>
+  "hh.h"
+</pre>
+<p>
+The player by the gap is the one who gets knocked out. For example,
+if the four players above are in their starting order when the music
+stops, then Joe gets knocked out.
+</p>
+<p>
+For each second of music, the players advance one position. From the
+original order shown above, for example, the players' order changes to
+the following after one second.
+</p>
+<pre>
+  {"Cassius Clay", "Emma Sue", "Billy Bob Thornton", "Joe"}
+</pre>
+<p>
+Given an int <b>seconds</b> specifying the number of seconds that the
+music is played, return the name of the player who gets knocked out.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">MusicalChairs</td></tr><tr><td class="statText">Method:</td><td class="statText">knockedOut</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String knockedOut(String[] playerNames, String chairs, int seconds)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>playerNames</b> will contain between 2 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>playerNames</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>playerNames</b> will contain only letters ('A'-'Z', 'a'-'z') and spaces (' ').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>chairs</b> will contain the same number of characters as the number of elements in <b>playerNames</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Exactly one character in <b>chairs</b> will be '.', and all the other characters will be 'h'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>seconds</b> will be between 0 and 600, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Emma Sue", "Billy Bob Thornton", "Joe", "Cassius Clay"}</pre></td></tr><tr><td class="statText"><pre>"hh.h"</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "Billy Bob Thornton"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Emma Sue", "Billy Bob Thornton", "Joe", "Cassius Clay"}</pre></td></tr><tr><td class="statText"><pre>"hh.h"</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "Joe"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">After 4 seconds, the players are exactly at the same positions as in the beginning.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Jack Dempsey", "Joe Louis", "Rocky Marciano",
+ "Cassius Clay", "George Foreman", "Mike Tyson"}</pre></td></tr><tr><td class="statText"><pre>"h.hhhh"</pre></td></tr><tr><td class="statText"><pre>500</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "Mike Tyson"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"  itchy   ", "SCRATCHY"}</pre></td></tr><tr><td class="statText"><pre>".h"</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "  itchy   "</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Moe", "Larry", "Curly", "Moe"}</pre></td></tr><tr><td class="statText"><pre>"hh.h"</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "Moe"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

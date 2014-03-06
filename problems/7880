@@ -1,0 +1,63 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+The game of Inc is played by 3 players on a rectangular board, made up of an MxN grid of squares.
+Each square is either empty or contains a digit between 1 and 3, inclusive.
+The players take turns making moves on the board, in order, starting with player 1.
+Play continues for a pre-determined number of moves, after which the players' scores are totaled.
+Each player receives one point for each square containing a digit equal to their player number.
+The player with the highest score wins.
+</p>
+
+<p>
+A move consists of a player dividing the squares on the board into two non-empty groups, with a
+single straight horizontal or vertical line.
+The player then selects one of the two groups on either side of the line,
+and either adds 1 to or subtracts 1 from all the digits in that group.
+Whenever 1 is added to 3, the result is wrapped around to 1.
+Similarly, whenever 1 is subtracted from 1, the result is wrapped around to 3.
+</p>
+
+<p>
+Each player makes his or her moves according to the following set of priorities.
+A higher-numbered priority is only used to select among multiple moves that satisfy all lower-numbered priorities.
+</p>
+
+<ol><li>Prefer moves that will result in you having more points than the other 2 players at the end of the game.</li>
+<li>Prefer moves that will result in neither of the other 2 players having more points than you at the end of the game.</li>
+<li>Prefer moves that will result in you having as many points as possible at the end of the game.</li>
+<li>Prefer dividing the board with a horizontal line over dividing the board with a vertical line.</li>
+<li>Prefer the group to the left or the top of the dividing line over the group to the right or the bottom.</li>
+<li>Prefer lines to the left or the top over lines to the right or the bottom.</li>
+</ol><p>
+Assume that all players play optimally, and that they all expect each other to play optimally as well.
+</p>
+
+<p>
+The initial state of the board is given as a String[] <b>initial</b>.
+Each character in <b>initial</b> represents one square of the board.
+A '.' (period) represents an empty square, while a digit represents a digit in the corresponding square.
+Earlier elements in <b>initial</b> correspond to the top of the board and later elements correspond to the bottom,
+while earlier characters in each element of <b>initial</b> correspond to the left of the board and later characters correspond to the right.
+The number of turns in the game is given by an int <b>turns</b>.
+An int <b>inc</b> dictates if players add or subtract 1 to the digits they select on their turn.
+A value of -1 means that players must subtract 1 and a value of 1 means that players must add 1.
+</p>
+
+<p>
+Return the final state of the board as a String[], in the same format as the input.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Inc</td></tr><tr><td class="statText">Method:</td><td class="statText">finalBoard</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] finalBoard(String[] initialBoard, int inc, int turns)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>turns</b> will not necessarily be divisible by 3.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>initial</b> will contain between 2 and 5 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>initial</b> will be between 2 and 5 characters long, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>initial</b> will have the same length.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>initial</b> will be either a '.' (period), '1', '2', or '3'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>inc</b> will be -1 or 1.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>turns</b> will be between 1 and 10, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "333",
+  "3.3",
+  "333" }</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"111", "1.1", "333" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Only player 1 makes a move, and there are 4 ways he can get 5 points.  Following the given priorities, he chooses to divide the board with a horizontal line one row above the bottom, and increment the 5 digits in the 6 squares above that line.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "....",
+  "3333",
+  "3333",
+  ".33." }</pre></td></tr><tr><td class="statText"><pre>-1</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"....", "2222", "2222", ".22." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Player 1 cannot score any points and selects only the top row, which contains no digits.  This leaves player 2 with the optimal move of selecting all rows but the top.  Player 3 cannot score any points either and selects the top row only, leaving player 2 with all 10 available points.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "111", "111" }</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>9</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"313", "232" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "2222", "2222", "2222" }</pre></td></tr><tr><td class="statText"><pre>-1</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"3112", "3112", "3112" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "231.3",
+  "3.233",
+  "12.12",
+  "3.231",
+  "132.3" }</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"123.1", "1.333", "12.31", "1.331", "132.2" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"123",
+"123"
+}</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"131", "131" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

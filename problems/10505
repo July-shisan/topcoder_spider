@@ -1,0 +1,41 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">In soccer, all the major national leagues are conducted in the following way:
+<br><br>
+A league consists of several teams.  Over the course of a year, each team must play exactly two matches against each of the other teams - one at its own stadium and one at the opponent's stadium.  When a team plays at its own stadium, it is called the "home team" and its opponent is called the "away team".  Each match ends in one of three possible results: a home team victory, a draw, or an away team victory.  Each time a team wins, it is awarded 3 points.  When there's a draw, both teams are awarded 1 point.  No points are awarded for a loss.  The overall ranking of the teams is based on the total number of points received by each team.
+<br><br>
+You are given a String[] <b>matches</b>.  The j-th character of the i-th element of <b>matches</b> denotes the result of the match between team i and team j at team i's stadium.  'W' represents a home team victory, 'D' represents a draw, and 'L' represents an away team victory.  All characters on the main diagonal of <b>matches</b> will be '-' because a team never plays against itself.  Return a int[] where the i-th element is the total number of points received by the i-th team.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">SoccerLeagues</td></tr><tr><td class="statText">Method:</td><td class="statText">points</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] points(String[] matches)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>matches</b> will contain exactly n elements, where n is between 2 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>matches</b> will contain exactly n characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>matches</b> will contain only '-','W','D' and 'L' characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For all i, the i-th character of the i-th element of <b>matches</b> will be '-', and no other characters will be '-'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"-WW",
+ "W-W",
+ "WW-"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {6, 6, 6 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are 3 teams in the league, and in all matches the home team has won.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"-DD",
+ "L-L",
+ "WD-"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {5, 2, 8 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This time, the first team has 1 win and 2 draws, the second one has 2 draws and the third has 2 wins and 2 draws.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"-DWWD",
+ "L-WLL",
+ "DD-WD",
+ "DDL-L",
+ "DDLL-"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {14, 7, 12, 8, 10 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"-LWWLWDLDWWWWWWDDWDW",
+ "D-WWLDDWDWDLWDDWLWDD",
+ "LL-DLDWDLDLDWWWLWDDW",
+ "LDD-LLLDLWLWWWWDWDWL",
+ "LWWW-DWDLWDWDWWWDWDW",
+ "DLLWD-WWLLDDDLWWDWWW",
+ "WWLWDL-LLDWWWWWDWWLW",
+ "LLLLLDW-LDLWDDLLLDWL",
+ "DWWWWDDD-DWWWWDWWWDW",
+ "WWWWLLLWL-LWWWWWLWWW",
+ "DWWWWWWWLW-WDWWWWWWW",
+ "DDDLLLDWWWL-DDWDWLDD",
+ "LWLWLDLLLDLW-DDDWWDD",
+ "LLWWLWDDLWLWL-WWWDLL",
+ "WWWWLLDDDWLWDD-WWWLW",
+ "DLDLLLWWLLLWWLW-DWLL",
+ "DLWWWLDLWWDWWDWL-WWD",
+ "LLDDLLWLLWLWLDLWW-WW",
+ "LLWLLLWWLWLWWDWWLD-W",
+ "LLWDLWDWDWLLWWDDWWL-"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{72, 62, 41, 41, 83, 63, 53, 35, 86, 50, 90, 32, 34, 41, 45, 36, 51, 32, 51, 45 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the actual table for the latest season's Barclaycard Premiership with the teams sorted alphabetically.
+</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

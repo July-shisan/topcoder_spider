@@ -1,0 +1,40 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+During today's meeting of the Council of Rainban, your advisors warned you about the growing traffic problems in your fair country.  It seems that the Daring Ostrich Society has shut down the Rainban Access Motorway due to the annual migration of ostriches across the highway.  This is rather unfortunate, as many cars are now trapped on the highway.  Construction crews have begun to build an emergency exit so that the trapped cars can exit, but there will be chaos without rules on when cars can exit.  To promote friendly driving, you decide to enforce the following rules:
+</p><ol><li>A car may not exit if there is a car in front of it in its lane.</li>
+<li>A car may not exit if a car in a lower numbered lane is about to exit.</li>
+<li>Once a car has reached the front of its lane, it must (if possible) yield exactly once to a car from a higher numbered lane.  This means that the car will allow a car from a higher numbered lane to exit (if one exists).</li>
+<li>If a car has fulfilled all of the above requirements, it may exit the highway.  The next car in that lane (if there is one) then moves to the front of the lane.</li>
+</ol>
+As an example, suppose that there are five cars in the highway, as pictured below (with the front of the lane located on the left):
+
+<pre>
+0 A B
+1 C D
+2 E
+</pre>
+<p>
+Car A has not yet yielded, so it must yield.  The same happens for car C.  Car E cannot yield (as there are no cars in higher lanes), and so it exits.  Now car A fulfills the exiting rules (having yielded to car E), and it can exit.  Car B moves up to the front, but has not yet yielded, and thus must yield to car C.  Car B then can exit, followed by car D.
+</p><p>
+You will be given <b>currentLanes</b>.  The i-th element of <b>currentLanes</b> corresponds to the cars currently located in lane i.  The 0-th character in each element corresponds to the car at the front of the lane.  No car in <b>currentLanes</b> has yielded yet.  The car represented by the character 'D' is a diplomat from a far-off country.  You want to know how many cars exit in front of this diplomat (so that you know whether you have time to take a bath before his arrival), and return this number.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">RoadConstruction</td></tr><tr><td class="statText">Method:</td><td class="statText">getExitTime</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int getExitTime(String[] currentLanes)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>currentLanes</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>currentLanes</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of <b>currentLanes</b> will be an uppercase letter ('A'-'Z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There will be exactly one 'D' in <b>currentLanes</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AB",
+ "CD",
+ "E"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AH",
+ "D",
+ "BCG",
+ "E",
+ "F"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Car F goes first.  Having yielded right of way, car A moves next, followed by car D (which already yielded to car F).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AAA",
+ "A",
+ "AAA",
+ "A",
+ "AAD",
+ "A",
+ "AAB"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 13</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Multiple cars can be represented by the same letter, but there will be exactly one diplomat.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"DEFGHIJK"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"I",
+ "WANT",
+ "TO",
+ "DRINK",
+ "SOME",
+ "COFFEE"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

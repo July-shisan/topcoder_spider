@@ -1,0 +1,30 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">In a chess tournament, each pair of distinct players played a single match against each other.  Each match resulted in one of three outcomes: the first player won, the second player won, or there was a draw.  The ambiguity number of the tournament is defined as the number of distinct triples of players (a, b, c) such that player a defeated b, player b defeated player c, and player c defeated player a.
+<pre></pre>
+You are given the results of all the matches as a String[] <b>table</b>.  The j-th character of the i-th element of <b>table</b> is '1' (one) if player i defeated player j, '0' (zero) if player j defeated player i, or '-' if the match between players i and j resulted in a draw.  Return the ambiguity number of the given tournament.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TournamentsAmbiguityNumber</td></tr><tr><td class="statText">Method:</td><td class="statText">scrutinizeTable</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int scrutinizeTable(String[] table)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>table</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>table</b> will contain exactly n characters, where n is the number of elements in <b>table</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>table</b> will be '1' (one), '0' (zero), or '-'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The i-th character of the j-th element of <b>table</b> will be '1' if and only if the j-th character of the i-th element of <b>table</b> is '0'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The i-th character of the j-th element of <b>table</b> will be '-' if and only if the j-th character of the i-th element of <b>table</b> is '-'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The i-th character of the i-th element of <b>table</b> will be '-'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"-10",
+ "0-1",
+ "10-"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Player 0 defeated player 1, player 1 defeated player 2, and player 2 defeated player 0.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"----",
+ "----",
+ "----",
+ "----"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">All matches ended in a draw.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"-1",
+ "0-"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Too few players to form a triple.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"--1-10-1---1--1-00",
+ "--0110000--0---10-",
+ "01--00000100-00011",
+ "-0---0010-11110100",
+ "001--01-00-0001-1-",
+ "11111--100--1-1-01",
+ "-1110--00110-11-01",
+ "0110-01--100110-10",
+ "-111111---01--0-01",
+ "--0-1100----10011-",
+ "--10--011--1--101-",
+ "01101-110-0--1-0-1",
+ "---010-0-0---00-11",
+ "--101-00-1-01-0-0-",
+ "0-110001110-11-110",
+ "-010-----011--0--0",
+ "11010110100-010--0",
+ "1-01-0010--00-111-"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 198</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

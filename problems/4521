@@ -1,0 +1,30 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">I need software that can read written numbers and convert them to integers.
+The numbers are always between 1 and 99 inclusive, but may be misspelled.
+The correct spelling of numbers is given by the following grammar, in which
+'&lt;' '&gt;' '::=' and '|' are metacharacters and all others are literal:<ul><li>
+      &lt;NUMBER&gt; ::= &lt;ONES&gt; | &lt;TEEN&gt; | &lt;TENS&gt; | &lt;TENS&gt;-&lt;ONES&gt;</li><li>
+      &lt;ONES&gt; ::= one | two | three | four | five | six | seven | eight | nine</li><li>
+      &lt;TEEN&gt; ::= ten | eleven | twelve | thirteen | fourteen | fifteen | 
+                 sixteen | seventeen | eighteen  | nineteen</li><li>
+      &lt;TENS&gt; ::= twenty | thirty | forty | fifty | sixty | seventy | eighty | ninety</li></ul>
+
+Create a class Speller that contains a method value that is given a String <b>number</b>
+and that returns the integer value whose correct spelling is closest to <b>number</b>.
+The distance between two spellings is defined to be the number of characters in one
+of the spellings that would need to be changed to a different character in order
+to make them match, where matching is case sensitive. Two spellings of different lengths are considered 
+to be infinitely far apart.
+<p>
+The method should return -1 if there is more than one value that is closest to <b>number</b>.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Speller</td></tr><tr><td class="statText">Method:</td><td class="statText">value</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int value(String number)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>number</b> will contain between 1 and 20 characters inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>number</b> will be between ASCII 33 and ASCII 126 inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"forty-two"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 42</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"FORTY-TWO"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   "forty-two" and " fifty-two" are both a distance of 8 from "FORTY-TWO".
+   No other number is closer.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"eightene"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 18</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   "eighteen" is 2 misspelled letters away from "eightene"</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"fi"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">All numbers are infinitely far away, since there are no 2 character strings that represent numbers.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

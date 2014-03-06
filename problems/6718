@@ -1,0 +1,36 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>Consider the following two player word game, which slightly resembles Mastermind:</p>
+
+<p>The first player secretly picks a word and tells its length to the second player.
+The second player then guesses a word, and the first player responds by telling whether
+the number of correct letters in correct positions is even or odd. This is repeated
+until the second player can figure out what the first player's picked word is (see the examples
+for clarifications).</p>
+
+<p>Create a class WordGuessingGame containing the method possibleWords which takes
+a String[] <b>even</b> containing all the guessed words so far where
+the correct number of letters in the correct position were even, and a String[]
+<b>odd</b> containing all the guessed words so far where the correct
+number of letters in the correct position were odd. The method should return a
+String[] containing all possible words that the first player
+could have picked. The String[] should be sorted in alphabetical order.</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">WordGuessingGame</td></tr><tr><td class="statText">Method:</td><td class="statText">possibleWords</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] possibleWords(String[] even, String[] odd)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Note that in this problem, "word" means any possible combination of uppercase letters ('A'-'Z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If no words match the information given, return an empty String[] (see example 3).</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>even</b> and <b>odd</b> will together contain between 1 and 18 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements in <b>even</b> and <b>odd</b> will be of the same length (between 1 and 9 characters, inclusive).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All characters in even and odd will be uppercase letters ('A'-'Z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The number of words matching the given information will be at most 100.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"DAY","MAY","BUY"}</pre></td></tr><tr><td class="statText"><pre>{"SAY","DUE","TEN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"SEE" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+0 or 2 letters are correct and at their correct location in the words "DAY" and "MAY". This tells us that the first letter can't be 'D' or 'M' because then one of the words would have an odd number of letters correct. "DAY" and "SAY" tell us that the first letter is either 'D' or 'S'. Therefore, the first letter must be 'S'.
+</p>
+<p>
+So the first letter is wrong in "MAY" and "BUY", and because they have the same parity, the second letter can't be 'A' or 'U'. Knowing that 'D' is not the first letter and 'U' is not the second, we can conclude from the word "DUE" that the last letter must be 'E'. Finally the word "TEN" tells us that the second letter must be 'E' because the other two letters in the word are wrong.
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"QMNA","UQJE"}</pre></td></tr><tr><td class="statText"><pre>{"HUIF","QMZB","QEHJ","LBJL"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"HBHB",
+"HBZJ",
+"HEZL",
+"LEIB",
+"LEZF",
+"LUHB",
+"LUZJ",
+"QBIA",
+"QBNF",
+"QUNL" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NODSN"}</pre></td></tr><tr><td class="statText"><pre>{"MOOTN","CRXXU","SREQR","DEREX","HOYGF","CDLCP","ZTDOC","STEEB"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"CODER" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{}</pre></td></tr><tr><td class="statText"><pre>{"AB","BC","CA"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

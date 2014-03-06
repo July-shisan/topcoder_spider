@@ -1,0 +1,59 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">The Order of the Hats is a magical organization. One of their duties is to teach students how to cast spells. There are N spells numbered from 0 to N-1. As an aid for the students, the teachers have prepared a spell chart. The chart lists suggestions on the order in which to study the spells. (This is explained in more detail below.)<br><br>
+
+
+
+Recently, some changelings broke into the Order's spell archive and messed up the spell chart. You are given a String[] <b>spellChart</b> containing the new, messed-up state of the spell chart. Each character of each element of <b>spellChart</b> is either 'Y' or 'N'. The students will come to study soon. They will interpret the chart in the following way: If <b>spellChart</b>[i][j] is 'Y' then spell i must be learned before spell j. <br><br>
+
+As the chart is now messed up, it may be impossible to learn all the spells in the chart because of cycles in the requirements. Your task is to repair the given chart. Determine the minimum number of changes needed to remove all the cycles in the requirements. In a single change, you may either change some character <b>spellChart</b>[i][j] from 'Y' to 'N', or change some character from 'N' to 'Y'. <br><br></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">OrderOfTheHats</td></tr><tr><td class="statText">Method:</td><td class="statText">minChanged</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int minChanged(String[] spellChart)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>spellChart</b> will contain between 1 and 20 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>spellChart</b> will contain N characters, where N is the number of elements in <b>spellChart</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>spellChart</b> will be either 'Y' or 'N'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Y"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This spell chart contains a spell that should be learned before itself. The students would never be able to learn such a spell.
+We can remove this cyclic dependency by changing the 'Y' to 'N'.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYN",
+ "NNY",
+ "NNN"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This spell chart is already OK.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYN",
+ "NNY",
+ "YNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Changing any single 'Y' to a 'N' will fix this spell chart.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYYYYYY",
+ "YNYYYYY",
+ "YYNYYYY",
+ "YYYNYYY",
+ "YYYYNYY",
+ "YYYYYNY",
+ "YYYYYYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 21</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NNNY",
+ "YNYN",
+ "YNNN",
+ "YYYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"YYYYYNNYYYNYNNNNYNNY",
+ "NYNNNYYNNYNYYYNYYYYY",
+ "NNYNNNYYNNNNNNYYYYNY",
+ "YYNYNYYNNYYYNYNNNYYY",
+ "NYYNNYNYNYNNNNYYYNYN",
+ "NNNNNYYNYNNYYYYNYYYN",
+ "YNYNYYNNNYNNNNNYNNYY",
+ "NYYYYNYNYNNYNNYNNNNY",
+ "YYYYNYYNNYYYNNYNNYNY",
+ "YYYYYYNYNYNYNNNNNNYN",
+ "NNYYYYYNNNYNNNYNNNNY",
+ "YYNNNYNYYNYYNYYNYNYN",
+ "NNYNYYNYYNYYNYNYNYYN",
+ "YNYNYYNYNNNYNYNYYNYY",
+ "NNYNNNYYYYYYYYYYYNYY",
+ "YYYYYNYYNYYYYYNNYNNN",
+ "NYYYYYYYYNNNNNYYNNYN",
+ "YNNYNNNYYNYYYNYNYYYY",
+ "YYNNYNYYYNYYNNNYYNNY",
+ "NNYNYNYYYNYYNYNNYNNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 79</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"YYNYNN",
+ "YNYNNY",
+ "YYYYNN",
+ "NNNYNN",
+ "NNNYNN",
+ "YNYNYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">7)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NNNNNNNNNN",
+ "NNNNNNNNNN",
+ "NNNYNNYNNN",
+ "NNNYNNYNNN",
+ "NNNYNNYNNN",
+ "NNNNNNNNNN",
+ "NNYYYYYYNN",
+ "NNYNNNNYNN",
+ "NNNYYYYNNN",
+ "NNNNNNNNNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

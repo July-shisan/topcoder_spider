@@ -1,0 +1,29 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">The Cantor Set is an important mathematical construction devised by the 
+19th century mathematician Georg Cantor. It is defined as follows:
+<p>
+Start with the set of real numbers from 0.0 to 1.0 inclusive, which is denoted by [0.0, 1.0]. Then</p><ol><li>  
+At step 1, remove the open middle third of [0.0, 1.0] ("open" means not including
+ its endpoints).</li><li>
+At step 2, remove the open middle thirds of the 2 remaining intervals.</li><li>...</li><li>
+At step k, remove the open middle thirds of the 2^(k-1) remaining intervals.</li><li>...</li></ol>
+
+The Cantor Set is the part of [0.0, 1.0] that is not removed by this process.
+<p>
+We want software to help determine if a given number is in the Cantor Set.  Create
+a class CantorSet that contains a method removed that is given a String <b>value</b> that
+represents a real number in [0.0, 1.0] and returns the step at which <b>value</b> is
+removed in the above construction. If it is not removed before step 1,000,000 
+return 0 indicating that it is highly likely that it is in the Cantor Set.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CantorSet</td></tr><tr><td class="statText">Method:</td><td class="statText">removed</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int removed(String value)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>value</b> will contain between 2 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The first character in <b>value</b> will be '.'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All characters in <b>value</b> after the first will be digits '0'-'9'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>".200"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    .2 is in the middle third of the lower third of [0.0, 1.0] so it is 
+    removed in step 2.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>".74928"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 14</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>".975"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   This number is in the Cantor Set.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

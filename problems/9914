@@ -1,0 +1,33 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+We have a deck of cards. Each of the cards is either black or red. We will use the character <tt>B</tt> to represent a black card and the character <tt>R</tt> for a red card.
+By listing the cards from top to bottom of the deck we get a String <b>deck</b>.
+</p>
+
+<p>
+We now want to insert all the cards into a new deck. 
+Initially, the new deck is empty. We will now process the cards in the old deck from top to bottom.
+When processing the card that corresponds to character i of <b>deck</b>, take it from the old deck and insert it into the new deck in such a way that exactly <b>above</b>[i] cards are above it after the insertion.
+</p>
+
+<p>
+Write a method that takes the String <b>deck</b> and int[] <b>above</b>, and returns the new deck encoded as a String in the same way as <b>deck</b>.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">DeckRearranging</td></tr><tr><td class="statText">Method:</td><td class="statText">rearrange</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String rearrange(String deck, int[] above)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>deck</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>deck</b> will be either '<tt>B</tt>' or '<tt>R</tt>' (uppercase letter B or R).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The number of elements in <b>above</b> will be equal to the number of characters in <b>deck</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For each i, element i in <b>above</b> will be between 0 and i, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"BRBRR"</pre></td></tr><tr><td class="statText"><pre>{0, 0, 1, 0, 3}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "RRBRB"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+The order of cards in the old deck, top to bottom, is: B, R, B, R, R.
+This is the order in which we will process them. 
+</p>
+<p>
+Below we list the new deck, top to bottom, after each of the insertions. 
+The most recently inserted card is given in uppercase, the other cards are in lowercase.
+</p>
+<ol><li>B</li>
+<li>Rb</li>
+<li>rBb</li>
+<li>Rrbb</li>
+<li>rrbRb</li>
+</ol>
+Therefore the new deck is RRBRB.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"RRRRRR"</pre></td></tr><tr><td class="statText"><pre>{0,1,2,0,1,3}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "RRRRRR"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No matter how you rearrange a deck with 6 red cards, you will always get a deck with 6 red cards.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"RBRRBRBB"</pre></td></tr><tr><td class="statText"><pre>{0,1,2,3,4,5,6,7}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "RBRRBRBB"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In this example each card is placed at the bottom of the new deck. The result is the same deck as the old one.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"RBRRBRBB"</pre></td></tr><tr><td class="statText"><pre>{0,0,0,0,0,0,0,0}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "BBRBRRBR"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In this example, each card is placed on the top of the new deck. The result is the old deck turned upside down.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"RBRRBRBB"</pre></td></tr><tr><td class="statText"><pre>{0,1,0,0,4,0,6,7}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "RRRRBBBB"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In this example, we place each red card on the top, and each black card on the bottom. The result is a deck with all red cards on the top.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,24 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+John is obsessed with security.
+He is writing a letter to his friend Brus and he wants nobody else to be able to read it.
+He uses a simple substitution cipher to encode his message.
+Each letter in the message is replaced with its corresponding letter in a substitution alphabet.
+A substitution alphabet is a permutation of all the letters in the original alphabet.
+In this problem, the alphabet will consist of only lowercase letters ('a'-'z').
+</p>
+
+<p>
+For example, if John's message is "hello" and his cipher maps 'h' to 'q', 'e' to 'w', 'l' to 'e' and 'o' to 'r', the encoded message will be "qweer".
+If the cipher maps 'h' to 'a', 'e' to 'b', 'l' to 'c' and 'o' to 'd', then the encoded message will be "abccd".
+</p>
+
+<p>
+Given the original message, determine the cipher that will produce the encoded string that comes earliest alphabetically.
+Return this encoded string.
+In the example above, the second cipher produces the alphabetically earliest encoded string ("abccd").
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TheEncryptionDivTwo</td></tr><tr><td class="statText">Method:</td><td class="statText">encrypt</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String encrypt(String message)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If A and B are two Strings of the same length, then A comes earlier alphabetically than B if it contains a smaller character at the first position where the Strings differ.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>message</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>message</b> will contain only lowercase letters ('a'-'z').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"hello"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "abccd"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example from the statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"abcd"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "abcd"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here the message is encoded to itself.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"topcoder"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "abcdbefg"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"encryption"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "abcdefghib"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

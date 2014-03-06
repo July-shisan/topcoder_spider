@@ -1,0 +1,104 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">The ACME company is building a factory complex in your county which has k cities. The factory complex is split into <b>n</b> part-building factories and <b>m</b> part-assembling factories. Each factory must be built in a different city of your county because of polution regulations, and there must be a direct road between each building factory and each assembling factory.
+<br><br>
+You will be given a String[] <b>county</b>. Character j of element i of <b>county</b> will be 'Y' if there is a direct road between city i and city j, and 'N' if there isn't. All roads are bidirectional. Return the number of ways the factory complex can be built in this county. Two factory complexes are different if the set of cities containing part-building factories is different in one than the other, or the set of cities containing part-assembling factories is different in one than the other</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">FactoryCounting</td></tr><tr><td class="statText">Method:</td><td class="statText">count</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long count(int n, int m, String[] county)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> and <b>m</b> will each be between 1 and 8, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>county</b> will have between 1 and 30 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>county</b> will have exactly k characters, where k is the number of elements in <b>county</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>county</b> will be either 'Y' or 'N'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Character i of element i will always be 'N'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For all i and j, where i != j, character i of element j of <b>county</b> will be equal to character j of element i.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>{
+ "NYY",
+ "YNY",
+ "YYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here we have the following possibilities:
+<p>
+part-building factories: {1, 2}<br>
+part-assembling factories: {3}
+</p>
+<p>
+part-building factories: {1, 3}<br>
+part-assembling factories: {2}
+</p>
+<p>
+part-building factories: {2, 3}<br>
+part-assembling factories: {1}
+</p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>{
+ "NYYYYN",
+ "YNYYNY",
+ "YYNYYY",
+ "YYYNYN",
+ "YNYYNY",
+ "NYYNYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 32</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>{
+ "NNNNYN",
+ "NNNYNN",
+ "NNNNYN",
+ "NYNNYN",
+ "YNYYNN",
+ "NNNNNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are a total of 4 direct roads.  For each direct road connecting cities a and b, we have two options: we can either put a part-building factory in city a and a part-assembling factory in city b, or vice versa.  Therefore, we have a total 8 possible factory complexes.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>{
+ "NYYYNYYNYY",
+ "YNYYYYYYYN",
+ "YYNYYYNYYN",
+ "YYYNYYNYNY",
+ "NYYYNYYYYY",
+ "YYYYYNYYNY",
+ "YYNNYYNYYN",
+ "NYYYYYYNNY",
+ "YYYNYNYNNY",
+ "YNNYYYNYYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 308</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>7</pre></td></tr><tr><td class="statText"><pre>8</pre></td></tr><tr><td class="statText"><pre>{
+ "NYYYYYNYYYYYNYYYYYYYYYYNYYYYYY",
+ "YNYYYYYYYYYYYYYYYNYYYYYYYYYYYY",
+ "YYNYYYYYYYYYYYYNYNYYYNNYYYNYYY",
+ "YYYNYYYYYYYYNYYYYYNYYYYYYNYYYY",
+ "YYYYNYYYYYYYYYNYYYYYYYYYYYNYYY",
+ "YYYYYNYYNYYYYNYYYYYNYYYYYYYNNY",
+ "NYYYYYNYYYYYYYYYNYYYYNYYYYYYYY",
+ "YYYYYYYNYYYYYYYYYYYYYYYYYYYYYY",
+ "YYYYYNYYNYYYYNNYYYYYYYYNYYNNYY",
+ "YYYYYYYYYNYYNYYNYNYYNYYYYYYYYY",
+ "YYYYYYYYYYNYYNYYYYYYYNYYYYYYYY",
+ "YYYYYYYYYYYNYYYYNYYYYYYYYYYYYY",
+ "NYYNYYYYYNYYNYYYNYNYYYYYNYYYYY",
+ "YYYYYNYYNYNYYNYYYYYYYYYYYNYYNY",
+ "YYYYNYYYNYYYYYNNNYYYYYYYYYYYYY",
+ "YYNYYYYYYNYYYYNNYNYYYYYNNYYYNY",
+ "YYYYYYNYYYYNNYNYNNYYNYYYYYNYNY",
+ "YNNYYYYYYNYYYYYNNNYYNYYYYYYYYY",
+ "YYYNYYYYYYYYNYYYYYNNYYNYYYYYYY",
+ "YYYYYNYYYYYYYYYYYYNNYYYYYYYYYY",
+ "YYYYYYYYYNYYYYYYNNYYNYYYYYNYYY",
+ "YYNYYYNYYYNYYYYYYYYYYNYYYYYYYY",
+ "YYNYYYYYYYYYYYYYYYNYYYNYYYYYYY",
+ "NYYYYYYYNYYYYYYNYYYYYYYNYYYYYY",
+ "YYYYYYYYYYYYNYYNYYYYYYYYNYYYYY",
+ "YYYNYYYYYYYYYNYYYYYYYYYYYNYYYY",
+ "YYNYNYYYNYYYYYYYNYYYNYYYYYNYYY",
+ "YYYYYNYYNYYYYYYYYYYYYYYYYYYNYY",
+ "YYYYYNYYYYYYYNYNNYYYYYYYYYYYNN",
+ "YYYYYYYYYYYYYYYYYYYYYYYYYYYYNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 522891760</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>8</pre></td></tr><tr><td class="statText"><pre>8</pre></td></tr><tr><td class="statText"><pre>{
+ "NYYYYYYYYYYYYYYYYYYYYYYYYYYYYY",
+ "YNYYYYYYYYYYYYYYYYYYYYYYYYYYYY",
+ "YYNYYYYYYYYYYYYYYYYYYYYYYYYYYY",
+ "YYYNYYYYYYYYYYYYYYYYYYYYYYYYYY",
+ "YYYYNYYYYYYYYYYYYYYYYYYYYYYYYY",
+ "YYYYYNYYYYYYYYYYYYYYYYYYYYYYYY",
+ "YYYYYYNYYYYYYYYYYYYYYYYYYYYYYY",
+ "YYYYYYYNYYYYYYYYYYYYYYYYYYYYYY",
+ "YYYYYYYYNYYYYYYYYYYYYYYYYYYYYY",
+ "YYYYYYYYYNYYYYYYYYYYYYYYYYYYYY",
+ "YYYYYYYYYYNYYYYYYYYYYYYYYYYYYY",
+ "YYYYYYYYYYYNYYYYYYYYYYYYYYYYYY",
+ "YYYYYYYYYYYYNYYYYYYYYYYYYYYYYY",
+ "YYYYYYYYYYYYYNYYYYYYYYYYYYYYYY",
+ "YYYYYYYYYYYYYYNYYYYYYYYYYYYYYY",
+ "YYYYYYYYYYYYYYYNYYYYYYYYYYYYYY",
+ "YYYYYYYYYYYYYYYYNYYYYYYYYYYYYY",
+ "YYYYYYYYYYYYYYYYYNYYYYYYYYYYYY",
+ "YYYYYYYYYYYYYYYYYYNYYYYYYYYYYY",
+ "YYYYYYYYYYYYYYYYYYYNYYYYYYYYYY",
+ "YYYYYYYYYYYYYYYYYYYYNYYYYYYYYY",
+ "YYYYYYYYYYYYYYYYYYYYYNYYYYYYYY",
+ "YYYYYYYYYYYYYYYYYYYYYYNYYYYYYY",
+ "YYYYYYYYYYYYYYYYYYYYYYYNYYYYYY",
+ "YYYYYYYYYYYYYYYYYYYYYYYYNYYYYY",
+ "YYYYYYYYYYYYYYYYYYYYYYYYYNYYYY",
+ "YYYYYYYYYYYYYYYYYYYYYYYYYYNYYY",
+ "YYYYYYYYYYYYYYYYYYYYYYYYYYYNYY",
+ "YYYYYYYYYYYYYYYYYYYYYYYYYYYYNY",
+ "YYYYYYYYYYYYYYYYYYYYYYYYYYYYYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1871589827250</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

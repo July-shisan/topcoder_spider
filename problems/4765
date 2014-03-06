@@ -1,0 +1,60 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+We have a big digital wall clock, but while hanging it on
+the wall, we mounted it upside-down by mistake (i.e. the
+display was rotated 180 degrees). To make
+things worse, the clock has a complicated mechanism inside
+that makes it go slow when it is upside-down, needing <b>secsPerMinute</b>
+seconds to advance a minute instead of 60 seconds. Note that
+even at the moment we hang the clock on the wall, this is not
+necessarily set at the correct time. The
+clock itself only displays hours (from 00 to 23) and
+minutes (from 00 to 59), including any leading zeros.
+</p>
+<p>
+You are given a String <b>currentTime</b> in
+the form "HH:MM", representing the actual (correct) time at
+which the clock is mounted on the wall, and a
+String <b>clockTime</b> also in the form
+"HH:MM", representing the time the clock is
+displaying when it is mounted on the wall
+(the time that we would see if the clock was mounted
+normally, not upside-down).
+Assume in both times that the seconds part is 0, i.e.,
+the time just changed to <b>currentTime</b> and the
+clock just advanced to <b>clockTime</b>.
+You are to compute the first time after the clock is mounted on
+the wall that the clock shows the correct time
+(i.e., the display as shown now that the clock is mounted upside-down
+represents the correct time) and return
+this as a String in the form "HH:MM", including
+any leading zeros. If the clock never shows the correct time,
+return an empty String.
+</p>
+<p>
+When the clock time is read upside-down, the digits
+0, 1, 2, 5 and 8 are the same, 6 is shown as 9 and
+9 is shown as 6. The digits 3, 4 and 7 do not show
+any meaningful digits when read upside-down.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">SlowDigitalClock</td></tr><tr><td class="statText">Method:</td><td class="statText">firstCorrectTime</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, String, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String firstCorrectTime(String currentTime, String clockTime, int secsPerMinute)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">You may assume that when the clock display is updated to the next minute, this update takes zero time.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>currentTime</b> and <b>clockTime</b> will have exactly 5 characters each, in the form "HH:MM". "HH" will be an integer between 00 and 23, inclusive (including any leading zeros), "MM" will be an integer between 00 and 59, inclusive (including any leading zeros).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>secsPerMinute</b> will be between 61 and 1000, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"01:11"</pre></td></tr><tr><td class="statText"><pre>"21:09"</pre></td></tr><tr><td class="statText"><pre>61</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "01:12"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+At the beginning, the clock shows the upside-down time "60:12"
+(of course, this is not a valid time, so this can not be the correct time).
+After 61 seconds, the clock will advance to 21:10, which is read upside-down as:
+01:12. Since the correct time at the beginning was 01:11:00, now (61 seconds later)
+the time is 01:12:01, so (ignoring the seconds) the clock shows the correct time
+"01:12".
+</p>
+<p>
+The figure below shows the normal clock display when it shows 21:10.
+</p>
+<p>
+<img src="http://www.topcoder.com/contest/problem/SRM_260/2110.png"></p>
+<p>
+The figure below shows the same display upside-down (now showing 01:12).
+</p>
+<p>
+<img src="http://www.topcoder.com/contest/problem/SRM_260/2110_inverse.png"></p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"01:10"</pre></td></tr><tr><td class="statText"><pre>"21:09"</pre></td></tr><tr><td class="statText"><pre>61</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "01:12"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In 120 seconds, the time is 01:12, but the clock still shows 21:10 (which upside-down reads 01:12).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"12:50"</pre></td></tr><tr><td class="statText"><pre>"05:21"</pre></td></tr><tr><td class="statText"><pre>125</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "12:50"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The clock already shows the correct time at the beginning (and this remains correct for the next 60 seconds), so <b>currentTime</b> is returned.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"05:46"</pre></td></tr><tr><td class="statText"><pre>"23:50"</pre></td></tr><tr><td class="statText"><pre>240</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "11:10"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Be careful when changing days (after 23:59 comes 00:00).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"12:34"</pre></td></tr><tr><td class="statText"><pre>"23:45"</pre></td></tr><tr><td class="statText"><pre>197</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "02:11"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The first time that the clock displays the correct time may occur after several days.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"12:34"</pre></td></tr><tr><td class="statText"><pre>"23:45"</pre></td></tr><tr><td class="statText"><pre>300</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: ""</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In this case, the clock never shows the correct time.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"00:00"</pre></td></tr><tr><td class="statText"><pre>"00:01"</pre></td></tr><tr><td class="statText"><pre>86</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "01:22"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

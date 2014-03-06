@@ -1,0 +1,40 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>You have built an above-ground pool and you want to know how much water it will hold.  The pool structure is built out of stacks of cubes aligned on a grid.  <b>layout</b> gives an overhead view showing the height of the cubes in each position of the grid.  Here is an example pool:</p>
+
+<pre>
+    16661
+    61116
+    16661
+</pre>
+
+<p>This pool can hold a total of 15 units of water: 5 units on each of the 3 middle grid locations.  After that, any water added to the middle would flow out over the walls (the grid locations of height 6), and any water added to the walls or corners would flow out onto the surrounding ground.  When it can, water will always flow to areas of lower height, and no water will "stand" on surfaces such as the pool walls shown here.  Water cannot flow through diagonals, so it won't leak out of the middle via the corners.  The ground surrounding the pool is at height 0 and can absorb an infinite amount of water.  Return the total number of water units that can be held by the pool.</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">PoolFiller</td></tr><tr><td class="statText">Method:</td><td class="statText">getCapacity</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int getCapacity(String[] layout)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>layout</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>layout</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>layout</b> will be the same length.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>layout</b> will be a digit between '1' and '9', inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"16661",
+"61116",
+"16661"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 15</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"999999",
+"955119",
+"955119",
+"999999"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 48</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This pool has high walls, with a shallow end on the left and a deeper end on the right.  The shallow end has a capacity of 4*4=16, and the deep end has a capacity of 8*4=32.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"111111111",
+"115111611",
+"131516161",
+"115111611",
+"111111111"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In this case, we have two separate mini-pools.  The one on the right holds 5 units, and the one on the left holds 2 (any more than 2 would leak out of the left side).  </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"1111111111111",
+"1555555555551",
+"1511111111151",
+"1511199911151",
+"1511192911151",
+"1511199911151",
+"1511111111151",
+"1555555555551",
+"1111111111111"
+}
+
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 151</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Now we have a small, tall pool in the middle of a larger pool.  The main pool holds 36*4=144 units.  The pool in the middle holds 9-2=7 units.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

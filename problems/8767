@@ -1,0 +1,77 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+You have trained 3 mice to solve a maze.
+They know the maze well, and are capable of running from any point to any other point in the maze following the shortest path possible, provided that a path exists between those two points.
+If at any point a mouse can go in multiple directions that will all result in the same shortest distance to its end point, it will choose among them with equal probability.
+</p>
+
+<p>
+The maze is defined on a 2D grid of squares, where each square is either an open space or a wall.
+It will be given as a String[] <b>maze</b>,
+and will contain exactly 1 of each of the following 6 characters: 'a', 'A', 'b', 'B', 'c', and 'C'.
+These characters represent open spaces, and also define the starting and ending points for each mouse.
+Mouse A runs from 'a' to 'A', mouse B runs from 'b' to 'B', and mouse C runs from 'c' to 'C'.
+Each of the other characters in <b>maze</b> will be either '#' (a wall) or '.' (an open space).
+Mice may not run off the sides of the maze.
+</p>
+
+<p>
+The mice do not like each other.
+In fact, if in the course of running the maze, two mice ever meet,
+they will fight to the death.
+It takes a mouse 1 second to run from the center of one open space
+to the center of a horizontally or vertically adjacent open space.
+Two mice "meet" if they ever attempt to occupy the center of the same open space at the same time,
+or if they move in opposite directions between the same two adjacent open spaces at the same time.
+</p>
+
+<p>
+You do not want this to happen.
+You want all three mice to run a different path through the same maze,
+and you may start the mice any integer number of seconds apart (including 0 seconds), in any order.
+The mice do not enter the maze until you start them, and you remove a mouse from the maze immediately after it reaches its destination square.
+You must preselect the starting times for all three mice before the first mouse begins.
+That is, you cannot wait to see which path one mouse follows before deciding when to start another.
+Return the smallest possible total time in seconds
+(from the time the first mouse starts its path to the time the last mouse finishes)
+such that there is no chance of any mice meeting in the maze.
+If it is impossible for all 3 mice to reach their destination, return -1.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">IncompatibleMice</td></tr><tr><td class="statText">Method:</td><td class="statText">totalTime</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int totalTime(String[] maze)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>maze</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>maze</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>maze</b> will have the same length.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>maze</b> will be fomatted as described in the problem statement.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "########",
+  "###a####",
+  "##...###",
+  "#b...B##",
+  "##...###",
+  "###A#cC#",
+  "########" }
+
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The lengths of the 3 paths are 4, 4, and 1.  If you start mice A and B at the same time, they will meet where their paths cross.  However if you delay one of them by 1 second, they will miss each other.  Mouse C is not a factor and can be started anytime between 0 and 4 seconds after the first mouse.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "A##.##B",
+  ".......",
+  "b#####a",
+  "#.c.C.#" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 15</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here, an optimal solution is to start mouse B 7 seconds after mouse A.  After 7 seconds, mouse A will be between the 'A' and 'b' characters.  Mouse B starts at this time one square below.  One second later (after a total of 8 seconds), mouse A has moved on to its destination square, and mouse B has moved between the 'A' and the 'b'.  It will then take 7 more seconds for mouse B to complete its path.  Again, mouse C is not a factor.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "##.#...#.##",
+  "##...#...##",
+  "a..#...#..A",
+  "##...#...##",
+  "b..#...#..B",
+  "##...#...##",
+  "c..#...#..C",
+  "##...#...##",
+  "##.#...#.##" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 16</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Each mouse has 6 possible paths to its destination, all of length 14.  All mice could potentially pass through the center square of the maze in the middle of their path.  Therefore, they must all start at different times.  If you start one mouse 1 second after another, and the third mouse 1 second after that, they will finish in a total of 16 seconds without any possibility of conflict.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "....b....",
+  ".........",
+  "..a......",
+  ".........",
+  "c.......C",
+  ".........",
+  "......A..",
+  ".........",
+  "....B...." }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "aB........Ab.cC" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 20</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Mice A and B each have a path of length 10, but you cannot start one until the other has completely finished.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "...a...",
+  ".#####.",
+  "Bc...bC",
+  "###.###",
+  "###A###" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 13</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Unfortunately, we must select the starting times of mice before the experiment, so we will not be able to let the first mouse A run and see which way will it choose.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ ".a.A.#...",
+  ".b...#.B.",
+  ".c.C.#..." }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

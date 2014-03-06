@@ -1,0 +1,37 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">There are N cells in a row.
+The cells are numbered 0 through N-1 from left to right.
+Magical Girl Riena wants to give magical powers to all the cells by painting all of them using magic colors.
+Riena starts at time 0 in cell 0.
+She can do three types of actions:
+<ul><li>She can wait in her current cell for as long as she wants.</li>
+<li>She may move to an adjacent cell. The move takes 1 unit of time.</li>
+<li>She may paint an adjacent cell. Painting the cell takes 1 unit of time. (Note that she cannot paint the cell she currently stands in, only the adjacent ones.)</li>
+</ul>
+There is one additional restriction: Riena cannot enter a freshly painted cell until the paint dries.
+You are given a int[] <b>dryingTime</b> with N elements.
+For each i, <b>dryingTime</b>[i] is the time needed for the paint in the cell i to dry after Riena <i>finished</i> painting the cell.
+Once cell i has already been painted, Riena is not allowed to <i>start moving</i> to cell i before the paint in cell i gets dry.
+<br>
+For example, suppose that Riena is currently in cell 3 and we have <b>dryingTime</b>[2]=7.
+At time 12 Riena starts painting the adjacent cell 2.
+She will finish painting the cell at time 12+1 = 13.
+The paint in the cell will be dry at time 13+7 = 20.
+Therefore, the earliest time Riena can be in cell 2 again is 21.
+(At time 20 she can start moving from cell 3 to cell 2, and the move takes 1 unit of time.)
+<br>
+Riena wants to paint all N cells, and she wants to finish painting as quickly as possible.
+She may paint the cells in any order she likes.
+Compute and return the earliest possible time when Riena can finish painting the last cell.
+(Note that the return value you are trying to minimize is the moment when Riena finishes painting, not the moment when the paint dries.)</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ColorTheCells</td></tr><tr><td class="statText">Method:</td><td class="statText">minimalTime</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int minimalTime(int[] dryingTime)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>dryingTime</b> will contain between 2 and 7 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>dryingTime</b> will be between 1 and 100,000, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{2, 2, 3}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">One of the optimal solutions:
+<ul><li>At time 0, Riena starts moving from cell 0 to cell 1.</li>
+<li>At time 1, she reaches cell 1 and starts painting cell 0.</li>
+<li>At time 2, she finishes painting cell 0 and starts painting cell 2. The paint in cell 0 starts drying.</li>
+<li>At time 3, Riena finishes painting cell 2. The paint in cell 2 starts drying. Riena now has to wait because she already painted both adjacent cells and she cannot move to either of them yet.</li>
+<li>At time 4, cell 0 becomes dry and Riena starts moving from cell 1 to cell 0.</li>
+<li>At time 5, Riena reaches cell 0 and starts painting cell 1.</li>
+<li>At time 6, Riena finishes painting cell 1 and she is done. (Also, cell 2 is now dry and cell 1 will be dry at time 8, but we don't care about them any more.)</li>
+</ul></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1, 2, 100, 1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{33, 58, 21, 44}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 26</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{35198, 26281, 72533, 91031, 44326, 43178, 85530}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 26287</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

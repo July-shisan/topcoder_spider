@@ -1,0 +1,52 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A Company that Makes Everything (ACME) has entered the surface mining business. They bought a rectangular field which is split into cells, with each cell having a profit value. A mine is a non-empty rectangular region, and the profit of a mine is equal to the sum of the values of all its cells. ACME wants to extract ore from three different non-overlapping mines. You are to choose these mines to maximize the total profit. 
+<br><br>
+You are given a String[] field where each character represents the profit value of a single cell. Characters 'a' to 'z' correspond to the numbers 0 through 25 and characters 'B' to 'Z' correspond to numbers -1 through -25. The jth char in the ith element of field is the profit value of the cell at row i, column j.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ThreeMines</td></tr><tr><td class="statText">Method:</td><td class="statText">maximumProfit</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int maximumProfit(String[] field)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>field</b> will contain between 1 and 30 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>field</b> will contain between 1 and 30 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of <b>field</b> will be from the set 'a'..'z' and 'B'..'Z'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>field</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>field</b> must contain at least 3 cells.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"bbbb",
+"bBBB",
+"BBbb",
+"BBBB"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">One of the optimal solutions is the following:
+One mine contains all cells in the first row, the second mine contains the cell (1, 0), and the third mine contains the cells (2, 2) and (2, 3).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"cfCBDCbcdZb"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 14</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A single row example.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"d", "c", "B", "m", "Z", "h", "g", "B", "z", "G", "H", "b", "Y"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 54</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A single column example.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"hBhh", 
+"BBBB",
+"BBBB", 
+"hBhh", 
+"hBhh"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 62</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This test has only one solution.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"BB", 
+"BB"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">It is possible for the maximum possible profit to be negative.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"ZcabcaacacabcbbbcababacaccbZaa",
+"acaaccccacbccbaaccabaccaacbZbc",
+"bcbaacbcbbccbbcbabbbbaZcbcbccb",
+"cccacbabccbZbcbabaacbbZcbacbab",
+"cacbabbcabbabbcacbcbbcaacaabbc",
+"bacZcacaaccbabbcccccabcaacbaca",
+"cbcccacabcabacaccacaZbbcbcacbb",
+"cZbbbcaacbaacaabZcaccbcZccbbab",
+"Zcababaacbbbbccbcbbaccacacbbcc",
+"cZcccaaabbcbcbccccbcbaabbbccbb",
+"bbcaacacabccababacbccacccbbaba",
+"cccbbcaZabccacabbccccabbabbbab",
+"bbbacbccbbcaabaaabccbcaabcacaa",
+"cbbababbccccbcccbaacacccaabaac",
+"aaccaccaccbabbccaaaacbacccacca",
+"bbbcabcabZZcabcabbaacZbaaabaZb",
+"aaabbabcabaaacbcccccbbcabcccbc",
+"bbbaccbacacaccbbaccabacbbbaaac",
+"acaaacccbabbccbcbabbcbaaaccabb",
+"bcaaaaabcbabaaabccacccbaacbbbc",
+"bZcbcbcccaabccaabbccbababbbcca",
+"cbbbbcccabcabcbacaaaaabbbbbcac",
+"ccbbcbacacbbcacacbaabcbbacbaba",
+"cbbbaabaabbbbaccabbcbcaccaaaac",
+"abZcabaacbbcacbaaabccbabacacaa",
+"aabccacbabaacaccccbbbbcccccaca",
+"aabcbaaacbabcaccbaabbbabbabbca",
+"ababcabaccaaaacccacbcbcabacbcb",
+"bcaaaacabcabbbaccccccacabccacb",
+"cbbabbbccaaaaacbccaabcbbccbacc"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 671</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

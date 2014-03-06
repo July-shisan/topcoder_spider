@@ -1,0 +1,40 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Little Romeo likes cosmic amoebas a lot. He has a colony of all kinds of amoebas. Recently he received a rectangular table as a gift from his mother. He decided to place one of his amoebas on it. The table is a grid of square 1x1 cells, and each cell is occupied by either matter or antimatter. The usual shape of a cosmic amoeba is a convex set of cells (see explanation below). Romeo can place it on the table as long as every cell of the table is either completely covered by part of the amoeba or completely uncovered, and no part of the amoeba lies outside of the table. It is a well-known fact that cosmic amoebas cannot lie on top of matter, so every cell of the table covered by the amoeba must only contain antimatter. <br><br>
+A set of cells is called <i>connected</i> if there exists a path between each two cells from the set which satisfies the following restrictions:
+<ul><li>All cells in the path belong to this set.</li>
+<li>Each pair of neighboring cells in the path shares a common edge.</li>
+</ul>
+A set is called <i>convex</i> if it is satisfies the following conditions:
+<ul><li>It is connected.</li>
+<li>If any two cells in the set lie in the same row then all cells in that row between them also belong to the set.</li>
+<li>If any two cells in the set lie in the same column then all cells in that column between them also belong to the set.</li>
+</ul><p>You are given a String[] <b>table</b> containing only lowercase hexadecimal digits.  Numbers 0-9 are represented by characters '0'-'9', and numbers 10-15 are represented by characters 'a'-'f'.
+Each digit in <b>table</b> represents a 2x2 section of the table.  For each digit <b>table</b>[i][j], let n be its 4-digit binary representation.  From this, you can determine the contents of the following cells:</p>
+<p>
+row 2*i, column 2*j: n[0] <br>
+row 2*i, column 2*j+1: n[1] <br>
+row 2*i+1, column 2*j: n[2] <br>
+row 2*i+1, column 2*j+1: n[3] <br>
+where 0 represents antimatter, and 1 represents matter.  For example, if <b>table</b>[0][0] = '5', then its 4-digit binary representation is "0101" (bits are numerated from right to left), and that section of the table looks like this: </p>
+<pre>
+      |  column 0  |  column 1  |
+------|------------|------------|
+row 0 |   matter   | antimatter |
+------|------------|------------|
+row 1 |   matter   | antimatter |
+------|------------|------------|
+</pre>
+Now Romeo wonders how many ways there are to place a single amoeba on the table. Return this number modulo 1000000007. Two ways are considered different if and only if there is a table cell that is covered in one but not the other.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">AmoebaDivOne</td></tr><tr><td class="statText">Method:</td><td class="statText">count</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int count(String[] table)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>table</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>table</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>table</b> will have the same length.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>table</b> will be a hexadecimal digit ('0'-'9', 'a'-'f').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 13</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here are all 13 configurations, where X represents the amoeba:
+<pre>
+X. .X .. .. XX .. X. .X XX XX X. .X XX
+.. .. X. .X .. XX X. .X X. .X XX XX XX
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"84","21"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 72</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here the table looks like this ('.' stands for cell with antimatter and '#' stands for cell with matter):
+<pre>
+....
+.##.
+.##.
+....
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"e","e"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"00"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 90</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

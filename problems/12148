@@ -1,0 +1,44 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>Fox Jiro came to a flower shop to buy flowers.
+The flowers in the shop are arranged in some cells of a rectangular grid.
+The layout of the grid is given as a String[] <b>flowers</b>.
+If the j-th cell of the i-th row of the grid contains a flower, then the j-th character of the i-th element of <b>flowers</b> will be 'F'.
+(All indices in the previous sentence are 0-based.)
+If the particular cell is empty, the corresponding character will be '.' (a period).</p>
+<br><p>In order to buy flowers, Jiro has to draw a rectangle on this grid and buy all the flowers which lie inside the rectangle.
+Of course, the sides of the rectangle must be on cell boundaries.
+(Therefore, the sides of the rectangle will necessarily be parallel to the coordinate axes.)</p>
+<br><p>Jiro wants to buy as many flowers as possible.
+Unfortunately, he cannot select the entire grid.
+Eel Saburo came to this shop before Jiro.
+Saburo has already drawn his rectangle.
+Saburo's rectangle contains just a single cell: the <b>c</b>-th cell of the <b>r</b>-th row of the grid.
+(Again, both indices are 0-based.)
+Jiro's rectangle may not contain this cell.</p>
+<br><p>You are given the String[] <b>flowers</b> and the ints <b>r</b> and <b>c</b>.
+Return the maximum possible number of flowers Jiro can buy in this situation.</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">FoxAndFlowerShopDivTwo</td></tr><tr><td class="statText">Method:</td><td class="statText">theMaxFlowers</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int theMaxFlowers(String[] flowers, int r, int c)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>flowers</b> will contain R elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">R will be between 2 and 10, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>flowers</b> will contain C characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">C will be between 1 and 10, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>flowers</b> will be either 'F' or '.'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>r</b> will be between 0 and R - 1, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>c</b> will be between 0 and C - 1, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"F.F",
+ ".F.",
+ ".F."}</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The forbidden cell is the one in the middle. Jiro can buy two flowers by drawing a rectangle that contains the entire first row.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"F..",
+ "...",
+ "..."}</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are no flowers Jiro can buy.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".FF.F.F",
+ "FF...F.",
+ "..FF.FF"}</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"F",
+ ".",
+ "F",
+ "F",
+ "F",
+ ".",
+ "F",
+ "F"}</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".FFF..F...",
+ "FFF...FF.F",
+ "..F.F.F.FF",
+ "FF..F.FFF.",
+ "..FFFFF...",
+ "F....FF...",
+ ".FF.FF..FF",
+ "..F.F.FFF.",
+ ".FF..F.F.F",
+ "F.FFF.FF.F"}</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 32</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

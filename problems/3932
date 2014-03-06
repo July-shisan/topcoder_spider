@@ -1,0 +1,39 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">An object can float only if it is less dense than water. A floating object 
+displaces an amount of water equal
+to its weight. We are given an object (that may or may not float) and a 
+container of water and we 
+want to calculate the water level that will result when we place the object
+in the container. All weights are given in grams, all lengths are given in
+centimeters, and a cubic centimeter of water weighs one gram.
+<p>
+The container is a tall rectangular box (with no top) with
+horizontal dimensions <b>wid</b> x <b>len</b>. It is originally filled with water
+to a height of <b>waterHt</b>.  The object is a rectangular solid that is 1 x 1 x <b>objHt</b>.
+The weight of the object is <b>objWt</b>. When placed in the water, the object
+remains upright whether it floats or rests on the bottom.
+</p><p>
+Create a class Buoyancy that contains a method waterLevel that is given
+<b>wid</b>, <b>len</b>, <b>waterHt</b>, <b>objWt</b>, and <b>objHt</b> and that returns the height of the water 
+after the object has been placed in the container.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Buoyancy</td></tr><tr><td class="statText">Method:</td><td class="statText">waterLevel</td></tr><tr><td class="statText">Parameters:</td><td class="statText">double, double, double, double, double</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double waterLevel(double wid, double len, double waterHt, double objWt, double objHt)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The returned value must be accurate to within a relative or absolute value of 1E-9</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>wid</b> and <b>len</b> will be between 1.2 and 10.0 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>waterHt</b>, <b>objWt</b>, and <b>objHt</b> will be between 0.1 and 500.0 inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>100</pre></td></tr><tr><td class="statText"><pre>150</pre></td></tr><tr><td class="statText"><pre>80</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 120.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   The object ends up on the bottom of the container, completely submerged.
+   The final height of the water must be 120 since the total volume of the 
+   water and submerged object is 2*2*100 + 80 and that is equal to  the new
+   water level times the container's cross-section, 120*2*2.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>100</pre></td></tr><tr><td class="statText"><pre>150</pre></td></tr><tr><td class="statText"><pre>140</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 133.33333333333334</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   This object also sinks, but does not get completely submerged. In the 
+   final situation, the total volume of the water and the part of the
+   object that is submerged is 2*2*100 + 1*1*133.33 and that is equal to
+   2*2*133.3. </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>100</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>160</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 102.5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   This object is very buoyant. It floats, with 10 units of its length submerged,
+   displacing 10 grams of water.
+   The total volume of the water and the submerged part of the object is then
+   2*2*100 + 10 and that is equal to 2*2*102.5.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

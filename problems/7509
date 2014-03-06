@@ -1,0 +1,56 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+You and your friends have recently started playing the game of Mafia.  In this game, play goes as follows:
+</p><ul><li>The players are divided into two groups at the start of the game:  the Mafia, and villagers.  The identities of the Mafia are unknown to the villagers.</li>
+<li>When there are an even number of players, it is the "night".  During the night, the Mafia secretly select a person who is removed from the game.</li>
+<li>When there are an odd number of players, it is the "day".  During the day, the players select the most guilty person and remove that person from the game.</li>
+<li>If at any time, there are no Mafia remaining in the game, the game is over, and the villager team wins.</li>
+<li>If at any time, there are no villagers remaining in the game, the game is over, and the Mafia team wins.</li>
+</ul>
+After having played the game for a while, you are the only member of the Mafia team remaining, and now you need to figure out a way to win. You will be given <b>guilt</b>, the current guilt of each villager; this is a number that is used to decide which villager is removed during the day (as described below).  You will also be given a String[] <b>responses</b>.  The game will play as follows:
+<ul><li>During the night, the Mafia selects a person to remove from the game.  This causes all of the players' guilts to change.  If player i was removed, then the j-th character in <b>responses</b>[i] corresponds to the change in guilt for player j.  Specifically, if this is a lowercase letter ('a'-'z'), the guilt is decreased by 1-26, respectively.  If this character is an uppercase letter ('A'-'Z'), the guilt is increased by 1-26, respectively.  See example 0 for clarification.</li>
+<li>During the day, the players select the player with the highest guilt among those players still in the game.  This player is removed from the game.  If there is a tie among guilty people, the player with the lowest index is removed from the game.  Players removed from the game during the day do not change the players' guilts.</li>
+</ul>
+You are player <b>playerIndex</b> (indexed from 0), and you want to survive as long as possible. Return the maximum number of nights that will occur in this game, assuming that you play optimally. See the examples for clarification.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Mafia</td></tr><tr><td class="statText">Method:</td><td class="statText">play</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], String[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int play(int[] guilt, String[] responses, int playerIndex)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>guilt</b> will contain between 1 and 16 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>guilt</b> will be between 300 and 800, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>responses</b> will contain the same number of elements as <b>guilt</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>responses</b> will contain exactly N characters, where N is the number of elements in <b>guilt</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>responses</b> will be a letter ('A'-'Z', 'a'-'z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>playerIndex</b> will be between 0 and N-1, inclusive, where N is the number of elements in <b>guilt</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{500,500,500,500}</pre></td></tr><tr><td class="statText"><pre>{"ADCb",
+ "bADC",
+ "CbAD",
+ "DCbA"}</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">With 4 players, this game starts out at night.  If you remove player 0 from the game, the guilts of the living players will now be:
+<pre>
+Player | Guilt
+-------+------
+  1    |  504
+  2    |  503
+  3    |  498
+</pre>
+The villagers will remove player 1 (you) from the game, causing you to lose.  Alternatively, by removing player 2 from the game first, the guilts will be:
+<pre>
+Player | Guilt
+-------+------
+  0    |  503
+  1    |  498
+  3    |  504
+</pre>
+The villagers will remove player 3 from the game, and during the next night the Mafia will remove player 0 from the game to win.  Thus, there are two nights in the game.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{500,500,500,500,501}</pre></td></tr><tr><td class="statText"><pre>{"ADCbE",
+ "bADCE",
+ "CbADE",
+ "DCbAE",
+ "EDCbA"}</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">With an odd number of players, the game starts during the day.  The most guilty player is player 4, so he is removed from the game.  Play then proceeds as in example 0.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{500,500,500,500,500,500}</pre></td></tr><tr><td class="statText"><pre>{"cccccc",
+ "BBBBBB",
+ "dddddd",
+ "FFFFFF",
+ "GGGGGG",
+ "hhhhhh"}</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Due to tie-breaks, you will be removed from the game during the first day, with only 1 night.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{501, 499, 499, 499}</pre></td></tr><tr><td class="statText"><pre>{"ABCD",
+ "zfAg",
+ "ESAS",
+ "atsm"}</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{800}</pre></td></tr><tr><td class="statText"><pre>{"E"}</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{643,457,642,710,595,631,566,634}</pre></td></tr><tr><td class="statText"><pre>{"APOSIfjf",
+ "ewFOJWeJ",
+ "jElLLoSS",
+ "GeOSSmff",
+ "zWSTsOuu",
+ "fmfOPPsa",
+ "MSoPPWXn",
+ "FeojwFAM"}</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

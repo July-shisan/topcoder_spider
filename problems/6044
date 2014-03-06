@@ -1,0 +1,40 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Each character in <b>maze</b> will be '.' or 'X' denoting a free
+square or an obstacle, respectively.  Starting on some free square, and moving
+exclusively through free squares, your goal is to leave the confines
+of the <b>maze</b> through its left edge.  Each move you make is either 'U', 'D', 'L', or
+'R' denoting up, down, left, and right respectively.  Moving upward
+decreases which element of <b>maze</b> you are in, while moving
+leftward decreases which character you are at in a particular
+element.  Nothing happens (your position does not change) if you move into an
+obstacle, or try to leave the maze other than leftward.  Similarly, nothing happens if you issue a move
+and you have already left the maze (you already won).
+<br><br>
+Your friend has decided to challenge you by trying to solve the
+<b>maze</b> with the monitor off.  This means you do not know which
+position you have started in or if you have won.  
+Return the shortest sequence of moves that will solve
+the <b>maze</b> regardless of your initial position.  If there are multiple shortest solutions, return the one that occurs first lexicographically.
+If there is no solution, return an empty string.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BlindMazeSolve</td></tr><tr><td class="statText">Method:</td><td class="statText">getSolution</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String getSolution(String[] maze)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>maze</b> contains between 1 and 5 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>maze</b> will contain between 1 and 4 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>maze</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>maze</b> will be '.' or 'X'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>maze</b> will contain at least one '.'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".X"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "L"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Left will win immediately, so we return "L".</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"..",
+".."
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "LL"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Regardless of your initial position, moving left twice will result in winning.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"X..",
+"X..",
+"XXX"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: ""</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No way to win here.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"X...",
+"XXX.",
+"X...",
+"X.XX",
+"..XX"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "RRDDLLDDLL"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".XX."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: ""</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">If you happen to be in the rightmost position, you cannot win.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"XXX.",
+"..X.",
+"X...",
+"XX..",
+"X..."
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "DDDRULULULL"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,33 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">The turnpike has mile markers at each mile along its length, with 0 at the western end
+and <b>pikeLength</b> at the eastern end (so it is exactly <b>pikeLength</b> miles long). 
+We locate our service
+plazas at various mile markers. Each plaza
+can service traffic going in either direction, so we never place multiple 
+plazas at the same mile marker. We also never place a plaza at either end of 
+the turnpike. 
+<p>
+The locations of all the existing plazas are given in a int[] <b>plazas</b>. We are
+interested in locating <b>n</b> new plazas along the turnpike in such a way as to
+minimize the longest segment of turnpike that has no plaza. Given <b>pikeLength</b>, <b>n</b>, 
+and <b>plazas</b>, determine the best locations for the <b>n</b> new plazas and return the length of the
+longest unserviced segment after the new plazas have been added.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Turnpike</td></tr><tr><td class="statText">Method:</td><td class="statText">unserviced</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int unserviced(int pikeLength, int n, int[] plazas)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>pikeLength</b> will be between 100 and 1000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> will be between 1 and 100, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>plazas</b> will contain between 0 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The elements in <b>plazas</b> will be distinct values between 1 and <b>pikeLength</b>-1, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> plus the number of elements in <b>plazas</b> will be less than <b>pikeLength</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1000</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>{300,701,800}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 300</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   The new plaza should be placed in the segment between 300 and 701. But the best
+   we can do is to make the longest unserviced segment be of length 300, since the
+   segment from 0 to 300 will still be unserviced. 
+
+
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1000</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>{200,701,800}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 251</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   We should place the new plaza in the segment between 200 and 701. We can reduce
+   the longest unserviced segment to 251 by placing it either at 450 or at 451.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>800</pre></td></tr><tr><td class="statText"><pre>7</pre></td></tr><tr><td class="statText"><pre>{622,411,201,555,755,82}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 70</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The seven new plazas can be distributed along the turnpike so
+that the longest unserviced segments are from 201 to a new
+plaza at 271, from 271 to 341 (also a new plaza), and from
+341 to the existing plaza at 411.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

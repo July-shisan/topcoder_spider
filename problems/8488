@@ -1,0 +1,30 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+A marble game is played on a board, each cell of which may contain a number of marbles. Your task is to collect as many marbles as possible using a robot on the board.
+The layout of the board is given in the String[] <b>board</b>, where each cell is marked with a digit ('0'-'9'), '#', 'U' or 'L'.
+Each digit represents the number of marbles in that cell.  There are no marbles in cells that are not marked with digits.</p>
+<p>
+The robot starts in the upper left cell, which is the first character of the first element of <b>board</b>.  During each turn, it can move according to the following rules:
+</p><ul><li>The robot can't move out of the board.</li>
+<li>The robot can't enter a cell marked '#'.</li>
+<li>The robot may move either right or down one step from any cell.</li>
+<li>The robot may move up one step from a cell marked 'U'.</li>
+<li>The robot may move left one step from a cell marked 'L'.</li>
+</ul><p>
+When the robot enters a cell for the first time, it collects all the marbles from that cell.  That cell will no longer contain any marbles for the rest of the game.  Return the maximum total number of marbles the robot can collect.
+</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">MarbleCollectionGame</td></tr><tr><td class="statText">Method:</td><td class="statText">collectMarble</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int collectMarble(String[] board)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain between 1 and 20 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of  <b>board</b> will contain between 1 and 20 characters. inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of  <b>board</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain only digits ('0'-'9'), '#', 'U' and 'L'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The first character of the first element of <b>board</b> will not be '#'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"7"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0",
+ "8"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"264",
+ "3LL"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 15</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The best route is right, right, down, left and left.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"8U4L9",
+ "0183U",
+ "U8#38",
+ "2158#",
+ "L65U7"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 44</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"039LLLU",
+ "953348#",
+ "0L87#29",
+ "718#4#U",
+ "594U196"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 55</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

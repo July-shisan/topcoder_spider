@@ -1,0 +1,106 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Teddy and Tracy are on school vacation, so they bought a puzzle book.  Within the book, they discovered an interesting game called Solitaire Chess.
+<br><br>
+The game of Solitaire Chess is played on an 8 x 8 board consisting of 64 unit squares. The rows are labeled '1' through '8' from bottom to top, and the columns are labeled 'a' through 'h' from left to right. Squares are notated as "cr" (quotes for clarity), where c is the column and r is the row.
+<br><br>
+There are two kinds of pieces in Solitaire Chess: the <i>knight</i>, represented by the character 'N', and the <i>pawn</i>, represented by the character 'P'. The legal moves of each piece are shown in the diagrams below.
+<br><br><pre>
+  abcdefgh      abcdefgh
+8 ........    8 ........
+7 ..X.X...    7 ........
+6 .X...X..    6 ........
+5 ...N....    5 ...X....
+4 .X...X..    4 ...P....
+3 ..X.X...    3 ........
+2 ........    2 ........
+1 ........    1 ........
+
+  Knight          Pawn
+</pre>
+<br><br>
+In a single move, a knight can move to any one of the eight 'X' squares appearing in the left diagram, while a pawn can move to the single 'X' square appearing in the right diagram. All moves are relative to the current piece location and apply for all piece locations, provided the piece doesn't move outside the board. Moreover, a square may contain more than one piece.
+<br><br>
+If a pawn moves to the eighth row, it is immediately promoted into a knight. The promotion itself doesn't count as a move.
+<br><br>
+You are given two String[]s <b>board1</b> and <b>board2</b>. <b>board1</b> is the initial layout of the board and <b>board2</b> is the desired final layout of the board. Character j of element i of <b>board1</b> and <b>board2</b> is 'P' if a pawn is located on the corresponding square, 'N' if a knight is located on the corresponding square, or '.' if the corresponding square is empty.
+<br><br>
+Return the minimum number of moves required to transform the initial layout into the desired layout, or -1 if it is impossible.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">SolitaireChess</td></tr><tr><td class="statText">Method:</td><td class="statText">transform</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int transform(String[] board1, String[] board2)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Elements 0 through 7 of both <b>board1</b> and <b>board2</b> correspond to rows '8' through '1', respectively.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Characters 0 through 7 of each element of both <b>board1</b> and <b>board2</b> correspond to columns 'a' through 'h', respectively.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board1</b> and <b>board2</b> will each contain exactly 8 elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of both <b>board1</b> and <b>board2</b> will contain exactly 8 characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of both <b>board1</b> and <b>board2</b> will be one of '.', 'P', and 'N'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Element 0 of both <b>board1</b> and <b>board2</b> will not contain the character 'P'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board1</b> and <b>board2</b> will each contain at most 20 pieces as described above.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"...N....",
+ "........",
+ "........",
+ "........",
+ "........",
+ "........",
+ "...P....",
+ "........"}</pre></td></tr><tr><td class="statText"><pre>{"...N....",
+ ".....N..",
+ "........",
+ "........",
+ "........",
+ "........",
+ "........",
+ "........"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Move the pawn on d2 to d8 (6 moves), promoting it into a knight. Then move one of the knights on d8 to f7.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"........",
+ "........",
+ "...P....",
+ "........",
+ "........",
+ "........",
+ "........",
+ "........"}</pre></td></tr><tr><td class="statText"><pre>{"........",
+ "........",
+ "........",
+ "........",
+ "........",
+ "........",
+ "........",
+ "...P...."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A pawn cannot move backward.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"........",
+ "........",
+ "........",
+ "........",
+ "........",
+ "........",
+ "........",
+ ".N...P.."}</pre></td></tr><tr><td class="statText"><pre>{"........",
+ "........",
+ "........",
+ "........",
+ "........",
+ "........",
+ ".....P..",
+ ".......N"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">One optimal solution is:
+<ol><li>Move the pawn on f1 to f2.</li>
+<li>Move the knight on b1 to c3.</li>
+<li>Move the knight on c3 to e2.</li>
+<li>Move the knight on e2 to g3.</li>
+<li>Move the knight on g3 to h1.</li>
+</ol></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"N.......",
+ "........",
+ "N.......",
+ "........",
+ "........",
+ "........",
+ "........",
+ "........"}</pre></td></tr><tr><td class="statText"><pre>{"........",
+ "..N.....",
+ "........",
+ "........",
+ "........",
+ "........",
+ "........",
+ "........"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"..N.N...",
+ "PPP....N",
+ "..N..N..",
+ "N...N...",
+ "...NNNNN",
+ "N.......",
+ "...NN...",
+ "..N...N."}</pre></td></tr><tr><td class="statText"><pre>{"..N....N",
+ "P....N..",
+ "..N..N..",
+ "N..NNN.N",
+ "N.....N.",
+ "N.N.....",
+ "...NNN..",
+ ".....N.N"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 23</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

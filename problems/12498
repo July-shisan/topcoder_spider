@@ -1,0 +1,37 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">John has a sequence of digits.
+He and Brus will now play with the sequence.
+<br><br>
+
+First, John will repeat the following operation <b>k</b> times:
+He will choose two different positions in the sequence, and swap the elements at those positions.
+(John makes each choice uniformly at random.
+That is, each time John chooses two positions, each pair of different positions has the same probability of being chosen.)
+<br><br>
+
+Afterwards, Brus will randomly choose a non-empty contiguous subsequence of John's sequence.
+He will compute the sum of all elements in the chosen subsequence and he will write it down on a piece of paper.
+(Brus also makes his choice uniformly at random.
+That is, each possible contiguous subsequence has the same probability of being chosen.)
+<br><br>
+
+You are given a String[] <b>sequence</b>.
+Concatenate all elements of <b>sequence</b> to get the string s.
+For each i, the i-th character of s is a digit ('0'-'9') representing the digit at index i in John's original sequence.
+<br><br>
+
+Return the expected value of the sum Brus writes down.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TheSwapsDivOne</td></tr><tr><td class="statText">Method:</td><td class="statText">find</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double find(String[] sequence, int k)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The returned value must be accurate to within a relative or absolute value of 1E-9.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>sequence</b> will contain between 2 and 47 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>sequence</b> will contain between 1 and 47 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>sequence</b> will consist of only decimal digits ('0'-'9').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>k</b> will be between 1 and 1,000,000, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"4", "77"}</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are three equally likely swaps John might make.
+If the first two elements are swapped, John will get the sequence {7,4,7}.
+Then Brus chooses one of the six possible subsequences.
+Their sums are 7, 4, 7, 11, 11 and 18.
+Thus the expected value is (7 + 4 + 7 + 11 + 11 + 18)/6 = 29/3.
+<br><br>
+If the first and the last elements are swapped, the sequence becomes {7,7,4}, and the subsequence sums are 7, 7, 4, 14, 11 and 18.
+The expected value in this case is (7 + 7 + 4 + 14 + 11 + 18)/6 = 61/6.
+<br><br>
+When the last two elements are swapped, the sequence doesn't change and the expected value is equal to 61/6 as well.
+Finally, the overall expected value is equal to (29/3 + 61/6 + 61/6)/3 = 10.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"4", "77"}</pre></td></tr><tr><td class="statText"><pre>47</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"1", "1", "1", "1", "1", "1", "1"}</pre></td></tr><tr><td class="statText"><pre>1000000</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"572685085149095989026478064633266980348504469", "19720257361", "9", "69"}</pre></td></tr><tr><td class="statText"><pre>7</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 98.3238536775161</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

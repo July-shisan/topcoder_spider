@@ -1,0 +1,59 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Some square tiles have been selected from a N x M chessboard,
+building a pattern (not necessarily connected). You have the task of coloring
+some of the selected tiles red and all of the others blue so that the pattern
+composed by the blue tiles is a shifted copy of the
+pattern composed by the red tiles.
+One example is shown in the figure below (the white tiles in the left
+image are the selected tiles, which are colored in the right image).
+</p>
+<p>
+<img src="http://www.topcoder.com/contest/problem/SRM_260/redblue.png"></p>
+<p>
+You will be given a String[] <b>board</b> containing N
+elements, each of them M characters long, with a character '#'
+indicating that the tile in the corresponding position belongs to the
+selected tiles (i.e., to be colored, the white tiles in the example
+above), a character '.' indicating a tile that shall be ignored
+(the gray tiles in the example above).
+Return a String[] representing the red pattern,
+after 
+cropping the image to the smallest rectangle that contains all the red tiles.
+Use the character '#' to denote tiles painted in red, '.' to denote other
+tiles. If there are several ways to color the tiles so that two
+equal patterns are created (one in red, one in blue), use the solution
+in which the red pattern has the smallest width (horizontal
+distance from the leftmost red tile to the rightmost red tile). If there
+are several ways with the smallest width, use the solution among them
+with the smallest height (vertical distance from the uppermost red tile
+to the lowermost red tile).
+If there is still a tie, use the one among the tied ones that comes first
+lexicographically after you concatenate the Strings representing
+the solution ('#' comes before '.').
+If there is no solution, return an empty String[].
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">AreaSplit</td></tr><tr><td class="statText">Method:</td><td class="statText">halfPattern</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] halfPattern(String[] board)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Since the red and blue patterns are translated copies of the same pattern, the returned value would be the same if we asked for the blue pattern (since we crop the returned value to the width/height of the resulting pattern).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of the returned String[] shall have the same length (the width of the red pattern).</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will have between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of <b>board</b> will be either '#' or '.'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There will be at least one '#' character in at least one element of <b>board</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".........",
+ ".##......",
+ "..#.##...",
+ ".#####...",
+ ".#######.",
+ ".#..###..",
+ "....#....",
+ "........."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"##..", ".#..", "####", "###.", "#..." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"##",
+ "##"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"#", "#" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here, two different half-patterns are possible: the horizontal {"##"} (width 2, height 1) and the vertical {"#", "#"} 
+(width 1, height 2). We return the one with the smallest width.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".#..#",
+ "##.##"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {".#", "##" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Note that the pattern need not be connected.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".#.##",
+ "####.",
+ "#...."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"#.##", "#..." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Even if the pattern is connected, the solution may not be connected.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".###.",
+ "##.#.",
+ "..###"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">We can not split this pattern into two equal patterns.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".#.",
+ "#.#",
+ ".#."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"#.", ".#" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here, both {"#.", ".#"} and {".#", "#."} are possible solutions. We have to return the first
+of these solutions (if we concatenate the two Strings
+of that solution we get "#..#" which comes lexicographically
+before ".##.", the concatenation of the Strings
+of the second solution).</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

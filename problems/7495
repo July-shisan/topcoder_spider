@@ -1,0 +1,47 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You are given a <b>table</b> of characters.  Words are found in <b>table</b> by taking steps up, down, left, or right (up and down refer to row changes, while left and right refer to column changes).  The string of letters stepped on during this process is said to be <i>found</i>.  If <b>word</b> is found in <b>table</b>, then all of the positions stepped on while finding <b>word</b> are considered pairwise connected.  Each occurrence of <b>word</b> that is found is dealt with separately.  Connectivity is transitive: if position x connects to y, and position y connects to z, then positions x and z are connected.  Return the number of distinct connected components in <b>table</b> (a connected component is a maximal collection of pairwise connected positions). To simplify matters, the characters in <b>word</b> will be distinct.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">WordConnect</td></tr><tr><td class="statText">Method:</td><td class="statText">numComponents</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int numComponents(String word, String[] table)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>word</b> will contain between 1 and 26 lowercase letters ('a'-'z'), inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>word</b> will be distinct.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>table</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>table</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>table</b> will be a lowercase letter ('a'-'z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>table</b> will contain the same number of letters.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"top"</pre></td></tr><tr><td class="statText"><pre>{
+"toptoptop",
+"toptoptop"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are 6 separate components. Each is numbered below:
+<pre>
+111222333 
+444555666
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"top"</pre></td></tr><tr><td class="statText"><pre>{
+"aaaaaaaaaaa",
+"aaaopopoaaa",
+"aaatototaaa",
+"aaaopopoaaa",
+"aaaaaaaaaaa"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 41</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here there is one large central component, and a surrounding sea of single character components.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"topcader"</pre></td></tr><tr><td class="statText"><pre>{
+"topcader",
+"oaaaaaae",
+"paaaaaad",
+"caaaaaaa",
+"aaaaaaac",
+"daaaaaap",
+"eaaaaaao",
+"redacpot"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 37</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A single component lines the outer edge, surrounding a sea of single character components.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"topcader"</pre></td></tr><tr><td class="statText"><pre>{
+"topcoder",
+"oaaaaaae",
+"paaaaaad",
+"caaaaaaa",
+"aaaaaaac",
+"daaaaaap",
+"eaaaaaao",
+"redocpot"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 50</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"a"</pre></td></tr><tr><td class="statText"><pre>{
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 220</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

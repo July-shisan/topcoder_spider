@@ -1,0 +1,33 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">As a serious strategy-games player, you decided to solve one of the most common problems - attacking your
+opponent's building (barracks), which constantly produces new soldiers.<br><br>
+
+Before the attack, you've got <b>myUnits</b> soldiers. In a single round, each soldier can either kill one of your opponent's soldiers or inflict 1 hit point of damage to the barracks.<br>
+
+Your opponent doesn't have any soldiers initially.  However, his barracks has <b>barHp</b> hit points and produces <b>unitsPerRound</b> soldiers per round.<br><br>
+
+The course of one round:<br>
+1. Each solider from your army either kills one of your opponent's soldiers or inflicts 1 hit point of damage to the barracks.  Each soldier can choose to do something different.  When the barracks loses all of its hit points, it is destroyed. <br>
+2. Your opponent attacks. He will kill k of your soldiers, where k is the number of remaining soldiers he has.<br>
+3. If the barracks are not yet destroyed, your opponent will produce <b>unitsPerRound</b> new soldiers.<br><br>
+
+Your task is to destroy the barracks and kill all your opponent's soldiers. If it is possible, return the minimum number of rounds you need to do this.
+Otherwise return -1.
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BarracksEasy</td></tr><tr><td class="statText">Method:</td><td class="statText">attack</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int attack(int myUnits, int barHp, int unitsPerRound)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>myUnits</b>, <b>barHp</b>, <b>unitsPerRound</b> will each be between 1 and 50, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>11</pre></td></tr><tr><td class="statText"><pre>15</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Round 1:<br>
+- All your soldiers attack the barracks, leaving it with 1 hit point.<br>
+- Your opponent has no soldiers, so he cannot kill any of your soldiers.<br>
+- Your opponent's army increases from 0 soldiers to 15 soldiers.<br><br>
+Round 2:<br>
+- One of your soldiers destroys the barracks. The other nine kill 9 of your opponent's soldiers.<br>
+- Your opponent has 6 soldiers, so he kills 6 of your soldiers.<br>
+- The barracks have been destroyed, so no new soldiers are produced.<br><br>
+Round 3:<br>
+- You have got 4 soldiers, so you decrease your opponent's army to 2 soldiers.<br>
+- Your opponent kills 2 of your soldiers.<br>
+- The barracks have been destroyed, so no new soldiers are produced.<br><br>
+Round 4:<br>
+- You kill 2 remaining soldiers. <br></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>11</pre></td></tr><tr><td class="statText"><pre>12</pre></td></tr><tr><td class="statText"><pre>9</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

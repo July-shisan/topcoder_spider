@@ -1,0 +1,50 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Even though it is June, the city of SnowVille is facing some serious trouble: last night, lots of snow covered all the roads in the city.
+</p>
+<p>
+The road network looks as follows: There are N important places in the city. The places are labeled 0 through N-1. Each road in the city connects two of these places. Each pair of places is connected by at most one road. Each road can contain one or more car lanes. Each road is bidirectional and the number of lanes is the same for both directions.
+</p>
+<p>
+Sadly, all the snow plows except for one were already decommissioned for the summer.
+The one snow plow that is still available is in a depot at place 0.
+</p>
+<p>
+Whenever the snow plow drives along a road, it is able to clean a single lane going in the direction in which it travels.
+Hence if you want to clean an entire road with K lanes going in each direction, the snow plow must drive along this road at least K times in each direction.
+</p>
+<p>
+You are given a String[] <b>roads</b> that describes the road network: 
+If there is no road between places i and j, character j of element i of <b>roads</b> is '<tt>0</tt>'.
+The maximum number of lanes a road can have in each direction is 9.
+If there is a road with k lanes in each direction, character j of element i of <b>roads</b> is '<tt>k</tt>' (that is, '<tt>1</tt>' if there is one lane, '<tt>2</tt>' if there are two lanes, etc.)
+</p>
+<p>
+Traversing a single lane of any single road takes the snow plow exactly one minute. Return the least number of minutes in which the snow plow can clean all lanes on all roads.
+If cleaning all lanes on all roads is impossible, return -1 instead.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">SnowPlow</td></tr><tr><td class="statText">Method:</td><td class="statText">solve</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int solve(String[] roads)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The snow plow is allowed to drive along a lane it already cleared.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The road network does not have to be planar.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The number of places N will be between 2 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>roads</b> will contain exactly N elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>roads</b> will contain exactly N characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of <b>roads</b> will be between '<tt>0</tt>' and '<tt>9</tt>', inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>roads</b> will be symmetric, i.e., for each i and j: character i of element j of <b>roads</b> will be equal to character j of element i of <b>roads</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For each i, character i of element i of <b>roads</b> will be '<tt>0</tt>'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"010000",
+ "101000",
+ "010100",
+ "001010",
+ "000101",
+ "000010"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The important places are connected as follows: 0-1-2-3-4-5. The only optimal solution is for the snow plow to travel from 0 to 5 and back.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"010000",
+ "101000",
+ "010100",
+ "001020",
+ "000201",
+ "000010"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 12</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This time the road between places 3 and 4 has two lanes in each direction. One possible optimal schedule for the snow plow is to visit the places in the order 0,1,2,3,4,5,4,3,4,3,2,1,0, each time using a new lane.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"031415",
+ "300000",
+ "100000",
+ "400000",
+ "100000",
+ "500000"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 28</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This time the snow plow can clean all lanes simply by going back and forth between 0 and each of the neighboring places a suitable number of times.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0100",
+ "1000",
+ "0001",
+ "0010"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There is no way to reach the road 2-3, so clearly there is no solution.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0101",
+ "1001",
+ "0000",
+ "1100"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In this case the road network consists of the roads 0-1, 0-3, and 1-3. It can be cleared for example by doing a circle in one direction (0-1-3-0) followed by a circle in the other direction. Note that place 2 remains unvisited.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

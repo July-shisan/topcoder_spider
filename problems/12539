@@ -1,0 +1,75 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Crow Keith is looking at the goose cage in the zoo.
+The bottom of the cage is divided into a grid of square cells.
+There are some birds sitting on those cells (with at most one bird per cell).
+Some of them are geese and all the others are ducks.
+
+Keith wants to know which birds are geese.
+He knows the following facts about them:
+<ul><li>There is at least one goose in the cage.</li>
+<li>The number of geese is even.</li>
+<li>Each bird within Manhattan distance <b>dist</b> of any goose is also a goose.</li>
+</ul>
+ 
+You are given a String[] <b>field</b> and the int <b>dist</b>.
+The array <b>field</b> describes the bottom of the cage.
+Each character of each element of <b>field</b> describes one of the cells.
+The meaning of individual characters follows.
+<ul><li>The character 'v' represents a cell that contains a bird.</li>
+<li>The character '.' represents an empty cell.</li>
+</ul>
+
+Return the number of possible sets of geese in the cage, modulo 1,000,000,007.
+Note that for some of the test cases there can be no possible sets of geese.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">GooseInZooDivOne</td></tr><tr><td class="statText">Method:</td><td class="statText">count</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int count(String[] field, int dist)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The Manhattan distance between cells (a,b) and (c,d) is |a-c| + |b-d|, where || denotes absolute value. In words, the Manhattan distance is the smallest number of steps needed to get from one cell to the other, given that in each step you can move to a cell that shares a side with your current cell.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>field</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>field</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>field</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of <b>field</b> will be 'v' or '.'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>dist</b> will be between 0 and 100, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"vvv"}</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are three possible sets of positions of geese: "ggd", "gdg", or "dgg" ('g' are geese and 'd' are ducks).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"."}</pre></td></tr><tr><td class="statText"><pre>100</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The number of geese must be positive, but there are no birds in the cage.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"vvv"}</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"v.v..................v............................"
+,".v......v..................v.....................v"
+,"..v.....v....v.........v...............v......v..."
+,".........vvv...vv.v.........v.v..................v"
+,".....v..........v......v..v...v.......v..........."
+,"...................vv...............v.v..v.v..v..."
+,".v.vv.................v..............v............"
+,"..vv.......v...vv.v............vv.....v.....v....."
+,"....v..........v....v........v.......v.v.v........"
+,".v.......v.............v.v..........vv......v....."
+,"....v.v.......v........v.....v.................v.."
+,"....v..v..v.v..............v.v.v....v..........v.."
+,"..........v...v...................v..............v"
+,"..v........v..........................v....v..v..."
+,"....................v..v.........vv........v......"
+,"..v......v...............................v.v......"
+,"..v.v..............v........v...............vv.vv."
+,"...vv......v...............v.v..............v....."
+,"............................v..v.................v"
+,".v.............v.......v.........................."
+,"......v...v........................v.............."
+,".........v.....v..............vv.................."
+,"................v..v..v.........v....v.......v...."
+,"........v.....v.............v......v.v............"
+,"...........v....................v.v....v.v.v...v.."
+,"...........v......................v...v..........."
+,"..........vv...........v.v.....................v.."
+,".....................v......v............v...v...."
+,".....vv..........................vv.v.....v.v....."
+,".vv.......v...............v.......v..v.....v......"
+,"............v................v..........v....v...."
+,"................vv...v............................"
+,"................v...........v........v...v....v..."
+,"..v...v...v.............v...v........v....v..v...."
+,"......v..v.......v........v..v....vv.............."
+,"...........v..........v........v.v................"
+,"v.v......v................v....................v.."
+,".v........v................................v......"
+,"............................v...v.......v........."
+,"........................vv.v..............v...vv.."
+,".......................vv........v.............v.."
+,"...v.............v.........................v......"
+,"....v......vv...........................v........."
+,"....vv....v................v...vv..............v.."
+,".................................................."
+,"vv........v...v..v.....v..v..................v...."
+,".........v..............v.vv.v.............v......"
+,".......v.....v......v...............v............."
+,"..v..................v................v....v......"
+,".....v.....v.....................v.v......v......."}</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 898961330</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,80 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A power series takes the form: <pre>
+  f(x) =  a<sub>0</sub> + a<sub>1</sub>x + a<sub>2</sub>x<sup>2</sup> + a<sub>3</sub>x<sup>3</sup> + ...
+</pre>
+If we had another power series<pre>
+  g(x) =  b<sub>0</sub> + b<sub>1</sub>x + b<sub>2</sub>x<sup>2</sup> + b<sub>3</sub>x<sup>3</sup> + ...
+</pre>
+then we compute the product as follows:<pre>
+  f(x)g(x) = a<sub>0</sub>b<sub>0</sub> + (a<sub>0</sub>b<sub>1</sub> + a<sub>1</sub>b<sub>0</sub>)x + (a<sub>0</sub>b<sub>2</sub> + a<sub>1</sub>b<sub>1</sub> + a<sub>2</sub>b<sub>0</sub>)x<sup>2</sup> + ...</pre>
+More formally, we have <pre>
+   c<sub>k</sub> = sum (i = 0 to k) a<sub>i</sub>b<sub>k-i</sub></pre>
+where c<sub>k</sub> is a coefficient of the power series for the product.
+<br>
+Given the series f(x) you must determine g(x) such that f(x)g(x) = 1 + 0x + 0x<sup>2</sup> + ... 
+The first few a-values will be given in a int[] <b>start</b>.  The remaining a-values will be an infinitely repeating sequence of the terms in <b>repeat</b>.  For example, if <b>start</b> = { 1, 2 } and <b>repeat</b> = { 3, 4, 5 } then the resulting power series is <pre>
+    1 + 2x + 3x<sup>2</sup> + 4x<sup>3</sup> + 5x<sup>4</sup> + 3x<sup>5</sup> + 4x<sup>6</sup> + 5x<sup>7</sup> + ...
+</pre>
+You will return the first <b>n</b> terms of g(x) as a String[] where the first element is b<sub>0</sub>, the second is b<sub>1</sub> and so forth.  Each b<sub>i</sub> should be given in the form "p/q" where p and q are integers with no common factors (other than 1), and q is positive.  If b<sub>i</sub> equals 0, then use the string "0/1".  Neither p nor q should have extra leading zeros, and if p is negative, it should have a single leading '-'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CauchyProduct</td></tr><tr><td class="statText">Method:</td><td class="statText">findInverse</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] findInverse(int[] start, int[] repeat, int n)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>start</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>repeat</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>start</b> will be between -20 and 20, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>repeat</b> will be between -20 and 20, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Element 0 of <b>start</b> will not be 0.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> will be between 1 and 1000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each integer in each element of the return value will be between -100000 and 100000, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1}	</pre></td></tr><tr><td class="statText"><pre>{1}</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"1/1", "-1/1", "0/1", "0/1", "0/1" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1}</pre></td></tr><tr><td class="statText"><pre>{2}</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"1/1", "-2/1", "2/1", "-2/1", "2/1" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1,2}</pre></td></tr><tr><td class="statText"><pre>{3,4,5}</pre></td></tr><tr><td class="statText"><pre>20</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"1/1",
+"-2/1",
+"1/1",
+"0/1",
+"0/1",
+"3/1",
+"-9/1",
+"9/1",
+"0/1",
+"-9/1",
+"18/1",
+"-36/1",
+"45/1",
+"-9/1",
+"-63/1",
+"126/1",
+"-171/1",
+"180/1",
+"-36/1",
+"-333/1" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1,2}	</pre></td></tr><tr><td class="statText"><pre>{3,4,5}</pre></td></tr><tr><td class="statText"><pre>35</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"1/1",
+"-2/1",
+"1/1",
+"0/1",
+"0/1",
+"3/1",
+"-9/1",
+"9/1",
+"0/1",
+"-9/1",
+"18/1",
+"-36/1",
+"45/1",
+"-9/1",
+"-63/1",
+"126/1",
+"-171/1",
+"180/1",
+"-36/1",
+"-333/1",
+"747/1",
+"-927/1",
+"720/1",
+"99/1",
+"-1818/1",
+"3960/1",
+"-4923/1",
+"3123/1",
+"2097/1",
+"-10674/1",
+"20457/1",
+"-24552/1",
+"13464/1",
+"17379/1",
+"-62865/1" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{2,3,4}</pre></td></tr><tr><td class="statText"><pre>{5,6,7}</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"1/2", "-3/4", "1/8", "1/16", "1/32" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{-19,14,-8,-2,-19,12,-4}</pre></td></tr><tr><td class="statText"><pre>{-6,-6,2,14,-5,-18,17,-8,8,
+ -16,-2,-12,11,16,-12,-17,5,
+  1,11,11,0,10,-14,8,1,4,
+ -8,1,-16,16,19,-4,18,4,
+ -11,-15,9,4,-8,10,-5,-9,9,-9,16,10}</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"-1/19", "-14/361", "-44/6859" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

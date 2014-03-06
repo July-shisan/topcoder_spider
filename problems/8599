@@ -1,0 +1,39 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+The king of Absurdistan has become very angry, and thus he has decided to make an evil reform of the road network.
+</p>
+
+<p>
+Currently, the network contains several towns, connected by some one-way and some two-way streets. The king's goal is to change all two-way streets into one-way streets. That is, for each currently present two-way street the king will pick one of the two directions,
+and make the street one-way in the chosen direction.
+</p>
+
+<p>
+To make it even worse, the king has a simple goal he wants to achieve: After the reform the network must be so evil that once someone starts traveling along the roads, he will never be able to return back to the town where he started.
+</p>
+
+<p>
+You will be given the current map as a String[] <b>roads</b>. 
+</p>
+
+<p>
+More precisely, the towns are numbered from 0 to N-1 for some N.
+The j-th character of the i-th element of <b>roads</b> is '<tt>Y</tt>' if there is a direct road that allows us to travel from i to j, otherwise it will be '<tt>N</tt>'.
+Each pair of towns is connected by at most one direct road. If the input contains a '<tt>Y</tt>' both for a i-&gt;j road and for a j-&gt;i road, this means that the road between i and j is currently two-way.
+</p>
+
+<p>
+Write a method that will return
+either "<tt>YES</tt>" or "<tt>NO</tt>" (quotes for clarity), depending on whether the king can achieve his evil goal.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">OneWayStreets</td></tr><tr><td class="statText">Method:</td><td class="statText">canChange</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String canChange(String[] roads)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>roads</b> will contain N elements, where N is between 2 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>roads</b> will contain exactly N characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>roads</b> will be either '<tt>Y</tt>' or '<tt>N</tt>'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For each i the i-th character of the i-th element of <b>roads</b> will be '<tt>N</tt>'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYN","NNY","NNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "YES"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This map contains two roads: 0-&gt;1 and 1-&gt;2. Both roads are already one-way, so the king can't change
+anything.
+However, the map already has the desired property.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYN","YNY","NYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "YES"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This map contains two roads: 0&lt;-&gt;1 and 1&lt;-&gt;2. Both roads are two-way. The king can change them to
+one-way streets 0-&gt;1 and 1-&gt;2, thus creating the situation from the previous example.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYNN","NNYN","YNNY","NNYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "NO"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Roads: 0-&gt;1, 1-&gt;2, 2-&gt;0, and 2&lt;-&gt;3.
+The king may change 2&lt;-&gt;3 either to 2-&gt;3, or to 3-&gt;2.
+Neither of these changes will help him, as people will still be able to leave town 0 and return back
+via the route 0-&gt;1-&gt;2-&gt;0.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NNN","NNN","NNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "YES"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYYYY","YNYYY","YYNYY","YYYNY","YYYYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "YES"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

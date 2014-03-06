@@ -1,0 +1,42 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Cat Taro has a triangle board divided into hexagonal cells. The board contains N rows numbered 0 through N-1 from top to bottom, where the i-th row contains (i+1) hexagonal cells numbered (i,0) through (i,i) from left to right. For example, if N = 4, the board looks like the picture below.
+<br><br><center><img src="http://www.topcoder.com/contest/problem/HexagonPuzzle/hexagon_11.gif"></center>
+<br><br>
+Each cell contains a token. Rabbit Hanako locked some cells so that tokens in those cells can't be moved. You are given a String[] <b>board</b> containing exactly N elements. For all i between 0 and N-1, inclusive, the i-th element of <b>board</b> will contain exactly (i+1) characters. If the j-th character of the i-th element of <b>board</b> is 'X', the cell (i,j) is locked. If the j-th character of the i-th element of <b>board</b> is '.', the cell (i,j) is unlocked.
+<br><br>
+Cat Taro can perform the following operation an arbitrary number of times: Choose three distinct unlocked cells A, B and C. These three cells must have a common vertex. Move the token in cell A to cell B, the token in cell B to cell C and the token in cell C to cell A.
+<br><br><center><img src="http://www.topcoder.com/contest/problem/HexagonPuzzle/hexagon_2.gif"></center>
+<br><br>
+Return the number of different board states he can achieve by performing operations as described above, modulo 1,000,000,007. Two states are different if there exists at least one token that is placed in a different cell in one state than it is in the other state.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">HexagonPuzzle</td></tr><tr><td class="statText">Method:</td><td class="statText">theCount</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int theCount(String[] board)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The i-th (0-indexed) element of <b>board</b> will contain exactly i+1 characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>board</b> will be '.' or 'X'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".",
+ ".X",
+ "X..",
+ ".X.X"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Example from the problem statement.
+<br><br>
+He can achieve the following three board states.
+<br><br><center>
+<img src="http://www.topcoder.com/contest/problem/HexagonPuzzle/hexagon_333.gif"> <img src="http://www.topcoder.com/contest/problem/HexagonPuzzle/hexagon_444.gif"> <img src="http://www.topcoder.com/contest/problem/HexagonPuzzle/hexagon_555.gif"></center></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"X"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Taro can't perform any operation.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".",
+ "..",
+ "...",
+ ".X.."}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 20160</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".",
+ "..",
+ "XXX",
+ "..X.",
+ ".X..X",
+ "XXXX..",
+ "..X.X.X",
+ "..X.XX.."}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 108</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".",
+ "..",
+ "...",
+ "....",
+ ".....",
+ "......",
+ ".......",
+ "........"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 261547992</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

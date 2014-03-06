@@ -1,0 +1,46 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">I go on random bike rides. I go down my driveway, and then at each choice point I flip
+a coin: Heads means to choose the leftmost road, Tails means to choose the rightmost. If there are 3 choices at
+the intersection, I flip twice:  Heads Heads means to take the leftmost, Heads Tails means to choose
+the middle road, Tails Heads means choose the rightmost, and Tails Tails is a "do-over" -- repeat the
+whole process until a choice is made.
+<p>
+The ride continues until the random ride leads me back up my driveway to my house.
+Here is a map of my neighborhood. All of the intersections where a choice can be
+made are shown with a capital letter and my home is marked "Home".</p><pre>
+                                                   
+                                                     
+                          +-----M-----N----------+ 
+                          |     |     |          | 
+                          I-----J-----K----------L 
+                          |     |     |          |
+                    +-----G-----H     |          |
+                    |     |     |     |          |
+              +-----B-----C-----D-----E---+      |
+              |                           |      |
+Home ---------A                           +------F
+              |                                  |
+              |                                  | 
+              +----------------------------------+
+</pre>
+Instead of actually flipping a coin while riding my bike, I record the results of
+a sequence of flips to use during the ride. If during my ride I use them all then I start back at the
+begining of the sequence. Given <b>flips</b> return the number of flips needed to get me
+back home. If I never will get back home, return -1.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">RandomRide</td></tr><tr><td class="statText">Method:</td><td class="statText">flipCount</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int flipCount(String flips)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>flips</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>flips</b> will be 'H' or 'T'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"H"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   Every choice will be left. My first flip is at A where my driveway hits the road. Then
+   I go left around the curve and flip at B. My path continues going clockwise around
+   the perimeter of my neighborhood, visiting intersections 
+A, B, G, I, M, N, L, F, and A at which point my flip sends me home. 
+   Only at intersection G is there a 3-way choice, thus requiring 2 flips. So I used H H HH H H 
+   H H H H using a total of 10 flips at the 9 visited intersections. 
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"HHTTTTTHTHTHHHTT"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 11</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   At A I turn left, go around the curve to B and go left there
+   to G.  This is an intersection where there are 3 choices. I flip TT (do-over), 
+   TT (another do-over), then TH so I turn right and go to C. At C the flip causes me to go right to B where I go "left" (it's really straight, but it is more to the left than the other choice) to A. Now I flip tails so I turn right and am home. The whole trip is A:H, B:H, G:TT TT TH, C:T, B:H, A:T for a total of 11 flips.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"HTH"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 13</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"HHHTHHHHHHTTTHHHHHHHHHTTHHT"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 328</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

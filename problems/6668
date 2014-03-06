@@ -1,0 +1,41 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A road consists of a sequence of circular arcs and straight sections. We want
+to know the straight line distance between the two ends of the road, treating
+the road as a curvy line with negligible width.
+<p>
+The path of the road is specified by a sequence of sections. Each section has a
+length (when travelling along the road) and a radius of curvature (telling the radius of
+a circle that this section follows). A positive radius is a curve to the right, a negative 
+radius indicates that the curve is to the left, and a radius of 0 is a special
+value indicating that this section is straight.
+</p><p>
+Each circular arc section of the road is on the circle that is tangential to the path of
+the road at both its ends. So, for example, if the road is heading northeast when a section
+with radius of curvature equal to -3 begins, the
+center of that section's circle is 3 units to the northwest of that point on the road. 
+</p><p>
+Create a class Curvy that contains a method distance that is given int[]s 
+<b>length</b> and <b>radius</b> and that returns the straight line distance between the two
+ends of the road. The i-th elements of <b>length</b> and <b>radius</b> indicate the information
+for the i-th section as we travel from start to end.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Curvy</td></tr><tr><td class="statText">Method:</td><td class="statText">distance</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double distance(int[] length, int[] radius)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A return value with either an absolute or relative error of less than 1.0E-9 is considered correct.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>length</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>radius</b> will contain the same number of elements as <b>length</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>length</b> will be between 1 and 10,000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>radius</b> will be between -100 and 100, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{100}</pre></td></tr><tr><td class="statText"><pre>{0}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 100.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   This road is a single section which is straight and has a length of 100.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{628}</pre></td></tr><tr><td class="statText"><pre>{-1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.3171858120571965</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    This road is a single section which curves to the left with a radius of
+    curvature of 1. It goes around in a circle on top of itself almost exactly 
+    100 times, so its two ends are pretty close to each other.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{628,50,20,10}</pre></td></tr><tr><td class="statText"><pre>{1,0,0,0}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 79.68684435034164</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    This road is composed of 4 sections. The first section behaves as in the
+    previous example except it curves to the right. Then, in 3 separate straight sections, the road continues in a straight line for 50+20+10 = 80 units.<p>
+
+628 is a bit smaller than (2*PI) * 100. This means that after going 628 units along the circle, the road will be headed nearly toward the starting point.
+The final 3 sections continue on 50+20+10 = 80 units in that direction, so
+the final distance from the start to the end is a little less than 80.
+</p></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

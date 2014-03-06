@@ -1,0 +1,28 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">My friends have accepted an invitation to my party. I need to sort them into
+"popularity order" which means that  
+the ones with more popular first names
+are earlier on the list. In case of ties, I'll list the ones who replied
+earlier to my invitation earlier in my popularity order. (The popularity of
+a first name is equal to how many of my friends have the same first name.)
+<p>
+I have a String[] <b>reply</b> that lists the names in order of their reply. The k-th
+element is the k-th one who replied to the invitation. Each name is given as the first name, followed by a single space, followed by the last name, all in uppercase letters.
+Given <b>reply</b> return a String[] containing the names from <b>reply</b> in the desired order.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Popularity</td></tr><tr><td class="statText">Method:</td><td class="statText">sort</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] sort(String[] reply)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>reply</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>reply</b> will contain between 3 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>reply</b> will contain only uppercase letters ('A'-'Z') and exactly one space, neither leading nor trailing.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"DON XI","EAGER TOPLEASE","BJ SMITH","BJ JONES","BJ BJ","DON SMITH","EAGER SMITH"} </pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"BJ SMITH",
+"BJ JONES",
+"BJ BJ",
+"DON XI",
+"EAGER TOPLEASE",
+"DON SMITH",
+"EAGER SMITH" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+    "BJ" is the most popular name with 3 occurrences as a first name. "EAGER" and
+    "DON are tied with 2 occurrences each. Within the 3 occurrence names they are listed
+    in the same order as they replied. This is followed by the 2 occurrence names
+    in the same order as they replied.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BOB JONES", "BOB ADAMS", "BOBBY ADAMS", "BOB ADAMS"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"BOB JONES", "BOB ADAMS", "BOB ADAMS", "BOBBY ADAMS" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">BOB is more popular than BOBBY. Note that I have two friends with the same name and they must both appear in the popularity order.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"FRED EVANS","AL BAKER","CAL ADAMS","ED FARMER","AL ADAMS","CAL DETROIT"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"AL BAKER", "CAL ADAMS", "AL ADAMS", "CAL DETROIT", "FRED EVANS", "ED FARMER" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">AL and CAL are tied for most popular with ED and FRED tied at a lower popularity level. So the AL's and CAL's are listed first in the same order as they appear in <b>reply</b>, followed by ED and FRED, also in their original order.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

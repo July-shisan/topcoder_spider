@@ -1,0 +1,31 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>
+    +---+
+    | D |
++---+---+---+---+
+| E | A | B | F |
++---+---+---+---+
+    | C |
+    +---+
+</pre>
+
+<p>
+The ASCII art above shows the net of a general 6-sided die. There is a number written on each of the six sides. In the picture, these numbers are denoted A to F.
+(The net is folded so that the numbers are on the outside, but this information is not necessary to solve the following problem.)
+</p>
+
+<p>
+The numbers A to F will be given to you as a int[] <b>values</b>, where A will be <b>values</b>[0], B will be <b>values</b>[1], and so on.
+</p>
+
+<p>
+You have <b>N</b>^3 identical dice, each one matching the net shown above. You want to take all the dice, rotate some of them, and assemble a <b>N</b>×<b>N</b>×<b>N</b> cube. The cube will be standing on a table, hence only 5 of its sides will be visible. 
+</p>
+
+<p>
+You are given the int <b>N</b>, and the int[] <b>values</b>.
+Write a method that will return the smallest possible sum of the 5<b>N</b>^2 visible faces of the dice.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CubeOfDice</td></tr><tr><td class="statText">Method:</td><td class="statText">minimumSum</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long minimumSum(int N, int[] values)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>N</b> will be between 1 and 1,000,000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>values</b> will contain exactly 6 elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>values</b> will be between 1 and 50, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>{1,2,3,4,5,6}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 36</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This input corresponds to 8 classical dice.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>{1,2,3,4,5,6}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 69</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Now we have 27 classical dice.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1000000</pre></td></tr><tr><td class="statText"><pre>{50,50,50,50,50,50}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 250000000000000</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The largest possible output. Note that all numbers are equal, hence in this case there is only one possible way to arrange the dice.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>{1,1,1,1,50,1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 500</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">It is possible to rotate and arrange the dice so that no side with the 50 will be visible.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

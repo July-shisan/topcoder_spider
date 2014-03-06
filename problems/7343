@@ -1,0 +1,41 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+You and a friend are sharing a piece of cake.  First you eat half of the piece, and then your friend eats half of what remains.  You continue in this fashion until the two of you have finished the cake (after an infinite number of iterations).  If you write the sum of the fractions each of you eat like this:
+</p>
+<pre>
+    you     him
+    -----   -----
+    1/2   + 1/4   +
+    1/8   + 1/16  +
+    1/32  + 1/64  +
+    1/128 + 1/256 +
+    ...
+</pre>
+<p>
+with each fraction you eat in the first column and each fraction your friend eats in the second column, you can clearly see that you eat twice as much cake as your friend does, because in each row the fraction you eat is twice the fraction your friend eats.  Since the total amount of cake is 1, you therefore have eaten 2/3 of the cake and your friend has eaten 1/3.
+</p>
+<p>
+If, instead of simply taking turns eating half of the remaining cake, you and your friend repeat a different pattern, you can each get a different total amount.  For example, if you repeat the pattern "you, him, you", you will end up eating 5/7 and your friend will end up eating 2/7.  This can be seen by writing the fractions as such:
+</p>
+<pre>
+
+    you     him     you
+    -----   -----   -----
+    1/2   + 1/4   + 1/8   +
+    1/16  + 1/32  + 1/64  +
+    1/128 + 1/256 + 1/512 +
+    ...
+</pre>
+<p>
+The first and third fraction in each row sum to 5/2 of the middle fraction, so you each eat cake in the ratio of 5 to 2.  Therefore, you end up eating 5/7 of the whole.
+</p>
+<p>
+Given a fraction <b>a</b>/<b>b</b>, determine the shortest pattern of taking half of the remaining cake that can be repeated infinitely such that you will get a/b of the piece of cake.
+Return the pattern as a String, made up of the characters '*' (indicating that you take the next half) or '-' (indicating that your friend takes the next half).
+If it is impossible to achieve with a pattern of length 60 or smaller, return "impossible" (quotes for clarity only).
+</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ZenoDivision</td></tr><tr><td class="statText">Method:</td><td class="statText">cycle</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String cycle(String a, String b)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>b</b> will contain only digits, and will represent a number between 1 and 2^63-1, inclusive, with no unnecessary leading zeros.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>a</b> will contain only digits, and will represent a number between 0 and <b>b</b>, inclusive, with no unnecessary leading zeros.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The integers represented by <b>a</b> and <b>b</b> will not have any common factors (the fraction a/b will be in reduced form).</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"2"</pre></td></tr><tr><td class="statText"><pre>"3"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "*-"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the first example in the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"5"</pre></td></tr><tr><td class="statText"><pre>"7"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "*-*"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the second example in the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"0"</pre></td></tr><tr><td class="statText"><pre>"1"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "-"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"5"</pre></td></tr><tr><td class="statText"><pre>"9"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "*---**"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"1"</pre></td></tr><tr><td class="statText"><pre>"2"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "impossible"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There is no way for you to each have half of the piece of cake.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"76861433640456464"</pre></td></tr><tr><td class="statText"><pre>"76861433640456465"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "********************************************************----"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,104 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Rabbit and Eel are playing a board game.
+The game is played with a single token on a rectangular board that is divided into a grid of unit cells.
+Each cell contains a digit that represents the cost of placing the token onto that cell.
+<br><br>
+The game is played in turns.
+In each turn, Rabbit moves first and Eel moves second.
+In the first turn, Rabbit places the token onto one of the cells in the topmost row, and he pays the associated cost.
+In each of the following turns, Rabbit moves the token one cell left, right, or down, and pays the cost written in the target cell.
+(Note that Rabbit is not allowed to move the token upwards.)
+Eel never moves the token.
+Instead, in each turn, Eel gets to place some walls.
+In each turn, Eel may place as many walls as he wants, including none.
+Each wall must be placed between two adjacent cells in the same column.
+<br><br>
+The game ends when Rabbit first moves the token into the bottommost row.
+The game must always be allowed to end.
+That is, Eel must never place a wall that would prevent Rabbit from reaching the bottommost row from the token's current location.
+Rabbit's goal is to minimize and Eel's goal is to maximize the total cost paid by Rabbit during the game.
+<br><br>
+You are given the String[] <b>costs</b> representing the costs of cells:
+character j of element i of <b>cost</b> represents the cost written in the cell in row i, column j.
+Return the total cost of the game assuming that both Rabbit and Eel play optimally.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">WallGameDiv1</td></tr><tr><td class="statText">Method:</td><td class="statText">play</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int play(String[] costs)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>costs</b> will contain between 2 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>costs</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>costs</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of <b>costs</b> will be between '0' and '9', inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"12"
+,"34"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">One possible gameplay is as follows:
+<ul><li>Rabbit puts a token on '2' and pays 2.</li>
+<li>Eel puts a wall between '2' and '4'</li>
+<li>Rabbit moves the token to '1' and pays 1.</li>
+<li>Eel does nothing.</li>
+<li>Rabbit moves the token to '3', pays 3, and the game ends.</li>
+</ul>
+The total cost is 2+1+3 = 6.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"99999"
+,"99999"
+,"99999"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 99</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Let's label the cells in the following way:
+<pre>
+ABCDE
+FGHIJ
+KLMNO
+</pre>
+We will not show you the optimal strategy. Instead, we will just show you one possible gameplay.
+<ul><li>Rabbit puts a token on C and pays 9.</li>
+<li>Eel puts eight walls: between AF, BG, CH, DI, GL, HM, IN, and JO.</li>
+<li>Rabbit moves the token to D and pays 9.</li>
+<li>Eel does nothing.</li>
+<li>Rabbit moves the token to E and pays 9.</li>
+<li>Eel does nothing.</li>
+<li>During next several turns, Rabbit will move the token along the path E-&gt;J-&gt;I-&gt;H-&gt;G-&gt;F and Eel does nothing.</li>
+<li>Rabbit moves the token to K, pays 9, and ends the game with total cost 81.</li>
+</ul>
+In the above example, neither player played optimally.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"11111"
+,"90005"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Let's label the cells in the following way:
+<pre>
+ABCDE
+FGHIJ
+</pre>
+Again, we will not show you the optimal strategy. Instead, we will just show you one possible gameplay.
+<ul><li>Rabbit puts a token on C.</li>
+<li>Eel puts three walls: between BG, CH, and DI.</li>
+<li>Rabbit moves the token to D and pays 1.</li>
+<li>Eel puts a wall between EJ.</li>
+<li>Now Rabbit is forced to move the token back. Rabbit will move the token along the path D-&gt;C-&gt;B-&gt;A-&gt;F and Eel does nothing.</li>
+<li>The game ends with total cost 14.</li>
+</ul></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"4417231387449337370319219832088987579792"
+,"3117295688208899006196193430472892512797"
+,"0835796222361526836944954410684516919758"
+,"1988200069973565052900745230547016216225"
+,"8080511471118865780390486996601082102418"
+,"4229084185957675819725844582167613108400"
+,"9068653877952162764545674979144308771754"
+,"8551565425951612499712254182109991511690"
+,"7090525592007482152807163656647658543093"
+,"9198968742256995592729889137556032960142"
+,"2071864379877766468141740053503050313101"
+,"1055375249261868472993219156394129253481"
+,"2461178270502857106406495509025426298874"
+,"8216781259733537757203421037984512664825"
+,"4693452554407216935375049784445568498482"
+,"2709693439640250842244170297203200674391"
+,"5122217695676372684217182241705137947908"
+,"6668814191410691246849638388008228444294"
+,"4952122070212780440963814752538149378639"
+,"9827737761436134120332969866554332504400"
+,"3412406588339828249986707470540386748886"
+,"7521506848088506994554600408372456405830"
+,"1916926179183007872881163173153907665999"
+,"6636166791472761992310264951474925339024"
+,"6679667717747231380196787943691121008076"
+,"3218993234115685151069259138068533004433"
+,"4920152552986426962081492913852060211795"
+,"0365186235986445521382132973036266396894"
+,"3205351414936828189305188614651974318855"
+,"3144278971529524658788277656125598825426"
+,"5525287537572356662391582052968411726245"
+,"2130137226726919525622574701068062252930"
+,"2369996694245544770519574837226971226841"
+,"6806769058165410189286521891570936341547"
+,"0448109211631660241710734664066810078242"
+,"4622919135804954122810530631429501069659"
+,"0235247446548732490429856705369583140671"
+,"2193399741215975228987754171460722199304"
+,"1203037020703833716225328076959743850915"
+,"5419885193880826109484912489603262199432"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7366</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

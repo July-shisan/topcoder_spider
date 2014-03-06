@@ -1,0 +1,47 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">N rabbits (numbered 0 through N - 1) aim to work at the new TopCoder office in Rabbitland. 
+You are to choose some of these applicants as employees. <br><br>
+Each pair of rabbits will make a certain profit when they work together. 
+Given a group of rabbits, we can easily compute the total profit P as the sum of profits for each pair of rabbits in the group.
+However, hiring rabbits also brings some costs: they want to have a supply of fresh carrots.
+Surprisingly, the cost of supplying carrots to K rabbits is not linear in K.
+This cost is given by the formula C = (K * (200 - K)).
+The <i>efficiency</i> of a given group of rabbits is the real number (P / C), where P is their total profit and C is the cost of supplying carrots for them. <br><br>
+You are given a String[] <b>profit</b>, 
+the j-th character of the i-th element of which represents the profit gained from rabbit i and rabbit j working together. 
+The characters '0', '1', ..., '9' represent the values 0, 1, ..., 9, respectively. 
+You may hire an arbitrary non-empty subset of the available rabbits.
+Return the maximum possible efficiency of the group of hired rabbits. 
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">RabbitWorking</td></tr><tr><td class="statText">Method:</td><td class="statText">getMaximum</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double getMaximum(String[] profit)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The returned value must have an absolute or relative error less than 1e-9. </td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>profit</b> will contain between 1 and 50 elements, inclusive. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>profit</b> will contain exactly N characters, where N is the number of elements in <b>profit</b>. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>profit</b> will be a digit ('0' - '9'). </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For each index i and j, the i-th character of the j-th element of <b>profit</b> will be equal to the j-th character of the i-th element of <b>profit</b>. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For each index i, the i-th character of the i-th element of <b>profit</b> will be '0'. </td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "071", 
+  "702", 
+  "120" }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.017676767676767676</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><ul><li>If you choose only one rabbit, then P = 0, K = 1 and the efficiency is 0. </li>
+	<li>If you choose rabbit 0 and rabbit 1, then P = 7, K = 2 and the efficiency is 7/396. </li>
+	<li>If you choose rabbit 0 and rabbit 2, then P = 1, K = 2 and the efficiency is 1/396. </li>
+	<li>If you choose rabbit 1 and rabbit 2, then P = 2, K = 2 and the efficiency is 2/396. </li>
+	<li>If you choose all three rabbits, then P = 10, K = 3 and the efficiency is 10/591. </li>
+</ul>
+You should choose rabbit 0 and rabbit 1 to maximize the efficiency. 
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "061", 
+  "602", 
+  "120" }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.015228426395939087</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">You should choose all three rabbits here. 
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "0" }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "013040", 
+  "100010", 
+  "300060", 
+  "000008", 
+  "416000", 
+  "000800" }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.021996615905245348</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "06390061", 
+  "60960062", 
+  "39090270", 
+  "96900262", 
+  "00000212", 
+  "00222026", 
+  "66761201", 
+  "12022610" }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.06871794871794872</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

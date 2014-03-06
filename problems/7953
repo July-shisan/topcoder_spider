@@ -1,0 +1,86 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You're trapped inside a facility that contains several rooms connected by <b>corridors</b>.  You're currently located in room <b>start</b> and you wish to reach the <b>finish</b> using the least amount of time as possible.  Each corridor takes one second to travel through.<br><br>
+
+Your task is complicated by the fact that there are several agents located in various rooms.  These agents wish to capture you, but each one has a particular destination, as they each have different intelligence suggesting that you will head towards their destination.  Like yourself, these agents will also reach their target room in the least possible amount of time.  The agents begin moving at the same time as you do.  If there are multiple shortest paths that an agent may use, you may assume each such path is equally likely as his choice.  Once an agent reaches his goal, he will stay there indefinitely.  Note that while you are aware of each agent's start and target rooms, you will be unaware of the agent's movements as you move through the facility.<br><br>
+
+As you wish to dodge capture as well as reach the exit as quickly as possible, you will use the following strategy.
+Each second you choose the way which allows you to reach the exit as quickly as possible (see example 6 for clarification). If there are multiple ways to do so, you choose the corridor that minimizes the probability of being captured from that point on. As soon as you reach the exit room, you leave the facility and cannot be captured. However, you may be captured the moment that you reach the exit room (see example 7).<br><br>
+
+There are two ways that you can be captured by an agent.<br>
+1) You travel through a corridor at the same time an agent does (you can be traversing the corridor in either the same direction or the opposite direction).<br>
+2) You're in a room at the same time as an agent.<br><br>
+
+The facility is described by a String[] <b>corridors</b>.  The <i>j</i>th character of the <i>i</i>th element of <b>corridors</b> will be a '1' if there is a corridor between rooms <i>i</i> and <i>j</i>, and '0' otherwise.  Each element of <b>agentStart</b> and <b>agentTarget</b> represents the start and target rooms, respectively, of an agent.<br><br>
+
+Given this information, return the probability that you will be captured by an agent if you follow the described strategy.<br><br></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">EscapeArtist</td></tr><tr><td class="statText">Method:</td><td class="statText">bestRoute</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int[], int[], int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double bestRoute(String[] corridors, int[] agentStart, int[] agentTarget, int start, int finish)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The returned value must be accurate to within a relative or absolute value of 1E-9.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>corridors</b> will contain between 2 and 25 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>corridors</b> will contain exactly N characters, where N is the number of elements in <b>corridors</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>corridors</b> will be either a '0' (zero) or '1' (one).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The <i>j</i>th character of the <i>i</i>th element of <b>corridors</b> will be the same as the <i>i</i>th character of the <i>j</i>th element of <b>corridors</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The <i>i</i>th character of the <i>i</i>th element of <b>corridors</b> will be '0'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>start</b> and <b>finish</b> will each be between 0 and N-1, inclusive, where N is the number of elements in <b>corridors</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>start</b> will be different from <b>finish</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>agentStart</b> and <b>agentTarget</b> will each contain between 1 and 10 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>agentStart</b> and <b>agentTarget</b> will contain the same number of elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each agent's starting room will be different from his target room.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No agent will start in the same room as you.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>agentStart</b> and <b>agentTarget</b> will be between 0 and N-1, inclusive, where N is the number of elements in <b>corridors</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There will be at least one path between each pair of rooms in the facility.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"0100",
+"1011",
+"0100",
+"0100"
+}</pre></td></tr><tr><td class="statText"><pre>{3}</pre></td></tr><tr><td class="statText"><pre>{1}</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>    3
+    |
+    |
+0---1---2</pre>
+
+The agent will always arrive at room 1 at the same time as you do, so there is no way to avoid capture.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"01000",
+"10110",
+"01000",
+"01001",
+"00010"
+}</pre></td></tr><tr><td class="statText"><pre>{4}</pre></td></tr><tr><td class="statText"><pre>{1}</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>    2
+    |
+    |
+0---1---3---4</pre>
+
+You will reach room 1 before the agent does, so you will avoid capture.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"010000",
+"101011",
+"010111",
+"001000",
+"011000",
+"011000"
+}</pre></td></tr><tr><td class="statText"><pre>{4}</pre></td></tr><tr><td class="statText"><pre>{5}</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>     4
+    / \
+0--1---2--3
+    \ /
+     5</pre>
+Your path must be 0-1-2-3.  The agent is equally likely to take the paths 4-1-5 or 4-2-5.  If he takes the first path, you will be captured in room 1.  However, if he takes the second path, you will escape.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"010000",
+"101001",
+"010110",
+"001000",
+"001000",
+"010000"
+}</pre></td></tr><tr><td class="statText"><pre>{4}</pre></td></tr><tr><td class="statText"><pre>{5}</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>    5   4
+    |   |
+    |   |
+0---1---2---3</pre>
+You will be travelling through the corridor between rooms 1 and 2 at the same time the agent travels through the same corridor in the opposite direction.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"01100",
+"10011",
+"10010",
+"01100",
+"01000"
+}</pre></td></tr><tr><td class="statText"><pre>{4,3}</pre></td></tr><tr><td class="statText"><pre>{1,0}</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>      0
+     / \
+4---1   2
+     \ /
+      3</pre>
+Here you can choose between two paths.  If you take path 0-1-3, you will always be captured by the first agent at room 1.  However, if you take path 0-2-3, there is a 50% chance that you will be captured in room 2, depending on which path the second agent takes.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"0100",
+"1010",
+"0101",
+"0010"
+}</pre></td></tr><tr><td class="statText"><pre>{3}</pre></td></tr><tr><td class="statText"><pre>{2}</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>0--1--2--3</pre>
+
+The agent reaches room 2 before you, but stays there indefinitely.  You will then be captured as soon as you enter room 2.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0101", "1010", "0101", "1010"}</pre></td></tr><tr><td class="statText"><pre>{1}</pre></td></tr><tr><td class="statText"><pre>{0}</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>
+0 -- 1
+|    | 
+|    |
+3----2
+</pre>
+The longer path (0 -&gt; 3 -&gt; 2 -&gt; 1) is absolutely safe, but you must take the shortest one (0 --&gt; 1).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">7)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"011", "101", "110"}</pre></td></tr><tr><td class="statText"><pre>{0}</pre></td></tr><tr><td class="statText"><pre>{1}</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">You are caught at the moment you enter room 1.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

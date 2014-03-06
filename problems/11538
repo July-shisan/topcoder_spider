@@ -1,0 +1,63 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">There is a HxW rectangular board divided into 1x1 cells. Initially each cell is colored white. Fox Ciel wants to change the color of the cells. Letters 'A', 'B', ..., 'Z', 'a', 'b', ..., 'z' represent distinct colors, and they are different from white. You are given a String[] <b>board</b>. She must change the color of the cell (i, j) to the color represented by the j-th character of the i-th element of <b>board</b>.
+<br><br>
+Fox Ciel can perform the following operation:
+<br><br>
+1. Choose one row or one column.
+<br>
+2. Choose one color from 'A', 'B', ..., 'Z', 'a', 'b', ..., 'z'. Note that she can't choose white.
+<br>
+3. Paint the row or the column she chose in step 1 with the color she chose in step 2. The color of all cells in the row or the column becomes the color she chose in step 2.
+<br><br>
+Return the minimal number of operations required to change the color of the cells to <b>board</b>. If it's impossible, return -1.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ColorfulBoard</td></tr><tr><td class="statText">Method:</td><td class="statText">theMin</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int theMin(String[] board)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>board</b> will be a letter ('A'-'Z', 'a'-'z').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"SSS",
+ "SRR",
+ "SMM"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Initially, the board is (# represents white):
+<pre>
+###
+###
+###
+</pre>
+Paint row 0 with color S:
+<pre>
+SSS
+###
+###
+</pre>
+Paint row 1 with color R:
+<pre>
+SSS
+RRR
+###
+</pre>
+Paint row 2 with color M:
+<pre>
+SSS
+RRR
+MMM
+</pre>
+Paint column 0 with color S:
+<pre>
+SSS
+SRR
+SMM
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BBBBBBBB",
+ "BBBBBBBB",
+ "BBBBBBBB",
+ "BBBBBBBB",
+ "BBBBBBBB"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Paint five rows with color B.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Ab",
+ "bA"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"iiiii",
+ "iwiwi"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ffffffffff",
+ "xfxxoofoxo",
+ "ffffffffff",
+ "xfxxoofoxo",
+ "ffffffffff",
+ "ooxxoofoxo",
+ "xfxxoofoxo",
+ "xfxxoxfxxo",
+ "ffxxofffxo",
+ "xfxxoxfxxo"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 17</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

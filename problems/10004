@@ -1,0 +1,35 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You are standing on a cell inside a maze, facing south.  The maze is a rectangular grid where each cell is either passable or contains a wall. Each row and each column of the maze contains at least one passable cell.  You walk through the entire maze, visiting every passable cell in every row and column.  As you're walking, you write down all of your moves.  Later, you want to draw a map of the maze using only your notes.
+<br>
+You are given a String <b>moves</b> containing your notes, where each character represents a single move.  'F' means that you walked forward one cell in the direction you're facing.  'L' and 'R' mean that you changed your direction by turning left or right, respectively, by 90 degrees, without changing your position.  
+<br>
+Return a String[] containing the maze, where '.' denotes a passable cell and '#' denotes a wall.  The j-th character of the i-th element must represent the cell at row i, column j of the maze, where row 0 is the northern-most row and column 0 is the western-most column.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">MazeReconstruction</td></tr><tr><td class="statText">Method:</td><td class="statText">mazeMap</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] mazeMap(String moves)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>moves</b> will have between 0 and 49 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>moves</b> will be 'F','L' or 'R'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"RRFRF"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"..", ".#" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"LFFRFF"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"...", "##.", "##." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"LFLFRRFLFRRFLF"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"#.#", "...", "#.#" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">You could have visited one cell several times.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"FLFRFFRFFFRFFRFLFLL"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"#..#", "....", ".##.", "...." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"FRFFFFFFLLFRFFFFFLLFRFFFFLFFLFF"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"######.", ".......", "#.#####", "#.#...#", "#.###.#", "#.....#", "#.#####" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"FFFFFFFFFFFFFFFFFFFFFFFFLFFFFFFFFFFFFFFFFFFFFFFFF"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+".########################",
+"........................." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>""</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

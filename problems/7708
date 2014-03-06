@@ -1,0 +1,29 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A second degree polynomial <b>a</b>x^2 + <b>b</b>x + <b>c</b> can sometimes be
+factored into two first degree polynomials with integer coefficients.
+We want to produce the factorization as a string in the following
+format:<pre>
+    (&lt;coef&gt;x&lt;sign&gt;&lt;num&gt;)(&lt;opneg&gt;&lt;coef&gt;x&lt;sign&gt;&lt;num&gt;) 
+where 
+    '(' ')' and 'x' are literal 
+    &lt;coef&gt; is either empty or is a positive integer greater than 1. 
+    &lt;num&gt; is a positive integer
+    &lt;sign&gt; is a sign character, either '+' or '-'
+    &lt;opneg&gt; is an optional '-' character</pre>
+
+Neither &lt;coef&gt; nor &lt;num&gt; can be expressed with leading zeroes.
+<p>
+Given <b>a</b>, <b>b</b>, and <b>c</b>, return the factorization as a String. If no factorization
+is possible, return the 4 uppercase letters "NONE". If more than one
+factorization is possible, choose the one with the largest
+coefficient of x in the first factor. If more than one is still possible,
+choose the one whose first factor is bigger when evaluated at x=0.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Factorer</td></tr><tr><td class="statText">Method:</td><td class="statText">factor</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String factor(int a, int b, int c)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>a</b>, <b>b</b>, and <b>c</b> will each be between -1,000,000,000 and 1,000,000,000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Neither <b>a</b> nor <b>c</b> will be 0.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>-1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "(x+1)(x-1)"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+This factorization of x^2-1 is preferred to "(x-1)(x+1)" by the second tie breaker.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>-4</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>-1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "(2x-1)(-2x+1)"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+-4x^2 + 4x -1 = (2x-1)(-2x+1)</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>-4</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "NONE"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>-3</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "(x-1)(x-2)"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">"(x-1)(x-2)" is preferred to "(x-2)(x-1)" by the second tie-breaking rule (since -1 is greater than -2).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>-20</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>20</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "(20x+20)(-x+1)"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

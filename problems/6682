@@ -1,0 +1,62 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+A position is an arrangement of pieces on the checkerboard at a particular time during the game. Given a position, you are to calculate the total number of possible moves that can be made on the next turn.
+</p>
+<p>
+The game of checkers is played by two players on an 8x8 grid with alternating black and white squares (any two squares that share an edge have different colors). The leftmost square of the top row is always black, and the playable surface consists of only the 32 black squares. Each player starts with 12 pieces. The first player's pieces are black, and the second player's pieces are white. Black pieces start from the top part of the board and can only move toward the bottom, while white pieces start from the bottom and only move toward the top. The two players alternate moves.
+</p>
+<p>
+There are two ways you can move a piece: slide it diagonally forward to an adjacent unoccupied black square, or "jump" an opponent's piece.  You can jump an opponent's piece only if it is diagonally adjacent and there is a vacant square directly beyond it in the same direction.  When you perform a jump, your piece will end up in that vacant square, and the opponent's piece will be removed from the board.  Jumping is mandatory, so if there is an opportunity to make a jump, it must be taken.  When multiple jumps are possible, any one of them can be chosen.  As mentioned earlier, both slides and jumps can only be made in the "forward" direction, meaning that black pieces must move toward the bottom of the board and white pieces must move toward the top.
+</p>
+<p>
+You will be given a String[] <b>board</b> that contains the current position of a checkers game. The j-th character of the i-th element represents the contents of the square at row i, column j (where row 0 is the topmost row, and column 0 is the leftmost column). A space (' ') represents a vacant square, and 'W' and 'B' represent squares occupied by white and black pieces, respectively. You are to determine the total number of possible moves in this position. You don't know which player has the next turn, so return the sum of all possible moves for both players.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CheckersBoard</td></tr><tr><td class="statText">Method:</td><td class="statText">numMoves</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int numMoves(String[] board)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">In real checkers multiple jump moves are allowed. We ignore them for the purposes of this problem.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain exactly 8 elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain exactly 8 characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain only 'W', 'B' and ' ' characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain at least one non-space character.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain at most 12 'W' characters and at most 12 'B' characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All 'W' and 'B' charactes in <b>board</b> will be located at 'black' cells only.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"B       ",
+"        ",
+"        ",
+"        ",
+"        ",
+"        ",
+"        ",
+" W      "
+}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The black piece has 1 possible move, and the white piece has a choice of 2 moves.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"B B     ",
+" W      ",
+"        ",
+"        ",
+"        ",
+"        ",
+"        ",
+"        "
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Each of the black pieces can jump over the white piece. The right black piece has a free cell diagonally down and to the right, but can not move here because jumping is mandatory and can not be passed up to make a non-jumping move.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"B B B B ",
+" B B B B",
+"B B B B ",
+"        ",
+"        ",
+" W W W W",
+"W W W W ",
+" W W W W"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 14</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The position at the beginning of the game. Black pieces in the first two rows can not move. The leftmost black piece in the third row has one possible move, and the other 3 pieces have 2 possible moves each. The white pieces have symmetrical moves.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"B B B B ",
+" W W W W",
+"W W W W ",
+"        ",
+"        ",
+"        ",
+"        ",
+"        "
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No possible moves here.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"    B B ",
+"   B B W",
+"    B W ",
+"     W W",
+"      W ",
+"       W",
+"        ",
+"        "
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

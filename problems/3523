@@ -1,0 +1,40 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">One day, I started writing out the following patterns (The procedure for constructing the pattern is deliberately not given, you must infer the procedure through the examples):
+<pre></pre>
+Input string: "HELLO" (quotes for clarity only)
+<pre>
+Pattern:      O
+             OLO
+            OLLLO
+           OLLELLO
+          OLLEHELLO
+           OLLELLO
+            OLLLO
+             OLO
+              O
+</pre>
+<br>
+Input string: "TC" (quotes for clarity only)
+<pre>
+Pattern:      C
+             CTC
+              C   
+</pre>
+<br>
+Input string: "ABCD" (quotes for clarity only)
+<pre>
+Pattern:      D
+             DCD
+            DCBCD
+           DCBABCD
+            DCBCD
+             DCD
+              D
+</pre>
+<br>
+After constructing the patterns, I noticed something interesting. Starting with the first letter of the input string (which appears only once in the very center of the pattern), I can trace a path outwards toward the edges, spelling out the original input string. Of course, I only move Up, Down, Left and Right from any letter. I'm now perplexed because I want to know how many ways the original input string can be spelled out in the pattern. I must always end at an edge, and I can't go over one letter more than once while spelling a word.
+<br><br>
+Create a class WordPattern containing the method countWords which takes a String <b>word</b> as input. The method should return a long which is the number of ways the original input can be spelled out in the pattern according to my rules.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">WordPattern</td></tr><tr><td class="statText">Method:</td><td class="statText">countWords</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long countWords(String word)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Remember, I only move Up, Down, Left and Right from any letter to the next letter and never use a letter twice.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>word</b> will contain between 1 and 50 characters inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>word</b> will contain only uppercase letters ('A'-'Z').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"HELLO"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 60</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"TC"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"ABCDEFGHIJKLMNOPQRST"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2097148</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJ"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 137438953468</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

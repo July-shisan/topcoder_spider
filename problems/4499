@@ -1,0 +1,54 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">In Bingo, you have a card with five columns and five rows. The columns are labeled 
+'B', 'I',  'N', 'G' and 'O'. The columns contain 5 different numbers in the ranges 
+1-15, 16-30, 31-45, 46-60, and 61-75 respectively, except that the middle square of the middle column is 
+"FREE".  Letter-number combinations are called (such as B12) and you win when you get 
+five (or four + FREE) along a row, column, or one of the 2 diagonals on your card.
+<p>
+String[] <b>card</b> will have exactly 6 elements. The first gives the column headings and the 
+next five give the numbers in each of the five rows on the card (with 'F' denoting FREE in the middle square). All elements are
+padded with space characters so that all the numbers (and the 'F') end in the third column, the sixth
+column, etc.  
+</p><p>
+String[] <b>calls</b> will give the letter-number combinations that are called. The last
+element of <b>calls</b> will be "BINGO" indicating the end 
+of the game because another player has won. 
+</p><p>
+Create a class Bingo that contains a method winner that is given <b>card</b> and <b>calls</b> and
+that returns either "YOU LOSE" or a String with the 4 or 5 calls (in the order in which
+they were called) that first allowed you to win. The calls in the return must be
+separated with commas and must contain no spaces.
+</p><p>
+If the call that first allows you to win allows you to win in more than one way, the method
+must return the winning sequence that had the earliest call in it.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Bingo</td></tr><tr><td class="statText">Method:</td><td class="statText">winner</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String winner(String[] card, String[] calls)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>card</b> will contain exactly 6 elements, each containing exactly 15 characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The first element of <b>card</b> will be <pre>"  B  I  N  G  O".</pre></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The other elements of <b>card</b> will each have 5 tokens right-justified in fields of size 3.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The third token in the fourth element of <b>card</b> will be "F". Otherwise each token will be a 1 or 2 digit number with no leading 0's in the appropriate range for its column.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The numbers within each column will be distinct.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>calls</b> will contain between 1 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The elements of <b>calls</b> will be distinct.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The last element of <b>calls</b> will be "BINGO".</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each other element of <b>calls</b> will be a legal call: an uppercase letter followed by a 1 or 2 digit number (no leading 0's) in the appropriate range.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "  B  I  N  G  O",
+  " 12 22 33 55 66",
+  "  9 23 34 52 72",
+  "  1 24  F 59 71",
+  "  4 16 40 48 61",
+  "  3 18 41 49 63"}</pre></td></tr><tr><td class="statText"><pre>{"B12","B3","I16","N40","B2","O70","B1","B9","O71","B4","B7","B11","O68","BINGO"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "B12,B3,B1,B9,B4"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+When B4 is called, it completes a vertical line down the first column. The five calls
+that created the win are returned in the same order as they appeared in <b>calls</b>.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "  B  I  N  G  O",
+  " 12 22 33 55 66",
+  "  9 23 34 52 72",
+  "  1 24  F 59 71",
+  "  4 16 40 48 61",
+  "  3 18 41 49 63"}</pre></td></tr><tr><td class="statText"><pre>{"B12","B3","I16","N40","B2","O70","B1","B9","BINGO"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "YOU LOSE"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+There is no win on your card after the 8 calls so you lose when 
+somebody else calls BINGO.
+ </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "  B  I  N  G  O",
+  " 12 22 33 55 66",
+  "  9 23 34 52 72",
+  "  1 24  F 59 71",
+  "  4 16 40 48 61",
+  "  3 18 41 49 63"}</pre></td></tr><tr><td class="statText"><pre>{"O63","G48","I23","B9","B1","B4","B3","B7","B12","G49","BINGO"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "O63,G48,I23,B12"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+When B12 is called you have two different wins. But the first call in the
+diagonal win was earlier than the first call in the other win so the return
+shows the 4 calls from the diagonal win.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

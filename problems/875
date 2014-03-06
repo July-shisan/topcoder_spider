@@ -1,0 +1,33 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+We have a collection of train cars. We want to hook them together to get the
+train with the most cars possible. Some cars have a unique front end, and some
+can have either end in front. Two cars can be coupled together only if their 
+coupling mechanisms are compatible.
+</p><p>
+Each car is described by a String of uppercase letters. The front end is the 
+end with the letter that comes first in the alphabet (if it starts and ends 
+with the same letter, either end can be in front). Two words can be hooked 
+together only if the two adjoining ends have the same letter.  Create a class 
+WordTrain that contains the method hookUp that takes <b>cars</b>, a String[], and 
+returns a String which is the longest word train that can be made from <b>cars</b>.
+</p><p>
+If more than one train of the longest length is possible, return the one that 
+comes first alphabetically.  Remember that the length of a train is the number 
+of cars, not the number of letters.
+</p><p>
+The returned string should be all the cars in the train, starting at the
+front of the train, concatenated with '-' showing the coupling between adjacent
+cars. For alphabetic breaking of ties, the '-' is included in its usual order 
+in the ASCII sequence.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">WordTrain</td></tr><tr><td class="statText">Method:</td><td class="statText">hookUp</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String hookUp(String[] cars)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>cars</b> contains between 1 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>cars</b> contains only uppercase letters ('A'-'Z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>cars</b> contains between 3 and 10 characters inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"CBA","DAA","CXX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "ABC-CXX"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+This is the only possible train of length 2. Note that CBA needed to be reversed 
+so that it was facing the right direction.
+  
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ACBA"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "ABCA"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AUTOMATA","COMPUTER","ROBOT"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "COMPUTER-ROBOT"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AAA","AAAA","AAA","AAA"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "AAA-AAA-AAA-AAAA"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">'-' sorts before uppercase letters
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABA","BBB","COP","COD","BAD"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "BBB-BAD"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

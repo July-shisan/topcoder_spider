@@ -1,0 +1,75 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Little Bonnie has taken a vacation to Ha Long Bay.  There are a few thousand stone islands in the bay, making it one of the most beautiful natural scenes in Vietnam.  Bonnie is so impressed by this fact that she has decided to visit all of the islands.
+<br><br>
+
+She bought a map of all the islands in the bay.  This map is given in the String[] <b>islandMap</b>, which is a two-dimensional matrix where each cell is either '.' or lowercase 'x'.  '.' cells represent sea and 'x' cells represent land.  Two cells are connected if they have a point in common, so each cell may connect to at most 8 other cells.  An island is defined as a maximal connected group of 'x' cells.  A trip between two islands is defined as a connected group of '.' cells where, for each of the two islands, there is at least one '.' cell in the trip which is connected to a cell in that island.  If there is no such connected group of '.' cells between two islands, then there is no trip between them.  Note that an island can be nested inside another island.
+<br><br>
+
+A tour is a sequence of islands where there is a trip between every pair of consecutive islands in the sequence.  Little Bonnie wants to visit every island exactly once, and she wants to do this using the minimum possible number of tours.  Return the number of tours she will have to take.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">MinimumTours</td></tr><tr><td class="statText">Method:</td><td class="statText">getMinimumTours</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int getMinimumTours(String[] islandMap)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">It is possible for a tour to have only one island.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Bonnie cannot leave the mapped area at any time.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">It is assumed that Bonnie has another way to travel from the last island of one tour to the first island of another tour, so you don't have to take this into account when solving the problem.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>islandMap</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>islandMap</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>islandMap</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>islandMap</b> will be either '.' or lowercase 'x'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There will be at least one island in the map.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"..x..x..x..",
+"..x..x..x..",
+"..x..x..x..",
+"..x..x..x.."
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Only one tour is needed. Bonnie can just go from the leftmost island through the middle one to the rightmost island. Or she can choose to go in the reverse way.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"x....x....x",
+".....x.....",
+".....x.....",
+".....x.....",
+"xxxxxxxxxxx",
+".....x.....",
+".....x.....",
+".....x.....",
+"x....x....x"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">At least three tours are required to cover the five islands. One possible set of three tours is to go from the small island in the top-left corner through the big cross-shaped island to the top-right island, and each of the two other islands makes up a one-island tour.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"x....x....x",
+".....x.....",
+".....x.....",
+"....x.x....",
+"xxxx...xxxx",
+"....x.x....",
+".....x.....",
+".....x.....",
+"x....x....x"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There is always a trip between any two islands. So only one tour is enough to visit all five islands.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+"x............................x",
+"x..xxxxxxxxxx....xxxxxxxxxx..x",
+"x..x........x....x........x..x",
+"x..x..xxxx..x....x.xxxxxx.x..x",
+"x..x........x....x.x....x.x..x",
+"x..xxxxxxxxxx....x.x.x..x.x..x",
+"x................x.x....x.x..x",
+"x................x.xxxxxx.x..x",
+"x..xxxxxxxxxx....x........x..x",
+"x..x........x....x........x..x",
+"x..x..xxxx..x....x.xxxxxx.x..x",
+"x..x........x....x........x..x",
+"x..xxxxxxxxxx....xxxxxxxxxx..x",
+"x............................x",
+"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">An island can be nested inside another one. And two tours are needed in this example.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"xxxxxxxxxxxxx....xxxxxxxxxxxxxxxxxxxxxx",
+"x...........x....x.....................",
+"x.xxxxxxxxx.x....x.xxxxxxxxxxxxxxxxxxx.",
+"x.x.......x.x....x.x.................x.",
+"x.x.xxxxx.x.x....x.x.xxxxxxxxxxx.....x.",
+"x.x...x...x.x....x.x.x..........x....x.",
+"x.x...x...x.x....x.x.x.xxx..xxx...x..x.",
+"x.x.......x.x....x.x.x.x....x..x..x..x.",
+"x.xxxxxxxxx.x....x.x.x.xxx..x..x..x..x.",
+"x...........x....x.x.x.x....x..x..x..x.",
+"xxxxxxxxxxxxx....x.x.x.xxx..xxx...x..x.",
+"x................x.x.x......xx....x..x.",
+"x................x.x.x......x.x...x..x.",
+"x................x.x.x......x..x..x..x.",
+"x................x.x.x...........x...x.",
+"x................x.x.xxxxxxxxxxxx....x.",
+"x................x.x.................x.",
+"x................x.xxxxxxxxxxxxxxxxxxx.",
+"x................x.....................",
+"x................xxxxxxxxxxxxxxxxxxxxxx"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

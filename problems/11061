@@ -1,0 +1,48 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Some jewels are placed in a rectangular grid on an infinite plane. 
+You are given String[] <b>jewels</b> describing the jewels. 
+If the j-th character of the i-th element of <b>jewels</b> is 'R', 'G' or 'B', 
+there is a red, green or blue jewel at the center of the j-th cell of the i-th row of the grid, respectively. 
+Jewels of the same color cannot be distinguished. 
+<br><br>
+Alice draws two squares on this plane. 
+Their sides must be parallel to the axis and have length <b>k</b>.
+She is allowed to draw squares so that some part of them are on the outside of the grid. 
+Then she will get the jewels which lie in the <i>inside</i> of at least one of the two squares. 
+Note that the <i>inside</i> of a square does not contain its boundary. 
+She wants to make a chain of jewels, using some of the jewels she will get. 
+She does not have to use all of the jewels she will get. 
+A chain is a row of one or more jewels. 
+Chains are non-directional. 
+For example, chains R-G-B and B-G-R are considered equal. 
+How many different chains are possible, considering all the chains from all possible square locations? 
+Return the answer modulo 1,000,000,009. 
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ColorfulJewelry</td></tr><tr><td class="statText">Method:</td><td class="statText">getChains</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int getChains(String[] jewels, int k)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For the purposes of this problem, a jewel is considered to be a single point.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>jewels</b> will contain between 1 and 44 elements, inclusive. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>jewels</b> will contain the same number of characters. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>jewels</b> will contain between 1 and 44 characters, inclusive. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>jewels</b> will be either 'R', 'G' or 'B'. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>k</b> will be between 1 and 44, inclusive. </td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "RGB" }
+</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Alice can get at most two jewels. 
+The possible chains are: R, G, B, R-G, R-B, G-B. 
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "RGB" }
+</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Alice can get all the three jewels. 
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "RGB" }
+</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "RRRRR", 
+  "RGGRR", 
+  "RGGGG", 
+  "RRRGG" }
+</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 280</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "RRRRRRRRRR", 
+  "RRRRRRRRRR", 
+  "RRRRRRRRRR", 
+  "RRRRRRRRRR", 
+  "RRRRRRRRRR", 
+  "RRRRRRRRRR", 
+  "RRRRRRRRRR", 
+  "RRRRRRRRRR", 
+  "RRRRRRRRRR", 
+  "RRRRRRRRRR" }
+</pre></td></tr><tr><td class="statText"><pre>6</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 68</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "RRRGGGGG", 
+  "RRRGGGGG", 
+  "RRRGGBBB", 
+  "GGGGGBBB", 
+  "GGGGGBBB" }
+</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 613435159</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,75 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">There is a 3-dimensional grid that consists of N*M*L cells.
+Each of the cells has three integer coordinates (i,j,k), where 0 &lt;= i &lt; N, 0 &lt;= j &lt; M, and 0 &lt;= k &lt; L.
+Initially, the cells are colorless.
+You are now going to color each of the cells either white or black.
+<p></p>
+You will be given three strings: S, T, and U.
+Each of these strings only contains the characters 'o' and 'x'.
+The lengths of these strings are N, M, and L, respectively.
+<p></p>
+The coloring of cells will consist of two steps.
+The first step looks as follows:
+For each i,j,k: you color the cell (i,j,k) white if the three characters S[i], T[j], and U[k] are all the same.
+Otherwise, you color the cell black.
+<p></p>
+Once the first step is done, the white cells will form some connected components.
+(Two cells belong to the same component if they share a common face. Belonging to the same component is transitive.)
+A white component is said to be on the boundary, if at least one of its cells has a face that is on the boundary of the grid.
+<p></p>
+In the second step, the white components that are on the boundary will remain white, and the color of all remaining white components is changed to black.
+<p></p>
+You are given three String[]s: <b>SArray</b>, <b>TArray</b>, and <b>UArray</b>.
+Concatenate all elements of <b>SArray</b> to get S. In the same way, <b>TArray</b> yields T and <b>UArray</b> yields U.
+Your method must return the number of black cells after the second step.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">FloodFill3D</td></tr><tr><td class="statText">Method:</td><td class="statText">countBlack</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long countBlack(String[] SArray, String[] TArray, String[] UArray)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>SArray</b>, <b>TArray</b> and <b>UArray</b> will each contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>SArray</b>, <b>TArray</b> and <b>UArray</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of <b>SArray</b>, <b>TArray</b> and <b>UArray</b> will be either 'o' or 'x'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"oxo"}</pre></td></tr><tr><td class="statText"><pre>{"oxo"}</pre></td></tr><tr><td class="statText"><pre>{"oxo"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 19</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The figure below shows how the coloring is done.
+After the first step, 9 cells are white and the other 18 are black.
+In the second step, the cell (1,1,1) changes color to black.
+So there are 18+1 = 19 black cells after the second step.
+<br><br><img src="http://www.topcoder.com/contest/problem/FloodFill3D/FloodFill3Dex0.png"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ooo"}</pre></td></tr><tr><td class="statText"><pre>{"oo"}</pre></td></tr><tr><td class="statText"><pre>{"o"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are 3*2*1=6 cells and all of those are colored in white in the first step.
+Since this connected component shares at least one face with the boundary of the cells, it is not recolored.
+Therefore, the resulting number of black cells are 0.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"xxo", "oox", "o"}</pre></td></tr><tr><td class="statText"><pre>{"x", "o", "x", "o"}</pre></td></tr><tr><td class="statText"><pre>{"ooo", "xxxoo", "oxx"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 242</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Do not forget to concatenate all elements of the String[]s to get S, T, and U.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"xxxxxxxxxxxxxxxxxxxx"
+,"xxooooooooooooooooxx"
+,"xxooooooooooooooooxx"
+,"xxxxxxxxooooxxxxxxxx"
+,"xxxxxxxxooooxxxxxxxx"
+,"xxxxxxxxooooxxxxxxxx"
+,"xxxxxxxxooooxxxxxxxx"
+,"xxxxxxxxooooxxxxxxxx"
+,"xxxxxxxxooooxxxxxxxx"
+,"xxxxxxxxooooxxxxxxxx"
+,"xxxxxxxxooooxxxxxxxx"
+,"xxxxxxxxooooxxxxxxxx"
+,"xxxxxxxxooooxxxxxxxx"
+,"xxxxxxxxxxxxxxxxxxxx"}
+</pre></td></tr><tr><td class="statText"><pre>{"xxxxxxxxxxxxxxxxxxxx"
+,"xxxxxxxoooooooxxxxxx"
+,"xxxxxoooooooooooxxxx"
+,"xxxxooooooooooooxxxx"
+,"xxxxooooxxxxxoooxxxx"
+,"xxxxoooxxxxxxxxxxxxx"
+,"xxxxoooxxxxxxxxxxxxx"
+,"xxxxoooxxxxxxxxxxxxx"
+,"xxxxooooxxxxoooxxxxx"
+,"xxxxoooooooooooxxxxx"
+,"xxxxxooooooooooxxxxx"
+,"xxxxxxoooooooxxxxxxx"
+,"xxxxxxxxxxxxxxxxxxxx"}
+</pre></td></tr><tr><td class="statText"><pre>{"xxxxxxxxxxxxxxxxxxxx"
+,"xxxxxxxoooooxxxxxxxx"
+,"xxxxoooooooooooxxxxx"
+,"xxoooooooooooooooxxx"
+,"xxoooooxxxxxoooooxxx"
+,"xxooooxxxxxxxooooxxx"
+,"xxooooxxxxxxxooooxxx"
+,"xxooooxxxxxxxooooxxx"
+,"xxooooxxxxxxxooooxxx"
+,"xxoooooxxxxxoooooxxx"
+,"xxxxoooooooooooxxxxx"
+,"xxxxxxxoooooxxxxxxxx"
+,"xxxxxxxxxxxxxxxxxxxx"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 15027148</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

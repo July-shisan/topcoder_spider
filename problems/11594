@@ -1,0 +1,34 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You are going to fill 9 strings into the cells of a 3x3 square. Rows of the square are numbered 0 to 2 from top to bottom, and columns of the square are numbered 0 to 2 from left to right. Let S[i][j] be the string you'll enter into the cell in row i, column j. The strings S[i][j] do not have to be distinct. It is also allowed to use empty strings.
+<p></p>
+You are given two String[]s <b>rowStrings</b> and <b>columnStrings</b>. For each i, the concatenation of strings in row i must be equal to <b>rowStrings</b>[i]. The same must hold for columns and <b>columnStrings</b>. Formally, the strings in the cells must satisfy the following conditions:
+<ul><li>For all 0&lt;=i&lt;=2, S[i][0]+S[i][1]+S[i][2] = <b>rowStrings</b>[i].</li>
+<li>For all 0&lt;=j&lt;=2, S[0][j]+S[1][j]+S[2][j] = <b>columnStrings</b>[j].</li>
+</ul>
+Here, '+' represents a string concatenation.
+<p></p>
+Return the number of ways in which the strings S[i][j] can be chosen so that all conditions are satisfied.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">MagicalSquare</td></tr><tr><td class="statText">Method:</td><td class="statText">getCount</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long getCount(String[] rowStrings, String[] columnStrings)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>rowStrings</b> and <b>columnStrings</b> will each contain exactly 3 elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>rowStrings</b> will contain between 0 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>columnStrings</b> will contain between 0 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>rowStrings</b> and <b>columnStrings</b> will contain only lowercase letters ('a'-'z').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"f", "o", "x"}
+</pre></td></tr><tr><td class="statText"><pre>{"f", "o", "x"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The only valid way to choose the strings:
+<pre>
+ --- --- ---
+| f |   |   |
+ --- --- ---
+|   | o |   |
+ --- --- ---
+|   |   | x |
+ --- --- ---
+</pre>
+That is, S[0][0]="f", S[1][1]="o", S[2][2]="x", and all other S[i][j] are empty.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"x", "x", "x"}</pre></td></tr><tr><td class="statText"><pre>{"x", "", "xx"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">These are the three valid possibilities:
+<pre>
+ --- --- ---    --- --- ---    --- --- ---
+| x |   |   |  |   |   | x |  |   |   | x |
+ --- --- ---    --- --- ---    --- --- ---
+|   |   | x |  | x |   |   |  |   |   | x |
+ --- --- ---    --- --- ---    --- --- ---
+|   |   | x |  |   |   | x |  | x |   |   |
+ --- --- ---    --- --- ---    --- --- ---
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"cd", "cd", "cd"}</pre></td></tr><tr><td class="statText"><pre>{"dvd", "dvd", "dvd"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In this case there is no way to satisfy all conditions.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"abab", "ab", "abab"}</pre></td></tr><tr><td class="statText"><pre>{"abab", "ab", "abab"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 11</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"qwer", "asdf", "zxcv"}</pre></td></tr><tr><td class="statText"><pre>{"qaz", "wsx", "erdfcv"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,61 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">If you look at a cross section of a tree you will notice that there are several
+rings in it.  The innermost ring represents the first year of the tree's growth,
+and each year the tree adds one new ring.  You will be given a bitmap of a
+tree's cross section.  Character j of element i represents the pixel at position
+(j,i) and is either an 'X' or an '.'.  The exact structure of the rings can be
+defined recursively.  The innermost ring consists of a group of connected 'X's.
+The innermost ring is then surrounded by '.' characters, which are then
+surrounded by 'X' characters.  Each ring after is formed in the same way: all
+previous rings are surrounded by '.' characters, which are then surrounded by
+'X' characters.  The group of '.' characters that surround previous rings are all connected in a circle
+(horizontally or vertically),
+as are the 'X' characters forming the new ring.  The background of the image also consists of '.'
+characters, and there may be no 'X's on the edges of the image.  For example,
+the following is a valid bitmap with 2 rings:
+<pre>
+    {".........",
+     ".XXXXXXX.",
+     ".X....XX.",
+     ".X.XX.X..",
+     ".X....XX.",
+     ".XXXXXXX.",
+     "........."}
+</pre>
+If the bitmap represents an image of rings as defined above, you are to return the number of rings in it (only the 'X's make rings).  Otherwise, if the image is not valid in some way, you are to return -1.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">RingCount</td></tr><tr><td class="statText">Method:</td><td class="statText">count</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int count(String[] bitmap)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Informally, a ring is connected in a circle if, for every pair of pixels in that ring, there is a path (of horizontal and vertical steps to pixels in the ring) going from one pixel to the other both in both clockwise and counterclockwise directions.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>bitmap</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>bitmap</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>bitmap</b> will contain between 1 and 50 characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>bitmap</b> will be 'X' or '.'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".........",
+ ".XXXXXXX.",
+ ".X....XX.",
+ ".X.XX.X..",
+ ".X....XX.",
+ ".XXXXXXX.",
+ "........."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"...",
+ ".X.",
+ "..."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"...........",
+ ".XXXXXXXXX.",
+ ".X.......X.",
+ ".X.XXXXX.X.",
+ ".X.X...X.X.",
+ ".X.X..XX.X.",
+ ".X.X...X.X.",
+ ".X.XXXXX.X.",
+ ".X.......X.",
+ ".XXXXXXXXX.",
+ "..........."}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is invalid because there is no innermost ring consisting of just 'X's.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".......",
+ ".XXXXX.",
+ ".X...X.",
+ ".X.X.X.",
+ ".X...X.",
+ ".XXXX..",
+ "......."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The rings of 'X's and '.'s must be horizontally and vertically connected in a circle.  In this example, the large ring of 'X's is connected, but not in a circle.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"X"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There may be no 'X's on the edges.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+".........",
+".XXXXXXX.",
+".X.....X.",
+".X.X.X.X.",
+".X.....XX",
+".XXXXXXX.",
+"........."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

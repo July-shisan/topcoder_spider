@@ -1,0 +1,30 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Synchronize your watches to 12:00 ....... now!
+<p>
+We have a collection of watches whose hands move continuously. 
+Create a class Synchro that contains a method resynch that is given a int[] <b>watch</b>
+telling how many minutes the hand of each watch advances in an hour and that returns the
+position of the minute hands (in minutes past the hour) at the first 
+time when the minute hands all exactly agree again.
+</p><p>
+Each element of <b>watch</b> describes a different watch. The returned value should be 
+a non-negative double less than 60. Ignore (or rip off!) the hour hands.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Synchro</td></tr><tr><td class="statText">Method:</td><td class="statText">resynch</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double resynch(int[] watch)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The returned value must be accurate to within a relative or absolute value of 1E-9.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>watch</b> will contain between 2 and 10 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>watch</b> will be between 1 and 200, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{59,59,59}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   These watches are a little slow but they stay synchronized. So the first time
+   that the minute hands are resynchronized is arbitrarily close to 0.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{60,53}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 34.28571428571427</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   After 8 hours the first watch has its minute hand at 0 and the other watch
+   has circled 7 times and has its minute hand at 4 minutes. The faster watch
+   then catches up in 4/7 of an additional hour, and at that point both minute
+   hands are at 34.285.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{120,40}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 30.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   
+   The faster watch catches the slower one in 3/4 of an hour at which point they
+   are both at the half hour position.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1, 2, 4, 8, 16, 32, 64, 128}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

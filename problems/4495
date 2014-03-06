@@ -1,0 +1,34 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><b>n</b> children walk around a circle with <b>n</b>-1 evenly-spaced chairs. When the music 
+stops, each one tries to get to the nearest chair. One of them is bound to fail 
+thus providing a lesson about life.  We want to identify the loser.
+<p>
+The children start evenly spaced around the circle, with the first child, A, 
+located right next to a chair. The child who follows A as they walk around the circle is B, 
+the one who follows B is C, etc. The children all start walking when the music starts at a speed that will get them all 
+the way around the circle in 10 seconds. When the music stops, they each try to 
+get to the nearest chair.
+</p><p>
+Create a class Musical that contains a method loser that is given <b>n</b> (the number
+of children) and <b>time</b> (the number of seconds the music plays). The method
+should return the name of the loser as a String containing just one uppercase letter.
+</p><p>
+It may be helpful to note that the child who is farther from any chair than each other child
+is always the loser.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Musical</td></tr><tr><td class="statText">Method:</td><td class="statText">loser</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, double</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String loser(int n, double time)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> will be between 2 and 26 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>time</b> will be between 1.0 and 100.0 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For all values within 1.0 E-9 of <b>time</b> the same child would be the loser.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>1.2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "B"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+Starting from their original positions they walk for 1.2 seconds. When the music 
+stops the closest chair to A is the first chair, the one he started at.  
+Meanwhile B has moved to the point where now that chair is also the closest 
+chair for him. But A is closer than B so B is the loser. (C is closest to the 
+second chair and has no competition for that one.)
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>12.0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "A"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+The children walk all the way around the circle and a little farther before the 
+music stops. The situation is almost the same now as in the previous case, 
+with A and B racing for the first chair, but this time A is farther away than B.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>26</pre></td></tr><tr><td class="statText"><pre>100.0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "N"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>15.0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "A"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The 2 children start out with A next to the chair and B on the other side of the circle. After 15 seconds, they have gone around the circle one and a half times, so B is next to the chair and A is the loser.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,42 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">We have a circular train track on which a number of loaded cars are located. Each 
+car has its own specified unloading position on the track.  The cars can be
+moved in either direction along the track, but cannot pass each other.
+<p>
+We want to specify the order in which the cars should be
+moved. The order of cars must allow each car to be moved just
+once all the way to its unloading position where it will remain. 
+</p><p>
+The cars are each named with a lowercase letter, and their destinations with
+the same letter but in uppercase. The positions of the cars and of their 
+destinations are given by a sequence of letters that is regarded as circular by
+wrapping around the ends. So, for example,  "BACacb" describes a situation in
+which going clockwise around the track we encounter B, A, C, a, c, b, and then 
+return back to B.  Here
+there are 3 different orders in which the cars could be moved to their
+destinations: 'a' then 'c' then 'b', 'a' then 'b' then 'c', or 'b' then 'a' then 'c'.
+</p><p>
+Create a class CircleOrder that contains a method firstOrder that is given the
+original positions in a String <b>circle</b> and that returns the order in which they 
+can be moved as a String, with the first character naming the first
+car to move, the second naming the second car, etc.  
+</p><p>
+If there is more
+than one order possible, give the one that comes first alphabetically.
+If no order is possible, your method should return the 4-letter String "NONE".
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CircleOrder</td></tr><tr><td class="statText">Method:</td><td class="statText">firstOrder</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String firstOrder(String circle)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>circle</b> will contain between 2 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character will be a letter, 'a'-'z' or 'A'-'Z'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No character will appear more than once.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If a letter appears in <b>circle</b>, it will appear both in uppercase and in lowercase.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"BACacb"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "abc"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   This is the example given above. "abc" comes alphabetically before the
+   other two choices, "acb" and "bac".
+
+
+
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"ABCacb"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "NONE"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+ 
+   We cannot move car 'c' first. If we move 'a' first, then we can never move 'b' to 'B', but 
+   if we move 'b' first we can never move 'a' to 'A'.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"XYxPyp"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "xyp"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

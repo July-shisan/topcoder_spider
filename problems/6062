@@ -1,0 +1,73 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p> 
+     An earthquake took place yesterday and caused some of the passages in the cave to be obstructed by stones.  There are four bears trapped in the cave and they want to reach each other. You have to determine the minimum number of passages that must be cleared to allow each bear to reach all the other bears.
+</p>
+<p>
+     The cave is represented as a rectangular <b>field</b>.  Each cell in the <b>field</b> corresponds to a passage.  Obstructed passages are denoted by '.' symbols and unobstructed passages are denoted by 'X' symbols. Bears can only move in four directions: left, right, up and down; they can't leave the field and can't walk through obstructed passages.
+</p>
+<p>
+     The first two bears are located in the first column of <b>field</b> and are denoted by 'B' symbols.  All other cells in the first column are obstructed passages.  You are NOT allowed to clear any obstructed passages in that column.
+</p>
+<p>  
+     The last two bears are located in the last column of <b>field</b> and are denoted by 'B' symbols.  All other cells in the last column are obstructed passages.  You are NOT allowed to clear any obstructed passages in that column.
+</p>
+<p>
+     You will be given the cave as a rectangular <b>field</b>, each element of which represents a row of the cave. Your method should return the minimum number of passages that must be cleared to allow each bear to reach all the other bears.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">FourBears</td></tr><tr><td class="statText">Method:</td><td class="statText">clearPassages</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int clearPassages(String[] field)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">       <b>field</b> will have between 2 and 7 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">       All elements in <b>field</b> will have the same length between 3 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">       The first column in <b>field</b> will have exactly two 'B' symbols denoting the bears, all other symbols will be '.' in that column.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">       The last column in <b>field</b> will have exactly two 'B' symbols denoting the bears, all other symbols will be '.' in that column.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">       All columns except the first and the last will contain only '.' and 'X' symbols.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+ "B.X...............",
+ "..X..XXXXXXXXXX..B",
+ "B.X..X........X...",
+ ".....X........X...",
+ "..XXXX........X..B"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The passages which must be cleared are marked with '#' characters.
+<pre>
+ B#X...............
+ ..X..XXXXXXXXXX##B
+ B#X..X........X...
+ ..#..X........X...
+ ..XXXX........X##B
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+ "..................",
+ "B..........XXXX..B",
+ "..........X.......",
+ "....XXXXXX........",
+ "..........XX......",
+ "B............XX..B",
+ ".................."
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 15</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>
+ ..................
+ B#........#XXXX##B
+ .#........X.......
+ .###XXXXXX#.......
+ .#........XX......
+ B#.........##XX##B
+ ..................
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+ "B.B",
+ "...",
+ "B.B"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>
+ B#B
+ .#.
+ B#B
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+ "..B",
+ "B.B",
+ "B.."
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>
+ ..B
+ B#B
+ B..
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+ "B..................XX.................XX.XXX.....B",
+ "...XXXXX.....XXXX......XXXXX.....XXXX..XXX.XXXX...",
+ "............XX..................XX................",
+ ".......XXX........XX..X....XXX...........XXX......",
+ "............XXX......X.XXX......XXX.XXX..X.XXX....",
+ "....XXXX......XXX...X...XXXX......XXX.XXXX........",
+ "B..XX..............XX............................B"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 28</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,77 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+A lattice crossword is a variant of a crossword where exactly 4 words are arranged in the form of a lattice (like a '#' sign). Given 4 words, <b>a</b>, <b>b</b>, <b>c</b> and <b>d</b>, return the number of different lattice crosswords that can be created according to the following rules:
+</p><ol><li>
+Each of the four given words must appear in the crossword exactly once.
+</li>
+<li>
+Two of the four words must be printed horizontally, from left to right.
+</li>
+<li>
+Two of the four words must be printed vertically, from top to bottom.
+</li>
+<li>
+Each horizontal word must cross both vertical words (each through exactly one common letter).
+</li>
+<li>
+Each vertical word must cross both horizontal words (each through exactly one letter).
+</li>
+<li>
+The horizontal words must be separated by at least one row.
+</li>
+<li>
+The vertical words must be separated by at least one column.
+</li>
+</ol><p>
+Two lattice crosswords are considered different if at least one of the words is at a different position.  The position of a word is determined by the row and column position of its first letter.  Row 0 is the row of the topmost letter in the crossword, and column 0 is the column of the leftmost letter in the crossword.
+</p>
+
+<pre>
+      c
+      o
+    p n
+    r t
+topcoder
+    b s
+  solution
+    e
+    m
+</pre>
+
+<p>
+Here the leftmost letter is "t" of the "topcoder" and the topmost letter is "c" of the "contest".
+So, the positions of the words are:<br>
+"topcoder" - (0, 4)<br>
+"contest"  - (6, 0)<br>
+"problem"  - (4, 2)<br>
+"solution" - (2, 6)<br></p>
+
+<p>
+Another one lattice crossword, which can be constructed using this words is:
+</p>
+
+<pre>
+    t
+    o
+    p s
+    c o
+  problem
+    d u
+contest
+    e i
+      o
+      n
+</pre>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">LatticeCrossword</td></tr><tr><td class="statText">Method:</td><td class="statText">crossword</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, String, String, String</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int crossword(String a, String b, String c, String d)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>a</b>, <b>b</b>, <b>c</b> and <b>d</b> will each contain between 3 and 15 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>a</b>, <b>b</b>, <b>c</b> and <b>d</b> will be distinct.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>a</b>, <b>b</b>, <b>c</b> and <b>d</b> will contain only lowercase letters ('a'-'z').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"topcoder"</pre></td></tr><tr><td class="statText"><pre>"contest"</pre></td></tr><tr><td class="statText"><pre>"problem"</pre></td></tr><tr><td class="statText"><pre>"solution"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"coder"</pre></td></tr><tr><td class="statText"><pre>"number"</pre></td></tr><tr><td class="statText"><pre>"rober"</pre></td></tr><tr><td class="statText"><pre>"joker"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No lattice crossword can be constructed.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"lattice"</pre></td></tr><tr><td class="statText"><pre>"crossword"</pre></td></tr><tr><td class="statText"><pre>"disticnt"</pre></td></tr><tr><td class="statText"><pre>"approach"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"zaxb"</pre></td></tr><tr><td class="statText"><pre>"axc"</pre></td></tr><tr><td class="statText"><pre>"cxd"</pre></td></tr><tr><td class="statText"><pre>"bxdy"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Two lattice crosswords:
+
+<pre>
+           z
+zaxb       axc
+ x x  and  x x
+ cxd       bxdy
+   y
+</pre>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"aaaaaaaaaaaaaaa"</pre></td></tr><tr><td class="statText"><pre>"aaaaaaaaaaaaba"</pre></td></tr><tr><td class="statText"><pre>"aaaaaaaaaaaaaab"</pre></td></tr><tr><td class="statText"><pre>"baaaaaaaaaaaaaa"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10082176</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A lot of crosswords.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

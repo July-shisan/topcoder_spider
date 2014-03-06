@@ -1,0 +1,27 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p><i>This problem contains an image that can be viewed in the applet.</i></p>
+<p>
+A door of a safe is locked by a password. Josh witnessed an employee opening the safe. Here is the information Josh spied.
+</p><ol><li>The password is a sequence containing exactly <b>N</b> digits..</li>
+<li>The password is entered using the keypad shown in the picture below.</li>
+<li>Every pair of neighboring digits in the password is adjacent on the keypad.  Two digits are adjacent on the keypad if they are distinct and have a common edge.</li>
+</ol><p>
+<img src="http://www.topcoder.com/contest/problem/UnsealTheSafe/UnsealTheSafe.gif"></p>
+<p>
+Josh has evil intentions of unsealing the safe, but before he can realize his plan, he wants to know how many different passwords exist.  Given the value for <b>N</b>, return the number of possible passwords that satisfy all the constraints given above.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">UnsealTheSafe</td></tr><tr><td class="statText">Method:</td><td class="statText">countPasswords</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long countPasswords(int N)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>N</b> will be between 2 and 30, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 26</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><ul><li>if the first button is 1, the second button can be either 2 or 4</li>
+<li>if the first button is 2, the second button can be either 1, 3 or 5</li>
+<li>if the first button is 3, the second button can be either 2 or 6</li>
+<li>if the first button is 4, the second button can be either 1, 5 or 7</li>
+<li>if the first button is 5, the second button can be either 2, 4, 6 or 8</li>
+
+<li>if the first button is 6, the second button can be either 3, 5 or 9</li>
+<li>if the first button is 7, the second button can be either 4, 8 or 0</li>
+<li>if the first button is 8, the second button can be either 5, 7 or 9</li>
+<li>if the first button is 9, the second button can be either 6 or 8</li>
+<li>if the first button is 0, the second button can be 7 only</li>
+</ul></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 74</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>25</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 768478331222</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

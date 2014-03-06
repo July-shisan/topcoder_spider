@@ -1,0 +1,121 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Alice and Bob are playing a game on a rectangular board.
+Rows and columns are both numbered starting from 0.
+We will use (i, j) to denote the cell in row i, column j.
+The cell (0, 0) is in the top left corner of the board. <br>
+
+Some cells contain walls, others are empty.
+The game is played on empty cells only.
+The empty cells form a tree.
+A more formal specification:
+We say that two cells are adjacent when they share an edge.
+A path from cell X to cell Y is a sequence of distinct cells such that the first cell in the sequence is cell X, the last cell is Y, and each pair of consecutive cells in the sequence is adjacent.
+The test data for this task has the following property: For each pair X, Y of empty cells in the grid, there is exactly one path from X to Y that consists of empty cells only. <br>
+
+The game is played as follows:
+Each player has one piece on the board.
+Initially, each piece occupies a different cell.
+The players take alternating turns, Alice starts.
+In each turn, the player moves his/her piece onto one of the adjacent empty cells.
+(Note that moving the piece is mandatory, it is not allowed to keep it in its current cell.) <br>
+
+If at any moment the two tokens occupy the same cell, Alice wins.
+If Bob is able to make 100,000 moves, Bob wins. <br>
+
+You are given a String[] <b>field</b> that describes the game board.
+Character j of element i of <b>field</b> describes the initial content of the cell (i, j).
+The character '.' represents an empty cell, '#' represents a wall, 'A' is an empty cell where Alice's piece starts, and 'B' is an empty cell where Bob's piece starts. <br>
+
+Here is the twist:
+The game board is completely in the dark.
+Alice and Bob each know the initial location of both pieces.
+During the game, Alice has no idea how Bob moves his piece.
+However, Bob has an extraordinary ability:
+Even before the game starts, he can predict the sequence of Alice's moves with perfect reliability.
+(Note that this is actually possible: as Alice does not gain any information during the game, she may as well determine her entire strategy in advance.)
+He can then use this knowledge when planning his own moves. <br>
+
+Determine whether Alice has a winning strategy. If she does, return "Alice wins" (quotes for clarity). Otherwise, return "Bob wins".</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">GameInDarknessDiv1</td></tr><tr><td class="statText">Method:</td><td class="statText">check</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String check(String[] field)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Note that the return value is case sensitive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>field</b> will contain between 2 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>field</b> will contain between 2 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>field</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of <b>field</b> will be either '.', '#', 'A' or 'B' (quotes for clarity).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>field</b> will contain exactly one 'A' and 'B' each.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All empty cells in <b>field</b> (including A and B) will form a tree. See the statement for a formal definition.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A.B..",
+ "##.##",
+ "##.##"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "Alice wins"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Initially Alice's piece starts in the cell (0, 0) and Bob's piece in the cell (0, 2). <br>
+
+One possible strategy for Alice is as follows:
+<ul><li>Move to (0, 1).</li>
+<li>Move to (0, 2).</li>
+<li>Move to (1, 2).</li>
+<li>Move to (0, 2).</li>
+<li>Move to (0, 3).</li>
+</ul>
+With this strategy, Alice can always win regardless of how Bob moves.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A.B..",
+ ".#.#.",
+ "#..##"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "Bob wins"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"#...#",
+ ".#A#.",
+ "..B..",
+ ".#.#.",
+ "#...#"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "Alice wins"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Alice can win, just by moving her piece to cell (2, 2).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"##..#",
+ "A.#..",
+ "#B..#",
+ "#.##.",
+ "....."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "Alice wins"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"##################################################",
+ "###..................#................#........###",
+ "###.################.########.#######.########.###",
+ "###.################.########.#######.########.###",
+ "###.################.########.#######.########.###",
+ "###.################.########.#######.########.###",
+ "###.################.########.#######.########.###",
+ "###.################.########.#######.########.###",
+ "###.################.########.#######.########.###",
+ "###.################.########.#######.########.###",
+ "###..........#######........#.#######........#.###",
+ "############.#######.########.#######.########.###",
+ "############.#######.########.#######.########.###",
+ "############.#######.########.#######.########.###",
+ "############.#######.########.#######.########.###",
+ "############.#######.########.#######.########.###",
+ "############.#######.########.#######.########.###",
+ "############.#######.########.#######.########.###",
+ "############.#######.########.#######.########.###",
+ "###B.........#######..........#######..A.......###",
+ "##################################################"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "Bob wins"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"###.#",
+ "###..",
+ "A..B#",
+ "###..",
+ "###.#"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "Alice wins"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".....#.##.##.#.#",
+ ".###.#.##.##....",
+ "#......B#...#.#.",
+ "#.#A#.#.#.#..##.",
+ "...#..#....#...."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "Alice wins"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">7)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"...#.....###....#.....#...#.#.",
+ ".#..#.##..#..#.#..###...#.....",
+ "..#..#..#...#.#..#....##.#.###",
+ ".#.#...###.#..#.#..###....#...",
+ "...##.###..#.#..#.#...#.##..#.",
+ ".#..#..#..#...#.#.#.#.#..#.#..",
+ "..#..#.#.#..#..##.#.#..#.##..#",
+ ".#.###.#.##..#.....A##......#.",
+ "#.........#.#..#.###..###.#...",
+ "..###.#.#.#..#.#....#.....#.#.",
+ ".#..#.#.####.#..#.#..#.#.###..",
+ "..#...#...#..#.#...#.#..#.#..#",
+ "#..#.#..#.#.#..###.#.#.#....#.",
+ "..#..##.##...#....#..#.#.####.",
+ "#..#...#...#..#.#..###.#......",
+ "#.#.##...#..#..#.#....#..#.#.#",
+ "....#..##.#..#....#.#.#.#...#.",
+ ".#.#..#....#.#.##..#..##..#.#.",
+ "..##.#..##.#..#..#..#...#.#...",
+ "#.#..##..#..#..#..#..##.#.#.#.",
+ "..#.#.#.#.#..#...##.#...#..#..",
+ ".##.....#..#.#.#.#..#.##.#..#.",
+ "...#.#.#..#..#.###.#..#...#.#.",
+ ".#..#....#..#.#...###.#.#..#..",
+ ".#.#.#####.#....#..#..#.##.#.#",
+ ".#...#......#.#..###B#....#...",
+ "..###..####.#..#.#...#.#.#..#.",
+ "#.#..#.#..#.#.#..#.#..#....#..",
+ "..#.##..#.#.#.####..#.#####..#",
+ "#.....#...#.#......#.......#.."}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "Bob wins"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

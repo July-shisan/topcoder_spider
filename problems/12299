@@ -1,0 +1,57 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You are given ints <b>n</b> and <b>m</b>: the dimensions of a matrix.
+A matrix M with <b>n</b> rows and <b>m</b> columns is called a <i>mountain</i> if it satisfies the following conditions:
+<ul><li>All elements of M are <i>positive</i> integers.</li>
+<li>There are integers a and b with the following properties:
+  <ul><li>0 &lt;= a &lt;= <b>n</b>-1 and 0 &lt;= b &lt;= <b>m</b>-1.</li>
+  <li>For each row i, M[i][0] &lt; M[i][1] &lt; ... &lt; M[i][b-1] &lt; M[i][b] &gt; M[i][b+1] &gt; ... &gt; M[i][<b>m</b>-1].</li>
+  <li>For each column j, M[0][j] &lt; M[1][j] &lt; ... &lt; M[a-1][j] &lt; M[a][j] &gt; M[a+1][j] &gt; ... &gt; M[<b>n</b>-1][j].</li>
+  </ul></li>
+</ul>
+
+In addition to <b>n</b> and <b>m</b>, you are given some elements of M.
+More precisely, you are given the int[]s <b>rowIndex</b>, <b>columnIndex</b> and <b>element</b>.
+For each valid k, M[<b>rowIndex</b>[k]][<b>columnIndex</b>[k]] has to be <b>element</b>[k].
+
+Your task is to fill in the missing values so that M becomes a mountain.
+Find and return the smallest possible sum of all elements in a mountain M that matches the given constraints.
+If there is no mountain that matches the given constraints, return -1 instead.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TheMountain</td></tr><tr><td class="statText">Method:</td><td class="statText">minSum</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int[], int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int minSum(int n, int m, int[] rowIndex, int[] columnIndex, int[] element)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> and <b>m</b> will each be between 1 and 200, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>rowIndex</b> will contain between 1 and min(<b>n</b>*<b>m</b>, 50) elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>columnIndex</b> and <b>element</b> will contain the same number of elements as <b>rowIndex</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>rowIndex</b> will be between 0 and <b>n</b>-1, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>columnIndex</b> will be between 0 and <b>m</b>-1, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>element</b> will be between 1 and 1,000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No two indices represented by <b>rowIndex</b> and <b>columnIndex</b> will be the same.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>{0, 0, 0, 1, 1, 1}</pre></td></tr><tr><td class="statText"><pre>{0, 1, 2, 0, 1, 2}</pre></td></tr><tr><td class="statText"><pre>{4, 6, 9, 1, 3, 6}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 29</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">We are already given all elements of this matrix.
+It looks as follows:
+<pre>
+[4 6 9]
+[1 3 6]
+</pre>
+We can easily verify that this is a mountain for a=0 and b=2.
+The sum of all elements is 4+6+9+1+3+6=29.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>{1, 0, 1}</pre></td></tr><tr><td class="statText"><pre>{2, 2, 0}</pre></td></tr><tr><td class="statText"><pre>{5, 7, 6}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 40</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The matrix looks as follows.
+<pre>
+[? ? 7]
+[6 ? 5]
+</pre>
+The optimal solution is as follows. The sum is 7+8+7+6+7+5=40.
+<pre>
+[7 8 7]
+[6 7 5]
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>{0, 0, 2, 2}</pre></td></tr><tr><td class="statText"><pre>{0, 2, 2, 0}</pre></td></tr><tr><td class="statText"><pre>{1, 1, 1, 1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 15</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The matrix looks as follows:
+<pre>
+[1 ? 1]
+[? ? ?]
+[1 ? 1]
+</pre>
+The optimal solution is as follows.
+<pre>
+[1 2 1]
+[2 3 2]
+[1 2 1]
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>{0, 0, 1, 1}</pre></td></tr><tr><td class="statText"><pre>{0, 1, 1, 0}</pre></td></tr><tr><td class="statText"><pre>{5, 8, 5, 8}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The given matrix is not a mountain.
+<pre>
+[5 8]
+[8 5]
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>{0}</pre></td></tr><tr><td class="statText"><pre>{1}</pre></td></tr><tr><td class="statText"><pre>{1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This matrix looks as follows:
+<pre>
+[? 1 ?]
+</pre>
+It is not possible to make a mountain out of it, because in a mountain all elements have to be positive.
+(Note that 0 is not positive.)</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>123</pre></td></tr><tr><td class="statText"><pre>45</pre></td></tr><tr><td class="statText"><pre>{2, 3, 5, 7, 11}</pre></td></tr><tr><td class="statText"><pre>{13, 17, 19, 23, 29}</pre></td></tr><tr><td class="statText"><pre>{100, 200, 300, 400, 500}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 367047</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>200</pre></td></tr><tr><td class="statText"><pre>200</pre></td></tr><tr><td class="statText"><pre>{5}</pre></td></tr><tr><td class="statText"><pre>{8}</pre></td></tr><tr><td class="statText"><pre>{666}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5737554</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">7)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>{0, 8, 7}</pre></td></tr><tr><td class="statText"><pre>{3, 1, 9}</pre></td></tr><tr><td class="statText"><pre>{5, 4, 7}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 593</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,44 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Given a finite alphabet <tt>S</tt>, a binary code over this alphabet <tt>S</tt> is a 
+function that maps each element of <tt>S</tt> to some (possibly empty) string over the alphabet <tt>{0,1}</tt>.
+</p>
+
+<p>
+An example of such a code for <tt>S={a,b,c,d}</tt> is the function <tt>f</tt> defined by 
+<tt>f(a)=1, f(b)=1010, f(c)=01, f(d)=10101</tt>.
+</p>
+
+<p>
+Any binary code can be naturally extended to encode strings over the alphabet <tt>S</tt>
+simply by concatenating the codes of the string's letters, in order.
+For example, using the code mentioned above we can encode <tt>cac</tt> as <tt>f(cac)=01101</tt>.
+</p>
+
+<p>
+A code is called <i>ambiguous</i> if there are two different strings over <tt>S</tt> that have the same encoding.
+Obviously, in practice we want to avoid using an ambiguous code.
+</p>
+
+<p>
+A code is called <i>really ambiguous</i> if there are <i>three</i> different strings over <tt>S</tt> that have the same encoding.
+For example, the code from the above example is really ambiguous: the strings <tt>ba</tt>, <tt>acc</tt>, and <tt>d</tt> are all encoded to
+<tt>10101</tt>.
+</p>
+
+<p>
+You will be given a String[] <b>code</b> containing the strings over <tt>{0,1}</tt> used to encode letters of some alphabet <tt>S</tt>.
+Your method should check whether this code is <i>really ambiguous</i>.
+If it is really ambiguous, find a shortest string over <tt>{0,1}</tt> that is an encoding of (at least) three different strings over <tt>S</tt>, and return its length. 
+If the given code is not really ambiguous, return -1.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BinaryCodes</td></tr><tr><td class="statText">Method:</td><td class="statText">ambiguous</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int ambiguous(String[] code)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Your method does not need to know the actual elements of <tt>S</tt>, and the size of <tt>S</tt> is obviously equal to the number of elements in <b>code</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>code</b> will contain between 2 and 30 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>code</b> will contain between 0 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>code</b> will only contain the characters '<tt>0</tt>' (zero) and '<tt>1</tt>' (one).</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"1","1010","01","10101"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example from the problem statement, and the string <tt>10101</tt> is the shortest string that can be decoded in three different ways.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0","1"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This code is obviously not ambiguous.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0","11","11","11"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is clearly a really ambiguous code, as there are three different one letter strings over
+<tt>S</tt> that are encoded to <tt>11</tt>.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0000","001","01001","01010","01011"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This code is a prefix code, i.e., no code word is a prefix of another code word. If a code has this
+property, it is guaranteed that it is not ambiguous, but the other direction is not true.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"1","10","00"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is not a prefix code, but it can easily be shown that this code is not ambiguous.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"","01101001001","111101011"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Having an empty code word is a great way how to design a really ambiguous code.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"00011011","000110","11","0001","1011","00","011011"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The shortest proof that this code is really ambiguous is <tt>00011011</tt>. Note that this string can in fact be decoded in four different ways.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

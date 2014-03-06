@@ -1,0 +1,52 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Rabbits often feel lonely, so they enjoy participating in programming contests together. <br><br>
+Rabbit Iris is the head coach of her university's programming team. 
+The big annual contest is going to be held next month, 
+so she decided to hold a preliminary contest to help her decide who to put in the team. <br><br>
+The preliminary contest is now over, and the submissions are being reviewed. 
+You are given a int[] <b>points</b>, and a String[] <b>standings</b>. 
+Each element of points represents a single problem from the contest. 
+For the j-th problem: 
+<ul><li>If <b>points</b>[j] is positive, then all submissions for this problem have been reviewed, 
+	and the point value of the problem is <b>points</b>[j]. 
+	The j-th character of the i-th element of standings is 'Y' if rabbit i correctly solved the problem, 
+	or 'N' if he did not. </li>
+	<li>If <b>points</b>[j] is negative, then none of the submissions for this problem have been reviewed yet, 
+	and the point value of the problem is -<b>points</b>[j]. 
+	The j-th character of the i-th element of standings is 'Y' if rabbit i submitted a solution (which may or may not be correct) 
+	for this problem, or 'N' if he did not. </li>
+</ul>
+A rabbit's score is the sum of the point values for the problems which he solved correctly. 
+Once all the submissions are reviewed, the rabbits will be ranked according to their scores. 
+Rabbits with higher scores will be ranked higher than rabbits with lower scores. 
+If two rabbits have the same score, then the lower-numbered rabbit will be ranked higher. 
+The top <b>qualified</b> ranking rabbits will be qualified to be members of the team. 
+Among them, Iris will arbitrarily select <b>selected</b> rabbits to actually be in the team. 
+If you consider all the possible scenarios for the problems which have not yet been reviewed, 
+how many different teams are possible? 
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">RabbitProgramming</td></tr><tr><td class="statText">Method:</td><td class="statText">getTeams</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], String[], int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long getTeams(int[] points, String[] standings, int qualified, int selected)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Two teams are considered different if and only if at least one rabbit belongs to exactly one of the teams.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>points</b> will contain between 1 and 50 elements, inclusive. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>points</b> will be between -100,000 and 100,000, inclusive. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No element of <b>points</b> will be 0. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>standings</b> will contain between 1 and 50 elements, inclusive. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>standings</b> will contain exactly <i>N</i> characters, where <i>N</i> is the number of elements in <b>points</b>. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>standings</b> will be either 'Y' or 'N'. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>qualified</b> will be between 1 and the number of elements in <b>standings</b>, inclusive. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>selected</b> will be between 1 and <b>qualified</b>, inclusive. </td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 1, -10 }</pre></td></tr><tr><td class="statText"><pre>{ "NY", 
+  "YN", 
+  "YN",
+  "YN" }</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">If rabbit 0's submission for problem 1 is correct, rabbits 0, 1, and 2 are qualified, 
+and teams { 0, 1 }, { 0, 2 }, { 1, 2 } are possible. <br><br>
+If it is incorrect, rabbits 1, 2, and 3 are qualified, and teams { 1, 2 }, { 1, 3 }, { 2, 3 } are possible. 
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ -250, -500, -1000 }</pre></td></tr><tr><td class="statText"><pre>{ "YYY", 
+  "YNY", 
+  "YYN", 
+  "YYN", 
+  "YNN" }</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Any pairs of rabbits can be chosen. 
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 5, -12, 5, -15, 10, -20, 3, -25, 7, -32, 21, -45 }</pre></td></tr><tr><td class="statText"><pre>{ "YYYYYYYYYNYY", 
+  "YYYNYYYYYNNN", 
+  "YYYNYNYYNNYN", 
+  "YYYYYNYYYYNN", 
+  "YYNNYNYNYYNN", 
+  "YYYNNNYYNNNN", 
+  "YYNNNNYYNNNN", 
+  "NNYNYYYNYNNN", 
+  "NNNNNNYYYNNN", 
+  "YYYNNNYYYNNN" }
+</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 99</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Example from a real programming contest. 
+</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

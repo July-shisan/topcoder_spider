@@ -1,0 +1,34 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+As multiprocessor computers become more widespread in our lives, 
+it becomes more and more important to write parallel programs 
+that can solve tasks using several processors.
+</p>
+<p>
+However, designing parallel programs is difficult for 
+many reasons. Let us consider two of them. First, some 
+amount of work cannot be parallelized and must therefore 
+be executed on a single processor. Besides that, when increasing the number
+of processors, the amount of work needed for synchronization increases. 
+We will assume that there is one special processor that controls the 
+execution and executes the unparallelizable part, and that 
+the increase in time due to synchronization is linear in the number of processors.
+</p>
+<p>
+You are given ints <b>t0</b>, <b>tp</b>, and <b>ts</b>.  
+<b>t0</b> is the number of seconds needed for the execution of the 
+unparallelizable part.  <b>tp</b> is the number of seconds needed 
+for execution of the parallelizable part on a single processor.  
+<b>ts</b> is the number of seconds added to the synchronization time 
+for each additional processor.
+</p>
+<p>
+The time needed to execute the whole task on one processor is <b>t0</b>+<b>tp</b>.
+The time needed to execute the whole task on n &gt; 1 processors is 
+max(<b>t0</b>, <b>tp</b>/(n-1) + <b>ts</b>*(n-1)). Here <b>tp</b>/(n-1) is a floating point number. 
+Return the number of processors needed to execute the task in minimal time. 
+If there are multiple solutions, return the smallest among them.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">MultiprocessorProgramming</td></tr><tr><td class="statText">Method:</td><td class="statText">optimalNumberOfProcessors</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long optimalNumberOfProcessors(int t0, int tp, int ts)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>t0</b> will be between 1 and 10<sup>9</sup>, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>tp</b> will be between 1 and 10<sup>9</sup>, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>ts</b> will be between 1 and 10<sup>9</sup>, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In this case the optimal number of processors is 4. The time needed to complete the task is max(1,10/3+1*3)=19/3.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>8</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In this case the unparallelizable part is too large, so the optimal number of processors is 3. The time needed to complete the task is max(8,10/2+1*2)=8.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In this case synchronization is too difficult, so parallelization is unreasonable.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

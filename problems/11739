@@ -1,0 +1,39 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Marvin plays a simple game. The game is played with an infinite supply of marbles and five bags, labeled "bag 0" through "bag 4".
+</p>
+
+<p>
+At the beginning, Marvin takes <b>N</b> marbles (where <b>N</b> is a nonnegative integer) and places them into bag 0. The remaining four bags are left empty.
+Marvin then follows this simple algorithm:
+</p>
+
+<pre>
+    Add a marble into bag 1.
+    Repeat forever:
+        Add a marble into bag 1.
+        Empty bag 4.
+        While there are marbles in bag 0:
+            While there are marbles both in bag 0 and in bag 1:
+                Remove a marble from bag 0.
+                Remove a marble from bag 1.
+                Add a marble into bag 2.
+                Add a marble into bag 3.
+            End While
+            Add a marble into bag 4.
+            If bags 0 and 1 are both empty:
+                Move all marbles from bag 3 to bag 4.
+                TERMINATE THE GAME
+            End If
+            Move all marbles from bag 3 to bag 1.
+        End While
+        Move all marbles from bag 2 to bag 0.
+    End Repeat
+</pre>
+
+<p>
+You are given a long <b>N</b>. Count the number of times a marble enters a bag during Marvin's game. That is, compute X+Y, where X is the number of times a marble is added to some bag, and Y is the number of times a marble is moved from one bag to another. To avoid overflows, return just the value ((X+Y) modulo 1,000,000,009). If Marvin's game does not terminate for the given <b>N</b>, return -1 instead.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">MinskyMystery</td></tr><tr><td class="statText">Method:</td><td class="statText">computeAnswer</td></tr><tr><td class="statText">Parameters:</td><td class="statText">long</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int computeAnswer(long N)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Suppose there are M marbles in bag A. The instruction "<tt>Move all marbles from bag A to bag B.</tt>" then counts as M individual moves.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Note that <b>N</b> is allowed to be zero.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>N</b> will be between 0 and 10^12, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 27</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 16</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2401</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 59058</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>24</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 86</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

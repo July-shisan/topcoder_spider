@@ -1,0 +1,46 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Taro likes <i>colorful</i> things, especially <i>colorful</i> tiles.
+<br><br>
+Taro's room is an H x W rectangle divided into 1 x 1 tiles. Each tile is one of the following four colors: red, green, blue or yellow. You are given a String[] <b>room</b>. If the j-th character of the i-th element is 'R', 'G', 'B' or 'Y', the color of the tile in the j-th column of the i-th row is red, green, blue or yellow, respectively.
+<br><br>
+He decided to change the color of some tiles so that no two adjacent tiles have the same color. Two tiles are adjacent if they share a side or a corner (so a tile has at most 8 adjacent tiles). He is allowed to change at most <b>K</b> tiles.
+<br><br>
+Return the number of ways to change tiles that satisfies the above conditions, modulo 1,000,000,007. Two ways are considered to be different if there is at least one tile of distinct color.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ColorfulTiles</td></tr><tr><td class="statText">Method:</td><td class="statText">theCount</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int theCount(String[] room, int K)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>room</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>room</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>room</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>room</b> will be 'R', 'G', 'B' or 'Y'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>K</b> will be between 0 and the number of characters in <b>room</b>, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"RG"}</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">If he doesn't change any tiles, he can make "RG".
+<br>
+If he changes the first tile, he can make "BG" or "YG".
+<br>
+If he changes the second tile, he can make "RB" or "RY".</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BY"}</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 12</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">All pairs of different colors are possible.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"RG",
+ "GR"}</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The eight ways are:
+<br><br><pre>
+RG  RG  BY  YB  BG  YG  RB  RY
+BY  YB  GR  GR  YR  BR  GY  GB
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BRYBGYRB"
+,"GRYGYBBG"
+,"RGBGYBYG"
+,"YRBRGBYG"
+,"RBGRBRGG"
+,"RBGYRYBY"}</pre></td></tr><tr><td class="statText"><pre>34</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 489</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+,"BBBBBBYYYBBBBBBBBBBBBBBBBBBBBBBBBBYYYYYBBBBBBBBBBB"
+,"BBBBBBYYYBBBBBBBBBBBBBBBBBBBBBBYYYYYYYYYYYBBBBBBBB"
+,"BBBBBBYYYYYYYYYYYYYYYYBBBBBBBBYYYYBBBBBYYYYBBBBBBB"
+,"BBBBBBYYYYYYYYYYYYYYYYBBBBBBBYYYBBBBBBBBBYYYBBBBBB"
+,"BBBBBBYYYBBBBBBBBBBBBBBBBBBBBYYYBBBBBBBBBYYYBBBBBB"
+,"BBBBBBYYYBBBBBBBBBBBBBBBBBBBBYYYBBBBBBBBBYYYBBBBBB"
+,"BBBBBBYYYBBBBBBBBBBBBBBBBBBBBYYYBBBBBBBBBYYYBBBBBB"
+,"BBBBBBYYYBBBBBBBBBBBBBBBBBBBBYYYBBBBBBBBBYYYBBBBBB"
+,"BBBBBBYYYBBBBBBBBBBBBBBBBBBBBBYYYYBBBBBYYYYBBBBBBB"
+,"BBBBBBYYYBBBBBBBBBBBBBBBBBBBBBBBYYYYYYYYYBBBBBBBBB"
+,"BBBBBBYYYYYYYYYYYYBBBBBBBBBBBBBBYYYYYYYYYBBBBBBBBB"
+,"BBBBBBYYYYYYYYYYYYYYBBBBBBBBBBYYYYBBBBBYYYYBBBBBBB"
+,"BBBBBBBBBBBBBBBBYYYYYBBBBBBBBYYYBBBBBBBBBYYYBBBBBB"
+,"BBBBBBBBBBBBBBBBBBYYYBBBBBBBBYYYBBBBBBBBBYYYBBBBBB"
+,"BBBBBBBBBBBBBBBBBBYYYBBBBBBBBYYYBBBBBBBBBYYYBBBBBB"
+,"BBBBBBYYYBBBBBBBBBYYYBBBBBBBBYYYBBBBBBBBBYYYBBBBBB"
+,"BBBBBBYYYBBBBBBBBBYYYBBBBBBBBYYYBBBBBBBBBYYYBBBBBB"
+,"BBBBBBBYYYYBBBBBYYYYBBBBBBBBBBYYYYBBBBBYYYYBBBBBBB"
+,"BBBBBBBBYYYYYYYYYYYBBBBBBBBBBBBYYYYYYYYYYYBBBBBBBB"
+,"BBBBBBBBBBBYYYYYBBBBBBBBBBBBBBBBBBYYYYYBBBBBBBBBBB"
+,"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"}</pre></td></tr><tr><td class="statText"><pre>825</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 404506540</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,32 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><i>A domino is a rectangular tile with a number on each end.</i>
+<br><br>
+On a TV game show, a player is presented with a NxN board containing N^2 dominoes.  The domino in row i, column j (both 1-based indices) contains the numbers i and j.  The player must choose exactly N dominoes from the board such that no two dominoes are from the same column and no two are from the same row.  He is then required to join all pairs of dominoes that contain the same number.  For example, if he picks (1,3), (3,2), (2,4) and (4,1), he must join them all together in a cycle.
+<br><br>At this point, there are one or more groups of connected dominoes (a single domino counts as a group).  Because the player is not allowed to choose dominoes from the same column or row, there will always be a single way to join the dominoes together.
+<br><br>
+Each domino has a hidden number on its back.  Compute the product of the hidden numbers of all the selected dominoes.  If there is an even number of connected domino groups, multiply this product by -1.  The final product is the outcome of the game, and if it is positive, the player wins money, and if it's negative, he loses money.
+<br><br>
+You are given a String[] <b>board</b> containing the hidden numbers of all the dominoes on the board.  The j-th character of the i-th element of <b>board</b> is a character representing the hidden number of the domino in row i, column j.  Digits '0' to '9' represent the numbers 0 to 9.  Letters 'A' to 'I' represent the numbers -1 to -9. Return a int[] containing exactly two elements.  The first element is the minimum possible outcome of the game, and the second element is the maximum possible outcome.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TVGameWinnings</td></tr><tr><td class="statText">Method:</td><td class="statText">getMinMax</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] getMinMax(String[] board)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain between 1 and 6 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain exactly n characters, where n is the number of elements in <b>board</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain only digits '0'-'9' and uppercase letters 'A'-'I'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"35",
+ "44"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {-12, 20 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are two possible ways to select the dominoes:
+<br><br>
+1) Select (1,1) and (2,2).  You can't join them together, so you have two groups of dominoes (each containing a single domino).  The product of their hidden numbers is 3x4 = 12.  Since there's an even number of groups, you then multiply by -1 to get -12.
+<br><br>
+2) Select (1,2) and (2,1).  You must join these two together, so you have one connected group of dominoes.  The product of their hidden numbers is 4x5 = 20.
+<br><br>
+The minimum outcome is -12 and the maximum is 20.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"00200",
+ "0B000",
+ "00020",
+ "10000",
+ "00001"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {-8, 0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Every choice leads to 0 earnings except (1,3), (2,2), (3,4), (4,1), (5,5).  When we choose those, we get three groups of connected dominoes:<br><ul><li>(1,3) - (3,4) - (4,1)</li>
+<li>(2,2)</li>
+<li>(5,5)</li>
+</ul>
+The outcome here is 2*(-2)*2*1*1 = -8.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"12A",
+ "A12",
+ "2A1"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {-1, 8 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are 6 possible ways to select the dominoes, and their outcomes are: -1, 1, 2, 2, 2, 8.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AAAA",
+ "BBBB",
+ "CCCC",
+ "DDDD"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {-24, 24 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here, no matter how we choose the dominoes, the outcome will always be either 24 or -24.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

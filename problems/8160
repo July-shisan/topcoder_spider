@@ -1,0 +1,47 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+	You are given a goal word as a String <b>matchString</b> and puzzle words as a 
+	String[] <b>matchWords</b>.
+	The number of puzzle words is equal to the number of letters in the goal word. 
+	Assume all letters in all words have the same width and height.
+</p>
+<br><p>
+	You want to play a game. At the beginning of the game, all the words from <b>matchWords</b> are arranged one below 
+	another, in the order that they're given.  The words are horizontally aligned so that the first letters of all the 
+	words form a vertical line.
+	You may then shift each of the words any number of places (zero or more) to the right, where one place is the 
+	width of a single letter.
+	The goal of the game is to shift the puzzle words such that the goal word can be read vertically from top to 
+	bottom in a straight line. See examples for clarification.
+</p>
+<br><p>
+	Your score is the sum of the number of places each puzzle word was shifted. 
+	Return the minimal score you can obtain while achieving your goal, or -1 if it is impossible.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">MatchString</td></tr><tr><td class="statText">Method:</td><td class="statText">placeWords</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int placeWords(String matchString, String[] matchWords)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>matchWords</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>matchWords</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>matchWords</b> will contain only uppercase letters ('A'-'Z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>matchString</b> will contain the same number of characters as the number of elements in <b>matchWords</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>matchString</b> will contain only uppercase letters ('A'-'Z').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"TOP"</pre></td></tr><tr><td class="statText"><pre>{"TIK", 
+ "PPPO", 
+ "OP"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The final arrangement is
+<pre>   <b>T</b>IK</pre>
+<pre>PPP<b>O</b></pre>
+<pre>  O<b>P</b></pre>
+The first word is shifted 3 places, and the last word is shifted 2 places.<br>
+In this arrangement, the goal word can be read vertically in the fourth column from the right (shown in bold).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"EEA"</pre></td></tr><tr><td class="statText"><pre>{"GEGA", 
+ "TOPCODER", 
+ "TEST"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The puzzle words must be used in the order they are given, so it is impossible to form the goal word in this case.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"AB"</pre></td></tr><tr><td class="statText"><pre>{"ABA", 
+ "ABAB"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">One possible arrangement is
+<pre> <b>A</b>BA</pre>
+<pre>A<b>B</b>AB</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"FIND"</pre></td></tr><tr><td class="statText"><pre>{"VERYFAST", 
+ "OPINION", 
+ "SPENDING", 
+ "ODD"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>VERY<b>F</b>AST</pre>
+<pre>OPIN<b>I</b>ON</pre>
+<pre> SPE<b>N</b>DING</pre>
+<pre>  OD<b>D</b></pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"TOP"</pre></td></tr><tr><td class="statText"><pre>{"OUTTHERE", 
+ "FROM", 
+ "NOPQRSTU"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The final arrangement can be made without shifting at all:
+<pre>OU<b>T</b>THERE</pre>
+<pre>FR<b>O</b>M</pre>
+<pre>NO<b>P</b>QRSTU</pre></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

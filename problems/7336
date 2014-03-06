@@ -1,0 +1,34 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">We are going to plant a tree on level ground near a streetlight, and we want 
+to know how big a shadow it will cast. We will model the tree as a (possibly
+degenerate) rectangular
+solid, and treat the streetlight as
+casting rays from a single point. We will use an x,y,z coordinate system that is aligned with
+the rectangular solid and
+in which y is the distance above ground level.
+<p>
+int[] <b>tree</b> contains exactly 6 elements, namely the x,y,z coordinates of one
+corner of the rectangular solid followed by the coordinates of the diagonally
+opposite corner. int[] <b>light</b> contains exactly 3 elements, the x,y,z coordinates
+of the streetlight. Given <b>tree</b> and <b>light</b>,
+return the area of the shadow, or return -1 to indicate that the shadow has an
+infinite area. If the shadow is an infinitely long line, return 0 as its area.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Shadow</td></tr><tr><td class="statText">Method:</td><td class="statText">area</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double area(int[] tree, int[] light)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A return value with either an absolute or relative error of less than 1.0E-9 is considered correct.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>tree</b> will contain exactly 6 elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>light</b> will contain exactly 3 elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>tree</b> and of <b>light</b> will be between 1 and 10, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The coordinates of the light will not lie on the boundary of the tree.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1,1,1, 10,1,1}</pre></td></tr><tr><td class="statText"><pre>{5,5,5}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   This tree is just a line so its shadow has no area.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1,3,1, 10,1,1}</pre></td></tr><tr><td class="statText"><pre>{2,2,2}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   This tree is just a rectangle. Its shadow covers an infinite rectangular 
+   area on the ground.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1,1,1, 2,2,2}</pre></td></tr><tr><td class="statText"><pre>{3,3,3}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 15.75</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   This is a unit cube one unit above the ground. The shadowed area
+   is a six-sided polygon.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre> {1,1,1, 3,3,3} </pre></td></tr><tr><td class="statText"><pre>{2,2,2}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   When the light is inside the tree the shadow extends everywhere.
+</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

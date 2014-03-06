@@ -1,0 +1,50 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">There are N boxes numbered 0 through N-1. Every box except for one contains carrots, but Rabbit Hanako does not know which box is the empty one. Each box has the same probability of being empty.
+<br><br>
+Hanako wants to find the empty box without opening it. Fortunately, she has some clues. Some of the boxes contain information about the content of other boxes, and she knows which boxes contain such information. You are given a String[] <b>information</b>, where the j-th character of the i-th element is 'Y' if opening the i-th box will reveal whether or not the j-th box contains carrots, or 'N' if the i-th box contains no such information.
+<br><br>
+Return the probability that she can find the empty box without opening it, assuming she behaves optimally.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CarrotBoxes</td></tr><tr><td class="statText">Method:</td><td class="statText">theProbability</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double theProbability(String[] information)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>information</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>information</b> will contain exactly N characters, where N is the number of elements of <b>information</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The i-th character of the i-th element of <b>information</b> will be 'Y'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>information</b> will be 'Y' or 'N'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"YYYYY",
+ "NYNNN",
+ "NNYNN",
+ "NNNYN",
+ "NNNNY"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.8</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The optimal strategy is opening box 0 first. If box 0 contains carrots, she can find the empty box without opening it because box 0 contains information about all boxes. It happens with probability 0.8.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"YNNNN",
+ "NYNNN",
+ "NNYNN",
+ "NNNYN",
+ "NNNNY"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No box contains information about other boxes, so she can find the empty box without opening it only when she opens all other boxes. It happens with probability 0.2.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Y"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Since there is only one box, she knows that the only box is empty.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"YNNNN",
+ "YYNNN",
+ "YNYNN",
+ "NNNYY",
+ "NNNYY"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"YYYNNNYN",
+ "NYNNNNYN",
+ "NNYNNNNN",
+ "NYNYNNNN",
+ "YNNNYNNY",
+ "NNYNNYNN",
+ "NNNNYNYN",
+ "NNYNNNNY"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.875</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"YNNNNNNNNYNNNNNNNNNN",
+ "NYNNNNNNNNNNNNNNNNNN",
+ "NNYNNNNNNNYNNNNNYNNN",
+ "NNNYNYNNNNNNNNYNNNNN",
+ "NNNNYNNNNNNNNNYNNNNY",
+ "NNNNNYNNNNNNNNNNNNNY",
+ "NNNNYNYNYNNNNNNNNNNN",
+ "NNNNNNNYNNNYYNNNNNNN",
+ "NNNNNNNNYNNNNNNNNNNN",
+ "YNNNNNNNNYNNNNNYNNNN",
+ "NNNNNNNNNNYNNNNNNNNN",
+ "NYNNNNNNNNNYNNNNNNNN",
+ "NNNNNNNYNNNNYNNNNNNN",
+ "NNNNNNNNNNNNNYNNNYNN",
+ "NNNNNNNNNNNYNNYNNNYN",
+ "NYNNNNNNNNNNNNNYNNNN",
+ "NNYNNNNNNNNNNNNNYNNN",
+ "NNNNNNNNNNNNNYNYNYNN",
+ "NNNNNNNNYNYNNNNNNNYY",
+ "NNNYNNNNNNNNNNNNNNNY"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.75</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

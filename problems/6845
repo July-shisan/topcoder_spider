@@ -1,0 +1,36 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+<b>N</b> people take part in a Rock-Paper-Scissors tournament. The purpose of the tournament is to assign every participant a distinct place from 1 to <b>N</b>.
+</p>
+
+<p>
+The places are assigned by running a number of rounds of Rock-Paper-Scissors.
+In each round, each participant casts one of three figures - Rock, Paper, or Scissors - with equal probability.  Rock beats Scissors, Paper beats Rock, and Scissors beats Paper.  After all the participants have cast their figures, the round is replayed if one of the following occurred:
+</p>
+
+<ul><li> All participants cast the same figure. </li>
+<li> Each of the three figures was cast at least once. </li>
+</ul><p>
+If the round is not replayed, then for every pair of participants who cast different figures, the one whose figure beat the other player's figure will take a higher place.  Within each group of players who cast equal figures, an independent subtournament will be run using the same rules.  Of course, if a group contains only one player, no rounds are needed to determine that player's placement within that group.
+</p>
+
+<p>
+For example, consider a tournament between 5 players where the results of the first round are as follows:
+</p>
+
+<ul><li> Player 1 casts Rock </li>
+<li> Player 2 casts Scissors </li>
+<li> Player 3 casts Scissors </li>
+<li> Player 4 casts Rock </li>
+<li> Player 5 casts Scissors </li>
+</ul><p>
+The players will be divided into 2 groups: {P<sub>1</sub>, P<sub>4</sub>} and {P<sub>2</sub>, P<sub>3</sub>, P<sub>5</sub>}.  An independent subtournament will be run for each group. Since Rock beats Scissors, the players from the first group will take overall places in the range 1-2 depending on the results of their subtournament, and players assigned to the second group will take places in the range 3-5 depending on the results of their subtournament.
+</p>
+
+<p>
+Given <b>N</b>, the number of participants in the tournament, return the expected number of rounds.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">RPSChamps</td></tr><tr><td class="statText">Method:</td><td class="statText">numberOfMoves</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double numberOfMoves(int N)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The returned value must have absolute or relative error less than 1E-9.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If a round is replayed one or more times, every replay is counted towards the total number of rounds for that tournament.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>N</b> will be between 1 and 500, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Since there is only one participant, no rounds are needed to determine placement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There is a 1/3 probability of each round being replayed.  When a round is not replayed, all places are immediately determined.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>10</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 35.59012622220019</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>200</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5.509733035960696E34</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,42 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+A rectangular panel consists of R rows, with C bulbs in each row.
+The rows are numbered from 0 to R-1, and the columns are numbered from 0 to C-1.
+Some of the bulbs are turned on and some of them are turned off.
+</p>
+
+<p>
+The panel is connected to a board with switches. The switches are arranged into
+a rectangle with R rows and C columns (i.e., with the same dimensions as the
+panel).
+</p>
+
+<p>
+Flipping each switch will cause some of the bulbs to change state: those that were
+turned on will become turned off, and vice versa. More precisely, if we flip
+the switch with coordinates (row,col), then all bulbs with coordinates (x,y)
+where x&lt;=row and y&lt;=col will change their states. In other words, flipping
+the switch at (row,col) switches all the bulbs in the rectangle with opposite
+corners (0,0) and (row,col).
+</p>
+
+<p>
+You will be given a String[] <b>board</b> containing the initial states
+of the bulbs. The character '<tt>1</tt>' represents a bulb that is turned on, and the
+character '<tt>0</tt>' represents a bulb that is turned off.
+</p>
+
+<p>
+Return the smallest number of flips necessary to have all the bulbs on at the same time.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TurningLightOn</td></tr><tr><td class="statText">Method:</td><td class="statText">minFlips</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int minFlips(String[] board)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Using the right combination of switches it is always possible to turn on all bulbs at the same time.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>board</b> will have the same length.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will only contain the characters '<tt>0</tt>' (zero) and '<tt>1</tt>' (one).</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0001111",
+ "0001111",
+ "1111111"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">It is enough to flip the switch at (1,2).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"1111111",
+ "1111111",
+ "1111111"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here all the bulbs are already turned on, we don't have to do anything.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"01001"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">For this case, one optimal solution is to start by flipping the leftmost switch (turning on the leftmost bulb only), then flip the switch at (0,3) to get "<tt>00111</tt>", and finally flip the switch at (0,1).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0101",
+ "1010",
+ "0101",
+ "1010"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">For chessboard patterns one needs quite a lot of flips.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

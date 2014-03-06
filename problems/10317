@@ -1,0 +1,67 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+The unicorn is an exotic chess piece similar to the knight. The difference is that while the knight moves two cells in one direction and one in the other direction, the unicorn moves <i>more than</i> two cells in one direction and <i>more than</i> one in the other direction.
+</p>
+
+<p>
+More precisely, each unicorn move looks as follows:
+</p>
+
+<ul><li>pick up the unicorn;</li>
+<li>pick one of the four basic directions, and move the unicorn more than two cells in that direction;</li>
+<li>pick one of the two basic directions that are orthogonal to the previous one, and move the unicorn more than one cell in that direction;</li>
+<li>put down the unicorn.</li>
+</ul><p>
+We have a chessboard that has <b>R</b> rows times <b>C</b> columns. 
+Each cell of the chessboard contains one of the first <b>L</b> letters of the alphabet.
+To keep the input small, the content of the cells is randomly generated using the method
+described below.
+</p>
+
+<p>
+You are given the ints <b>R</b>, <b>C</b>, and <b>L</b> described above, an int <b>seed</b> used to generate
+the letters in the cells, and a String <b>word</b>. You want to trace the String <b>word</b> by taking a unicorn, placing it onto a cell containing the
+first letter of <b>word</b>, making a valid move that takes it onto a cell that contains the second letter, from there making another
+move to the third letter, and so on.
+Return the number of ways in which this can be done, modulo 1,000,000,007.
+</p>
+
+<p>
+The content of the cells is generated using the following pseudocode:
+</p>
+<pre>
+x = <b>seed</b>;
+d = (65535 div <b>L</b>)+1;
+for (int r=0; r&lt;<b>R</b>; r++)
+  for (int c=0; c&lt;<b>C</b>; c++) {
+    x = (x * 25173 + 13849) modulo 65536;
+    chessboard[r][c] = character with ASCII code (65+(x div d));
+  }
+</pre>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Unicorn</td></tr><tr><td class="statText">Method:</td><td class="statText">countWays</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int, int, String</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int countWays(int R, int C, int L, int seed, String word)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The path of the unicorn can contain the same cell multiple times.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">In the pseudocode, "A div B" represents the integer part of A/B. For example, 14 div 5 = 2 and 20 div 4 = 5.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The author's solution does not depend on any properties of the pseudorandom generator. It would solve any input of allowed size within the given limits.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>R</b> will be between 1 and 300, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>C</b> will be between 1 and 300, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>L</b> will be between 1 and 26, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>seed</b> will be between 0 and 65,535, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>word</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>word</b> will be an uppercase letter ('A'-'Z').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>47</pre></td></tr><tr><td class="statText"><pre>"AB"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+When generating the input we will compute d=32768, and then generate the content of the cells. The variable <tt>x</tt> will have the following values, in order: 17332, 39133, 37242, 14235, 656, 12265, 20598, 6471, 51372, 44853, 44210, and 45363. The generated chessboard looks as follows:
+</p>
+<pre>
+ABBA
+AAAA
+BBBB
+</pre>
+<p>
+There are only two ways a unicorn can trace the word "AB" on this chessboard. It has to start in one of the two top corners, and then jump into the opposite corner.
+</p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>47</pre></td></tr><tr><td class="statText"><pre>"CD"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No letter C on this board.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>42</pre></td></tr><tr><td class="statText"><pre>"AA"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 20</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The unicorn can start in one of the four corner cells (and then has three possible jumps), or at one of the 8 cells that share a side with a corner cell (and then only have one possible jump). This gives us 4*3 + 8*1 = 20 ways to trace the word.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>42</pre></td></tr><tr><td class="statText"><pre>"AAAAA"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 172</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>54321</pre></td></tr><tr><td class="statText"><pre>"ABCDE"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The board is too small. No word longer than one character can be traced as there is no way to make a valid move.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>8</pre></td></tr><tr><td class="statText"><pre>8</pre></td></tr><tr><td class="statText"><pre>26</pre></td></tr><tr><td class="statText"><pre>226</pre></td></tr><tr><td class="statText"><pre>"TOPCODER"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The board looks as follows:
+<pre>
+AILFPSPF
+DZIOMYCE
+QOODZARU
+YVOTLTRX
+LSRIGANL
+LCIUUSNF
+IWVXKTDE
+OVPPNXRD
+</pre>
+If we number the rows and columns starting from 0, with (0,0) being the upper left corner cell, the only valid path of the unicorn is (6,5)-(2,1)-(7,3)-(1,6)-(7,0)-(2,3)-(6,7)-(4,2).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>47</pre></td></tr><tr><td class="statText"><pre>"AAAAA"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 373977054</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Do not forget about the modulo; the actual number of paths can be huge.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,63 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Let p[0], p[1], ..., p[<b>N</b>-1] be a permutation of integers between 0 and <b>N</b>-1, inclusive. A <i>binary search tree</i> is a rooted binary tree with an integer value stored at each node. We use the following pseudocode to construct a binary search tree from the permutation p:
+</p>
+<pre>
+Create the root and put p[0] there
+For each i in (1, 2, ..., <b>N</b>-1)
+	Call insert(root, p[i])
+
+Procedure insert(vertex V, integer X)
+	If X &lt; number at V
+		If V has left child
+			Call insert(left child of V, X)
+		Else
+			Create new left child of V with value X
+	Else
+		If V has right child
+			Call insert(right child of V, X)
+		Else
+			Create new right child of V with value X
+	End
+End
+</pre>
+<p>
+You are given three ints: <b>N</b>, <b>seed</b> and <b>limit</b>. Use the following pseudocode to generate the permutation p (be sure to use 64-bit integers in computations where needed; note that '/' represents integer division and % represents remainder):
+</p>
+<pre>
+X := <b>seed</b>
+For each i in (0, 1, ..., <b>N</b>-1)
+	p[i] := i
+	X := (X * 295397169) % 1073741789;
+	If (X * 1000000) / 1073741789 &lt; <b>limit</b>
+		X := (X * 295397169) % 1073741789
+		// generate j within [0, i]
+		j := (X * (i + 1)) / 1073741789
+		// j &lt;= i, so p[j] is already initialized
+		swap(p[i], p[j])
+	End
+End
+</pre>
+<p>
+John constructed a binary search tree from the generated permutation using the pseudocode described above. 
+Return the sum of the heights of all nodes in the constructed tree. The height of a node V is the number of nodes in the path from the root to V.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BSTConstruction</td></tr><tr><td class="statText">Method:</td><td class="statText">sumHeights</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long sumHeights(int N, int seed, int limit)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The input is encoded purely for convenience. The intended solution does not rely on any properties of the way it is generated, and will work for any permutation p.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>N</b> will be between 1 and 250,000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>seed</b> will be between 1 and 1,073,741,788, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>limit</b> will be between 0 and 1,000,000, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>12345678</pre></td></tr><tr><td class="statText"><pre>500000</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 40</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>The permutation p here is (9, 1, 4, 3, 2, 5, 6, 7, 8, 0). The binary search tree for this permutation looks as follows:</p>
+<pre>
+		9
+	       /
+              1
+             / \
+            0   4
+               / \
+              3   5
+             /     \
+            2       6
+                     \
+                      7
+                       \
+                        8
+</pre>
+<p>The sum of the nodes' heights in this tree is 1+2+3+3+4+4+5+5+6+7=40.</p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>87654321</pre></td></tr><tr><td class="statText"><pre>1000000</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 31</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Now p is (6, 3, 2, 7, 9, 4, 8, 1, 0, 5).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>45454545</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 55</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here p = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>99988877</pre></td></tr><tr><td class="statText"><pre>12345</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

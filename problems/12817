@@ -1,0 +1,75 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>Fox Ciel has an unlimited supply of T-shaped tetrominoes.
+We will call them T-blocks.
+One T-block is shown in the picture below.
+The green cell is called the center of the T-block.</p>
+<br><img src="http://www.topcoder.com/contest/problem/TBlocks/TBlock.png"><br><br><p>Ciel also has a rectangular board divided into square cells.
+The cells of the board have the same size as the cells of her T-blocks.
+Each cell is marked 'o', '*', or '-'.
+Ciel wants to place some T-blocks onto this board in a way that satisfies the following conditions:</p>
+<ul><li>Each T-block covers precisely 4 cells of the board. (Thus, each T-block must be placed completely inside the board.)</li>
+<li>No two T-blocks overlap. (They are allowed to touch each other.)</li>
+<li>The center of a T-block can only be placed on cells marked 'o' and '*'.</li>
+<li>Each 'o' cell has to contain the center of some T-block.</li>
+</ul><br><p>You are given a String[] <b>board</b> that represents Ciel's board using the characters specified above.
+Return the number of valid ways in which T-blocks can be placed onto this board, modulo 1,000,000,007.</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TBlocks</td></tr><tr><td class="statText">Method:</td><td class="statText">count</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int count(String[] board)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of <b>board</b> will be 'o', '*' or '-'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain between 0 and 500 'o's, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain between 0 and 12 '*'s, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"---"
+,"-o-"
+,"---"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">We have to place exactly one T-block. Its center has to be on the middle cell. There are 4 ways to do this:<br><br><img src="http://www.topcoder.com/contest/problem/TBlocks/Tsample1.png"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"o"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There isn't enough space to place a T-block here.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"**-"
+,"-**"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Some '*' cells may remain empty. They may also contain T-block cells other than the center.<br><br><img src="http://www.topcoder.com/contest/problem/TBlocks/Tsample2.png"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"----"
+,"-o*-"
+,"--*-"
+,"----"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"--"
+,"--"
+,"--"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"-----o------o-----o---o------o-----o--------------"
+,"-o--------o---o-----------o----o-----o--o---o-o--o"
+,"----o-o-o--o-------*-o---o--o---o--o---o--o-------"
+,"-o-----------o-oo-------------o------o---------o--"
+,"---o-o-o--o-------o-o--o--o------oo-----o---*--o--"
+,"--o---------o-o-------------o--o-----o---o-------o"
+,"o---o---oo---------o--o--o-------------o---*------"
+,"--o---o------o---o---------*-o--o-o------o---o-oo-"
+,"------o---o----o-----o--o------------o------------"
+,"-o-o----o---o-----o-------o---oo---o----o--o--o---"
+,"------o-------o-o----o--o---o----o---o----------o-"
+,"----o----oo--------o-o----o---o----o---o----o--o--"
+,"--o-----------o-----------o-----o---------o------o"
+,"o-----o-----o----o-----o----o----o---o------o-o---"
+,"---o-----o-----o----o----o----o--------o--------o-"
+,"-o----o------o----o-----o---o---o---o----o-----o--"
+,"--------o--o----o----o-------o--------o-----o----o"
+,"----o-----o---o---oo---o-o-----o--o------o----o---"
+,"-o----o-o----o--o----o-----o--------o--o---o--o-o-"
+,"---o------------o--o--------------o---------------"
+,"-----o-o--o---o--------o--*--o--o----o---o-o---o--"
+,"-o-------o-------o---o--o----------o---o----o-----"
+,"----o-o-----o--o---o-------o--o------o----o-----o-"
+,"-o--------o---------o--o-o------o--o-----*----o---"
+,"-----o-o-----o--o-o---------o------o---o----------"
+,"-o-o-----o-o-------o--o--o----o------o--o---o--o-o"
+,"------o--------o-o-----o----o---o-*---------------"
+,"-o--o-----o---------o-----------------o---*o----o-"
+,"----o---o---o-o---o-----o--o---oo--o----o----o----"
+,"------*----o---------o-------o--------o----------o"
+,"o--*-----o-----o---o---o---o--o--o--o----o--o-oo--"
+,"--o----o---o-----o-------o-------------o-o--------"
+,"----o----o---o-o-----o----o-----o-o--o-------o--o-"
+,"------o---o-------------o---o-o---------o--o------"
+,"-o--o-------o-o--o-o--o---------o--o-o-----o--o---"
+,"------o-o--------o-------o---o---------o--------o-"
+,"--o----------o-o-----o-----o------o-o-----o--o----"
+,"---------o-o------o----o------o---------o--o-----o"
+,"o--o-o----------o---o----o---o--o--o--o-------o---"
+,"-------o---oo-o-------o----o---o--o-----o-o-----o-"
+,"-o--o---o-------o--o----o----o------oo-------o----"
+,"-----o----o----------*-----o-----o------o-o-------"
+,"o-o----o----o---o--o---o-----o-o------o-----o-o-o-"
+,"----o----o----o-------o---o-------o-o----o--o-----"
+,"-o----o----o------o-----------o--------o------o--o"
+,"-----o--o---o--o----o----oo-o---o-----o----o------"
+,"o--o------o-------o----o----------*--------o----o-"
+,"-------o-o---o-------o-------o--o---o----o----o---"
+,"-o--oo----------oo-o----o--o-----------o----o----o"
+,"--------o--o--o-------o-------o---o--o---o-----o--"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 481632789</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

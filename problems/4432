@@ -1,0 +1,51 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">We have a circular track on which a number of loaded cars are located. Each 
+car has its own specified unloading position along the track.  The cars can be
+moved in either direction along the track, but cannot pass each other.
+<p>
+We want to make a worklist, specifying the order in which the cars should be
+moved. The order of cars in the worklist must allow each car to be moved just
+once all the way to its unloading position. How many different orders will 
+allow this?
+</p><p>
+The cars are each named with a lowercase letter, and their destinations with
+the same letter but in uppercase. The positions of the cars and of their 
+destinations are given by a sequence of letters that is regarded as circular by
+wrapping around the ends. So, for example,  "BACacb" describes a situation in
+which going clockwise around the track we encounter B, A, C, a, c, b, and then 
+return back to B.  Here
+there are 3 different orders in which the cars can be moved to their
+destinations: a then c then b, a then b then c, or b then a then c.
+</p><p>
+Given the
+original positions of the cars and destinations in a String <b>circle</b>, 
+return the number of different orders in which the 
+cars can be moved. If there are more than 2,000,000,000 orders return -1.
+If no order is possible, your method should return 0.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CircleCount</td></tr><tr><td class="statText">Method:</td><td class="statText">countOrder</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int countOrder(String circle)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>circle</b> will contain between 2 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character will be a letter ('a'-'z', 'A'-'Z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No character will appear more than once in <b>circle</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If a letter appears in <b>circle</b>, it will appear both in uppercase and in lowercase.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"BACacb"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   This is the example given above.
+
+
+
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"ABCacb"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+ 
+   We cannot move c first. If we move a first, then we can never move b to B, but 
+   if we move b first we can never move a to A.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"xX"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   We must move car x. We could move it to its destination either in a clockwise
+   or a counterclockwise direction but there is only one order for choosing
+   the cars to move.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"ABCabc"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   The possibilities are 1) a then b then c, or 2) c then b then a (moving the cars in the other direction).
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPp"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   These 16 cars can be move in any order, so there are 16! orders which is
+   greater than 2,000,000,000</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

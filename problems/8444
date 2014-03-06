@@ -1,0 +1,37 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A database <b>table</b> consists of a set of columns called attributes, and a set of rows called entries.  A <i>superkey</i> is a set of attributes such that each entry's values for those attributes forms a unique ordered set. That is, for any superkey, each pair of entries differs in at least one of the attributes contained within the superkey.  A <i>candidate superkey</i> is a superkey such that no proper subset of its attributes forms a superkey.<br><br>
+
+Return a int[] with exactly two elements.  The first element should be the number of attributes in the smallest candidate superkey of the table, and the second element should be the number of attributes in the largest candidate superkey of the table.  If there is no valid candidate superkey, return an empty int[] instead.<br><br>
+
+The input is described by a String[] <b>table</b>.  Each String in <b>table</b> represents one entry, while characters contained in the String are attribute values for that entry.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CandidateKeys</td></tr><tr><td class="statText">Method:</td><td class="statText">getKeys</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] getKeys(String[] table)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A proper subset of a superkey is a set of attributes that is formed by removing one or more attributes from the superkey.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>table</b> will contain between 2 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>table</b> will contain between 1 and 10 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>table</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>table</b> will be an uppercase letter ('A'-'Z').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"ABC",
+"ABC",
+"ABC"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Since all entries are the same, there is no set of attributes that can differentiate between them.  Therefore, this table has no candidate superkeys.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"ABC",
+"ABD",
+"ABE"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1, 1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are four superkeys here:<br>
+{column 0, column 1, column 2}<br>
+{column 0, column 2}<br>
+{column 1, column 2}<br>
+{column 2}<br>
+
+Note that the fourth superkey is a subset of all the other superkeys, so it is the only candidate superkey.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"ABC",
+"ACD",
+"BBE"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1, 2 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A","B"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1, 1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"AABB",
+"BABA",
+"CAAB",
+"DAAA",
+"EBBB",
+"FBBA",
+"GBAB",
+"HBAA"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1, 3 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

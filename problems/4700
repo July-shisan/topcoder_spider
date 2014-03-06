@@ -1,0 +1,61 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+A binary tree is either empty or it consists of a <i>root</i> node and two binary trees, called the <i>left subtree</i> and the <i>right subtree</i> of the root node. Each node of our binary trees will contain one lowercase letter. We say that a binary tree is a <i>binary search tree</i> (BST) if and only if for each node the following conditions hold:
+</p>
+
+<ul><li> All letters in the left subtree of the node occur earlier in the alphabet than the letter in the node. </li>
+<li> All letters in the right subtree of the node occur later in the alphabet than the letter in the node. </li>
+</ul><p>
+Note that if a tree is a BST, then each subtree of this tree is also a BST. As a consequence, if the tree is non-empty, then both subtrees of the root node are BSTs again.
+</p>
+
+<p>
+Examples of BSTs with 4 nodes:
+</p>
+
+<pre>
+    c        b        a
+   / \      / \        \
+  b   d    a   d        c
+ /            /        / \
+a            c        b   d
+</pre>
+
+<p>
+A <i>pre-order code</i> of a BST is a String obtained in the following way: 
+</p>
+
+<ul><li> The pre-order code of an empty BST is an empty string. </li>
+<li> The pre-order code of a non-empty BST is obtained in the following way: Let L and R be the pre-order codes of the left and right subtree, respectively. Then the pre-order code of the whole BST is the concatenation of the letter in its root node, L and R (in this order). </li>
+</ul><p>
+The pre-order codes for the trees above are "cbad", "badc" and "acbd", respectively.
+</p>
+
+<p>
+Consider all BSTs with exactly <b>N</b> nodes containing the first <b>N</b> lowercase letters. Order these trees alphabetically by their pre-order codes.
+Our sequence of BSTs is one-based, i.e., the index of the first tree in this sequence is 1.
+Return the pre-order code of the BST at the specified <b>index</b> in this sequence.
+If <b>index</b> is larger than the number of BSTs with exactly <b>N</b> nodes, return an empty string.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">EncodingTrees</td></tr><tr><td class="statText">Method:</td><td class="statText">getCode</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String getCode(int N, int index)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">You may assume that the number of our BSTs with 19 nodes doesn't exceed 2,000,000,000.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>N</b> is between 1 and 19, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>index</b> is between 1 and 2,000,000,000, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "ab"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are 2 BSTs with 2 nodes. The first of them is
+<pre>
+a
+ \
+  b
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "ba"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The second one is
+<pre>
+  b
+ /
+a
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: ""</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are only 2 BSTs with 2 nodes, so the empty string is returned for an index of 3.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>9</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "cbad"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The 14 valid pre-order codes of BSTs with 4 nodes: abcd, abdc, acbd, adbc, adcb, bacd, badc, cabd, cbad, dabc, dacb, dbac, dcab, dcba. The 9th tree:
+<pre>
+    c
+   / \
+  b   d
+ /
+a
+</pre>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>15</pre></td></tr><tr><td class="statText"><pre>14023</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "abcdeohgfniljkm"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

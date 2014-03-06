@@ -1,0 +1,35 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>You have two cutout pieces of paper, each of which may have one or more sections missing.  You wish to arrange those two pieces, possibly overlapping, to cover the largest possible rectangular area.  Each of the pieces may be rotated (in 90 degree increments), or flipped over.</p>
+
+<p>You are given String[]s <b>paper1</b> and <b>paper2</b>, where each character of each element is a '.' or an uppercase 'X' indicating whether or not the paper has a hole at that location, respectively.</p>
+
+<p>Return the area of the largest rectangular region you can cover using the two pieces of paper.</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">PaperScraps</td></tr><tr><td class="statText">Method:</td><td class="statText">biggestRectangle</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int biggestRectangle(String[] paper1, String[] paper2)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>paper1</b> will contain between 1 and 5 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>paper1</b> will contain between 1 and 5 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>paper1</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of <b>paper1</b> will be uppercase 'X' or '.'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>paper2</b> will contain between 1 and 5 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>paper2</b> will contain between 1 and 5 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>paper2</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of <b>paper2</b> will be uppercase 'X' or '.'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"X"}</pre></td></tr><tr><td class="statText"><pre>{"X"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Put the two pieces of paper next to each other to make a 2x1 rectangle.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XX"}</pre></td></tr><tr><td class="statText"><pre>{"X",
+ "X"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Rotate one of the two papers, and then put them together to make a 2x2, or a 4x1 rectangle.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXX",
+ ".X."}</pre></td></tr><tr><td class="statText"><pre>{"XX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">We can arrange the papers to get a 2x2:
+<pre>
+XXX    XXX
+YX.    .X.
+Y..    .Y.
+       .Y.
+</pre>
+...but even better is to get a 5x1 like this:
+<pre>
+XXXYY
+.X.
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXX",
+ "X.X",
+ "XXX"}</pre></td></tr><tr><td class="statText"><pre>{"XX",
+ "X."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">We can use the second piece to cover the hole in the first, and make a 3x3 rectangle.  Note that the overlap is permitted.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXXXX",
+ "XXXX.",
+ "XXX..",
+ "XX...",
+ "X...."}</pre></td></tr><tr><td class="statText"><pre>{"XXXXX",
+ "XXXX.",
+ "XXX..",
+ "XX...",
+ "X...."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 30</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

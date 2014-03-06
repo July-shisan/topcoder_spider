@@ -1,0 +1,67 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Fox Ciel is going to play Gomoku with her friend Fox Jiro.
+Ciel plays better, so before they start she allowed Jiro to put some of his pieces on the board.<br><br><br>
+You are given a String[] <b>board</b> that represents a square board.
+The character <b>board</b>[i][j] represents the cell with coordinates (i,j).
+Each of those characters is either '.' (representing an empty cell) or 'o' (representing a cell with Jiro's piece).<br><br><br>
+Of course, Ciel does not want Jiro to win the game before she has a chance to play.
+Thus she now has to check the board and determine whether there are five consecutive tokens somewhere on the board.<br><br><br>
+Determine whether there are 5 consecutive cells (horizontally, vertically, or diagonally) that contain Jiro's tokens.
+Return "found" (quotes for clarity) if there are five such cells anywhere on the board.
+Otherwise, return "not found".</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">FoxAndGomoku</td></tr><tr><td class="statText">Method:</td><td class="statText">win</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String win(String[] board)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">n will be between 5 and 15, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain exactly n elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>board</b> will contain exactly n characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>board</b> will be 'o' or '.'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"....o.",
+ "...o..",
+ "..o...",
+ ".o....",
+ "o.....",
+ "......"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "found"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There is five continue pieces diagonally.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"oooo.",
+ ".oooo",
+ "oooo.",
+ ".oooo",
+ "....."}
+ </pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "not found"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There is no five-in-a-row on this board.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"oooo.",
+ ".oooo",
+ "oooo.",
+ ".oooo",
+ "....o"}
+ </pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "found"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Five consecutive tokens can be found in the following cells: (0,0), (1,1), (2,2), (3,3), and (4,4).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"o.....",
+ ".o....",
+ "..o...",
+ "...o..",
+ "....o.",
+ "......"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "found"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"o....",
+ "o.o..",
+ "o.o.o",
+ "o.o..",
+ "o...."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "found"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"..........",
+ "..........",
+ "..oooooo..",
+ "..o.......",
+ "..o.......",
+ "..oooooo..",
+ ".......o..",
+ ".......o..",
+ "..oooooo..",
+ ".........."}
+ 
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "found"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"..........",
+ "..........",
+ "..oooo.o..",
+ "..o.......",
+ "..o.......",
+ "..o.oooo..",
+ ".......o..",
+ ".......o..",
+ "..oooo.o..",
+ ".........."}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "not found"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">7)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ooooo",
+ "ooooo",
+ "ooooo",
+ "ooooo",
+ "ooooo"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "found"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">8)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".....",
+ ".....",
+ ".....",
+ ".....",
+ "....."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "not found"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

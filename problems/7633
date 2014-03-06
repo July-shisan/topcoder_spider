@@ -1,0 +1,59 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You are the manager of a small taxi firm with 2 cars. On a particular evening, you have a number of customers who wish to travel between various locations, and you have to decide how to schedule the trips. Both of your cars start out at your base at location 0, and as manager, you have to wait for both of the cars to return to base before you can leave work for the night. Your goal is to minimize the amount of time before all of the customers have been delivered to their destinations and the cars have both returned to location 0.
+<br><br>
+The area in which your customers want to travel is represented by M locations, indexed from 0 to M-1, some of which are connected by roads. You will be given a String[] <b>roads</b>, where the j-th digit of the i-th element is the time to travel on the direct road from location i to location j, or '0' if no direct route between these locations exists. You will also be given a String[] <b>customers</b>, where each element contains two space-separated integers that represent the indices of the starting location and destination of a customer. Customers have no preference as to which car picks them up and you may schedule the customers in any order, but once a car has picked up a customer, it must take him or her immediately to the required destination; the customer cannot be dropped off at an intermediate location to be picked up again later. Customers will also not share a car with each other, so if a taxi is carrying a customer it may not pick up another one. Picking up or dropping off a customer takes negligible time.
+<br><br>
+You should return the minimum amount of time before both of your cars have returned to base and you can go home for the night.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TaxiManager</td></tr><tr><td class="statText">Method:</td><td class="statText">schedule</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int schedule(String[] roads, String[] customers)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>roads</b> will not necessarily be symmetric. Therefore the time taken to drive from location i to j may not be the same as the time to drive from j to i.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>roads</b> will contain between 2 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>roads</b> will contain exactly M characters, where M is the number of elements in <b>roads</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>roads</b> will be a digit ('0' - '9').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The i-th character in the i-th element of <b>roads</b> will be '0'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each location will be reachable from all other locations.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>customers</b> will contain between 1 and 12 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>customers</b> will contain 2 distinct space-separated integers.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each integer in <b>customers</b> will be between 0 and M-1, inclusive, with no leading zeros.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"020200"
+,"202020"
+,"020002"
+,"200020"
+,"020202"
+,"002020"}</pre></td></tr><tr><td class="statText"><pre>{"5 3","2 4","1 5","3 2"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 16</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">An example of an optimal schedule is:<br><tt><b>Time    Action</b><br>
+0       Car 1 - Drive to location 3<br>
+0       Car 2 - Drive to location 1<br>
+2       Car 1 - Pick up customer 3, then drive to location 0, then 1, then 2<br>
+2       Car 2 - Pick up customer 2, then drive to location 2, then 5<br>
+6       Car 2 - Drop off customer 2, pick up customer 0, then drive to location 4, then 3<br>
+8       Car 1 - Drop off customer 3, pick up customer 1, then drive to location 1, then 4<br>
+10      Car 2 - Drop off customer 0, then drive to location 0<br>
+12      Car 2 - Arrive back at base<br>
+12      Car 1 - Drop off customer 1, then drive to location 1, then 0<br>
+16      Car 1 - Arrive back at base<br></tt></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>
+{"00020251090265906661"
+,"00763002550100090081"
+,"06003699000080062771"
+,"00000710460400035310"
+,"50000039119198350060"
+,"66060004050810046028"
+,"02333108565000200880"
+,"40212560000209205231"
+,"02601150098329905062"
+,"00210383709951005203"
+,"10111087340780827070"
+,"05065800003095040140"
+,"15604020082000100090"
+,"83430030070580600750"
+,"10588355007006001150"
+,"14400080790005400536"
+,"23400990400933060004"
+,"11053016300602000090"
+,"90040920084059282502"
+,"61300007077904050900"}</pre></td></tr><tr><td class="statText"><pre>{"0 19","4 16","15 16","4 18","2 7","9 15","11 6","7 13","19 13","12 19","14 12","16 1"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 33</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>
+{"095222800320504"
+,"107600288090501"
+,"760973530769345"
+,"963093337510830"
+,"338404069255826"
+,"291700050155264"
+,"002783031709004"
+,"404730701707712"
+,"068870030090995"
+,"320025180036103"
+,"468695042801904"
+,"233626561000105"
+,"070014432197086"
+,"887301000143802"
+,"230852749990330"}</pre></td></tr><tr><td class="statText"><pre>{"3 6","0 4","2 7","9 7","13 9","1 6","7 13","14 2","8 7","10 1","11 13","7 12"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 28</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"00401","50990","00062","08008","03000"}</pre></td></tr><tr><td class="statText"><pre>{"2 4"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 14</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">With only one customer, you only need to send out one car.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

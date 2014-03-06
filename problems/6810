@@ -1,0 +1,30 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A codeset is a set of n binary strings (the codes) that could be used to
+encode messages based on an alphabet of size n. In order to be able to
+decode the result, a codeset must have the property that no code is a prefix
+of any other code. A codeset is "maximal" if it is not possible to add
+any additional code to the codeset without violating the prefix requirement.
+<p>
+We are interested in how many different codesets of size n exist. For example,
+when n=4 there are 5 different maximal codesets:</p><pre>
+
+         {"000","001","01","1"}, {"010","011","00","1"}, {"111","110","10","0"},
+         {"101","100","11","0"}, {"00","11","01","10"}
+</pre><p>
+Oh yes, we have a favorite code and we are only interested in codesets that
+include that code.
+You are given <b>n</b>, the size of each codeset, and a binary String <b>favorite</b>.  Return the number of maximal codesets of size <b>n</b> that contain <b>favorite</b>.  If there are more than 1,000,000,000, return -1 instead.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CodeSet</td></tr><tr><td class="statText">Method:</td><td class="statText">numSets</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, String</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int numSets(int n, String favorite)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> will be between 2 and 20, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>favorite</b> will contain between 1 and 20 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>favorite</b> will be '0' or '1' (zero or one).</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>"01"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   This is the example shown above. Only the first and last codeset 
+   listed contain "01".
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>"0110"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   None of the possible codesets contains "0110".</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>"0"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   The only maximal codeset of size 2 is {0,1}.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>"011001"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 65132550</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>15</pre></td></tr><tr><td class="statText"><pre>"100001"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 87210</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

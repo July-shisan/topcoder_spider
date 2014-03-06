@@ -1,0 +1,37 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+You want to send some messages of various lengths (specified in the number
+of minutes it takes to send them), and don't want more than three of them
+to be completely intercepted. A message is considered to be intercepted if some
+malevolent person taps your connection the whole time the message is being sent (a partially
+tapped message won't do this person any good). Assuming that the connection is being tapped during
+<b>interceptTime</b> consecutive minutes, what's the shortest time you need to send all the messages
+so at most three of the messages can be completely intercepted?
+</p>
+
+<p>
+Each message is sent in one continuous transmission, though any number of messages can
+be sent in parallel. You can only start sending a message at the beginning of a minute.
+The messages can be sent in any order.
+</p>
+
+<p>
+Create a class ShortTaps containing the method leastTime which takes an int <b>interceptTime</b>
+and a int[] <b>messageTimes</b> (containing the time in minutes it takes to send each message,
+respectively) and returns an int, the minimum time needed to send all the messages so that
+at most three of them can be intercepted.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ShortTaps</td></tr><tr><td class="statText">Method:</td><td class="statText">leastTime</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int leastTime(int interceptTime, int[] messageTimes)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>interceptTime</b> will be between 1 and 100, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>messageTimes</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>messageTimes</b> will be between 1 and 100, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>{2, 3, 4, 5, 6, 7, 8}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 14</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The optimal solution can be achieved by sending the messages according to this scheme:
+
+<pre>
+Time   Message length
+---------------------
+  0     2 min, 3 min, 6 min
+  3     8 min
+  6     5 min
+  7     4 min, 7 min
+</pre>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>{14, 2, 9, 14, 17, 1, 3, 10, 5, 9, 25, 8, 11, 7}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 43</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>40</pre></td></tr><tr><td class="statText"><pre>{30, 40, 50, 60, 70, 80, 90, 100}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 100</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Only the two shortest messages have any chance of being intercepted, so all eight messages can be sent at time 0.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

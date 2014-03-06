@@ -1,0 +1,51 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+There are <b>countA</b> representatives of a company A and
+<b>countB</b> representatives of a company B that are
+having a meeting at a round table. There are <b>chairs</b>
+chairs around the table and they want to sit down in such
+a way that no representative of company A is sitting closer
+than <b>minDistance</b> to a representative of company B
+(<b>minDistance</b>=1 means any seating is allowed,
+<b>minDistance</b>=2 means there must be at least one empty
+chair between representatives of different companies, etc.).
+</p>
+<p>
+Return the number of ways that such a seating arrangement is possible.
+Two seating arrangements are different if at least one person is
+sitting in different chairs in the two arrangements (i.e., include
+in the count all possible rotations of each seating arrangement).
+Note also that two different representatives of the same company
+are to be treated as different persons, see example 5.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">RoundTable</td></tr><tr><td class="statText">Method:</td><td class="statText">arrangements</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long arrangements(int countA, int countB, int chairs, int minDistance)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The return value will fit in a 64 bit signed int.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The input values are not guaranteed to allow a valid seating arrangement; if there is no seating arrangement that satisfies the input, return 0.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>countA</b> and <b>countB</b> will each be between 1 and 5, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>chairs</b> will be between 1 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>minDistance</b> will be between 1 and 50, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 90</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+Each company sends one representative. The first one can sit in
+any of the 10 chairs, the second one in any of the remaining 9
+chairs (since <b>minDistance</b>=1 he may sit arbitrarily close
+to the other one). So there are a total of 10 * 9 = 90 arrangements.
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 70</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+The same as example 0, but now the second one can not sit next to
+the first one, so only 7 chairs remain that he can choose from.
+This gives a total of 10 * 7 = 70 arrangements.
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>7</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 14</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+Company A sends one representative, who sits down in one of the 7
+possible chairs. Since <b>minDistance</b>=3, two chairs next to him
+at each side must remain empty. This leaves only 2 chairs that the
+2 representatives from company B have to share (2 possible combinations
+for which one takes which of the two chairs). This gives a total
+of 7 * 2 = 14 arrangements.
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>7</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+There are not enough chairs (5 + 3 = 8 representatives in total,
+but only 7 chairs).
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>11</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+Now there would be enough chairs, but since <b>minDistance</b>=3, we
+have to keep 2 chairs empty between the groups at each side, thus
+requiring at least 5 + 3 + 2 + 2 = 12 chairs.
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Note that the two representatives of company A are treated as different persons, so there are a total of 3! = 6 possibilities to assign the three representatives to the three available chairs.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 180000</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

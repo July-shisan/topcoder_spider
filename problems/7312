@@ -1,0 +1,36 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A microbiologist wants us to partition a collection of strings
+into disjoint groups based on common prefixes.
+The desired partition is formed by the following process:<pre>
+ 
+    while there are at least 2 strings that have not been assigned to a group:
+        find the longest prefix that appears in at least 2 unassigned strings
+        form a new group consisting of all unassigned strings having that prefix
+    if there is an unassigned string, assign it to its own group
+</pre>
+Note that the "longest prefix" in the algorithm above may have length 0.
+<p> 
+We want to produce a listing of the strings organized by group, with a string
+of '-'s following the members of each group. The '-' string should contain
+one '-' for each character in the common prefix of the group. So a group
+whose common prefix has length 0 should be followed by the string "". As a special
+case, a group that contains just one string is considered to have a common prefix of 
+length 0.
+</p><p>
+List the groups with the longest common prefix first. Among groups with the
+same length common prefix, list the groups alphabetically. Among strings within a group, 
+list the strings alphabetically.
+Given a String[] <b>protein</b>, return a String[] that is the desired listing.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Prefixes</td></tr><tr><td class="statText">Method:</td><td class="statText">prefixList</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] prefixList(String[] protein)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>protein</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>protein</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>protein</b> will be an uppercase letter ('A'-'Z').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AAAAA","ABCDE","ABCDE"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"ABCDE", "ABCDE", "-----", "AAAAA", "" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   The 2 identical strings are in a group since they have a common prefix consisting of all 5 letters. "AAAAA" cannot qualify to be in the same group as the other two. Since it is in a group by itself, it is followed by a string with 0 '-'s (an empty string) indicating a common prefix of length 0.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABCDE", "ABCDXY", "ABC", "ABD", "ARX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"ABCDE", "ABCDXY", "----", "ABC", "ABD", "--", "ARX", "" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+The 3 groups have common prefixes "ABCD", "AB", and "". The groups are listed in order of longest prefix first.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XA","AX","XB","A"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"A", "AX", "-", "XA", "XB", "-" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    The group with common prefix "A" comes before the group with common
+    prefix "X" because it comes first alphabetically. Similarly, within 
+    each group, the individual strings are ordered alphabetically.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XA","AX","YXB","A"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"A", "AX", "-", "XA", "YXB", "" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

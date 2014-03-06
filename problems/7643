@@ -1,0 +1,56 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+A local charity is asking for donations of Ethernet cable.
+You realize that you probably have a lot of extra cable in your house, and make the decision that
+you will donate as much cable as you can spare.
+</p>
+
+<p>
+You will be given a String[] <b>lengths</b> indicating the length (in meters) of cables
+between each pair of rooms in your house.
+You wish to keep only enough cable so that every pair of rooms in your house is connected by some
+chain of cables, of any length.
+The <i>j</i>th character of <b>lengths</b>[i] gives the length of the cable between
+rooms <i>i</i> and <i>j</i> in your house.
+A value of '0' (zero) indicates no cable,
+values of 'a' through 'z' indicate lengths of 1 through 26,
+and values of 'A' through 'Z' indicate lengths of 27 through 52.
+</p>
+
+<p>
+If both the <i>j</i>th character of <b>lengths</b>[i]
+and the <i>i</i>th character of <b>lengths</b>[j] are greater than 0,
+this means that you have two cables
+connecting rooms <i>i</i> and <i>j</i>, and you can certainly donate at least one of them.
+If the <i>i</i>th character of <b>lengths</b>[i] is greater than 0,
+this indicates unused cable in room <i>i</i>,
+which you can donate without affecting your home network in any way.
+</p>
+
+<p>
+You are not to rearrange any cables in your house; you are only to remove unnecessary ones.
+Return the maximum total length of cables (in meters) that you can donate.
+If any pair of rooms is not initially connected by some path, return -1.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CableDonation</td></tr><tr><td class="statText">Method:</td><td class="statText">cable</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int cable(String[] lengths)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>lengths</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The length of each element of <b>lengths</b> will be equal to the number of elements in <b>lengths</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in lengths will be a letter ('a'-'z', 'A'-'Z') or '0' (zero).</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "abc",
+  "def",
+  "ghi" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 40</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">You can part with the following cables:
+<ul><li>length 1 in room 0</li>
+<li>length 5 in room 1</li>
+<li>length 9 in room 2</li>
+<li>length 4 between rooms 0 and 1</li>
+<li>length 7 between rooms 0 and 2</li>
+<li>length 6 between rooms 1 and 2</li>
+<li>length 8 between rooms 1 and 2</li>
+</ul>
+for a total of 40 meters.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "a0",
+  "0b" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The two rooms are not connected.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "0X00",
+  "00Y0",
+  "0000",
+  "00Z0" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">You have no unnecessary cable.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "Az",
+  "aZ" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 105</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "0top",
+  "c0od",
+  "er0o",
+  "pen0" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 134</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

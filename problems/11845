@@ -1,0 +1,84 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Elly's house has a number of light bulbs. Some of them are turned on, some of them are not. She wants to switch all of them off for the upcoming Earth Hour.<p></p>
+
+Unfortunately, her house has a strange system of light switches. Each switch changes the state of some of the bulbs (possibly none or all of them). This means that if she uses the switch, all bulbs that are connected to it go off if they were on, and go on if they were off. She also knows that each bulb is connected to at most two switches. Help Elly determine what is the minimal number of switches she must use in order to turn off all the lights.<p></p>
+
+You are given a String <b>initial</b> and a String[] <b>switches</b>. Each character in <b>initial</b> represents one light bulb: if the i-th light bulb (0-based index) is initially on, the i-th character of <b>initial</b> is 'Y', otherwise it is 'N'. Each element of <b>switches</b> represents one switch: if the i-th switch toggles the j-th light bulb, <b>switches</b>[i][j] is 'Y', otherwise it is 'N'.<p></p>
+
+Find and return the smallest nonnegative integer X such that there is a sequence of X switches such that if Elly toggles those switches in the given order, all light bulbs will be turned off at the end. If no such X exists, return -1.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">EllysLights</td></tr><tr><td class="statText">Method:</td><td class="statText">getMinimum</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int getMinimum(String initial, String[] switches)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">It is possible that none or all of the bulbs are turned on initially.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Elly is allowed to toggle the same switch more than once.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>initial</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of <b>initial</b> will be either 'Y' or 'N'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>switches</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>switches</b> will contain the same number of characters as <b>initial</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of <b>switches</b> will be either 'Y' or 'N'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For each index of <b>initial</b> there will be at most two elements of <b>switches</b> that will have 'Y' at that index.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"YNYNNN"</pre></td></tr><tr><td class="statText"><pre>{"YNNYNY", "NYYYNN", "YNYNYN", "NNNNYN", "NYNNNY"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are multiple ways how to turn off all the lights.
+For example, she can first use switch 0, then switch 4, and finally switch 1.
+The shortest solutions only use two switches.
+For example, it is enough to flip the switch 2 followed by the switch 3.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"YNYNYN"</pre></td></tr><tr><td class="statText"><pre>{"NNNNNN", "YYYYYY", "NYNNNN", "NNNYNN", "NNNNNY"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Some of the switches might change the state of none or all of the bulbs. Some of the bulbs might be influenced by less than 2 switches.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"YYN"</pre></td></tr><tr><td class="statText"><pre>{"YNY", "NYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Sometimes there might be no way to switch off all the bulbs. In this case return -1.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"NNYNYNYYYNNYYYYN"</pre></td></tr><tr><td class="statText"><pre>{"NYNYNYNYNYNYNYNY",
+ "YNYNYNYNYNYNYNYN",
+ "NNNNNNNNNNNNNNNN",
+ "YNNNNNNNNNNNNNNN",
+ "NYNNNNNNNNNNNNNN",
+ "NNYNNNNNNNNNNNNN",
+ "NNNYNNNNNNNNNNNN",
+ "NNNNYNNNNNNNNNNN",
+ "NNNNNYNNNNNNNNNN",
+ "NNNNNNYNNNNNNNNN",
+ "NNNNNNNYNNNNNNNN",
+ "NNNNNNNNYNNNNNNN",
+ "NNNNNNNNNYNNNNNN",
+ "NNNNNNNNNNYNNNNN",
+ "NNNNNNNNNNNYNNNN",
+ "NNNNNNNNNNNNYNNN",
+ "NNNNNNNNNNNNNYNN",
+ "NNNNNNNNNNNNNNYN",
+ "NNNNNNNNNNNNNNNY"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are 9 lit bulbs initially. We can turn them off one by one, but it will be faster to use one of the complex switches and then to toggle the ones that are still lit.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"NYNYNYYYNNYYYNNYNNYYYYYNNYNYYYY"</pre></td></tr><tr><td class="statText"><pre>{"NNNNNNNNNNNNNNNNNNYNNNNNNNNNNNN",
+ "NNNNNNNNYNNNYNNNNYYNYNNNNYNNNNN",
+ "NNNNNNNNNYNNNNNNNNNNNNYNNNNNNNN",
+ "NNNNNYNNNNNNNNNNNNNNNNNNNNNNNNN",
+ "NYNNNNNNNNNNNNYNNNNNNNNNNNNNNNN",
+ "NNNNNNNNNNNNNYYNNNNNNNNNNNNNNNY",
+ "NNNNNNYNNNNNNNNNNNNYNNNNNYNNNNN",
+ "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN",
+ "YNNNNNNNNNNNNNNNNNNYNNNNNNNNNNN",
+ "NNNYNNNNNNNNNNNNNNNNNNNYYNNNNNN",
+ "NYNNNNNNNNNNYNNNNNNNNNNNNNNNYNN",
+ "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN",
+ "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN",
+ "NNNNNYNNNNNNNNNNNNNNNNNNNNNNNNY",
+ "NNNNNNNNNNYNNNNNNNNNYYYNNNNNNNN",
+ "NNNYNNNNNNNNNNNNNNNNNNNNNNNYNNN",
+ "NNNNNNNNYNNNNNNNNNNNNNNNYNNNNNN",
+ "YNNNYNNNNNNNNNNNNNNNNNNNNNNYNNN",
+ "NNNNNNNNNNYNNNNNNNNNNNNNNNNNNNN",
+ "NNNNYNNYNNNNNNNNNNNNNNNNNNNNNNN",
+ "NNNNNNNYNNNYNNNYNNNNNNNNNNNNNYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"NYNYYNYNYYYYNNYNYNNYYNNNNNYNYNNNNNYNNNYN"</pre></td></tr><tr><td class="statText"><pre>{"NNNNNNNNNNNNNNNNNNNYNNNNNNNNNNNNNNNYNNNN",
+ "NNNNNNNNNNNNNNNNNNNNNNNNNNYNNNNNNNNNNNNN",
+ "NNNNNNNNNYNNNNYNNYNNNNNNNNNNNNNNNNNNNNNN",
+ "NNNNNNNNNNNNNNNNNNNYNNNNYNNNNNNNYNNNNNNN",
+ "NNNNNYNNNNNNNNNNNNNNNNNYNNNNNNNNNNNNNNNN",
+ "NNNNNNNNNNNNNNNNNNYNNNNNNNNYNNNYNNNNNYNN",
+ "NNNNNNNNNNYNNNNNNNNNNNNNNYNNNNNYNNYNNNNN",
+ "NNNNNYNNYNNYNNNNNNNNNNNNNNNNNNNNNYNNNNNN",
+ "YNNNYNNNNNNNNNNNNNYNNNYNNYNNNNNNNYNNNNNN",
+ "NNNNNNNNNYYNNNNNNNNNNNNYNNNNYNNNNNNNNNNN",
+ "NNNNNNNNNNNYNYNNNNNNNNNNNNNNNNNNNNNNNNNY",
+ "NNNNNNNNNNNNYNNNNNNNNNNNYNNNNNNNNNNNNNNN",
+ "NNNNNNNNNNNNNNNNNNNNNNYNNNNNNNNNNNNNNNNN",
+ "NNNYNNNNNNNNNNNNNNNNNYNNNNNNNNNNYNNNNNNN",
+ "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN",
+ "NNNNNNNNNNNNNNYNNYNNNNNNNNNNNNNNNNNNNNNN",
+ "NNYNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNYYNNY",
+ "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNYNNNNNNNNN",
+ "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN",
+ "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN",
+ "NNNNNNNYNNNNNYNYNNNNNNNNNNNNNNNNNNNNNNNN",
+ "NNYNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNYNNNNN",
+ "NYNNNNNNNNNNNNNNNNNNNNNNNNNNNYNNNNNNNNNN",
+ "NNNNYNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN",
+ "NYNNNNYNNNNNNNNNNNNNNNNNNNNYNNNNNNNNNNNN",
+ "NNNNNNYNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNYNN",
+ "NNNNNNNNNNNNYNNYYNNNNNNNNNNNNNNNNNNNNNNN",
+ "NNNNNNNYNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN",
+ "NNNYNNNNNNNNNNNNNNNNYYNNNNNNNNNNNNNNNNNN",
+ "NNNNNNNNYNNNNNNNNNNNNNNNNNNNYNYNNNNNNNNN",
+ "NNNNNNNNNNNNNNNNNNNNNNNNNNYNNYNNNNNNYNNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

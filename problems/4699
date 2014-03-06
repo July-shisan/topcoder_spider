@@ -1,0 +1,33 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">We have a collection of possibly overlapping 45 degree isosceles right triangles.
+Each triangle is oriented with its hypotenuse at the bottom, parallel with the 
+x axis.  Each triangle is specified by giving the center point (<b>xCenter</b>,<b>yCenter</b>)
+of its hypotenuse and the <b>height</b>.  For example, a triangle with center at (1,3) and with height 7
+would have its three vertices at (-6,3), (8,3), and (1,10).
+<p>
+We need to know the area that is covered by the collection of triangles. Of
+course, we don't want to count overlapping areas multiple times.  Create a 
+class TriArea that contains a method area that is given int[]s <b>xCenter</b>, <b>yCenter</b>,
+and <b>height</b> and returns the area covered.  The specification of the i-th 
+triangle is given by the i-th element of <b>xCenter</b>,
+<b>yCenter</b>, and <b>height</b>.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TriArea</td></tr><tr><td class="statText">Method:</td><td class="statText">area</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double area(int[] xCenter, int[] yCenter, int[] height)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>xCenter</b> will contain between 1 and 25 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>yCenter</b> and <b>height</b> will have the same number of elements as <b>xCenter</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>xCenter</b> and <b>yCenter</b> will be between -100 and 100, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>height</b> will be between 1 and 100 inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1}
+
+</pre></td></tr><tr><td class="statText"><pre>{3}</pre></td></tr><tr><td class="statText"><pre>{7}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 49.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   This collection consists of just one triangle with a height of 7. This
+   triangle has a base of 14 and an altitude of 7 so it has area 49.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1,1,1}</pre></td></tr><tr><td class="statText"><pre>{3,3,3}</pre></td></tr><tr><td class="statText"><pre>{7,7,8}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 64.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   The first two triangles in this collection are identical and the third
+   triangle contains both of them, so the total area covered is just the
+   area covered by the third one.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1,2}</pre></td></tr><tr><td class="statText"><pre>{3,3}</pre></td></tr><tr><td class="statText"><pre>{7,7}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 55.75</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   The area covered by these 2 triangles is the sum of their areas minus the
+   area of their intersection. Their intersection is a 45 degree right triangle
+   with height 6.5, so the result is 7*7 + 7*7 - 6.5*6.5 = 55.75.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{3, 6, 10, 12}</pre></td></tr><tr><td class="statText"><pre>{4, 11, -1, -7}</pre></td></tr><tr><td class="statText"><pre>{2, 4, 6, 8}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 116.0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

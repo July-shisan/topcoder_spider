@@ -1,0 +1,67 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+In this task we will consider a mechanical puzzle that has the shape of a regular tetrahedron.
+Each edge is divided into <b>edgeLength</b> unit segments, and each face is divided into 
+unit equilateral triangles.
+See the picture below for an example of a puzzle with <b>edgeLength</b>=3.
+</p>
+
+<p>
+On the real puzzle each of the small triangles is colored using one of four 
+colors (red, green, blue, and yellow). 
+The colors will not matter in this problem, 
+but we will still use them in the pictures.
+</p>
+
+<p>
+<img src="http://www.topcoder.com/contest/problem/PyramidPuzzle/0-pyramid-small.png"></p>
+
+<p>
+Little Juliet is playing with the puzzle. Initially, she placed the puzzle on the table before her
+so that it was lying on one of its sides. Then she rotated it so that one vertex pointed towards her.
+This position of the pyramid will be called the canonical position. When a pyramid is in the
+canonical position, we can label the three edges of the bottom face as L (front left), R (front right)
+and B (back), as in the picture above.
+</p>
+
+<p>
+Little Juliet performed a sequence of moves, which left the puzzle in a scrambled state.
+Each of the moves was of one of these types:
+</p>
+
+<ul><li>"<tt>+X</tt>": Rotate the top X rows of the pyramid 120 degrees counter-clockwise (seen from above).</li>
+<li>"<tt>-X</tt>": Rotate the top X rows of the pyramid 120 degrees clockwise.</li>
+<li>"<tt>L</tt>": Flip the entire puzzle around the front left edge. The face that was previously the front left face is now the bottom face. Rotate the puzzle 60 degrees counter-clockwise and translate it back into the canonical position.</li>
+<li>"<tt>R</tt>": Flip the entire puzzle around the front right edge, rotate it 60 degrees counter-clockwise and translate it back into the canonical position.</li>
+<li>"<tt>B</tt>": Flip the entire puzzle around the back edge, rotate it 60 degrees counter-clockwise and translate it back into the canonical position.</li>
+</ul><p>
+<img src="http://www.topcoder.com/contest/problem/PyramidPuzzle/1-pyramid-rotated-small.png">
+   
+<img src="http://www.topcoder.com/contest/problem/PyramidPuzzle/2-pyramid-back-small.png"></p>
+
+<p>
+The pictures above show the results of some of the moves, each starting with a puzzle in the canonical position, with the entire front left side being red, front right side green, back side blue and bottom side yellow. 
+The first picture is an almost finished move <tt>-2</tt>. The second picture is the result of the move <tt>B</tt> (the bottom side is now blue).
+</p>
+
+<p>
+ 
+</p>
+
+<p>
+After seeing the scrambled puzzle, Juliet began to wonder whether repeating the exact same sequence of moves over and over again would bring it back to the initial state -- that is, each of the small triangles must return to the exact same place where it started.
+</p>
+
+<p>
+You are given an int <b>edgeLength</b> and a String[] <b>moves</b>. Concatenate the elements
+of <b>moves</b> to get a space-separated list of moves Juliet performed. 
+</p>
+
+<p>
+If there is a positive integer K such that performing all the moves exactly K times brings each small triangle to the place where it was in the beginning, find the smallest such K and return the value (K mod 987654319). If no such K exists, return -1.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">PyramidPuzzle</td></tr><tr><td class="statText">Method:</td><td class="statText">repeatCount</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int repeatCount(int edgeLength, String[] moves)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">When evaluating whether we are in the initial position, we can distinguish between triangles of the same color.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>edgeLength</b> will be between 3 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>moves</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>moves</b> will contain between 0 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>moves</b> will have the form described in the problem statement.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>moves</b> will contain at least one move.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For moves of the first two types the integer X will be between 1 and <b>edgeLength</b>, inclusive, and it will be specified without leading zeroes.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>{"-2"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Three repetitions of this move bring the puzzle into the original state.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>{"-2 +2 -2"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+This sequence of moves has the same effect as a single <tt>-2</tt> move, thus we have to repeat it three times to get the initial position.
+</p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>6</pre></td></tr><tr><td class="statText"><pre>{"B ","B"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Flipping the entire puzzle backwards only leads to a few possible states.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>7</pre></td></tr><tr><td class="statText"><pre>{"+2 -1 +2 -1 +3 +2 -1 -3"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A disguised identity.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>{"-", "2 L"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 72</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Don't forget to concatenate the elements of <b>moves</b>.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>50</pre></td></tr><tr><td class="statText"><pre>{"B +50"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Note that <tt>+50</tt> rotates the entire pyramid, including the triangles on the bottom face.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

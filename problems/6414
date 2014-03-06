@@ -1,0 +1,52 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>
+   0  1  2  3  4  5  6  7  8  9 10 
+  39                            11
+  38                            12
+  37                            13
+  36                            14
+  35                            15
+  34                            16
+  33                            17
+  32                            18
+  31                            19
+  30 29 28 27 26 25 24 23 22 21 20
+</pre>
+In a certain board game, there are 40 numbered squares arranged around the board as shown above. The players alternate
+turns. On each turn a player rolls 2 six-sided dice and moves forward (clockwise) the sum of the
+two values. If he lands on square 7, 22, or 36 he draws a card which may direct him
+to move forward to a specified square or to "go to jail". There are 20 cards, and  after a card has been drawn it is replaced and the cards are reshuffled: <ul><li>
+    2 cards say "go to jail" </li><li>
+    1 card  says "go to square 11"</li><li>
+    1 card says "go to square 24"</li><li>
+    1 card says "go to square 29"</li><li>
+    1 card says "go to square 39"</li><li>
+    14 cards don't cause him to move </li></ul><p>
+If he has not gone to jail and has rolled "doubles" (the 2 dice have the same value) he 
+continues his turn by rolling again and behaving as before. However, if he rolls doubles 
+3 times on one turn, he does not move the amount shown on the third roll -- instead 
+he "goes to jail".
+The player's turn ends after he moves on a roll that was not doubles, or when he goes to jail.
+</p><p>
+One additional rule is that if a player lands on square 30, his turn ends after that move and he goes to jail.
+</p><p>
+We want to analyze the beginning of a 2 player game. Both players start on square 0. We will pretend that a
+player is removed from the game when he goes to jail or when he gets past square 39 (possibly
+by being directed to move by a card). So if a card directs a player to a lower numbered square, the player is
+removed from the game before landing on that square. If a card directs a player to a higher numbered square, he
+has landed on both the square where he drew the card and on the square he was directed to.
+</p><p>
+
+ For a particular square we want to know the probability that the 2nd player will land on it without
+having the first player land on it earlier. Create a class Monopolies that contains a method
+probability the is given <b>square</b> and that returns the desired probability.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Monopolies</td></tr><tr><td class="statText">Method:</td><td class="statText">probability</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double probability(int square)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A return value with either an absolute or relative error of less than 1.0E-9 is considered correct.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>square</b> will be between 1 and 39, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   No player can land on square 1 on his first time around the board, since the smallest
+   possible roll causes a player to move 2 squares forward.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>22</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.12122739832411301</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>30</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.11905533142891316</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

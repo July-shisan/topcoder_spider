@@ -1,0 +1,53 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Manao has a matrix X with 1,000,000,000 rows and <b>W</b> columns. He likes to fill it with characters; he even has developed an algorithm for this task. First, he chooses a string S consisting of at most <b>W</b> lowercase letters. The string S is called the generator. Then, he applies the algorithm described by the following pseudocode:
+<pre>
+cur := 0
+for i := 0 to 999999999
+  for j := 0 to W - 1
+    X[i][j] := S.charAt(cur)
+    cur := (cur + 1) mod length(S)
+</pre>
+<br>
+Manao has recently found a matrix X in his notepad.
+He wonders whether it was generated using the above algorithm.
+You are given:
+<ul><li>a String[] <b>fragment</b> that contains a rectangular submatrix of X,</li>
+<li>the int <b>W</b>: the width of X,</li>
+<li>and two ints <b>i0</b> and <b>j0</b>: the coordinates of the upper left corner of your submatrix within X.</li>
+</ul>
+In other words, for all valid i, j we have <b>fragment</b>[i][j] = X[i + <b>i0</b>][j + <b>j0</b>].
+Count how many different generators Manao could have used to create a matrix X that contains the fragment you were given.
+Return this number modulo 1,000,000,009.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CharacterBoard</td></tr><tr><td class="statText">Method:</td><td class="statText">countGenerators</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int countGenerators(String[] fragment, int W, int i0, int j0)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>fragment</b> will contain N elements, where N is between 1 and 10, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>fragment</b> will be M characters long, where M is between 1 and 10, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>fragment</b> will consist of lowercase letters ('a'-'z') only.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>W</b> will be between M and 1,000,000,000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>i0</b> will be between 0 and 1,000,000,000 - N, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>j0</b> will be between 0 and <b>W</b> - M, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"dea",
+ "abc"}
+</pre></td></tr><tr><td class="statText"><pre>7</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Manao has a matrix with 1000000000 rows and 7 columns. We know that it looks as follows:
+<br><pre>
+???????
+?dea???
+?abc???
+???????
+...
+</pre>
+<br>
+The only string of length at most 7 which could generate such matrix is "abcde".
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"xyxxy"}
+</pre></td></tr><tr><td class="statText"><pre>6</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 28</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The given information is:
+<pre>
+??????
+xyxxy?
+??????
+...
+</pre>
+<br>
+The corresponding generator could be "xyx", "yxyxx", or a string of form "xyxxy?", where '?' stands for any lowercase letter.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"gogogo",
+ "jijiji",
+ "rarara"}
+</pre></td></tr><tr><td class="statText"><pre>6</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No generator could create this matrix using the given algorithm.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"abababacac",
+ "aaacacacbb",
+ "ccabababab"}
+</pre></td></tr><tr><td class="statText"><pre>8827</pre></td></tr><tr><td class="statText"><pre>104</pre></td></tr><tr><td class="statText"><pre>6022</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 829146844</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

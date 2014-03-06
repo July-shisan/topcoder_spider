@@ -1,0 +1,51 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You are a geek with so many geeky friends that you sometimes forget about their birthdays.  So, you've decided to write a program that will remind you about such recurring events.  Since your friends are geeks, they may celebrate occasions other than their actual birthdays.  For example, they might celebrate whenever their age in days becomes divisible by 1000.<br><br>
+
+You are given a String[] <b>friendNames</b> and a int[] <b>birthDates</b>.  Your <b>i</b>-th friend is named <b>friendNames[i]</b> and was born on <b>birthDates[i]</b>.  All dates in this problem are non-negative integers representing the number of days that have elapsed since day 0.<br><br>
+
+The occasions celebrated by all your friends are given in the String[] <b>occasions</b> and int[] <b>days</b>.  Occasion <b>i</b> is named <b>occasions[i]</b>. Each of your friends celebrates that occasion on each date <b>b+n*day[i]</b>, where <b>b</b> is that friend's birth date and <b>n</b> is an integer greater than or equal to 1.  For example, if a friend was born on day 10, and there's an occasion that is celebrated every 4 days, that friend would celebrate it on day 14, day 18, day 22, etc.<br><br>
+
+Today's date is given as an int <b>currentDate</b>.  Your task is to generate the next <b>k</b> occasions that will be celebrated by your friends (starting from today).  Return these occasions in a String[] where each element represents a single occasion formatted as "DATE. FRIEND OCCASION (NUMBER)" (quotes for clarity).  Each DATE is the date of the occasion with no extra leading zeroes, FRIEND is the name of the friend, OCCASION is the name of the occasion, and NUMBER is the number of the occasion (1 is the first time the occasion has happened since that person's birth date, 2 is the second time, etc.).  The String[] should be sorted in chronological order from earliest to latest.  If multiple occasions happen on the same day, order them by occasion (occasions that appear earlier in <b>occasions</b> and <b>days</b> should be listed earlier), breaking ties by friend (friends that appear earlier in <b>friendNames</b> and <b>birthDates</b> should be listed earlier).</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BirthdayReminders</td></tr><tr><td class="statText">Method:</td><td class="statText">remind</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int[], int, String[], int[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] remind(String[] friendNames, int[] birthDates, int currentDate, String[] occasions, int[] days, int k)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>currentDate</b> will be between 1 and 1000000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>friendNames</b> will contain the same number of elements as <b>birthDates</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>friendNames</b> and <b>birthDates</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>birthDates</b> will be between 0 and <b>currentDate-1</b>, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>occasions</b> will contain the same number of elements as <b>days</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>occasions</b> and <b>days</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>days</b> will be between 1 and 1000000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>k</b> will be between 1 and 100, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>friendNames</b> will contain only uppercase letters ('A' - 'Z'), lowercase letters ('a' - 'z'), and spaces.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>occasions</b> will contain only uppercase letters ('A' - 'Z'), lowercase letters ('a' - 'z'), and spaces.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"John", "Jack", "Bill"}</pre></td></tr><tr><td class="statText"><pre>{50, 100, 150}</pre></td></tr><tr><td class="statText"><pre>500</pre></td></tr><tr><td class="statText"><pre>{"birthday", "decimal birthday", "binary birthday"}</pre></td></tr><tr><td class="statText"><pre>{365, 1000, 512}</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"515. Bill birthday (1)",
+"562. John binary birthday (1)",
+"612. Jack binary birthday (1)",
+"662. Bill binary birthday (1)",
+"780. John birthday (2)",
+"830. Jack birthday (2)",
+"880. Bill birthday (2)",
+"1050. John decimal birthday (1)",
+"1074. John binary birthday (2)",
+"1100. Jack decimal birthday (1)" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Zero", "Two", "Three"}</pre></td></tr><tr><td class="statText"><pre>{0, 2, 3}</pre></td></tr><tr><td class="statText"><pre>24</pre></td></tr><tr><td class="statText"><pre>{"threeday", "twoday"}</pre></td></tr><tr><td class="statText"><pre>{3,2}</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"24. Zero threeday (8)",
+"24. Three threeday (7)",
+"24. Zero twoday (12)",
+"24. Two twoday (11)",
+"25. Three twoday (11)",
+"26. Two threeday (8)",
+"26. Zero twoday (13)",
+"26. Two twoday (12)",
+"27. Zero threeday (9)",
+"27. Three threeday (8)" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This demonstrates the sorting rules used.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Jessica Alba", "Angelina Jolie", "Paris Hilton", "Britney Spears"}</pre></td></tr><tr><td class="statText"><pre>{4135, 1980, 4065, 4353}</pre></td></tr><tr><td class="statText"><pre>14091</pre></td></tr><tr><td class="statText"><pre>{"Venus year", "Earth year", "Mars year", "Jupiter year", "Saturn year"}</pre></td></tr><tr><td class="statText"><pre>{225, 365, 687, 4332, 10760}</pre></td></tr><tr><td class="statText"><pre>20</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"14130. Angelina Jolie Venus year (54)",
+"14190. Paris Hilton Venus year (45)",
+"14208. Britney Spears Earth year (27)",
+"14253. Britney Spears Venus year (44)",
+"14260. Jessica Alba Venus year (45)",
+"14285. Paris Hilton Earth year (28)",
+"14346. Angelina Jolie Mars year (18)",
+"14355. Angelina Jolie Venus year (55)",
+"14355. Jessica Alba Earth year (28)",
+"14370. Paris Hilton Mars year (15)",
+"14390. Angelina Jolie Earth year (34)",
+"14415. Paris Hilton Venus year (46)",
+"14440. Jessica Alba Mars year (15)",
+"14478. Britney Spears Venus year (45)",
+"14485. Jessica Alba Venus year (46)",
+"14573. Britney Spears Earth year (28)",
+"14580. Angelina Jolie Venus year (56)",
+"14640. Paris Hilton Venus year (47)",
+"14650. Paris Hilton Earth year (29)",
+"14658. Britney Spears Mars year (15)" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

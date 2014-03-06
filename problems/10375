@@ -1,0 +1,41 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">There is a country with N cities, some of which are connected with bidirectional roads.  Your task is to reconfigure the roads so that it is possible to get from each city to every other city.  You must do this using the minimum possible number of transformations, where each transformation consists of the following steps:
+
+<ol><li>Choose four different cities A, B, C and D, where roads (A, B) and (C, D) exist, but (A, C), (A, D), (B, C) and (B, D) do not exist.</li>
+<li>Destroy roads (A, B) and (C, D).</li>
+<li>Build two new roads - either (A, C) and (B, D), or (A, D) and (B, C).</li>
+</ol>
+
+The following images show an example of this transformation. From the first situation you can get the second one or the third one:<br><img src="http://www.topcoder.com/contest/problem/StrangeCountry/before.png"> <img src="http://www.topcoder.com/contest/problem/StrangeCountry/after.png"> <img src="http://www.topcoder.com/contest/problem/StrangeCountry/after2.png"><br><br>
+
+You are given a String[] <b>g</b>, where the j-th character of the i-th element is 'Y' if there is a road between cities i and j, and 'N' otherwise.  Return minimal number of transformations required to accomplish your task, or return -1 if it is impossible.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">StrangeCountry</td></tr><tr><td class="statText">Method:</td><td class="statText">transform</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int transform(String[] g)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>g</b> will contain between 2 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>g</b> will contain exactly N characters 'Y' or 'N', where N is the number of elements in <b>g</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For each i and j, <b>g</b>[i][j] will be equal to <b>g</b>[j][i].</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For each i, <b>g</b>[i][i] will be equal to 'N'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NY",
+ "YN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This country is already connected.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYYNN",
+ "YNYNN",
+ "YYNNN",
+ "NNNNY",
+ "NNNYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><img src="http://www.topcoder.com/contest/problem/StrangeCountry/tc_before.png"> <img src="http://www.topcoder.com/contest/problem/StrangeCountry/tc_after.png"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYYNNNN",
+ "YNYNNNN",
+ "YYNNNNN",
+ "NNNNYYN",
+ "NNNYNYY",
+ "NNNYYNY",
+ "NNNNYYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYNYNNNNNNNN",
+ "YNYNNNNNNNNN",
+ "NYNYYNNNNNNN",
+ "YNYNNNNNNNNN",
+ "NNYNNYYNNNNN",
+ "NNNNYNYNNNNN",
+ "NNNNYYNNNNNN",
+ "NNNNNNNNYYNN",
+ "NNNNNNNYNYNN",
+ "NNNNNNNYYNNN",
+ "NNNNNNNNNNNY",
+ "NNNNNNNNNNYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"NYNNNN",
+ "YNYNNN",
+ "NYNYNN",
+ "NNYNNN",
+ "NNNNNY",
+ "NNNNYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

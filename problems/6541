@@ -1,0 +1,39 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You've been given the task of designing part of a circuit board.  You need to connect as many data lines as possible from the top edge of the board to the bottom edge of the board.  However, there are a number of screwholes already in place that cannot be moved and will need to be avoided.  <b>layout</b> will contain the current layout of the board, formatted like the example below, with '.' for open spaces and 'o' for screwholes:
+<br><br><pre>
+.o.ooo..
+o.......
+.....ooo
+........
+.o.oo...
+</pre>
+<br>
+The data lines must be kept short; this means they cannot go sideways or backwards on the board.  They start at the top row, and at each step they must go either straight down, down and one cell to the right, or down and one cell to the left.  Two data lines cannot occupy the same cell.  In the example above, we can fit in 3 data lines by laying them out like this:
+<br><br><pre>
+\o|ooo/.
+o||../..
+./|.|ooo
+|.|.\...
+|o|oo|..
+</pre>
+<br>
+Return the maximum number of complete data lines that can be placed on the board.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CircuitBoard</td></tr><tr><td class="statText">Method:</td><td class="statText">maxDataLines</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int maxDataLines(String[] layout)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>layout</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>layout</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>layout</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>layout</b> will contain only the characters '.' or lowercase 'o'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+".o.ooo..",
+"o.......",
+".....ooo",
+"........",
+".o.oo..."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+".......",
+"oo...oo",
+".oo.oo.",
+"oo...oo",
+"......."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Two data lines cannot occupy the same cell, so watch for bottlenecks.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"oooooooooo.....",
+"...............",
+"...............",
+"...............",
+".......oooooooo"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">You can't go sideways or backwards (only straight down or diagonal) - so in this case only one wire can reach from the top right to the bottom left.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

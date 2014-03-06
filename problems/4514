@@ -1,0 +1,42 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">The dating ritual can be pretty complex.  Here is how it works at a certain 
+cocktail party. All the men and women stand around in a circle, making chitchat.
+Eventually someone gets up his or her nerve and chooses the most desirable 
+remaining person of the opposite
+sex and those 2 go off and discuss world affairs privately.  This continues 
+until either everyone has left, or only one gender remains and they all go home.
+<p>
+The original circle is described by a String <b>circle</b> containing lowercase letters
+for women and uppercase letters for men. The last one in <b>circle</b> is actually adjacent
+to the first one. Starting with the first person in <b>circle</b>, we count from
+1 to <b>k</b> around the circle, letting the k-th person be the first chooser. 
+Letters nearer the
+beginning of the alphabet represent hotter individuals, and the chooser always
+chooses the hottest remaining member of the opposite sex. Starting with the next remaining person
+after the last chooser we again count from one to k (counting only people who still remain in the
+circle) to determine the next chooser.
+This continues until the party breaks up.
+</p><p>
+
+Create a class Dating that contains a method dates that is given <b>circle</b> and <b>k</b> and returns
+a String showing all the dates. The return should list each date as a 2 letter sequence,
+with the chooser before the chosen. The dates should appear in the order in which they
+were made, and with a single space between adjacent dates. There must be no leading
+or trailing spaces in the return.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Dating</td></tr><tr><td class="statText">Method:</td><td class="statText">dates</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String dates(String circle, int k)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>circle</b> will contain between 1 and 50 characters, inclusive, all letters 'A'-'Z' or 'a'-'z'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The characters in <b>circle</b> will be distinct.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>k</b> will be between 1 and 100, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"abXCd"</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "bC dX"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   Starting at the beginning we count 'a' as 1 and 'b' as 2 so 'b' chooses 'C' since
+   'C' is a lot hotter than 'X'. Then we count 'X' as 1 and 'd' as 2 (since 'C' is
+   off discussing world affairs with 'b') so 'd' chooses 'X'. At this point only
+   'a' is left so the party breaks up.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"abXCd"</pre></td></tr><tr><td class="statText"><pre>8</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "Xa dC"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   We count all the way around the circle and arrive at 'X' as the first to choose. 
+   The next chooser is 'd' since we count all the way around the circle more than twice
+   (since there are only 3 people left at this point).
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"HGFhgfz"</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "Hf Gg Fh"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

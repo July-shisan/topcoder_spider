@@ -1,0 +1,39 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+	<b>d</b> dogs and <b>d</b> dog-houses are located on a rectangular field of n * m squares. It is raining now, so each dog wants 
+	to get into a dog-house as soon as possible, but each dog-house can accomodate only 1 dog. To make the task harder, 
+	some squares of the field contain rocks which make those squares impassable. Dogs cannot pass through squares with dog-houses 
+	either, but they can enter empty dog-houses. Once a dog enters a dog-house, it can never leave it. Dogs are very friendly, 
+	so a dog can pass through an empty square even if there are other dogs on it.
+</p>
+
+<p>
+	A String[] <b>field</b> will give you the map of the field. Each character of <b>field</b> will be an uppercase 
+	'D' (representing an empty square with a dog on it), an uppercase 'H' (a dog-house), an uppercase 'R' (a rock) or a '.' 
+	(an empty square). Dogs can only move between neighboring squares (two squares are neighboring if they share a side), and 
+	it takes 1 second to move from one square to another. At most one dog can move at the same time. The dogs may never leave the 
+	field. Return the minimal total time required for all the dogs to end up in dog-houses. 
+	If at least one dog cannot reach an empty dog-house, return -1 instead.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">DogField</td></tr><tr><td class="statText">Method:</td><td class="statText">saveDogs</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int saveDogs(String[] field)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Initially, every dog is on an empty square (i.e., not on a square containing a dog-house, rock, or another dog).</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>field</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>field</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>field</b> will contain same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>field</b> will be an uppercase 'R', an uppercase 'H' , an uppercase 'D' or a '.'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>field</b> will contain between 1 and 10 'D' characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The number of 'D' and 'H' characters in <b>field</b> will be the same.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"D..H..H",
+ ".D...DD",
+ ".H..H.."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The dog at row 0, column 0 will move three squares right. The dog at row 1, column 1 will move one square down. The dog at row 1, column 5 will move one square left and one square down. The dog at row 1, column 6 will move one square up.
+
+The total time needed to save all the dogs is 3 + 1 + 2 + 1 = 7.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"D..RH",
+ "...RR",
+ "....."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The dog cannot reach the dog-house because it is surrounded by rocks.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"...RRRR.",
+ "D..RH...",
+ "..RRRRR.",
+ "........"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 14</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The only dog will move to the only dog-house by the path marked by 'U' characters:
+<pre>
+...RRRR.
+D..RHUUU
+U.RRRRRU
+UUUUUUUU
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"D",
+ "H"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The dog only needs to move one square to reach the dog-house.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"DDD..RH.H.H",
+ "DDD..R.H.H.",
+ "DD.........",
+ "DD...RHHHHH"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 96</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

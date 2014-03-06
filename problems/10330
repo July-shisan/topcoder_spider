@@ -1,0 +1,68 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+In the attic of your house you found an M×N board, divided into MN unit squares. Some of the squares are black and the others are white. You decided that you will make a chessboard out of the board by cutting out an 8×8 region and throwing away the rest of the board.
+</p>
+
+<p>
+The only problem is that the board is not painted in the alternate black/white pattern you need for the chessboard. Thus after you cut out the 8×8 chessboard, you will have to repaint some of the squares. Of course, you can pick which 8×8 region to cut out.
+</p>
+
+<p>
+You are given the current colors of the squares as a String[] <b>board</b>. Character c in element r of <b>board</b> is '<tt>W</tt>' if the cell at coordinates (r,c) is white, and '<tt>B</tt>' if it is black. Your task is to find the minimum number of squares you will need to repaint after cutting out the 8×8 region.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">RepaintTheChessboard</td></tr><tr><td class="statText">Method:</td><td class="statText">minimumChanges</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int minimumChanges(String[] board)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">On a correctly colored chessboard each square is either black or white, and no two squares that share a side have the same color.  <br> (Note that according to this definition there are two valid colorings: one with a white, the other with a black square in the upper left corner.)</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain between 8 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain between 8 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>board</b> will have the same length.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>board</b> will be either '<tt>B</tt>' or '<tt>W</tt>'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BWBWBWBW",
+ "WBWBWBWB",
+ "BWBWBWBW",
+ "WBWBWBWB",
+ "BWBWBWBW",
+ "WBWBWBWB",
+ "BWBWBWBW",
+ "WBWBWBWB"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is a perfect chessboard, no repainting (and no cutting) necessary.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"WBWBWBWB",
+ "BWBWBWBW",
+ "WBWBWBWB",
+ "BWBBBWBW",
+ "WBWBWBWB",
+ "BWBWBWBW",
+ "WBWBWBWB",
+ "BWBWBWBW"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is almost a perfect chessboard, except for one square.
+<br>
+(Using 0-based indices, the incorrectly colored square is element 3, character 3 of <b>board</b>.)</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BBBBBBBBBBBBBBBBBBBBBBB",
+ "BBBBBBBBBBBBBBBBBBBBBBB",
+ "BBBBBBBBBBBBBBBBBBBBBBB",
+ "BBBBBBBBBBBBBBBBBBBBBBB",
+ "BBBBBBBBBBBBBBBBBBBBBBB",
+ "BBBBBBBBBBBBBBBBBBBBBBB",
+ "BBBBBBBBBBBBBBBBBBBBBBB",
+ "BBBBBBBBBBBBBBBBBBBBBBB",
+ "BBBBBBBBBBBBBBBBBBBBBBW"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 31</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">If we take the 8×8 piece in the lower right corner, we will have one white square, and we will only need 31 more.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BBBBBBBBBB",
+ "BBWBWBWBWB",
+ "BWBWBWBWBB",
+ "BBWBWBWBWB",
+ "BWBWBWBWBB",
+ "BBWBWBWBWB",
+ "BWBWBWBWBB",
+ "BBWBWBWBWB",
+ "BWBWBWBWBB",
+ "BBBBBBBBBB"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here we have a perfect chessboard in the middle of the given board.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"WBWBWBWB",
+ "BWBWBWBW",
+ "WBWBWBWB",
+ "BWBBBWBW",
+ "WBWBWBWB",
+ "BWBWBWBW",
+ "WBWBWWWB",
+ "BWBWBWBW"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">For this board the minimum number of changes is 2: We need to change one black square into a white one, and one white square into a black one.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BWWBWWBWWBWW",
+ "BWWBWBBWWBWW",
+ "WBWWBWBBWWBW",
+ "BWWBWBBWWBWW",
+ "WBWWBWBBWWBW",
+ "BWWBWBBWWBWW",
+ "WBWWBWBBWWBW",
+ "BWWBWBWWWBWW",
+ "WBWWBWBBWWBW",
+ "BWWBWBBWWBWW",
+ "WBWWBWBBWWBW"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 15</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

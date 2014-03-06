@@ -1,0 +1,58 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You regularly participate in problem solving contests. During a contest all contestants must solve 3 problems, submitting their solutions to the judges for some points. After the competition, the judges will check the correctness of the problems, and award 0 points for incorrect problems.
+<br><br>
+You want to know your result as soon as possible and you hate waiting for the judges to finish their work. You are ambitious and you are only interested in knowing if you will finish among the top 5 people. Thus you decide to write your own program to determine your probability of getting a top 5 spot. Notice that if someone gets the same score as you, they will go above you on the top scorers list.
+<br><br>
+You will be given two String[]s - <b>results</b>, giving you the points all people have scored for their problems (prior to being judged), and <b>accuracies</b>, the submission accuracies for all people (the i<sup>th</sup> element of <b>results</b> corresponds to the i<sup>th</sup> element of <b>accuracies</b>). Each element of <b>results</b> and <b>accuracies</b> will contain three space-delimited integers without extra leading zeroes. For the i<sup>th</sup> contestant the corresponding element of <b>results</b> contains the points this contestant received for his three solutions, and the corresponding element of <b>accuracies</b> represents the probabilities in percents of these solutions to be correct.
+<br>
+Given the <b>points</b> you have (you think all your solutions are correct), return the probability you will make the top 5.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TopFive</td></tr><tr><td class="statText">Method:</td><td class="statText">findProbability</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double findProbability(String[] results, String[] accuracies, int points)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Your return value must have an absolute or relative error less than 1e-9.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>results</b> and <b>accuracies</b> will have the same number of elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>results</b> will have between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>results</b> and <b>accuracies</b> will contain between 5 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>results</b> will be formatted as "A B C", where A, B and C are integers between 0 and 1000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>accuracies</b> will be formatted as "A B C", where A, B and C are integers between 0 and 100, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All integers in both <b>results</b> and <b>accuracies</b> will NOT contain any leading zeroes.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>points</b> will be between 0 and 2000, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"200 200 200",
+"200 200 200",
+"200 200 200",
+"200 200 200",
+"200 200 200"}</pre></td></tr><tr><td class="statText"><pre>{"100 100 100",
+"100 100 100",
+"100 100 100",
+"100 100 100",
+"0 0 50"
+}</pre></td></tr><tr><td class="statText"><pre>100</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The first four people always solve their problems correctly (getting 600 points each) and finish higher than you. Your success depends on the fifth person, who has a 50-50 chance of solving the 3rd problem, and beating you.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"200 200 200",
+"200 200 200",
+"200 200 200",
+"200 200 200",
+"200 200 200"}</pre></td></tr><tr><td class="statText"><pre>{"100 100 100",
+"100 100 100",
+"100 100 100",
+"100 100 100",
+"100 100 100"}</pre></td></tr><tr><td class="statText"><pre>100</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Your performance isn't good enough for you to have any chance of making the top 5.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"928 209 594", "547 408 596", "190 865 494", "353 392 962", "6 252 267",
+ "817 671 562", "631 78 290", "593 292 312", "59 51 286", "553 541 487",
+ "466 318 271", "605 892 562", "596 261 63", "865 895 625", "893 479 586",
+ "759 596 476", "157 407 819", "509 695 861", "696 730 430", "271 221 0",
+ "922 296 640", "999 456 654", "320 550 805", "835 808 711", "9 161 670",
+ "82 737 480", "939 12 363"}</pre></td></tr><tr><td class="statText"><pre>{"84 87 72", "39 60 84", "56 78 48", "0 80 59", "11 69 94",
+ "100 53 77", "87 77 55", "0 67 7", "89 63 3", "4 69 99", 
+"58 9 49", "81 8 84", "81 85 55", "84 68 28", "7 1 46", 
+"30 50 51", "16 82 8", "60 17 88", "44 30 67", "20 65 65", 
+"40 75 73", "38 97 20", "82 38 88", "90 78 58", "58 30 66",
+ "3 95 50", "76 60 57"}</pre></td></tr><tr><td class="statText"><pre>1623</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.8657569451352308</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"200 200 200",
+"200 200 200",
+"200 200 200",
+"200 200 200",
+"600 600 600"}</pre></td></tr><tr><td class="statText"><pre>{"100 100 100",
+"100 100 100",
+"100 100 100",
+"100 100 100",
+"75 75 75"
+}</pre></td></tr><tr><td class="statText"><pre>500</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.015625</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The fifth contestant must fail all his problems.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"200 200 200",
+"200 200 200",
+"200 200 200",
+"200 200 200",
+"33 33 33",
+"33 200 200"}</pre></td></tr><tr><td class="statText"><pre>{"100 0 0",
+"0 0 100",
+"0 100 0",
+"100 100 100",
+"100 100 100",
+"33 80 50"
+}</pre></td></tr><tr><td class="statText"><pre>200</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.10000000000000009</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The last contestant must fail both the second and third problems to grant you a top 5 spot. The correctness of his first problem does not affect the result.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

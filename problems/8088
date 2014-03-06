@@ -1,0 +1,51 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+You have a sheet of paper and you are looking at it sideways.  You can fold the paper exactly in half using one of the following operations:
+</p><ol><li>
+	Fold the right half of the paper counterclockwise over the left half.
+	</li>
+	
+	<li>
+	Fold the right half of the paper clockwise under the left half.
+	</li>
+</ol>
+The following picture illustrates the two possible folds:
+
+
+<p>
+<img src="http://www.topcoder.com/contest/problem/PaperUnfolding/picture1.gif"></p>
+
+<p>
+Figure 1 shows the original sheet of paper.  Figure 2 shows the result of performing fold operation 1, and figure 3 shows the result of performing fold operation 2 (each on the original sheet of paper).
+</p>
+
+<p>
+After one initial fold, the paper is two layers thick.  You can continue folding the paper any number of times, and each time it will become twice as thick and half as long.  The following picture shows one possible sequence of folds:
+</p>
+
+<p>
+<img src="http://www.topcoder.com/contest/problem/PaperUnfolding/picture2.gif"></p>
+
+<p>
+Figure 1 shows the original sheet of paper.  Figure 2 shows the result of performing fold operation 1 on the original sheet.  Figure 3 shows the result of performing fold operation 2 on the resulting two-layer sheet.
+</p>
+
+<p>
+After some number of folds (possibly zero), you decide to unfold the paper.  To do this, you simply work backwards and reverse each fold until you end up with the original sheet.  Unfortunately, the paper will now show marks where each of the folds occurred.  We go from left to right and label each mark where the paper bends slightly clockwise as an OUT, and each mark where the paper bends slightly counterclockwise as an IN.  The following picture shows the unfolded version of the paper from the previous picture.
+</p>
+
+<p>
+<img src="http://www.topcoder.com/contest/problem/PaperUnfolding/picture3.gif"></p>
+
+<p>
+You are given a String[] <b>code</b>.  Concatenate the elements of <b>code</b> to obtain one string.  This string contains the marks on an unfolded sheet of paper from left to right, where '1' (one) represents an OUT and '0' (zero) represents an IN.  So, for example, the paper in the picture above would be represented as "100".  Return "YES" if <b>code</b> represents a piece of paper that could have been produced using the process described above, or "NO" otherwise (all quotes for clarity).
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">PaperUnfolding</td></tr><tr><td class="statText">Method:</td><td class="statText">isValidUnfolding</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String isValidUnfolding(String[] code)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>code</b> will contain between 0 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>code</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>code</b> will contain only the characters '1' (one) and '0' (zero).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The total number of characters in <b>code</b> will be 2^n-1, where n is an integer greater than or equal to zero.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "YES"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This sheet of paper has no marks, which means that no folding operations were applied.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "YES"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This paper was only folded once.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"000"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "NO"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No sequence of valid folds can produce an unfolded sheet containing three consecutive INs.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"1000110"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "YES"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Do two folding operations of type 1, and one folding operation of type 2.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"10001101100111001000110010011101100011011001110110",
+ "00110010011101100011011001110010001100100111001000",
+ "11011001110110001100100111001000110110011100100011",
+ "00100111011000110110011101100011001001110010001101",
+ "10011100100011001001110010001101100111011000110010",
+ "01110"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "YES"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

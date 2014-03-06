@@ -1,0 +1,33 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Circular Island is a small undeveloped island with a circular shape.
+The circle is divided into N sectors.
+The sectors are numbered 0 through N-1 in clockwise order.
+Each sector has some constant altitude.
+<p></p>
+The inhabitants of the island have some desired altitude.
+This altitude will be given in the input as 0.
+Negative altitudes are lower, positive ones are higher.
+<p></p>
+The people on the island decided to spend <b>T</b> days on flattening their island to the desired altitude.
+Each day looked as follows:
+The people formed N teams, one on each segment.
+If the altitude of the segment was negative, the team did nothing that day.
+If the altitude was positive, the team took shovels and removed enough dirt to decrease the altitude by 1.
+Also, that dirt was then moved into the next sector clockwise.
+In other words, if the altitude of sector i was positive, the team on sector i decreased the altitude of sector i by 1, and increased the altitude of sector ((i+1) modulo N) by 1.
+Note that all teams always worked at the same time, so it is possible that the altitude of some sectors was decreased and increased on the same day.
+<p></p>
+You are given a long[] <b>height</b> containing N elements.
+The i-th element of <b>height</b> represents the altitude of sector i at the beginning.
+You are also given a long <b>T</b> specifying the number of days of flattening.
+Return a long[] containing exactly N elements.
+The i-th element of the return value should be the height of sector i after the entire flattening is done.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">FlattenOut</td></tr><tr><td class="statText">Method:</td><td class="statText">simulateIt</td></tr><tr><td class="statText">Parameters:</td><td class="statText">long[], long</td></tr><tr><td class="statText">Returns:</td><td class="statText">long[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long[] simulateIt(long[] height, long T)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>height</b> will contain between 2 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>height</b> will be between -10^16 and 10^16, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>T</b> will be between 1 and 10^16, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1, 3, -4, -4, 2, 0}</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0, 3, -3, -4, 1, 1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In this case there is only one day of flattening.
+The teams on sectors 2, 3, and 5 do nothing.
+The teams on sectors 0, 1, and 4 shovel dirt to the next sector (i.e., sectors 1, 2, and 5).
+The resulting sector altitudes are shown in the output above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1, 3, -4, -4, 2, 0}</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1, 2, -2, -4, 0, 1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The initial altitudes are the same as in Example 0, but this time there are two days.
+We already know that the altitudes after the first day will be {0, 3, -3, -4, 1, 1}.
+On the second day, teams on sectors 1, 4, and 5 will be the ones working.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{9999999999999999, -9999999999999999, 9999999999999999, -9999999999999999}</pre></td></tr><tr><td class="statText"><pre>9999999999999999</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0, 0, 0, 0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Watch out for overflow, the input values may be huge.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{0, 0, 0}</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0, 0, 0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,89 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Preparing for the End of The World on 21.12.2012, Manao and his neighbours decided to dig several tunnels under their neighbourhood. All of the houses in Manao's neighbourhood are standing in a line and all of the tunnels are dug directly under them, so we can consider the neighbourhood's underground in two-dimensional space.
+<br><br><img src="http://i46.tinypic.com/4j8hza.png"><br><br>
+The underground is divided into squares 1 meter long. Each tunnel is a sequence of squares obeying the following rules:
+<ul><li>Each pair of consecutive squares shares an edge.</li>
+<li>No pair of non-consecutive squares shares an edge.</li>
+<li>The first square in the sequence is right under the ground level.</li>
+<li>If the squares are traversed from the first one to the last one, the direction in each pair will be either down, left or right. That is, a tunnel cannot contain an ascending fragment.</li>
+</ul><br>
+Note that each tunnel may have multiple squares directly below the ground level. It is also known that no two tunnels in the neighbourhood share a square and there are no two neighbouring square which belong to different tunnels. See the following examples of incorrectly built tunnel systems: in the first one, the tunnel does not begin right under the ground level; in the second one, a tunnel has an ascending fragment, in the third one, there are non-consecutive squares sharing an edge and in the fourth one, two tunnels have neighbouring squares.
+<br><br><pre>
+**********GROUND**********
+...   X...   X..   X....X
+.X.   X...   XXX   XXXXXX
+...   X.X.   .XX   ..XX..
+...   XXX.   ...   ..X...
+</pre>
+<br>
+Suppose we have encoded the whole underground and have an infinite grid where each cell is either 'X', denoting a dug square, or '.', denoting an undug square. You are given some rectangular fragment of this infinite grid as String[] <b>frame</b>. It is guaranteed that the tunnels were built according to the given rules. Return the minimum possible number of tunnels in this underground.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Tunnels</td></tr><tr><td class="statText">Method:</td><td class="statText">minimumTunnels</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int minimumTunnels(String[] frame)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>frame</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>frame</b> will be between 1 and 50 characters long, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The elements of <b>frame</b> will be of equal length.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>frame</b> will be either '.' or 'X'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The picture given by <b>frame</b> will be a fragment of a correct tunnels system described in the statement.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXX.XXXX.....X",
+ "..X....XXX...X",
+ "XXX......X...."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">We see three tunnels in <b>frame</b>. Note that this fragment could either be right below the ground level or elsewhere in the deep.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".......X.....",
+ ".............",
+ "XXX.XXXXXXXXX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A fuller picture of the system could be the following:
+<br><pre>
+X.......X.....X
+X.............X
+XXXX.XXXXXXXXXX
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".............",
+ "XXXXXXXXXXXXX",
+ ".............",
+ "XXX.......XXX",
+ "..........X..",
+ "..........XXX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The given fragment could correspond to a system with only two tunnels. A possible picture is:<br><pre>
+2.1..............
+2.111111111111111
+2...............1
+222222.......1111
+.............1...
+.............111.
+</pre>
+<br>
+Another possible picture is:
+<pre>
+..............1.2
+111111111111111.2
+1...............2
+1111.......222222
+...........2.....
+...........222...
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXXX...X..",
+ "....XXXX.X",
+ "XX.......X",
+ "..........",
+ "....XXXXXX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A possible corresponding picture is:
+<pre>
+....1...2..3.4
+11111...2..3.4
+1....2222.33.4
+111.......3..4
+.............4
+.....444444444
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"X........X..",
+ ".........XXX",
+ "............",
+ "XXXXXXXXXXXX",
+ "............",
+ "XXXXXXXXXXXX",
+ "............",
+ ".........XXX",
+ "..XXXXXXXX.."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"...............X.X....X",
+ "XXXXX..........X.......",
+ "....X..................",
+ "XXX.X.........XXXXXXXXX",
+ "..X.X.........X........",
+ "XXX.X.........XXXXXXXXX",
+ "....X..................",
+ "XXXXX......XXXXXXXXXXXX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".",
+ "X",
+ "X",
+ ".",
+ "X"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">7)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"X.XX",
+ "X...",
+ "...X",
+ "X...",
+ "X..X"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">8)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"...",
+ "..."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

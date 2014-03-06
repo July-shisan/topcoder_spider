@@ -1,0 +1,39 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">In Computer Science we hold weird ceremonies -- at each ceremony we display all our candles but
+only n of them are lit (yeah, a binary code). Unfortunately we have 2
+different types of candles: we have <b>n1</b> candles that each burn at the rate <b>r1</b>, 
+and <b>n2</b> candles that each burn at the rate <b>r2</b>. (The rates are in mm/hr.)
+<p>
+Before each ceremony we can choose which <b>n</b> of our candles 
+will be the ones that are lit during the ceremony -- we do this in an attempt to keep our
+candles approximately the same length. Given <b>n</b>, <b>n1</b>, <b>r1</b>, <b>n2</b>, and <b>r2</b> return the number of ceremonies
+required for us to return our candles to uniform length. If we can never achieve uniform length,
+return -1. 
+</p><p>
+(You may assume that
+our candles are arbitrarily long or that our ceremonies are arbitrarily short so
+we won't completely burn up any candles.)
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Candles</td></tr><tr><td class="statText">Method:</td><td class="statText">ceremonies</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int ceremonies(int n, int n1, int r1, int n2, int r2)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b>, <b>n1</b>, <b>r1</b>, <b>n2</b>, <b>r2</b> will all be between 1 and 1000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n1</b>+<b>n2</b> will be greater than <b>n</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>6</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   We have 6 type 1 candles and 4 type 2's and we burn 5 candles at each
+   ceremony. Here they burn at the same rate, so we can burn any 5 of them
+   during the first ceremony and the other five at the next ceremony.
+
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>12</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>6</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   For the first 6 ceremonies we could burn fresh candles, 2 of type 1 and 1 of
+   type 2. At that point the type 1 candles will be shorter than the type 2
+   candles. For the last 2 ceremonies burn 3 type 2 candles and then the other
+   3 type 2 candles -- all the candles will now be the same length.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>19</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    We don't have much choice here. In each ceremony we must
+    burn all our candles except for 1. We will never be able to burn enough
+    of the slower burning candles to get them as short as the others.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>56</pre></td></tr><tr><td class="statText"><pre>50</pre></td></tr><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>60</pre></td></tr><tr><td class="statText"><pre>16</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 125</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

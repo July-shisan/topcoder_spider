@@ -1,0 +1,40 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">String matching is extraordinarily useful. In our application, we define the
+match quality between 2 strings of lowercase letters to be the number 
+of positions that match
+exactly. For example, the match quality between
+"abcdedd" and "bcddd" is 1, since they only match in the 4th character.
+<p>
+We have a string sequence, <b>data</b>, and are interested in finding string sequences
+of the same length that fit the data well. We say that one sequence fits the data
+better than another sequence if it has a higher quality match with the data at
+the first position where the match qualities differ.
+</p><p>
+String sequences are ordered lexicographically based on the normal alphabetical
+comparison between individual strings. That means that if position i is the first
+position where 2 sequences differ, the sequence whose ith element would come later
+in a dictionary is later in the ordering of sequences.
+Given <b>data</b> and <b>candidate</b> return the next later permutation of <b>candidate</b>
+ that fits <b>data</b> better.
+If no lexicographically later permutation of <b>candidate</b> gives a better fit, 
+return <b>candidate</b>.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">NextBetter</td></tr><tr><td class="statText">Method:</td><td class="statText">nextPerm</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] nextPerm(String[] data, String[] candidate)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>data</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>candidate</b> will contain the same number of elements as <b>data</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>data</b> and <b>candidate</b> will contain between 1 and 10 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>data</b> and <b>candidate</b> will contain only lowercase letters ('a'-'z').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ab","cde"}</pre></td></tr><tr><td class="statText"><pre>{"xx","ade"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"xx", "ade" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    The only permutation of "xx","ade" is earlier (since "ade" precedes "xx"). Therefore, there is no next permutation, and <b>candidate</b> is returned.
+  
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ad","cde"}</pre></td></tr><tr><td class="statText"><pre>{"xx","yde"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"yde", "xx" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    "yde","xx" is the next permutation of "xx","yde" and it fits <b>data</b> better 
+    since it has
+    a match quality of 1 in the first position ("yde" vs "ad") while <b>candidate</b>
+    has a match quality of 0 in the first position of <b>data</b>.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ade","cde","acd"}</pre></td></tr><tr><td class="statText"><pre>{"ab","ae","c"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"ab", "c", "ae" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    All 5 permutations of <b>candidate</b> come later than <b>candidate</b>. "ab","c","ae" fits
+    <b>data</b> better than <b>candidate</b>, and so does "ae","c","ab". None of the
+    other permutations fits <b>data</b> better than <b>candidate</b>. So the return is
+    the earlier of these 2.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

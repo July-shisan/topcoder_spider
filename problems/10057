@@ -1,0 +1,61 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+<i>
+(Note: This problem statement contains images that should best be viewed in the arena applet.)
+</i>
+</p>
+
+<p>
+You are given N strips of paper. Each strip is a 5 by 1 rectangle, divided into 5 unit squares. Each unit square is either black or white.
+</p>
+
+<p>
+Your goal is to arrange all of these strips into a bitmap of height 5 and width N in such a way that the largest possible number appears.
+Strips can be rotated, and each strip can be placed either horizontally or vertically. Obviously, no two strips may overlap.
+</p>
+
+<p>
+We will now explain your goal in more detail. First, we will define the bitmap representations of all decimal digits.
+Each digit is a bitmap of width 3 and height 5. Below, letters <tt>X</tt> represent black squares and periods represent white squares.
+</p>
+
+<pre>
+..X   XXX   XXX   X.X   XXX
+..X   ..X   ..X   X.X   X..
+..X   XXX   XXX   XXX   XXX
+..X   X..   ..X   ..X   ..X
+..X   XXX   XXX   ..X   XXX
+
+XXX   XXX   XXX   XXX   XXX
+X..   ..X   X.X   X.X   X.X
+XXX   ..X   XXX   XXX   X.X
+X.X   ..X   X.X   ..X   X.X
+XXX   ..X   XXX   XXX   XXX
+</pre>
+
+<p>
+The bitmap representation of a multiple-digit number consists of the bitmap representations of its digits. Additionally, each pair of consecutive digits is separated by one column of white squares. For example, below is the bitmap representation of the number 47.
+</p>
+
+<pre>
+X.X.XXX
+X.X...X
+XXX...X
+..X...X
+..X...X
+</pre>
+
+<p>
+The value of N will be one of 3, 7, 11, and 15. Your goal is to assemble a 1-digit number if N=3, a 2-digit number if N=7, a 3-digit number if N=11, or a 4-digit number if N=15.
+If the number you are trying to assemble has more than one digit, it must not have a leading zero. 
+</p>
+
+<p>
+You will be given a String[] <b>pieces</b>, describing the N strips of paper you have.
+Find and return the largest number that can be assembled from these pieces. 
+If there is no such number, return -1 instead.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Digsaw</td></tr><tr><td class="statText">Method:</td><td class="statText">largestNumber</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int largestNumber(String[] pieces)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>pieces</b> will contain exactly N elements, where N is one of 3, 7, 11, and 15.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>pieces</b> will have exactly 5 characters, and each of these characters will either be an uppercase letter X or a period.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXX.X","XXX.X","X.X.X"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Using these three strips, we can assemble either the digit 2 or the digit 5. We return the largest possible answer.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXX..","XXXX.","X..X."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No number can be assembled from these strips.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXXXX","XXXXX","XXXXX","XXXXX","X...X","X...X","....."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">"00" is not a valid 2-digit number, and nothing else can be assembled.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXX..","XXXXX",".X.XX","...X.","XX...","...X.",".X..."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 47</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><img src="http://www.topcoder.com/contest/problem/Digsaw/digsaw1.png"><br>
+Using these seven strips we can assemble the number 47 as shown in the picture below:<br><img src="http://www.topcoder.com/contest/problem/Digsaw/digsaw2.png"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXXXX","X...X","XXXXX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Zero is a valid answer in case of one-digit numbers.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

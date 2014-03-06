@@ -1,0 +1,38 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A 2-tree is a tree in which each vertex either has exactly 2 non-empty 
+children (its left and right child),
+or is a leaf (has no children). Each leaf is named with an uppercase letter,
+and each other vertex is named with a lowercase letter.
+<p>
+We want to mutate a given 2-tree by swapping the locations of two of its subtrees.
+For example, below is shown a 2-tree and then its mutation when its 
+subtrees rooted at C and x are swapped.</p><pre>
+      q                      q
+  x       z        ==&gt;    C       z
+ A B    C   g                   x    g
+           R Q                 A B  R Q
+
+</pre> 
+Each 2-tree can be represented by a string consisting of the names of its
+vertices in the order given by a post-order traversal of the tree (see notes). 
+Given <b>tree</b>, the representation of a 2-tree, and the 0-based indices of two of its vertices,
+return the representation of the mutated tree.  If the two subtrees have
+any vertices in common return the 7-character string "OVERLAP". If <b>tree</b> is
+not the representation of any 2-tree, return "BADTREE".
+
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">MutateTree</td></tr><tr><td class="statText">Method:</td><td class="statText">newTree</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String newTree(String tree, int root1, int root2)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A post-order print of a 2-tree rooted at root is defined recursively as follows:<pre>if root is not a leaf<br>    post-order print the left subtree<br>    post-order print the right subtree<br>print the root's letter.</pre> </td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">   <b>tree</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">   Each character in <b>tree</b> will be a letter ('A'-'Z','a'-'z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">   The characters in <b>tree</b> will be distinct.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">   <b>root1</b> and <b>root2</b> will each be between 0 and n-1, inclusive, where n is the number of characters in <b>tree</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"ABxCRQgzq"</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "CABxRQgzq"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+    This is the example above, in which the subtrees rooted at C and x are
+    swapped.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"rAB"</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "BADTREE"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+      The post-order print of every (non-empty) 2-tree starts with a leaf.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"ABxCRQgzq"</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>7</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "OVERLAP"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+     This is the tree shown in the problem. The two indicated subtrees are
+   the ones rooted at C and at z. They overlap since vertex C is in both of
+   them.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"CEGHfdbIa"</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "CEHGfdbIa"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"X"</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "OVERLAP"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This tree is a legal 2-tree containing only one leaf. The subtrees are the
+entire tree -- they overlap.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"IPDqWmSbEa"</pre></td></tr><tr><td class="statText"><pre>9</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "BADTREE"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

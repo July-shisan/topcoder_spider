@@ -1,0 +1,39 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+	There is a rectangular table divided into <b>r</b> rows and <b>c</b> columns, for a total of <b>r</b> * <b>c</b> fields.  
+	The rows are numbered 1 to <b>r</b>, from bottom to top, and the columns are numbered 1 to <b>c</b>, from left to right.  
+	All coordinates in this problem will be given as (row, column).
+</p>
+<br><p>
+	You are given int[]s <b>fieldrow</b> and <b>fieldcol</b> containing a list of special fields in the 
+	table, where (<b>fieldrow</b>[i], <b>fieldcol</b>[i]) are the coordinates of the i-th field.  For each number n, 
+	where 0 &lt;= n &lt;= the number of elements in <b>fieldrow</b>, you must count the number of different paths from field (1, 1) 
+	to field (<b>r</b>, <b>c</b>) that contain exactly n special fields.  These paths are called paths of length n.
+</p>
+<br><p>
+	There are two rules you must follow.  First, you are only allowed to make moves that are straight up or to the right.  
+	In other words, from each field (row, column), you can only move to field (row+1, column) or field (row, column+1).  
+	Second, in each path, all the special fields must appear in the same order that they appear in the input.  
+	In other words, if the path contains field a = (<b>fieldrow</b>[idxa], <b>fieldcol</b>[idxa]) and 
+	field b = (<b>fieldrow</b>[idxb], <b>fieldcol</b>[idxb]), and a appears before b in the path, then idxa must be less than idxb.
+</p>
+<br><p>
+	Return a int[] containing exactly k+1 elements, where k is the number of elements in <b>fieldrow</b>.  
+	The i-th element (0-indexed) must be the number of different paths of length i modulo 1000007.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CountPaths</td></tr><tr><td class="statText">Method:</td><td class="statText">difPaths</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] difPaths(int r, int c, int[] fieldrow, int[] fieldcol)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>r</b> and <b>c</b> will each be between 1 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>fieldrow</b> will contain between 0 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>fieldcol</b> and <b>fieldrow</b> will contain same number of elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>fieldrow</b> will be between 1 and <b>r</b>, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>fieldcol</b> will be between 1 and <b>c</b>, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">For all i and j, where i &lt; j, the pairs (<b>fieldrow</b>[i], <b>fieldcol</b>[i]) and (<b>fieldrow</b>[j], <b>fieldcol</b>[j]) will be different.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>{2, 3}</pre></td></tr><tr><td class="statText"><pre>{2, 2}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1, 3, 2 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Path of length 0:
+<pre>(1, 1) -&gt; (1, 2) -&gt; (1, 3) -&gt; (2, 3) -&gt; (3, 3)
+</pre>
+Paths of length 1:
+<pre>(1, 1) -&gt; (2, 1) -&gt; <b>(2, 2)</b> -&gt; (2, 3) -&gt; (3, 3)
+(1, 1) -&gt; (1, 2) -&gt; <b>(2, 2)</b> -&gt; (2, 3) -&gt; (3, 3)
+(1, 1) -&gt; (2, 1) -&gt; (3, 1) -&gt; <b>(3, 2)</b> -&gt; (3, 3)
+</pre>
+Paths of length 2:
+<pre>(1, 1) -&gt; (2, 1) -&gt; <b>(2, 2)</b> -&gt; <b>(3, 2)</b> -&gt; (3, 3)
+(1, 1) -&gt; (1, 2) -&gt; <b>(2, 2)</b> -&gt; <b>(3, 2)</b> -&gt; (3, 3)
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>6</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>{5, 3}</pre></td></tr><tr><td class="statText"><pre>{3, 2}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {14, 24, 0 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>{1, 2, 3}</pre></td></tr><tr><td class="statText"><pre>{3, 4, 5}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {42, 14, 10, 4 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>35</pre></td></tr><tr><td class="statText"><pre>37</pre></td></tr><tr><td class="statText"><pre>{3, 28, 28, 27, 27, 5, 15, 23, 21, 3, 8, 25, 34, 31, 33, 35, 13, 34}</pre></td></tr><tr><td class="statText"><pre>{12, 34, 3, 9, 34, 3, 18, 17, 26, 5, 23, 14, 20, 7, 3, 20, 19, 23}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{830519, 709835, 755976, 219563, 868547, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>50</pre></td></tr><tr><td class="statText"><pre>50</pre></td></tr><tr><td class="statText"><pre>{50, 1}</pre></td></tr><tr><td class="statText"><pre>{50, 1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0, 0, 0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There is no path that passes through (50, 50) before (1, 1).</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

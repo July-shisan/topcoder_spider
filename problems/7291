@@ -1,0 +1,39 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+In Slovakia, every person is assigned a unique 10-digit string when he is born. 
+This string is known as the <i>birth number</i> of the respective person.
+</p>
+
+<p>
+The birth number has the form "<tt>YYMMDDCCCC</tt>", where:
+</p>
+
+<ul><li><tt>YY</tt> are the last two digits of the year.</li>
+<li>For males, <tt>MM</tt> is a two-digit number of the month, i.e., a number between 01 and 12, inclusive.
+    <br>
+    For females, <tt>MM</tt> is the number of the month increased by 50, i.e., a number between 51 and 62, inclusive.</li>
+<li><tt>DD</tt> is a two digit number of the day in the month.</li>
+<li><tt>CCCC</tt> are four arbitrary digits that are used both as a checksum and as a way to distinguish between different people born on the same day.
+    <br>
+    The checksum property works as follows: the digits <tt>CCCC</tt> must be chosen in such a way that the entire 10-digit number is divisible by eleven (11).
+    </li>
+</ul><p>
+For example, the strings "<tt>8104121234</tt>" and "<tt>8154121239</tt>" represent valid birth numbers.
+<br>
+(The first person is male, the second one female. Both of them are born on April 12th, ??81.)
+</p>
+
+<p>
+The strings "<tt>8134120005</tt>", "<tt>8102310007</tt>", and "<tt>8104121235</tt>" are not valid birth numbers. 
+<br>
+(In the first case, "<tt>34</tt>" can not be a valid month. In the second case, the day number is wrong, as the second month has less than 31 days. In the third case, the date is valid but the number is not divisible by 11.)
+</p>
+
+<p>
+You will be given a String[] <b>test</b> containing several ten-digit strings. Write a method that will return a String[]
+with the same number of elements. If the i-th element of <b>test</b> is a valid birth number the i-th element of the return value shall be "YES",
+otherwise the i-th element of the return value shall be "NO". When checking whether the date is valid, assume that the year when the person was born is between 1907 and 2006, inclusive.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BirthNumbersValidator</td></tr><tr><td class="statText">Method:</td><td class="statText">validate</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] validate(String[] test)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The number of days in each month of a non-leap year (from 1 to 12): 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Leap years have 29 days in the second month.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A year is a leap year if either (the year is divisible by 400) or (the year is divisible by 4, but not by 100). <br> For example, 2000 and 2004 are leap years, 1900 and 1947 are not.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>test</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>test</b> will contain exactly 10 characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>test</b> will contain only digits ('0'-'9').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"8104121234"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"YES" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The first example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"8154121239"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"YES" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The second example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"8134120005"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"NO" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The third example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"8102310007","8104121235"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"NO", "NO" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The last two examples from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0411131237"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"YES" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Note that leading zeros may occur in a valid birth number.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

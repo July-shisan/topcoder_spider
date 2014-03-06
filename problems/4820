@@ -1,0 +1,44 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+We have a 6 x 6 square board, and we place in each
+square one of the digits 0 and 1. On this board
+we can then read 12 binary numbers, 6 horizontal
+and 6 vertical. We call the horizontal numbers
+"H1" (the number in the first row) to
+"H6" (the number in the last row) and
+the vertical numbers "V1" (the number in
+the first column) to "V6" (the number in
+the last column). We will fill in the board so that
+the 12 numbers are distinct and we can sort them in
+strictly increasing order.
+</p>
+<p>
+You will be given <b>order</b>, a String[]
+containing the names of the 12 numbers in order
+of increasing values, and are to return a String[]
+representing the digits in the board. The <b>i</b>th element
+of the return value shall represent the <b>i</b>th row.
+The constraints will guarantee that there is exactly one
+way to place the digits 0 and 1 in the board so
+that the given order is created.
+See the first example for more details.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BinaryBoard</td></tr><tr><td class="statText">Method:</td><td class="statText">board</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] board(String[] order)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>order</b> will contain exactly 12 elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>order</b> will contain exactly 2 characters. The first character will be 'H' or 'V', the second character will be a digit between '1' and '6', inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>order</b> will be different.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The input values will be such that there is exactly one board satisfying the given order.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"V2", "V5", "H4", "V6", "H5", "H3", "V4", "H1", "V3", "V1", "H6", "H2"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"101100", "111011", "100011", "011101", "011111", "111010" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+The 12 numbers in the rows and columns of the returned board are:
+</p>
+<pre>
+H1 = 101100     V1 = 111001
+H2 = 111011     V2 = 010111
+H3 = 100011     V3 = 110111
+H4 = 011101     V4 = 100110
+H5 = 011111     V5 = 011011
+H6 = 111010     V6 = 011110
+</pre>
+<p>
+It is easy to verify that this conforms to the given order:
+V2 &lt; V5 &lt; H4 &lt; ... &lt; H2.
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"V4", "H4", "H2", "V1", "H5", "V6", "H6", "H3", "V3", "H1", "V2", "V5"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"111011", "011110", "110011", "011011", "101100", "101111" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"V4", "H6", "H3", "V1", "H2", "H1", "H4", "V3", "V6", "H5", "V5", "V2"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"011011", "010000", "000011", "100000", "101010", "000010" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"H1", "H6", "V1", "H5", "H3", "V2", "V4", "H2", "V3", "V5", "V6", "H4"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {"001111", "111011", "011011", "111111", "010101", "010010" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

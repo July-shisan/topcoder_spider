@@ -1,0 +1,43 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">For those who file jointly and have a taxable income of at least $100,000 
+the tax for 2004 is calculated from the following table. To calculate
+your tax, you find
+the appropriate bracket for your taxable income, multiply your taxable income by the multiplier,
+and then subtract the subtraction value.<pre><tt>
+
+    At_least   Less_than    Multiplier       Subtraction
+    100,000     117,250        25%             6,525.00
+
+    117,250     178,650        28%            10,042.50
+
+    178,650     319,100        33%            18,975.00
+
+    319,100        -           35%            25,357.00
+
+</tt></pre>           
+When I find out how much tax someone had to pay, I want to be able to figure 
+out what their taxable income was.  Create a class TaxTable that contains a
+method income that is given the <b>taxAmount</b> and calculates the taxable income whose
+tax is closest to <b>taxAmount</b>. This result is returned,
+rounded to the nearest dollar (.5 rounds up). If the
+<b>taxAmount</b> is too low to have come from the table, return -1.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TaxTable</td></tr><tr><td class="statText">Method:</td><td class="statText">income</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int income(int taxAmount)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>taxAmount</b> will be between 0 and 1,000,000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All values within 1e-6 of the taxable income corresponding to <b>taxAmount</b> will round to the same integer.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>47025</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 200000</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   The tax on $200,000  is  33% * 200,000 - 18975 
+which is 47025.
+
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1000</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   Anybody who has taxable income of at least $100,000 has a tax that is
+   greater than $1000
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>47026</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 200003</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   The tax on $200,000 is exactly $47,025. For each dollar above that we must pay
+   33 cents additional tax.  So the income that results in a tax of exactly
+   $47,026 is $200,003.0303030303.... which rounds to $200,003. Note that a 
+   return of 200002 would be incorrect, even though the tax on that amount would
+   be 47025.66 which is close to 47026.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>86304</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 319027</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>22792</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 117266</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

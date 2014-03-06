@@ -1,0 +1,36 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">We want to design a network consisting of <b>n</b> identical Worker nodes and one Server node.
+The network must be connected 
+and must not contain any cycles. We also require that each Worker node must be connected to an 
+odd number of other nodes. How many distinct networks are there?
+<p>
+Here is a listing of all the distinct networks containing exactly 5 worker nodes:</p><pre>
+                                                       
+       W               W     W              W          W  W 
+       |                \    |              |          | /   
+   W---S----W            S---W          S---W      S---W    
+       | \              /    |              |          | \  
+       W  W            W     W          W---W---W      W  W  
+                                                       
+</pre>
+Two configurations G and G' are not distinct if there is a 1-1 mapping between their nodes such that the server in G
+maps to the server in G', and such that for every pair of nodes in G the pair that they are mapped to in G' is connected
+if and only if the pair in G is connected. Note that two configurations are not distinct if they have the same connection pattern, even if they are different geometrically as displayed in the plane. For example, these
+two configurations with 8 worker nodes are not distinct:<pre>
+
+   W   W   W          W       W                                      
+   |   |   |          |       |  
+   W---S---W      W---S-------W                                                 
+   |   |   |          |       | 
+   W   W   W      W---W---W   W          
+</pre>                                                       
+Given <b>n</b>, return the number of distinct networks that can 
+be constructed with exactly <b>n</b> worker nodes.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">OddGraph</td></tr><tr><td class="statText">Method:</td><td class="statText">count</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int count(int n)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The answer will fit in an int.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> will be between 1 and 40, inclusive.    </td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The 4 networks are listed above.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    S---W  is the only network with 1 worker node. </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>40</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 929556155</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,71 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+BattleDice is a two-player game where each person uses his own N-sided die.
+The two players roll their dice, and whoever's die shows the highest number wins.
+In the event of a tie, they continue rolling until one player wins.
+You and your opponent start with a total of 3 dice.
+Your opponent selects one of the three, and then you select one of the remaining two.
+</p>
+
+<p>
+To make the game more interesting, you and your opponent begin with only two of the three dice.
+Given these two,
+determine the third die you would like to construct and add to the original two
+in order to maximize your probability of winning the game.
+Assume that your opponent will play optimally,
+making the selection that will give him the highest chance of winning.
+</p>
+
+<p>
+The two dice will be given as int[]s <b>die1</b> and <b>die2</b>.
+The numbers on each side of the dice will be between 1 and <b>range</b>, inclusive,
+and the numbers on the third die you are constructing must also be in this range.
+The two given dice will have the same number of sides,
+and the die you are constructing must have the same number of sides as the first two.
+Return your die as a int[], sorted in ascending order.
+</p>
+
+<p>
+Neither of the two given dice will have the same number on every side, but your third die may.
+</p>
+
+<p>
+There may be more than one third die that will give you the same optimal chance of winning the game.
+In this case, sort the values on each die in ascending order, find the first pair of corresponding values that differ,
+and prefer the die with the smaller of those two values.
+</p>
+
+<p>
+For example, if <b>range</b> = 6 and the first two dice are:
+</p>
+<pre>
+
+    <b>die1</b> = { 2, 2, 5 }
+    <b>die2</b> = { 2, 3, 3 }
+</pre>
+<p>
+you would choose to construct:
+</p>
+<pre>
+
+    die3 = { 1, 3, 4 }
+</pre>
+
+<p>
+If your opponent selects die1, you could choose die2 to give yourself a 4/7 chance of winning.
+If your opponent selects die2, you could choose die3 to give yourself a 4/7 chance of winning.
+If your opponent selects die3, you could choose die1 to give yourself a 5/9 chance of winning.
+Given these three choices your opponent will select die3, and you will have a 5/9 chance of winning.
+No other third die will give you a higher chance of winning.
+The die { 1, 4, 4 } also guarantees you a 5/9 chance of winning,
+but according to the tiebreaking rules { 1, 3, 4 } is the correct answer.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BattleDice</td></tr><tr><td class="statText">Method:</td><td class="statText">die3</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] die3(int[] die1, int[] die2, int range)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The dice used are fair dice, which means that every roll will result in each side with a 1/N probability.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Ignore the practical difficulties of constructing a die with an odd number of sides.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>die1</b> and <b>die2</b> will each contain between 2 and 10 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>die1</b> and <b>die2</b> will have the same number of elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>range</b> will be betwen 2 and 15, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>die1</b> and <b>die2</b> will be between 1 and <b>range</b>, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">At least two elements of <b>die1</b> will be distinct.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">At least two elements of <b>die2</b> will be distinct.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 2, 2, 5 }</pre></td></tr><tr><td class="statText"><pre>{ 2, 3, 3 }</pre></td></tr><tr><td class="statText"><pre>6</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1, 3, 4 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 3, 5, 6 }</pre></td></tr><tr><td class="statText"><pre>{ 6, 3, 5 }</pre></td></tr><tr><td class="statText"><pre>15</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1, 1, 1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">If the first 2 dice are the same, the best you can do is end up with a 50% chance of winning.  If you add a die better than the first two, your opponent will select it.  Otherwise, both you and your opponent will chose one of the first two.  Following the tiebreaking rules, the correct answer is therefore the smallest possible die, with a 1 on each side.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 1, 3, 8, 10 }
+</pre></td></tr><tr><td class="statText"><pre>{ 1, 5, 6, 12 }
+</pre></td></tr><tr><td class="statText"><pre>12</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1, 6, 6, 7 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 2, 3, 4 }</pre></td></tr><tr><td class="statText"><pre>{ 5, 6, 7 }</pre></td></tr><tr><td class="statText"><pre>8</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1, 6, 8 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><b>die2</b> beats <b>die1</b> every time.  The best you can do is construct a third die that beats <b>die2</b> 50% of the time.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 6, 6, 8, 9, 13, 13, 15 }
+</pre></td></tr><tr><td class="statText"><pre>{ 3, 5, 8, 10, 13, 14, 14 }
+</pre></td></tr><tr><td class="statText"><pre>15</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1, 7, 9, 10, 13, 13, 14 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 1, 6, 5, 1, 5 }
+</pre></td></tr><tr><td class="statText"><pre>{ 3, 3, 7, 7, 1 }
+</pre></td></tr><tr><td class="statText"><pre>7</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {4, 4, 4, 4, 4 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

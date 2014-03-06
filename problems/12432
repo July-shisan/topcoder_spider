@@ -1,0 +1,53 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>Cat Carol is the queen of Gridland.
+Gridland is a rectangular country divided into a grid of unit square cells.
+Each cell contains either a town or a wasteland.
+Carol has decided to construct some railroad tracks according to the following rules:</p>
+<br><ul><li>The cells with wasteland must not contain any railroad tracks.</li>
+<li>Each town cell has to contain a single segment of railroad tracks that connects two of its four sides.</li>
+<li>Each segment of tracks has to be connected to two other segments of tracks (one on each end).</li>
+</ul><br><p>Note that Carol does not require the entire set of tracks to be connected.
+Configurations that consist of multiple disjoint loops are acceptable, too.</p>
+<br><p>A Curvy is a curious animal indigenous to Gridland.
+These animals love curves and hate straight things.
+Some of the towns in Gridland are inhabited by Curvies.
+If such a town happens to contain a straight segment of tracks (i.e., a segment that connects two opposite sides of the cell), the Curvies in the town are very unhappy.</p>
+<br><p>You are given a String[] <b>field</b> that describes Gridland:
+each character of each element of <b>field</b> describes one of its cells.
+The meaning of individual characters follows.</p>
+<br><ul><li>The character '.' represents a town without Curvies.</li>
+<li>The character 'C' represents a town with Curvies.</li>
+<li>The character 'w' represents a wasteland.</li>
+</ul><br><p>Compute and return the minimal number of towns with unhappy Curvies when the railroad tracks are constructed according to the above constraints.
+If there is no way to construct the railroads according to the given rules, return -1 instead.</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CurvyonRails</td></tr><tr><td class="statText">Method:</td><td class="statText">getmin</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int getmin(String[] field)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>field</b> will contain between 1 and 25 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>field</b> will contain between 1 and 25 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>field</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of <b>field</b> will be '.', 'w' or 'C'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".."
+,".."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">It is possible to construct a round railroad that passes through all towns.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"wCCww"
+,"wCC.."
+,"..w.."
+,"....w"
+,"ww..w"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><img src="http://www.topcoder.com/contest/problem/CurvyonRails/curvy0.png">   <img src="http://www.topcoder.com/contest/problem/CurvyonRails/curvy1.png"><br>
+There are two valid ways to construct the railroads. In the left picture, there is one town with unhappy Curvies. In the right picture, there are no towns with unhappy Curvies.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"C.w"
+,"..."
+,".C."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The curvy in the middle of the bottom row will be unhappy.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There is no way to construct the railroads.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"w"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There is no town.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"CC..CCCw.CwC..CC.w.C",
+ "C.CCCwCCC.w.w..C.w..",
+ "wwww...CC.wC.Cw.CC..",
+ "CC..CC.w..w.C..CCCC.",
+ "CC.CCC..CwwCCC.wCC..",
+ "w.C..wwCC.CC.wwwCC..",
+ ".CC.CC..CCC..CC.CC.C",
+ "Cw....C.C.CCC...CC..",
+ "CC.C..Cww.C.CwwwC..w",
+ "wCCww..C...CCCCCCC.w",
+ "C.CCw.CC.ww...C.CCww",
+ "C.C.C.CCwCC..wCCw.Cw",
+ "CCC.C...w..C.wC.wCCw",
+ "CC.C..C..CCC.CC.C...",
+ "C.ww...CCC..CC...CCC",
+ "...CCC.CwwwC..www.C.",
+ "wwCCCCC.w.C.C...wCwC",
+ "CCwC.CwCCC.C.w.Cw...",
+ "C.w.wC.CC.CCC.C.w.Cw",
+ "CCw.CCC..C..CC.CwCCw",
+ "C.wwwww.CwwCCwwwwwww"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

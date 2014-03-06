@@ -1,0 +1,76 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+<i>NOTE: This problem contains images that may not be displayed properly if viewed outside the contest applet.</i>
+</p>
+
+<p>
+You will be given the layout of a rectangular room as a String[] <b>room</b>,
+where each character corresponds to a 1 meter by 1 meter square area of the room.
+A '.' (period) indicates an empty square, a '#' indicates a post that covers the square
+and extends from the floor to the ceiling, and a '*' (asterik) indicates a light source
+at the center of the square.
+There will be exactly 1 light source in the room.
+</p>
+
+<p>
+The source will illuminate any point on the floor in an empty square
+if a straight line from to that point from the light source does not intersect any post.
+All other points in empty squares are in shadow.
+Given <b>room</b>, compute the area of the floor (in square meters) that is in shadow.
+</p>
+
+<p>
+For example, consider the following room layout:
+</p>
+
+<pre>
+
+  { ".*#...",
+    "......",
+    ".#...#",
+    ".....#",
+    ".....#" }
+</pre>
+
+<p>
+The post below the light casts a shadow of 5.0 square meters,
+and the shadow cast by the post to the right of the light has an area of 8.5
+square meters, as shown in the figure below.
+Therefore, 13.5 is the correct answer.
+</p>
+
+<br><center>
+<img src="http://legakis.net/justin/topcoder/shadowarea1.png"></center>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ShadowArea</td></tr><tr><td class="statText">Method:</td><td class="statText">area</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double area(String[] room)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The returned value must be accurate to within a relative or absolute value of 1e-9.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>room</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>room</b> will have the same length, between 1 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>room</b> will contain only the characters '#', '.' (period), and '*'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Exactly one characer in <b>room</b> will be a '*'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ ".*#...",
+  "......",
+  ".#...#",
+  ".....#",
+  ".....#" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 13.5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "..............................",
+  "..............................",
+  "..........#...................",
+  ".........#*#..................",
+  "..........#...................",
+  "..............................",
+  "..............................",
+  "..............................",
+  "..............................",
+  ".............................." }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 295.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A 30x10 room with every square in shadow, exept for the 4 squares with posts and the 1 square with the light.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ ".#....*",
+  "##.....",
+  "#......" }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.166666666666666</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><img src="http://legakis.net/justin/topcoder/shadowarea2.png"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "..........",
+  "..........",
+  "..........",
+  "###..#####",
+  "..........",
+  "*........." }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 29.27777777777778</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><img src="http://legakis.net/justin/topcoder/shadowarea3.png"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "...........",
+  "...........",
+  "......#....",
+  "........#..",
+  "..........#",
+  "..........*" }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 25.43333333333333</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><img src="http://legakis.net/justin/topcoder/shadowarea4.png"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "*" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

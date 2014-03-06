@@ -1,0 +1,43 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A group of people have participated in an online chat session.  Element i (0-based) of <b>numSeen</b> contains the number of lines of chat seen by person i before leaving (everyone arrives at the same time).  More precisely, integer j in element i of <b>numSeen</b> is the exact number of lines written by person j that are seen by person i before leaving.  Integer i of element i will always be 0, and should be ignored.  You will return a int[] containing the order in which each person left.  If multiple orders are possible, return the one that occurs first lexicographically.  If none are possible, return an empty int[].</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ChatExit</td></tr><tr><td class="statText">Method:</td><td class="statText">leaveOrder</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] leaveOrder(String[] numSeen)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Order A comes lexicographically before order B if A has a lower value than B in the first position that they disagree.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>numSeen</b> will contain between 2 and 25 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>numSeen</b> will contain between 3 and 50 characters inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>numSeen</b> will be a single space delimited list of integers.  Each integer will be between 0 and 100 inclusive, and will have no extra leading zeros.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>numSeen</b> will contain exactly k integers, where k is the number of elements in <b>numSeen</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Integer i in element i of <b>numSeen</b> will always be 0.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"0 1 1",
+"2 0 0",
+"3 1 0"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1, 0, 2 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A possible sequence of events is:<br>
+Person 0 writes a line.<br>
+Person 1 writes a line.<br>
+Person 0 writes a line.<br>
+Person 1 leaves.<br>
+Person 2 writes a line.<br>
+Person 0 writes a line.<br>
+Person 0 leaves.<br>
+Person 2 leaves.<br></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"0 1 1",
+"4 0 0",
+"3 1 0"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No order is possible here due to the following requirements:
+<ol><li> Person 1 must see 4 lines from person 0, but person 2 must only see 3 lines from person 0. </li>
+<li> Person 0 must see 1 line from person 2, but person 1 must not see any.</li>
+</ol>
+The first item above forces person 1 to leave after person 2.  The second item forces person 1 to leave before person 2.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"0 100 100 100 100 100",
+"100 0 100 100 100 100",
+"100 100 0 100 100 100",
+"100 100 100 0 100 100",
+"100 100 100 100 0 100",
+"100 100 100 100 100 0"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0, 1, 2, 3, 4, 5 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Everyone says exactly 100 lines.  Any leaving order is possible.  The lexicographically first order is returned.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"0 1 0 0",
+"1 0 0 0",
+"0 0 0 0",
+"0 0 0 0"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {2, 3, 0, 1 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"0 0 0 0 0",
+"0 0 0 0 0",
+"0 0 0 0 0",
+"0 0 0 0 0",
+"0 0 0 0 0"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0, 1, 2, 3, 4 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

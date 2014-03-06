@@ -1,0 +1,35 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">The banking method is sometimes used to
+calculate the amortized cost of a process. In our system, every time a
+value is written to memory, it will cost 1 dollar. We are going to use
+this system to study the behavior of a dynamic array. The array starts
+empty with some initial capacity. If an item is added to the array, a
+memory write occurs, and the cost is 1 dollar. If the item added
+doesn't fit in the array, a new array is allocated which is twice the
+size of the previous array. All of the elements from the old array
+must be copied over, costing 1 dollar for each element copied. Then the
+new item must be added, costing another dollar.  
+For example, if 3 adds occur to an array with initial
+capacity 1:
+<pre>
+Action     Capacity      Size      Cost Incurred
+-------------------------------------------------
+Start      capacity = 1  size = 0  (empty)
+Add        capacity = 1  size = 1  (cost = 1)
+Add        Doesn't fit
+ -allocate capacity = 2  size = 0  (empty)
+ -copy     capacity = 2  size = 1  (cost = 1)
+ -add      capacity = 2  size = 2  (cost = 1)
+Add        Doesn't fit
+ -allocate capacity = 4  size = 0  (empty)
+ -copy     capacity = 4  size = 2  (cost = 2)
+ -add      capacity = 4  size = 3  (cost = 1)
+</pre>
+So the total cost is 1+1+1+2+1 = 6.  
+
+Given the initial capacity of the empty array, and the number of adds that occur, return
+the cost.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BankingArray</td></tr><tr><td class="statText">Method:</td><td class="statText">addCost</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int addCost(int initialCapacity, int numAdds)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>initialCapacity</b> is between 1 and 1000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>numAdds</b> is between 0 and 500000000, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">From the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">All of the items fit in the array.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>500000000</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1036870911</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Many adds.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No adds.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

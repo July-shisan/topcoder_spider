@@ -1,0 +1,41 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">The elevator in your house is broken, so you need to use stairs to get to different places. Now you want to know how long it will take to get from one location in your house to another one.
+
+You will be given the plan of your house as a String[]. All elements with even indices (elements 0, 2, 4, ...) will represent the floors of the building. Each '#' character represents a piece of the floor, and the characters 'S' and 'F' represent your starting position and your destination, respectively. All elements with odd indices will represent the area between floors.  The '|' character represents a set of stairs, and the '.' character represents an empty space.  You can only move from one floor to another floor by going up or down a set of stairs. There will only be one set of stairs between each pair of consecutive floors. You spend one second to move one floor down, two seconds to move one step left or right and three seconds to move one floor up. You are to return the minimal time you need to get from the starting position to the finish.
+
+For example, for the following plan:
+<tt>
+<br>
+#S###<br>
+...|.<br>
+#####<br>
+.|...<br>
+####F<br></tt>
+
+the optimal path will consist of two steps to the right, moving 1 floor down, two steps to the left, moving 1 floor down and finally three steps to the right. The total time spent is 2*2 + 1*1 + 2*2 + 1*1 + 3*2 = 16 seconds.<br>
+First element represents the topmost floor.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BrokenElevator</td></tr><tr><td class="statText">Method:</td><td class="statText">wayTime</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int wayTime(String[] plan)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>plan</b> will contain between 1 and 49 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>plan</b> will contain an odd number of elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>plan</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>plan</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Elements of <b>plan</b> with even indices (0-based) will contain only the characters '#', 'S', and 'F'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Elements of <b>plan</b> with odd indices will contain only the characters '.' and '|'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>plan</b> with an odd index will contain exactly one '|'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>plan</b> will contain exactly one 'S' and exactly one 'F'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"#S###","...|.","#####",".|...","####F"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 16</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example from the statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"#F###","...|.","#####",".|...","####S"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 20</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The optimal path contains 3 steps to the left (6 seconds), moving 1 floor up (3 seconds), two steps to the right (4 seconds), moving another 1 floor up (3 seconds) and 2 steps to the left (4 seconds).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"SF"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Just one step to the right</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"FS"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"F", "|", "S"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"###############S####",
+"........|...........",
+"####################",
+".........|..........",
+"####################",
+".|..................",
+"####################",
+"|...................",
+"####################",
+"..............|.....",
+"###############F####",
+"|...................",
+"####################",
+".......|............",
+"####################",
+"..............|.....",
+"####################",
+"................|...",
+"####################",
+"..........|.........",
+"####################"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 69</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

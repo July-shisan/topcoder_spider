@@ -1,0 +1,42 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">When I start my shift at work I punch in my starting time, and when I leave 
+I punch out. The
+times are printed on a card using exactly 8 characters in the format
+<pre>           hh:mm,xx </pre>
+where hh is the 2 digit 
+representation of the hour, mm is the 2 digit representation of the minute, and
+xx is either am or pm. The ':' and ',' are literal. "12:00,am" denotes midnight, 
+while "12:00,pm" denotes noon.
+<p>
+The difference between that time I punch in and the time I punch out is the amount of time I have
+worked so, for example, if I punch in at 03:33pm and punch out at 03:34pm I have worked 1 minute.
+</p><p>
+No shift is allowed to be more than 20 hours long. This is my last shift of the 
+week and I am supposed to work 40 hours during the week. 
+Create a class TimeCard that contains a method leave that is given a String[]
+<b>time</b> of all the times on this week's timecard and that returns a String (using the
+same format) that tells when I can leave and have exactly 40 hours for the
+week.  Return "BELOW 40" or "ABOVE 40" if it is not possible to get exactly
+40 hours. In all cases, the return should contain exactly 8 characters.
+</p><p>
+The elements of <b>time</b> alternate:  punch in time, punch out time, punch in time,
+... with the final element being the time I just punched in on my final shift.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TimeCard</td></tr><tr><td class="statText">Method:</td><td class="statText">leave</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String leave(String[] time)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>time</b> will contain an odd number of elements between 1 and 49 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>time</b> will be formatted as above.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">In each element of <b>time</b> hh will be between 01 and 12 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">In each element of <b>time</b> mm will be between 00 and 59 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>time</b> will contain no shift that exceeds 20 hours in duration.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"03:00,pm"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "BELOW 40"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   This is my one and only shift, and I am only allowed to work 20 hours on
+   a shift.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"09:00,am","05:00,pm","09:00,am","05:00,pm",
+    "09:00,am","05:00,pm","09:00,am","05:00,pm","09:00,am"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "05:00,pm"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+
+    I have worked 4 previous shifts of 8 hours, so I need 8 hours on 
+    this shift to make 40.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"12:00,am","08:00,pm","12:00,am","08:00,pm","12:00,am"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "12:00,am"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    I have already worked 2 shifts of 20 hours so I already have exactly
+    40 hours. I should go home immediately.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"12:00,pm","08:00,pm","12:00,am","08:00,pm","12:00,am"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "12:00,pm"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"09:00,am","04:31,pm","09:00,am","04:31,pm",
+     "09:00,am","05:00,pm","09:00,am","05:00,pm","03:53,am"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "12:51,pm"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

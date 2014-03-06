@@ -1,0 +1,46 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">There is a white rectangular board divided into a grid of unit square cells.
+Fox Ciel wants to paint some of the cells black, so that the board looks as described by the String[] <b>target</b>.
+More precisely: for each i, j, the cell in row i, column j of the board (0-based indices) should be painted black if <b>target</b>[i][j] is '#', and it should remain white if <b>target</b>[i][j] is '.'.
+<br><br><br>
+Fox Ciel paints in steps.
+In each step, she selects a group of white cells and paints all of them black.
+She is only allowed to select a contiguous sequence of white cells in a single row or in a single column.
+<br><br><br>
+Return the minimal number of steps needed to color the board.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BoardPainting</td></tr><tr><td class="statText">Method:</td><td class="statText">minimalSteps</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int minimalSteps(String[] target)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">n will be between 1 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">m will be between 1 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>target</b> will contains exactly n elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>target</b> will contains exactly m characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>target</b> will be '#' or '.'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"#####"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Fox Ciel can select the entire row of the board and paint it all black in a single step.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"#####",
+ ".....",
+ "#####",
+ ".....",
+ "#####"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In each turn, Ciel selects and colors one of the rows that should be black.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"..#..",
+ "..#..",
+ "#####",
+ "..#..",
+ "..#.."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Note that each sequence of cells selected by Ciel has to be a contiguous sequence of white cells. It is not allowed to select a black cell. Therefore the best solution has three steps. One possibility: first she selects row 2, then the first two cells in column 2, and finally the last two cells in column 2.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"#####",
+ "..#..",
+ "#####",
+ "..#..",
+ "#####"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".#.#.",
+ "#####",
+ ".#.#.",
+ "#####",
+ ".#.#."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".##.####.####.#########.##..",
+ "##.#.####################.##",
+ ".##.###.##.###.###.###.###..",
+ "#..###..#########..###.##.##",
+ "####..#######.#.#####.######",
+ "##.######.#..#.#############",
+ "##.######.###########.######",
+ "#######.#######.#..###.#.###",
+ "#####..#######.#####.#.###.#",
+ "#..#################.#.####.",
+ "##.######..#.#####.######.##",
+ "..#.#############.#.##....#.",
+ "....##..##..#.#####.#.###.##",
+ "##.#########...#..#.#.######",
+ "##.#..###########..#..####.#",
+ "#.####.###.########.########",
+ "#####.#########.##.##.######",
+ ".##.####..###.###...######.#"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 88</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"...................."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Note that the target can be totally white.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

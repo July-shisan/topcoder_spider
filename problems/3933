@@ -1,0 +1,46 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">We have run some processes concurrently on a single cpu by time sharing. 
+Only one process could run at a time, but the operating system often switched which
+of the processes was the one that was running.
+<p>
+Each process, as it ran, frequently
+checked what time it was and stored that time.  The sequence of times that
+each process observed is given to us. We want to find out how often the
+context was switched from one of our processes to another.  Because it is
+possible that a process was allowed to execute very briefly and then the
+cpu was switched to a different process before the first process checked and
+stored the time, the best we can hope for is to find the minimum possible
+number of switches that is consistent with the recorded times.
+</p><p>
+The biggest complication is that times on a computer are discrete. If the
+time that was recorded was 3, that means that the actual time was sometime
+between the third and fourth clock tick.  Multiple processes could record the
+same time, and one process could record the same time multiple times.
+</p><p>
+Create a class Switching that contains a method minSwitch that is given 
+String[] <b>ticks</b>, the sequence of times
+recorded by each process, and that returns the smallest number of context
+switches that could have occurred.  The i-th element of <b>ticks</b> contains the 
+sequence of times recorded by the i-th process.
+</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Switching</td></tr><tr><td class="statText">Method:</td><td class="statText">minSwitch</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int minSwitch(String[] ticks)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>ticks</b> will contain between 2 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>ticks</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>ticks</b> will consist of integer values separated by single spaces.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No element of <b>ticks</b> will have leading or trailing spaces.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each value of each element <b>ticks</b> will be between 1 and 20000 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The values within each element of <b>ticks</b> will be in non-decreasing order.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The values within each element of <b>ticks</b> will have no leading zeroes.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"3 5 7 7 8","4 6 7 7 12"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   The only possible order in which these 2 processes (A and B) could have 
+   run with only 5 context switches is:  A during 3, B during 4, A during 5,
+   B during 6 and 7, A during (a later part of)7 and 8, B during 12. (We can't
+   tell which one was running during 9,10, and 11 but the last switch could
+   have occurred anywhere from late in 8 to early in 12.) 
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"3 3 3 3 3","3 3 3 3 3"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   They could have switched back and forth during 3, but it is possible that
+   one of them ran completely first during 3, and then the other ran entirely
+   during a later part of 3.
+  </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"3 3 3 4 4 7 8 8 9","3 5 6 7 7 8 10","3 4 4 5 8 9 10"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   Here is one possible order: B3, C3, A3-4, C4-5, B5-7, A7-8, B8, C8, A9, C9-10, B10.
+   Note that there are 11 separate runs, so 10 switches.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

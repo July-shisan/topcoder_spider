@@ -1,0 +1,35 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Given a collection of facts, we would like to get rid of as much redundancy as possible.
+The facts involved in this problem are members of a transitive relation between
+uppercase letters. So each fact is a pair of uppercase letters such as AB
+meaning that A is related to B.  A letter may or may not be related to itself,
+but transitivity holds: if A is related to B and B is related to C then we
+can infer that A is related to C.
+<p>
+Create a class FactCount that contains a method minFacts that is given a 
+String[] <b>known</b> and that returns the size of the smallest set of facts that
+will allow us to infer everything (and only those things) that can be inferred from the facts
+contained in <b>known</b>. 
+</p><p>
+Each element of <b>known</b> will contain 1 or more facts separated by a single space. The smallest set of facts may contain facts that can be inferred from
+<b>known</b> but that are not contained in it. 
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">FactCount</td></tr><tr><td class="statText">Method:</td><td class="statText">minFacts</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int minFacts(String[] known)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>known</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>known</b> will contain between 2 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>known</b> will consist of pairs of uppercase letters ('A'-'Z'), separated by a space (' ').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AA AA AA AB"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   AA and AB capture all the content of the 4 facts in <b>known</b>.
+
+
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AB AC CA AA BC", "AD"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   AB, CA, BC, and AD allow us to infer both AA (AB, BC, CA gives AA by transitivity)
+   and AC (AB, BC gives AC by transitivity), and there is no smaller subset that
+   allows us to infer all the known facts.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AB BA BC CB"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   The set {AC,BA,CB} allows us to infer exactly the same facts. Note that AC is
+   not a fact contained in <b>known</b>, but these 3 facts allow us to infer exactly the
+   same things that we can infer from the 4 facts contained in <b>known</b>.
+</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

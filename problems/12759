@@ -1,0 +1,35 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+<i>This problem statement contains superscripts and/or subscripts. These may not display properly outside the applet.</i>
+</p>
+<p>
+</p>
+<p>
+Little Elephant from the Zoo of Lviv likes permutations.
+A permutation of size <b>N</b> is a sequence (a<sub>1</sub>, ..., a<sub><b>N</b></sub>) that contains each of the numbers from 1 to <b>N</b> exactly once.
+For example, (3,1,4,5,2) is a permutation of size 5.
+</p>
+<p>
+</p>
+<p>
+Given two permutations A = (a<sub>1</sub>, ..., a<sub><b>N</b></sub>) and B = (b<sub>1</sub>, ..., b<sub><b>N</b></sub>), the value magic(A,B) is defined as follows:
+magic(A,B) = max(a<sub>1</sub>,b<sub>1</sub>) + max(a<sub>2</sub>,b<sub>2</sub>) + ... + max(a<sub><b>N</b></sub>,b<sub><b>N</b></sub>).
+</p>
+<p>
+</p>
+<p>
+You are given the int <b>N</b>.
+You are also given another int <b>K</b>.
+Return the number of pairs (A,B) such that both A and B are permutations of size <b>N</b>, and magic(A,B) is greater than or equal to <b>K</b>.
+(Note that A and B are not required to be distinct.)
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">LittleElephantAndPermutationDiv2</td></tr><tr><td class="statText">Method:</td><td class="statText">getNumber</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long getNumber(int N, int K)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>N</b> will be between 1 and 10, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>K</b> will be between 1 and 100, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">For <b>N</b>=1 the only pair of permutations is ( (1), (1) ).
+The magic of this pair of permutations is 1, so we count it.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Now there are four possible pairs of permutations. They are shown below, along with their magic value.
+<ul><li>magic( (1,2), (1,2) ) = 1+2 = 3</li>
+<li>magic( (1,2), (2,1) ) = 2+2 = 4</li>
+<li>magic( (2,1), (1,2) ) = 2+2 = 4</li>
+<li>magic( (2,1), (2,1) ) = 2+1 = 3</li>
+</ul>
+In all four cases the magic value is greater than or equal to <b>K</b>.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>8</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 18</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">When A = (1,2,3), there are 3 possibilities for B: (2,3,1), (3,1,2) and (3,2,1). For each of the other 5 values of A, it can be shown that there are 3 possibilities for B as well. Therefore the answer is 3*6 = 18.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>47</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 13168189440000</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

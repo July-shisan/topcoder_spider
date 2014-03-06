@@ -1,0 +1,53 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Bob's father bought him a toy map of islands and seas.  The map is a two-dimensional grid where each cell is either 'x' or '.'.  A sea is defined as a maximal connected group of '.' cells, where two '.' cells are connected if they are vertically or horizontally adjacent.  An island is defined as a maximal connected group of 'x' cells, where two 'x' cells are connected if they are vertically, horizontally, or diagonally adjacent.
+An island has a level of 0 if it contains no other islands.  An island has a level of K+1 if it contains one or more islands and the highest level of a contained island is K.  An island A contains island B if A and B are different and, if you start sailing from any point of island B, you won't be able to sail out of island A (you can sail only horizontally and vertically, but not diagonally).
+</p>
+<p>
+For example, the given map below has 5 islands with level 0 (islands 0 - 4 on the right picture) and one island with level 1 (island 5). Please note that starting at island 3, you can not sail outside island 5 (you can not sail diagonally), but its possible get out of island 1 when starting at island 4.
+</p>
+<pre>
+xxx.x...xxxxx        000.0...11111
+xxxx....x...x        0000....1...1
+........x.x.x        ........1.4.1
+..xxxxx.x...x        ..55555.1...1
+..x...x.xxx.x        ..5...5.111.1
+..x.x.x...x..        ..5.3.5...1..
+..x...x...xxx        ..5...5...111
+...xxxxxx....        ...555555....
+x............        2............
+</pre>
+
+<p>
+Given a String[] <b>seaMap</b>, return a int[], where the k-th element is the number of islands of level k.  The int[] must contain exactly (m + 1) elements, where m is the highest level of an island in the map.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">LandAndSea</td></tr><tr><td class="statText">Method:</td><td class="statText">howManyIslands</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] howManyIslands(String[] seaMap)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>seaMap</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>seaMap</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>seaMap</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>seaMap</b> will contain only '.' and lowercase 'x' characters.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"x"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"xxxxx",
+"x...x",
+"x.x.x",
+"x...x",
+"xxxxx"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1, 1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"xxxxx",
+"x...x",
+"x.x.x",
+"x...x",
+"xxxxx",
+"xxxxx",
+"x...x",
+"x.x.x",
+"x...x",
+"xxxxx"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {2, 1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"..",
+".."
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{
+"............",
+".......xxxx.",
+"..xxx.x...x.",
+"..x..x..x.x.",
+"..x.x.x...x.",
+"..xx...xxx.."
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1, 1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

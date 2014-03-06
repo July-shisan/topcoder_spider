@@ -1,0 +1,50 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">There are N rabbits who like to gossip. They are numbered from 0 to N-1.
+<p></p>
+There are two rumors. Let's call them A and B. At this moment, each rabbit either knows both rumors or no rumors at all. The rabbits want to spread the rumors to everyone as quickly as possible.
+<p></p>
+Rabbits are very picky when it comes to spreading rumors. Each rabbit only trusts some of the other rabbits. Moreover, the situation is not necessarily symmetric - there may be rabbits A and B such that A trusts B, but B does not trust A.
+<p></p>
+At the beginning of each day, each rabbit who knows at least one rumor chooses a rumor X it knows. The rabbit then spends the day spreading rumor X. A rabbit will learn a new rumor if it is spreaded by someone it trusts. Note that a rabbit may learn both rumors in the same day (from two different other rabbits). Also note that a rabbit may spread one rumor and learn the other rumor on the same day.
+<p></p>
+You are given a String <b>knowledge</b> and a String[] <b>graph</b>. The String <b>knowledge</b> has exactly N characters. Character i of <b>knowledge</b> is '<tt>Y</tt>' if rabbit i already knows both rumors, or '<tt>N</tt>' if it does not know the rumors yet. The String[] <b>graph</b> contains N strings with N characters each. Element i of <b>graph</b> describes rabbits who trust rabbit i: character j of element i of <b>graph</b> is '<tt>Y</tt>' if rabbit j trusts rabbit i, or '<tt>N</tt>' if rabbit j does not trust rabbit i. In other words, <b>graph</b>[i][j] is '<tt>Y</tt>' if and only if rabbit i will spread rumors to rabbit j.
+<p></p>
+Return the minimum number of days needed to spread both rumors so that each of the N rabbits will know both rumors. If it is impossible, return -1.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Rumor</td></tr><tr><td class="statText">Method:</td><td class="statText">getMinimum</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int getMinimum(String knowledge, String[] graph)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>knowledge</b> will contain between 1 and 16 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of <b>knowledge</b> will be either 'Y' or 'N'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>knowledge</b> will contain at least one 'Y' character.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>graph</b> will contain N elements, where N is the length of <b>knowledge</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>graph</b> will contain N characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of <b>graph</b> will be either 'Y' or 'N'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">i-th character of i-th element of <b>graph</b> will be 'N'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"YNN"</pre></td></tr><tr><td class="statText"><pre>{"NYN"
+,"NNY"
+,"NNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Initially, there are 3 rabbits. Rabbit 0 knows rumor A and B, and other rabbits know nothing.
+<br>
+One of the optimal ways is as follows.
+<ul><li>On day 1, rabbit 0 sends information about rumor A to rabbit 1.</li>
+<li>On day 2, rabbit 1 sends information about rumor A to rabbit 2, and rabbit 0 sends information about rumor B to rabbit 1.</li>
+<li>On day 3, rabbit 1 sends information about rumor B to rabbit 2.</li>
+</ul>
+As a result, it takes 3 days.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"YNNY"</pre></td></tr><tr><td class="statText"><pre>{"NYYN"
+,"YNNY"
+,"YNNY"
+,"NYYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">One of the optimal ways is as follows.
+<ul><li>On day 1, rabbit 0 sends information about rumor A to rabbit 1 and rabbit 2, and rabbit 3 sends information about rumor B to rabbit 1 and rabbit 2.</li>
+</ul></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"YYYY"</pre></td></tr><tr><td class="statText"><pre>{"NYNN"
+,"YNYN"
+,"NYNY"
+,"NNYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">All rabbits already know the rumors, so no day is required.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"YYYYYN"</pre></td></tr><tr><td class="statText"><pre>{"NYYYYN"
+,"YNYYYN"
+,"YYNYYN"
+,"YYYNYN"
+,"YYYYNN"
+,"NNNNNN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">It is impossible to make rabbit 5 know the rumors.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"NNNY"</pre></td></tr><tr><td class="statText"><pre>{"NNNN"
+,"YNNN"
+,"YNNN"
+,"NYYN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre> "NNNNNNNYYY"</pre></td></tr><tr><td class="statText"><pre>{"NYNNYNNYNN"
+,"NNYNYNNNNY"
+,"YYNNNYNNNN"
+,"YNNNYNYNNN"
+,"NNYNNYNNYN"
+,"NNNNYNNNYY"
+,"NYNYNYNNNN"
+,"NNNNNNYNYY"
+,"NNNYNNNYNY"
+,"NYYNNNNYNN"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

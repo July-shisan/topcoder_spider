@@ -1,0 +1,35 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You are given the vertices of a convex polygon in clockwise order. As you traverse the boundary in the given order, your heading adjusts toward your right at each vertex by more than 0 but less than 180 degrees. As you 
+complete the circuit by going from the last vertex to the first vertex and then
+heading toward the second vertex, your
+total heading adjustment has been 360 degrees.
+<p>
+We want to increase the size of the given convex polygon by picking some of its vertices
+and moving them. We are not allowed to choose vertices that are adjacent to each
+other, and we are not allowed to move a chosen vertex a distance of more than 1.
+Of course the boundary segments between a moved vertex and its fixed adjacent vertices
+also move -- we require that moving boundary segments never
+intersect any other boundary segments. This guarantees
+that we will end up with a polygon (possibly not convex) that has
+a well-defined interior and exterior.
+</p><p>
+Create a class PolyMove that contains a method
+addedArea that is given the sequence of vertices of a convex polygon in int[]s
+<b>x</b> and <b>y</b>. It returns
+the greatest increase in area that can be achieved by choosing and moving vertices.
+The coordinates of the i-th vertex are given by the i-th elements of <b>x</b> and <b>y</b>. 
+There is a boundary segment between the last vertex and first vertex.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">PolyMove</td></tr><tr><td class="statText">Method:</td><td class="statText">addedArea</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double addedArea(int[] x, int[] y)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A return value with either an absolute or relative error of less than 1.0E-9 is considered correct.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>x</b> and <b>y</b> will contain the same number of elements, a number between 3 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>x</b> and of <b>y</b> will be between -1000 and 1000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The points corresponding to <b>x</b> and <b>y</b> will be distinct.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The described polygon will be clockwise convex as specified above.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{0,1,2}</pre></td></tr><tr><td class="statText"><pre>{0,1,0}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    This is an isosceles triangle that has an area of 1. We can increase its area most by moving
+the middle point from (1,1) to the point (1,2). Now the triangle will have an area of 2, so the increase in area is 1.
+
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{0,1,1,0}</pre></td></tr><tr><td class="statText"><pre>{1,1,0,0}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.4142135623730951</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+    
+    This polygon is a unit square. We can move (0,0) and (1,1), moving them each one unit along the 45 degree diagonal to (-1/sqrt(2),-1/sqrt(2)) and
+(1+sqrt(2),1+sqrt(2)) respectively. The new polygon is diamond shaped and has an area of 1 + sqrt(2), so its area has increased by sqrt(2).</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

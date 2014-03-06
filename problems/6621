@@ -1,0 +1,69 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>You are playing a game with a friend involving two robots on a rectangular board.  Each cell of the board is either empty, an obstacle, a starting point for a robot, or the destination.  You win the game only if your robot is the first to reach the destination cell.  Note that if both robots reach the destination cell at the same time or if neither reaches the destination at all, you lose.</p> 
+
+<p>Both robots listen to the following movement commands: <br>
+	- 'S' -- move south (the current row increases by one) <br>
+	- 'N' -- move north (the current row decreases by one) <br>
+	- 'E' -- move east (the current column increases by one) <br>
+	- 'W' -- move west (the current column decreases by one) <br></p>
+
+<p>During one time unit, the same movement command is given to both robots.  A robot may choose to follow the command given or ignore it.  Note that if the command makes the robot leave the board, or enter a cell occupied by an obstacle, it is automatically ignored and that both robots can be in the same cell at the same time.  The robots will always make an optimal decision so that they reach the destination cell as soon as possible.</p>
+
+<p>You will be given a String[] <b>board</b>.  Each character in <b>board</b> will represent a single cell on the game board and will be either '.' denoting an empty space, '#' denoting an obstacle, 'Y' denoting the starting point for your robot, 'F' denoting the starting point for your friend's robot, or 'X' denoting the destination cell.  You will also be given a String[] <b>commands</b>.  You should concatenate all elements of <b>commands</b> and make a long String of commands.  The ith character of this string will represent the command given during the ith time unit.  Starting the game at time 0 (in other words, from the first character of the string of commands) may not guarantee that your robot wins the race.  Return the earliest starting time that will guarantee your robot will win.  Starting the race at time T means that only the commands starting at index T in the input string are given, the ones with lower indexes will be ignored by both robots.  If there is no starting time that can make your robot win, return -1.</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">RoboRace</td></tr><tr><td class="statText">Method:</td><td class="statText">startTime</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int startTime(String[] board, String[] commands)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>board</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of <b>board</b> will be either '.', '#', 'Y', 'F' or 'X'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The characters 'Y', 'F' and 'X' will each appear exactly once in <b>board</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>commands</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>commands</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of <b>commands</b> will be either 'S', 'N', 'E' or 'W'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"#F",
+ "YX"}</pre></td></tr><tr><td class="statText"><pre>{"NES"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Your robot needs to move east to reach the destination, while your friend's robot needs to move south.  You have three options: start the race at times 0, 1, or 2.  If you start the race at time 2, your friend will win.  If the race starts at time 0, both robots will have no choice but to ignore the first command, and your robot will win by following the second command.  From the two options that guarantee your robot wins, choose the first one, at time 0.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"########",
+ "#......#",
+ "#.Y....#",
+ "#.F.#..#",
+ "#...X..#",
+ "#...#..#",
+ "#......#",
+ "########"}</pre></td></tr><tr><td class="statText"><pre>{"SSEEESSW"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Start the race at time 2 and your robot will follow the last 6 commands and reach the destination.  Your friend's robot needs one of the first two 'S' commands, so you can not start the race sooner than time 2.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"########",
+ "#......#",
+ "#.Y....#",
+ "#.F.#..#",
+ "#...X..#",
+ "#...#..#",
+ "#......#",
+ "########"}</pre></td></tr><tr><td class="statText"><pre>{"ESSEESSW"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The only way for your robot to reach the destination is to start the race at time 0.  However, the other robot will reach the destination sooner in this case.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"##.#.#.",
+ "..##...",
+ "..#...X",
+ "Y...##.",
+ "#...#.#",
+ "..#..F."}</pre></td></tr><tr><td class="statText"><pre>{"SSSNWSSSEWNSENENENNNNENWNEWESE"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">If the race starts at time 5, the destination is reached at time 26.  The commands followed by your robot are EEENEEE (the others are ignored).  Note that starting the race at time 4 would result in both robots reaching the destination cell at the same time.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"#..#.........#...X##....",
+ "#........#..........##.#",
+ ".#.#........#.....#.#...",
+ "..###...#..##.##...#....",
+ "..#.#.....#....#.#.####.",
+ "#...##.##.##..#.....##..",
+ ".##...#.#....#.......#.#",
+ "....##.#..#....#....#...",
+ "....###.##.....###...#..",
+ "#.#.......#.#......#..#.",
+ ".##....##.#.##.......#.#",
+ "......###...####......#.",
+ "..#.##.#..#.#...#...#...",
+ ".....#.#..........#...#.",
+ "##.#....##F#.....#.##.#.",
+ ".##....#.......##.##.##.",
+ "..#...#..##....#..#...Y.",
+ "#...........#...###..###",
+ ".....#...#..#.........#.",
+ ".#...##..#.#...#..#.##..",
+ "#..#...######....###.#..",
+ "#.#.....#.......#.##....",
+ "#..#....###....#.#..#...",
+ "..#...#.##.##.#.##.##..#",
+ "#....##.##..........#..#"}</pre></td></tr><tr><td class="statText"><pre>{"NWWSEWSSNWESSWES",
+ "ESEEENSNWNNWSNSNWWNWWNNNWE",
+ "NSNENENNSEENWWNSNNNNWWSSN",
+ "EENEWNWESESEEESNNNSEENNEWNNESNEESSEESEEENENNNWSSW",
+ "NWNNWSNWSWSSSSEEWSSWSESWWNNWWENSNNWWSSWWNNE",
+ "NWEWNEWSNEN",
+ "NNNEWNSWSNWESWNNNSWWNNNWWWNNEWNEEWSSWNSSWWNNWESEWS",
+ "WSSSEESSEEEEENNSWEWWWENSENWNSEENES",
+ "NNSNESESWNESNENSEESESWSENNESESNESNESEEW",
+ "ESNENEENWSNS"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 18</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

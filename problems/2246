@@ -1,0 +1,50 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+
+A self-catalogue is a sentence that truthfully and comprehensively describes its own
+composition. In this problem, we are concerned with sentences that count
+numerals occurring in themselves, such as the following.
+
+</p>
+<p>
+
+<i>
+This sentence contains <b>1</b> occurrence of <b>0</b>, <b>2</b> occurrences of <b>1</b>, <b>3</b> occurrences of <b>2</b>,
+and <b>2</b> occurrences of <b>3</b>.
+</i>
+
+</p>
+<p>
+
+The above is a self-catalogue because it gives an accurate count for each numeral occurring in itself.
+The following sentence, although accurate in the counts that it gives, is not a self-catalogue because it does not give a count for the numeral 3.
+
+</p>
+<p>
+
+<i>
+This sentence contains <b>3</b> occurrences of <b>1</b>, <b>1</b> occurrence of <b>8</b>, and <b>1</b> occurrence of <b>9</b>.
+</i>
+
+</p>
+<p>
+
+A self-catalogue must not give more than one count for the same numeral. Thus, the following is not a self-catalogue.
+
+</p>
+<p>
+
+<i>
+This sentence contains <b>4</b> occurrences of <b>4</b>, and <b>4</b> occurrences of <b>4</b>.
+</i>
+
+</p>
+<p>
+
+Given a int[] specifying a count for each of the numerals 0 through 9,
+try to find a self-catalogue that agrees with these counts. A count of 0 means that the numeral does not appear in the sentence at all, and a specified count of -1 means that any count (including 0) is acceptable. If there is no sentence meeting this specification, return an empty int[]. Otherwise, return a int[] of the same size as the input and containing the same non-negative counts, but with each -1 replaced by an accurate count. If several self-catalogues are possible, choose the one that yields the smallest value in element 0 of the result. If a tie remains, select for the smallest value in element 1; if there is still a tie, select for the smallest value in element 2; and so forth.
+
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">SelfCatalogue</td></tr><tr><td class="statText">Method:</td><td class="statText">construct</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] construct(int[] counts)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Leading zeros are not permitted for any number appearing in a self-catalogue.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>counts</b> contains exactly 10 elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>counts</b> is between -1 and 100, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1, -1, -1, -1, -1, -1, -1, -1, -1, -1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1, 2, 3, 2, 0, 0, 0, 0, 0, 0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The first sentence from the problem statement satisfies the input specification that there be exactly one occurrence of the numeral 0:<br><i>This sentence contains <b>1</b> occurrence of <b>0</b>, <b>2</b> occurrences of <b>1</b>, <b>3</b> occurrences of <b>2</b>, and <b>2</b> occurrences of <b>3</b>.</i></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{100, -1, -1, -1, -1, -1, -1, -1, -1, -1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">It is impossible to make a self-catalogue with 100 zeros.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1, 11, -1, -1, -1, -1, -1, -1, -1, -1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {1, 11, 0, 1, 1, 1, 1, 1, 1, 1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Note that 11 contains two occurrences of 1.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{-1, -1, -1, -1, -1, -1, -1, -1, -1, -1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: {0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The following self-catalogue illustrates this degenerate case:<br><i>This is a sentence.</i></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,98 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>A glossary is an alphabetical list of terms in some specialized field of knowledge, usually published as an appendix to a text on that field.</p>
+
+<p>
+In this problem, you will be given a String[] <b>items</b>, where each element is a single term.  You must build a two column glossary of these terms using the following method:</p>
+<p>
+For each letter 'A'-'Z', if there is at least one term that begins with that letter (case-insensitive), create an entry for the letter in the following format:
+</p><ol><li>Place the uppercase letter on the first line.</li>
+<li>Place 19 dashes ('-') on the second line.</li>
+<li>Place each term that begins with the letter on a new line, in alphabetical order (again, case-insensitive).  Each term should be preceded by exactly 2 spaces.</li>
+<li>Pad all lines with spaces on the right side until they are exactly 19 characters wide.</li>
+</ol><p>
+Now, sort these entries alphabetically by their letter, and split them into two columns.  The left column should contain the entries for letters 'A' through 'M', inclusive, and the right column should contain the entries for letters 'N' through 'Z', inclusive.  Each column must be exactly 19 characters wide, and the two columns must be separated by exactly 2 spaces.  See examples for clarification.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Glossary</td></tr><tr><td class="statText">Method:</td><td class="statText">buildGlossary</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] buildGlossary(String[] items)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Two strings differing only in capitalization are considered the same, for example "aa" and "aA" are same.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>items</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>items</b> will contain between 1 and 17 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>items</b> will contain letters ('A' - 'Z', 'a' - 'z') and spaces (' ') only.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>items</b> will start with a letter.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each term will appear at most once in <b>items</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Canada", "France", "Germany", "Italy", "Japan", "Russia", 
+ "United Kingdom", "United States"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"C                    R                  ",
+"-------------------  -------------------",
+"  Canada               Russia           ",
+"F                    U                  ",
+"-------------------  -------------------",
+"  France               United Kingdom   ",
+"G                      United States    ",
+"-------------------                     ",
+"  Germany                               ",
+"I                                       ",
+"-------------------                     ",
+"  Italy                                 ",
+"J                                       ",
+"-------------------                     ",
+"  Japan                                 " }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The Group of Eight. Together, these countries represent about 65% of the world economy.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"alpha", "beta", "gamma", "delta", "omega"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"A                    O                  ",
+"-------------------  -------------------",
+"  alpha                omega            ",
+"B                                       ",
+"-------------------                     ",
+"  beta                                  ",
+"D                                       ",
+"-------------------                     ",
+"  delta                                 ",
+"G                                       ",
+"-------------------                     ",
+"  gamma                                 " }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AVL tree", "backtracking", "array", "balanced tree", "binary search"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"A                                       ",
+"-------------------                     ",
+"  array                                 ",
+"  AVL tree                              ",
+"B                                       ",
+"-------------------                     ",
+"  backtracking                          ",
+"  balanced tree                         ",
+"  binary search                         " }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The second column might be empty, but you need to pad each line of the result with spaces.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXXXXXXXXXXXXXXXX", 
+ "YYYYYYYYYYYYYYYYY",
+ "ZZZZZZZZZZZZZZZZZ"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"                     X                  ",
+"                     -------------------",
+"                       XXXXXXXXXXXXXXXXX",
+"                     Y                  ",
+"                     -------------------",
+"                       YYYYYYYYYYYYYYYYY",
+"                     Z                  ",
+"                     -------------------",
+"                       ZZZZZZZZZZZZZZZZZ" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The first column may be empty too.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Asteria", "Astraeus", "Atlas", "Clymene", "Coeus", "Crius", 
+ "Cronus", "Dione", "Epimetheus", "Helios", "Hyperion", "Iapetus", 
+ "Leto", "Mnemosyne", "Oceanus", "Ophion", "Phoebe", "Prometheus", 
+ "Rhea", "Tethys", "Theia", "Themis"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{"A                    O                  ",
+"-------------------  -------------------",
+"  Asteria              Oceanus          ",
+"  Astraeus             Ophion           ",
+"  Atlas              P                  ",
+"C                    -------------------",
+"-------------------    Phoebe           ",
+"  Clymene              Prometheus       ",
+"  Coeus              R                  ",
+"  Crius              -------------------",
+"  Cronus               Rhea             ",
+"D                    T                  ",
+"-------------------  -------------------",
+"  Dione                Tethys           ",
+"E                      Theia            ",
+"-------------------    Themis           ",
+"  Epimetheus                            ",
+"H                                       ",
+"-------------------                     ",
+"  Helios                                ",
+"  Hyperion                              ",
+"I                                       ",
+"-------------------                     ",
+"  Iapetus                               ",
+"L                                       ",
+"-------------------                     ",
+"  Leto                                  ",
+"M                                       ",
+"-------------------                     ",
+"  Mnemosyne                             " }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Titans.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

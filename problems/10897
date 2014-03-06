@@ -1,0 +1,43 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+A travel agent is organizing tours for a group of people. He is charging a fixed <b>fee</b> to the whole group for each tour they take. The company policy, however, forces him to make each tour completely different from other tours because tourists don't want to see the same sight twice.
+</p><p>
+Each tour the agent plans starts at the group's hotel, consists of a sequence of distinct sights and ends at the hotel. The agent has managed to get the best price on transportation from the hotel to each of the sights, and between the sights. All transportation is directed, which means the cost to travel from A to B may be different from the cost to travel from B to A. The overall cost of a tour is the sum of all the transportation costs in the tour.
+</p><p>
+You will be given the information the agent has. The <b>fee</b> will be given as an int. The transportation costs between sights or between each sight and the hotel are given in two String[]s, <b>c</b> and <b>d</b>. Character j of element i of <b>c</b> and <b>d</b> give the first and second digit, respectively, in base-64 coding (explained in the notes), of the cost to the agency of transporting the whole group from point i to point j. Point 0 is always the hotel, while all the other points are the sights. You have to return the maximum income the agency can make by allocating tours. The income will be the fee multiplied by the number of tours, minus the total costs of all transportation needed. See the examples for further clarification.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">VacationTours</td></tr><tr><td class="statText">Method:</td><td class="statText">getIncome</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int getIncome(String[] c, String[] d, int fee)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If c is the first digit and d is the second digit in base-64 coding, then the value is c*64+d, where c and d are translated to a number between 0 and 63, inclusive, as follows: <ul><li>Uppercase letters 'A' to 'Z' have values 0 to 25, respectively</li><li>Lowercase letters 'a' to 'z' have values 26 to 51, respectively</li><li>Digits '0' to '9' have values 52 to 61, respectively</li><li>'+' has value 62 and '/' has value 63</li></ul></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Transportation costs are not necessarily reflexive, and do not necessarilly follow the triangle inequality. When the group needs to be transported from point i to point j, the agent has to do this directly, even if traveling through one or more intermediate points would result in a lower cost. See examples for further clarification.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>fee</b> will be between 1 and 10000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>c</b> will contain between 2 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>d</b> will contain the same number of elements as <b>c</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>c</b> and <b>d</b> will contain exactly N characters, where N is the number of elements of <b>c</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of both <b>c</b> and <b>d</b> will be a base-64 coding character, as described in the notes. </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Character i of element i of both <b>c</b> and <b>d</b> will be an uppercase 'A'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AAA",
+ "AAA",
+ "AAA"}</pre></td></tr><tr><td class="statText"><pre>{"ABJ",
+ "JAB",
+ "BJA"}</pre></td></tr><tr><td class="statText"><pre>15</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 12</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The price matrix is as follows:
+<pre>
+- 1 9
+9 - 1
+1 9 -
+</pre>
+You can set up two tours stopping at sight 1 and 2 respectively, for a cost of 10 each. You can earn 30=15*2 by doing it, making a total profit of 10. Alternatively, you can set up a single tour that goes to sight 1, then to sight 2, and returns to the hotel with a total cost of only 3. In the second case you can earn only 15, with an overall benefit of 12. The latter is the optimal arrangement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AAAA",
+ "AAAA",
+ "AAAA",
+ "AAAA"}</pre></td></tr><tr><td class="statText"><pre>{"AAAA",
+ "AAAA",
+ "AAAA",
+ "AAAA"}</pre></td></tr><tr><td class="statText"><pre>100</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 300</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">All trips are free, so you must do as many tours as possible (3 in total, one for each sight).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A//",
+ "/A/",
+ "//A"}</pre></td></tr><tr><td class="statText"><pre>{"A//",
+ "/A/",
+ "//A"}</pre></td></tr><tr><td class="statText"><pre>1000</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">All possible trips are too expensive to get any benefit, so it's better to do no trips.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AAA////",
+ "/AA/A//",
+ "//AA/A/",
+ "A//AA//",
+ "///AAA/",
+ "///A/AA",
+ "AA////A"}</pre></td></tr><tr><td class="statText"><pre>{"AKo////",
+ "/AU/X//",
+ "//AZ/o/",
+ "j//AK//",
+ "///XAo/",
+ "///y/AK",
+ "KP////A"}</pre></td></tr><tr><td class="statText"><pre>1000</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1809</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

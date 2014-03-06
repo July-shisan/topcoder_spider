@@ -1,0 +1,74 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>A context free grammar is a set of words represented by a set of derivation rules, each written 
+as<br>
+&lt;nonterminal&gt; ::= &lt;expression&gt; <br>
+where &lt;nonterminal&gt; is a symbol, and &lt;expression&gt; is a non-empty sequence of symbols (terminals and/or nonterminals) that represents a possible substitution for &lt;nonterminal&gt;. Symbols that never appear on the left side of a rule are called terminals.</p>
+<p>If you have several rules for the same nonterminal:<br>
+&lt;nonterminal&gt; ::= &lt;expr<sub>0</sub>&gt;<br>
+&lt;nonterminal&gt; ::= &lt;expr<sub>1</sub>&gt;<br>
+...<br>
+&lt;nonterminal&gt; ::= &lt;expr<sub>n</sub>&gt;<br>
+it is also possible to write them in a single line, separated by pipes:<br>
+&lt;nonterminal&gt; ::= &lt;expr<sub>0</sub>&gt; | &lt;expr<sub>1</sub>&gt; | ... | 
+&lt;expr<sub>n</sub>&gt;</p>
+<p>There is a special nonterminal called a seed. Sequences of terminals that can be derived from the seed are the words that belong to the set described by the grammar.</p>
+<p>In this problem we will use uppercase letters exclusively for nonterminals and lowercase 
+letters for terminals.</p>
+<p>For example, this specification:<br>
+A ::= BD<br>
+B ::= bB | b | Bb<br>
+D ::= dD<br>
+D ::= d<br><br>
+with A as the seed represents the set of words that have one or more b's followed 
+by one or more d's (bd, bbd, bddd, bbbddd, etc.).</p>
+<p>A parsing tree in this context is a tree whose root node is the seed.  The children of each nonterminal node are the symbols of the expression derived from that nonterminal using one of the derivation rules.  These children are ordered from left to right. If read in that order, the leaves of a parsing tree form the parsed word. A terminal node is further to the left than another one if the path that leads to it from the first common ancestor begins with a branch that is further to the left in the rule used.</p>
+<br>
+The parsing tree for the string bdd in the above specification is:<br><pre>
+   A
+  / \
+ B   D
+ |  / \
+ b d   D
+       |
+       d
+</pre>
+Now, in this case this is the only possible parsing tree for that string, but the string bbd 
+has two parsing trees:<br><pre>
+     A
+    / \
+   B   D
+  / \  |
+ b   B d
+     |  
+     b
+</pre>
+and
+<pre>
+     A
+    / \
+   B   D
+  / \  |
+ B   b d
+ |  
+ b
+</pre>
+<p>To avoid having infinite parsing trees, no expression on the right side of a rule will be just one nonterminal.</p>
+<p>You are given the set of <b>rules</b> as a String[], where each element is formatted as described above, along with a <b>seed</b> and a <b>word</b>.  Return the number of distinct parsing trees for the given word. If there are more than 1000000000 (10<sup>9</sup>) parsing trees, return -1.</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ContextFreeGrammars</td></tr><tr><td class="statText">Method:</td><td class="statText">countParsingTrees</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], char, String</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int countParsingTrees(String[] rules, char seed, String word)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Two parsing trees are considered different if they have different tree structures, or if they have the same structure, but at least one node used a different rule to derive its children than the corresponding node in the other tree.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">According to the above note, if there are multiple equal rules (same nonterminal and same expression), there can be trees that are different even though have the same exact nodes and structure.  See example 3 for further clarification.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All uppercase letters are considered nonterminals even if they do not appear on the left side of any rule.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">When multiple expressions separated by pipes appear in a single line, each one still counts as a distinct rule (see example 5).</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>word</b> will contain between 1 and 35 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of <b>word</b> will be a lowercase letter ('a'-'z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>seed</b> will be an uppercase letter ('A'-'Z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>rules</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>rules</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>rules</b> will start with an uppercase letter, followed by " ::= ", followed by a list of one or more expressions separated by " | ", where each expression is a non-empty sequence of lowercase and uppercase letters ('a'-'z' and 'A'-'Z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No expression on the right side of a rule will be just one uppercase letter.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A ::= BD",
+ "B ::= bB | b | Bb",
+ "D ::= dD",
+ "D ::= d"}</pre></td></tr><tr><td class="statText"><pre>'A'</pre></td></tr><tr><td class="statText"><pre>"bdd"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The first example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A ::= BD",
+ "B ::= bB | b | Bb",
+ "D ::= dD",
+ "D ::= d"}</pre></td></tr><tr><td class="statText"><pre>'A'</pre></td></tr><tr><td class="statText"><pre>"bbd"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The second example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A ::= BD",
+ "B ::= bB | b | Bb",
+ "D ::= dD",
+ "D ::= d"}</pre></td></tr><tr><td class="statText"><pre>'A'</pre></td></tr><tr><td class="statText"><pre>"ddbb"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This string does not belong to the represented set, so there is no parsing tree.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"B ::= topcoder | topcoder",
+ "B ::= topcoder"}</pre></td></tr><tr><td class="statText"><pre>'B'</pre></td></tr><tr><td class="statText"><pre>"topcoder"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here, there are 3 trees that look the same (B as the root and 8 leaves with the "topcoder" letters),
+but you can make a tree with each one of the 3 different rules, so all those trees are considered different.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A ::= BCD",
+ "Z ::= z",
+ "B ::= Cz | Dz | Zz",
+ "C ::= Bz | Dz",
+ "D ::= Cz | Bz"}</pre></td></tr><tr><td class="statText"><pre>'X'</pre></td></tr><tr><td class="statText"><pre>"zzz"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Every uppercase letter is a nonterminal, even though it has no associated rule.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"B ::= bB | bB | bB | bB | b" }</pre></td></tr><tr><td class="statText"><pre>'B'</pre></td></tr><tr><td class="statText"><pre>"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here, the first 29 b's can be derived by processing a "B ::= bB" rule 29 times, each time picking one of the four rules that do that. The result is 4<sup>29</sup> = 288230376151711744, which is much greater than 10<sup>9</sup>, so you must return -1.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

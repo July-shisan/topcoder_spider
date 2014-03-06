@@ -1,0 +1,34 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">We are designing an Amazing Race course. Contestants will travel back and forth 
+between various cities. We want to choose the required sequence of cities
+so that the total effort of a contestant is as close as possible to
+1000. 
+<p>
+The total effort of a contestant is the sum of the effort 
+for each city-to-city trip, but the effort for a trip depends on how tired
+the contestant is. Let effort(c1,c2) be the effort required to travel from city c1
+to city c2 when a contestant is fresh. We estimate that if the contestant has
+already completed k trips then the effort required for a trip from city c1 to 
+city c2 is</p><pre>
+                 factor<sup>k</sup> *  effort(c1,c2)</pre>
+where factor is a fixed value &gt;= 1.
+<p>
+Create a class Amazing that contains a method totalE that is given <b>factor</b>, 
+<b>numTrips</b>, and a String[] <b>effort</b>. Each element of effort contains a single space separated list of integers.  The jth integer in the ith element of effort is effort(ci,cj). Your method should find the race course with exactly <b>numTrips</b> trips that comes closest to requiring a total effort of 1000, and return the absolute difference between that total effort and 1000.
+</p><p>
+A trip may go from a city to itself, and effort(ci,ci) is not necessarily 0.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Amazing</td></tr><tr><td class="statText">Method:</td><td class="statText">totalE</td></tr><tr><td class="statText">Parameters:</td><td class="statText">double, int, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double totalE(double factor, int numTrips, String[] effort)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Your return value must have an absolute or relative error less than 1e-9.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>factor</b> will be between 1.0 and 2.0, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>numTrips</b> will be between 1 and 10, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>effort</b> will contain n elements where n is between 1 and 10, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>effort</b> will contain exactly n non-negative integers separated by single spaces.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>effort</b> will contain no leading spaces and no trailing spaces.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each integer in each element of <b>effort</b> will be between 0 and 1000, inclusive, and contain no leading zeroes.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1.0</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>{"1000 300 700","200 0 901","35 100 0"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   One course requires contestants to start in city 1, then travel to city 2, and then back to city 1. The total effort would be 1001.
+
+   The only other equally good course would be to start in city 2,
+then travel to city 1 and then back to city 2.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2.0</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>{"1000 300 700","200 0 901","35 100 0"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 29.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   Now that the tiredness factor is 2.0, the courses from the previous example
+   would require too much effort (1101 and 1902 respectively). The best course
+   would be to start at city 1, go to city 2 at an effort of 901 and then
+   to city 0 with an additional effort of 2.0*35 giving a total of 971.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1.3</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>{"1000 300 700","200 0 901","35 100 0"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2.8999999999998636</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

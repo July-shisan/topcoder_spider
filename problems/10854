@@ -1,0 +1,44 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Pavel likes puzzles.  One of his favorite puzzles is <i>DrawingBlackCrosses</i>.  In this puzzle, the player starts with a rectangular grid of cells, where each cell is either white or black, and at most 8 of the cells are black.  The player's goal is to achieve the state where all of the cells in the grid are black.  To achieve this goal, a sequence of moves must be performed.  In each move, a single white cell is selected and all white cells located in the same row and all white cells located in the same column as the selected cell, including the selected cell itself, are colored black.  The moves are performed until there are no more white cells.
+<br><br>
+Each solution to this puzzle can be written as a sequence of cells, where the i-th cell in the sequence is the cell that was selected on the player's i-th move.  Two solutions are considered to be different if these sequences have different lengths or if there's an index i such that the i-th cells in these sequences are different.  You are given a String[] <b>field</b> representing the initial state of the grid.  The j-th character in the i-th element of <b>field</b> is '.' if the cell in row i, column j of the grid is initially white and 'B' if this cell is initially black.  Return the number of different solutions that exist for the given grid, modulo 1000000007.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">DrawingBlackCrosses</td></tr><tr><td class="statText">Method:</td><td class="statText">count</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int count(String[] field)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>field</b> will contain between 1 and 20 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>field</b> will contain between 1 and 20 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>field</b> will have the same length.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>field</b> will be either 'B' or '.'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>field</b> will contain no more than 8 'B' characters.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Only one possible move.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BBB",
+ "BBB"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No moves are necessary here since all the cells are already black.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"...", 
+ "BB."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Let's number rows and columns of the grid as follows:
+<pre>
+   012
+0  ...
+1  BB.
+</pre>
+<br>
+The following sequences of moves are possible (the first coordinate of each cell is its row number, the second coordinate is column number): <br>
+1. (0, 0), (1, 2);<br>
+2. (0, 1), (1, 2);<br> 
+3. (0, 2);<br>
+4. (1, 2), (0, 0);<br>
+5. (1, 2), (0, 1).<br></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"....................", 
+ "....................", 
+ "....................", 
+ "....................", 
+ "....................", 
+ "....................", 
+ "....................", 
+ "....................", 
+ "....................", 
+ "....................", 
+ "....................", 
+ "....................", 
+ "....................", 
+ "....................", 
+ "....................", 
+ "....................", 
+ "....................", 
+ "....................", 
+ "....................", 
+ "...................."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 563200757</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"B..B",
+ "B.B.",
+ "...B",
+ "BB.B",
+ "...."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 324</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

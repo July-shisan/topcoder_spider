@@ -1,0 +1,30 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+You are given a String[] <b>numbers</b>, each element of which represents a positive integer written using the letters 'A' through 'J' instead of digits.  You know that each letter represents exactly one digit, and each digit is represented by exactly one letter.  You also know that none of the integers start with zero. Return the maximum possible sum of the given integers.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">EncodedSum</td></tr><tr><td class="statText">Method:</td><td class="statText">maximumSum</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long maximumSum(String[] numbers)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>numbers</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>numbers</b> will contain between 1 and 12 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>numbers</b> will contain only uppercase letters between 'A' and 'J', inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There will be at least one letter between 'A' and 'J', inclusive, that never occurs as the first character of any element of <b>numbers</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABC",
+ "BCA"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1875</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>
+B = 9
+A = 8
+C = 7
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABCDEFGHIJ"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9876543210</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABCDEFGHIJ", 
+ "J"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9876543202</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">We can not use J as 0. So, <br><pre>
+J = 1
+I = 0
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A", 
+ "BB", 
+ "CCC", 
+ "DDDD", 
+ "EEEEE", 
+ "FFFFFF", 
+ "GGGGGGG", 
+ "HHHHHHHH", 
+ "IIIIIIIII", 
+ "AJJJJJJJJJ"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9973936905</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"GHJIDDD",
+ "AHHCCCA",
+ "IIJCEJ",
+ "F",
+ "HDBIGFJAAJ"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9888114550</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

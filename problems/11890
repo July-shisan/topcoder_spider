@@ -1,0 +1,31 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Magical Girl Sayaka just learned about Conway's Game of Life. She is now thinking about new rules for this game.<br><br>
+In the Game of Life, an infinite plane is divided into a grid of unit square cells. 
+At any moment, each cell is either alive or dead.
+Every second the state of each cell changes according to a fixed rule.
+In Sayaka's version of the game the following rule is used: <br><ul><li> Consider any cell C. Look at the current states of the cell C and all four cells that share a side with C. </li>
+<li> If at least one of these five cells are alive, cell C will be alive in the next second. Otherwise, cell C will be dead in the next second. </li>
+<li> Note that each second the rule is applied on all cells at the same time. </li> </ul>
+Sayaka wants to know how many cells are alive after <b>K</b> seconds.<br><br>
+You are given the int <b>K</b> and a String[] <b>field</b> that describes the initial state of the plane. <b>field</b> describes only some rectangular area of the plane. More precisely, character j of element i of <b>field</b> is 'o' if the cell in the i-th row of the j-th column of the rectangular area is alive, and it is '.' otherwise. Cells which aren't described in <b>field</b> is initially all dead. <br>
+Return the number of alive cells after <b>K</b> seconds.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">NonXorLife</td></tr><tr><td class="statText">Method:</td><td class="statText">countAliveCells</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int countAliveCells(String[] field, int K)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>field</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each elements of <b>field</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>field</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>field</b> will be either 'o' or '.'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>K</b> will be between 1 and 1500, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"oo"
+,"o."}</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 36</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The status after 3 seconds is below.
+<pre>...oo...
+..oooo..
+.oooooo.
+oooooooo
+ooooooo.
+.ooooo..
+..ooo...
+...o....</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".."
+,".."}</pre></td></tr><tr><td class="statText"><pre>23</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">All cells of the plane can be dead.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"o"}</pre></td></tr><tr><td class="statText"><pre>1000</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2002001</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"o.oo.ooo"
+,"o.o.o.oo"
+,"ooo.oooo"
+,"o.o..o.o"
+,"o.o..o.o"
+,"o..oooo."
+,"..o.o.oo"
+,"oo.ooo.o"}</pre></td></tr><tr><td class="statText"><pre>1234</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3082590</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,39 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+We have an N-digit digital counter that increments every second. The counter is cyclic: after it reaches 10^N - 1, it starts once again from zero.
+</p>
+
+<p>
+Each digit is shown using the standard seven-segment display. The exact forms of all the digits are shown in the ASCII art below.
+</p>
+
+<pre>
+    +   +---+   +---+   +   +   +---+
+    |       |       |   |   |   |
+    +   +---+   +---+   +---+   +---+
+    |   |           |       |       |
+    +   +---+   +---+       +   +---+
+
++---+   +---+   +---+   +---+   +---+
+|           |   |   |   |   |   |   |
++---+       +   +---+   +---+   +   +
+|   |       |   |   |       |   |   |
++---+       +   +---+       +   +---+
+</pre>
+
+<p>
+Each line segment that connects two adjacent '+' symbols represents a single lit segment.  For example, '1' contains two lit segments, and '9' contains five lit segments.
+</p>
+
+<p>
+You are given a String <b>current</b> that contains the current number shown by the counter. 
+<br>
+The number of characters in <b>current</b> is equal to the number N of displayed digits.
+</p>
+
+<p>
+Return the smallest positive number of seconds after which the counter will have the same total number of lit segments as it does now.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">DigitalCounter</td></tr><tr><td class="statText">Method:</td><td class="statText">nextEvent</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long nextEvent(String current)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The digits 1, 2, ..., 9, and 0 have 2, 5, 5, 4, 5, 6, 3, 7, 5, and 6 lit segments, respectively.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The counter does always show leading zeroes. (See Examples #3 and #5.)</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">As the counter is cyclic, the answer always exists and for any valid input the answer fits into a long.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>current</b> will contain between 1 and 15 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>current</b> will be a digit ('0'-'9').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"1"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No other digit has exactly two segments lit, thus the next time there will be two segments lit will be in 10 seconds.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"3"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In 2 seconds the display will show "5", and "5" and "3" both have exactly five lit segments.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"9"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In 3 seconds, the display will show "2".</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"99"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The number "99" is shown using 5+5=10 lit segments. In 5 seconds, the display will show "04", with 6+4=10 lit segments again. </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"654371"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 43</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"007"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 11</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Note that the input can have leading zeroes.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

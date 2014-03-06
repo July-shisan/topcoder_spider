@@ -1,0 +1,60 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+You will be given a 2-dimensional grid of letters and a length.
+Write a method to count the total number of distinct paths of consecutive letters of the given length, starting at 'A'.
+Paths can step from one square in the grid to any adjacent square (horizontally, vertically, or 
+diagonally).
+</p>
+
+<p>
+For example, in the following grid, there are 7 paths of consecutive letters from 'A' to 'C':
+</p>
+
+<pre>
+    { "ABC",
+      "CBZ",
+      "CZC",
+      "BZZ",
+      "ZAA" }
+
+    A B C    A . C    A B .    A . .    A . .    A . .    . . .
+    . . .    . B .    C . .    C B .    . B .    . B .    . . .
+    . . .    . . .    . . .    . . .    C . .    . . C    C . .
+    . . .    . . .    . . .    . . .    . . .    . . .    B . .
+    . . .    . . .    . . .    . . .    . . .    . . .    . A .
+    (spaces are for clarity only)
+</pre>
+
+<p>
+so, for this grid and a length of 3, your method should return 7.
+</p>
+
+<p>
+If there are more than 1,000,000,000 paths, your method should return 1,000,000,000.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">AlphabetCount</td></tr><tr><td class="statText">Method:</td><td class="statText">count</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int count(String[] grid, int length)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>grid</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>grid</b> will be between 1 and 50 characters long, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>grid</b> will have the same length.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>grid</b> will contain only uppercase letters ('A'-'Z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>length</b> will be between 1 and 26, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "ABC",
+  "CBZ",
+  "CZC",
+  "BZZ",
+  "ZAA" }</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "AAAA",
+  "AAAA",
+  "AAAA" }</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 12</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "ABAB",
+  "BABA",
+  "ABAB",
+  "BABA" }</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 24</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "HIJKLMNOPQZZZONMLKHIDZYQR",
+  "GYXWVUTSRASTZZPSTUJGECPXS",
+  "FZABCDEFARQPUQRAAAVWFBOWT",
+  "EONMJIHGAJMNOVAAAAAYXANUV",
+  "DCBLKDEFIEKLEDWAAAZFGHMLK",
+  "UVAZYBCGHFDFCAYXNPQZEDIJA",
+  "TSWXAKLZGCZBGZIJOMZRUTCBZ",
+  "RQPONMJIHBAZZHZZKLZZSVWXY" }</pre></td></tr><tr><td class="statText"><pre>26</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "CZC",
+  "ZBZ",
+  "AZA" }
+</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZ" }</pre></td></tr><tr><td class="statText"><pre>26</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1000000000</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "BDBCBACABDDCCADCBDDCBDDDBCCCCABACADDDCCCBADDDBADCA",
+  "DCBBBACBDBACCADABCCAABACDBADBCBBABACBCADADCBDABBBD" }
+</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 20</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>
