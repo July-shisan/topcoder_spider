@@ -1,0 +1,26 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Our warehouse is square, 200 feet on each side, with solid north and 
+south walls.  The east
+and west walls have sliding doors which allow trucks free entry and exit.
+Trucks come in a variety of sizes, but the width of each truck is an integer number
+of feet.
+Unfortunately the roof is supported by posts (of negligible size).
+<p>
+We want to drive big trucks in a straight line into the warehouse through the 
+west wall and (after unloading and without changing direction) out through the east wall.  
+Create a class 
+Warehouse that contains the method feetWide that takes the positions of the 
+posts as inputs and returns the width of the widest truck (of integral width) that can drive 
+straight through without touching any posts (or the north or south wall).  The positions of the posts are 
+given by int[] <b>x</b> and int[] <b>y</b>: the i-th element
+of <b>x</b> and <b>y</b> gives the distance in feet
+east and north respectively from the southwest corner of the building to the i-th post.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Warehouse</td></tr><tr><td class="statText">Method:</td><td class="statText">feetWide</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int feetWide(int[] x, int[] y)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>x</b> has between 1 and 50 elements inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>y</b> has the same number of elements as <b>x</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>x</b> and <b>y</b> is between 0 and 200 inclusive</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{0}</pre></td></tr><tr><td class="statText"><pre>{200}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 199</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The only post is at one of the corners of the building.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{100,100,120}</pre></td></tr><tr><td class="statText"><pre>{60,140,180}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 79</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The best path is due east, but the first and second posts are only 80  feet apart
+so the truck must be less than 80 feet wide.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{100,120}</pre></td></tr><tr><td class="statText"><pre>{60,140}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 82</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The best path is a little south of east, going between the two posts.  The
+distance between the posts is sqrt(6800) = 82.xxx</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,37 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Concurrency can be simulated on a single processor using the technique of <i>time-slicing</i>, giving each process a chance to run for
+some small, fixed interval before switching to the next process.  For example, two processes might take turns executing for 10 milliseconds each until both have finished.  However, switching between processes is expensive, so it is sometimes desirable to allow a 
+process to execute more than one time slice in a row.  On the other hand, to preserve the illusion of parallel execution, it is desirable
+that no process have to wait too long before getting a chance to run.  One way to balance these conflicting desires is to set a limit <b>K</b> on the number of time slices a process might wait between turns.  More precisely, no process that still needs more time slices will ever wait more than <b>K</b> time slices before getting a chance to run.
+</p>
+
+<p>
+Consider two processes, A and B, that both need to run for <b>N</b> time slices.  Given <b>N</b> and <b>K</b>, your task is to determine how many ways there are to schedule A and B such that A gets the first time slice and B gets the last time slice.  For example,
+if <b>N</b>=3 and <b>K</b>=3, there are six possible schedules:
+</p>
+<pre>
+     AAABBB
+     AABABB
+     AABBAB
+     ABAABB
+     ABABAB
+     ABBAAB
+</pre>
+If <b>K</b> is reduced to 2, then the AAABBB schedule is eliminated, leaving five possible schedules.
+
+<p>
+Your task is to write a method that takes two integers, <b>N</b> (the number of time slices needed by each process) and <b>K</b> (the maximum number of time slices an unfinished process is willing to wait), 
+and returns the number of possible schedules as a long (see examples).
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TimeSlicing</td></tr><tr><td class="statText">Method:</td><td class="statText">howMany</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long howMany(int N, int K)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>N</b> is between 1 and 30, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>K</b> is between 1 and 30, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 12</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The twelve possible schedules are
+<pre>
+   AABAABBB    ABAABABB    ABBAABAB
+   AABABABB    ABAABBAB    ABBABAAB
+   AABABBAB    ABABAABB
+   AABBAABB    ABABABAB
+   AABBABAB    ABABBAAB
+</pre>
+Notice in the first schedule (AABAABBB) that process B runs for three time slices in a row even though <b>K</b>=2.  This is legal because process A has already finished.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>15</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>7</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 33246459524</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>30</pre></td></tr><tr><td class="statText"><pre>28</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 30067266499540954</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

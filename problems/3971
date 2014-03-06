@@ -1,0 +1,44 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>You have recently been given a one-time bonus at work, along with a pay raise.  In the interest of putting your new found money to good use, you have decided to invest in the stock market.  To learn about recent market history, you have acquired historical data on several stocks you might be interested in purchasing.</p>
+
+<p>For experiment's sake, you want to evaluate the potential performance of your selected stocks.  What you are wondering is how much money you could have made if, at the beginning, you had an initial investment of int <b>initialInvestment</b> dollars, and each month thereafter you had an additional int <b>monthlyContribution</b> dollars.  Assume that you may buy any number of shares of stocks at the beginning of each month (including fractional numbers of shares), and that at the end of the timeframe (at the beginning of the last month) represented in the data, you sell all of your holdings.  You may not sell stocks in the intermediate period.  (See examples for clarification.)</p>
+
+<p>You are given a String[], <b>stockPrices</b>, in which each element lists the prices
+of each stock at the beginning of a month.  Each element of <b>stockPrices</b> is in the form "<i>stock0</i> <i>stock1</i> ..." (quotes added for clarity), where each stocki is a positive integer with no leading zeroes.  The first element of <b>stockPrices</b> gives the initial prices, the second element gives the prices at the beginning of the first month after you start investing, and so on.</p>
+
+<p>You are to return an int indicating the maximum earnings (profit) you could make by the end of the timeframe.  You should round your result to the nearest integer.</p>
+
+
+
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">StockHistory</td></tr><tr><td class="statText">Method:</td><td class="statText">maximumEarnings</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int maximumEarnings(int initialInvestment, int monthlyContribution, String[] stockPrices)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>initialInvestment</b> will be between 0 and 10000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>monthlyContributon</b> will be between 0 and 1000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>stockPrices</b> will contain between 2 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>stockPrices</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>stockPrices</b> will be formatted as a space delimited list of positive integers.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each integer represented in an element of <b>stockPrices</b> will be between 1 and 999, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>stockPrices</b> will represent the same number of integers.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The result prior to rounding will not be within 0.01 of x.5, where x is an integer.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1000</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>{"10 20 30", "15 24 32"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 500</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Clearly the first stock is a bigger gain than either of the others.  We go all in on it.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1000</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>{"10", "9"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">We're best off not buying any shares, rather than buying and losing money.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>100</pre></td></tr><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>{"40 50 60",
+ "37 48 55",
+ "100 48 50",
+ "105 48 47",
+ "110 50 52",
+ "110 50 52",
+ "110 51 54",
+ "109 49 53"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 239</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Remember that we can't sell any shares until the beginning of the last month.  So, let's work backwards, and figure out what the best way to invest our money is.  During the second to last month (month 6), the stock prices are 110, 51 and 54, all higher than the prices that we would sell at, so we don't buy anything during that month.<br><br>
+At the beginning of month 5, the price of the third stock is a little lower than its final price, so we invest our 20 in that, and make a meager 20*((53/52)-1).  The prices are the same at the beginning of month 4, so we do the same thing.<br><br>
+At the beginning of month 3, the prices have changed, but it is still best to invest in the third stock.  Note that the profit we make investing in the third stock during month 3 is larger than it is if we save our money and invest later.  Hence, we make a profit of 20*((53/47)-1) on our 20 from month 3.<br><br>
+At the beginning of month 2, it is best to save all of our money, and then invest in the third stock during the next month when the price is lower.  At the beginning of month 1, you should clearly invest in the first stock.  You should save all of your money from the initial investment until the price of the first stock goes down a little.  So, to summarize:
+<pre>
+month | action
+------+-------
+    0 | save
+    1 | buy stock 0 (120/37 shares)
+    2 | save
+    3 | buy stock 2 (40/47 shares)
+    4 | buy stock 2 (20/52 shares)
+    5 | buy stock 2 (20/52 shares)
+    6 | save
+    7 | sell (3.243 shares of stock 0, 1.620 shares of stock 2)
+Total sales price : 439.389
+Total investment  : 200
+Profit            : 239.389
+</pre>
+
+Notice that you always either invest all of your money at the beginning of a month, or else save all of it.  When you know the future prices, there is no reason to invest only some of your money.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

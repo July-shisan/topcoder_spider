@@ -1,0 +1,67 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A lexer (lexical analyzer) is used in compilers to break input text into pieces
+called tokens.  In this problem you will be given a list of  valid tokens.  For example: <br>
+tokens = {"ab","aba","A"}  <br><br>
+
+Given a list of valid tokens and an input string your lexer will work as follows: <br>
+1) a) If the input doesn't begin with one of the valid tokens, remove the first
+character from the string. <br>
+   b) If the input does begin with a valid token, 
+determine the longest valid token the input starts with and remove it from the string.  
+The removed portion is considered CONSUMED. <br>
+2) Repeat 1 until there are no characters left in the input. <br><br>
+
+The lexer is CASE-SENSITIVE so a token must exactly match the beginning of the
+string. <br><br>
+
+Given a list of valid tokens and an input string your method will return a list
+containing the CONSUMED valid tokens in the order they were CONSUMED.
+
+For example: <br>
+tokens = {"ab","aba","A"} <br>
+input = "ababbbaAab" <br><br>
+"ab" and "aba" are found at the beginning of the input but "aba" is longest so
+it is consumed.  Now: <br>
+consumed = {"aba"} <br>
+input = "bbbaAab" <br><br>
+There are no tokens that start with 'b' so the lexer will remove the first 3
+characters from the string. <br>
+consumed = {"aba"} <br>
+input = "aAab" <br><br>
+The 'a' doesn't match the token "A" due to CASE-SENSITIVITY.  The lexer removes the 'a' from the beginning of the string.<br>
+consumed = {"aba"}<br>
+input = "Aab"<br><br>
+The lexer consumes the "A" token.<br>
+consumed = {"aba","A"}<br>
+input = "ab"<br><br>             
+Finally the lexer consumes the "ab" token and completes the process.<br>
+consumed = {"aba","A","ab"}<br>
+input = ""<br>
+The returned list is {"aba","A","ab"}.<br><br>
+Create a class Lexer that contains the method tokenize, which takes a String[]
+tokens, and a String input, and returns a String[] in the form specified above.  
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Lexer</td></tr><tr><td class="statText">Method:</td><td class="statText">tokenize</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] tokenize(String[] tokens, String input)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">tokens will contain between 0 and 50 elements inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of tokens will have length between 1 and 50 inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of tokens will only consist of letters (A-Z,a-z)</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">input will have length between 0 and 50 inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">input will only consist of letters (A-Z,a-z)</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ab","aba","A"}</pre></td></tr><tr><td class="statText"><pre>"ababbbaAab"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "aba",
+  "A",
+  "ab" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Same as above</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"a","a","aa","aaa","aaaa","aaaaa","aa"}</pre></td></tr><tr><td class="statText"><pre>"aaaaaaaaaaaaaaaaaaaaaaaaa"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "aaaaa",
+  "aaaaa",
+  "aaaaa",
+  "aaaaa",
+  "aaaaa" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Make sure to use the longest valid starting token</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"wow","wo","w"}</pre></td></tr><tr><td class="statText"><pre>"awofwwofowwowowowwwooo"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "wo",
+  "w",
+  "wo",
+  "w",
+  "wow",
+  "wow",
+  "w",
+  "wo" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"int","double","long","char","boolean","byte","float"}</pre></td></tr><tr><td class="statText"><pre>"intlongdoublecharintintboolean"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "int",
+  "long",
+  "double",
+  "char",
+  "int",
+  "int",
+  "boolean" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{}</pre></td></tr><tr><td class="statText"><pre>"Great"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No valid tokens, so nothing is CONSUMED</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AbCd","dEfG","GhIj"}</pre></td></tr><tr><td class="statText"><pre>"abCdEfGhIjAbCdEfGhIj"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "dEfG",
+  "AbCd",
+  "GhIj" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Remember CASE-SENSITIVITY</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

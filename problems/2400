@@ -1,0 +1,56 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>The TopCoder office building is filled with very efficient people.
+Each of these people always parks their car in the closest
+(to the building) available parking space. The parking spaces
+are arranged linearly, with space number one being the closest
+to the building, space number two being the second closest to
+the building, etc.</p>
+
+<p>Given a sequence of employee arrivals and departures, determine
+the number of parking spaces used that day. The parking
+lot is empty at the beginning of the day. Names are case
+sensitive.</p>
+
+For example in the sequence of events below:<br><pre>{"Alice arrives",
+ "bob arrives",
+ "Alice departs",
+ "Charles arrives",
+ "bob departs",
+ "Charles departs"}
+
+Alice parks in space 1
+bob parks in space 2
+Alice vacates space 1
+Charles parks in space 1
+bob vacates space 2
+Charles vacates space 1
+</pre>
+<p>The total number of parking spaces used is 2.</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">OfficeParking</td></tr><tr><td class="statText">Method:</td><td class="statText">spacesUsed</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int spacesUsed(String[] events)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">HINT: If the maximum number of people at the office building at once is N, then there is never a reason for anyone to park in the (N+1)<sup>st</sup> spot, as one of the first N spots must have been available when they arrived.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>events</b> will have between 0 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>events</b> must contain between 9 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>events</b> is formatted as "&lt;name&gt; &lt;action&gt;" (quotes for clarity).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each &lt;name&gt; contains between 1 and 42 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each &lt;name&gt; contains only letters ('a'-'z', 'A'-'Z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each &lt;name&gt; and &lt;action&gt; are separated by exactly one space character.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each &lt;action&gt; is either "arrives" or "departs".</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Departures will always have a matching arrival (with the exact same case sensitive name) in a previous element of events.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There will not be two arrivals of the exact same case sensitive name without an intervening departure of the exact same name.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Alice arrives","bob arrives","Alice departs",
+ "Charles arrives","bob departs","Charles departs"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AdminBrett arrives","lbackstrom arrives","AdminBrett departs","mike arrives",
+ "TheFaxman arrives","AdminBrett arrives","lbackstrom departs","dok arrives",
+ "AdminBrett departs","gt arrives","AdminBrett arrives","lbackstrom arrives",
+ "AdminBrett departs","jhughes arrives","jhughes departs","TheFaxman departs",
+ "MaryJoe arrives","AdminBrett arrives","AdminBrett departs","AdminBrett arrives"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"SnapDragon arrives","tomek arrives","JohnDethridge arrives","ZorbaTHut arrives",
+ "snewman arrives","reid arrives","NGBronson arrives","Yarin arrives",
+ "bstanescu arrives","mathijs arrives","radeye arrives","bladerunner arrives",
+ "dgarthur arrives","venco arrives","dmwright arrives","WishingBone arrives",
+ "Eryx arrives","antimatter arrives","ChristopherH arrives","lars arrives",
+ "biggnate arrives","JanKuipers arrives","dary arrives","haha arrives","grotmol arrives",
+ "XuChuan arrives","Ryan arrives","LunaticFrindge arrives","Wasteland arrives",
+ "RunningWild arrives","hampster arrives","RalphFurmaniak arrives",
+ "kyky arrives","qubits arrives","Rustyoldman arrives","turuthok arrives",
+ "Vulpecular arrives","Eeyore arrives","wackes arrives","Ishan arrives",
+ "dimkadimon arrives","dplass arrives","Olorin arrives","TangentZ arrives",
+ "NeverMore arrives","Pops arrives","srowan arrives","tjq arrives",
+ "vorthys arrives","schveiguy arrives"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 50</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AdminBrett arrives","AdminBrett departs","AdminBrett arrives","AdminBrett departs",
+ "AdminBrett arrives","AdminBrett departs","AdminBrett arrives","AdminBrett departs",
+ "AdminBrett arrives","AdminBrett departs","AdminBrett arrives","AdminBrett departs",
+ "AdminBrett arrives","AdminBrett departs","AdminBrett arrives","AdminBrett departs"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"snapdragon arrives","SnapDragon arrives",
+ "AdminBrett arrives","AdminBrett departs",
+ "SnapDragon departs","snapdragon departs"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"departs arrives","arrives arrives","arrives departs","departs departs"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Note that the first words are the names, and the second words are the actions.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

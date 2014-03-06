@@ -1,0 +1,48 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+[<i>Note to plug-in users: This problem statement contains images and superscripts.  If you do not see the images, or
+if 2<sup><b>k</b></sup> is displayed the same as 2<b>k</b>, then please view the problem in the applet.</i>]
+</p>
+
+<p>
+A Hilbert curve is a path that traces through all the points in a two-dimensional square grid
+in such a way that each step in the path moves between neighbors in the grid.  Hilbert curves
+are sometimes used in image processing because they exhibit greater locality than
+other common methods of linearizing a two-dimensional image, such as row-by-row (even
+than the boustrophedonic variations of row-by-row that alternate between left-to-right 
+and right-to-left).
+</p>
+
+<p>
+A rank-<b>k</b> Hilbert curve is a path through a 2<sup><b>k</b></sup>-by-2<sup><b>k</b></sup> grid.
+A rank-1 Hilbert curve is a simple U-shape through a 2-by-2 grid, as shown below.
+<br><br><img src="http://www.topcoder.com/contest/problem/Hilbert/hilbert1.gif"><br><br>
+The blue point indicates the first point in the path and the red point indicates the
+last point in the path.  For <b>k</b> &gt; 1, a rank-<b>k</b> Hilbert curve is
+composed of four rank-(<b>k</b>-1) Hilbert curves, shown below as dotted lines.
+<br><br><img src="http://www.topcoder.com/contest/problem/Hilbert/hilbert2a.gif"><br><br>
+Notice how the curve is organized in quadrants, first the upper left, then
+the lower left, then the lower right, and finally the upper right.  (The cross in the 
+background is not part of the curve; it merely highlights the quadrants.)
+Notice also
+how some of the rank-(<b>k</b>-1) curves are flipped and rotated compared to the 
+orientation of the rank-<b>k</b> curve.  The blue and red points indicate
+where each rank-(<b>k</b>-1) curve begins and ends, respectively.  The overall rank-<b>k</b>
+curve begins at the first point of the upper left rank-(<b>k</b>-1) curve and
+ends at the last point of the upper right rank-(<b>k</b>-1) curve.  Here is
+a complete picture of a rank-3 Hilbert curve.
+<br><br><img src="http://www.topcoder.com/contest/problem/Hilbert/hilbert3.gif"></p> 
+
+<p>
+You will be given a value <b>k</b> and coordinates <b>x</b> and <b>y</b> in a
+2<sup><b>k</b></sup>-by-2<sup><b>k</b></sup> grid.  Coordinates range from 1 to 2<sup><b>k</b></sup> inclusive,
+with the upper left corner at coordinates (1,1).  Assuming the points are traversed
+in the order specified by a rank-<b>k</b> Hilbert curve, determine how many steps it
+takes to reach the point at coordinates (<b>x</b>,<b>y</b>).  For example,
+it takes 0 steps to reach the upper left corner at coordinates (1,1) and 4<sup><b>k</b></sup>-1 
+steps to reach the upper right corner at coordinates (2<sup><b>k</b></sup>,1).
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Hilbert</td></tr><tr><td class="statText">Method:</td><td class="statText">steps</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int steps(int k, int x, int y)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>k</b> is between 1 and 15, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>x</b> and <b>y</b> are between 1 and 2<sup><b>k</b></sup>, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 13</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The target is the colored point in the image below.  It takes 13 steps to reach
+from the start point along the path highlighted in blue.<br><br><img src="http://www.topcoder.com/contest/problem/Hilbert/hilbert4.gif"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The upper left corner.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>15</pre></td></tr><tr><td class="statText"><pre>32768</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1073741823</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The upper right corner.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>546</pre></td></tr><tr><td class="statText"><pre>109</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 955129</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>15</pre></td></tr><tr><td class="statText"><pre>30000</pre></td></tr><tr><td class="statText"><pre>30000</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 706873514</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

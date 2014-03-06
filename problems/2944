@@ -1,0 +1,87 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><i>
+NOTE: This problem statement contains images that may not display properly if viewed outside of the applet.
+</i>
+
+<p>
+Given a regular grid of size <b>W</b> x <b>H</b> with various squares blocked out,
+find a path from point (0,0) to point (<b>W</b>,<b>H</b>)
+that does not pass through any of the blocked-out squares.
+The path must consist only of 90-degree arcs (quarters of circles).
+The radius of each arc must be an integer,
+and therefore begin and end on an integer grid point. 
+The tangents at each end of every arc must be parallel to the x or y axis.
+</p>
+
+<p>
+Arcs may intersect the corner of a blocked-out square
+and even pass between two that share a corner
+(as shown in the examples below),
+but may not pass through the interior of any blocked-out square.
+</p>
+
+<p>
+The grid will be given as a String[],
+with a '.' representing an empty square
+and a '#' representing a blocked-out square.
+For example, given the following 12 x 8 grid:
+</p>
+
+<pre>
+
+  { "....########",
+    "###..###...#",
+    "..##..#.##.#",
+    "...##..#...#",
+    "....#..#...#",
+    "....#..###..",
+    "....####.##.",
+    "..........#." }
+</pre>
+
+<p>
+there is a path from (0,0) to (12,8) consisting of 4 arcs,
+as shown in the following figure:
+</p>
+
+<br><center>
+<img src="http://www.topcoder.com/contest/problem/Arcs/arcs_figure1.gif"></center>
+
+<p>
+Find the path that contains the fewest number of arcs,
+and return the number of arcs in that path.
+If there is no path, return -1.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Arcs</td></tr><tr><td class="statText">Method:</td><td class="statText">numArcs</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int numArcs(String[] grid)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>grid</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>grid</b> will have a length between 1 and 50, inclusive, and will contain only the characters '.' and '#'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>grid</b> will have the same length.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "..",
+  ".." }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A single arc of radius 2, centered at (0,2) or (2,0), forms a path from (0,0) to (2,2).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "...",
+  "..." }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There can only be a path between opposite corners if the dimensions of the grid are both even or both odd.  In this case, the dimensions are 3 x 2, so no path exists.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "....",
+  ".##.",
+  ".##.",
+  ".##.",
+  ".##.",
+  "...." }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Seven arcs of radius 1 are required in this example.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>  { "....########",
+    "###..###...#",
+    "..##..#.##.#",
+    "...##..#...#",
+    "....#..#...#",
+    "....#..###..",
+    "....####.##.",
+    "..........#." }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example in the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ ".....#................",
+  "....#.................",
+  "....#.................",
+  "....#.....#...........",
+  "....#.................",
+  "....#....#.#..........",
+  "....#.......#####.....",
+  "....#.....#.....#.....",
+  "....#.....#.....#.....",
+  "....#....#.#....#.....",
+  "....#....#.#.....#....",
+  "....#....#.#......#...",
+  "....#....#.#.##.#..###",
+  "....#....#....#......." }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There is a path consisting of 5 arcs, as shown in the following figure.  Notice that the path may cross itself:
+<p></p>
+<center>
+<img src="http://www.topcoder.com/contest/problem/Arcs/arcs_figure2.gif"></center></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

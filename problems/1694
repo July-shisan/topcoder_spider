@@ -1,0 +1,80 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+The Incas used a sophisticated system of record keeping consisting of bundles of knotted cords.
+Such a bundle of cords is called a <i>quipu</i>.  Each individual cord represents a single number.
+Surprisingly, the Incas used a base-10 positional system, just like we do today.  Each digit of a number 
+is represented by a cluster of adjacent knots, with spaces between neighboring clusters.  The digit is 
+determined by the number of knots in the cluster.
+For example, the number 243 could be represented by a cord with knots tied in the following pattern
+</p>
+<pre>
+     -XX-XXXX-XXX-
+</pre>
+where each uppercase '<tt>X</tt>' represents a knot and each '<tt>-</tt>' represents an unknotted segment of cord (all quotes for clarity only).
+
+
+<p>
+A sequence of numbers is represented by a sequence of cords.  For example, the numbers 725, 234, and 558 
+could be represented by the cords
+</p>
+<pre>
+     -XXXXXXX--XX-----XXXXX---
+     ---XX----XXX-----XXXX----
+     -XXXXX---XXXXX--XXXXXXXX-
+</pre>
+Notice how consecutive dashes are used to align clusters of knots on different cords.  
+Clusters representing digits in the same position
+are required to overlap completely.  Clusters representing digits in 
+different positions never overlap.  All quipus obey these rules.  For example, the following configurations would all be illegal:
+<pre>
+     -XXXXX---
+     ----XXX--    [The 3 and 5 must overlap completely or not at all.]
+
+     -XXXXXXXXX-
+     --XX------- 
+     -------XX--  [Both 2s overlap with the 9, but not each other.]
+
+     -XXXXXXXX-
+     --XX----X-   [The 2 and 1 cannot both overlap with the 8.]
+</pre>
+
+<p>
+Unlike many ancient civilizations, the Incas were aware of the concept of zero, and used it in their quipus.
+A zero is represented by a cluster containing no knots.  For example, the numbers 105 and 340 could be 
+represented by the cords
+</p>
+<pre>
+     --X--------XXXXX-
+     -XXX--XXXX-------
+</pre>
+Assume that the numbers being represented do not all contain zeros in the same position.  For example, any input that you could
+conceivably interpret as representing the numbers 105 and 802, you should interpret as 15 and 82 instead.
+
+<p>
+Write a method to translate a sequence of quipu cords (of type String[]) into a sequence of integers (of type int[]), where the integer in position <i>i</i>
+corresponds to the cord in position <i>i</i>.  
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">QuipuReader</td></tr><tr><td class="statText">Method:</td><td class="statText">readKnots</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] readKnots(String[] knots)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>knots</b> contains between 1 and 10 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>knots</b> contains the same number of characters, between 1 and 50, inclusive.  </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>knots</b> contains only the characters '<tt>X</tt>' and '<tt>-</tt>'.  Note that '<tt>X</tt>' is uppercase.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">At least one element of <b>knots</b> contains at least one '<tt>X</tt>'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No element of <b>knots</b> contains 10 consecutive '<tt>X</tt>'s.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If two (non-empty) clusters of knots A and B overlap at all, then they must overlap completely.  More formally, let A<sub>0</sub> be the position of the first '<tt>X</tt>' in cluster A, and let A<sub>1</sub> be the position of the last '<tt>X</tt>' in cluster A.  Let B<sub>0</sub> and B<sub>1</sub> be defined similarly for cluster B.  Assume, without loss of generality, that A<sub>0</sub> &lt;= B<sub>0</sub>.  Then either B<sub>1</sub> &lt;= A<sub>1</sub> (they overlap completely) or A<sub>1</sub> &lt; B<sub>0</sub> (they do not overlap at all).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All clusters of knots that overlap with some particular cluster also overlap with each other.  More formally, if two (non-empty) clusters of knots A and B both overlap with a third (non-empty) cluster C, then A and B also overlap with other.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>knots</b> will represent a number between 0 and 1000000, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "-XXXXXXX--XX-----XXXXX---",
+  "---XX----XXX-----XXXX----",
+  "-XXXXX---XXXXX--XXXXXXXX-" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 725,  234,  558 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">One of the examples above.  Notice that adjacent digit positions are usually separated by
+one or more columns of dashes.  In this example, the first and second positions are separated 
+by one column of dashes, and the second and third positions are separated by two columns
+of dashes.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "XX---XXXX",
+  "XXX-----X" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 24,  31 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Notice that leading and trailing dashes are not required.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "-XXX---XX----X",
+  "--X----X-XXXXX",
+  "-XX--XXXX---XX" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 321,  115,  242 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Notice that adjacent digit positions are not always separated by columns of dashes.
+In this example, the first and second positions are separated by a column of dashes,
+but the second and third positions are not.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "-------X--------",
+  "--XXX----XXXX---",
+  "--------------XX" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 100,  3040,  2 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Notice that leading zeros are permitted.  For example, 100 is really 0100 and 2 is really 0002.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "--XXX-XXXXXXXX----------XXXXXXXXX--XXXXXXXX-",
+  "--XX----XXXX-----XXXXXX---XXX------XXXXXXXX-",
+  "--------------------X----XXXXXXXX--XXXXXXXX-",
+  "--XX-------X------XXXX----XXX-------XXXXXX--",
+  "--XXX---XXXXX-------X------XX--------X------",
+  "-XXXX--XXXXXXX-----------XXXXXXX----XXXXX---",
+  "-----------X---XXXXXXXX----XX--------XXX----",
+  "-----------X---XXXXXXXX----X----------------",
+  "---X--XXXXXXXX--XXXXXXX---XXX---------------",
+  "--XX---XXXXXXX--XXXXXXX----XX-------XXXXX---" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 38098,  24638,  188,  21436,  35121,  47075,  1823,  1810,  18730,  27725 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"X","-"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 1,  0 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

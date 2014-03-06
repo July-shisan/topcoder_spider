@@ -1,0 +1,51 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+At a recent party, a number of people were loitering around talking to one
+another, and generally doing partyish things.  It was a very social event, and we
+would like to come up with some sort of a metric for how social it was.  One
+possibility is to find the shortest distance from each person to
+every other person, and take the average.  Your task is to write a class
+Socialize, with a method average, that computes the average distance between
+all distinct pairs of people, and returns this average, rounded to the nearest integer (.5 rounds up).
+</p><p>
+However, our metric would not be very accurate if we just took the distance between people.  For example, two people could have been only a few feet from each other, but if there was a wall between them, they wouldn't have been able to socialize.
+Thus, we will define the distance between two people as the shortest path between
+them, which doesn't go through any obstacles, and where the path goes in
+discrete steps, with each step being one unit in any of the four cardinal
+directions (east, west, north and south).
+</p><p>
+Because there are various obstacles, there may be cases where two people are
+totally cut off from each other.  In this case, you should not include the
+distance between them in your calculation.
+</p><p>
+For example, if the layout were ('P' represents a person, '#' represents some
+sort of an obstacle, and '.' represents open floor):
+</p><pre>
+P...P
+###..
+P...#
+####P
+</pre><p>
+There are four people in total, one at each of the following locations (where
+the first coordinate is the distance along the x axis, and the second is along
+the y axis, with (0,0) at the upper left corner): (0,0),(4,0),(0,2),(4,3)
+</p><p>
+The person at (0,0) and the person at (4,0) are connected by a path of length 4.
+<br>
+The person at (0,0) and the person at (0,2) are connected by a path of length 8 because to get from one to another, they have to walk around the obstacle between them.
+<br>
+The person at (4,0) and the person at (0,2) are connected by a path of length 6.
+<br>
+The person at (4,3) can not reach any of the other people because he is blocked in (no diagonal movement), thus distances from him to other people do not play a role in the average.
+</p><p>
+Thus, there are three paths between people, whose lengths are 4,6, and 8.  The
+average length of these paths is 6, so your method should return 6.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Socialize</td></tr><tr><td class="statText">Method:</td><td class="statText">average</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int average(String[] layout)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If there are no pathes between people, return 0.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>layout</b> contains between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>layout</b> contains between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>layout</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each character in <b>layout</b> is either '#', '.', or 'P'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"P"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"#"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"P#P"
+,"P#."
+,"P#P"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"P...P",
+"###..",
+"P...#",
+"####P"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,32 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">An entry in a Thesaurus is a list of words that are all synonyms. Each entry 
+contains no duplicates within it. It is possible
+that two entries might have some common words, but the editors (who are somewhat
+cheap) have decided that if any two entries have 2 or more words in common then
+they should be combined into a single entry. 
+<p>
+This editing process may produce new entries which can be combined.  The 
+final Thesaurus must contain no pair of entries that have 2 or more words in common.
+Of course, each entry must contain no duplicates.
+</p><p> 
+Create a class Thesaurus that contains a method edit that is given a String[] 
+<b>entry</b>, the entries in the original Thesaurus. The method returns the edited Thesaurus as a String[]. Each element of <b>entry</b> has no leading or trailing spaces and has its words separated by a single space.  Each element of the return should also have no leading or trailing spaces and have its words separated by a single space. In addition, the words within each element of the return must be in alphabetical order, and the elements in the return must appear in alphabetical order.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Thesaurus</td></tr><tr><td class="statText">Method:</td><td class="statText">edit</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] edit(String[] entry)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>entry</b> will contain between 1 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>entry</b> will contain between 1 and 50 characters inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>entry</b> will consist of 1 or more "words" separated by single spaces.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>entry</b> will contain no leading or trailing spaces.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each "word" will consist of 1 or more lowercase letters 'a'-'z'</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No element of <b>entry</b> will contain two identical words.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ape monkey wrench", "wrench twist strain"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "ape monkey wrench",  "strain twist wrench" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"> 
+
+   These two entries have only one common word so they cannot be combined.
+   After rearranging the words within each entry to put the words into alphabetical order,
+   the first entry is first alphabetically.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ape monkey wrench", "wrench twist strain", "monkey twist frugue"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "ape monkey wrench",  "frugue monkey twist",  "strain twist wrench" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   No entries could be combined, but two had to be arranged, and the order
+   was changed.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ape monkey wrench", "wrench twist strain", "monkey twist frugue strain"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "ape frugue monkey strain twist wrench" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   The first two entries could not be combined, but the last two could.
+   After they were combined, the first entry shared both "wrench" and
+   "monkey" with the new combined entry, so we ended up with just one entry.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"point run score","point dot","cut run tear score","cut valley","cute pretty"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "cut point run score tear",  "cut valley",  "cute pretty",  "dot point" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

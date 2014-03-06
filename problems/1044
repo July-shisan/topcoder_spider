@@ -1,0 +1,39 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+A spy, working as a reporter at a local newspaper, has been leaking information
+to enemy countries by hiding messages within the articles. However, he has been
+found out, and the local intelligence
+agency wants you to write a program to detect the occurrence of certain words
+within this newspaper. The difficulty is that the words are not written
+directly in the articles, but are spaced out by a constant number (possibly zero) of garbage
+characters. For example, by taking every other character (i.e. the constant
+number of garbage characters is 1) the word "hello" is encoded in the stream of
+letters: "haeilelao". Also, the word "the" is encoded in "at bah ate" by
+starting at the second character and reading every fourth character. Note the
+number of garbage characters used can be any non-negative integer.
+</p><p>
+Create a class WordSpaces with a method which takes a String <b>sentence</b> and a String[] <b>words</b>. This method is to determine the first
+occurrence of each word in <b>words</b> within <b>sentence</b>. Elements
+of the int[] you return must correspond to <b>words</b>. That is, element <i>i</i> of the int[] corresponds to element <i>i</i> of
+<b>words</b>. If a word starts at character 0 of the sentence, then that
+element of the return int[] must be 0. Note that in the sentence: " at bah ate"
+(same as above, but with a leading space), the word "the" starts at position 2,
+whereas in the above example without the leading space, the word "the" starts
+as position 1.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">WordSpaces</td></tr><tr><td class="statText">Method:</td><td class="statText">find</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] find(String sentence, String[] words)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">In the event that a word does not occur in the sentence with any spacing, use the value -1 for that word.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>sentence</b> will be between 1 and 50 characters in length, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>sentence</b> will contain only lowercase letters (a-z) and spaces</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>words</b> will contain between 0 and 50 elements, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>words</b> will be between 1 and 50 characters in length, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>words</b> will contain only lowercase letters (a-z)</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"at bah ate"</pre></td></tr><tr><td class="statText"><pre>{"the","aa","hae"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 1,  0,  5 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">By taking the 2nd, 6th, and 10th characters (at positions 1, 5, and 9), we get
+"the". Thus, the first element of the return value is 1. (garbage spacing is 3)
+The word "aa" occurs at a number of locations:
+<br>
+By taking characters at positions 0 and 4, we get "aa". (garbage spacing is 3)
+However, we also get "aa" by taking the letters at positions 4 and 7. (garbage
+spacing is 2)
+<br>
+You are to return the position of the first occurrence, so the second
+element of the return value is 0.
+<br>
+"hae" is found by taking letters at positions 5, 7, and 9, so the third element of the
+return value is 5. (garbage spacing is 1)
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"test this one out"</pre></td></tr><tr><td class="statText"><pre>{"test","tst","hoe","not"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 0,  0,  -1,  -1 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"t ah mi as this"</pre></td></tr><tr><td class="statText"><pre>{"this","mat","zebra","hh"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 0,  5,  -1,  3 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"abcdefghijklmnoqrstuvwxyz zywvutsrponmlkjighfedcba"</pre></td></tr><tr><td class="statText"><pre>{"foy","foz","fox","ace","rom"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 5,  -1,  -1,  0,  33 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"ridikulus ridiculous"</pre></td></tr><tr><td class="statText"><pre>{"kuri","ks","cs","z","i","rsl"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 4,  4,  14,  -1,  1,  0 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

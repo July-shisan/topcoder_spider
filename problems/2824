@@ -1,0 +1,88 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Soma is a three dimensional puzzle invented by Piet Hein. You have seven pieces which are formed by joining cubes at their faces. (They are all of the non-convex shapes that can be so formed with four or fewer cubes). Six of the pieces are formed from four cubes and one is formed by three cubes. There are 27 cubes total. The pieces can be described by the following arrays which show how high cubes are stacked in each grid cell, and are also shown in the picture below.
+</p>
+
+<pre>
+1 1 1   1 1 1   0 1 1
+1 0 0   0 1 0   1 1 0
+
+1 1   0 2   2 0   1 2
+1 0   1 1   1 1   0 1
+</pre>
+<img src="http://www.topcoder.com/contest/problem/Soma/somapieces.gif"><p>
+The pieces can be translated and rotated into any orientation, to build larger shapes, but can not be reflected (as in a mirror) or disassembled. Pieces may touch, but not intersect. Each piece is used exactly once in a solution.
+</p>
+<p>
+Given <b>pattern</b> (a shape composed of 27 cubes, not necessarily connected), try to arrange the seven soma pieces into the same shape as <b>pattern</b>.  In other words, you are constructing <b>pattern</b> using the seven pieces.
+Return the number of distinct solutions for <b>pattern</b>. 
+</p>
+<p>
+What is meant by "distinct":<br>
+In a valid solution each cube in <b>pattern</b> will be occupied by a cube from exactly one of the seven pieces. You could assign a number between 1 and 7 inclusive to each <b>pattern</b> cube to indicate which piece occupies that <b>pattern</b> cube. Two solutions are distinct if this assignment is different at one or more <b>pattern</b> cubes. Thus removing a piece which has rotational symmetry, rotating it, and putting it back "in the same place" does not produce a new distinct solution. But a rearrangement of some or all of the pieces which is equivalent to rotating or reflecting the entire <b>pattern</b> (assuming <b>pattern</b> has such symmetry) is considered distinct by this definition. For example the <b>pattern</b>, "21112", can be constructed in exactly two distinct ways using the pieces "211" and "12". The distinct ways are "211"-"12" and "21"-"112".
+</p>
+<p>
+The <b>pattern</b> will be specified in a String[] similar to the arrays showing the individual pieces above. Each character indicates how many cubes are stacked at that location, starting from a common plane at a height of zero.
+</p>
+<p>
+For example:
+</p>
+<pre>
+{"333",
+ "333",
+ "333"}
+</pre>
+<p>
+specifies a 3x3x3 cube which is possible to construct with the seven soma pieces in 11520 distinct (as defined above) ways, so return 11520. 
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Soma</td></tr><tr><td class="statText">Method:</td><td class="statText">letMeCountTheWays</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int letMeCountTheWays(String[] pattern)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If no rotational symmetries are involved, there are 24 possible orthogonal orientations resulting from rotations in three dimensions. Visualize the 3x2 "L" shaped piece (which has no rotational symmetry). The top (long end) of the "L" can point in six directions x,y,z,-x,-y,-z. For each of those, the short leg of the "L" can point in one of four directions. 6 x 4 = 24 </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each of the other six pieces does have some rotational symmetry, and thus fewer possible distinct orientations.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The rotation of a point about a line passing through the origin can be calculated using a single, vector by matrix, multiplication: [x y z]*M=[rx ry rz] where M is a 3 by 3 matrix, [x y z] is the original point and [rx ry rz] is the rotated point.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Vector by matrix multiplication is defined as: for(i) { r[i]=0 ; for(j) { r[i]+=p[j]*M[j][i] } }  where p is the original point and r is the rotated point.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The matrix for 90 degree rotation about the x axis is: {{1,0,0},{0,0,1},{0,-1,0}}</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The matrix for 90 degree rotation about the y axis is: {{0,0,-1},{0,1,0},{1,0,0}}</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The matrix for 90 degree rotation about the z axis is: {{0,1,0},{-1,0,0},{0,0,1}}</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The easiest way to generate all possible orthogonal orientations is to rotate about the x axis (0,90,180 or 270 degrees), then about the y axis (0,90,180 or 270  degrees) then about the z axis (0,90,180,270 degrees). That is 64 combinations of rotations (4x4x4). Try all 64 and throw away those that produce duplicate results.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Sequences of rotations in three dimensions are non-commutative. The order in which you apply the rotations matters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There are 240 fundamental patterns to form the cube, proven by the great mathematician, Prof. John H. Conway. 240 x 24 rotations x 2 (for mirror reflection) = 11520. There are 96 ways to rotate individual pieces in each of the 11520 "distinct" ways. 11520 x 96 = 1105920 which is the "over a million ways to build a cube" number the manufacturer uses.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>pattern</b> will contain between 2 and 27 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>pattern</b> will consist of between 2 and 27 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>pattern</b> will have the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>pattern</b> will be a digit between '0' and '9' inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The sum of all the digits in <b>pattern</b> will be exactly equal to 27.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"333",
+ "333",
+ "333"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 11520</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The cube.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"345",
+ "234",
+ "123"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2800</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The crystal.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"3330000",
+ "0033300",
+ "0000333"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 28</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The wall.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"21111111",
+ "21111111",
+ "21111111"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The chase lounge, impossible.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"67",
+ "77"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1520</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The tower.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"010000000000000000000000000",
+ "110000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000000",
+ "000000000000000000000000022",
+ "000000000000000000000000022",
+ "000000000000000000000002222",
+ "000000000000000000000002222"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 76</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Replication.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"11100110001",
+ "01001100111",
+ "00000000000",
+ "20002012011",
+ "11011001001"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Disjoint.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">7)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"121",
+ "222",
+ "121",
+ "121",
+ "333"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 78</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The monument.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">8)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"020",
+ "010",
+ "010",
+ "020",
+ "343",
+ "353"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 42</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The gallows.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,90 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+XML documents are widely used today to describe many different kinds
+of data. The primary purpose of XML is to allow people to share
+textual and numerical data in a structured format across the Internet.
+Note that the XML document format described in this problem is a simplified version
+of the actual XML format.
+</p>
+
+<p>
+An XML document contains tags and plain text. Tags are used to define <i>blocks</i> within
+the XML document. A block always begins with a start-tag and ends with a
+corresponding end-tag. The format of these tags are &lt;<i>tag-name</i>&gt;
+and &lt;/<i>tag-name</i>&gt;, respectively.
+The <i>tag-name</i> for an end-tag is the same (including case) as the start-tag
+for the block it closes. All plain text data must be inside at least one block.
+The plain text will not contain the characters '&lt;', '&gt;' and '/'.
+</p>
+
+<p>Blocks may be nested, but cannot overlap. So for instance, 
+<tt>"&lt;root&gt;&lt;data&gt;Hello world&lt;/data&gt;&lt;/root&gt;"</tt>
+and
+<tt>"&lt;root&gt;Hello&lt;/root&gt;&lt;root&gt;world&lt;/root&gt;"</tt>
+are valid XML documents, while
+<tt>"&lt;root&gt;&lt;data&gt;Hello world&lt;/root&gt;&lt;/data&gt;"</tt>
+and
+<tt>"&lt;root&gt;Hello&lt;/root&gt; &lt;root&gt;world&lt;/root&gt;"</tt>
+are not; the first one has overlapping blocks (the tag &lt;data&gt; must end
+before the outer tag &lt;root&gt; ends), the second has text - a space - outside
+all blocks (in this problem, spaces are treated just like any other character, see example 2).
+</p>
+
+<p>Your task is to write a program which formats an XML document, according to the following
+rules: If a block contains other blocks, the start- and end-tags for that block should
+be on lines by themselves, and all tags and text inside this block should be indented
+by 3 spaces per open tag. Otherwise the start- and end-tags should be on the same line, with the textual
+content of the block (if any) between the tags (and nothing else, except indentation,
+may appear on this line). See example 0 for clarifications.
+</p>
+
+<p>
+Create a class BadXML containing the method
+format which takes a String[] <b>doc</b>, the XML document,
+and returns a String[] containing the properly indented XML document.
+Concatenate the elements in <b>doc</b> to get the full XML document.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BadXML</td></tr><tr><td class="statText">Method:</td><td class="statText">format</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] format(String[] doc)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Spaces are treated like any other character, see example 2.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>doc</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>doc</b> will contain between 0 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The characters in the elements of <b>doc</b> will have ASCII values between 32 and 126, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The characters '&lt;', '&gt;' and '/' will only be used in tags.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A tag-name will not contain any of the characters '&lt;', '&gt;', '/' or space.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A tag-name will contain at least one character.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>doc</b> will describe a valid XML document according to the description above, and will contain at least one block.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The return value will contain at most 100 elements, and no element will contain more than 80 characters.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"&lt;article&gt;",
+ "&lt;author&gt;writer&lt;/author&gt;",
+ "&lt;headline&gt;TopCoder",
+ " ",
+ "Open 2004&lt;/headline&gt;",
+ "&lt;ingress&gt;",
+ "&lt;/ingress&gt;",
+ "&lt;paragraph&gt;",
+ "TopCoder Open is being held at &lt;st:hotel&gt;",
+ "Santa Clara Marriott&lt;/st:hotel&gt;",
+ "which lies in the northern part of ",
+ "&lt;st:state&gt;California&lt;/st:state&gt;.",
+ "&lt;/paragraph&gt;",
+ "&lt;paragraph&gt;",
+ "&amp;lbr;Image&amp;rbr;",
+ "&lt;/paragraph&gt;",
+ "&lt;/article&gt;"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "&lt;article&gt;",
+ "   &lt;author&gt;writer&lt;/author&gt;",
+ "   &lt;headline&gt;TopCoder Open 2004&lt;/headline&gt;",
+ "   &lt;ingress&gt;&lt;/ingress&gt;",
+ "   &lt;paragraph&gt;",
+ "      TopCoder Open is being held at ",
+ "      &lt;st:hotel&gt;Santa Clara Marriott&lt;/st:hotel&gt;",
+ "      which lies in the northern part of ",
+ "      &lt;st:state&gt;California&lt;/st:state&gt;",
+ "      .",
+ "   &lt;/paragraph&gt;",
+ "   &lt;paragraph&gt;&amp;lbr;Image&amp;rbr;&lt;/paragraph&gt;",
+ "&lt;/article&gt;" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>The block surrounded by the paragraph tags contain two nested blocks as well as three plain text strings. All these end up on separate lines. The other plain text strings end up on the same line as the tags in the blocks they are surrounded by.</p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"&lt;ro","ot&gt;A roo","","t node&lt;/r","oot&gt;&lt;","root&gt;Anot","her root node&lt;/ro","ot&gt;",""}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "&lt;root&gt;A root node&lt;/root&gt;",  "&lt;root&gt;Another root node&lt;/root&gt;" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">An XML document may contain several blocks at the top level.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"&lt;outer_tag&gt;",
+ "   &lt;inner_tag&gt;",
+ "      Some text",
+ "   &lt;/inner_tag&gt;",
+ "&lt;/outer_tag&gt;"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "&lt;outer_tag&gt;",
+ "      ",
+ "   &lt;inner_tag&gt;      Some text   &lt;/inner_tag&gt;",
+ "&lt;/outer_tag&gt;" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The indentation in the input is treated as space characters and is not removed.
+</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

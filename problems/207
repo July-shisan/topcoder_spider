@@ -1,0 +1,163 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>THIS PROBLEM WAS TAKEN FROM THE FINALS OF THE TOPCODER INVITATIONAL TOURNAMENT
+
+PROBLEM STATEMENT
+To fulfill one of the many demands of its members, a certain company organizing
+programming competitions must implement a routine to sort users in a list by
+several options.  The users can be sorted by handle, rating, or log in time.
+Each of the options can be sorted forwards or backwards.  
+
+Implement a class UserListSorter that contains a method sortUsersBy.  The
+method takes as its parameters a String[] and two integer sort parameters.  The
+method returns a String[] that contains the handles of the users after it sorts
+the given input String[] based on the specified sort parameters.
+
+DEFINITION
+Class Name: UserListSorter
+Method Name: sortUsersBy
+Parameters: String[], int, int
+Returns: String[]
+Method signature (be sure your method is public):  String[] sortUsersBy
+(String[] userInfo, int sortBy, int order); 
+
+TopCoder will ensure the validity of the inputs.  Inputs are valid if all of
+the following criteria are met:
+- userInfo contains between 1 and 50 elements, inclusive.
+- The elements of userInfo are in the form "HANDLE RATING LOGINTIME". 
+* HANDLE is unique and contains between 1 and 20 (inclusive) lowercase
+letters (a-z).
+   * RATING is an integer between 0 and 3000, inclusive.
+* LOGINTIME is a String of the form hh:mm where hh is between 00 and 23,
+inclusive, and mm is between 00 and 59, inclusive.
+- sortBy is an int representing how the list should be sorted.  Valid values of
+sortBy are:
+  1 for sort by handle
+  2 for sort by rating
+  3 for sort by login time
+- order will be an int that is 1 for sort forwards and 0 for sort backwards.
+
+NOTES
+- Sort Definitions:
+  * Sort by handle forwards puts the handles in alphabetical order.
+  * Sort by handle backwards puts the handles in reverse alphabetical order.
+  * Sort by rating forwards puts the ratings in increasing order.
+  * Sort by rating backwards puts the ratings in decreasing order.
+* Sort by login time forwards puts the login times in sequential order
+(earliest time at top of list).
+* Sort by login time backwards puts the login times in reverse sequential
+order.
+* If in a sort, multiple people have identical sort by values, their relative
+order in the output should be the same as their relative order in the input.
+- All letters of HANDLES are lowercase.
+
+EXAMPLES
+For the examples, users=
+{
+ "aaa 1500 10:30",
+ "a 728 10:30",
+ "aa 2898 14:32",
+}
+
+if sortBy=1 and order=1, the user names are put in alphabetical order, and the
+method returns:
+{
+ "a",
+ "aa",
+ "aaa"
+}
+
+For the examples, users=
+{
+ "dwarfsleepy 728 10:30",
+ "mitalub 2898 14:32",
+ "ads 1500 10:30",
+ "mike 1727 22:00",
+ "romana 1200 09:00",
+ "td 1299 01:00",
+ "dok 1200 17:25",
+ "chuck 1200 18:00"
+}
+
+if sortBy=1 and order=1, the user names are put in alphabetical order, and the
+method returns:
+{
+ "ads",
+ "chuck",
+ "dok",
+ "dwarfsleepy",
+ "mike",
+ "mitalub",
+ "romana",
+ "td"
+}
+
+if sortBy=1 and order=0, the user names are put in reverse alphabetical order,
+and the method returns:
+{
+ "td",
+ "romana",
+ "mitalub",
+ "mike",
+ "dwarfsleepy",
+ "dok",
+ "chuck",
+ "ads"
+}
+
+if sortBy=2 and order=1, the users should be put in order of increasing rating,
+and the method returns:
+{
+ "dwarfsleepy",
+ "romana",
+ "dok",
+ "chuck",
+ "td",
+ "ads",
+ "mike",
+ "mitalub"
+}
+
+if sortBy=2 and order=0, the users should be put in order of decreasing rating,
+and the method returns:
+{
+ "mitalub",
+ "mike",
+ "ads",
+ "td",
+ "romana",
+ "dok",
+ "chuck",
+ "dwarfsleepy"
+}
+
+if sortBy=3 and order=1, the users should be put in the sequential order they
+logged in, and the method returns:
+{
+ "td",
+ "romana",
+ "dwarfsleepy",
+ "ads",
+ "mitalub",
+ "dok",
+ "chuck",
+ "mike"
+}
+
+if sortBy=3 and order=0, the users should be put in the reverse sequential
+order of their logins, and the method returns:
+{
+ "mike",
+ "chuck",
+ "dok",
+ "mitalub",
+ "dwarfsleepy",
+ "ads",
+ "romana",
+ "td"
+}
+
+
+</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">UserListSorter</td></tr><tr><td class="statText">Method:</td><td class="statText">sortUsersBy</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] sortUsersBy(String[] param0, int param1, int param2)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,34 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><i>Note to plugin users: this problem contains images which may not display properly with some plugins</i><p>
+Figurate numbers are numbers which form a scalable pattern of nested geometric figures. The hexagonal numbers (1,6,15,28,45,66,91,120,153...) form the following figures with points arranged in a plane as nested hexagons.
+</p>
+<img src="http://www.topcoder.com/contest/problem/HexagonalSums/hexagonal.png"><p> In the year 1830, the great mathematician, Legendre, proved that every integer larger than 1719 can be formed as the sum of exactly four hexagonal numbers (although many larger integers can also be formed as the sum of fewer than four hexagonal numbers). This was pretty much the last word on the subject until much later, in the year 1990, when this result was improved to three hexagonal numbers for all "sufficiently large" integers. </p>
+<p> In this problem we ask the slightly different question: "what is the minimum number of hexagonal numbers that is required to form a particular sum?" Let's call this MLHS(n), for Minimum Length Hexagonal number Sum totaling to n. Here are the first few terms of MLHS(n):
+</p>
+<pre>
+n  MLHS(n)  a minimum length sum
+1    1      1
+2    2      1+1
+3    3      1+1+1
+4    4      1+1+1+1
+5    5      1+1+1+1+1
+6    1      6
+7    2      1+6
+8    3      1+1+6
+9    4      1+1+1+6
+10   5      1+1+1+1+6
+11   6      1+1+1+1+1+6
+12   2      6+6
+</pre>
+<p>
+For n greater than 1719, we know <tt>MLHS(n) &lt;= 4</tt> due to Legendre's result. But since our problem is different we can actually establish much tigher bounds. Six is the highest possible answer which only occurs for MLHS(11) and MLHS(26).
+<br>The largest n that has MLHS(n) = 6 is 26,  
+<br>The largest n that has MLHS(n) = 5 is 130,  
+<br>The largest n that has MLHS(n) = 4 is 146858.
+</p> 
+<p>
+Given a number, <b>N</b>, return MLHS(n), the minimum number of terms required to form a sum of N, when each term is a hexagonal number.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">HexagonalSums</td></tr><tr><td class="statText">Method:</td><td class="statText">minLength</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int minLength(int N)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>N</b> will be between 1 and 1000000 inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>26</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">1+1+1+1+6+15</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>130</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">1+28+28+28+45</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>146858</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">1+1+1326+145530</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>999999</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">6+258840+741153</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1000000</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">285390+714610</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>145530</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">145530 is the 269th hexagonal number</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

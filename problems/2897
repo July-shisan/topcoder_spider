@@ -1,0 +1,206 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>You have been charged with writing the 'type checking' module for a new 
+language called TC--.  When coding in TC--, the coder is allowed to 
+omit the types of local variables and parameters, and the return types of functions, 
+<i>only when the compiler is able to deduce those types from their usage.</i> Each 
+valid program has one and only one possible "type set".</p>
+
+<p>Sometimes a variable is used before its type is "known" when reading the 
+program from top to bottom, but that should not deter the type checking module 
+you're writing. Once the type of a variable is known, it is retroactively 
+effective to the start of the function, and proactively effective to the 
+end of the function.  This applies to local variables, formal parameters, 
+and function return types.</p>
+
+<p>Informally the grammar can be defined as:</p>
+<ul><li>- A program is one or more function definitions.</li>
+<li>- A function definition always includes the name of the function, zero or more parameters with optional type definitions, and an optional return type. Every function will return a value, even if it is not explicitly declared. After the function definition, zero or more local variables will be defined,
+then zero or more program statements, then exactly one return statement.  Example:
+<pre>
+	function a(b:string)
+</pre>
+</li>
+<li>- Local variable definitions.  Variable definitions are optional, but when present, <i>must</i> specify the variable name <i>and</i> type:
+<pre>
+	a:int
+	b:string
+</pre>
+</li>
+<li>- Function call.  There can be zero or more actual arguments, which always match
+	the type and number of formal parameters. <i>All arguments are variables only and never
+        integer or string constants, nor expressions.</i>
+<pre>
+	a=b()
+	c=d(e,f,g)
+</pre>
+</li>
+<li>- Assignment.
+<pre>
+	a=12345
+	s="this is 'a' string constant!"
+	b=c
+</pre>
+</li>
+<li>- Expressions: (note, you cannot mix <tt>int</tt>s and <tt>string</tt>s, and cannot use constants in expressions)
+<pre>
+	a=b+c
+	a=b-c
+	a=b/c
+	a=b*c
+</pre>
+</li>
+<li>- Return statement: (you can return a variable, or an <tt>int</tt> or <tt>string</tt> constant)
+<pre>
+	return x
+</pre>
+</li>
+</ul><p>Function calls, assignments and expressions are all instances of "program statements" and can occur in any order within the function. A return statement will always be the last statement in a function.</p>
+
+<p>Note that there are only two data types in TC--: <tt>int</tt> and 
+<tt>string</tt>.  You cannot mix <tt>int</tt>s and 
+<tt>string</tt>s in an assignment or an expression.  
+Only the + and - operators are valid on <tt>string</tt>s, whereas all four operators are valid on <tt>int</tt>s. 
+Both arguments to a binary operator must be variables or parameters 
+of the <i>same type</i> (no constants in expressions).</p>
+
+<p>For example (line numbers and whitespace added for clarity):</p>
+<pre>
+	 1  function f(a,b,c)
+	 2     e:int
+	 3     g=h(a)
+	 4     e=b+c
+	 5     return c
+	 6  
+	 7  function h(p:string):string
+	 8     return p
+</pre>
+
+<p>The TC-- compiler will deduce the following types:</p>
+<ul><li>- The type of parameter <tt>a</tt> is <tt>string</tt> from the call on line 
+3 to function <tt>h</tt> - whose argument must be a <tt>string</tt>.
+</li>
+<li>- The type of parameters <tt>b</tt> and <tt>c</tt> is <tt>int</tt>, since <tt>e</tt> is 
+declared as an <tt>int</tt> on line 2 and you can only add 
+<tt>int</tt>s together, on line 4.
+</li>
+<li>- Since <tt>c</tt> is an <tt>int</tt>, and function f returns it 
+on line 5, we know that the return type of <tt>f</tt> is  
+<tt>int</tt>.
+</li>
+<li>- Therefore the complete signature of function <tt>f</tt> is:
+<pre>
+	function f(a:string,b:int,c:int):int
+</pre>
+</li>
+<li>- The type of local variable <tt>g</tt> must be <tt>string</tt> because on line 3 
+it calls function <tt>h</tt>, which returns a <tt>string</tt>, defined 
+on line 7. (Note: the fact that <tt>p</tt> is declared as a 
+<tt>string</tt> on line 7, and returned on line 8, is another way to 
+determine that the return type of <tt>h</tt> is <tt>string</tt>.)
+</li>
+</ul><p>Write a method, deduceTypes, which is given a valid TC-- <b>program</b> 
+which follows the grammar defined above, and determines each function's 
+complete signature and the types of all local variables in each function.  The 
+program provided will be syntactically valid, and will be guaranteed to 
+have only one unique type assignment.  Your method should return a String[] 
+which contains two types of entries:</p>
+<ol><li>1. function signatures, <i>in the order they were defined</i> in <b>program</b>, 
+in the following format:
+<pre>
+	function name(param:type,...):type
+</pre>
+	The only whitespace should be a single space between the word 
+"<tt>function</tt>" (quotes added for clarity) and the name of the 
+function.  As listed in the constraints section, all function and
+parameter names are single letters, lower case.
+<br><br></li>
+<li>2. local variable declarations, in <i>alphabetical order</i> within each function, 
+in the following format:
+<pre>
+	var:type
+</pre>
+	There should be no whitespace.  <tt>type</tt> should be either 
+"<tt>string</tt>" or "<tt>int</tt>" (quotes added for clarity). As 
+listed in the constraints section, all variable names are single letters,
+lower case.
+</li>
+</ol><p>Therefore, for the above example, your output should be:</p>
+<pre>
+	function f(a:string,b:int,c:int):int
+	e:int
+	g:string
+	function h(p:string):string
+</pre>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TCMinMin</td></tr><tr><td class="statText">Method:</td><td class="statText">deduceTypes</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] deduceTypes(String[] program)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Function names may be reused as parameter or variable names.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Variables can be used before they are assigned a value.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A formal grammar for the input can be found at the end of the problem.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There will be at least one function defined in <b>program</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There will be at most one definition for each function (no overloading).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>program</b> will contain between 2 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>program</b> contain between 3 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All variable, parameter and function names will be single letters in lower case.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Integer constants range from zero (inclusive) to positive infinity, subject to line length constraints</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">String constants will always start and end with double quotes</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">String constants may contain any upper or lower case letter, digit, space, or any of the following characters: <pre>!@#$%^*()_+`~-={}|;:,.?</pre></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Spaces (outside quotes) will only be present in two locations: 1.  After the <tt>function</tt> keyword (exactly one single space will always be present) 2. After the <tt>return</tt> keyword (exactly one single space will always be present)</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The program provided will be syntactically valid, and will be guaranteed to have only one unique type assignment.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The number of arguments in each function call will always match the number of formal parameters defined for that function.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Variable names will not 'shadow' parameter names, or vice versa.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"function f(a,b,c)",
+	"e:int",
+	"g=h(a)",
+	"e=b+c",
+	"return c",
+"function h(p:string):string",
+	"return p"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "function f(a:string,b:int,c:int):int",
+ "e:int",
+ "g:string",
+ "function h(p:string):string" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example from above. (Note that the indenting was added for clarity only, and is NOT within the strings themselves.)</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"function a()",
+	"return 0"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "function a():int" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the smallest possible TC-- program.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"function a(b:int):int",
+	"c:int",
+	"return c"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "function a(b:int):int",  "c:int" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Already a fully-specified program; the compiler doesn't have much to do.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"function f(a,b,c)",
+	"g=a(a)",
+	"f=b+c",
+	"return f",
+"function a(a:string)",
+	"return a",
+"function b()",
+	"a=f(b,a,c)",
+	"a=0123456789012345678901234567890",
+	"return a"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "function f(a:string,b:int,c:int):int",
+ "f:int",
+ "g:string",
+ "function a(a:string):string",
+ "function b():int",
+ "a:int",
+ "b:string",
+ "c:int" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"function s(s)",
+"s=s*s",
+"return s",
+"function f():int",
+"a=f()",
+"return b"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "function s(s:int):int",  "function f():int",  "a:int",  "b:int" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Remember, * and / are only for integers, not strings.
+
+<hr><p>For your reference, the BNF grammar for TC-- is:</p>
+<pre>
+	program ::= function | program function
+	function ::= functionDef optionalLocalVars optionalStatements returnStmt
+	functionDef ::= 'function' var '(' optionalParams ')' | 
+			'function' var '(' optionalParams ')'  ':' type
+	optionalParams ::= params | e
+	params ::= param | param ',' params
+	param ::= var | var ':' type
+	optionalLocalVars ::= localVars | e
+	localVars ::= localVar | localVar localVars
+	localVar ::= var ':' type
+	type ::= 'int' | 'string'
+	optionalStatements ::= statements | e
+	statements ::= statement | statement statements
+	statement ::= funCall | assign | expression
+	funCall ::= var '=' var '(' optionalArgs ')'
+	optionalArgs ::= args | e
+	args ::= var | var ',' args
+	assign ::= var '=' intConstant | var '=' stringConstant | var '=' var
+	expression ::= var '=' var op var 
+	returnStmt ::= 'return' var | 'return' intConstant | 'return' stringConstant
+	op ::= '+' | '-' | '*' | '/'
+	intConstant ::= 0..infinity
+	stringConstant ::= '"' chars '"'
+	chars ::= char | chars char
+	char ::= [a-zA-Z0-9!@#$%^*()_+`~-={}|;:,.? ]
+	var ::= [a-z]
+</pre>
+(Note, 'e' means empty and [] is used for grouping)
+</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

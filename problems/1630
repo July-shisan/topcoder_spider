@@ -1,0 +1,135 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Any irrational number greater than 1 can be written as
+</p>
+<pre>
+    Q[0] +             1
+           ------------------------
+           Q[1] +         1
+                  -----------------
+                  Q[2] +      1
+                         ----------
+                         Q[3] +  1
+                                ---
+                                ...
+</pre>
+for some infinite sequence <tt>Q[0]</tt>,<tt>Q[1]</tt>,<tt>Q[2]</tt>,<tt>Q[3]</tt>,... where each <tt>Q[i]</tt> is a positive integer.  This method of writing a number is called a <i>continued fraction</i>, and each <tt>Q[i]</tt> is called a <i>partial quotient</i>.  A remarkable
+fact from number theory is that, whenever the square root of a non-square positive integer is written in this form, the sequence of
+partial quotients is periodic.  In other words, there exists some number <tt>K</tt> such that <tt>Q[J+K] = Q[J]</tt> for all <tt>J &gt; 0</tt>.  Notice that the repeating pattern begins at <tt>Q[1]</tt>; the initial partial quotient, <tt>Q[0]</tt>, is not involved in the repetition.
+
+<p>
+We will represent such a periodic continued fraction as the finite sequence <tt>{Q[0],Q[1],...,Q[K]}</tt>, where 
+<tt>K</tt> is the size of the shortest repeating pattern. 
+For example, the square root of 2 has partial quotients 1,2,2,2,... and would be written as <tt>{1,2}</tt>.  Similarly, the square root of 8 has partial quotients 2,1,4,1,4,... and would be written as <tt>{2,1,4}</tt>.
+Your task is to take a non-square positive integer <b>n</b>, and calculate its representation as a periodic continued fraction.
+Several sample calculations will be presented from which you should be able to generalize an algorithm.  Although you are not
+required to follow the same algorithm as the sample calculations, it is highly suggested that you do so.  Note that, for the purposes
+of this problem, the periodic continued fraction will always contain fewer than 100 elements.
+</p>
+
+<p>
+Here is a sample calculation showing that the square root of 2 is <tt>{1,2}</tt>:
+</p>
+<pre>
+  Step 0: Calculate Q[0] from sqrt(2).
+
+      sqrt(2) = <b>1</b> + sqrt(2)-1
+                    ---------
+                        1
+
+      Q[0] is 1.  The remainder is (sqrt(2)-1)/1.
+
+  Step 1: Calculate Q[1] from (sqrt(2)-1)/1.
+
+      sqrt(2)-1         1                    1                  1               1
+      --------- = ------------- = --------------------- = ------------- = -------------
+          1             1             1       sqrt(2)+1     sqrt(2)+1     <b>2</b> + sqrt(2)-1
+                    ---------     --------- * ---------     ---------         ---------
+                    sqrt(2)-1     sqrt(2)-1   sqrt(2)+1          1                1
+
+      Q[1] is 2.  The remainder is (sqrt(2)-1)/1.
+
+  Step 2: Calculate Q[2] from (sqrt(2)-1)/1.  (Same as Step 1!)
+</pre>
+<p>
+Substituting the result of Step 1 into the result of Step 0, we get
+</p>
+<pre>
+  sqrt(2) = 1 +    1
+                -------
+                2 + ...
+</pre>
+and at this point the pattern repeats, so the square root of 2 is <tt>{1,2}</tt>.
+
+<p>
+Notice that, at every step, the partial quotient is chosen to force the remainder between 0 and 1 (exclusive), and that there
+is only one way to do this.  Also notice that,
+in Step 1, we made essential use of the identity <tt>(A-B)*(A+B) = A*A - B*B</tt>. 
+</p>
+
+<p>
+Here is a more elaborate example, showing that the square root of 41 is <tt>{6,2,2,12}</tt>:
+</p>
+<pre>
+Step 0: Calculate Q[0] from sqrt(41).
+
+    sqrt(41) = <b>6</b> + sqrt(41)-6
+                   ----------
+                        1
+
+    Q[0] is 6.  The remainder is (sqrt(41)-6)/1.
+
+Step 1: Calculate Q[1] from (sqrt(41)-6)/1.
+
+    sqrt(41)-6          1                    1                     1                1
+    ---------- = -------------- = ----------------------- = -------------- = --------------
+         1              1              1       sqrt(41)+6     sqrt(41)+6     <b>2</b> + sqrt(41)-4
+                   ----------     ---------- * ----------     ----------         ----------
+                   sqrt(41)-6     sqrt(41)-6   sqrt(41)+6          5                  5
+
+    Q[1] is 2.  The remainder is (sqrt(41)-4)/5.
+
+Step 2: Calculate Q[2] from (sqrt(41)-4)/5.
+
+    sqrt(41)-4          1                    1                     1                1
+    ---------- = -------------- = ----------------------- = -------------- = --------------
+         5              5              5       sqrt(41)+4     sqrt(41)+4     <b>2</b> + sqrt(41)-6
+                   ----------     ---------- * ----------     ----------         ----------
+                   sqrt(41)-4     sqrt(41)-4   sqrt(41)+4          5                  5
+
+    Q[2] is 2.  The remainder is (sqrt(41)-6)/5.
+
+Step 3: Calculate Q[3] from (sqrt(41)-6)/5.
+
+    sqrt(41)-6          1                    1                     1                1
+    ---------- = -------------- = ----------------------- = -------------- = ---------------
+         5              5              5       sqrt(41)+6     sqrt(41)+6     <b>12</b> + sqrt(41)-6
+                   ----------     ---------- * ----------     ----------          ----------
+                   sqrt(41)-6     sqrt(41)-6   sqrt(41)+6          1                   1
+
+    Q[3] is 12.  The remainder is (sqrt(41)-6)/1.
+
+Step 4: Calculate Q[4] from (sqrt(41)-6)/1.  (Same as Step 1!)
+</pre>
+
+<p>
+Substituting the result of each step into the result of the previous step, we get
+</p>
+<pre>
+  sqrt(41) = 6 +       1
+                ----------------
+                2 +      1
+                    ------------
+                    2 +    1
+                        --------
+                        12 + ...
+</pre>
+and at this point the pattern repeats, so the square root of 41 is <tt>{6,2,2,12}</tt>.
+
+<p>
+Notice that the remainders are always of the form <tt>(sqrt(<b>n</b>)-<i>d</i>)/<i>m</i></tt>, for some integers <tt><i>d</i></tt> and <tt><i>m</i></tt>.  It might sometimes appear that the remainder has the form <tt><i>c</i>*(sqrt(<b>n</b>)-<i>d</i>)/<i>m</i></tt>, but
+it will always be possible to eliminate the <i>c</i>.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ContinuedFractions</td></tr><tr><td class="statText">Method:</td><td class="statText">squareRoot</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] squareRoot(int n)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Because we have restricted each partial quotient to be a positive integer, each square root has a unique representation as a periodic continued fraction.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> is between 2 and 1000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> is not a square number.  For example, <b>n</b> is not 4, 9, or 16.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 1,  2 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The first example above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>41</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 6,  2,  2,  12 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The second example above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>63</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 7,  1,  14 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>158</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 12,  1,  1,  3,  12,  3,  1,  1,  24 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>512</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 22,  1,  1,  1,  2,  6,  11,  6,  2,  1,  1,  1,  44 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

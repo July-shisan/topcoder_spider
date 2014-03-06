@@ -1,0 +1,56 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+In mathematics, we don't bother to parenthesize every expression.  
+For example, we write "<tt>a*b+c*d</tt>" instead of "<tt>((a*b)+(c*d))</tt>".
+To make sense of unparenthesized expressions, we depend on two ideas: <i>precedence</i> and
+<i>associativity</i>.  For this problem, we will only consider the operations of exponentiation ('^'),
+multiplication ('*'), division ('/'), addition ('+'), and subtraction ('-').
+</p>
+
+<p>
+There are three levels of precedence.  Exponentiation has the highest precedence,
+multiplication and division have the middle level of precedence, 
+and addition and subtraction have the lowest level of precedence. 
+Unless overridden by parentheses, an operator with a higher level of precedence is executed before an
+operator with a lower level of precedence.  For example, "a+b*c" means "a+(b*c)", and "d^e/f" means
+"(d^e)/f".
+</p>
+
+<p>
+The order of execution among unparenthesized operators at the same level of precedence is determined by associativity.
+Exponentiation is <i>right associative</i>, meaning that, when there are several exponentiation operators, the rightmost is
+executed first.  For example, "a^b^c" means "a^(b^c)".  Division and subtraction are <i>left associative</i>, meaning that, when
+there are several divisions or several subtractions, the leftmost is executed first.  For example, "a-b-c" means "(a-b)-c".
+Multiplication and addition are <i>associative</i>, meaning that, when there are several 
+multiplication operators or several addition operators, it doesn't matter which one is executed first.  
+For example, "a*b*c" can mean either "(a*b)*c" or "a*(b*c)" because the two parenthesizations are equivalent.
+</p>
+
+<p>
+When mixing different unparenthesized operators at the same level of precedence, either multiplication and division or 
+addition and subtraction, the interplay between associativity and left associativity is complicated.
+The operators can be executed in any order as long as each division or subtraction is executed before
+the operator to its immediate right.
+For example, "a*b/c*d" can mean "((a*b)/c)*d" or "(a*(b/c))*d" or "a*((b/c)*d)" but not "(a*b)/(c*d)" or "a*(b/(c*d))".
+Similarly, "a-b+c-d" can mean "((a-b)+c)-d" or "(a-b)+(c-d)" but not "a-((b+c)-d)" or "a-(b+(c-d))" or "(a-(b+c))-d".
+</p>
+
+<p>
+You will be given a fully parenthesized expression as a String <b>expr</b> satisfying the following grammar:
+</p>
+<pre>
+   &lt;expr&gt; = &lt;lowercase letter&gt;
+          | "(" &lt;expr&gt; &lt;op&gt; &lt;expr&gt; ")"
+   &lt;op&gt;   = "^" | "*" | "/" | "+" | "-"
+</pre>
+No letter will be used more than once in the same expression.
+Your task is to remove all unnecessary parentheses and return the resulting expression, also as a String.
+The expression cannot be changed in any way other than removing parentheses.  For example, "(a-(b+c))" cannot be changed
+to "a-b-c".  Similarly, you should make no use of algebraic laws other than those described above.  For example,
+"(a-(b-(c-d)))" cannot be changed to "a-(b-c)-d".
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ParenReduction</td></tr><tr><td class="statText">Method:</td><td class="statText">pretty</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String pretty(String expr)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>expr</b> contains between 1 and 49 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of <b>expr</b> is a lowercase letter ('a'-'z'), a parenthesis ('(',')'), or a binary operator ('^','*','/','+','-').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No letter appears more than once in <b>expr</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>expr</b> satisfies the grammar given in the problem statement.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"(a-(b/(c^d)))"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "a-b/c^d"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Exponentiation has higher precedence than division and division has higher
+precedence than subtraction.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"(e*((f+(g+h))*i))"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "e*(f+g+h)*i"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Multiplication has higher precedence than addition.  Both are associative.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"(((a-(b-c))-d)^((e/f)/(g/h)))"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "(a-(b-c)-d)^(e/f/(g/h))"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Subtraction and division are both left associative.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"x"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "x"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"((a+((l-g)+o))^((r/i)*((t/h)*m)))"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "(a+l-g+o)^(r/i*t/h*m)"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"(((((t-(k/(o*m)))*(c*f))*((n/j)+(v-z)))^l)/(x-h))"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "((t-k/(o*m))*c*f*(n/j+v-z))^l/(x-h)"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

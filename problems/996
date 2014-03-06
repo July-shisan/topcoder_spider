@@ -1,0 +1,33 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+A traveling salesman has recently decided to go international and sell his
+wares around the globe.  He has done in depth research and has come up with a
+list of cities which he thinks will provide the best market for his goods.  In
+planning his trip, the salesman wants to minimize the total distance he has to
+travel because he does not particularly like traveling (which is unfortunate
+for him, as he is a traveling salesman) and furthermore, he figures
+the less distance he has to travel, the cheaper his trip will be.  However,
+this salesman is not particularily good at math, and so you must write a
+computer program to help him find his way in the least distance.
+</p><p>
+You will be given a set of cities defined by their longitudes and latitudes.
+In addition, you will be given the radius of the planet that this traveling
+salesman resides on.  Assume that there are direct flights, both ways, between
+every pair of cities that the salesman wants to visit, and that the flights
+follow the shortest path possible (over the surface of the planet).  In
+addition, the first element of the input String[] will be the city in which the
+salesman lives, and thus his trip must start and end at this city.
+</p><p>
+Each city is defined by two numbers, a latitude and a longitude.  The latitude
+is the number of degrees above the equator, with 90 being the north pole, and
+-90 being the south pole.  The longitude is the number of degrees east or west
+of some arbitrary, predefined point.  Thus, 90 degrees east is one quarter of
+the way around the globe in the eastern direction.
+</p><p>
+If the result is not an integer, round it to the nearest integer (.5 rounds up)
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Travel</td></tr><tr><td class="statText">Method:</td><td class="statText">shortest</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int shortest(String[] cities, int radius)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Assume the planet is a perfect sphere.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">To find the cartesion coordinates of a city, assuming the center of the planet is at (0,0,0), use the following formulas:<br>x = r*cos(latitude)*cos(longitude)<br>y = r*cos(latitude)*sin(longitude)<br>z = r*sin(latitude)</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>cities</b> contains between 2 and 9 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>cities</b> represents a unique point on the globe.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>cities</b> is formatted as "&lt;latitude&gt; &lt;longitude&gt;" where &lt;latitude&gt; is an integer in the range -90 to 90, inclusive, and &lt;longitude&gt; is an integer in the range -180 to 180, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>radius</b> is an integer between 1 and 1,000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">to avoid rounding errors, the shortest path, prior to rounding, will not be within 0.001 of &lt;x&gt;+0.5 for any integer &lt;x&gt;.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0 0","0 1"}</pre></td></tr><tr><td class="statText"><pre>1000</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 35</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The two cities are located one degree apart at the same latitude</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0 0","0 1","0 -1","-1 0","1 0","-1 -1","1 1","1 -1","-1 1"}</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"40 -82","-27 -59","-40 48"
+,"26 -12","-31 -37","-30 42"
+,"-36 -23","-26 71","-19 83","8 63"}</pre></td></tr><tr><td class="statText"><pre>698</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4505</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

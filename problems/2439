@@ -1,0 +1,146 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><i>Warning: This problem statement makes extensive use of html superscripts and subscripts and will not be displayed properly with plugins. Use the applet window to read this problem statement.</i>
+<p>
+A complex number can be represented by a+bi where a and b are real numbers and i is the square root of negative one (ie. i*i = -1), a so-called "imaginary" number. "a" is called the "real part" of the complex number, and "bi" is called the "imaginary part." Complex numbers where the real part and the imaginary part (ignoring the i) are both integers are called complex integers, or Gaussian integers.  Two complex integers a+bi and c+di can be multiplied yielding a complex integer (ac-bd)+(ad+bc)i. Once we have complex integers and complex integer multiplication defined, one wonders if there are complex primes similar to the primes of the positive integers. Yes there are, but they are a little different.</p> 
+
+
+<p> Let us pause to define a few terms here.</p>
+<ul><li> A "prime number" is a positive integer greater than one that has no positive integer factors other than one and itself.</li>
+<li>A "composite number" is a positive integer that has at least one positive integer factor other than one and itself.</li>
+<li>The "norm" of the complex number z, where z=a+bi, is written |z|<sup>2</sup> and is defined as a<sup>2</sup>+b<sup>2</sup> (this is actually the L<sub>2</sub> norm). </li>
+<li>F and G are "complex integer factors" of z if F and G are complex integers and F * G = z (F may equal G).</li>
+</ul><p> Complex Integers can be divided into four categories.</p>
+<ul><li>
+Complex Zeros, 0, satisfy the equation z * 0 = 0 for all complex numbers z. There is one complex zero, (0+0i) </li>
+<li>Complex Units, I, satisfy the equation |z * I|<sup>2</sup> = |z|<sup>2</sup> for all complex numbers z. There are four complex integers which are complex units (0+1i), (0-1i), (1+0i) and (-1+0i)</li>
+<li>Complex Primes, P, have |P|<sup>2</sup> &gt; 1 and have no complex integer factor, F, such that |P|<sup>2</sup> &gt; |F|<sup>2</sup> &gt; 1 </li>
+<li>Complex Composites, C, have at least one complex integer factor, F, such that |C|<sup>2</sup> &gt; |F|<sup>2</sup> &gt; 1 </li>
+</ul><p>After a bit of not particularly obvious algebraic manipulation we find the following somewhat easy-to-test rules:</p>
+
+<ul><li>For complex integers, z = a+bi</li>
+<li>if |z|<sup>2</sup> = 0, then z is a complex zero.</li>
+<li>if |z|<sup>2</sup> = 1, then z is a complex unit.</li>
+<li>if |z|<sup>2</sup> &gt; 1 , and p is any prime number that also satisfies p % 4 = 3</li>
+<li><ul><li>  if a (or b) is zero and b (or a) is equal to some p or -p, then z is a complex prime.</li>
+<li>  if a (or b) is zero and b (or a) is not equal to any p or -p, then z is a complex composite.</li>
+<li>  if a and b are both non-zero and |z|<sup>2</sup> is a prime number then z is a complex prime.</li>
+<li>  if a and b are both non-zero and |z|<sup>2</sup> is a composite number then z is a complex composite .</li>
+</ul></li></ul><p>
+Given two int[]s, <b>realPart</b> and <b>imaginaryPart</b>, return a String[] where
+the k'th element of the answer is "zero", "unit", "prime", or "composite"  corresponding to the complex integer (realPart[k]+imaginaryPart[k]i)
+</p>
+
+<p>For example:</p>
+<pre>
+{ 0,     1,       0,     1,       -1,      2,           0,       0,          -3}
+{ 0,     0,      -1,     1,        1,      0,          -3,       5,          -2}
+returns
+{"zero", "unit", "unit", "prime", "prime", "composite", "prime", "composite", "prime"}
+</pre>
+Some factorizations of the composites are: <ul><li>(2+0i) = (1+1i)*(1-1i)</li>
+<li>(0+5i) = (1+2i)*(2+1i)</li>
+</ul></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ComplexIntegers</td></tr><tr><td class="statText">Method:</td><td class="statText">classify</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] classify(int[] realPart, int[] imaginaryPart)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>realPart</b> will contain between 1 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>imaginaryPart</b> will contain the same number of elements as <b>realPart</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>realPart</b> will be between -10000 and 10000 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>imaginaryPart</b> will be between -10000 and 10000 inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 0,     1,       0,     1,       -1,      2,           0,       0,          -3}</pre></td></tr><tr><td class="statText"><pre>{ 0,     0,      -1,     1,        1,      0,          -3,       5,          -2}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "zero",
+ "unit",
+ "unit",
+ "prime",
+ "prime",
+ "composite",
+ "prime",
+ "composite",
+ "prime" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example from above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{2,3,4,5,2,3,4,5,2,3,4,5,2,3,4,5}</pre></td></tr><tr><td class="statText"><pre>{2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "composite",
+ "prime",
+ "composite",
+ "prime",
+ "prime",
+ "composite",
+ "composite",
+ "composite",
+ "composite",
+ "composite",
+ "composite",
+ "prime",
+ "prime",
+ "composite",
+ "prime",
+ "composite" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{0,0,0,0,0,0,0,0,0,-19,23,29,31,37,-41}</pre></td></tr><tr><td class="statText"><pre>{15,2,-3,5,-7,11,-13,17,0,0,0,0,0,0,0}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "composite",
+ "composite",
+ "prime",
+ "composite",
+ "prime",
+ "prime",
+ "composite",
+ "composite",
+ "zero",
+ "prime",
+ "prime",
+ "composite",
+ "prime",
+ "composite",
+ "composite" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{99,-39,0,0,97,1003,9998,1119}</pre></td></tr><tr><td class="statText"><pre>{0,0,35,-129,-2,-232,9997,1120}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "composite",
+ "composite",
+ "composite",
+ "composite",
+ "prime",
+ "prime",
+ "prime",
+ "prime" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{0,  0,0,1,-1,   1,1,-1,-1,   2,-2,0,0,  1,1,2,2,-1,-1,-2,-2, 
+     3,-3,0,0,   1,1,3,3,-1,-1,-3,-3,    2,2,-2,-2,  0,0,4,-4,
+                 1,1,4,4,-1,-1,-4,-4 }</pre></td></tr><tr><td class="statText"><pre>{0,  1,-1,0,0,   1,-1,1,-1,   0,0,2,-2,  2,-2,1,-1,2,-2,1,-1,  
+     0,0,-3,3,   3,-3,1,-1,3,-3,1,-1,     2,-2,2,-2,  4,-4,0,0,
+                 4,-4,1,-1,4,-4,1,-1 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "zero",
+ "unit",
+ "unit",
+ "unit",
+ "unit",
+ "prime",
+ "prime",
+ "prime",
+ "prime",
+ "composite",
+ "composite",
+ "composite",
+ "composite",
+ "prime",
+ "prime",
+ "prime",
+ "prime",
+ "prime",
+ "prime",
+ "prime",
+ "prime",
+ "prime",
+ "prime",
+ "prime",
+ "prime",
+ "composite",
+ "composite",
+ "composite",
+ "composite",
+ "composite",
+ "composite",
+ "composite",
+ "composite",
+ "composite",
+ "composite",
+ "composite",
+ "composite",
+ "composite",
+ "composite",
+ "composite",
+ "composite",
+ "prime",
+ "prime",
+ "prime",
+ "prime",
+ "prime",
+ "prime",
+ "prime",
+ "prime" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

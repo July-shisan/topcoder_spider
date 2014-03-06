@@ -1,0 +1,58 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">
+A collection of particles is contained in a linear chamber.  They all have the
+same speed, but some are headed toward the right and others are headed toward
+the left. These particles can pass through each other without disturbing the
+motion of the particles, so all the particles will leave the chamber relatively
+quickly.
+<p>
+We will be given the initial conditions
+by a String <b>init</b> containing at each position an 'L' for a leftward moving particle,
+an 'R' for a rightward moving particle, or a '.' for an empty location. <b>init</b>
+shows all the positions in the chamber.
+Initially, no location in the chamber contains two particles passing through
+each other.
+</p><p>
+We would like an animation of the process. At each unit of time, we want a
+string showing occupied locations with an 'X' and unoccupied locations with a
+'.'. Create a class Animation that contains a method animate that is given an int 
+<b>speed</b> and a String <b>init</b> giving the initial conditions. The <b>speed</b> is the
+number of positions each particle moves in one time unit.
+</p><p>
+The method will return
+a String[] in which each successive element shows the occupied locations at 
+the next time unit.  The first element of the return should show the occupied
+locations at the initial instant (at time = 0) in the 'X','.' format. The last element
+in the return should show the empty chamber at the first time that it becomes
+empty.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Animation</td></tr><tr><td class="statText">Method:</td><td class="statText">animate</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] animate(int speed, String init)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>speed</b> will be between 1 and 10 inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>init</b> will contain between 1 and 50 characters inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each character in <b>init</b> will be '.' or 'L' or 'R'</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre> "..R...." </pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "..X....",  "....X..",  "......X",  "......." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   The single particle starts at the 3rd position, moves to the 5th,
+   then 7th, and then out of the chamber.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>"RR..LRL" </pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "XX..XXX",  ".X.XX..",  "X.....X",  "......." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   At time 1, there are actually 4 particles in the chamber, but two
+   are passing through each other at the 4th position</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>"LRLR.LRLR"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "XXXX.XXXX",  "X..X.X..X",  ".X.X.X.X.",  ".X.....X.",  "........." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">At time 0 there are 8 particles.  At time 1, 
+there are still 6 particles, but only 4 positions are occupied since particles are passing through each other.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>"RLRLRLRLRL"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "XXXXXXXXXX",  ".........." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">These particles are moving so fast that they all exit the chamber by time 1.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>"..."</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "..." }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>"LRRL.LR.LRR.R.LRRL."</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "XXXX.XX.XXX.X.XXXX.",
+ "..XXX..X..XX.X..XX.",
+ ".X.XX.X.X..XX.XX.XX",
+ "X.X.XX...X.XXXXX..X",
+ ".X..XXX...X..XX.X..",
+ "X..X..XX.X.XX.XX.X.",
+ "..X....XX..XX..XX.X",
+ ".X.....XXXX..X..XX.",
+ "X.....X..XX...X..XX",
+ ".....X..X.XX...X..X",
+ "....X..X...XX...X..",
+ "...X..X.....XX...X.",
+ "..X..X.......XX...X",
+ ".X..X.........XX...",
+ "X..X...........XX..",
+ "..X.............XX.",
+ ".X...............XX",
+ "X.................X",
+ "..................." }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

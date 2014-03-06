@@ -1,0 +1,23 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><i>*** You may only submit a given problem once - no resubmissions will be accepted. ***</i><br><br>
+An arithmetic series consists of a sequence of terms such that each term
+minus its immediate predecessor gives the same result. For example,
+the sequence 3,7,11,15 is the terms of the arithmetic series 3+7+11+15; each term minus its predecessor
+equals 4. (Of course there is no requirement on the first term since it
+has no predecessor.)
+<p>
+Given a collection of integers, we want to find the longest arithmetic 
+series that can be formed by choosing a sub-collection (possibly the entire collection).
+Create a class
+ASeries that contains a method longest that is given a int[] <b>values</b> and 
+returns the length of the longest arithmetic series that can be 
+formed from <b>values</b>.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ASeries</td></tr><tr><td class="statText">Method:</td><td class="statText">longest</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int longest(int[] values)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>values</b> will contain between 2 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>values</b> will be between -1,000,000 and 1,000,000 inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{3,8,4,5,6,2,2}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+No arithmetic series using these values is longer than 2,3,4,5,6.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{-1,-5,1,3}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">-1, 1, 3 is an arithmetic series (so is 3,-1,-5).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{-10,-20,-10,-10}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">-10,-10,-10 is an arithmetic series.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,114 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+A certain software developer has decided to play a web-based role playing game in his spare time. However, it gets very tedious at certain points, and he wants to write a robot to play it for him during these tedious times. To work towards that, he has mapped a large section of the game. Simply programming a robot to go from a specific starting point and execute a sequence of events is too simple, so he wants to make it smarter, by being able to determine where it is on the map. The only way to describe a given location on the map is by which directions the player can move from that location - any combination of north, south, east, and west.
+</p>
+<p>
+The developer has programmed the robot to move around several times from its initial location, in order to get its bearings.
+</p>
+<p>
+You are to write a class RPGRobot, with a method which takes a String[] <b>map</b> detailing the area mapped out by the developer, and another String <b>movements</b>, which indicates the first several movements by the robot, and in which directions the robot could have moved from each location visited.
+</p>
+<p>
+<b>map</b> will be formatted according to the following grammar (single quotes are for clarification only):
+</p>
+<pre><tt>
+map             ::= &lt;EVENROW&gt; (&lt;ODDROW&gt; &lt;EVENROW&gt;)+
+EVENROW         ::= &lt;ASTERISK&gt; (&lt;HORIZONTAL WALL&gt; &lt;ASTERISK&gt;)+
+ODDROW          ::= &lt;VERTICAL WALL&gt; (&lt;GAMESPACE&gt; &lt;VERTICAL WALL&gt;)+
+HORIZONTAL WALL ::= '-' OR &lt;SPACE&gt;
+VERTICAL WALL   ::= '|' OR &lt;SPACE&gt;
+SPACE           ::= ' '
+ASTERISK        ::= '*'
+GAMESPACE       ::= ' '
+</tt></pre>
+
+<p>
+In the above grammar, a &lt;HORIZONTAL WALL&gt; or &lt;VERTICAL WALL&gt; that is a &lt;SPACE&gt; indicates that the player can move between the two adjacent &lt;GAMESPACE&gt;s. Otherwise, the player cannot move between adjacent &lt;GAMESPACE&gt;s.
+The map is given in order from west to east, north to south. That is, the first element of <b>map</b> is the northernmost row in the map, and the first character of the first element of <b>map</b> is the northwesternmost character in the map.
+</p>
+
+<p>
+<b>movements</b> will be formatted according to the following grammar (single quotes are for clarification only):
+</p>
+<pre><tt>
+movements  ::= &lt;DIRECTIONS&gt; (',' &lt;MOVE&gt; ' ' &lt;DIRECTIONS&gt;)*
+DIRECTIONS ::= ('' OR 'N') ('' OR 'S') ('' OR 'W') ('' OR 'E')
+MOVE       ::= 'N' OR 'S' OR 'W' OR 'E'
+</tt></pre>
+
+<p>
+The data represented by <b>movements</b> will be self-consistent. i.e., if the robot moves east from location X, it must be able to move back west, and moving west would take it back to location X. Further, if <b>movements</b> indicates that the robot moves east from location X, east must be in the &lt;DIRECTIONS&gt; element for location X.
+</p>
+
+<p>
+The first &lt;DIRECTIONS&gt; element indicates what directions the player can move from the initial location. Each subsequent &lt;MOVE&gt;,&lt;DIRECTIONS&gt; pair indicates that the robot moved in the &lt;MOVE&gt; direction, and from where it ended up, it could move in the directions specified by &lt;DIRECTIONS&gt;.
+</p>
+
+<p>
+For example, "NSW,W NS" means that in the initial location, the player could move north, south, or west, and that the robot moved the player west. From that location the player could move north or south.
+</p>
+
+<p>
+Your job is to determine which &lt;GAMESPACE&gt; locations could have been the starting location, and return them in a String[], where each element is an ordered pairs of coordinates "x,y", where x is the horizontal axis starting at 0 in the northwest corner of the given map and increasing east, and y is the vertical axis starting at 0 in the northwest corner and increasing south. If a possible starting location is not within the bounds of the map, then do not return it.
+The elements of the return value must be sorted in ascending order first by x coordinate, and then by y coordinate. The x and y coordinates in the return value should not have leading zeros.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">RPGRobot</td></tr><tr><td class="statText">Method:</td><td class="statText">where</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] where(String[] map, String movements)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">It is legal for the player to exit the mapped portion of the game. Since it is unmapped, nothing is known about it.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">When the player moves from one &lt;GAMESPACE&gt;, he moves directly to another &lt;GAMESPACE&gt;, not to the character in between.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">In the grammar, the '+' following an element means that one or more of that element must occur, while a '*' following an element means that zero or more of that element must occur.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>map</b> will be formatted exactly as described above.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>map</b> will contain between 3 and 49 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Every element of <b>map</b> will contain between 3 and 49 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Every element of <b>map</b> will have the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Every element of <b>map</b> will contain only the following characters: ' ', '*', '|', '-'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>movements</b> will be formatted exactly as describe above.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>movements</b> will have between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>movements</b> will contain only the letters 'N', 'S', 'W', 'E', and the characters ',' and ' ' (comma and space).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>movements</b> will be self-consistent.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"* *",
+ "| |",
+ "*-*"}</pre></td></tr><tr><td class="statText"><pre>"N"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "1,1" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There is only one starting position, and the player can go north from there. There is no movement specified, so he must have started here.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"* *-*",
+ "| | |",
+ "* * *",
+ "| | |",
+ "*-*-*"}</pre></td></tr><tr><td class="statText"><pre>"N,N NS"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "1,3" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Given only the initial "N" of <b>movements</b>, the player could have started in either (1,3) or (3,3). However, after moving north, the player can go both north and south, eliminating (3,3) as a starting position.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"*-*-*",
+ "     ",
+ "* * *",
+ "     ",
+ "* * *"}</pre></td></tr><tr><td class="statText"><pre>"SWE,S NSWE"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "1,1",  "3,1" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"* *-* *",
+ "|     |",
+ "* *-* *",
+ "|     |",
+ "* *-* *"}</pre></td></tr><tr><td class="statText"><pre>"NSE,E WE,E NSW,N NSW"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "1,1",  "1,3" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Note that starting at (1,1) ends up with the player at (5,-1). Although the player ends up off the map, he started inside, and thus it is a valid starting location.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"* *-*",
+ "| | |",
+ "* * *",
+ "| | |",
+ "*-*-*"}</pre></td></tr><tr><td class="statText"><pre>"N,N S"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "3,3" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Identical to Example 1, except that the player can only go south after going north, eliminating (1,3) as a starting point, instead of (3,3).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"*-*",
+ "| |",
+ "*-*"}</pre></td></tr><tr><td class="statText"><pre>"N"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The only location is not a possible starting location for this configuration.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"* * * *",
+ "       ",
+ "*-*-*-*"}
+ </pre></td></tr><tr><td class="statText"><pre>"NWE,N NSE,E SWE,S NWE"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "1,1",  "3,1",  "5,1" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">7)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"* * * *-* * * *-*-* * * * * *-* *",  
+ "  |     | |     |   |         |  ",  
+ "* * *-* * *-* * * * * * * * *-* *",
+ "| | |   | | |       |     |     |",
+ "* * *-*-* *-*-*-* * * * * * *-*-*", 
+ "  |     | |   | |   |   |     | |", 
+ "*-* *-* * *-*-* *-*-*-* * *-* *-*", 
+ "    | |     |     | |   |   | |  ", 
+ "*-*-* *-*-*-*-* *-*-*-* *-*-* * *", 
+ "| |   |         | | |       |    ", 
+ "*-*-* * * *-* *-*-* * * * *-*-* *", 
+ "  | |     | | | | | |     | | |  ", 
+ "*-* *-* * * *-* *-*-* *-* * *-*-*", 
+ "  | |   | | | |   |   | | |   |  ", 
+ "*-* * * *-* * *-*-*-* * * * * * *", 
+ "|     | | |   |   |   | | |      ", 
+ "* *-*-*-*-*-* *-* * * *-* *-* *-*", 
+ "  | | |         |   | |   |   |  ", 
+ "* * *-*-*-* *-* *-*-*-*-*-*-*-*-*", 
+ "| |     |   | | | |     |     | |", 
+ "* *-* * *-* *-*-*-*-* * *-*-*-* *", 
+ "    | | | | |   | | | |     | |  ", 
+ "* *-*-*-*-* *-*-* *-* *-*-* * *-*", 
+ "  | | | | |   |         | | |    ", 
+ "*-*-*-* *-*-* * *-* *-* * * *-*-*", 
+ "|   | |           |   | | |     |", 
+ "* *-* * * *-*-* *-*-*-* *-* * *-*", 
+ "      |     | | | |     |       |", 
+ "*-* * * * * *-*-* * * * * *-* * *", 
+ "|           | |       |   | |   |", 
+ "* * *-*-* *-*-* * * *-*-* * * *-*", 
+ "|   | | | | |   | | | | | |   | |", 
+ "*-* * *-* * * * * * *-* *-* *-*-*", 
+ "  |     | | |   |             | |", 
+ "*-* *-* *-* * * * *-* *-* *-*-*-*"}</pre></td></tr><tr><td class="statText"><pre>"NW,W SE,S NSW,W NSWE"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "1,23" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

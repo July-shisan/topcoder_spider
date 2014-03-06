@@ -1,0 +1,36 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><i>*** You may only submit a given problem once - no resubmissions will be accepted. ***</i><br><br>
+Diamond and Xerxes Inc. is designing their logo. It will be a hollow (the inside will
+be filled with spaces) diamond, in a square field of characters.  The edges of the diamond will
+be denoted by 'X' (for Xerxes). But how big 
+should it be? What should the background character be?  They want software 
+that will generate a logo so that they can choose.
+<pre>
+    .X.      --X--
+    X X      -X X-
+    .X.      X   X
+             -X X-
+             --X--   
+</pre>
+Above are drawn two possible logos. The left-hand one has size 2 (the number
+of X's along each edge of the diamond) and background character '.'. The right-hand one
+has size 3 and background character '-'.
+<p>
+Create a class DiamondLogo that contains a method logo that is given an 
+int <b>size</b>, the number of X's along each edge of the diamond, and a char <b>background</b> that is
+the character to be used as the background.  The method should return
+a String[] giving the resulting square logo. The first element of the return will be
+the top row, the next element the second row, etc. The return must not include any extraneous rows or columns.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">DiamondLogo</td></tr><tr><td class="statText">Method:</td><td class="statText">logo</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, char</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] logo(int size, char background)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>background</b> will be an ASCII character between 32 and 126 inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>size</b> will be between 2 and 40 inclusive</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>'.'</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { ".X.",  "X X",  ".X." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the left-hand example above. Each element of the return contains 3 characters, thus providing the 3x3 logo.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>'-'</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "--X--",  "-X X-",  "X   X",  "-X X-",  "--X--" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the right-hand example above, giving a 5x5 logo.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>'q'</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "qqqqXqqqq",
+ "qqqX Xqqq",
+ "qqX   Xqq",
+ "qX     Xq",
+ "X       X",
+ "qX     Xq",
+ "qqX   Xqq",
+ "qqqX Xqqq",
+ "qqqqXqqqq" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

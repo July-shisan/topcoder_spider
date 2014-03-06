@@ -1,0 +1,82 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Two integers are relatively prime if they have no common factors other than 1.  For example, 8 and 6 are not relatively prime since they are both divisible by 2.  27 and 10 are relatively prime since they have no common factors other than 1. Note that 1 is relatively prime to all numbers.<br><br>
+The Nth U-group is a special group of integers denoted U(N).  An integer B is in U(N) if:<br>
+1) 0 &lt; B &lt; N<br>
+2) B is relatively prime to N <br><br>
+All arithmetic done in U(N) is performed modulo N.  This means:<br>
+If C and D are in U(N) then:  C*D means (C*D) mod N  <br><br>
+The order of an element K in a U-group U(N) is the smallest positive integer E such that: <br>
+(K^E) mod N = 1  <br>
+where ^ denotes exponentiation <br>
+In other words, how ever many times you have to multiply K times itself mod N to get 1.  In a U-group, every element will have a finite order.<br><br>
+Given N you are going to return the order of each element in U-group U(N).<br>
+For example:<br>
+N = 8<br>
+U(N) = {1,3,5,7}<br>
+Orders = {1,2,2,2} since<br>
+(1^1) mod 8 = 1 mod 8 = 1 <br>
+(3^2) mod 8 = (3*3) mod 8 = 9 mod 8 = 1 <br>
+(5^2) mod 8 = (5*5) mod 8 = 25 mod 8 = 1 <br>
+(7^2) mod 8 = (7*7) mod 8 = 49 mod 8 = 1<br>
+See examples for further clarification.<br><br>
+Create a class UGroupOrder that contains the method findOrders, which takes an
+int N and returns a int[] containing the order of each corresponding element
+in U(N).  </td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">UGroupOrder</td></tr><tr><td class="statText">Method:</td><td class="statText">findOrders</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] findOrders(int N)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The index of each returned element corresponds to the elements of U(N).  The first element of U(N) corresponds to the first element in the return value.  The second element of U(N) corresponds to the second element in the returned value ...</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Note that (a*b) mod N = ((a mod N)*(b mod N)) mod N</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">N will be between 2 and 51 inclusive</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>9</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 1,
+  6,
+  3,
+  6,
+  3,
+  2 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">1^1 mod 9 = 1<br>
+2^6 mod 9 = 1<br>
+4^3 mod 9 = 1<br>
+5^6 mod 9 = 1<br>
+7^3 mod 9 = 1<br>
+8^2 mod 9 = 1</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>8</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 1,
+  2,
+  2,
+  2 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example given in the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>15</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 1,
+  4,
+  2,
+  4,
+  4,
+  2,
+  4,
+  2 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>51</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ 1,
+  8,
+  4,
+  16,
+  16,
+  8,
+  16,
+  16,
+  4,
+  16,
+  2,
+  8,
+  16,
+  16,
+  16,
+  8,
+  8,
+  16,
+  16,
+  16,
+  8,
+  2,
+  16,
+  4,
+  16,
+  16,
+  8,
+  16,
+  16,
+  4,
+  8,
+  2 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>10</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 1,
+  4,
+  4,
+  2 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 1 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,141 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Skew heaps are an excellent implementation of priority queues.  A skew heap is a binary tree like a binary search tree, but with a different ordering of its elements.  In a skew heap, the elements are <i>heap-ordered</i>, meaning that every child is larger
+than its parent.  A left sibling is not required to be smaller than its right sibling, and skew heaps are not required to be
+balanced.  The heap-ordering property implies that the minimum element in a skew heap is always the root.
+</p>
+
+<p>
+Inserting a new element <tt>X</tt> into a skew heap <tt>H</tt> is done recursively.  The base case applies when <tt>H</tt> is empty 
+or when <tt>X</tt> is smaller than the existing root.  The new element becomes the new root, with the old root as its left child.
+The recursive case applies when <tt>X</tt> is larger than the existing root.  The left and right subtrees of the existing root are swapped, and <tt>X</tt> is inserted recursively into the left subtree (which was the right subtree before the swap).  These two cases are illustrated below.
+</p>
+<pre>
+
+     BASE CASE (H is empty or X &lt; root of H)
+     ---------------------------------------
+       Insert(X, H) ===&gt;   X
+                          /
+                         H
+
+     RECURSIVE CASE (X &gt; Y)
+     ---------------------------------------
+       Insert(X,  Y  ) ===&gt;            Y
+                 / \                  / \
+                A   B       Insert(X,B)  A
+</pre>
+
+<p>
+The following snapshots show the results of sequentially inserting the numbers 0,1,2,3,4,5,6 
+into an initially empty tree (where all children not shown are assumed to be null):
+</p>
+<pre>
+
+      0    0    0        0        0         0           0
+          /    / \      / \      / \       / \         / \
+         1    2   1    1   2    2   1     /   \       /   \
+                      /        /   /     1     2     2     1
+                     3        4   3     / \   /     / \   / \
+                                       5   3 4     6   4 5   3
+</pre>
+Notice how, because of the swaps, new elements are distributed evenly between the two sides of the tree.  In this case, the odd elements
+(1,3,5) are placed on one side of the tree, and the non-zero even elements (2,4,6) are placed on the other side of the tree.
+
+<p>
+On the other hand, it is also possible to get an unbalanced tree if the elements are not inserted in sorted order.
+For example, sequentially inserting the numbers 6,4,5,2,0,1,3 into an initially empty tree yields
+</p>
+<pre>
+
+      6    4    4        2        0     0         0
+          /    / \      /        /     / \       / \
+         6    5   6    4        2     1   2     2   1
+                      / \      /         /     / \
+                     5   6    4         4     3   4
+                             / \       / \       / \
+                            5   6     5   6     5   6
+</pre>
+Notice how elements inserted <i>after</i> the overall minimum element are distributed evenly between the left and right
+subtrees of the root (e.g., 1 and 3 in the last tree above).  In contrast, elements inserted <i>before</i> the overall minimum
+element end up in the same subtree of the root (e.g., 6, 4, 5, and 2 above).
+
+<p>
+Your task is to write a method that will take a skew heap and return the sequence of insertions that might have created that heap.
+If more than one sequence of insertions might have created the final skew heap, return the lexicographically earliest.  A sequence
+A is lexicographically earlier than a sequence B if the element of A at the leftmost position at which the sequences differ is smaller than the element of B at the same position.
+</p>
+
+<p>
+The input heap contains the values 0 through <i>n</i>-1, inclusive, where <i>n</i> is the size of the heap.  Each value appears exactly
+once in the heap.  The shape of the input tree will be represented by a int[], <b>parent</b>, of size <i>n</i>-1.
+If the node containing <i>i</i> is a left child, then element <i>i</i>-1 of <b>parent</b> is the value of the node's parent.
+If the node containing <i>i</i> is a right child, then element <i>i</i>-1 of <b>parent</b> is 100 plus the value of the parent.
+Note that <b>parent</b> is 0-indexed.
+The node containing 0 is always the root, so its parent is not represented.  For example, the skew heap
+</p>
+<pre>
+              0
+             / \
+            1   2
+           /   / \
+          5   4   3
+</pre>
+would be represented by <b>parent</b> = {0,100,102,2,1}, meaning that
+<ul><li> 1 is the left child of 0. </li>
+<li> 2 is the right child of 0. </li>
+<li> 3 is the right child of 2. </li>
+<li> 4 is the left child of 2. </li>
+<li> 5 is the left child of 1. </li>
+</ul><p>
+No skew heap built entirely by inserts will ever contain a node with an empty left subtree and a non-empty right subtree. 
+Such heaps will not be permitted as input.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">SkewHeaps</td></tr><tr><td class="statText">Method:</td><td class="statText">history</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] history(int[] parent)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>parent</b> contains between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Element <i>i</i> of <b>parent</b> is either between 0 and <i>i</i>, inclusive, or between 100 and 100+<i>i</i>, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No value appears more than once in <b>parent</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If the value 100+<i>k</i> appears in <b>parent</b>, for some non-negative <i>k</i>, then the value <i>k</i> must also appear in <b>parent</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 100, 0, 101, 102, 1, 2 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 0,  1,  2,  3,  4,  5,  6 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The tree
+<pre>
+        0
+       / \
+      /   \
+     2     1
+    / \   / \
+   6   4 5   3
+</pre> 
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 100, 0, 2, 102, 4, 104 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 4,  6,  5,  2,  0,  1,  3 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The tree
+<pre>
+        0
+       / \
+      2   1
+     / \
+    3   4
+       / \
+      5   6
+</pre>
+Either {4,6,5,2,0,1,3} or {6,4,5,2,0,1,3} could have created this tree, so we return the lexicographically smallest.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 0, 100, 1, 102, 2, 3, 5 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 2,  5,  0,  3,  4,  6,  7,  1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The tree
+<pre>
+        0
+       / \
+      1   2
+     /   / \
+    3   5   4
+   /   /
+  6   7
+</pre>
+There are eight sequences that could have produced this tree:
+<pre>
+  {2,5,0,3,4,6,7,1}
+  {2,5,0,6,4,3,7,1}
+  {2,7,0,3,4,6,5,1}
+  {2,7,0,6,4,3,5,1}
+  {5,2,0,3,4,6,7,1}
+  {5,2,0,6,4,3,7,1}
+  {7,2,0,3,4,6,5,1}
+  {7,2,0,6,4,3,5,1}
+</pre>
+We choose the lexicographically smallest.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 0 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 0,  1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The tree
+<pre>
+        0
+       /
+      1
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 100, 1, 101, 103, 3, 4, 6, 107, 7, 0, 10, 11, 110, 12, 112, 111, 8, 108, 2, 16 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ 8,  18,  17,  7,  9,  0,  11,  6,  12,  4,  16,  3,  15,  1,  20,  2,  10,  5,  13,  19,  14 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

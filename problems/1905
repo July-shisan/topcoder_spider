@@ -1,0 +1,35 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Given a sequence of uppercase letters, we want to remove all but one occurrence of each
+letter, doing it in such a way that the
+remaining letters are in alphabetical order.  Of course, there may be no way to 
+do this, but if there is, we want to know which letters to remove.
+<p>
+Create a class MakeUnique that contains a method eliminated that is given a
+String <b>original</b>, and returns <b>original</b> with the
+eliminated letters replaced with periods ('.'). The remaining letters must 
+be in alphabetical order.
+</p><p>
+If there is no way to do this, return a String with length 0.
+</p><p>
+If there are several ways to do this, choose the one with the shortest length
+between the first and last remaining letters. If there are still several ways,
+return the String among these that comes earliest lexicographically ('.' comes 
+earlier than any letter in the ASCII sequence).
+</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">MakeUnique</td></tr><tr><td class="statText">Method:</td><td class="statText">eliminated</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String eliminated(String original)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>original</b> will contain between 1 and 50 characters inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each character in <b>original</b> will be an uppercase letter 'A'-'Z'</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"ABBBXCXABCX"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: ".......ABCX"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    The 4 letters ABCX must remain, and in that order. <tt>"AB...CX...."</tt> would also leave these letters in the
+appropriate order,
+but the length between the first and last remaining letters
+    would be longer than in the given answer.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"ABBBXCXABCB"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "A..B.CX...."</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+    <tt>"AB...CX...."</tt> and <tt>"A.B..CX...."</tt> are also possible and have the same
+    length between first and last remaining letters, but they come later
+    lexicographically than the given answer.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"ABBBXCABCB"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: ""</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    There is no way to eliminate letters and end up with C before X.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"AABACBXABX"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: ".AB.C.X..."</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">       </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"CABDEAFDEGSDABCDEADFGSEFBGS"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "............ABCDE..FGS....."</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"AAAAAA"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: ".....A"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

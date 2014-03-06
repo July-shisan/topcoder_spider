@@ -1,0 +1,29 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Our problem is where to locate our TV station's broadcasting antenna.  We know 
+the locations of the towns we should serve. We must place the antenna at a point 
+whose coordinates are both integers. Fortunately, we are located on the 
+flat, flat prairie, so the only remaining issue is to locate the antenna to minimize the 
+broadcast radius that includes all the towns.  
+<p>
+We have int[] <b>x</b> and int[] <b>y</b> giving the locations of the towns; the i-th element 
+of <b>x</b> and <b>y</b> gives the coordinates of the i-th town.
+Create a class TVAntenna that contains a method minRadius that is given <b>x</b>
+and <b>y</b>, and returns the minimum
+broadcast radius that can reach all the towns from a location with integer coordinates.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TVAntenna</td></tr><tr><td class="statText">Method:</td><td class="statText">minRadius</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double minRadius(int[] x, int[] y)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If the return has either a relative or absolute error less than 1.0E-9 it is acceptable.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>x</b> will contain between 1 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>y</b> will contain the same number of elements as <b>x</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>x</b> and  <b>y</b> will be between -200 and 200 inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{2,0,0,1}</pre></td></tr><tr><td class="statText"><pre>{0,1,-1,1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.4142135623730951</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   The towns are located at (2,0), (0,1), (0,-1) and (1,1).  
+   The obvious location for the antenna is at (1,0). 
+   From there the distances to the four towns are 1, sqrt(2),
+   sqrt(2) and 1, so a broadcast radius of       
+   sqrt(2) will reach all four towns. The next best location for 
+   the antenna at integer coordinates
+   would be at (1,1) but then one of the towns would be sqrt(5) 
+   away from the antenna.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{3}</pre></td></tr><tr><td class="statText"><pre>{99}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   Locate the tower right in the one town.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

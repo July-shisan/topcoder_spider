@@ -1,0 +1,30 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>You have been given a "word search" puzzle, which consists of a rectangular grid of letters, in which several words are hidden.  Each word may begin anywhere in the puzzle, and may be oriented in any straight line horizontally, vertically, or diagonally.  However, the words must all go down, right, or down-right.  (see examples)</p>
+
+<p>You are given a String[], <b>grid</b>, indicating the letters in the grid to be searched.  Character <i>j</i> of element <i>i</i> of <b>grid</b> is the letter at row <i>i</i>, column <i>j</i>.  You are also given a String[], <b>wordList</b>, indicating the words to be found in the grid.  You are to return a String[] indicating the locations of each word within the grid.</p>
+
+<p>The return value should have the same number of elements as <b>wordList</b>.  Each element of <b>wordList</b> corresponds to the element of the return value with the same index.</p>
+
+<p>Each element of the return value should be formatted as "<i>row</i> <i>col</i>" (quotes added for clarity), where <i>row</i> is the 0-based row in which the first letter of the word is found, and <i>col</i> is the 0-based column in which the first letter of the word is found.  If the same word can be found more than once, the location in the lowest-indexed row should be returned.  If there is still a tie, return the location with the lowest-indexed column.  If a word cannot be found in the grid, return an empty string for that element.</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">WordFind</td></tr><tr><td class="statText">Method:</td><td class="statText">findWords</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] findWords(String[] grid, String[] wordList)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>grid</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>grid</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>grid</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of <b>grid</b> will be 'A'-'Z'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>wordList</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>wordList</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of <b>wordList</b> will be 'A'-'Z'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"TEST",
+ "GOAT",
+ "BOAT"}</pre></td></tr><tr><td class="statText"><pre>{"GOAT", "BOAT", "TEST"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "1 0",
+  "2 0",
+  "0 0" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">These words are pretty easy to find.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"SXXX",
+ "XQXM",
+ "XXLA",
+ "XXXR"}</pre></td></tr><tr><td class="statText"><pre>{"SQL", "RAM"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "0 0",
+  "" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">While "RAM" may be found going up at "3 3", we are only allowing words that go down and right.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"EASYTOFINDEAGSRVHOTCJYG",
+ "FLVENKDHCESOXXXXFAGJKEO",
+ "YHEDYNAIRQGIZECGXQLKDBI",
+ "DEIJFKABAQSIHSNDLOMYJIN",
+ "CKXINIMMNGRNSNRGIWQLWOG",
+ "VOFQDROQGCWDKOUYRAFUCDO",
+ "PFLXWTYKOITSURQJGEGSPGG"}</pre></td></tr><tr><td class="statText"><pre>{"EASYTOFIND", "DIAG", "GOING", "THISISTOOLONGTOFITINTHISPUZZLE"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "0 0",
+  "1 6",
+  "0 22",
+  "" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

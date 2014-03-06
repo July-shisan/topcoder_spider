@@ -1,0 +1,159 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+
+When Bob learned that he was to be sent abroad to work on an oil rig,
+he resolved that he would write regularly to his girlfriend.
+
+</p><p>
+
+"We'll have to encrypt our correspondence," he told Alice, "so that my
+tender feelings remain unknown to the rest of the crew."
+
+</p><p>
+
+Alice showed Bob a simple kind of text encryption that makes use of
+a square cardboard grille divided into equal-sized cells, exactly one
+quarter of which are punched out to make holes. For example, a six-by-six
+grille might be configured as follows, where '.' stands for a hole and
+'X' for a cell that has been left intact.
+
+</p><pre>
+
+               XXXXXX
+               .XXXX.
+               X.XX..
+               XXX.XX
+               X.XXXX
+               XX.XX.
+</pre><p>
+
+To encrypt a message, Bob begins writing plaintext into the grille, one
+character per hole, proceeding from left to right within each row and
+running through the rows from top to bottom. Once all holes are filled,
+he rotates the grille ninety degrees clockwise, and continues the message
+where he left off. After two more quarter turns, he has written a full
+square of coded text, and must begin a new one. Upon receipt of the
+message, Alice uses an identical grille to decrypt each square. If, for
+example, Bob's plaintext were "supercalifragilisticexpialadociously",
+Alice would receive the following code.
+
+</p><pre>
+
+               idocfc
+               sriaeu
+               gpxoer
+               piicau
+               laslla
+               iylsti
+</pre><p>
+
+Not just any grille will do for this purpose, as Bob discovered when
+he tried to make one by cutting out holes at random. He found that
+this haphazard grille wouldn't let him write out a full square of
+text in the prescribed manner. After fewer than four quarter-turns,
+some holes revealed previously written characters. Alice assured him
+that this was a grave flaw. An encoding grille must permit one to fill
+the entire square by making three quarter-turns, and it must show each
+cell of the square exactly once. Bob, alas, had a lyrical soul and not
+a mathematical one. He could not perceive the properties that make a
+grille suitable for use with this encryption technique. Can you?
+
+</p><p>
+
+You are given a String[] describing a grille row by row, in
+the style shown above, with no more than a quarter of its holes punched
+out. If it is not possible to make a complete and valid encoding grille
+from this configuration by punching out zero or more additional holes,
+then return an empty String[]. Otherwise, punch out the
+necessary holes in the upper-left quadrant to make a complete and valid
+grille, and return it in the same format as the input.
+
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">SquareCode</td></tr><tr><td class="statText">Method:</td><td class="statText">completeIt</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] completeIt(String[] grille)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>grille</b> contains between 2 and 50 elements, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>grille</b> contains an even number of elements</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">if <b>grille</b> contains exactly <i>n</i> elements, then every element of <b>grille</b> consists of <i>n</i> characters</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">every character in <b>grille</b> is either '.' or 'X'</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">no more than one quarter of the characters in <b>grille</b> are '.'</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XX..",
+ "XX.X",
+ ".XXX",
+ "XXXX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "XX..",  "XX.X",  ".XXX",  "XXXX" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+No additional holes are punched:
+</p>
+
+<pre>
+{"XX..",
+ "XX.X",
+ ".XXX",
+ "XXXX" }
+</pre>
+
+<p>
+This was already a good grille.
+</p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXX.",
+ "XX.X",
+ ".XXX",
+ "XXXX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "XXX.",  ".X.X",  ".XXX",  "XXXX" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+One additional hole is punched:
+</p>
+
+<pre>
+
+{"XXX.",
+ ".X.X",
+ ".XXX",
+ "XXXX"}
+</pre>
+
+<p>
+The grille could have been completed by punching a hole in one of four locations. We chose the leftmost, topmost one.
+</p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXX.",
+ "XX.X",
+ ".X.X",
+ "XXXX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+An empty String[] is returned:
+</p>
+
+<pre>
+
+{}
+</pre>
+
+<p>
+The given grille reveals the same character location more than once.
+</p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXXXXX",
+ "XXXXX.",
+ "XXXX..",
+ "XXX.XX",
+ "X.XXXX",
+ "XX.XX."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "XXXXXX",  ".XXXX.",  "X.XX..",  "XXX.XX",  "X.XXXX",  "XX.XX." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+Two additional holes are punched:
+</p>
+
+<pre>
+
+{"XXXXXX",
+ ".XXXX.",
+ "X.XX..",
+ "XXX.XX",
+ "X.XXXX",
+ "XX.XX." }
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXX.XX",
+ ".XXXX.",
+ "X.XXX.",
+ "XXX.XX",
+ "X.XXXX",
+ "XX.XX."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXXXX.XX",
+ "XXXX.XXX",
+ "XXX..X.X",
+ ".XXXXXXX",
+ "XXXXXXXX",
+ "XXXXXXXX",
+ "X.XXXXXX",
+ "XXXXXXXX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "....X.XX",
+ ".XX..XXX",
+ "X....X.X",
+ ".XX.XXXX",
+ "XXXXXXXX",
+ "XXXXXXXX",
+ "X.XXXXXX",
+ "XXXXXXXX" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

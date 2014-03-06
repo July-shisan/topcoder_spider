@@ -1,0 +1,64 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>This problem was taken from the Collegiate Challenge Finals.
+
+Class name: Area
+Method name: totalEnclosed
+Parameters: int, int, String 
+Returns: int
+
+Implement a class Area, which contains a method totalEnclosed.  totalEnclosed
+returns the sum of the union of areas enclosed by a path on the coordinate
+plane.  The path (call it the "perimeter") is composed of horizontal and
+vertical lines connecting ordered integer pairs. The perimeter is defined by a
+starting point (x,y) (x and y are integers) and a series of commands.  The
+commands are U, D, R, and L.  U moves 1 unit up.  D moves 1 unit down.  R moves
+1 unit right.  L moves 1 unit left.  The method takes as parameters two ints
+that are the starting (x,y) coordinates and a String that is the string of 1
+character commands.  The method starts at the starting point and successively
+processes the commands in the String from left to right and returns the area of
+the union of the shapes enclosed by the resulting perimeter.  
+
+*Enclosed areas must lie within the domain -10 &lt;= x &lt;= 10 and -10 &lt;= y &lt;= 10.
+If any point on the perimeter is beyond this domain, the method concludes there
+is no enclosed area and returns 0.
+*A point is in an enclosed area if and only if every continuous path from the
+point to outside the domain (-10 &lt;= x &lt;= 10 and -10 &lt;= y &lt;= 10) crosses the
+perimeter.
+
+Another way to look at this is: return the number of unit squares in the domain
+that are enclosed by the perimeter.
+
+The method signature is (be sure your method is public):
+int totalEnclosed(int startX, int startY, String commands)
+
+TopCoder will ensure the following:
+*startX must satisfy -10 &lt;= startX &lt;= 10.
+*startY must satisfy -10 &lt;= startY &lt;= 10.
+*commands contains only the characters U, D, L, and R and has length less than
+1000 characters.
+
+Note:
+-The solution must run in under 6 seconds on TopCoder's tester.
+
+Examples:
+-If the starting point is (0,0) and the commands are RRUULLDDDDL, the enclosed
+area is a square from (0,0) to (2,2). The area of this square is 4, and the
+method should return 4.
+
+-If the starting point is (3,3) and the commands are LDRULLLDDRUU, there are
+two enclosed areas, a square from (2,2) to (3,3) and a rectangle from (0,1) to
+(1,3). The areas are 1 and 2, and the method should return 1+2=3.
+
+-If the starting point is (0,0) and the commands are LLUURRDDLURD, the enclosed
+area is just the square from (-2,0) to (0,2) and the method should return the
+square's area, 4.  The area from (-1,0) to (0,1) is also enclosed by another
+path, but is not counted twice because the method must return the area of the
+union.
+
+-If the starting point is (10,10) and the commands are URDL, the path goes out
+of the domain and the method should return 0.
+
+</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Area</td></tr><tr><td class="statText">Method:</td><td class="statText">totalEnclosed</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, String</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int totalEnclosed(int param0, int param1, String param2)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

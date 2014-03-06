@@ -1,0 +1,121 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">
+A square <i>n</i> by <i>n</i> tile has <i>n</i>^2 one by one cells, some of which are colored. A number of identical tiles will be laid in a rectangular format, with the corner of each tile coinciding with 
+the corners of three other tiles. The tiles will not be laid upside down.
+
+<pre>
+ Legal Format        Illegal Format 
+ 
+_|___|___|___|_        _|   |___|   |_
+ |   |   |   |          |___|   |___|
+_|___|___|___|_        _|   |___|   |_
+ |   |   |   |          |___|   |___|
+_|___|___|___|_        _|   |___|   |_
+ |   |   |   |          |   |   |   |
+</pre>
+  We say 
+that a tile has the "edge-crossing" property if, no matter how the tiles are 
+rotated when they are laid, every colored cell on the edge of one tile is
+adjacent (orthogonally or diagonally) to at least one colored cell on another 
+tile.  This is a desirable property since it helps to hide tile edges.
+<p>This picture shows 3 by 3 tiles, with the colored cells indicated by 'X' and the
+uncolored cells by ' '. Note that all the tiles have the same coloring pattern but 
+that each tile can be laid in any of four possible rotations.</p>
+<pre>
+ |   |   |   |
+-|---|---|---|-
+ |XX | X | XX|
+ |XXX|XX | XX|
+ |   |XX | X |
+-|---|---|---|-
+ |   |   |   |
+</pre>
+<p>
+Create a class TileMatch that contains the method uncolor that takes a 
+String[] giving the original <b>pattern</b> of colored cells on a tile as input 
+and returns the minimum number of cells that we need to uncolor to give the tile the "edge-crossing" property.  
+</p><p>
+<b>pattern</b> is a square collection of '-', denoting an uncolored cell, and 'X',
+denoting a colored cell. Each element of <b>pattern</b> gives the coloring of one row.
+</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TileMatch</td></tr><tr><td class="statText">Method:</td><td class="statText">uncolor</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int uncolor(String[] pattern)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A colored cell on the edge of a tile must be uncolored if there is some way to rotate and arrange tiles so that the colored cell is not adjacent to any colored cells on an <i>adjacent</i> tile (vertically, horizontally, or diagonally).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Some cells, which need not be uncolored at first, may have to be uncolored after some other cell is uncolored.  See example 4.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>pattern</b> contains between 2 and 50 elements, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">the length of each string in <b>pattern</b> is the same as the number of strings in <b>pattern</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each character in each element of <b>pattern</b> is either '-' or 'X'</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXX",
+ "XXX",
+ "---"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Since the adjacent tiles may all be oriented so the adjacent
+edges have no color, you must uncolor all the edge cells.  Leave the center cell colored -- you can always leave a cell colored when it is not on the edge of a tile.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXX",
+ "XXX",
+ "-X-"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Every adjacent tile will have a colored cell in the middle of each edge,
+and this will be adjacent to every cell in the edge.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXXX",
+ "XXXX",
+ "-X--",
+ "XX--"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">It is necessary to remove the color from the 3 colored corner cells.  This gives the following tile with the "edge-crossing" property:
+<pre>
+ -XX-
+ XXXX
+ -X--
+ -X--
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XX--",
+ "---X",
+ "X---",
+ "--X-"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"-XX-",
+ "XXXX",
+ "XXXX",
+ "---X"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">We end up having to uncolor all of the colored cells on the edge.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"---X--",
+ "-----X",
+ "------",
+ "------",
+ "X-----",
+ "----X-"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXX-",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XX--X-X-XX-XX-XXXXX-X-XXX-X-X--XXXXXXXXXXXXXXXXXXX",
+ "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 170</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

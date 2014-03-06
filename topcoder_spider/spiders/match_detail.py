@@ -3,6 +3,7 @@ from scrapy.http import Request
 
 from topcoder_spider.items import MatchDetailItem
 from login_spider import LoginSpider
+from tools import extract_text
 
 class MatchDetailSpider(LoginSpider):
     name = "match_detail"
@@ -27,9 +28,9 @@ class MatchDetailSpider(LoginSpider):
 		item = MatchDetailItem()
 		item['match_id'] = response.meta['match_id']
 		item['division'] = 1
-		item['username'] = tds[1].xpath('./a/text()').extract()[0].strip()
-		item['score'] = tds[2].xpath('./text()').extract()[0].strip()
-		item['place'] = tds[3].xpath('./text()').extract()[0].strip()
+		item['username'] = extract_text(tds[1].xpath('./a/text()'))
+		item['score'] = extract_text(tds[2].xpath('./text()'))
+		item['place'] = extract_text(tds[3].xpath('./text()'))
 		items.append(item)
 		
 		if(len(tds) < 6):
@@ -38,8 +39,8 @@ class MatchDetailSpider(LoginSpider):
 		item = MatchDetailItem()
 		item['match_id'] = response.meta['match_id']
 		item['division'] = 2
-		item['username'] = tds[6].xpath('./a/text()').extract()[0].strip()
-		item['score'] = tds[7].xpath('./text()').extract()[0].strip()
-		item['place'] = tds[8].xpath('./text()').extract()[0].strip()
+		item['username'] = extract_text(tds[6].xpath('./a/text()'))
+		item['score'] = extract_text(tds[7].xpath('./text()'))
+		item['place'] = extract_text(tds[8].xpath('./text()'))
 		items.append(item)
 	return items

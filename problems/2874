@@ -1,0 +1,59 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Given a sequence of values, we want to display a histogram of vertical
+bars with a title at the bottom of each bar. Each value will be an integer,
+and the corresponding bar will consist of that many 'X' characters.  For
+example,
+<pre>
+                                   X
+                                   X
+               X                   X
+     X         X         X         X         X 
+    EAST     NORTH     SOUTH      WEST INTERNATIONAL
+</pre>
+We require that the bars be centered over their titles, using the more leftward of
+the two middle positions for a title whose length is even. We require that
+there must be at least one space between adjacent titles, and
+that the number of spaces between adjacent bars be constant.
+In the example above, there are 9 spaces between adjacent bars.
+<p>
+Create a class Histogram that contains a method draw that is given a String[] 
+<b>title</b> and a int[] <b>value</b>. It returns a String[] in which each element is the next
+row of the histogram to be printed, starting with the top row and ending with the row that 
+contains the titles. 
+</p><p>
+The histogram must preserve the order given in <b>title</b> and <b>value</b>. The spacing
+between bars should be as small as possible.  
+Each element of the return 
+should be as short as possible; this implies that the final element of the 
+return will have no leading spaces, 
+and that no element of the return will have trailing spaces. 
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Histogram</td></tr><tr><td class="statText">Method:</td><td class="statText">draw</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] draw(String[] title, int[] value)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>title</b> will contain between 2 and 10 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>title</b> will contain between 1 and 15 characters inclusive, all uppercase letters 'A'-'Z'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>value</b> will contain the same number of elements as <b>title</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>value</b> will be between 1 and 10 inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"EAST","NORTH","SOUTH","WEST","INTERNATIONAL"}</pre></td></tr><tr><td class="statText"><pre>{1,2,1,4,1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "                               X",
+ "                               X",
+ "           X                   X",
+ " X         X         X         X         X",
+ "EAST     NORTH     SOUTH      WEST INTERNATIONAL" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">   This is the example given in the problem.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A","B","C"}</pre></td></tr><tr><td class="statText"><pre>{2,1,2}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "X   X",  "X X X",  "A B C" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   This corresponds to the following histogram:
+<pre>
+   X   X
+   X X X
+   A B C
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"VERYLARGE", "XX"}</pre></td></tr><tr><td class="statText"><pre>{10,1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "    X",
+ "    X",
+ "    X",
+ "    X",
+ "    X",
+ "    X",
+ "    X",
+ "    X",
+ "    X",
+ "    X     X",
+ "VERYLARGE XX" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

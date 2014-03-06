@@ -1,0 +1,78 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+There is a famous puzzle in which you try to determine which of twelve coins is counterfeit.  You know
+that the counterfeit coin is slightly heavier or lighter than the eleven good coins, and your only
+tool is a balance scale that can tell which of two stacks of coins is heavier, or if they are the
+same weight.  In the famous puzzle, you must discover which coin is counterfeit and whether it is heavier
+or lighter than the good coins, using no more than three weighings.
+</p>
+
+<p>
+In this problem, you are given <b>N</b> coins.  As in the puzzle, exactly one of the coins is counterfeit, and it is slightly heavier
+or lighter than the other coins, which are all the same weight.  Using a balance scale, you want to determine
+which coin is counterfeit <i>and</i> whether it is heavier or lighter than the good coins, using the minimum number
+of weighings.  It is possible that your weighing strategy will use different numbers of weighings in different cases.  You
+want to minimize the maximum number of weighings required by your strategy.  For example, a strategy that always
+takes four weighings is preferable to a strategy that usually takes three weighings but occasionally takes five
+weighings.
+</p>
+
+<p>
+You have already made several weighings, and now you need to determine which coins to weigh next.  The individual
+coins are labeled with uppercase letters beginning with 'A'.  For example, if <b>N</b> is 5, then the coins are labeled 'A', 'B', 'C', 'D', and 'E'.  You will be given two String[]'s, <b>left</b> and <b>right</b>, where
+element <i>k</i> of <b>left</b> identifies which coins were on the left side of the scale during weighing <i>k</i>,
+and element <i>k</i> of <b>right</b> identifies which coins were on the right side of the scale during weighing 
+<i>k</i>.  (Note that the weighings are numbered from 0.)  You will also be given a String <b>result</b>,
+where character <i>k</i> of <b>result</b> describes the result of weighing <i>k</i>.  The character 'L' means that
+the left stack was heavier, the character 'R' means that the right stack was heavier, and the character 'E' means
+that the two stacks were the same weight.  For example, in the following scenario,
+</p>
+<pre>
+   N      = 12
+   left   = { "ABCD", "ABC" }
+   right  = { "EFGH", "IJK" }
+   result = { "EL" }
+</pre>
+coins A, B, C, and D were compared to E, F, G, and H in weighing 0, and the two stacks were the same weight.
+In weighing 1, coins A, B, and C were compared to I, J, and K, and the left stack (A, B, and C) was heavier.
+
+<p>
+Your task is to decide which coins to weigh next.  You want to choose the coins that minimize the maximum number
+of weighings needed from this point forward, assuming all subsequent weighings (if any) will be chosen optimally.
+For example, suppose you are trying to decide between two arrangements for the next weighing.  Arrangement 1 will
+require one subsequent weighing regardless of the result of the current weighing.  Arrangement 2 will require no
+subsequent weighings if the result of the current weighing is 'L' or 'R', but will require two subsequent weighings
+if the result of the current weighing is 'E'.  Then you would choose arrangement 1.
+</p> 
+
+<p>
+You will return the coins as a String of the form
+"&lt;<i>left</i>&gt;-&lt;<i>right</i>&gt;" where &lt;<i>left</i>&gt; is the coins in the left stack and 
+&lt;<i>right</i>&gt; is the coins in the right stack.  The coins in each stack should always be listed in
+alphabetical order.  For example, if you wanted to compare the coins A and B
+to the coins C and D, you would return "AB-CD".  If two different configurations of coins achieve the same maximum
+number of weighings, prefer the one that uses the fewest coins.  For example "AB-CD" would be preferred over
+"ABC-DEF".  If there is still a tie, prefer the configuration that comes first alphabetically.
+</p>
+
+<p>
+If the previous weighings are sufficient to determine which coin is counterfeit <i>and</i> whether it is heavier or lighter
+than the good coins, return the empty string ("").  If the results of the previous weighings are mutually inconsistent 
+or otherwise incompatible with the hypothesis that exactly one of the coins is counterfeit, return "error".
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CounterfeitCoin</td></tr><tr><td class="statText">Method:</td><td class="statText">nextWeighing</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, String[], String[], String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String nextWeighing(int N, String[] left, String[] right, String result)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>N</b> is between 3 and 26, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>left</b> contains between 0 and 5 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>right</b> contains the same number of elements as <b>left</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>result</b> contains the same number of characters as elements in <b>left</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>left</b> contains between 1 and 13 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Element <i>k</i> of <b>left</b> contains the same number of characters as element <i>k</i> of <b>right</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Every character in <b>left</b> and <b>right</b> is between 'A' and the <b>N</b>-th uppercase letter, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The characters in each element of <b>left</b> and <b>right</b> occur in alphabetical order, with no repeats.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Element <i>k</i> of <b>left</b> shares no characters in common with element <i>k</i> of <b>right</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>result</b> contains only the characters 'L', 'R', and 'E'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>12</pre></td></tr><tr><td class="statText"><pre>{}</pre></td></tr><tr><td class="statText"><pre>{}</pre></td></tr><tr><td class="statText"><pre>""</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "ABCD-EFGH"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In the famous problem, the first weighing should weigh the first four coins
+against the next four coins.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>12</pre></td></tr><tr><td class="statText"><pre>{ "ABCD", "ABC" }</pre></td></tr><tr><td class="statText"><pre>{ "EFGH", "IJK" }</pre></td></tr><tr><td class="statText"><pre>"EL"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "I-J"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example above.
+
+<p>
+After the first weighing, we know that coins A, B, and C are not counterfeit.
+Therefore, after the second weighing, the counterfeit coin must be one of 
+I, J, or K, and furthermore, the counterfeit coin must be lighter than the
+good coins.  Next, we should weigh coin I against coin J.  If one of them
+is lighter than the other, then the lighter one is counterfeit.  If I and
+J weigh the same, then the counterfeit is coin K.
+</p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>12</pre></td></tr><tr><td class="statText"><pre>{ "ABCD", "ABC", "I" }</pre></td></tr><tr><td class="statText"><pre>{ "EFGH", "IJK", "J" }</pre></td></tr><tr><td class="statText"><pre>"ELR"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: ""</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">I is the counterfeit coin, and it is light.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>6</pre></td></tr><tr><td class="statText"><pre>{ "AB", "EF" }</pre></td></tr><tr><td class="statText"><pre>{ "CD", "AC" }</pre></td></tr><tr><td class="statText"><pre>"EE"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "error"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The coins appear to all be the same weight.  Or perhaps several of the coins are counterfeit.
+Either way, it's an error.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>7</pre></td></tr><tr><td class="statText"><pre>{ "ACE" }</pre></td></tr><tr><td class="statText"><pre>{ "BDF" }</pre></td></tr><tr><td class="statText"><pre>"E"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "A-G"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The first weighing rules out coins A-F, so the counterfeit coin must be G.
+However, we do not yet know if it is heavy or light, so we need one more
+weighing to determine that.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>{ "ACDJMNOQ", "CD", "G", "ABC", "R"}</pre></td></tr><tr><td class="statText"><pre>{ "BFIKLPST", "AK", "H", "FIK", "G"}</pre></td></tr><tr><td class="statText"><pre>"LEEEE"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "JLM-NOP"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>26</pre></td></tr><tr><td class="statText"><pre>{}</pre></td></tr><tr><td class="statText"><pre>{}</pre></td></tr><tr><td class="statText"><pre>""</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "ABCDEFG-HIJKLMN"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

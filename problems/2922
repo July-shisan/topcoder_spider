@@ -1,0 +1,28 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">The Olympic Games in Athens end tomorrow.
+Given the results of the olympic disciplines, generate and return the medal table.<br><br>
+The results of the disciplines are given as a String[] <b>results</b>,
+where each element is in the format <tt>"GGG SSS BBB"</tt>. <tt>GGG</tt>, <tt>SSS</tt> and
+<tt>BBB</tt> are the 3-letter country codes (three capital letters from <tt>'A'</tt> to <tt>'Z'</tt>) of the countries winning
+the gold, silver and bronze medal, respectively.<br><br>
+The medal table is a String[] with an element for each country appearing in <b>results</b>.
+Each element has to be in the format <tt>"CCO G S B"</tt> (quotes for clarity), where
+<tt>G</tt>, <tt>S</tt> and <tt>B</tt> are the number of gold, silver and bronze medals won
+by country <tt>CCO</tt>, e.g. <tt>"AUT 1 4 1"</tt>. The numbers should not have any extra leading zeros.
+<br>
+Sort the elements by the number of gold medals won in decreasing order.
+If several countries are tied, sort the tied countries by the number of silver medals won in decreasing order.
+If some countries are still tied, sort the tied countries by the number of bronze medals won in decreasing order.
+If a tie still remains, sort the tied countries by their 3-letter code in ascending alphabetical order.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">MedalTable</td></tr><tr><td class="statText">Method:</td><td class="statText">generate</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] generate(String[] results)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>results</b> contains between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>results</b> is formatted as described in the problem statement.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No more than 50 different countries appear in <b>results</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ITA JPN AUS", "KOR TPE UKR", "KOR KOR GBR", "KOR CHN TPE"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "KOR 3 1 0",
+ "ITA 1 0 0",
+ "TPE 0 1 1",
+ "CHN 0 1 0",
+ "JPN 0 1 0",
+ "AUS 0 0 1",
+ "GBR 0 0 1",
+ "UKR 0 0 1" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">These are the results of the archery competitions.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"USA AUT ROM"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "USA 1 0 0",  "AUT 0 1 0",  "ROM 0 0 1" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"GER AUT SUI", "AUT SUI GER", "SUI GER AUT"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "AUT 1 1 1",  "GER 1 1 1",  "SUI 1 1 1" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

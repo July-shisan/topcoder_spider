@@ -1,0 +1,47 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+With the advent of text messaging on cell phones, a new method for typing has evolved, called T9.  The way T9 works is it has a dictionary of words, where each letter is mapped to a number 2-9.  The number-letter mappings are fixed, and are printed on the number keys of the phone.  For example, 2 corresponds to 'a', 'b', and 'c'.  A <i>word</i> is defined as a sequence of lowercase letters.  Since most words use different digits for their characters, it is possible to determine which word a user is typing by matching the digit sequence to the letter sequence.  Below are all the mappings for the characters used in the problem:
+</p>
+
+<pre>
+2 - abc
+3 - def
+4 - ghi
+5 - jkl
+6 - mno
+7 - pqrs
+8 - tuv
+9 - wxyz
+# - &lt;space&gt;
+0 - &lt;next word&gt;
+</pre>
+
+<p>
+So for example, to type "hello world", you would press "43556#96753".  A conflict arises when two words have the same digit sequence.  So for example, "the" and "tie" both have the same digit sequence - "843".  The way T9 handles these conflicts is to display the word that comes first alphabetically.  Then, if the word isn't desired, the user must press 0 to get the next word alphabetically, and repeat until the desired word is shown.  If the user wishes to enter another word, he/she presses # to insert a space and starts entering the next word.  So to input "the tie", you would type "843#8430".  It is illegal to press a non-zero digit immediately after pressing '0', the only legal keys you can press after pressing '0' are '0' and '#'.
+</p>
+
+<p>
+You will be given a String[] <b>messages</b>, which consists of messages you are to type into your cell phone.  <b>messages</b> will only contain spaces and words made entirely of lowercase letters.  Assume that the words contained in all of the messages are exactly the words contained in the T9 dictionary.  Return a String[] where each element <i>i</i> contains the numeric keypresses you would have to type for element <i>i</i> of <b>messages</b>.  Note that messages do not necessarily have to contain words, and can contain sequences of multiple spaces which must be preserved.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">T9Input</td></tr><tr><td class="statText">Method:</td><td class="statText">getKeypresses</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] getKeypresses(String[] messages)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>messages</b> will have between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>messages</b> will have between 0 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>messages</b> will contain only lowercase letters ('a'-'z') and spaces.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There will not be more than 7 words which have the same digit sequence.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"the tie", "the tie"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "843#8430",  "843#8430" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{" hey joe   ", "   "}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "#439#563###",  "###" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Don't forget to preserve multiple spaces, and to handle messages where there are no words.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"cba cba cba cba cba cba cba cba", "abc acb bac bca cab cba"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "22200000#22200000#22200000#22200000#22200000#22200000#22200000#22200000",
+ "222#2220#22200#222000#2220000#22200000" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Remember that the dictionary contains all words from all the messages, not just the message you are working on.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "the longest case for t nine is probably when",
+  "you enter seven two letter sequences from the",
+  "same key and then repeat the alphabetically",
+  "last case over and over again for the entire",
+  "list of messages",
+  "",
+  "these paragraphs demonstrate how efficient t",
+  "nine is since there is only one time where you",
+  "must use the zero key"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "843#5664378#2273#367#8#6463#47#77622259#9436",
+ "968#36837#73836#896#538837#737836237#3766#843",
+ "7263#539#263#8436#737328#843#25742238422559",
+ "5278#2273#6837#263#6837#24246#367#843#368473",
+ "5478#63#63772437",
+ "",
+ "843730#7272472747#33666787283#469#333424368#8",
+ "6463#47#74623#84373#47#6659#663#8463#94373#968",
+ "6878#873#843#9376#539" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"cca ccc c cccb ccca cccc"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "222#2220#2#22220#2222#222200" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Note that to make "cccc", you cannot use "22202".  Pressing '2' after pressing '0' is illegal.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

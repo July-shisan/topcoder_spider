@@ -1,0 +1,155 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Consider a maze laid out on a rectangular grid.  Each node in the grid is connected to
+some or all of its neighbors in the four cardinal directions (north, south,
+east, west).  A set of connections qualifies as a maze if (1) all nodes are reachable from
+the northwest corner, and (2) there are no loops.  You may recognize these
+conditions as defining a <i>spanning tree</i> of the underlying grid.
+</p>
+
+<p>
+It is easy to construct a random maze using, for example, a randomized version of 
+Kruskal's algorithm.  But mazes generated in such a fashion are often aesthetically
+unappealing.  The problem is that such mazes contain too many <i>short deadends</i>.
+A node is called a <i>deadend</i> if it is connected to exactly one other node, a <i>corridor</i>
+if it is connected to exactly two other nodes, and an <i>intersection</i> if it is connected
+to three or more other nodes.  A short deadend is a deadend that is connected directly to an 
+intersection, with no intervening corridors.  For example, consider the following maze:
+</p>
+<pre>
+      A  B--C--D--E
+      |     |     |
+      F--G--H  I--J
+                  |
+      K--L--M--N--O
+</pre>
+This maze contains four deadends: A, B, I, and K.  B and I are short deadends because they
+are connected directly to intersections (C and J, respectively).  A and K are not short
+deadends because they are connected to corridors (F and L, respectively).  The problem
+with short deadends is that human solvers can immediately see that there is no point
+in exploring them, so such nodes are viewed as "wasted space".
+
+<p>
+Given a random maze, there is a simple transformation that can greatly improve the aesthetic
+appeal of the maze by eliminating many short deadends.  The idea is that, whenever a short
+deadend is adjacent in the grid to another deadend (not necessarily short), the short deadend
+can be disconnected from the intersection it is currently connected to, and reconnected to
+the other deadend.  For example, in the above maze, node B can be disconnected from C
+and reconnected to A, yielding the new maze
+</p>
+<pre>
+      A--B  C--D--E
+      |     |     |
+      F--G--H  I--J
+                  |
+      K--L--M--N--O
+</pre>
+Now B is no longer "wasted space".  Instead, B now contributes to the difficulty of exploring 
+the path that used to end at A.  Node I is still a short deadend, but it cannot be eliminated by
+this transformation because it is not adjacent to any other deadends.
+
+<p>
+Call a short deadend a <i>candidate</i> if it is adjacent to another deadend.  You are to eliminate candidates
+one at a time using this transformation until there are no more candidates.  At each step, you should eliminate
+the northernmost candidate.  In case of a tie, eliminate the westernmost of the northernmost candidates.  
+When a candidate is adjacent to two or more other deadends, it should be reconnected to 
+a short deadend if possible.  In case of a tie, the candidate should be reconnected to the
+northernmost of the tied deadends.  If there is still a tie, the candidate should be reconnected to the 
+westernmost of the tied deadends.
+</p>
+
+<p>
+The initial maze will be given as a rectangular String[].  The rows are ordered from north to south,
+and the columns are ordered from west to east.
+Each character describes the connectivity of the node in the corresponding position in the grid.  The meanings of
+the possible characters are as follows:
+</p><ul><li> '<tt>|</tt>' means the node is connected to its northern neighbor </li>
+<li> '<tt>-</tt>' means the node is connected to its eastern neighbor </li>
+<li> '<tt>L</tt>' means the node is connected to both its northern and eastern neighbors </li>
+<li> '<tt>.</tt>' means the node is connected to neither its northern nor its eastern neighbor </li>
+</ul>
+Note that all connections are two-way.
+
+
+<p>
+For example, the maze
+</p>
+<pre>
+      A  B--C--D--E
+      |     |     |
+      F--G--H  I--J
+                  |
+      K--L--M--N--O
+</pre>
+would be represented as
+<pre>
+      .---.
+      L-|-|
+      ----|
+</pre>
+
+<p>
+You are to write a method that will take an input <b>maze</b>, apply the described transformation,
+and return the resulting maze, in the same format as the input.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">MazeImprovement</td></tr><tr><td class="statText">Method:</td><td class="statText">improve</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] improve(String[] maze)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>maze</b> contains between 2 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>maze</b> contains between 2 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>maze</b> contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Elements of <b>maze</b> contain only the characters '<tt>L</tt>', '<tt>|</tt>', '<tt>-</tt>', and '<tt>.</tt>'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No '<tt>L</tt>' or '<tt>|</tt>' appears in element 0 of <b>maze</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No '<tt>L</tt>' or '<tt>-</tt>' appears as the last character of an element of <b>maze</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The maze described by <b>maze</b> is connected (ie, all nodes are reachable from the northwest corner) and has no loops.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ ".---.",
+  "L-|-|",
+  "----|" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "-.--.",  "L-|-|",  "----|" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 
+  "........",
+  "LLLLLLL|",
+  "||||||||"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "-.-.-.-.",  "-L-L-L-|",  "|-|-|-||" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The maze
+<pre>
+  A  B  C  D  E  F  G  H
+  |  |  |  |  |  |  |  |
+  I--J--K--L--M--N--O--P
+  |  |  |  |  |  |  |  |
+  Q  R  S  T  U  V  W  X
+</pre>
+becomes
+<pre>
+  A--B  C--D  E--F  G--H
+     |     |     |     |
+  I--J--K--L--M--N--O--P
+  |     |     |     |  |
+  Q  R--S  T--U  V--W  X
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "--.--.",
+  "|.-L.|",
+  "|L-|-.",
+  "L--L-|" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "--.--.",  "|.||-|",  "|L-|-.",  "L--L-|" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "....-.--....-..",
+  "|LLL.L||-|L|L-|",
+  "L-L-.-|L-|.LL..",
+  "-|-||---.|L||.|",
+  "-.-.LL-.LL|.LL|",
+  "-L|L||-|||L|L.|" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "..-.-.-.-.-.-..",
+ "|L-||L||||L.L-|",
+ "L-L-.-|L-|.L|..",
+ "-|-||---.|L||||",
+ "-.-.LL-.LL|.LL|",
+ "|L|L|--|-|L|L-." }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "--.-..--.----.--.--.-..-...-..",
+  "-.LL-L-L.L---.L-.--LL-|-|LL-||",
+  "-|-L-.L---||L--||--L--.||---L|",
+  "L.-.--||-||L.|-|--L.L-.|-L.|||",
+  "-|.L|-L.-L--..L.|L.||L-L.-.|L.",
+  ".LL-||L--.|-.L|LL-.||-|-|L.|-.",
+  "L.|-|-||L.-|-|...||--L.|-L-|-|",
+  "|L.||-|..-L.|-LL|.---.||L-.-||",
+  "L---..L|L-.L--.L.|L---L--|.L-.",
+  "--|-LL||||L.|-.L-L|.L---.|LL.|",
+  "|--|.|.-|||-L|L-|L.||L.---||L.",
+  "||-LL-L||||--L-.|L.L-L--||||-|" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "--.-.--..----.--.--.-..-.-.-..",
+ "-.LL---L|L--.|L-.--LL-|-|L--||",
+ "-|.L-.L---||L--|||-L--.|.---L|",
+ "L.L.--|--||L..-|--L.L.||L|.||.",
+ ".|.L|-|--L--.|L.|L.||L-L.-||L|",
+ "|LL-||L-.-|-.L|LL-.||-|-|L.|-.",
+ "L..-|.|.L.-|-|-.-.|--L.|-L-|-|",
+ "|L|L.L||--L.|--L|.---.||L..-||",
+ "L---..L|--.L--.L.|L---L--||L-.",
+ "--|-LL|||||.|-.L-L|.L----.LL.|",
+ "|--|-|.-|||LL|L-||.|||----||L.",
+ "|L.L--L|-||--L--.L|L-L--|-||-|" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

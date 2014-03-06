@@ -1,0 +1,40 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A famous probabilistic primality test makes use of Fermat's Little Theorem from number theory.  The theorem states 
+<pre>
+         p-1
+	b     %   p  =  1
+</pre>
+for all primes p, with b satisfying 1 &lt; b &lt; p, and % denoting modulus or remainder.  To refresh your memory, a prime is an integer greater than 1 whose only factors are 1 and itself.  In order to test some potential prime <b>q</b> we do the following: 
+<ul><li>Choose some b-value and compute b^(<b>q</b>-1) % <b>q</b>.  </li>
+<li>If this value is not 1 then you know <b>q</b> is not prime. </li>
+<li>If this value is 1, then you are more sure <b>q</b> is prime than before.</li>
+</ul>
+Given <b>q</b> you will try each b-value beginning with 2 until you reach <b>q</b>-1.  If at least one of the b-values fails the test stated above (do not produce 1) then return the lowest failing b-value.  If all pass return <b>q</b>.<br><br>
+When computing b^(<b>q</b>-1) % <b>q</b> the numbers can get enormous unless certain measures are taken.  For one thing, after each multiplication you can apply the modulus.  For example, <pre>
+	190^11 % 300  =  ((190^5 % 300) * (190^6 % 300)) % 300  .
+</pre>
+In addition, repeated squaring can speed up the exponentiation process.  For example, <pre>
+	a^9 = a*a*a*a*a*a*a*a*a      requires 8 multiplications but
+        a^9 = a*((a^2)^2)^2          requires 4 multiplications.
+</pre>
+We can combine the two methods above as illustrated in the following example where we compute a^11 % 12: <pre>
+	a^11 % 12 = (a * (a^10 % 12)) % 12 
+        a^10 % 12 = (a^5 % 12)^2 % 12 
+        a^5  % 12 = (a * (a^4 % 12)) % 12 
+        a^4  % 12 = (a^2 % 12)^2 % 12 
+	a^2  % 12 = (a*a) % 12  
+</pre>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">PseudoPrimeTest</td></tr><tr><td class="statText">Method:</td><td class="statText">firstFail</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int firstFail(int q)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>q</b> will be between 3 and 32000 inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Since 2^2 % 3 = 4 % 3 = 1 simply return 3.
+
+   </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1729</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here we have <pre>
+   2^1728 % 1729 = 1
+   3^1728 % 1729 = 1
+   4^1728 % 1729 = 1
+   5^1728 % 1729 = 1
+   6^1728 % 1729 = 1
+   7^1728 % 1729 = 742
+</pre> so 7 is returned.
+   </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>561</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>7</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>341</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>31859</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 31859</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,66 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+
+Every moviegoer is familiar with the tense scene in the air control
+tower where a green phosphorescent screen shows a radial arm sweeping
+around to update the position of a brightly glowing spot. A more modern
+but less dramatic technology is omnidirectional radar, which diffuses
+its signal in all directions at once in order to discern the positions
+of several distinct bodies. Like the traditional system, this kind of
+radar does not work in a continuous fashion, but periodically emits a
+burst of radio waves.
+
+</p><p>
+
+Observe that if a single object traveling at constant speed is within
+range of the radar, two consecutive readings suffice to identify its
+path. If several objects are within range, then two readings alone are 
+inadequate, since they lead to multiple interpretations. Three consecutive
+readings, however, will often allow one to determine the paths of a set
+of objects traveling at constant speed.
+
+</p><p>
+
+You are given six int[]s describing three consecutive
+readings from an omnidirectional radar installation that pulses at
+one-second intervals. The first two int[]s contain the
+first set of readings, specifying the <i>x</i> and <i>y</i> coordinates
+in meters of each blip on the radar grid. The second and third pair
+of int[]s describe the coordinates of the same number of
+radar blips at consecutive intervals. Although within each pair, the <i>n</i>th
+element of the <i>x</i> int[] refers to the same point as
+the <i>n</i>th element of the <i>y</i> int[], there
+isn't necessarily any correspondence in the order of coordinate pairs
+between any two sets of readings.
+
+</p><p>
+
+If these readings are not consistent with the interpretation that every
+radar blip corresponds to an object moving in a straight line at constant
+speed within radar range, or if there are several such interpretations,
+return an empty int[]. Otherwise, return a int[]
+containing the speed in meters per second of each object in the order
+established by the first set of readings. Round your results to the
+nearest m/s, with 0.5 rounding up. 
+
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">PulseRadar</td></tr><tr><td class="statText">Method:</td><td class="statText">deduceSpeeds</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[], int[], int[], int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] deduceSpeeds(int[] x1, int[] y1, int[] x2, int[] y2, int[] x3, int[] y3)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Assume that all objects are moving in the same plane.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Some objects may be stationary.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">In the case of multiple interpretations that would all result in the same int[] of speeds, you should still return an empty int[].</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>x1</b> has between 1 and 10 elements, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>y1</b>, <b>x2</b>, <b>y2</b>, <b>x3</b>, and <b>y3</b> each have the same number of elements as <b>x1</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>x1</b>, <b>y1</b>, <b>x2</b>, <b>y2</b>, <b>x3</b>, and <b>y3</b> is between -1000 and 1000, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">no set of readings includes two radar blips at the same location</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{-8, -7, 9, -5}</pre></td></tr><tr><td class="statText"><pre>{2, -1, -2, -6}</pre></td></tr><tr><td class="statText"><pre>{-2, -3, 8, 1}</pre></td></tr><tr><td class="statText"><pre>{-3, 1, 4, -2}</pre></td></tr><tr><td class="statText"><pre>{4, 1, 7, 7}</pre></td></tr><tr><td class="statText"><pre>{-8, 3, 10, 2}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 8,  4,  6,  7 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>There is a unique interpretation of the objects' linear motion. In this and all further diagrams, red dots depict the first set of readings, blue dots the second, and green the third.</p>
+
+<p>
+<img src="http://www.topcoder.com/contest/problem/PulseRadar/case0_small.png"></p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{-7, -2, 2, 0}</pre></td></tr><tr><td class="statText"><pre>{8, -2, -2, -6}</pre></td></tr><tr><td class="statText"><pre>{-5, -1, 3, -1}</pre></td></tr><tr><td class="statText"><pre>{9, 1, -4, -8}</pre></td></tr><tr><td class="statText"><pre>{-3, 1, 5, -2}</pre></td></tr><tr><td class="statText"><pre>{10, 5, -6, -10}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>It cannot be the case that each object is moving in a straight line 
+at constant speed.</p>
+
+<p>
+<img src="http://www.topcoder.com/contest/problem/PulseRadar/case1_small.png"></p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{-4, -4, -4, -4}</pre></td></tr><tr><td class="statText"><pre>{9, 3, -1, -7}</pre></td></tr><tr><td class="statText"><pre>{-1, -1, -1, -1}</pre></td></tr><tr><td class="statText"><pre>{6, -2, 4, -4}</pre></td></tr><tr><td class="statText"><pre>{2, 2, 2, 2}</pre></td></tr><tr><td class="statText"><pre>{3, -7, 9, -1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>There are several interpretations of the objects' linear motion.</p>
+
+<p>
+<img src="http://www.topcoder.com/contest/problem/PulseRadar/case2_small.png"></p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{5, -4, 2, -1, 8, -4, -8, 3, -3, -4}</pre></td></tr><tr><td class="statText"><pre>{9, 9, -2, -8, 3, -8, -4, 2, -4, -2}</pre></td></tr><tr><td class="statText"><pre>{-2, 2, 1, 2, 1, -1, -3, 1, -4, -1}</pre></td></tr><tr><td class="statText"><pre>{-1, -5, 6, -2, 2, 2, 0, -1, -2, -5}</pre></td></tr><tr><td class="statText"><pre>{8, 5, -1, -3, 6, -5, 2, 0, -6, -8}</pre></td></tr><tr><td class="statText"><pre>{4, -2, 2, 3, -5, 2, -8, 0, -5, 2}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 5,  9,  5,  4,  8,  8,  4,  4,  3,  4 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+<p>
+<img src="http://www.topcoder.com/contest/problem/PulseRadar/case3_small.png"></p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{-300, 466}</pre></td></tr><tr><td class="statText"><pre>{-600, 866}</pre></td></tr><tr><td class="statText"><pre>{466, 100}</pre></td></tr><tr><td class="statText"><pre>{866, -450}</pre></td></tr><tr><td class="statText"><pre>{500, 466}</pre></td></tr><tr><td class="statText"><pre>{-300, 866}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 427,  0 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

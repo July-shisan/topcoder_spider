@@ -1,0 +1,62 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+<i>NOTE: This problem statement contains subscripts and superscripts which may not display properly for plugin users.</i>
+<br></p>
+<p>
+The elements of a two-dimensional matrix with <i>M</i> rows and <i>N</i> columns are usually stored as a linear array of length <i>M*N</i>.  Assuming "row-major" order, elements are stored left-to-right, then top-to-bottom (the same order that we read English text on a written page).  For example, the following matrix A, with <i>M=</i>3 and <i>N=</i>3:
+</p>
+<pre>
+
+    0 1 2
+    3 4 5
+    6 7 8
+</pre>
+<p>
+is stored as: { 0, 1, 2, 3, 4, 5, 6, 7, 8 }.
+</p>
+<p>
+The transpose of a matrix A (denoted A<sup>T</sup>) is obtained by exchanging its rows and columns. Element A<sup>T</sup><i><sub>ij</sub></i> equals A<i><sub>ji</sub></i> , and if A has <i>M</i> rows and <i>N</i> columns, A<sup>T</sup> will have <i>N</i> rows and <i>M</i> columns.  For example, the transpose of the above matrix is:
+</p>
+<pre>
+
+    0 3 6
+    1 4 7
+    2 5 8
+</pre>
+<p>
+and is stored as: { 0, 3, 6, 1, 4, 7, 2, 5, 8 }.
+</p>
+<p>
+Computing the transpose of the square matrix <i>"in place"</i> (overwriting the original matrix) in this example is easy: it involves swapping 3 pairs of elements: 1 and 3, 2 and 6, and 5 and 7.  Elements 0, 4, and 8 do not need to be moved.
+</p>
+<p>
+It is a bit more tricky when the matrix is not square.  For example, the matrix:
+</p>
+<pre>
+
+    12 58 23
+    81 74 96
+</pre>
+<p>
+is stored as { 12, 58, 23, 81, 74, 96 }.  Its transpose is:
+</p>
+<pre>
+
+    12 81
+    58 74 
+    23 96
+</pre>
+<p>
+and is stored as: { 12, 81, 58, 74, 23, 96 }.  This also requires 3 swaps.  (See example 1 below.)
+</p>
+<p>
+Given <i>M</i> and <i>N</i>, return the minimum number of swaps necessary to take the transpose of a matrix of that size <i>in place</i>.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Transpose</td></tr><tr><td class="statText">Method:</td><td class="statText">numSwaps</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int numSwaps(int M, int N)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Assume that you know nothing about the actual values of the elements in the matrix, and that you cannot reduce the number of swaps by looking for pairs of identical elements.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>M</b> and <b>N</b> will be between 1 and 100, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Initial array: { a, b, c, x, y, z }<br>
+Swap positions 1 and 2: { a, c, b, x, y, z }<br>
+Swap positions 1 and 3: { a, x, b, c, y, z }<br>
+Swap positions 3 and 4: { a, x, b, y, c, z }<br>
+After 3 swaps, the array has been transposed in place.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>50</pre></td></tr><tr><td class="statText"><pre>50</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1225</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>49</pre></td></tr><tr><td class="statText"><pre>51</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2492</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

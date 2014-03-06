@@ -1,0 +1,25 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Why should the alphabetic ordering of names put so much emphasis on the first
+letter in each name? In the spirit of fairness to all the letters in a name, 
+let's compute the average alphabetical position
+of the letters in each name, and order the names accordingly.
+<p>
+We can define the "value" of a name to be the average position of the letters
+in that name, counting an 'A' as 1, 'B' as 2, and so on up to 'Z' as 26. So, for example, the
+value of "BOB" would be (2+15+2)/3 = 6.3333. When given a list of names, we
+will order them by putting them in order of increasing value. When 2 or more names have 
+exactly the same value, we will break the tie by placing the names that were
+earlier on the original list earlier on the ordered list.
+</p><p>
+Create a class Fairness that contains a method fairSort that is given a 
+String[] <b>names</b> and that returns a String[] 
+containing the same names sorted according to the above method. The elements in the
+return should, of course, not contain any leading or trailing spaces.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Fairness</td></tr><tr><td class="statText">Method:</td><td class="statText">fairSort</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] fairSort(String[] names)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>names</b> will contain between 1 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>names</b> will contain between 1 and 20 characters inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>names</b> will be an uppercase letter, 'A'-'Z'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BOB","AAAAAAA","TOM"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "AAAAAAA",  "BOB",  "TOM" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+    BOB = 6.333, AAAAAAA = 1.0, TOM = 16
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABE","ABLE","ABE"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "ABE",  "ABE",  "ABLE" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"PANE","TOM","BONE","AAAA"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "AAAA",  "PANE",  "BONE",  "TOM" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">PANE and BONE are tied, and since PANE comes before BONE in the given list, it must come before BONE in the sorted list.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BONE","TOM","PANE","AAAA"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "AAAA",  "BONE",  "PANE",  "TOM" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,48 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">
+A primary limitation of fighter plane performance is the ability of the
+pilot to remain conscious. We have determined that pilots can withstand large
+accelerations for short time periods, but that they cannot handle an 
+extended time period during which the average acceleration is high.
+<p>
+Create a class GForce that contains a method avgAccel that will be given the
+<b>period</b> as an int, and int[]'s <b>accel</b> and <b>time</b> 
+giving a piecewise-linear 
+approximation to the acceleration experienced over time during a flight. 
+The method will return the greatest average acceleration experienced over any 
+interval of length equal to 
+<b>period</b>.  The return value should be the average acceleration as a double.
+</p><p> 
+The piecewise-linear acceleration function is given in order of increasing
+times, starting with the beginning of the flight and ending at the end of the
+flight.  The graph of acceleration versus time is the sequence of straight-line
+segments joining adjacent points (time<sub>i</sub>, accel<sub>i</sub>).
+</p><p>
+The average acceleration over an interval is the area under the graph between
+the beginning and ending times, divided by the length of the interval.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">GForce</td></tr><tr><td class="statText">Method:</td><td class="statText">avgAccel</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double avgAccel(int period, int[] accel, int[] time)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The returned result must only be relatively close to the correct answer. Specifically, if the returned value either has a relative error or an absolute error less than 10^-9 it is accepted as correct.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>accel</b> contains between 2 and 50 elements inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>time</b> contains the same number of elements as <b>accel</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">the elements of <b>time</b> are strictly increasing</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">the elements of <b>time</b> and of <b>accel</b> are between 0 and 10,000 inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>period</b> is greater than 0 and less than the difference between the first and last elements of <b>time</b></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>100</pre></td></tr><tr><td class="statText"><pre>{1500,1500,500,2000}</pre></td></tr><tr><td class="statText"><pre>{0,100,150,225}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1500.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>
+ accel                        
+  2000 +            X   
+  1500 +   X---X   /    
+  1000 +        \ /   
+   500 +         X                          
+       +-+-+-+-+-+-+-+-+-+---- time
+     -100  0  100 200 300
+</pre>
+The four points determine a piecewise linear function with three segments,
+whose graph is shown.  The interval from 0 to 100 is the one with the 
+biggest average accel.  In this region the average is obviously 1500.
+<p>
+The highest accel value is at t=225, but if we compute the area under the
+curve between 125 and 225 we get 112,500 so the average on that interval is
+1125 which is not as high as 1500.</p>
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>500</pre></td></tr><tr><td class="statText"><pre>{5,30,5}</pre></td></tr><tr><td class="statText"><pre>{0,1000,2000}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 26.875</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+By symmetry the interval with the highest average must be 750 to 1250.
+The area under the curve in this interval consists of two trapezoids, each
+with width 250 and heights 23.75 and 30. The sum of their areas is 26.875.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>11</pre></td></tr><tr><td class="statText"><pre>{0,5,5,0,6}</pre></td></tr><tr><td class="statText"><pre>{0,5,15,25,31}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4.984848484848485</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

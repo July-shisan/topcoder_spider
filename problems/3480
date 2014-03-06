@@ -1,0 +1,81 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Just before a chess match between two teams, each team's coach secretly determines an ordering of his team's players.
+The first players in each team then get to play against each other,
+the second players in each team play against each other, etc. The team with the most wins will win the match.
+</p>
+
+<p>
+You are the coach for one of the teams, and you have somehow managed to find out the order of the players in
+the other team. Based on that, you want to order your players so that your team's expected score
+is maximized to your advantage. The expected score of a single game
+can be calculated by the following formula (which is directly derived from how
+the international chess rating system works):
+</p>
+
+<pre>
+E<sub>A</sub> = 1 / (1 + 10 <sup>(R<sub>B</sub> - R<sub>A</sub>)/400</sup>)
+
+E<sub>B</sub> = 1 / (1 + 10 <sup>(R<sub>A</sub> - R<sub>B</sub>)/400</sup>)
+</pre>
+
+<p>
+where R<sub>A</sub> and R<sub>B</sub> are the ratings of player A and B, and
+E<sub>A</sub> and E<sub>B</sub> are the expected scores for each player.
+For instance, if R<sub>A</sub> is 2432 and R<sub>B</sub> is 2611, the expected score for player A
+is 1 / (1 + 10 <sup>179/400</sup>) = 0.263005239459. The expected score for a team is the sum of
+the expected scores for the players in that team.
+</p>
+
+<p>
+To make things a bit more complicated, the players in a team must be
+ordered such that a player with rating <i>x</i> plays before all players with
+rating strictly less than <i>x</i> - <b>lim</b>, where <b>lim</b>
+is a given non-negative integer. For example, if <b>lim</b> is 100, a player
+with rating 2437 must play before a player with rating 2336 but not necessarily
+before a player with rating 2337.
+</p>
+
+<p>Create a class ChessMatch containing the method bestExpectedScore
+which takes a int[] <b>teamA</b>, the ratings of your players (in
+no particular order);
+a int[] <b>teamB</b>, the ratings of your opponent's players
+in the order they will play; and an int <b>lim</b>, the limit
+determining how freely you can order your players. You can assume
+that your opponent's players will be ordered in accordance with <b>lim</b>.
+The method should return a double, your team's expected score
+if you order your players optimally.</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ChessMatch</td></tr><tr><td class="statText">Method:</td><td class="statText">bestExpectedScore</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double bestExpectedScore(int[] teamA, int[] teamB, int lim)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Your return must have an absolute or relative error less than 1e-9.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>teamA</b> will contain between 1 and 20 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>teamB</b> will contain the same number of elements as <b>teamA</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>teamA</b> and <b>teamB</b> will be between 1500 and 3000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>lim</b> will be between 0 and 1500, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>teamB</b>[<i>i</i>] + <b>lim</b> will be equal or greater than <b>teamB</b>[<i>j</i>] for <i>j</i>&gt;<i>i</i>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{2239,2412,2399,2267}</pre></td></tr><tr><td class="statText"><pre>{2534,2429,2340,2389}</pre></td></tr><tr><td class="statText"><pre>100</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.4835736078879815</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+There are only four possible ways to order the players in teamA so that the constraints are fulfilled.
+These are:
+</p>
+
+<pre>
+{2399,2412,2239,2267}   Expected score: 1.48040986...
+{2399,2412,2267,2239}   Expected score: 1.48357361...
+{2412,2399,2239,2267}   Expected score: 1.47815348...
+{2412,2399,2267,2239}   Expected score: 1.48131723...
+</pre>
+
+<p>
+Note that if we could order the players
+in teamA freely, the best way would have been to order them in reverse
+rating order, {2239, 2267, 2399, 2412}. However, this is not allowed, since
+2239 and 2267 aren't allowed to appear before 2399 and 2412 as the difference
+is greater than the limit of 100.
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{2239,2412,2399,2267}</pre></td></tr><tr><td class="statText"><pre>{2534,2429,2340,2389}</pre></td></tr><tr><td class="statText"><pre>150</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.5332458652994558</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+The players are the same as in the previous example, but the limit has been
+increased to 150, and a couple of more orderings are
+now possible. The best one is {2267, 2412, 2399, 2239}.
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{2500,2503}</pre></td></tr><tr><td class="statText"><pre>{1500,1503}</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.9936953816334797</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>teamA is superior, but the ordering still matters slightly.</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1786,2080,2156,2132,2187,2380,2191}</pre></td></tr><tr><td class="statText"><pre>{1885,1851,1743,1714,2338,2167,1789}</pre></td></tr><tr><td class="statText"><pre>1500</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5.227676657319362</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+Since the limit is 1500, any ordering of the players is possible.
+The best one is {2191, 2187, 2132, 2080, 1786, 2380, 2156}.
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1868,1797,2213,2085,1611,2002,2167,1908,
+ 1773,1834,1766,2245,1582,2009,2233,2030}</pre></td></tr><tr><td class="statText"><pre>{2138,2259,2109,2160,2295,2022,2043,2131,
+ 1655,1716,1648,1779,1518,1570,1560,1677}</pre></td></tr><tr><td class="statText"><pre>200</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9.229777079272512</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

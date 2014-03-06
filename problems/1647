@@ -1,0 +1,26 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">The Iditarod is a dogsled race from Anchorage to Nome that takes many days. 
+We want to take a list of the times when the competitors crossed the
+finish line and convert that into the average number of minutes to complete 
+the race.
+<p>
+The race starts on day 1 at 8:00 AM. We are given a list of finish times as
+a String[], where each finish time is formatted as </p><ul><li>
+                 hh:mm xM, DAY n  </li></ul>
+
+where hh is exactly 2 digits giving the hour, mm is exactly 2 digits giving
+the minute, x is either 'A' or 'P', and n is a positive integer less than 100
+with no leading zeros.
+So each string has exactly 15 or 16 characters (depending on whether n is
+less than 10).
+<p>
+Create a class Iditarod containing method avgMinutes that is given a 
+String[], <b>times</b>, and that returns the average number of minutes taken by the
+competitors to complete the race.  Round the returned value to the nearest
+minute, with .5 rounding up.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Iditarod</td></tr><tr><td class="statText">Method:</td><td class="statText">avgMinutes</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int avgMinutes(String[] times)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">"12:00 AM, DAY d" refers to midnight between DAY d-1 and DAY d</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">"12:00 PM, DAY d" refers to noon on DAY d</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>times</b> contains between 1 and 50 elements inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>times</b> is formatted as specified above, with hh between 01 and 12 inclusive, mm between 00 and 59 inclusive, and d between 1 and 99 inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>times</b> represents a time later than the start of the race</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"12:00 PM, DAY 1","12:01 PM, DAY 1"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 241</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">From 8:00 AM to noon is 4 hours, so we have 4 hours for one competitor,
+and 4 hours, 1 minute for the other. These two values average to 240.5 minutes which is rounded up.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"12:00 AM, DAY 2"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 960</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The one competitor finished in 16 hours, just at the start of DAY 2.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"02:00 PM, DAY 19","02:00 PM, DAY 20", "01:58 PM, DAY 20"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 27239</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">26280 minutes, 27720 minutes, 27718 minutes average to 27239.333 which rounds down. </td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

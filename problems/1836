@@ -1,0 +1,99 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Clue is a board game played by three or more players.  The object of the game is to determine who has committed a 
+crime, where the crime was committed, and with what weapon.  In this problem, we will number the suspects 1-6, the 
+weapons 1-6, and the locations 1-9 and assume that there are exactly 3 people playing. Each suspect, weapon 
+and location is represented by its own card, for a total of 21 cards.  In the game, one suspect card, one weapon 
+card and one location card are secretly chosen at random and set aside as the suspect, weapon and location associated 
+with the crime.  The remaining cards are then dealt so that each player gets a total of exactly 6 cards.  There are a number of turns in a game, and each turn a player guesses one suspect, one weapon and one location.  Then the player to his left examines her cards, and if she has one or more of the cards in 
+the guess, she must reveal one of them to the player who made the guess.  If she has more than one of the cards, she gets to choose which one to reveal.  If, and only if, the player to the immediate left of the guesser doesn't have one of the three cards, then the third player (to the guesser's right) must examine his or her cards, and perform the same procedure.  Eventually, enough guesses are made that one player may deduce which cards are set aside, and he or she wins the game.<br><br>
+
+Your goal is to write a class to try to deduce the cards which are set aside.  You will be given a 
+String[], <b>cards</b>, representing the cards in your hand.  You will also be given a 
+String[], <b>guesses</b>, representing the guesses made, in the order they were made, and the results of 
+the guesses.  Each element of <b>cards</b> will be formatted as "&lt;type&gt;&lt;number&gt;", where &lt;type&gt; is 
+'S', 'L', or 'W', representing suspect, location or weapon, respectively.  &lt;number&gt; is a single digit, 
+representing which suspect, location or weapon the card shows.  Each element of <b>guesses</b> will be formatted 
+as:
+<br><br>"&lt;guesser&gt; &lt;suspect guessed&gt; &lt;location guessed&gt; &lt;weapon guessed&gt;  &lt;responder&gt; 
+&lt;response&gt;"<br><br>  
+&lt;guesser&gt; will be a digit between 1 and 3, inclusive, representing the person making 
+the guess.  You are player 1, so if &lt;guesser&gt; is 1, it means that you made the guess.  &lt;suspect guessed&gt;, 
+&lt;location guessed&gt;, and &lt;weapon guessed&gt; will all be single digits representing which suspect, location 
+and weapon were guessed.  &lt;responder&gt; will be a single digit between 0 and 3, inclusive, representing the player who responded to the guess.  &lt;responder&gt; will not be the 
+same as &lt;guesser&gt;.  If &lt;responder&gt; is 0, it means that none of the non-guessing players had any of the 
+cards associated with the guess.  If &lt;responder&gt; is 1, it means that you are the one who 
+responded, and &lt;response&gt; will be an element of <b>cards</b>, representing which card you showed to 
+the guesser.  If &lt;guesser&gt; is 1, then you are the one who guessed, and if &lt;responder&gt; is not 0, then &lt;response&gt; will represent the card that player &lt;responder&gt; showed you.  If you are the guesser and no one responded, or if you are neither the responder nor the guesser, then &lt;response&gt; will be "N0" (the number zero, not the letter oh), meaning that the response was either hidden from you or did not exist.
+<br><br>
+You are to determine the set of cards that could be secret cards.  This set will always contain at least one suspect, one location, and one weapon.  You should return a sorted String[], each of whose elements represents a single card in this set, in the same format as elements of <b>cards</b>.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Clue</td></tr><tr><td class="statText">Method:</td><td class="statText">whodunit</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] whodunit(String[] cards, String[] guesses)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">You are player 1, the player to your left is player 2, and the player to his or her left is player 3, who is to your right.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Players do not necessarily make guesses in any particular order.  So, a single player may make more than 1 guess in a row.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>cards</b> will contain exactly 6 distinct elements, formatted as described in the problem statement.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>guesses</b> will contain between 0 and 50 elements, inclusive, formatted as described in the problem statement.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There will always be at least one way to divide the cards not in <b>cards</b> between the secret cards, player 2's cards, and player 3's cards that is consistent with <b>guesses</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>guesses</b> will be formatted as described above.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If &lt;guesser&gt; is 1, then either &lt;responder&gt; will be 0 and &lt;response&gt; will be N0, or &lt;responder&gt; will not be 0 and &lt;response&gt; will represent one of the three cards guessed.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If neither &lt;guesser&gt; nor &lt;responder&gt; is 1, then &lt;response&gt; will be N0.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If &lt;responder&gt; is 1, then &lt;response&gt; will be an element of <b>cards</b> and will be one of the three cards guessed.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If &lt;responder&gt; is not 1, then &lt;response&gt; will not be an element of <b>cards</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">&lt;responder&gt; will not equal &lt;guesser&gt;</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"S1","S2","S4","S3","S5","W5"}</pre></td></tr><tr><td class="statText"><pre>{"1 1 1 1 0 N0"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "L1",  "S6",  "W1" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In this example, you make a single guess of S1, W1, L1. No one is able to respond (&lt;responder&gt; = 0), which means that neither of the other two players has S1, W1, or L1.  Thus those three cards must all be either secret cards or your cards.  W1 and L1 are not your cards, and are thus secret cards.  Furthermore, since you have five of the six suspect cards, the only other possible suspect card that could be a secret card is S6.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"L3","S2","S4","S3","S5","W5"}</pre></td></tr><tr><td class="statText"><pre>{"2 1 1 1 0 N0"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "L1",
+ "L2",
+ "L4",
+ "L5",
+ "L6",
+ "L7",
+ "L8",
+ "L9",
+ "S1",
+ "S6",
+ "W1",
+ "W2",
+ "W3",
+ "W4",
+ "W6" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is a similar guess as the one in example 0, only with a different guesser.  You have no idea which cards the guesser has, so the guess doesn't really tell you anything, and any card not in your hand can be a secret card.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"W4","W1","L5","L9","S3","L2"}</pre></td></tr><tr><td class="statText"><pre>{"2 3 8 4 1 W4",
+ "1 3 8 3 3 W3"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "L8",  "S1",  "S2",  "S4",  "S5",  "S6",  "W2",  "W5",  "W6" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">From the first guess, we know that player 3 doesn't have S3, L8, or W4.  Similarly, from the second guess, we know that player 2 doesn't have S3, L8, or W3.  We also know that player 3 has W3, since he showed it to us.
+<br><br>
+First, we can deduce that the secret location must be L8, since neither of the other players have it, and we don't have it.  Next, the secret weapon has to be W2, W5, or W6, since we know who has the other weapons.  The only thing we know about suspects is the secret card isn't S3, since we have that.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"W4","W1","L5","L9","S3","L2"}</pre></td></tr><tr><td class="statText"><pre>{"1 3 5 4 0 N0"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "L1",
+ "L3",
+ "L4",
+ "L6",
+ "L7",
+ "L8",
+ "S1",
+ "S2",
+ "S4",
+ "S5",
+ "S6",
+ "W2",
+ "W3",
+ "W5",
+ "W6" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Guessing three of your own cards will never give you any new information.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"W4","W1","L5","L9","S3","L2"}</pre></td></tr><tr><td class="statText"><pre>{}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "L1",
+ "L3",
+ "L4",
+ "L6",
+ "L7",
+ "L8",
+ "S1",
+ "S2",
+ "S4",
+ "S5",
+ "S6",
+ "W2",
+ "W3",
+ "W5",
+ "W6" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"L5","L7","L8","S5","W5","W6"}</pre></td></tr><tr><td class="statText"><pre>{"2 6 1 6 3 N0",
+ "3 6 5 4 1 L5",
+ "1 6 1 3 2 W3",
+ "2 3 5 1 3 N0",
+ "3 5 7 1 1 S5",
+ "1 6 1 1 3 L1",
+ "2 1 2 5 3 N0",
+ "3 4 6 5 1 W5",
+ "1 3 3 4 2 W4",
+ "2 6 4 1 3 N0",
+ "3 4 3 6 1 W6",
+ "1 4 6 1 2 S4",
+ "2 2 5 6 3 N0",
+ "3 6 7 4 1 L7",
+ "1 6 4 1 3 L4",
+ "2 6 5 1 1 L5",
+ "3 4 3 1 2 N0",
+ "1 6 2 1 3 L2",
+ "2 6 3 1 0 N0",
+ "3 6 3 1 0 N0"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "L3",  "S6",  "W1" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

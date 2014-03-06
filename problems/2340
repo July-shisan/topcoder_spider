@@ -1,0 +1,35 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">I have a light that changes from on to off or from off to on when I clap twice.  The light's sensor
+samples the noise level in the room
+at short intervals and it triggers the light to change whenever it 
+detects a low noise level followed by exactly 2 high noise levels followed by a 
+low noise level.
+<p>
+"High" or "low" is based on a threshold noise level. When the
+sampled noise level is as high or higher than the threshold level, the noise
+level is classified as "high"; otherwise it is classified as "low". I have a 
+int[] <b>background</b> that is a typical sequence of sensor readings when normal
+activity is taking place. I want software that will choose the threshold value
+so that it has the following properties:</p><ol><li>
+     1) It causes more than 50% of all the values in <b>background</b> to be classified "low". </li><li>
+     2) It is the lowest possible threshold value that satisfies the 50% rule and that does 
+        not cause <b>background</b> to trigger the light to change.</li></ol><p>
+Create a class ClapLight that contains a method threshold that is given the 
+int[] <b>background</b> and that returns the desired threshold value.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ClapLight</td></tr><tr><td class="statText">Method:</td><td class="statText">threshold</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int threshold(int[] background)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>background</b> will contain between 4 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>background</b> will be between 0 and 1000 inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{6,6,6,6,6}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   The threshold must be at least 7 to exceed more than 50% of the samples, 
+   and with the threshold set at 7 every reading will be classified
+   "low" and the light will not be triggered.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 5,8,7,6,12,8,4,3,2,6 } </pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   The threshold must exceed at least 6 of these values to satisfy the 50% rule.
+   So it must be at least 7.  But with the threshold set at 7 the sequence 
+   5, 8, 7, 6 would trigger the light.
+   A threshold of 8 will allow the sequence 6,12,8,4 to trigger the light.  A threshold
+   of 9 will never cause this sequence to trigger the light.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{8,8,8,1,1,1,1,1,1,1,1,1,1,1,2,1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Remember that the high noise levels must be both preceded and followed by low noise levels to trigger the light.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{921,1,5,900,8,813,3,3,3,3,3,3,3,813,813}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

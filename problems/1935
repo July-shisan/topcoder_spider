@@ -1,0 +1,67 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Given a summary of events occurring during a TopCoder match in a single room, return the room summary for that room.
+The room summary is a list of coders' handles with their point totals, sorted in decreasing order by points. Ties are broken by listing lexicographically lower handles first (according to ASCII values).
+<br>
+The room summary is a String[], where each element is the result of a coder's performance in the format <tt>"&lt;handle&gt; &lt;points&gt;"</tt> (quotes for clarity) where <tt>&lt;handle&gt;</tt> is the coder's handle and <tt>&lt;points&gt;</tt> is the coder's point total (<tt>&lt;points&gt;</tt> must contain exactly 2 decimal places and have no extra leading zeros), eg. <tt>"SnapDragon 1201.30"</tt>
+<br><br><i>The Problems</i><br><br>
+The name of the three problems are given in the String[] <b>problems</b>.
+<br><br><i>The Coders</i><br><br>
+The coder's handles are given in the String[] <b>handles</b>.
+<br><br><i>I. Coding Phase</i><br><br>
+Each event during the Coding Phase is a submission, which is given as an element of the String[] <b>submissions</b> in the following format:<br><tt>"&lt;handle&gt; &lt;problem&gt; &lt;points&gt;"</tt> (quotes for clarity), where
+<ul><li><tt>&lt;handle&gt;</tt> is a coder's handle that corresponds to an element of <b>handles</b>,</li>
+ <li><tt>&lt;problem&gt;</tt> is a problem's name that corresponds to an element of <b>problems</b>,</li>
+ <li><tt>&lt;points&gt;</tt> is the points the coder receives for the submission of the respective problem, with exactly 2 decimal places and no extra leading zeros, eg. <tt>"612.34"</tt> (quotes for clarity).</li>
+</ul>
+This means that coder <tt>&lt;handle&gt;</tt> submits problem <tt>&lt;problem&gt;</tt> for <tt>&lt;points&gt;</tt> points.
+If a coder submits a problem more than once (i.e. resubmits), only the last submission made (i.e. the one with the higher index in <b>submissions</b>) is to be considered.
+Points are between 60.00 and 1000.00, inclusive.
+<br><br><i>II. Challenge Phase</i><br><br>
+Each event during the Challenge Phase is a challenge, which is given as an element of <b>challenges</b> in the following format:<br><tt>"&lt;handle1&gt; &lt;handle2&gt; &lt;problem&gt; &lt;result&gt;"</tt> (quotes for clarity), where
+<ul><li><tt>&lt;handle1&gt;</tt> is a coder's handle that corresponds to an element of <b>handles</b>,</li>
+ <li><tt>&lt;handle2&gt;</tt> is a coder's handle that corresponds to a different element of <b>handles</b>,</li>
+ <li><tt>&lt;problem&gt;</tt> is a problem's name that corresponds to an element of <b>problems</b>,</li>
+ <li><tt>&lt;result&gt;</tt> is the result of the challenge, either <tt>"successful"</tt> or <tt>"unsuccessful"</tt> (quotes for clarity).</li>
+</ul>
+This means that coder <tt>&lt;handle1&gt;</tt> challenges problem <tt>&lt;problem&gt;</tt> of coder <tt>&lt;handle2&gt;</tt> with the result <tt>&lt;result&gt;</tt>.
+For a successful challenge, <tt>&lt;handle1&gt;</tt> receives 50 points and <tt>&lt;handle2&gt;</tt> loses all points for his submission of <tt>&lt;problem&gt;</tt>.
+For an unsuccessful challenge, <tt>&lt;handle1&gt;</tt> loses 50 points (possibly getting a negative score). Challenges occur in the order listed in <b>challenges</b>.
+Coders with a non-positive score are still allowed to challenge (unlike in real TopCoder matches).
+<br><br><i>III. System Testing Phase</i><br><br>
+Each element in <b>failed</b> is a result of the System Testing Phase in the following format:<br><tt>"&lt;handle&gt; &lt;problem&gt;"</tt> (quotes for clarity), where
+<ul><li><tt>&lt;handle&gt;</tt> is a coder's handle that corresponds to an element of <b>handles</b>,</li>
+ <li><tt>&lt;problem&gt;</tt> is a problem's name that corresponds to an element of <b>problems</b>.</li>
+</ul>
+This means that problem <tt>&lt;problem&gt;</tt> of coder <tt>&lt;handle&gt;</tt> failed the system tests and <tt>&lt;handle&gt;</tt> loses all points for his submission of <tt>&lt;problem&gt;</tt>.
+All submissions that pass the system tests are not listed within <b>failed</b>.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">RoomSummary</td></tr><tr><td class="statText">Method:</td><td class="statText">generate</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[], String[], String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] generate(String[] problems, String[] handles, String[] submissions, String[] challenges, String[] failed)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Problem names and coder handles are case sensitive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>problems</b> contains exactly 3 elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>problems</b> contains between 1 and 15 alphanumeric characters ('A'-'Z', 'a'-'z', '0'-'9').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There are no duplicates within <b>problems</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>handles</b> contains between 1 and 20 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>handles</b> contains between 1 and 10 alphanumeric characters ('A'-'Z', 'a'-'z', '0'-'9').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There are no duplicates within <b>handles</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>submissions</b> contains between 0 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>challenges</b> contains between 0 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>failed</b> contains between 0 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>submissions</b>, <b>challenges</b> and <b>failed</b> are formatted as described in the problem statement.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Points for submissions are between 60.00 and 1000.00, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A resubmission results in a lower score than a previous submission or in the minimal possible score of 60.00.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A coder will not challenge his own problems or another coder's problem that was previously unsuccessfully challenged by him or successfully challenged by somebody else. Only problems that have been submitted will be challenged.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>failed</b> only contains problems that have been submitted and have not been successfully challenged.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "EasyP", "MediumP", "HardP" }</pre></td></tr><tr><td class="statText"><pre>{ "Andrea", "Billy", "Chris", "eddy", "David", "Feliza" }</pre></td></tr><tr><td class="statText"><pre>{ "Andrea EasyP 220.31",
+  "Billy EasyP 213.24",
+  "Chris EasyP 194.24",
+  "Chris EasyP 75.00",
+  "Andrea MediumP 472.23",
+  "Billy MediumP 428.34",
+  "Andrea HardP 823.60" }</pre></td></tr><tr><td class="statText"><pre>{ "Chris Andrea EasyP unsuccessful",
+  "Chris Billy EasyP unsuccessful",
+  "Billy Andrea HardP successful" }</pre></td></tr><tr><td class="statText"><pre>{ "Billy MediumP" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "Andrea 692.54",
+ "Billy 263.24",
+ "David 0.00",
+ "Feliza 0.00",
+ "eddy 0.00",
+ "Chris -25.00" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Andrea has 1516.14 (220.31 + 472.23 + 823.60) points after the coding phase. She loses 823.60 points during the challenge phase because her submission of HardP was successfully challenged. Her final score is 692.54.<br>
+Billy has 641.58 (213.24 + 428.34) points after the coding phase. He gains 50.00 points during the challenge phase and loses 428.34 points because his MediumP fails the system tests. His final score is 263.24.<br>
+Chris receives 75.00 points for his submission of EasyP (which was a resubmission), but loses 100.00 points due to two unsuccessful challenges. His final score is -25.00.<br>
+David, eddy and Feliza are not involved in any submission or challenge, thus all have a final score of 0.00. They are listed in lexicographical order (lower ASCII values first).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "EasyP", "MediumP", "HardP" }</pre></td></tr><tr><td class="statText"><pre>{ "Andrea", "Billy", "Chris" }</pre></td></tr><tr><td class="statText"><pre>{ "Billy EasyP 240.31",
+  "Billy MediumP 425.23",
+  "Chris HardP 831.42",
+  "Andrea EasyP 89.12" }</pre></td></tr><tr><td class="statText"><pre>{ "Andrea Billy EasyP unsuccessful",
+  "Andrea Chris HardP unsuccessful" }</pre></td></tr><tr><td class="statText"><pre>{}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "Chris 831.42",  "Billy 665.54",  "Andrea -10.88" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "250pointer", "500pointer", "1000pointer" }</pre></td></tr><tr><td class="statText"><pre>{ "Andrea", "Billy", "Chrissy", "Chris" }</pre></td></tr><tr><td class="statText"><pre>{ "Billy 250pointer 244.32",
+  "Andrea 250pointer 241.42",
+  "Andrea 500pointer 432.39",
+  "Billy 500pointer 372.40",
+  "Billy 250pointer 100.42" }</pre></td></tr><tr><td class="statText"><pre>{ "Billy Andrea 250pointer unsuccessful",
+  "Andrea Billy 500pointer successful",
+  "Billy Andrea 500pointer unsuccessful" }</pre></td></tr><tr><td class="statText"><pre>{}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "Andrea 723.81",  "Billy 0.42",  "Chris 0.00",  "Chrissy 0.00" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

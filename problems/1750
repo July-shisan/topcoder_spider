@@ -1,0 +1,25 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><i>Note to plugin users: There is an image in the problem examples. Please use the applet to view it.</i>
+<p>
+After laser surgery, I was instructed to put drops in my eyes 6 times a day,
+spacing them as far apart as possible.  Considering that I sleep for some
+period each day, it required some calculation to come up with an optimal
+schedule.  Recognizing that I get similar instructions every time I get 
+medication from the doctor, it became clear that a computer program was needed.
+</p><p>
+Create a class EyeDrops that contains a
+method closest that is given <b>sleepTime</b>, the number of hours that the patient
+sleeps each day, and <b>k</b>, the number of doses required each day. The method
+returns the number of minutes between the closest doses, when the schedule
+is chosen to make this period as large as possible. You should assume that the
+patient sleeps for the same continuous period each day.
+</p><p>
+The schedule that you choose will be applied for multiple days, so the period 
+between closest doses may be between doses on different days.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">EyeDrops</td></tr><tr><td class="statText">Method:</td><td class="statText">closest</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double closest(int sleepTime, int k)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The returned value must have a relative error of less than 1.0E-9</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>sleepTime</b> must be between 0 and 23 inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>k</b> must be between 1 and 50 inclusive</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>8</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 720.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">You can take one dose when you wake up, and the next one 12 hours later.
+<img src="http://www.topcoder.com/contest/problem/EyeDrops/example0.gif"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>9</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 450.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Take your medicine when you wake up, when you go to sleep, and halfway
+in between.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>23</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1440.0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>9</pre></td></tr><tr><td class="statText"><pre>8</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 128.57142857142856</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

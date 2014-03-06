@@ -1,0 +1,43 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">It is time to arrange the seating around a circular table for a party.  We
+want to alternate boys and girls around the table.  We have a list of all
+the attendees and their genders. Each attendee is specified by a String that
+consists of the name, followed by one space, followed by either "boy" or "girl".
+<p>
+In addition to the attendees, we need to seat 
+the HOST (a boy) and the HOSTESS (a girl) with the HOSTESS directly across from
+the HOST. That means that half the attendees should be on the HOST's left, and half on his right.  
+</p><p>
+Create a class PartySeats that contains a method seating that is given a 
+String[] <b>attendees</b> that lists all the attendees and their genders. The method
+returns a String[] that gives the seating plan, starting with "HOST" and proceeding
+clockwise around the table, including all the attendees and the HOSTESS. 
+</p><p>
+If there is more than one possible seating plan,
+return the one that comes first lexicographically. "First lexicographically" means that each successive element in the return should be chosen to be the earliest alphabetically that is consistent with a legal seating plan. If there is no legal seating
+plan, the return should contain 0 elements.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">PartySeats</td></tr><tr><td class="statText">Method:</td><td class="statText">seating</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] seating(String[] attendees)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>attendees</b> will contain between 1 and 50 elements inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>attendees</b> will consists of a name followed by a single space followed by either "boy" or "girl". There will be no leading or trailing spaces.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each name will contain between 1 and 20 characters inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each name will contain only uppercase letters 'A'-'Z'</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">no name will be "HOST" or "HOSTESS"</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BOB boy","SAM girl","DAVE boy","JO girl"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "HOST",  "JO",  "BOB",  "HOSTESS",  "DAVE",  "SAM" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">   A girl must follow the HOST, and JO comes earliest lexicographically. Then comes
+   a boy, and BOB is the earliest lexicographically. HOSTESS must come next so 
+   she can be opposite the HOST and then DAVE and SAM must follow in that order
+   to honor the alternating gender requirement.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"JOHN boy"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   There are more boys than girls so we cannot alternate.
+ </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"JOHN boy","CARLA girl"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   There is no way to alternate gender and also have the HOST sit directly
+   across from the HOSTESS</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"BOB boy","SUZIE girl","DAVE boy","JO girl",
+"AL boy","BOB boy","CARLA girl","DEBBIE girl"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "HOST",
+ "CARLA",
+ "AL",
+ "DEBBIE",
+ "BOB",
+ "HOSTESS",
+ "BOB",
+ "JO",
+ "DAVE",
+ "SUZIE" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

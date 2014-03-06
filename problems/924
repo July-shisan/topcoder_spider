@@ -1,0 +1,26 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+A line of symmetry is a line through the cartesian plane such that if you
+reflect everything from one side of the line to the other, you still have the
+same image.  For example, if the x-axis is a line of symmetry, it means that
+for every point (x,y) there is also a point (x,-y).  
+</p><p>
+Your task is, given a list of points, determine how many such lines exist.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Symmetry</td></tr><tr><td class="statText">Method:</td><td class="statText">countLines</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int countLines(String[] points)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>points</b> will be formatted as a list of x,y pairs "&lt;x<sub>1</sub>&gt; &lt;y<sub>1</sub>&gt; &lt;x<sub>2</sub>&gt; &lt;y<sub>2</sub>&gt; &lt;x<sub>3</sub>&gt; &lt;y<sub>3</sub>&gt; ...", where there is exactly one space between every two terms, and both &lt;x<sub>i</sub>&gt; and &lt;y<sub>i</sub>&gt; are integers.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">&lt;x<sub>i</sub>&gt; and &lt;y<sub>i</sub>&gt; will both be between -10,000 and 10,000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each point will be unique.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There will be between 2 and 200 points, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"1 1 1 -1 -1 1 -1 -1"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This looks something like this (where '-' and '|' represent the axes, and '*' represents a point):
+<pre>
+        |
+        |
+     *  |  *
+        |
+--------+--------
+        |
+     *  |  *
+        |
+        |
+</pre>
+There are 4 lines of symmetry.  Both axes are lines of symmetry, as are the
+line y = x and y = -x.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0 0 2 1 0 5 -2 4"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0 100 100 0","0 0 100 100","51 52"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0 0","100 0","50 87"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

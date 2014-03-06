@@ -1,0 +1,34 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A user has entered a list of Strings. We must check each String to see if it
+meets our criteria for a "customer", and either reject the String or
+recapitalize and respace it to meet our standards.
+<p>
+Our formatting manual states:</p><ol><li> 
+A well-formed customer consists of either 2 or 3 parts. The parts are separated by
+one or more spaces, but there are no leading spaces or trailing spaces.
+Each part must be a name or an initial, but the last part may not be an initial.
+    An initial is a letter ('a-z' or 'A-'Z') followed by a period ('.')
+    A name is a sequence of two or more letters ('a-z' or 'A'-'Z').
+</li></ol><p>
+Our standard for recapitalizing a well-formed customer is that each name or initial 
+should start with an uppercase letter and all other letters should be lowercase.
+Our standard for respacing a well-formed customer is that any extra spaces
+between parts should be removed leaving 
+exactly one space between adjacent parts.
+</p><p>
+Create a class NameCheck that contains a method formatList that is given a
+String[] <b>namelist</b> and that returns a String[] that includes all the well-formed customers,
+properly recapitalized and respaced. They should appear in the same order as in
+the original <b>namelist</b>.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">NameCheck</td></tr><tr><td class="statText">Method:</td><td class="statText">formatList</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] formatList(String[] namelist)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>namelist</b> will contain between 1 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>namelist</b> will contain between 1 and 50 characters inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>namelist</b> will be an ASCII character (32-126).</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Doug#as good","bArneY R.", "bArneY   Rubble"," Bob Stone", "Bob B. J. Toms","J. Lo"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "Barney Rubble",  "J. Lo" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   "Doug#as good" is not well-formed because Doug#as is not a name or initial.
+   "bArneY R." is not well-formed because it does not end with a name.
+   " Bob Stone" is not well-formed because it starts with a space.
+   "Bob B. J. Toms" is not well-formed because it has 2 names and 2 initials.
+   "bArneY   Rubble" is well-formed, being a first name followed by a last name.
+   "J. Lo" is well-formed, being a first initial followed by a last name.
+ </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Doug G.","GG WALNUT DOUG", "AB. JONES", "A. BOB J.", "Gg DouG", "GG DOUG"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "Gg Walnut Doug",  "Gg Doug",  "Gg Doug" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A BIG Mess", "A. Big Mess.Mess", "ABig","M.MESS"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

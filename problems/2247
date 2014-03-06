@@ -1,0 +1,67 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+
+<i><b>Warning</b>: This problem statement contains images that may not be
+visible to plugin users. For best results, use the standard Arena editor.</i>
+
+</p><p>
+
+Raccoons dug up your lawn during the spring, but now they've agreed to
+resurface it for a modest fee. They come equipped with a turf roller and
+a truckload of rectangular turf strips of fixed dimensions. We say that
+"length" is the measure of a turf strip's longer edges, while "breadth"
+is the measure of its shorter edges. Your lawn is also rectangular: from a
+bird's-eye view, what we call "width" is the distance from its left border
+to its right border, and "height" is the distance from bottom to top.
+
+</p><p>
+
+For aesthetic reasons, you demand that the turf be laid at a certain
+angle. This angle is between 0 and
+90 degrees, inclusive, and is measured counterclockwise from the bottom
+border of your lawn. In other words, the raccoons will ensure that the
+longer edges of every turf strip are inclined at precisely this angle
+relative to the horizontal axis.
+
+</p><p>
+
+It may well happen that a single turf strip laid at the desired angle
+is not long enough to span your lawn. In such cases, the raccoons lay
+several turf strips end to end, precisely aligning the shorter edges
+of subsequent strips. At no time will turf strips overlap. Any scraps of
+turf that overhang the lawn's borders are immediately trimmed off and
+discarded. Once the raccoons have completed their labors, the entirety
+of your lawn will be covered with fresh turf.
+
+</p><p>
+
+You are given five integers that respectively state: the width of your
+lawn; the height of your lawn; the angle at which turf is to be laid; the
+length of each turf strip; and the breadth of each turf strip.
+Calculate the minimum number of turf strips that the raccoons
+must use in the course of resurfacing your lawn.
+
+</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TurfRoller</td></tr><tr><td class="statText">Method:</td><td class="statText">stripNum</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int stripNum(int lawnWidth, int lawnHeight, int stripAngle, int stripLength, int stripBreadth)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Turf strips must always be laid lengthwise, as in the illustrations below. Breadthwise orientation is not permitted.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each turf strip must be laid at the specified angle, even if a different angle would allow the whole lawn to be covered with a single piece.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>lawnWidth</b> is between 1 and 100, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>lawnHeight</b> is between 1 and 100, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>stripAngle</b> is between 0 and 90, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>stripLength</b> is between 1 and 100, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>stripBreadth</b> is between 1 and 100, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>stripBreadth</b> is less than or equal to <b>stripLength</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If the angle is not 0 or 90, then the input is such that the final result will not be affected by small precision errors in your intermediate calculations. Specifically, the result would remain the same if both the length and width of the lawn were greater by 0.1 or less by 0.1 than they are in the input.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>60</pre></td></tr><tr><td class="statText"><pre>90</pre></td></tr><tr><td class="statText"><pre>39</pre></td></tr><tr><td class="statText"><pre>60</pre></td></tr><tr><td class="statText"><pre>25</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><center>
+<img src="http://www.topcoder.com/contest/problem/TurfRoller/turfroller.example.0.png"></center>
+
+<pre>
+</pre>
+
+This diagram shows that the raccoons can resurface a lawn of width 60 and height 90 by laying as few as eight turf strips, each of length 60 and breadth 25, at an angle of 39 degrees.
+
+<pre>
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>26</pre></td></tr><tr><td class="statText"><pre>6</pre></td></tr><tr><td class="statText"><pre>38</pre></td></tr><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>14</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><center>
+<img src="http://www.topcoder.com/contest/problem/TurfRoller/turfroller.example.1.png"></center>
+
+<pre>
+</pre>
+
+In an optimal configuration, the upper edge of the top left turf strip doesn't necessarily intersect with the top left corner of the lawn.
+
+<pre>
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>8</pre></td></tr><tr><td class="statText"><pre>9</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here, the strips are laid horizontally.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>6</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>45</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>45</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>70</pre></td></tr><tr><td class="statText"><pre>70</pre></td></tr><tr><td class="statText"><pre>45</pre></td></tr><tr><td class="statText"><pre>76</pre></td></tr><tr><td class="statText"><pre>24</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>100</pre></td></tr><tr><td class="statText"><pre>100</pre></td></tr><tr><td class="statText"><pre>45</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5112</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

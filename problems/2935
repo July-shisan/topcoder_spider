@@ -1,0 +1,45 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><i>This problem contains images.</i><br><br>
+In chess the queen reigns supreme over all other pieces.  She has mastered the techniques of the rook and the bishop, thus allowing her to move any number of steps diagonally, vertically, or horizontally.  Since a single queen controls such a large area, it is hard to put multiple queens on the board without them getting in each others' way (two queens are "in each others' way" if one can reach the other in a single move).  For this reason there is a famous challenge requiring <b>n</b> queens to be placed on an <b>n</b>-by-<b>n</b> chess board such that no two queens interfere with each other.<br><br>
+In this problem you will implement a particular randomized solution.  The board is setup as follows starting with column 1 on the left, and ending with column <b>n</b> on the right:
+<ul><li>  1) Choose a random number <i>R</i> between 1 and <b>n</b> inclusive. </li>
+   <li>  2) Place a queen in row <i>R</i> of the current column (row 1 is the top; row <b>n</b> is the bottom).</li>
+</ul>
+An <i>alteration step</i> works as follows:
+<ul><li>  1) Compute <i>T</i>, the number of columns containing reachable queens. </li>
+   <li>  2) Choose a random number <i>K</i> between 1 and <i>T</i> inclusive. Let <i>C</i> 
+	    denote the <i>K</i>th column, counting from the left, that contains a reachable queen.  
+	    In effect, we have randomly chosen one of the reachable queens.</li>
+   <li>  3) For each of the <b>n</b> positions in column <i>C</i>, 
+	    compute how many queens from other columns can currently reach that position. </li>
+   <li>  4) Move the queen in column <i>C</i> to the position in column <i>C</i> reachable 
+	    by the fewest number of queens.  If multiple positions are tied, continue to step 5, otherwise the alteration step is complete.</li>
+   <li>  5) Compute <i>P</i>, the number of positions that tied in step 4.</li>
+   <li>  6) Choose a random number <i>Q</i> between 1 and <i>P</i> inclusive.  Counting from the top down, 
+	    move the queen to the <i>Q</i>th of the tied positions in 4.</li>
+</ul>
+Note that an alteration step may not cause any movement at all.  You will return how many alteration steps are required before no two queens interfere with one another.  The <i>i</i>th random value used in the algorithms above will be (<i>a</i>(<i>i</i>) % <i>Up</i>)+1 where <i>Up</i> is the inclusive upper bound on the random number required and <i>a</i>(<i>i</i>) is given by the following formula:
+<ul><li> <i>a</i>( 1 ) = 1 ,</li>
+        <li> <i>a</i>( <i>k</i>+1 ) = ( 16807 * <i>a</i>( <i>k</i> ) ) % 2147483647 for <i>k</i> &gt; 0.</li>
+</ul>
+Here % denotes modulus or remainder.  Use a 64-bit integral type to correctly compute the <i>a</i>(<i>j</i>) values.  Random values 1 through <b>n</b> will be used to setup the board, while the remaining values will be used to perform the alteration steps.  Make sure to follow the algorithm carefully thus ensuring each random value is used at the correct time.  Specifically, make sure you do not continue on to step 5 unless directed to do so.  If no alteration steps are required, return 0.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">QueenInterference</td></tr><tr><td class="statText">Method:</td><td class="statText">numSteps</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int numSteps(int n)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> must be between 4 and 100 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> will not be 17.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The first 5 random numbers are 2,3,5,4,4 thus producing the following initial configuration.
+<br><img src="http://www.topcoder.com/contest/problem/QueenInterference/chesstmp.jpg"><br><b>Alteration Step 1:</b><br>
+All 5 queens are reachable, so we choose a random number between 1 and 5 inclusive.  The number we get is 1, so we shall work on the leftmost column.  Computing reachabilities we arrive at the following scores.
+<br><img src="http://www.topcoder.com/contest/problem/QueenInterference/chessnum.jpg"><br>
+Since there are 3 positions reachable by 1 queen, we retrieve another random number between 1 and 3 inclusive.  The number turns out to be 3 so the queen is placed on the lowest of the 3 potential spots.
+<br><img src="http://www.topcoder.com/contest/problem/QueenInterference/chesstmp2.jpg"><br><b>Alteration Step 2:</b><br>
+Since only 4 queens are still reachable we choose a random number between 1 and 4 inclusive.
+The next two random values are 1 and 3 so the previous steps are repeated and the board remains unchanged.  <br><b>Alteration Step 3:</b><br>
+Again we choose a random number between 1 and 4 inclusive, but this time we get 4.  Column 5 is the fourth column containing a reachable queen.  We thus compute how many queens can reach each position in that column.
+<br><img src="http://www.topcoder.com/contest/problem/QueenInterference/chessnum2.jpg"><br>
+Row 2 is the least reachable, so the queen is moved there.
+<br><img src="http://www.topcoder.com/contest/problem/QueenInterference/chesstmp3.jpg"><br><b>Alteration Step 4:</b><br>
+Now there are 3 reachable queens so we choose a random number between 1 and 3 inclusive.  We get the number 2 thus causing us to alter column 3 (the second column from the left containing a reachable queen).  Now we compute how many queens can reach each position.
+<br><img src="http://www.topcoder.com/contest/problem/QueenInterference/chessnum3.jpg"><br>
+Only the topmost position is reachable by 0 queens so we move the queen there.
+<br><img src="http://www.topcoder.com/contest/problem/QueenInterference/chesstmp4.jpg"><br>
+Now the board is complete, so we return 4.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>7</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>19</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 475</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The most possible steps.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

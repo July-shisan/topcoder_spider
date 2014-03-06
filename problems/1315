@@ -1,0 +1,45 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Define the height of a binary tree to be the number of nodes in
+the longest path from the root to a leaf.  
+The empty tree is considered to have height 0.
+A node is <b>k</b>-balanced if 
+its left and right subtrees differ in height by at most <b>k</b>.  A tree is
+<b>k</b>-balanced if all of its nodes are <b>k</b>-balanced.  The empty tree
+is considered to be <b>k</b>-balanced.
+</p>
+
+<p>
+For example, the tree below has height 4.
+</p>
+<pre>
+           o
+          / \
+         o   o
+        / \
+       o   o
+          /
+         o
+</pre>
+This tree is 2-balanced but not 1-balanced, because the left subtree of the root has height 3 and the right subtree of the root has height 1.
+
+<p>
+Your task is to write a method that takes
+a balance factor <b>k</b> and a number of nodes <b>n</b> and returns the maximum
+height of a <b>k</b>-balanced tree with <b>n</b> nodes.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BalancedTrees</td></tr><tr><td class="statText">Method:</td><td class="statText">maxHeight</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int maxHeight(int k, int n)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>k</b> is between 1 and 100, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> is between 1 and 1000000, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>7</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A tree that achieves the maximum height for 7 nodes and balance factor 1 is
+<pre>
+           o
+          / \
+         o   o
+        / \   \
+       o   o   o
+      /
+     o
+</pre>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>40</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>10</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">With <b>k</b>=10, a tree of size 5 can be completely linear (eg, every right subtree is empty) without violating the balance factor.
+</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

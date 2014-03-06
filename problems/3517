@@ -1,0 +1,50 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">We have a program segment and want to analyze the control flow through it. 
+We have already replaced the actual code with simpler code that captures just 
+the control logic. The code we want to analyze consists of a sequence of 
+statements in which each statement is one of the following two types:<ul><li>
+    IF target1 ELSE target2</li><li>
+    RETURN</li></ul>
+Execution of an IF statement is followed by execution of one of its two targets. 
+Each target is an integer referring to a zero-based position in the code sequence. 
+The two targets may be identical. Execution of a RETURN statement ends the execution. 
+<p>
+Execution of the program segment starts at the first
+statement (statement 0) and concludes when it reaches a RETURN statement. We call such a
+sequence an "execution path." 
+</p><p>
+In order to optimize the code, we want to find
+the smallest loop in the program segment that can be executed.
+A loop is defined to be a set of statements such that</p><ol><li>
+       Only one statement in the loop (the entry point) may be immediately 
+       preceded in an execution path by
+       a statement that is not in the loop. </li><li>
+       If a loop contains statement 0, then statement 0 must be the entry point for that loop.</li><li> 
+       If a statement S is in the loop, then there is an execution path that
+       executes S and then, without executing any statement outside the loop, 
+       executes every statement (including S) in the loop at least once.</li>
+</ol>
+
+Create a class Loopy that contains a method minLoop that is given a String[]
+<b>code</b> containing the sequence of statements and that returns the smallest number 
+of statements in <b>code</b> that form a loop. If <b>code</b> contains no loop, return 0.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Loopy</td></tr><tr><td class="statText">Method:</td><td class="statText">minLoop</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int minLoop(String[] code)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>code</b> will contain between 1 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>code</b> will be one of the two forms above.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each RETURN statement has no spaces.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each IF statement has exactly 3 spaces.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each target1 and target2 will be an integer with no extraneous leading zeroes.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each target1 and target2 will be between 0 and n-1 inclusive, where n is the number of elements in <b>code</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"RETURN", "IF 0 ELSE 1"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    Execution immediately returns, so there is no loop.
+
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"IF 1 ELSE 2","IF 1 ELSE 2","RETURN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    Statement 1 forms a loop. </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"IF 1 ELSE 2","RETURN", "IF 3 ELSE 2", "IF 2 ELSE 3"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+    No execution path that includes
+    either statement 2 or 3 can ever reach a RETURN statement. The only legal execution
+    path is statement 0 followed by statement 1 so there is no loop.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"IF 1 ELSE 2","IF 3 ELSE 3","IF 4 ELSE 1",
+ "IF 4 ELSE 5","RETURN","IF 0 ELSE 6",
+ "IF 6 ELSE 6","IF 7 ELSE 2"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+    Statements 0, 1, 2, 3, and 5 form a loop whose entry point is statement 0. Note that
+ no execution path contains statement 7, so statement 2 is never preceded
+    by a non-loop statement. 
+</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

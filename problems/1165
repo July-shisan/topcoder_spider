@@ -1,0 +1,83 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You are going on a road trip with your family.  Your dad has given you a map, and has marked where the family car will have to make turns on it.  For example: <pre>
+String[] <b>map</b> = {".........R....",
+		"..............",
+		"...L.....R....",
+		"..............",
+		"...L.....B...."}</pre>
+'.' denotes open road, 'R' denotes right turn, 'L' denotes left turn, and 'B' denotes turn around<br>
+You will keep travelling until you leave the map boundaries or loop forever.  Assuming you started in the top left hand corner travelling right, in the above example your path would be:<pre>
+ &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;v....                                 ..............
+ .........v....                                 ..............
+ ...v&lt;&lt;&lt;&lt;&lt;&lt;....   at this point you hit the B   ..............
+ ...v..........   and need to turn around so:   ..............
+ ...&gt;&gt;&gt;&gt;&gt;&gt;&lt;....                                 ...v&lt;&lt;&lt;&lt;&lt;&lt;....</pre>
+Note that the turns are always relative to the direction you are going. <br><br>
+Your family has decided that it wants to take the most scenic path possible, in other words, travel to the most number of unique positions on the map.  In the above example, starting at the upper left hand corner heading right allowed you to cover these locations:<pre>
+ xxxxxxxxxx....                 
+ .........x....
+ ...xxxxxxx.... marks off all of the squares
+ ...x.......... the car had traveled to.
+ ...xxxxxxx....</pre>
+The total number of x's (unique locations) is 26.  Your job is to find the spot and direction on the map you would have to begin at in order to produce the most scenic trip (greatest number of unique locations touched).  You will return the number of unique locations touched on the most scenic trip.  In the example above, the trip given is the most scenic one, and thus your method would return 26.<br>
+If there is a turn symbol in the position where you start it comes into effect immediately.  For example:<br><b>map</b> = {"R...B"}<br>
+If you started at the leftmost point facing right your path would look like:<br><pre>v....</pre>
+<br>
+If you started at the rightmost point facing right your path would look like:<br><pre>^&lt;&lt;&lt;&lt;</pre>
+<br>
+For this example your method would return 5.<br>
+A word of caution: loops can occur in the paths chosen.  Regardless of whether there is a loop or not, you will always return the number of unique squares you will touch.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">RoadTrip</td></tr><tr><td class="statText">Method:</td><td class="statText">howMany</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int howMany(String[] map)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The point you choose must be ON the map, and the directions must be one of the four directions: Up, Down, Left, Right</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>map</b> must contain between 1 and 30 elements inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>map</b> will have length between 1 and 30 inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>map</b> will have the same length</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>map</b> will only consist of letter from the following string (quotes for clarity): "BRL."</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".........R....",
+ "..............",
+ "...L.....R....",
+ "..............",
+ "...L.....B...."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 26</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The first example from the problem statement.  Heading right from the top left corner is optimal.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".........R.....R.......",
+ ".......................",
+ ".........B.............",
+ ".......................",
+ ".......................",
+ "..B......R.....R......B",
+ ".......................",
+ ".......................",
+ ".......................",
+ ".........B.....B......."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 60</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"......................R",
+ "R....................R.",
+ ".R..................R..",
+ "..R................R...",
+ "...R..............R....",
+ "....R.............R....",
+ "...R...............R...",
+ "..R.................R..",
+ ".R...................R.",
+ "R.....................R"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 230</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Starting right from the top left corner spirals arounds the board</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".B.....B"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Watch out for loops</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ ".............................."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 30</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

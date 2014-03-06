@@ -1,0 +1,37 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Often, a large task can be broken down into a number of smaller tasks, some of which are dependent on others.  For example, developing a substantial piece of software might be broken down into 4 tasks: the database component, the server component, the client component, and integration of the three components.  Each component can be written independently, but the final task of integrating the three components cannot be started until each of the components is finished.<br><br>
+We can think of these dependencies as a directed acyclic graph (DAG), where each node represents a task, and each directed edge represents a dependency.  For example, the following graph represents the above example:
+<pre>
+     DB------&gt;--\
+                 \
+     Server------&gt;Integration
+                 /
+     Client--&gt;--/
+</pre>
+Your task is to determine how fast some set of tasks can be completed, given that you can work on at most 2 tasks at a time, and once you start working on a task, you must work on that task until it is finished.  You are to write a method, fastest, which will take a DAG representing the dependencies of the tasks and the amount of time that each task takes to complete, and should return the smallest amount of time in which every task may be finished.
+<br><br>
+The DAG will be given to you as a String[], <b>dag</b>.  Each element of <b>dag</b> will be formatted as "&lt;time&gt;:&lt;d<sub>0</sub>&gt;,&lt;d<sub>1</sub>&gt;,...", where each &lt;d<sub>i</sub>&gt; indicates that the task represented by this element of <b>dag</b> is dependent on the task represented by the d<sub>i</sub><sup>th</sup> element of <b>dag</b>.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Scheduling</td></tr><tr><td class="statText">Method:</td><td class="statText">fastest</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int fastest(String[] dag)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>dag</b> will contain between 1 and 12 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>dag</b> will be formatted as "&lt;time&gt;:&lt;d<sub>0</sub>&gt;,&lt;d<sub>1</sub>&gt;,...", where each &lt;d<sub>i</sub>&gt; is between 0 and the number of elements in <b>dag</b>-1, inclusive (with no extra leading 0's anywhere).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each &lt;time&gt; will be between 1 and 10, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No element of <b>dag</b> will contain more than one occurrence of the same &lt;d<sub>i</sub>&gt;.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>dag</b> will contain between 2 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>dag</b> will represent a directed acyclic graph.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"3:","2:","4:","7:0,1,2"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 12</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This represents the following DAG (numbers represent the time it takes to complete a task represented by a node).
+<pre>
+     3--&gt;--\
+            \
+     2-------&gt;7
+            /
+     4--&gt;--/
+</pre>
+This is similar to the example in the problem statement.  Task 3 may not be started until tasks 0, 1, and 2 are all completed.  So, the best way to do this is to start by doing both tasks 0 and 2.  Then, at time 3, task 0 is completed, and you can start working on task 1.  At time 4, you complete task 2, but there is nothing more to do, so at that point you are only working on one task.  Then, at time 5, task 1 completes, and you can work on task 3, which completes at time 12.
+<br><br>Here is a table showing a timeline for one of the best ways to do it:
+<pre>
+      | Tasks being 
+ Time | worked on or
+      | started
+------+------
+  0   | 0,2
+  3   | 1,2
+  4   | 1
+  5   | 3
+  12  | done
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"9:","8:","6:","4:","7:","7:0,1,2,3,4","3:2,3"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 24</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This one is a little more complicated.  It represents the following DAG (plugin users - please view the image in the applet):<br><img src="http://www.topcoder.com/contest/problem/Scheduling/dag.gif"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "10:", "5:", "5:1", "5:1", "5:2,3" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 20</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"1:","2:","4:","8:","6:","3:","7:","5:","9:","5:","10:","3:"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 32</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

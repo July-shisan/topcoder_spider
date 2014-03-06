@@ -1,0 +1,95 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>Tim and Tom are playing a game called Super-Doorknobs.  From a starting position inside Tim's house, they each have to try to be the first one to touch a given number of doorknobs in any order.  Tom, being aware of his disadvantage of not knowing Tim's house, decides to code up a quick algorithm to tell him
+which doorknobs to go after.</p>
+<p>Given the configuration of the house and the number of doorknobs they need to hit, return the length of the shortest path that includes touching the necessary number of doorknobs.</p>
+<p>The house configuration will be a String[] birds-eye view.  The game will start in the top-left corner.  The following characters will represent the house:</p>
+<p>'.' - empty square.</p>
+<p>'o' - square with a doorknob (they touch the doorknob the moment they enter this square).</p>
+<p>'#' - a wall that neither of them can run through.</p>
+<p>For example, if Tim and Tom were racing to touch 3 doorknobs in the following house configuration (quotes added for clarity):</p>
+<pre>
+{".....",
+ "o....",
+ "o....",
+ "o....",
+ "...o."}</pre>
+<p>The shortest path is straight down, and has a total length of 3.  Therefore the method would return 3.</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Doorknobs</td></tr><tr><td class="statText">Method:</td><td class="statText">shortest</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int shortest(String[] house, int doorknobs)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If there is no way to reach &lt;doorknobs&gt; doorknobs from the starting location at the top-left of the house, return -1.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Tim and Tom can only move up, down, left, or right.  Diagonals are not allowed.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">house will contain between 5 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of house will be of length 5 to 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of house will be the same length as every other element of house.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of house will contain only the characters '.', '#', and/or 'o'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">the first character of the first element of house (the top-left square) will be a '.'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">doorknobs will be between 1 and 4, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">the number of 'o' characters in house is between &lt;doorknobs&gt; and 6, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"....."
+,"o...."
+,"o...."
+,"o...."
+,"...o."}</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"....."
+,"o...."
+,"o...."
+,"o...."
+,"...o."}</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".#..."
+,"#...."
+,"...oo"
+,"...oo"
+,"...oo"}</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Tim and Tom can't move from the starting location (what an odd house).
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"...o."
+,"o..o."
+,"....."
+,"..oo."
+,"....."}</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"....#"
+,".##o#"
+,".##oo"
+,"o##.#"
+,"....#"}</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 12</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"....#"
+,"o##o#"
+,".##oo"
+,".##.#"
+,"....#"}</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,"...................o.............................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,"........................................o........."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,"..........o......................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".....................................o............"
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."
+,".................................................."}</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 106</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

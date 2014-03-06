@@ -1,0 +1,57 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A fortress has been built to protect the queen.  It consists of a collection of
+walls built in circular arcs around the queen's throne. Each arc is described 
+by the directions from
+the throne to its two ends.  Directions are specified using N,E,W,S to indicate
+the four compass points. NE, NW, SE, SW indicate the directions half way
+between. Every other direction is specified by preceding one of these four 2-letter
+directions with a sequence of letters, each of which matches one of the direction's
+final 2 letters.  
+For example, ENE is the direction 
+halfway between NE and E.  NENE is the direction halfway between ENE and the 
+next more northern direction which can be expressed in 3 or fewer letters (NE).  
+SWWWSSW is halfway between WWWSSW and the next more 
+southerly direction that can be expressed in 6 or fewer letters (WSSW).
+<p> No more than 10 letters are ever used to name a direction. That means that
+there are exactly 2048 directions. 
+This diagram shows all of the directions in the Northeast quadrant that can 
+be expressed in 4 or fewer letters.
+</p><pre>
+               N
+               |  NNNE
+               |      NNE
+               |        ENNE
+               |          NE
+               |           NENE
+               |             ENE
+               |              EENE
+    -----------+-----------------E
+               |
+               |
+               |
+               |
+               |
+
+</pre><p>
+Create a class NENE that contains the method vulnerable that takes the ends of
+the circular arcs as inputs, and returns the first direction counterclockwise 
+from East which is not protected. Return the String "SAFE" if
+all legal directions are protected. A wall <b>does</b> protect the directions at its
+endpoints.
+</p><p>
+The ends are input as String[] <b>cw</b> and String[] <b>ccw</b>. Corresponding
+elements of <b>cw</b> and <b>ccw</b> give the directions of the clockwise and
+counterclockwise ends of a wall. The wall extends less than 360 degrees, going counterclockwise from its cw end to its ccw end.
+</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">NENE</td></tr><tr><td class="statText">Method:</td><td class="statText">vulnerable</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String vulnerable(String[] cw, String[] ccw)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">E is the last direction to check and return. See Example 4)</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">the returned direction must be a legal one, so it must have no more than 10 characters</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">every legal direction other than the compass points must end in either NE, SW, SE, or NW so, for example, EN or NEN would not be legal directions </td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">a wall protects its own endpoints.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>cw</b> has between 1 and 50 elements</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>ccw</b> has the same number of elements as <b>cw</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>cw</b> and <b>ccw</b> contains between 1 and 10 characters inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>cw</b> and <b>ccw</b> is a legal direction</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">no element of <b>cw</b> is equal to the corresponding element of <b>ccw</b></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"E"}</pre></td></tr><tr><td class="statText"><pre>{"W"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "WWWWWWWWSW"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+The one wall has an end to the east, and extends from there counterclockwise
+until its other end is to the west. The answer is the first legal direction 
+counterclockwise from W.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"E","E","SE"}</pre></td></tr><tr><td class="statText"><pre>{"W","N","S"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "SSSSSSSSSE"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The first wall is the same as in the preceding example. The second wall protects 
+nothing new. The third wall covers everything except the section from S to SE.
+The answer is the first direction counterclockwise from S.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"E","WWWWWWWWSW"}</pre></td></tr><tr><td class="statText"><pre>{"W","NE"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "SAFE"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Even though there is a small gap, all the legal directions are covered.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"EEEENE","WNW","SSWWSW"}</pre></td></tr><tr><td class="statText"><pre>{"NNNNENEENE","WWNW","EEENE"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "NEENE"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"EEEEEEEENE","W"}	</pre></td></tr><tr><td class="statText"><pre>{"WWWWWWWWNW","EEEEEEEESE"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "E"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"W"}</pre></td></tr><tr><td class="statText"><pre>{"S"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "EEEEEEEENE"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

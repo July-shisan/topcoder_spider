@@ -1,0 +1,85 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">
+<p>
+
+A government agency plans to establish a network of satellites to
+monitor rocket launches worldwide. You have been asked to develop
+a simulation that will help assess the coverage of a given satellite
+configuration. Given a collection of satellite positions and a collection
+of launch positions, you are to determine which rockets can be accurately
+detected before they leave boost phase.
+
+</p><p>
+
+For the purpose of this simulation, the Earth is a sphere with a diameter
+of 12800 kilometers. When a rocket is launched, it flies straight up from
+the surface. All satellites operate at an altitude between 200 and 1200
+kilometers, inclusive, and hold their position for the duration of the
+simulation. A rocket can be accurately detected only if it is visible
+to at least three satellites when its boosters are depleted at the
+altitude of 400 kilometers. In order to preclude floating-point error,
+the simulation will not include cases in which the line between
+a satellite and a rocket at the 400-kilometer altitude passes within one
+millimeter of the Earth.
+
+</p><p>
+
+The locations of the rocket launches are specified by a
+String[], <b>rockets</b>, each element of which contains
+exactly 19 characters. The first nine characters encode a fixed-point
+number in the following manner: the first character is either plus
+('+') or minus ('-'); the next four characters are the integer part of
+the number, padded with zeros as necessary; the next character is the
+decimal point ('.'); the final three characters are the zero-padded
+fractional part of the number. This number gives the latitude of the
+rocket launch. The tenth character of each element in <b>rockets</b>
+is a space, and the last nine characters give the longitude of the
+corresponding rocket in the same fixed-point format.
+
+</p><p>
+
+Latitudes range between -90.0 and 90.0 degrees, inclusive, while
+longitudes range between -180.0 and 180.0 degrees, inclusive. The equator
+is at latitude zero; the North Pole, at 90 degrees; the South Pole, at
+-90 degrees. Longitude zero runs through the Greenwich Royal Observatory
+in London. Positive longitudes are measured to the east of Greenwich,
+negative ones to the west. Longitudes 180 and -180, which are one and
+the same, lie on exactly the opposite end of the globe from longitude 
+zero. If a rocket were launched from the Eiffel Tower, for example,
+its location would be given as "+0048.867 +0002.267".
+
+</p><p>
+
+The locations of the satellites are described by another
+String[], <b>satellites</b>, each element of which contains
+exactly 29 characters. The first 19 characters encode the latitude
+and longitude, just as for rocket launches, of the terrestrial point
+closest to the satellite. The 20th character is a space, and the
+last nine characters give the satellite's distance in kilometers from the
+Earth's surface, again using the same fixed-point format. For example,
+a satellite flying at an altitude of 550 kilometers over Mount Everest
+would have the location "+0027.988 +0086.925 +0550.000".
+
+</p><p>
+
+You are to return a int[] containing the zero-based indices,
+sorted by ascending value, of those rockets that can be detected at an
+altitude of 400 kilometers by at least three satellites.
+
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Satellites</td></tr><tr><td class="statText">Method:</td><td class="statText">detectable</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] detectable(String[] rockets, String[] satellites)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">This simulation ignores collisions. Several satellites or rockets, or both, may occupy the same point at the same time.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>rockets</b> contains between 1 and 50 elements, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>rockets</b> conforms to the format described above</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>satellites</b> contains between 1 and 50 elements, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>satellites</b> conforms to the format described above</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">the input is such that no line of sight between a satellite and a rocket at the 400-kilometer altitude passes within one millimeter of the Earth</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"+0000.000 -0000.000"}</pre></td></tr><tr><td class="statText"><pre>{ "+0000.000 -0000.000 +0200.000",
+  "+0000.000 -0000.000 +0400.000",
+  "+0000.000 -0000.000 +1200.000"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">All satellites are at the same latitude and longitude as the rocket, so all can see it. Note that satellites do not block one another's lines of sight.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"-0050.000 +0045.000","+0040.000 -0135.000"}</pre></td></tr><tr><td class="statText"><pre>{"+0090.000 +0000.000 +1200.000",
+ "-0090.000 +0000.000 +1200.000",
+ "+0000.000 +0000.000 +1200.000",
+ "+0000.000 -0090.000 +1200.000",
+ "+0000.000 +0180.000 +1200.000",
+ "-0000.000 -0045.000 +1200.000",
+ "-0000.000 -0135.000 +1000.000",
+ "-0011.000 -0136.000 +1086.828"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Satellites 0, 6, and 7 can see rocket 1, their lines of sight coming within about 59.593, 215.477, and 0.000177 kilometers of the Earth's surface, respectively.  Only satellite 1 can see rocket 0.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"+0037.431 -0143.361",
+ "+0037.443 -0143.375",
+ "+0037.413 -0143.364"}</pre></td></tr><tr><td class="statText"><pre>{"+0037.470 -0143.316 +0513.143",
+ "+0037.443 -0143.388 +0342.159",
+ "+0037.434 -0143.361 +1034.123"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 0,  1,  2 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">All satellites and rockets are within a single degree of latitude and longitude of one another's locations; hence, all rockets are visible to all three satellites.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,118 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>PROBLEM STATEMENT:
+
+A rule engine is simply a warehouse of tests.  Based on the result of these
+tests, actions are taken.  When a set of rules causes an action to be taken,
+the rule set is said to "fire".
+
+EXAMPLE Rule Sets:
+
+Example 1:
+If the monkey is hungry and the monkey has a banana in it's hand, then the
+monkey eats the banana.  The rule set has two rules:
+IF:
+	(RULE) monkey is hungry
+	(RULE) monkey has banana
+THEN:
+	(ACTION) monkey eats banana.
+
+Example 2:
+If X = 2, and Y is between 10 and 15, and Z = 5, then Z = 4.  The rule set has
+three rules:
+IF:
+	(RULE) X = 2
+	(RULE) Y between 10 and 15
+	(RULE) Z = 5
+THEN:
+	(ACTION) set Z = 4
+
+DEFINITION:
+
+It is often very important to know when a given state will cause two different
+rule sets to fire.  You will be given two rule sets.  Determine whether there
+are any data sets that will cause both rule sets to fire. If so, return the
+number of such sets within a set of given bounds.  If not, return "0".
+The elements of the rule sets are of the form "&lt;X&gt;&lt;comparison&gt;data1,data2" or
+"&lt;X&gt;&lt;comparison&gt;data1" where &lt;comparison&gt; can be "==", "&lt;", "&lt;=", "&gt;", "&gt;=",
+"!=", or "B". &lt;X&gt; is a variable name, a single capital letter 'A'-'Z'. The
+element would be TRUE if the comparison of the value in &lt;X&gt; to data1 (or data1
+and data2) was true. If all elements of the rule set are TRUE, then the rule
+set fires (Double-quotes and angle-brackets are for clarity only).
+
+&lt;comparison&gt; legend:
+==	X == data1
+&lt;	X &lt; data1
+&lt;=	X &lt;= data1
+&gt;	X &gt; data1
+&gt;=	X &gt;= data1
+!=	X != data1
+B	X is between data1 and data2, inclusive
+
+X represents an integer variable whose range of possible values are specified
+by the below rules.
+
+Method signature: String countSets(String[] ruleSet1, String[] ruleSet2)
+Be sure your method is public.
+
+TopCoder will enforce the validity of the inputs.  Inputs are considered valid
+if all of the following criteria are met:
+  *ruleSet1 and ruleSet2 each have between 1 and 7 elements, inclusive.
+*each element of ruleSet1 and ruleSet2 is either of the form
+"&lt;X&gt;&lt;comparison&gt;&lt;data1&gt;" where &lt;comparison&gt; is not the letter "B", or of the
+form "&lt;X&gt;B&lt;data1&gt;,&lt;data2&gt;" (quotes and angle-brackets are shown for clarity,
+they do not appear in the input).
+  *&lt;X&gt; is a letter between 'A' and 'Z', inclusive (upper-case only).
+*&lt;data1&gt; and &lt;data2&gt; are integers between -9 and 9, inclusive.  Leading zeros
+are possible.
+  *&lt;comparison&gt; is one of the following: "==", "&lt;", "&lt;=", "&gt;", "&gt;=", "!=", "B".
+*If the &lt;comparison&gt; code is 'B', then &lt;data1&gt; will be less than or equal to
+&lt;data2&gt;.
+
+Return the number of distinct data sets made up of values between -10 and 10,
+inclusive that will cause both rules to fire.
+Format the return value as a String.
+
+WORKED EXAMPLES:
+
+ruleSet1 = { "A&lt;1", "B&gt;2" }, ruleSet2 = { "A&gt;1", "BB1,2" }.
+Here ruleSet1 will fire if the value in A is less than 1, and the value in B is
+greater than 2.  ruleSet2 will fire if the value in A is greater than 1, and
+the value in B is between 1 and 2.  The rule sets are mutually exclusive, for A
+cannot be both greater than and less than 1 so return "0".
+
+ruleSet1 = { "A&lt;0" }, ruleSet2 = { "A&lt;0" }.
+Both rulesets will fire for any value of A between -10 and -1, inclusive.
+There are 10 such values, so return "10".
+
+ruleSet1 = { "A==1", "X&gt;=4", "F&lt;1" }, ruleSet2 = { "X&gt;=5", "ZB2,9" }.
+ruleSet1 will fire when A is 1, X is greater or equal to 4, and F is less than
+1.  ruleSet2 will fire when X is greater than or equal to 5, and Z is between 2
+and 9, inclusive.  Both rule sets will fire when:
+A is 1.
+X is greater than or equal to 5.
+F is less than or equal to 0.
+Z is between 2 and 9, inclusive.
+
+Hence, the rule sets are not mutually exclusive, so calculate the number of
+distinct data sets that can cause the rule set to fire, in which the values are
+between -10 and 10, inclusive:
+
+A can only be 1 (1 possible element).
+X can be between 5, and 10 inclusive (6 possible elements).
+F can be between -10 and 0 inclusive (11 possible elements). 
+Z can be between 2 and 9 inclusive (8 possible elements).
+
+The number of distinct data sets that can cause both rule sets to fire within
+the given bounds is: 1 * 6 * 11 * 8 = 528.  Return "528".
+
+TEST CASES:
+
+{ "A&lt;1", "B==2", "C&gt;4", "D&gt;=6", "E&lt;=9", "FB1,2", "J!=6" }, { "E&gt;9" } returns "0".
+{ "A&lt;01", "B==2", "C&gt;4", "D&gt;=2", "E&lt;=9", "FB1,2", "J!=6" }, { "A&lt;9", "B&gt;=2" }
+returns "475200".
+{ "A&lt;=9", "B&lt;=9", "C&lt;=9", "D&lt;=9", "E&lt;=9", "F&lt;=9", "G&lt;=9" }, { "H&lt;=9", "I&lt;=9",
+"J&lt;=9", "K&lt;=9", "L&lt;=9", "M&lt;=9", "N&lt;=9" } returns "1638400000000000000".
+{ "KB-09,5", "K&lt;3" }, { "Y&gt;4" } returns "72".</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">RuleEngine</td></tr><tr><td class="statText">Method:</td><td class="statText">countSets</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String countSets(String[] param0, String[] param1)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

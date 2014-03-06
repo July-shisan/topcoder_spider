@@ -1,0 +1,63 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Baseball is a sport played on a diamond with three bases, first second and third, and a home plate.  Players start at home plate, and attempt to hit a ball and run around all three of the bases in order, and end up back at home plate.  If a player gets back to home plate, then a run is scored.  There are 6 things that can happen to a player when he attempts to hit the ball:
+<ol><li>The player may get an out, in which case the next batter steps up, and the runners on base do not move (unless it is the third out of the inning, see below).</li>
+<li>The player may be walked, and end up at first base.  If there was a player on first base, that player would advance to second.  If there were players on first and second, they would advance to second and third base respectively.  If there were players on all three bases, the player on third base would score a run and the players on first and second would advance to second and third base respectively.  In other words, when a walk occurs, a player only advances when another player advances to the base he is on.  Thus, if there were players on first and third bases, and a player was walked, only the player on first would advance.</li>
+<li>The player may hit a single. In this case, the player who hit the ball ends up on first base. If there was a player on first base, that player would advance to second. Each player who was on second or third base would make it to home plate and score a run. (So, if there were players on both second and third, two runs would score.)</li>
+<li>The player may hit a double, and end up on second base.  Each player who was on base scores a run.</li>
+<li>The player may hit a triple, and end up on third base.  Each player who was on base scores a run.</li>
+<li>The player may hit a home run, in which case he and all of the players on base score runs.</li>
+</ol>
+A game of baseball goes 9 innings.  Each inning consists of 3 outs (outs have no effect until there are 3 of them in an inning).  Players take turns batting in order, starting with player 1 (indexed from 1) in the first inning, and continue to bat until there are 3 outs.  Once 3 outs have been made, the inning ends and any runners who were on base are no longer on base.  In the next inning, the batting order picks up where it left off.  So, if player 4 made the last out in the 3rd inning, then player 5 would bat first in the 4th inning.  Furthermore, after player 9 bats, it is then player 1's turn.<br><br>
+Your task is, given the stats of all 9 players on a team, return the expected number of runs that team will score in 9 innings.  For each player you will be given a String, formatted as "&lt;outs&gt; &lt;walks&gt; &lt;singles&gt; &lt;doubles&gt; &lt;triples&gt; &lt;homeRuns&gt;".  Each term in the String will be an integer representing the number of each event per 1000 appearances.  Thus, the sum of all the terms in each String will be 1000.  For example, "646 107 141 37 0 69" would indicate that 646/1000 times the players gets out, 107/1000 times the player is walked, 141/1000 times the player gets a single, and so on.
+<br><br>Here is an example of how an inning might go, assuming that player 3 is the first batter of the inning and that we start with 0 runs:
+<pre>
+player | action   | outs | runs | runners on
+-------+----------+------+------+-----------
+ 3     | walk     | 0    | 0    | first
+ 4     | out      | 1    | 0    | first
+ 5     | double   | 1    | 1    | second
+ 6     | walk     | 1    | 1    | first and second
+ 7     | single   | 1    | 2    | first and second
+ 8     | out      | 2    | 2    | first and second
+ 9     | home run | 2    | 5    | none
+ 1     | walk     | 2    | 5    | first
+ 2     | walk     | 2    | 5    | first and second
+ 3     | out      | 3    | 5    | 
+</pre>
+In the next inning, player 4 would bat first.  Note that there would be no one on base at the beginning of the next inning, despite the fact that there were two players on base at the end of this inning.<br><br>
+In order to make things a little simpler, we will only allow 20 batters to hit in a single inning.  So, after the 20th batter of an inning hits, the inning ends, regardless of how many outs there are.  Thus, if every player hits a home run in every at bat, the team will score 20 runs per inning.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BaseballLineup</td></tr><tr><td class="statText">Method:</td><td class="statText">expectedRuns</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double expectedRuns(String[] stats)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Your result must have absolute or relative error less than 1e-9.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>stats</b> will contain exactly 9 elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>stats</b> will be formatted as "&lt;outs&gt; &lt;walks&gt; &lt;singles&gt; &lt;doubles&gt; &lt;triples&gt; &lt;homeRuns&gt;".</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each of the terms in each element of <b>stats</b> will represent a non-negative integer, with no extra leading 0's.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The sum of the integers in each element of <b>stats</b> will be 1000.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"652 77 185 53 13 20",
+ "649 58 213 74 1 5",
+ "646 107 141 37 0 69",
+ "650 100 159 55 1 35",
+ "683 64 160 49 3 41",
+ "663 76 184 43 2 32",
+ "712 80 111 63 0 34",
+ "693 99 135 48 2 23",
+ "824 16 112 16 0 32"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4.799858944836131</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The stats of the Cubs' starting lineup in game 7.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"1 0 0 0 0 999",
+ "1 0 0 0 0 999",
+ "1 0 0 0 0 999",
+ "1 0 0 0 0 999",
+ "1 0 0 0 0 999",
+ "1 0 0 0 0 999",
+ "1 0 0 0 0 999",
+ "1 0 0 0 0 999",
+ "1 0 0 0 0 999"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 179.81995685471114</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here, players hit home runs almost every single time.  Thus, since there are at most 20 at bats per inning, they are expected to score almost 20 runs per inning, for almost 180 during the whole game.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0 0 1000 0 0 0",
+ "0 0 1000 0 0 0",
+ "0 0 1000 0 0 0",
+ "0 0 1000 0 0 0",
+ "0 0 1000 0 0 0",
+ "0 0 1000 0 0 0",
+ "0 0 1000 0 0 0",
+ "0 0 1000 0 0 0",
+ "0 0 1000 0 0 0"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 162.0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0 0 1000 0 0 0",
+ "0 0 0 1000 0 0",
+ "0 0 1000 0 0 0",
+ "0 0 0 1000 0 0",
+ "0 0 1000 0 0 0",
+ "0 0 0 1000 0 0",
+ "0 0 1000 0 0 0",
+ "0 0 0 1000 0 0",
+ "1000 0 0 0 0 0"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 151.0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

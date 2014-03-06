@@ -1,0 +1,132 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">SameGame is a game with a grid of colored blocks.  If there are two or more
+blocks of the same color, all of which are connected, these form a group.  More formally, a group is a set of 2 or more blocks, each of which has the same color, in which all pairs of blocks are connected by a sequence of horizontal or vertical steps, each of which moves to a block in the group.  A group may be removed only if it is not a subset of some larger group.  When a group is removed, all of the blocks above the removed blocks "fall down", meaning that any blocks that are immediately above an empty space move down until they are resting in the bottom row, or immediately above another block.  If any entirely empty columns are created then columns to the right of the empty columns shift to the left until all of the empty columns are on the right side.  As blocks are removed, points are accumulated based on the number of blocks removed each
+time.  Each time a group of blocks is removed, the point total is increased by
+n*(n-1)/2 where n is the number of blocks in the group.  Additionally, if every single block has been removed from the grid by the end of the game,  the final score is multiplied by 4.
+<br><br>
+The input will be formatted as a String[], <b>board</b>, where each element represents a row
+of blocks, and each character tells which color a given block is.
+<br><br>
+For example, {"RBB","RRR","RBB"} represents:
+<pre>
+        RBB
+        RRR
+        RBB
+</pre>
+Where 'R' and 'B' are the only two colors present.
+<br><br>
+One possible sequence of moves would be to first remove the five 'R's, which
+are all connected and form a group.  This would give us 10 points (5*4/2) and make the board
+look as follows: (where '-' represents empty space):
+<pre>
+        -BB
+        ---
+        -BB
+</pre>
+Now the pieces fall down and shift to the left, giving:
+<pre>
+        ---
+        BB-
+        BB-
+</pre>
+If we then remove the group of 4 B's, we get an additional 6 points.  This
+removes all of the blocks so we multiply the total (16) by 4, and our final
+score is 64.
+<br><br>
+If the board is small enough, we can simply use brute force to find the optimal
+sequence of groups to remove to obtain the highest score.  However, as the
+number of blocks grows, brute force quickly becomes infeasible.  Thus, in order
+to write a program that plays well, we must use some intelligent technique to remove
+pieces - albeit a sub-optimal one.  One important observation to make in trying to come up with a good
+strategy is that the number of points grows non-linearly, and we get more
+points per block if we remove larger groups.  This suggests that we should save
+one color for last, and remove smaller groups first.  Your task is to implement
+the following strategy:
+<br><br>
+You will be given a String, <b>order</b>, defining an ordering on the colors.  You should always remove groups whose color appears earlier in <b>order</b>.  So, if order were "RB",
+we would never remove a group of 'B's if there were a group of 'R's we could
+remove.  When there are many groups of the same color, remove groups with less blocks in them first.  If there is a
+tie, remove the group which extends into (has at least one character in) the
+lower indexed element of the <b>board</b>.  If there is still a tie, remove the
+group which contains the lower indexed character in the lowest indexed element that both groups extend into.  Using this
+method, continue removing groups until there are none left and then return the final score.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">SameGame</td></tr><tr><td class="statText">Method:</td><td class="statText">getScore</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int getScore(String[] board, String order)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>board</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of each element of <b>board</b> will be an uppercase letter ('A'-'Z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>order</b> will contain between 1 and 26 uppercase letters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No character will occur more than once in <b>order</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>board</b> will also be in <b>order</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"RBB",
+ "RRR",
+ "RBB"}</pre></td></tr><tr><td class="statText"><pre>"RB"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 64</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABCD",
+ "ABCD",
+ "ABCD",
+ "ABCD"}</pre></td></tr><tr><td class="statText"><pre>"ABCD"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 96</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here, we end up removing one column at a time, starting with the 'A's, and ending with the 'D's.  After we remove each column, the remaining ones shift to the left.  Each column gives us 4*3/2 points, for a total of 24 points.  Since we can remove all of the blocks, we get a final score of 96.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABCD"}</pre></td></tr><tr><td class="statText"><pre>"ABCD"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ACCAA",
+ "ABAAA",
+ "ABBBA",
+ "AAACD"}</pre></td></tr><tr><td class="statText"><pre>"EABCD"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 28</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">First, we remove the 'L' shaped group of six 'A's, drop the blocks over empty space, and then shift left to get the following ('-' denotes empty space):
+<pre>
+    --AA- 
+    CCAA- 
+    BABA- 
+    BBCD-
+</pre>
+Next, we remove the group of 5 'A's and end up with:
+<pre>
+    -----
+    CC---
+    BAB--
+    BBCD-
+</pre>
+Finally, we remove the 3 'B's and get this board, which contains no groups:
+<pre>
+    -----
+    -----
+    -CB--
+    CACD-
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABABABABABABABABABAB",
+ "ABABABABABABABABABAB",
+ "CDCDCDCDCDCDCDCDCDCD",
+ "CDCDCDCDCDCDCDCDCDCD",
+ "EFEFEFEFEFEFEFEFEFEF",
+ "EFEFEFEFEFEFEFEFEFEF",
+ "GHGHGHGHGHGHGHGHGHGH",
+ "GHGHGHGHGHGHGHGHGHGH",
+ "IJIJIJIJIJIJIJIJIJIJ",
+ "IJIJIJIJIJIJIJIJIJIJ",
+ "KLKLKLKLKLKLKLKLKLKL",
+ "KLKLKLKLKLKLKLKLKLKL",
+ "MNMNMNMNMNMNMNMNMNMN",
+ "MNMNMNMNMNMNMNMNMNMN",
+ "OPOPOPOPOPOPOPOPOPOP",
+ "OPOPOPOPOPOPOPOPOPOP",
+ "QRQRQRQRQRQRQRQRQRQR",
+ "QRQRQRQRQRQRQRQRQRQR",
+ "STSTSTSTSTSTSTSTSTST",
+ "STSTSTSTSTSTSTSTSTST",
+ "UVUVUVUVUVUVUVUVUVUV",
+ "UVUVUVUVUVUVUVUVUVUV",
+ "WXWXWXWXWXWXWXWXWXWX",
+ "WXWXWXWXWXWXWXWXWXWX",
+ "YZYZYZYZYZYZYZYZYZYZ",
+ "YZYZYZYZYZYZYZYZYZYZ",
+ "WXWXWXWXWXWXWXWXWXWX",
+ "WXWXWXWXWXWXWXWXWXWX",
+ "UVUVUVUVUVUVUVUVUVUV",
+ "UVUVUVUVUVUVUVUVUVUV",
+ "STSTSTSTSTSTSTSTSTST",
+ "STSTSTSTSTSTSTSTSTST",
+ "MNMNMNMNMNMNMNMNMNMN",
+ "MNMNMNMNMNMNMNMNMNMN",
+ "QRQRQRQRQRQRQRQRQRQR",
+ "QRQRQRQRQRQRQRQRQRQR",
+ "OPOPOPOPOPOPOPOPOPOP",
+ "OPOPOPOPOPOPOPOPOPOP",
+ "KLKLKLKLKLKLKLKLKLKL",
+ "KLKLKLKLKLKLKLKLKLKL",
+ "IJIJIJIJIJIJIJIJIJIJ",
+ "IJIJIJIJIJIJIJIJIJIJ",
+ "GHGHGHGHGHGHGHGHGHGH",
+ "GHGHGHGHGHGHGHGHGHGH",
+ "EFEFEFEFEFEFEFEFEFEF",
+ "EFEFEFEFEFEFEFEFEFEF",
+ "CDCDCDCDCDCDCDCDCDCD",
+ "CDCDCDCDCDCDCDCDCDCD",
+ "ABABABABABABABABABAB",
+ "ABABABABABABABABABAB"}</pre></td></tr><tr><td class="statText"><pre>"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2720</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

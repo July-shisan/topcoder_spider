@@ -1,0 +1,48 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">The Counting Game is a game played between two players. The first player starts 
+counting at 1, and can say no more than <b>maxAdd</b> numbers. The second player continues
+counting from where the first player left off. The two players alternate, each one
+contributing at least one but no more than <b>maxAdd</b> numbers. The player who says
+the goal number is the winner.
+<p>
+For example, if <b>maxAdd</b> is 3 and the <b>goal</b> is 20, then a game (between bad players A and B) might
+go like this:
+</p><p>
+A: 1,2,3 ... B: 4,5 ... A: 6 ... B: 7,8,9 ... A: 10,11,12 ... B: 13 
+ ... A: 14 ... B: 15,16 ... A: 17,18 ... B: 19,20
+</p><p>
+Since player B said the goal number, she was the winner.
+</p><p>
+There is a perfect strategy for this game.  When <b>maxAdd</b> is 3, if you end your turn by saying 16, then no
+matter whether your opponent contributes 1, 2, or 3 numbers you will be able to
+count to 20 on your next turn.  Similarly, if you end your turn by saying 12, then no matter 
+what your opponent
+does you can end your next turn by saying 16, and thus win on your following turn.
+</p><p>
+Create a class CountGame to help you play this game. It should contain a method
+howMany that is given <b>maxAdd</b>, the
+most numbers you may say on each turn, <b>goal</b>, the goal number, and <b>next</b>, the number 
+that you must start counting on.  The method
+should return how many numbers you should say. If there is no way for you to force
+a win, then the method should return -1.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">CountGame</td></tr><tr><td class="statText">Method:</td><td class="statText">howMany</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int howMany(int maxAdd, int goal, int next)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If there is a play that forces a win, it is unique.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>maxAdd</b> will be between 2 and 8 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>goal</b> will be between 1 and 1000 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>next</b> will be between 1 and <b>goal</b> inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   This is the game where each player can contribute 1, 2 or 3 numbers and the
+   <b>goal</b> is 20. It is your turn and you must start at 10 (presumably because your opponent
+   ended his previous turn at 9). You should count 10,11,12 since, as shown above, when <b>maxAdd</b> is 3 you
+   can force a win if you end your turn by saying 12.
+
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>10</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   Count 10,11,12,13,14.  Then whatever your opponent does, you will be able to
+   win by counting to 20 on your next turn. Even if he says just 15, you can
+   reach 20 since <b>maxAdd</b> is 5.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>9</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   Whatever you do, your opponent will be able to end his next turn by saying 14. 
+   Then you won't be able to count up to 20, but even if you say just one number,
+   your opponent will be able to win on his turn.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>50</pre></td></tr><tr><td class="statText"><pre>50</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here the next number is the goal, so we just add that one number to the sequence and win.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

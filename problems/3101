@@ -1,0 +1,30 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Given the elevations of a plot of land, determine the deepest lake that could exist on the plot.  Assume that water will flow off the edge of the plot, and therefore a lake will not cover any land on the border.  A lake could form at a location up to level h so long as there is no path of horizontal or vertical steps from the lake to the edge of the plot that is completely below h.  For example, consider the following plot:<br><pre>
+  5255
+  5225
+  5525
+  5515
+  5555
+</pre>
+A lake will form up to level 2 where the 1 is.<br><br>
+You will be given a String[], <b>plot</b>, where the ASCII value of <b>plot[i][j]</b> represents the height of the land at location (i,j).  Your task is to determine the deepest lake that could form in the plot, where the depth of a lake is the largest difference between the lake height and the height of the land under the water.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">LakeDepth</td></tr><tr><td class="statText">Method:</td><td class="statText">depth</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int depth(String[] plot)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If no lake can form, return 0.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>plot</b> will contain between 3 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>plot</b> will contain between 3 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>plot</b> will be the same length.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>plot</b> will have an ASCII value between 32 and 126, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre> {"5255",
+  "5225",
+  "5525",
+  "5515",
+  "5555"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre> {"55555",
+  "59995",
+  "59595",
+  "59195",
+  "59995",
+  "55555"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A lake of height '9' will form in the center of this plot.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre> {"55555",
+  "59995",
+  "59A95",
+  "59A95",
+  "59995",
+  "55555"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No lake may form here, as 'A' has a higher value that '9'.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"55555",
+ "52335",
+ "53315",
+ "45555"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

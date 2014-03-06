@@ -1,0 +1,69 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+The solid in the picture below is made up of 1x1x1 cubes in a 3D grid.
+In this problem, we'll limit ourselves to solids that are made up of columns rooted on the ground
+(a column consists of one or several 1x1x1 cubes stacked on top of each other).
+Such solids can be described as a String[] of digits, where each digit
+corresponds to the height of a column in the 2D grid that makes up the ground.
+A zero means there is no column at all in that position.
+</p>
+
+<p>
+The solid in the picture would thus be described like this: (quotes for clarity only)
+</p>
+
+<pre>
+{"4231",
+ "2101",
+ "0001"}
+</pre>
+
+<br><img src="http://www.topcoder.com/contest/problem/Solid/solid.gif"><p>The volume of such a solid is simple enough to calculate, but we're interested here in the surface area (that is, the number of 1x1 "squares" on the outer surface).
+Create a class Solid containing the method surfaceArea which takes a String[] <b>solid</b> in the format mentioned aboved and returns an int, the surface area of this solid.
+You can assume that the solid is connected, i.e the columns will be attached to each other in the four cardinal directions.</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Solid</td></tr><tr><td class="statText">Method:</td><td class="statText">surfaceArea</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int surfaceArea(String[] solid)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>solid</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>solid</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements in <b>solid</b> will have the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All characters in <b>solid</b> will be digits, '0'-'9'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>solid</b> will describe one single, connected solid.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The volume of the solid will be at least 1.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"11"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is just a 2x1x1 solid. It has six sides, four of them with surface area 2 and two with
+suface area 1. The total surface area is therefore 10.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"4231",
+ "2101",
+ "0001"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 54</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the solid in the picture in the problem statement.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0000000000000000000",
+ "0000000111111111100",
+ "0001111111111111100",
+ "0111111222111110000",
+ "0111111122111111000",
+ "0111111111111111000",
+ "0000000000000000000"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 190</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"000000528711731016006000000000",
+ "000005195794786382818000000000",
+ "000000152759877615783700000000",
+ "000000538691532646444720000000",
+ "000448878233764358916526040000",
+ "000957681868472329823514746000",
+ "000468262265258953611195968000",
+ "353414949614353741985971227000",
+ "523414326739461146956185360000", 
+ "883755114476244883219144444000",
+ "382853216452287831155934152000",
+ "582346653747546124514813113000",
+ "872646187355968637442125842000",
+ "488795678641528974985428554900",
+ "184834779675978184943349141300",
+ "466455559389179259181268463686",
+ "577566824847934671312749443414",
+ "879443115123574825441232482522",
+ "813346335659785489878484611130",
+ "913125858434291686688282682100",
+ "276982916388781784196666212965",
+ "171998843675177318752563287763",
+ "639855577925843147586517873468",
+ "527868897287142566166897778388",
+ "513544481355194141741396768845",
+ "148819842161491541656585512420",
+ "014784988399688355411932978550",
+ "008427963354683469419487790000",
+ "007889062567387593411210000000",
+ "000000005778849898967400000000"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6280</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"111",
+ "101",
+ "111"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 32</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"5"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 22</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

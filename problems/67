@@ -1,0 +1,76 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>This problem is taken from the Collegiate Challenge Finals.
+
+Class Name: Vigenere
+Method Name: coder
+Parameters: String,String,int
+Returns: String
+
+The Vigenere Cipher is a simple but strong encryption algorithm.  Unlike many
+simple encryption algorithms, the Vigenere Cipher is immune to frequency
+analysis because it alters the normal frequency by using more than one alphabet
+to encrypt the message.  Instead of there being a one-to-one relationship
+between each letter and its substitute, there is a one-to-many relationship
+between each letter and its substitute.
+
+The Vigenere Cipher is based on the following table (which has a simple pattern
+so you don't actually have to store the table).
+
+      A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+A   A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+B   B C D E F G H I J K L M N O P Q R S T U V W X Y Z A 
+C   C D E F G H I J K L M N O P Q R S T U V W X Y Z A B
+D   D E F G H I J K L M N O P Q R S T U V W X Y Z A B C 
+.           .           .            .               .
+.           .           .            .               .
+.           .           .            .               .
+
+When encoding a message with the Vigenere Cipher, a code word is written
+repeatedly over the message.  Each letter in the message is replaced with the
+letter at the intersection of the row given by the corresponding code word
+letter and the column given by the message letter.
+
+Implement a class Vigenere that contains a method coder.  The method encodes
+and decodes Strings of capital letters (A-Z) using the Vigenere Cipher.  coder
+takes two Strings and an int as a parameter.  The first String is the message.
+The second String is the code word.  The int specifies whether the message
+should be encoded or decoded:
+int=1: encode message
+int=2: decode message
+The method returns a String that is the resulting (encoded or decoded) message.
+
+If the message or code word is not valid (They do not contain only capital
+letters in the range A to Z, or the code word is of length 0) the method
+returns "ERROR"
+If the int is not 1 or 2, the method returns "ERROR"
+If both the message and code word are of length 0, or if just the message has
+length 0 (and the code word is valid), the method should return an empty string.
+
+The method signature is:
+public String coder(String message,String codeWord,int action); 
+
+message and codeWord are Strings with length less than 1000.
+
+Examples:
+If the message is "TOPCODERISGREAT" and the codeWord is "CODE" and the action
+is encode (1), write the code word over the message and look up letters in the
+table:
+Code Word:
+               CODECODECODECOD  
+Message:
+               TOPCODERISGREAT
+Encoded:
+               VCSGQRHVKGJVGOW
+because the letter in row C column T is V,
+the letter in row O column O is C,
+etc....
+
+If the message is "HRWCQYRORWSCGKUO" and the codeWord is "OK" and the action is
+decode (2), the decoded message is "THISCODEDMESSAGE".
+If the message is "HowAreYou" and the codeWord is "GO" and the action is encode
+(1), the method returns "ERROR" because the message isn't all capital letters.
+</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Vigenere</td></tr><tr><td class="statText">Method:</td><td class="statText">coder</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, String, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String coder(String param0, String param1, int param2)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

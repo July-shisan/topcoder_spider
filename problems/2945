@@ -1,0 +1,151 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+A simple way to blur an image is to replace each pixel
+with the average of it and its neighboring pixels.
+The value of each pixel in the blurred image is computed
+by adding the values of the 3x3 region centered at the
+corresponding pixel of the original image, and dividing
+by 9.
+</p>
+<p>
+When computing the value of pixels on the border, the 3x3 region will
+fall partially outside of the original image.  Assume that
+pixels outside of the original image are black.
+</p>
+
+<p>
+For example, given the following original image:
+</p>
+
+<center>
+<img src="http://172.16.100.16/contest/problem/UnBlur/unblur_fig1a.gif"></center>
+
+<p>
+the algorithm described above results in the following blurred image:
+</p>
+
+<center>
+<img src="http://172.16.100.16/contest/problem/UnBlur/unblur_fig1b.gif"></center>
+
+<p>
+Write a method that will, given a blurred image, return the original image.
+The original image will contain only black and white pixels.
+All pixels on the top and bottom rows and left and right
+columns of the original image will be black.
+All values of the blurred image will therefore be: 0 (black), 1/9, 2/9,
+3/9, 4/9, 5/9, 6/9, 7/9, 8/9, or 9/9 (white).
+</p>
+<p>
+The blurred image will be given as a String[].
+Each character in the blurred image will be a character between
+'0' and '9', inclusive, giving the value of that pixel multiplied
+by nine.
+For example, the blurred image above would be given as:
+</p>
+
+<pre>
+
+{ "1233321000000000123332100000000000000000000",
+  "1244422233222332334343323322232112332223321",
+  "1255523344343443545343434434343233432334432",
+  "0033303455465775633011445546454355753457753",
+  "0033303333364543533011433336333364521346542",
+  "0033303455464532445343545546454355753446542",
+  "0022202344342200234343434434343233432323221",
+  "0011101233221100123332223322232112332211111" }
+</pre>
+
+<p>
+Return the original image as a String[].
+For each pixel in the original image, return a '.'
+if it is black and '#' if it is white.
+For example, the original image for the example
+above would be returned as:
+</p>
+
+<pre>
+{ "...........................................",
+  ".#####...........#####.....................",
+  "...#...####.####.#...#.####.###..####.####.",
+  "...#...#..#.#..#.#.....#..#.#..#.#....#..#.",
+  "...#...#..#.####.#.....#..#.#..#.###..####.",
+  "...#...#..#.#....#...#.#..#.#..#.#....#.#..",
+  "...#...####.#....#####.####.###..####.#..#.",
+  "..........................................." } 
+</pre>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Unblur</td></tr><tr><td class="statText">Method:</td><td class="statText">original</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] original(String[] blurred)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>blurred</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>blurred</b> will have a length between 1 and 50, inclusive, and contain only characters between '0' and '9', inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>blurred</b> will have the same length.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>blurred</b> will be the result of blurring a black and white image.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "1221",
+  "1221",
+  "1221" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "....",  ".##.",  "...." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+All pixels in the center two columns are adjacent to two white pixels in the source image.  The remaining pixels are adjacent to only one.
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "00000",
+  "00000",
+  "00000",
+  "00000" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { ".....",  ".....",  ".....",  "....." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A solid black image blurs to all zeros.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "0011212121100",
+  "0123333333210",
+  "0123333333210",
+  "1233333333321",
+  "1233333333321",
+  "1233333333321",
+  "0112121212110" } </pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ ".............",
+ "...#.#.#.#...",
+ "..#.#.#.#.#..",
+ ".............",
+ ".#.#.#.#.#.#.",
+ "..#.#.#.#.#..",
+ "............." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+original:
+</p>
+<img src="http://172.16.100.16/contest/problem/UnBlur/unblur_fig3a.gif"><p>
+blurred:
+</p>
+<img src="http://172.16.100.16/contest/problem/UnBlur/unblur_fig3b.gif"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "1233321000000000123332100000000000000000000",
+  "1244422233222332334343323322232112332223321",
+  "1255523344343443545343434434343233432334432",
+  "0033303455465775633011445546454355753457753",
+  "0033303333364543533011433336333364521346542",
+  "0033303455464532445343545546454355753446542",
+  "0022202344342200234343434434343233432323221",
+  "0011101233221100123332223322232112332211111" } </pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "...........................................",
+ ".#####...........#####.....................",
+ "...#...####.####.#...#.####.###..####.####.",
+ "...#...#..#.#..#.#.....#..#.#..#.#....#..#.",
+ "...#...#..#.####.#.....#..#.#..#.###..####.",
+ "...#...#..#.#....#...#.#..#.#..#.#....#.#..",
+ "...#...####.#....#####.####.###..####.#..#.",
+ "..........................................." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "0000123210000",
+  "0012456542100",
+  "0135789875310",
+  "0258988898520",
+  "1479865689741",
+  "2589742479852",
+  "2589742479852",
+  "1479865689741",
+  "0258988898520",
+  "0135789875310",
+  "0012456542100",
+  "0000123210000" }
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ ".............",
+ ".....###.....",
+ "...#######...",
+ "..#########..",
+ "..####.####..",
+ ".####...####.",
+ ".####...####.",
+ "..####.####..",
+ "..#########..",
+ "...#######...",
+ ".....###.....",
+ "............." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+original:
+</p>
+<img src="http://172.16.100.16/contest/problem/UnBlur/unblur_fig4a.gif"><p>
+blurred:
+</p>
+<img src="http://172.16.100.16/contest/problem/UnBlur/unblur_fig4b.gif"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

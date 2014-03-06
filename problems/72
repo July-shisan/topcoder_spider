@@ -1,0 +1,54 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>This problem was taken from the Collegiate Challenge Finals
+
+Class Name:  Camper
+Method Name:  maxCalories 
+Parameters:  int,int
+Returns:  int
+
+A hiker is preparing for a trip through the wilderness.  He is taking a
+backpack, and he must decide what food to pack in the backpack.  He can bring a
+limited amount of food because the backpack has a fixed maximum volume, and the
+weight of the items must not exceed a fixed maximum weight (He doesn't want the
+weight of the bag to slow him down.)  The hiker has several food items to
+choose from.  Each item has a weight, a volume, and a caloric content.  The
+hiker wants to maximize the number of calories he brings while keeping the
+total volume and weight less than or equal to the maximum volume and weight.   
+
+Implement a class Camper, which includes a method maxCalories.  maxCalories
+takes two ints as parameters, the maximum weight and the maximum volume.  The
+method should return the maximum number of calories that the hiker can bring
+such that the total weight of the items does not exceed the maximum weight and
+the total volume of the items does not exceed the maximum volume.
+
+The food items, the number of calories they contain, their weight, and their
+volume are given in a static 2-dimensional array, data.  data[0][x] is the
+number of calories in the xth food item.  data[1][x] is the weight of the xth
+element.  data[2][x] is the volume of the xth element.  This static array is
+already in the coding window below, make sure to keep it in the class.
+
+The method signature is:
+public int maxCalories(int maxWeight, int maxVolume);
+
+both maxWeight and maxVolume are between 0 and 1000, inclusive.
+
+Note:
+*If the maximum volume or maximum weight is 0, the method should return 0.
+*Your solution must run in under 6 seconds.
+
+Here is the array, in case you delete it accidentally:
+private static int [ ][ ] data = 
+{ { 10, 100, 170, 40, 68, 92, 220, 30, 60, 85,
+92, 109, 230, 60, 65, 72, 80, 82, 120, 130, 180, 222, 400, 800 }, //calories
+{  5,  20,  10, 12, 20, 40,  70, 30, 40, 30,
+30,  60, 100, 51, 52, 53, 54, 70,  20,  40,  40, 90,  200, 600 }, //weight
+{  3,  20,  90, 90, 80, 12,  50,  1, 70, 20,
+20,  30, 120, 40, 40, 40, 20, 80,  90, 100,  60, 30,  200,  50 } }; //volume
+
+Examples:
+If maxWeight=41 and maxVolume=181, the hiker can bring the most calories by
+bringing the 3rd and 19th elements (170 calories and 120 calories).  The method
+should return the total number of calories, 170+120=290. </pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Camper</td></tr><tr><td class="statText">Method:</td><td class="statText">maxCalories</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int maxCalories(int param0, int param1)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,184 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+
+Spamatronic Corporation made its mark by selling unsolicited commercial
+email delivery systems, and has lately expanded into the lucrative
+business of filtering unsolicited commercial email. You have been hired
+to implement the adaptive filtering algorithm devised by Spamatronic's
+research department. The premise of this algorithm is that new spam is
+composed largely of old spam.
+
+</p><p>
+
+Given a corpus of email messages that are known to be spam, consider the
+tokens that occur in it.  A token is defined as a sequence of letters
+('A' though 'Z' and 'a' through 'z') that are not adjacent to any other
+letters in the text. Since the Spamatronic algorithm is case-insensitive,
+all token occurrences are rendered in lowercase, and then reduced to
+a token set in which each token appears exactly once. For example,
+the token set derived from the messages
+
+</p><pre>
+
+    Good day, sir. It is with good will and confidence that I
+    make this urgent and private business proposal to you.
+</pre><p>
+
+and
+</p><pre>
+
+    Herbalize your bald spot! Gentle herbs flush negative ions
+    from your system and stimulate super-growth. Gain confidence!
+</pre><p>
+
+is the following when sorted alphabetically.
+
+</p><pre>
+
+    {"and", "bald", "business", "confidence", "day", "flush", "from",
+    "gain", "gentle", "good", "growth", "herbalize", "herbs", "i", "ions",
+    "is", "it", "make", "negative", "private", "proposal", "sir", "spot",
+    "stimulate", "super", "system", "that", "this", "to", "urgent",
+    "will", "with", "you", "your"}
+</pre><p>
+
+Now consider a newly arrived email message. If at least 75% of the tokens
+in its token set also appear in the token set of the spam corpus, the
+filtering algorithm decides that this message is a piece of spam. It is
+deleted from the user's mailbox and added to the spam corpus so that it
+may influence future filtering decisions.
+
+</p><p>
+
+You are given two String[]s, <b>knownSpam</b> and
+<b>newMail</b>. The former contains the initial spam corpus, while the
+latter is a collection of recently arrived email. Each String
+element constitutes one whole message.  Use the Spamatronic adaptive
+filtering algorithm to process the messages of <b>newMail</b> in the
+given order, and return a int[] containing the zero-based
+indices, in ascending order, of the messages that are not spam.
+
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Spamatronic</td></tr><tr><td class="statText">Method:</td><td class="statText">filter</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] filter(String[] knownSpam, String[] newMail)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>knownSpam</b> and <b>newMail</b> each contain between 1 and 50 elements, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>knownSpam</b> and <b>newMail</b> is between 1 and 50 characters long, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each character in every element of <b>knownSpam</b> and <b>newMail</b> is a printable character with an ASCII value between 32 and 126, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>newMail</b> will contain at least one token.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"This is a vile piece of spam."}</pre></td></tr><tr><td class="statText"><pre>{"Spam is spiced ham.",
+ "Spam is VILE!",
+ "Spam is not vile."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The algorithm is case-insensitive.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"We have the best mortgage rates. Refinance today.",
+ "Money-making opportunity! $5000/week potential!!!",
+ "Don't Feel Short; try Elevator Shoes for increase.",
+ "All-new pics: Stacy, Tiffany, Donner, and Blitzen."}</pre></td></tr><tr><td class="statText"><pre>{"5000 bucks for shoes?",
+ "Short bucks for new shoes?"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Under our definition, "5000" is not a token</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"We have the best mortgage rates. Refinance today.",
+ "Money-making opportunity! $5000/week potential!!!",
+ "Don't Feel Short; try Elevator Shoes for increase.",
+ "All-new pics: Stacy, Tiffany, Donner, and Blitzen."}</pre></td></tr><tr><td class="statText"><pre>{"On, Dasher! On, Dancer! On, Donner and Blitzen!"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Our algorithm counts the members of a token set, and the number of times a token occurs in the text is irrelevant.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"We have the best mortgage rates. Refinance today.",
+ "Money-making opportunity! $5000/week potential!!!",
+ "Don't Feel Short; try Elevator Shoes for increase.",
+ "All-new pics: Stacy, Tiffany, Donner, and Blitzen."}</pre></td></tr><tr><td class="statText"><pre>{"Try the prime ribs.",
+ "Donner: New Prime Rates Today",
+ "Try the prime ribs."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 0 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The order in which new mail arrives is significant.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"One, two, buckle my shoe.",
+ "Eins, zwei, polizei.",
+ "On the first day of Christmas, my true love",
+ "gave to me a partridge in a pear tree."}</pre></td></tr><tr><td class="statText"><pre>{"Christmas shoe buckle madness!",
+ "Partridge polizei madness day!",
+ "I did not shoot the deputy.",
+ "The second day of Christmas, a partridge bit me."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 2 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ArnQ iGue ORAr tYMK GLPK pcdV QCOQ TJGj JFgv QuDv ",
+ "BbPq hpBp Quuv VsQe oJYB GuIh syuO XNTl tLgZ GlET ",
+ "LYUT feoz ArcZ SFED Txbg DTQd SCID Vztx ERDj hkXY ",
+ "qTLZ nDXV sDKm lUsS cQVI UElK JkNT xbcc oSvE tnzK ",
+ "ysrX jLeu vIJe NYmX oeRC SWfg UfCU Iumf xnuE Dsay ",
+ "sXKj DCSY LCbJ ovIj tTGm AYyL KcTV PJFZ ZIaH yPnk ",
+ "EJcc ESfL PaRN OMpb DJGZ VQlA AUoD mrXE afWW otpR ",
+ "njeP FDib qEEt sZjP Ybsv XplI dPvn tuUM rnhE sRdG ",
+ "Rtbd oCEF xECT VOZP aKdp ARuG ZyqG BpOx KiZg VwjP ",
+ "zkmC JuIK jEaC AjuA jXRX TUyI cpJP bmnE qXsI BYAM ",
+ "JcJO BEQN bTrL OpXy fKfx XGyV aMFv TNCG xrmH rnsq ",
+ "olSb fBig LuzT rJbq IEjR ygzg GgpS qaiS GDMT wMoN ",
+ "Ypxx tWrb WSEe COmB XwqK GOWj ZCQW qtkm riJO weoj ",
+ "uDHD nmTu yruZ zVEu Bhyl qheT KqwD YFTK frMk daSC ",
+ "ywfg arFu KGOk rciT PZQX tSll dpXd Aczq EYjW RQkh ",
+ "BJcC dJkr lWPM jaJI UCMt NQiy azlc encg srwA YhUH ",
+ "wqET eMLv kFYM GbDi hkQq sFvy ZwLi gvbu wdLz bZzl ",
+ "NIVA xpTx SUOz vhQM fYTn NkrJ pKYm sVpf DMxL RtAn ",
+ "kCXI TAzJ aaeQ zYqX TpfN nLpA bsmp GsAa rDhI kexj ",
+ "ibLo DWfO aEYD Dkzt gqOf IKeP jDJk iaAH viBk kbyz ",
+ "ArnQ iGue ORAr tYMK GLPK pcdV QCOQ TJGj JFgv QuDv ",
+ "BbPq hpBp Quuv VsQe oJYB GuIh syuO XNTl tLgZ GlET ",
+ "LYUT feoz ArcZ SFED Txbg DTQd SCID Vztx ERDj hkXY ",
+ "qTLZ nDXV sDKm lUsS cQVI UElK JkNT xbcc oSvE tnzK ",
+ "ysrX jLeu vIJe NYmX oeRC SWfg UfCU Iumf xnuE Dsay ",
+ "sXKj DCSY LCbJ ovIj tTGm AYyL KcTV PJFZ ZIaH yPnk ",
+ "EJcc ESfL PaRN OMpb DJGZ VQlA AUoD mrXE afWW otpR ",
+ "njeP FDib qEEt sZjP Ybsv XplI dPvn tuUM rnhE sRdG ",
+ "Rtbd oCEF xECT VOZP aKdp ARuG ZyqG BpOx KiZg VwjP ",
+ "zkmC JuIK jEaC AjuA jXRX TUyI cpJP bmnE qXsI BYAM ",
+ "JcJO BEQN bTrL OpXy fKfx XGyV aMFv TNCG xrmH rnsq ",
+ "olSb fBig LuzT rJbq IEjR ygzg GgpS qaiS GDMT wMoN ",
+ "Ypxx tWrb WSEe COmB XwqK GOWj ZCQW qtkm riJO weoj ",
+ "uDHD nmTu yruZ zVEu Bhyl qheT KqwD YFTK frMk daSC ",
+ "ywfg arFu KGOk rciT PZQX tSll dpXd Aczq EYjW RQkh ",
+ "BJcC dJkr lWPM jaJI UCMt NQiy azlc encg srwA YhUH ",
+ "wqET eMLv kFYM GbDi hkQq sFvy ZwLi gvbu wdLz bZzl ",
+ "NIVA xpTx SUOz vhQM fYTn NkrJ pKYm sVpf DMxL RtAn ",
+ "kCXI TAzJ aaeQ zYqX TpfN nLpA bsmp GsAa rDhI kexj ",
+ "ibLo DWfO aEYD Dkzt gqOf IKeP jDJk iaAH viBk kbyz ",
+ "ArnQ iGue ORAr tYMK GLPK pcdV QCOQ TJGj JFgv QuDv ",
+ "BbPq hpBp Quuv VsQe oJYB GuIh syuO XNTl tLgZ GlET ",
+ "LYUT feoz ArcZ SFED Txbg DTQd SCID Vztx ERDj hkXY ",
+ "qTLZ nDXV sDKm lUsS cQVI UElK JkNT xbcc oSvE tnzK ",
+ "ysrX jLeu vIJe NYmX oeRC SWfg UfCU Iumf xnuE Dsay ",
+ "sXKj DCSY LCbJ ovIj tTGm AYyL KcTV PJFZ ZIaH yPnk ",
+ "EJcc ESfL PaRN OMpb DJGZ VQlA AUoD mrXE afWW otpR ",
+ "njeP FDib qEEt sZjP Ybsv XplI dPvn tuUM rnhE sRdG ",
+ "Rtbd oCEF xECT VOZP aKdp ARuG ZyqG BpOx KiZg VwjP ",
+ "Rtbd oCEF xECT VOZP aKdp ARuG ZyqG BpOx KiZg VwjP "}</pre></td></tr><tr><td class="statText"><pre>{"qXsI hRfD viBk KGOk GLPK kFYM WSEe oCEF ysrX Gicz ",
+ "YMav Clmy LuzT wdLz nmTu jiCs gvbu sRdG aaeQ EMFM ",
+ "syuO pKYm ootQ UyOJ TpfN encg LuzT sRdG TJGj elbx ",
+ "LuzT nDXV boPm zOqG jLeu gcxH zOqG KqwD RQkh PJFZ ",
+ "srwA aKdp VOZP rJbq viBk WIlz kexj ysrX icKO OpXy ",
+ "Flij SHTh shhx EMFM pcdV viBk ESfL zkmC sHHV TNCG ",
+ "GDMT lWPM tWrb tnzK aEYD dJkr NQiy CyZJ GOWj Ybsv ",
+ "wBEy IEjR COmB bZzl vhQM iaAH EMFM bsmp GLPK lWPM ",
+ "tWrb HFzg XPoH ZCQW zOqG PZQX CyZJ qnsD Txbg tLgZ ",
+ "LYUT vODC DzEE bTrL Clmy AYyL lBJT EYjW fBig MGEK ",
+ "UbbN DTQd ysrX vhQM tSll bZzl qXsI DWfO LzXO UfCU ",
+ "BYAM wAAt Aczq Ckym lWPM lBJT KcTV Hbut rJbq ibLo ",
+ "feoz qaiS oSvE kFYM XGyV lWPM NIVA sDKm QuDv rnsq ",
+ "BYAM UDNV GuIh GuIh bKFz ootQ sFvy zpXB ZbWY NQiy ",
+ "cWfG oeRC LHJC NYmX ppzA NIVA rDhI QCOQ fBig aMFv ",
+ "RQkh SUOz WkoW wqET sRdG sRdG tnzK ARuG OMpb xbcc ",
+ "gvbu AjuA GgpS nLpA TUyI Swfg LCbJ aaeQ XGyV yruZ ",
+ "ygzg xnuE afWW tuUM KGOk GOWj ousC mrXE ZwLi FSll ",
+ "ckKT frMk McdI zVEu nVIK ygzg daSC ArcZ Dagc ryuQ ",
+ "bPhx zurF XAIM gqOf aRSX Ypxx dfwy aKdp chtc iCCo ",
+ "ovIj ywfg QuDv pKYm iaAH BbPq LHJC tTGm Vztx VwjP ",
+ "TpfN TAzJ Vztx tTGm sXKj IKeP AUoD qXsI DMxL azlc ",
+ "sRdG WYmV NQuu xnuE TUyI XPoH YhUH ousC AYyL jEaC ",
+ "RQkh BbPq UbbN GuIh oCEF tLgZ arFu qTLZ Dkzt zVEu ",
+ "NIVA FDib PZQX McdI GgpS Euso ppzA Dagc Vztx LHJC ",
+ "ZvMg Bhyl GOWj sDKm ywfg oJYB AjuA jaJI ZIaH Dkzt ",
+ "ygzg oSvE qheT encg SUOz vODC mDVo KcTV swcU Dkzt ",
+ "GgpS RtAn TpfN JFgv kexj qXsI DMxL MhEv ArnQ oSvE ",
+ "TEig YhUH SHTh KGOk EYjW XGyV yruZ GLPK oeRC QIEM ",
+ "Ybsv jXRX Iumf kFYM wdLz gvbu hkXY QCOQ COmB tLgZ ",
+ "EYjW vhQM xECT UfCU iaAH JuIK KqwD XNTl wdLz Ypxx ",
+ "rdmJ RQkh avBu TSWv UtFm VsQe bZzl bZzl MGEK KGOk ",
+ "LuzT Euso UbGd jiCs qaqp wAMV ywfg nVIK LuzT otpR ",
+ "aEjf jELm ibwU eUXx OBwq UyOJ BbPq QEut Flij ysrX ",
+ "srwA FSll RtAn VQlA SrZq FRJh OMpb JFgv srwA KiZg ",
+ "DCSY ZIaH cQVI frMk zYqX McdI wdLz qTLZ BYAM srwA ",
+ "mhEw rnhE tWrb aEjf tXuk RtPo aeGI ootQ kexj DTQd ",
+ "PJFZ GOWj bTrL tuUM bmnE sZjP aKdp GuIh XplI Txbg ",
+ "tuUM EYjW viBk nLpA jDJk LuzT lUsS PZQX Dkzt aEYD ",
+ "vIJe ERDj jXRX aRPM aKdp xbcc qXsI Uosx YhUH WSEe ",
+ "SoOP Ypxx XNTl SUOz tTGm rJbq xbcc NIVA jDJk rnsq ",
+ "pcdV riJO zkmC JFgv yruZ fYTn njeP dPvn VsQe xECT ",
+ "iaAH TUyI QIEM zVEu BbuB Aseu xpTx aKdp WSEe tWrb ",
+ "UhJb sFvy ArnQ dfwy eUXx ENkl elbx VwjP kbyz UElK ",
+ "daSC vpco bmnE NwgV LYUT JkNT nDXV YMav aKdp NwgV ",
+ "rDhI GOWj AjuA mrXE BbPq aaeQ FGcp ckKT GlET ESfL ",
+ "Bhyl tSIB njeP nDXV VwjP VOZP tXuk NYmX UCMt KcTV ",
+ "BpOx JwQv TUyI Blsk PJFZ sFvy cpJP RtAn sZjP NYmX ",
+ "SFED Ybsv ootQ QCOQ DTQd pcdV kCXI TAzJ zVEu QCOQ ",
+ "SFED Ybsv ootQ QCOQ DTQd pcdV kCXI TAzJ zVEu QCOQ "}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ 1,  2,  3,  5,  8,  9,  11,  13,  14,  18,  19,  22,  24,  26,  28,  31,  32,  33,  36,  42,  43,  44 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

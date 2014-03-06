@@ -1,0 +1,231 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>PROBLEM STATEMENT
+
+The game of 3-D Tic-Tac-Toe has n levels of n by n Tic-Tac-Toe boards placed
+one above the other (an n * n * n cube of spaces).  Like Tic-Tac-Toe, there are
+two players: the first player uses an X to represent himself, while the second
+player uses a O.  The object of the game for the first player is to get n X's
+in a line. The object of the game for the second player is to get n O's in a
+line. 
+
+The game begins with the first player placing an X somewhere on the board, then
+the second player places a O on the board.  The two players alternate turns
+until one of three things happens, the first player gets n X's in a line, the
+second player gets n O's in a line or there are no more spots on the board that
+are available. 
+
+Here are *some* of the ways someone can win: (X is just used as an example, the
+same rules apply for O, n=3 for these examples)  
+
+____________         ____________         ____________
+____________
+2 /_X_/_X_/_X_/      2 /_X_/___/___/      2 /___/___/_X_/      2
+/___/_X_/___/
+level 0   1 /___/___/___/      1 /___/___/___/      1 /___/___/___/      1
+/___/_X_/___/
+0 /___/___/___/      0 /___/___/___/      0 /___/___/___/      0
+/___/_X_/___/
+0   1   2            0   1   2            0   1   2            0
+1   2
+____________         ____________         ____________
+____________
+2 /___/___/___/      2 /___/___/___/      2 /___/_X_/___/      2
+/___/___/___/
+level 1   1 /___/___/___/      1 /___/_X_/___/      1 /___/___/___/      1
+/___/___/___/
+0 /___/___/___/      0 /___/___/___/      0 /___/___/___/      0
+/___/___/___/
+0   1   2            0   1   2            0   1   2            0
+1   2
+____________         ____________         ____________
+____________
+2 /___/___/___/      2 /___/___/___/      2 /_X_/___/___/      2
+/___/___/___/
+level 2   1 /___/___/___/      1 /___/___/___/      1 /___/___/___/      1
+/___/___/___/
+0 /___/___/___/      0 /___/___/_X_/      0 /___/___/___/      0
+/___/___/___/ 
+0   1   2            0   1   2            0   1   2            0
+1   2
+
+
+____________         ____________         ____________
+____________
+2 /_X_/___/___/      2 /___/___/___/      2 /___/___/___/      2
+/___/___/___/
+level 0   1 /___/___/___/      1 /___/___/___/      1 /___/___/___/      1
+/_X_/___/___/
+0 /___/___/___/      0 /___/___/___/      0 /___/___/_X_/      0
+/___/___/___/
+0   1   2            0   1   2            0   1   2            0
+1   2
+____________         ____________         ____________
+____________
+2 /_X_/___/___/      2 /___/___/___/      2 /___/___/___/      2
+/___/___/___/
+level 1   1 /___/___/___/      1 /___/___/___/      1 /___/___/_X_/      1
+/___/_X_/___/
+0 /___/___/___/      0 /___/___/___/      0 /___/___/___/      0
+/___/___/___/
+0   1   2            0   1   2            0   1   2            0
+1   2
+____________         ____________         ____________
+____________
+2 /_X_/___/___/      2 /_X_/___/___/      2 /___/___/_X_/      2
+/___/___/___/
+level 2   1 /___/___/___/      1 /___/_X_/___/      1 /___/___/___/      1
+/___/___/_X_/
+0 /___/___/___/      0 /___/___/_X_/      0 /___/___/___/      0
+/___/___/___/
+0   1   2            0   1   2            0   1   2            0
+1   2 
+
+
+Implement a class NTicTacToe with a method compute.  compute should return a
+String holding the first winner and the number of moves it took that player to
+win.  If the first player (X) won in 3 moves compute, would return "X,3".  If,
+after processing the input, there is no winner, compute should return "NO
+WINNER".
+
+The String[] elements will be of the form "LEVEL,ROW,COLUMN" and represent the
+space a player moves during a move.  "0,0,0" is the space in the
+upper-front-left and "&lt;n-1&gt;,&lt;n-1&gt;,&lt;n-1&gt;" is the space in the lower-back-right.
+The first move of the game is the first element in xMoves, the second move of
+the game is the first element in oMoves, the third is the second element in
+xMoves, etc.   The int input represents the dimension of the game board.
+
+DEFINITION 
+Class Name: NTicTacToe
+Method Name: compute
+Parameters: String[], String[], int
+Returns: String
+Method signature (be sure your method is public):  String compute(String[]
+xMoves, String[] oMoves, int n);   
+
+TopCoder will ensure the validity of the inputs.  Inputs are valid if all of
+the following criteria are met:
+-  the total number of moves will not be greater than n^3. (there are only n^3
+spaces on the board)  
+-  all moves in xMoves, oMoves and the union of xMoves and oMoves will be
+unique. 
+-  all moves will be on the board (coordinates will all be between 0 and n-1
+inclusive).
+-  all moves will be formatted correctly "LEVEL,ROW,COLUMN" (no spaces and a
+comma separating the coordinates). 
+-  the size of the first String[] is either equal to or one greater than the
+size of the second String[].
+-  in the return string the winner X or O should be depicted with a captial
+letter.
+-  n is an integer between 3 and 9, inclusive.
+
+EXAMPLES 
+1. 
+Fig. 1                 Fig. 2                   Fig. 3
+  Fig. 4
+________________         ________________         ________________
+________________ 
+/___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+/___/___/___/___/
+/___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+/___/___/___/___/
+/___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+/___/___/___/___/
+/___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+/___/___/___/___/
+________________         ________________         ________________
+________________ 
+/___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+/___/___/___/___/
+/___/_X_/___/___/        /___/_X_/_O_/___/        /___/_X_/_O_/___/
+/___/_X_/_O_/___/
+/___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+/___/___/___/___/
+/___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+/___/___/___/___/
+________________         ________________         ________________
+________________ 
+/___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+/___/___/___/___/
+/___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+/___/___/_O_/___/
+/___/___/___/___/        /___/___/___/___/        /___/___/_X_/___/
+/___/___/_X_/___/
+/___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+/___/___/___/___/
+________________         ________________         ________________
+________________ 
+/___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+/___/___/___/___/
+/___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+/___/___/___/___/
+/___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+/___/___/___/___/
+/___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+/___/___/___/___/
+ 
+
+
+         Fig. 5                 Fig. 6                   Fig. 7
+    ________________         ________________         ________________
+   /___/___/___/___/        /___/___/___/___/        /_X_/___/___/___/
+  /___/___/___/___/        /___/___/___/_0_/        /___/___/___/_O_/
+ /___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+/___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+    ________________         ________________         ________________
+   /___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+  /___/_X_/_O_/___/        /___/_X_/_O_/___/        /___/_X_/_O_/___/
+ /___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+/___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+    ________________         ________________         ________________
+   /___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+  /___/___/_O_/___/        /___/___/_O_/___/        /___/___/_O_/___/
+ /___/___/_X_/___/        /___/___/_X_/___/        /___/___/_X_/___/
+/___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+    ________________         ________________         ________________
+   /___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+  /___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+ /___/___/___/___/        /___/___/___/___/        /___/___/___/___/
+/___/___/___/_X_/        /___/___/___/_X_/        /___/___/___/_X_/
+
+
+
+  xMoves = {"1,2,1","2,1,2","3,0,3","0,3,0"};
+  oMoves = {"1,2,2","2,2,2","0,2,3"}; 
+
+  Fig. 1: X makes the first move on level 1, row 2, column 1
+  Fig. 2: O makes the next move on level 1, row 2, column 2
+  Fig. 3: X makes the next move on level 2, row 1, column 2
+  Fig. 4: O makes the next move on level 2, row 2, column 2
+  Fig. 5: X makes the next move on level 3, row 0, column 3
+  Fig. 6: O makes the next move on level 0, row 2, column 3
+  Fig. 7: X makes the next move on level 0, row 3, column 0 
+
+  n = 4;
+  The output is: "X,4"
+  Because X won, and it took 4 moves. 
+
+2.
+xMoves =
+{"1,5,1","2,5,2","0,5,0","4,5,4","7,5,7","3,5,3","6,5,6","5,5,5","3,3,3"};
+oMoves =
+{"3,4,3","7,7,7","6,6,6","5,6,5","4,3,2","1,2,3","1,1,1","4,2,2","7,7,6"};
+  n = 8;
+  The output is: "X,8"
+  Because X won, and it took 8 moves. 
+
+3.
+  xMoves = {"0,2,2","1,2,2","2,2,2","1,0,0"};
+  oMoves = {"2,2,1","1,2,1","1,1,1"};
+  n = 4;
+  The output is: "NO WINNER" 
+
+4.
+  xMoves = {"2,1,0","0,0,0","2,2,2"};
+  oMoves = {"1,1,1","1,1,0","1,1,2"};
+  n = 3;
+  The output is: "O,3"
+  Because O won, and it took 3 moves.
+ </pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">NTicTacToe</td></tr><tr><td class="statText">Method:</td><td class="statText">compute</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String compute(String[] param0, String[] param1, int param2)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,128 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>PROBLEM STATEMENT 
+
+A parachuter wants to jump out of a plane and land in a target area outlined on
+the ground.  However, it is a real cloudy day and the parachuter cannot see the
+outlined target area on the ground.  He needs a program to help him figure out
+if his plane is over the target area.  Conveniently enough, the target area is
+a polygon, and its borders can be defined by a String[] of coordinates, with
+each coordinate representing a vertex on the polygon.
+
+Implement a class Parachuter that contains a method overArea.  overArea takes
+as its parameters, a String[] representing the coordinate points of the
+vertexes of the target area, and two ints representing the x and y coordinates
+of the parachuter's plane. 
+
+The method returns an int that equals a 0 (zero), 1 (one), or 2 (two) where 
+0 - if there is an input error.  An error occurs if the input String[] defines
+a polygon that is self intersecting.  A polygon is self intersecting if some
+edge in the polygon crosses some other edge, or if two vertices are the same
+point (any two elements in the String[] are the same), or if some vertex lies
+along some edge.
+1 - if the parachuter is currently over the target area (or exactly on the
+area's border)
+2 - if the parachuter is not over the target area.
+
+DEFINITION
+Class Name: Parachuter
+Method Name: overArea
+Parameters: String[], int, int
+Returns: int
+Method signature (be sure your method is public): int overArea (String[]
+points, int planeX, int planeY)
+
+-  points is a String[] of coordinate points representing the vertices of the
+target area's border. 
+-  planeX is the x coordinate of the plane.
+-  planeY is the y coordinate of the plane.
+
+TopCoder will ensure the validity of the inputs.  Inputs are valid if all of
+the following criteria are met:
+-  points elements are of the form "(x,y)" where x and y are ints between 0 and
+100, inclusive.
+-  points contains between 3 and 10, inclusive, elements.
+-  planeX and planeY are ints between 0 and 100, inclusive.
+
+NOTES
+-  Assume Earth is a two-dimensional plane with Cartesian coordinates.
+-  The x and y coordinates represent the position of the plane.  It should be
+assumed the if the parachuter jumps out of the plane at (x,y) he will land on
+the ground at exactly that point.
+-  The target area's border is the line loop that is the first point in the
+points String[] connected to the second, second to third, et cetera.  The last
+point of the String[] is connected to the first point.  Each connection between
+the vertices is an edge and each point is a vertex.  The target area is the
+border and the space enclosed by the border.  
+
+EXAMPLES
+
+If
+points=[(0,0)
+         (0,2)
+         (2,2)
+         (2,0)]
+planeX=1
+planeY=1,
+The method should return 1, because the plane is right in the middle of the
+target area.
+
+If
+points=[(0,0)
+         (0,2)
+         (2,2)
+         (2,0)]
+planeX=2
+planeY=2,
+The method should return 1, because the plane is over the target area's border.
+
+If
+points=[(0,0)
+         (0,2)
+         (2,2)
+         (2,0)]
+planeX=2
+planeY=3,
+The method should return 2, because the plane is outside the target area's
+border.
+
+If
+points=[(10,10)
+         (10,20)
+         (20,10)
+         (10,15)
+         (20,10)]
+planeX=1
+planeY=1,
+The method should return 0, because the polygon is self intersecting.
+
+If
+points=[(5,5)
+         (10,10)
+         (7,7)]
+planeX=2
+planeY=2,
+The method should return 0, because the polygon is self intersecting.
+
+
+If
+points=[(0,0)
+         (4,4)
+         (0,4)
+         (4,0)]
+planeX=2
+planeY=2,
+The method should return 0, because the polygon is self intersecting.
+
+If
+points=[(0,0)
+         (0,1)
+         (1,1)
+         (1,0)
+         (0,0)]
+planeX=90
+planeY=90,
+The method should return 0, because the first and last vertex are intersecting.
+</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Parachuter</td></tr><tr><td class="statText">Method:</td><td class="statText">overArea</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int overArea(String[] param0, int param1, int param2)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

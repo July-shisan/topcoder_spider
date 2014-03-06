@@ -1,0 +1,55 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Given a rectangular grid of squares, how many different convex polygons can be drawn
+whose vertices are all points on the grid and whose sides are either
+horizontal, vertical or (45 degree) diagonal?
+<p> 
+We define the width of the given rectangular grid to be the number of intersection
+points along one if its horizontals (including both the leftmost and rightmost
+points). Similarly the height of the grid is the number of intersection points
+along one of its verticals.  We want to count the number of different "grid polygons"
+that could be formed. A grid polygon is a polygon with the following properties:</p><ol><li>
+    1) Each vertex is located at a grid intersection point</li><li>
+    2) Each edge of the polygon is either vertical, horizontal, or at an angle of 45 degrees.</li><li>
+    3) It is a proper polygon, with no edge touching or intersecting another edge (except that
+adjacent edges touch at their common vertex). </li><li>
+    4) The polygon is convex: every straight line joining any two interior points of the polygon is entirely contained in the interior of the polygon.</li></ol><p>
+Two grid polygons should be counted as different if their boundaries are not identical. If they are the same shape but in different locations they are different.  But placing an extra vertex in the middle of an edge does not change the boundary so it does not create a new grid polygon.
+</p><p>
+Create a class ConvexPoly that contains a method count that is given two
+ints <b>w</b>, the grid width, and <b>h</b>, the grid height, and that returns the number
+of grid polygons that could be formed.
+</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ConvexPoly</td></tr><tr><td class="statText">Method:</td><td class="statText">count</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long count(int w, int h)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>w</b> will be between 2 and 100 inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>h</b> will be between 2 and 100 inclusive</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 19</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>
+
+XXXXXXX    XXXXXXX    XXXXXXX    XXXXXXX
+ X    X     X   X     X     X    X    X
+  X   X      X X      X     X    X   X
+.  XXXX    .  X  .    XXXXXXX    XXXX  .
+
+XXXX  .    XXXX  .    XXXX  .    X  .  .    .  X  .
+ X X       X  X       X X        XX           XX
+  XX       X  X       XX         X X         X X
+.  X  .    XXXX  .    X  .  .    XXXX  .    XXXX  .
+
+
+.  XXXX    .  X  .    XXXX  .    XXXX  .    .  XXXX
+  X   X      X X       X  X      X   X        X  X
+ X    X     X   X       X  X     X    X      X  X
+XXXXXXX    XXXXXXX    .  XXXX    XXXXXXX    XXXX  .
+
+.  XXXX    .  XXXX    .  XXXX    .  X  .    .  .  X  
+    X X       X  X       X X        XX           XX  
+     XX       X  X       XX         X X         X X  
+.  .  X    .  XXXX    .  X  .    .  XXXX    .  XXXX  
+
+</pre>
+
+All 19 possible grid polygons are shown above, with the polygon sides 
+shown with 'X' and unoccupied grid points with '.'
+
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>100</pre></td></tr><tr><td class="statText"><pre>100</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8658940474595</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

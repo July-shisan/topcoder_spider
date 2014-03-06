@@ -1,0 +1,89 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+
+Some text editors, such as vi, model the user's document as a sequence
+of lines containing a variable number of characters. Because the human
+eye prefers to read lines of equal length, such editors typically supply
+a function that will adjust the lines to make them fit within a column
+of fixed width. This process is called justification. (Other editors,
+such as OpenOffice.org, will justify lines on the fly.)
+
+</p><p>
+
+Your job is to write a justifier for a simplified piece of text. You
+are given a String[], <b>lines</b>, each element of which
+is a single line consisting of tokens separated by single spaces. For
+the present purposes, a token is a sequence of lowercase alphabetical
+characters. You are to return a String[] containing the
+same tokens in the same order and still separated by single spaces,
+distributed in such a way that no line exceeds the desired column width,
+which is specified by the int <b>columnWidth</b>. Within
+these constraints, you should put as many tokens as possible in the
+first line, then as many as possible in the second, and so on.
+
+</p><p>
+
+Note that tokens must not be split between consecutive lines, and that
+the number of lines in the result may differ from that in the input. The
+resulting lines must contain tokens separated by single spaces, without
+extraneous spaces at the beginning or end of a line, akin to the input. No
+input token will be longer than the column width.
+
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">WordWrap</td></tr><tr><td class="statText">Method:</td><td class="statText">justify</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] justify(String[] lines, int columnWidth)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>lines</b> contains between 1 and 50 elements, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>lines</b> is between 1 and 50 characters long, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">in each element of <b>lines</b>, only the space character (' ') and the lowercase alphabetical characters ('a' through 'z') are allowed</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">in each element of <b>lines</b>, neither the first nor last character may be a space</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">in each element of <b>lines</b>, there may not be two or more consecutive spaces</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>columnWidth</b> is between 1 and 50, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">in each element of <b>lines</b>, no sequence of alphabetic characters is more than <b>columnWidth</b> characters long</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"now is the time for all good men",
+ "to come to the aid of their country"}</pre></td></tr><tr><td class="statText"><pre>20</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "now is the time for",
+ "all good men to come",
+ "to the aid of their",
+ "country" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Token order is preserved in the result, but no line exceeds 20 characters in length.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"now",
+ "is the time for",
+ "all",
+ "good",
+ "men",
+ "to",
+ "come to the aid",
+ "of",
+ "their",
+ "country"}</pre></td></tr><tr><td class="statText"><pre>20</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "now is the time for",
+ "all good men to come",
+ "to the aid of their",
+ "country" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Each line is made as long as possible without exceeding the column width.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"four score and seven years ago", 
+ "our fathers brought forth",
+ "upon this continent",
+ "a new nation",
+ "conceived in liberty", 
+ "and dedicated to the proposition", 
+ "that all men are created",
+ "equal"}</pre></td></tr><tr><td class="statText"><pre>50</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "four score and seven years ago our fathers brought",
+ "forth upon this continent a new nation conceived",
+ "in liberty and dedicated to the proposition that",
+ "all men are created equal" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"th e ow l an d th e pu ss yc at",
+ "we nt to se a",
+ "on a be au ti fu l pe a gr ee n bo at"}</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "th e",
+ "ow l",
+ "an d",
+ "th e",
+ "pu",
+ "ss",
+ "yc",
+ "at",
+ "we",
+ "nt",
+ "to",
+ "se a",
+ "on a",
+ "be",
+ "au",
+ "ti",
+ "fu l",
+ "pe a",
+ "gr",
+ "ee n",
+ "bo",
+ "at" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

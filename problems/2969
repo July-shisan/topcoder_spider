@@ -1,0 +1,45 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+If I asked you to read the following lines aloud
+</p>
+<pre>
+    It was the best of times, it was the worst of times, it was the
+    the age of wisdom, it was the age of foolishness, it was the 
+    epoch of belief, it was the epoch of incredulity, ...
+</pre>
+there is a very good chance that you would say "it was <i>the</i> age of wisdom"
+instead of "it was <i>the</i> <i>the</i> age of wisdom".  This is a common typing
+error that can be fiendishly difficult to spot.
+
+<p>
+After making this error one too many times, you have decided to build a tool to detect
+such errors automatically.  Given a String[] <b>lines</b>, you are to return
+the zero-based index of the first line whose last word is the same as the first word on the
+next line, or -1 if there is no such line.  Each line contains one or more words separated by spaces.  Words are composed 
+of uppercase and lowercase letters ('A'-'Z' and 'a'-'z').    
+Two words are considered the same if they are exactly equal, including
+capitalization.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TheThe</td></tr><tr><td class="statText">Method:</td><td class="statText">check</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int check(String[] lines)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>lines</b> contains between 2 and 20 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>lines</b> contains between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>lines</b> contains only letters ('A'-'Z' and 'a'-'z') and spaces (' ').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No element of <b>lines</b> begins with a space, ends with a space, or contains two adjacent spaces.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "It was the best of times it was",
+  "the worst of times it was the",
+  "the age of wisdom it was the age",
+  "of foolishness it was the epoch",
+  "epoch of belief it was the epoch",
+  "of incredulity" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The error appears twice, once with the word "the" between lines 1 and 2,
+and once with the word "epoch" between lines 3 and 4.  You are looking for
+the first such error, so you return 1.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "I like you",
+  "You like me",
+  "Lets have dinner" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Capitalization matters.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "Sometimes I call my father Pops",
+  "PopsEdit is a feature rich editor",
+  "Just once I would like to beat SnapDragon",
+  "Dragon stew is tasty but the ingredients",
+  "are difficult to come by" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Only whole words count as matches, not prefixes or suffixes.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "A line might contain a",
+  "single",
+  "word" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "I know that",
+  "that kind of food",
+  "is bad for me but",
+  "I like it anyway" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Sometimes you actually intend to repeat a word, but such instances should
+be flagged as errors anyway.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

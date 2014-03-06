@@ -1,0 +1,57 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Some competitions have judges who score one specific area of a performance.  Unfortunately, bad judges do exist and can individually cause one group's rating to be affected drastically.  In some sports, the highest and lowest scores are dropped.  This works well when all judges are scoring the same thing.  However, when each judge scores only one aspect of a performance, dropping a score is not an option.
+<br><br>
+One way to minimize the effects of a bad judge is to not use the score each judge gives, but to use the relative ranking the judge gives each group.  The group that places first has a ranking of 1.  The group that places second has a ranking of 2, third has a ranking of 3, and so forth.  When multiple groups are given the same score from one judge, then they will all receive the same ranking.  For example, if the groups A, B, C, D, and E receive the scores 98, 95, 95, 90, and 83 respectively, then they would receive rankings of 1, 2, 2, 4, and 5, respectively.
+<br><br>
+Each group's rankings from all of the judges are then added together to find the group's total ranking.  The group with the lowest total ranking places first.  The group with the second lowest total ranking places second and so forth.  Ties are broken using the sum of all scores the group receives from the judges to find the group's total score.  The group with the highest total score wins the tiebreaker.  If multiple groups have the same total ranking and the same total score, then the group whose name comes first alphabetically wins.
+<br><br>
+Create a class ContestScore with a method sortResults that is given a String[] <b>data</b> and will return a String[] containing the group names and scores sorted from first to last place.  Every String in <b>data</b> will be formatted as: ("&lt;GROUPNAME&gt; NN.N NN.N NN.N") (quotes for clarity) where &lt;GROUPNAME&gt; will be between 1 and 10 characters in length, inclusive, and NN.N is a decimal number.  It will have leading zeros if necessary to follow the above format.  Each String in the returned String[] will be formatted as "&lt;GROUPNAME&gt; &lt;TOTALRANK&gt; &lt;TOTALSCORE&gt;" (quotes for clarity) where &lt;TOTALRANK&gt; is the group's total ranking and is an integer.  &lt;TOTALSCORE&gt; is the sum of the scores received from all judges and will always have exactly one decimal place and no extra leading 0's.  For example, if a group's &lt;TOTALRANK&gt; is 7 and &lt;TOTALSCORE&gt; is 271, then the string would be "&lt;GROUPNAME&gt; 7 271.0" (quotes for clarity).
+<br><br>
+For example, we have three groups.  Group A scored a 90.7, a 92.9, and an 87.4.  Group B scored a 90.5, a 96.6, and an 88.0.  Group C scored a 92.2, a 91.0, and a 95.3.  Here is how you would receive the data (quotes for clarity).
+<pre>
+  {"A 90.7 92.9 87.4",
+   "B 90.5 96.6 88.0",
+   "C 92.2 91.0 95.3"}</pre>
+From judge 1, group C got 1st, group A got 2nd, and group B got 3rd.  From judge 2, group B got 1st, group A got 2nd, and group C got 3rd.  From judge 3, group C got 1st, group B got 2nd, and group A got 3rd.
+<pre>
+   A  2 2 3
+   B  3 1 2
+   C  1 3 1</pre>
+So A has a total ranking of 7, B has a total ranking of 6, and C has a total ranking of 5.  Since C has the lowest total ranking, they place first.  B places second, and A places third.  You would return:
+<pre>
+  {"C 5 278.5",
+   "B 6 275.1",
+   "A 7 271.0"}</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ContestScore</td></tr><tr><td class="statText">Method:</td><td class="statText">sortResults</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] sortResults(String[] data)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">It is possible for a group to receive 00.0 for a score.  Remember that leading and trailing zeros will be present if necessary in order to maintain formatting.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Remember that if a group's total score is an exact integer to display it with one decimal place.  Also, if the total score is between 0.0 and 0.9, inclusive, display one zero to the left of the decimal point.  The last example shows this.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>data</b> will contain between 0 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>data</b> will contain the exact same number of scores.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>data</b> will be formatted as a group name followed by a single space, followed by a single space delimited list of scores.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Group names will be between 1 and 10 characters in length, and will consist of only of uppercase letters ('A'-'Z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No two groups will have the same name.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The score from each judge will be formatted as NN.N where N is a digit ('0'-'9').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There will be no leading or trailing spaces in each String of <b>data</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A 90.7 92.9 87.4",
+ "B 90.5 96.6 88.0",
+ "C 92.2 91.0 95.3"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "C 5 278.5",  "B 6 275.1",  "A 7 271.0" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Example from above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"STANFORD 85.3 90.1 82.6 84.6 96.6 94.5 87.3 90.3",
+ "MIT 95.5 83.9 80.4 85.5 98.7 98.3 96.7 82.7",
+ "PRINCETON 99.2 79.1 87.6 85.1 93.6 96.4 86.0 90.6",
+ "HARVARD 83.6 92.0 85.5 94.3 97.5 91.5 92.5 83.0",
+ "YALE 99.5 92.6 86.2 82.0 96.4 92.6 84.5 78.6",
+ "COLUMBIA 97.2 87.6 81.7 93.7 88.0 86.3 95.9 89.6",
+ "BROWN 92.2 95.8 92.1 81.5 89.5 87.0 95.5 86.4",
+ "PENN 96.3 80.7 81.2 91.6 85.8 92.2 83.9 87.8",
+ "CORNELL 88.0 83.7 85.0 83.8 99.8 92.1 91.0 88.9"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "PRINCETON 34 717.6",
+ "MIT 36 721.7",
+ "HARVARD 38 719.9",
+ "COLUMBIA 39 720.0",
+ "STANFORD 39 711.3",
+ "YALE 40 712.4",
+ "BROWN 41 720.0",
+ "CORNELL 42 712.3",
+ "PENN 51 699.5" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AA 90.0 80.0 70.0 60.0 50.0 40.0",
+ "BBB 80.0 70.0 60.0 50.0 40.0 90.0",
+ "EEE 70.0 60.0 50.0 40.0 90.0 80.0",
+ "AAA 60.0 50.0 40.0 90.0 80.0 70.0",
+ "DDD 50.0 40.0 90.0 80.0 70.0 60.0",
+ "CCC 40.0 90.0 80.0 70.0 60.0 50.0"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "AA 21 390.0",
+ "AAA 21 390.0",
+ "BBB 21 390.0",
+ "CCC 21 390.0",
+ "DDD 21 390.0",
+ "EEE 21 390.0" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A 00.1", "B 05.2", "C 29.0","D 00.0"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "C 1 29.0",  "B 2 5.2",  "A 3 0.1",  "D 4 0.0" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Remember that, for numbers between 0.0 and 0.9, inclusive, you must display a 0 before the decimal point.  Do not display any extraneous leading zeros if a number is between 1.0 and 9.9, inclusive.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

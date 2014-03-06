@@ -1,0 +1,41 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">An electronic component A has a size (sizeA), a number of inputs (inpA), and a 
+number of outputs (outpA).  We can join component A to component B if 
+inpB = outpA.
+The result is a new component C, where sizeC = sizeA + sizeB, inpC = inpA, and
+outpC = outpB. The cost of joining A to B includes testing the resulting component, 
+so it depends on the sizes of A and B 
+and on the number of inputs and outputs.  We estimate that the cost to join 
+A to B is 
+
+        <ul><li>cost = (inpA + sizeA) * connections * (outpB + sizeB)</li></ul>
+ 
+where connections equals outpA which equals inpB.
+<p>
+We have a sequence of n components, each of size 1, that we must assemble into 
+bigger and bigger components until we have assembled them into a single component.
+This will require us to perform n-1 joins.
+The order of the components may not be changed, but the order in which we perform
+the joins should be chosen to minimize the sum of the costs. 
+Create a 
+class Assemble that contains a method minCost that takes <b>connect</b>, the 
+sequence of the number of connections between adjacent components, as input and
+returns the minimum cost of assembling them into one component.
+</p><p>
+The first element in <b>connect</b> is the number of inputs to the first component, 
+and the last element in <b>connect</b> is the number of outputs of the last component.
+Otherwise, the i-th element is both the number of outputs of component i-1 and the number of
+inputs of component i.
+</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Assemble</td></tr><tr><td class="statText">Method:</td><td class="statText">minCost</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int minCost(int[] connect)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The number of elements in <b>connect</b> will be between 3 and 50 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>connect</b> will be between 1 and 100 inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{19,50,10,39}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 19400</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   The input represents 3 components, A B and C. A has 19 inputs and 50 outputs. There are only two ways to assemble 3 components:<ul><li>Plan 1.   join A to B, then AB to C. This will cost (19+1)*50*(10+1) to join A to B, plus (19+2)*10*(39+1) to join AB to C.  Total = 19,400</li>
+ 
+   <li>Plan 2.  join B to C, then A to BC.  This will cost (50+1)*10*(39+1) to join B to C, plus (19+1)*50*(39+2) to join A to BC. Total = 61,400</li></ul></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{13,18,24,11,25,100,93,92,79}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 407518</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1,1,1,1,1,1,1,1,1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 59</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The nine elements of input represent 8 idendical components. The cheapest way to 
+assemble them is first to join 4 adjacent pairs at a cost of 4 each, then
+to join two adjacent pairs of 2-component assemblies at a cost of 9 each, and
+finally to join the remaining pair of 4-component assemblies at a cost of 25.
+Total cost = 4*4 + 2*9 + 25 = 59.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

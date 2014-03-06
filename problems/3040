@@ -1,0 +1,68 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p><i>Plugin users: There is a picture in the problem statement.</i></p>
+
+<p>A <i>coding tree</i> is a proper binary tree (in which every node has either zero or two children) where each leaf has a distinct character assigned to it. This allows us to encode a string made up of the characters in the leaves as follows: For every character in the string, find the path from the root of the coding tree to the matching leaf. If following the left child of a node, append a 0 to the encoding, otherwise a 1. For instance, the string "helloworld" would, using the tree below, be encoded as "011001111111100001000111010" (zeros are the left branches). To decode a string of 0's and 1's, one just reverses this procedure: start at the root of the tree and follow the edges downwards: 0 for left, 1 for right. When a leaf is reached, append the leaf's character to the output string, and continue from the root.
+</p>
+<br><img src="http://www.topcoder.com/contest/problem/DamagedTree/tree.jpg"><p>
+One way (albeit not a very good one) to represent the coding tree is to describe for each character the path to the leaf. For instance, the tree in the picture above would be described as
+</p>
+
+<pre>
+{"h 0110",
+ "e 0111",
+ "l 11",
+ "o 10",
+ "w 000",
+ "r 001",
+ "d 010"}
+</pre>
+
+<p>
+In this problem, however, some characters in the binary codes in this representation have been damaged (and replaced by a question mark, '?'). Given a damaged representation
+and an encoded message, determine if it's possible to uniquely decode the encoded message,
+using the properties above about a well formed coding tree (see example 0).
+You may also use the fact that the encoded message must be fully decodable
+(see example 3). You are guaranteed that there will be at least one
+way to decode the message.
+</p>
+
+<p>
+Create a class DamagedTree containing the method decode which takes a String[], <b>tree</b>, representing a damaged representation of a coding tree in the format above, and a String[], <b>encodedMessage</b>, the encoded message (concatenate the elements in <b>encodedMessage</b> to get the full encoded message). If there is a way to uniquely decode this message, return this decoded message. Otherwise return the empty string (see example 1).
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">DamagedTree</td></tr><tr><td class="statText">Method:</td><td class="statText">decode</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String decode(String[] tree, String[] encodedMessage)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A '?' in <b>tree</b> must be replaced with either '0' or '1'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">At most 15 characters in <b>tree</b> will be a '?'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>tree</b> will contain between 2 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>tree</b> will contain between 3 and 50 characters inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The first character in the elements of <b>tree</b> will be 'A'-'Z', 'a'-'z' or a space.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The second character in the elements of <b>tree</b> will be a space.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The remaining characters in the elements of <b>tree</b> will be either '0', '1' or '?'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The first characters in the elements of <b>tree</b> will be distinct.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There will be at least one way to replace the '?' in <b>tree</b> so that <b>tree</b> describes a valid coding tree that can fully decode <b>encodedMessage</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>encodedMessage</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>encodedMessage</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>encodedMessage</b> will only contain the characters '0' and '1'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"h 01??",
+ "e 0111",
+ "l ??",
+ "o 10",
+ "w 000",
+ "r 001",
+ "d 010"}</pre></td></tr><tr><td class="statText"><pre>{"011001111111100001000111010"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "helloworld"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>For the letter 'l' we can deduce that the first '?' must be a '1'. It can't be a '0' because both the codes "00" and "01" wouldn't be valid codes since they are prefixes of other existing codes. Hence it's a '1', and then the second '?' for 'l' must also be '1' so it doesn't conflict with the code for the letter 'o'.</p>
+
+<p>The first '?' in 'h' can't be a '0' since the code for 'd' would then be a prefix to the code for 'h'. Hence it's a '1' and the last '?' in 'h' must be a '0'.</p>
+
+<p>The complete definition then becomes like the one in the problem statement, and there is of course only one way to decode the encoded message.</p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"h 01??",
+ "e 011?",
+ "l ??",
+ "o 10",
+ "w 000",
+ "r 001",
+ "d 010"}</pre></td></tr><tr><td class="statText"><pre>{"011001111111100001000111010"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: ""</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>Same as above, except that the last character in 'e' has been replaced with a '?'. Now it's no longer possible to tell which of 'h' and 'e' should be "0110" and "0111", and the message could be decoded both as "helloworld" and "ehlloworld". Hence the method returns "".</p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"h 01??",
+ "e 011?",
+ "l ??",
+ "o 10",
+ "w 000",
+ "r 001",
+ "d 010"}</pre></td></tr><tr><td class="statText"><pre>{"000100","0111010"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "world"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p><b>tree</b> is the same as above, but to decode the message we don't need to know if 'h' or 'e' is "0110" or "0111".</p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A ??",
+ "B ???",
+ "C ???",
+ "D 1"}
+</pre></td></tr><tr><td class="statText"><pre>{"0000"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "AA"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>The only way to decode the message is if 'A' is "00" ('B' and 'C' would be "010" and "011", in some order). Note that 'B' or 'C' can't be "000" because then we would only partially be able to decode the message. We are allowed to assume that the encoded message should be possible to completely decode.</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"a 0????",
+ "b 0????",
+ "c 0???",
+ "d 0??",
+ "e 0?",
+ "  ?"}</pre></td></tr><tr><td class="statText"><pre>{"1111111111111111111111111",
+ "1111111111111111111111111"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "                                                  "</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The return value is a string containing 50 spaces.
+</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

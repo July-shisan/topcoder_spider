@@ -1,0 +1,30 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">My partner and I have bags of gold, lined up in a row. The bags are different 
+sizes. My partner has offered to split up the gold using the following system:
+we take turns, each time choosing one bag from either end of the line.  She
+has even generously offered to let me go first -- hmmmmmmmm....
+<p>
+I need software to tell me the total amount of gold that I will get compared
+to how much my partner will get if I choose first. Of course we will assume
+that my partner and I are brilliant and always choose in the optimum way.
+</p><p>
+Create a class BagsOfGold that contains a method netGain that is given a 
+int[] <b>bags</b>,
+the values of all the bags of gold in the order in which they are lined up. 
+It should return how much more gold I will
+get than my partner if we both behave optimally. (I fear that the answer might 
+be a negative number since my partner proposed the plan.)
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BagsOfGold</td></tr><tr><td class="statText">Method:</td><td class="statText">netGain</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int netGain(int[] bags)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>bags</b> will contain between 1 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>bags</b> will be between 1 and 100,000 inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{7,2}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   I will choose the 7, and then she gets the 2. So the result is 7 - 2 = 5.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{2,7,3}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   It doesn't matter whether I choose the 2 or the 3. She will choose the 7 and
+   I will get the remaining bag.  (2+3) - 7 = -2</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1000,1000,1000,1000,1000}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1000</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   Since I choose first I will get 3 bags and my partner will get only 2 bags.
+   They all have the same value so (1000+1000+1000) - (1000+1000) = 1000.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{823,912,345,100000,867,222,991,3,40000}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -58111</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"> </td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

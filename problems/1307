@@ -1,0 +1,26 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Federal repaving contracts have been awarded to various contractors to 
+fix a number of sections of the nation's highway system.  Each contract specifies 
+a single section, giving its starting and ending location.  The number of feet of 
+highway in that section is the ending location minus the
+starting location. For example, a section whose start is 2000 and whose end is 2001 
+is just one foot long.  We need software to protect the
+public from the possibility that contracts might be granted for overlapping
+sections, leaving the government to pay multiple times for fixing that part.
+<p>
+We want a program that will examine the contracts and will tell us how
+many feet of highway have been included in more than one contract.  Create 
+a class RoadWork that contains a method fraudFeet that takes int[]
+<b>start</b> and int[] <b>end</b> 
+as input and returns the number of feet of 
+highway that are included in more than one contract. Corresponding elements of 
+<b>start</b> and <b>end</b> give the starting and ending location of a contract.  
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">RoadWork</td></tr><tr><td class="statText">Method:</td><td class="statText">fraudFeet</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int fraudFeet(int[] start, int[] end)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Keep in mind that the highways can potentially be very long (2,000,000,000 feet) and that your program must run in 8 seconds, and use less than 64 MB of memory.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>start</b> contains between 1 and 50 elements inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>end</b> contains the same number of elements as <b>start</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>end</b> is greater than the corresponding element of <b>start</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>start</b> and <b>end</b> is between 0 and 2,000,000,000 inclusive</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{50,50,50}</pre></td></tr><tr><td class="statText"><pre>{58,58,60}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+All three contracts cover the section from 50 to 58
+
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{171234,12,20,30}</pre></td></tr><tr><td class="statText"><pre>{171236,20,30,40}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{12,32,92}</pre></td></tr><tr><td class="statText"><pre>{991,161,1093}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 959</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">32 to 92 is covered by the first 2 contracts, 92 to 161 is covered by all the contracts, and 161 to 991 is covered by the first and last contract. The answer is (92-32) + (161-92) + (991-161)</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

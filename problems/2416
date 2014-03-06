@@ -1,0 +1,31 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>The usual longhand scheme for multiplying two numbers A and B is to multiply the last digit of B by A, shift left by one digit, multiply the second-to-last digit of B by A, and so on.  This process is illustrated below:</p>
+
+<pre>
+   36
+x  15
+-----
+  180
++ 36
+-----
+  540
+</pre>
+
+<p>But let's say we didn't multiply in the usual way.  Let us define a new method of multiplication called "NC-Multiplication", where the "NC" stands for "No Carry".  It is called this because we do not carry when numbers exceed 9, no matter what.  To multiply 36 by 15 in this manner, we would do:</p>
+
+<pre>
+     3  6
+x    1  5
+---------
+    15 30
++ 3  6
+---------
+  3 21 30
+</pre>
+
+<p>and so the result would be {3, 21, 30}.</p>
+
+<p>You will be given a int[] <b>digits</b>, that represents the result of NC-multiplying two numbers together.  You wish to factor this result by finding the two numbers that multiplied together to form the result.  There may be multiple pairs of numbers that work.  If we call the larger number A and the smaller B, then we want the pair such that A - B is minimized.  Of this pair, your method should return a long that is equal to A.  If no such A and B exist that NC-multiply to <b>digits</b>, your method should return -1.</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">NCMultiplication</td></tr><tr><td class="statText">Method:</td><td class="statText">findFactors</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long findFactors(int[] digits)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>digits</b> will contain between 1 and 15 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>digits</b> will be between 0 and 2000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">At least one element in <b>digits</b> will be nonzero.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The number represented by <b>digits</b> will be less than 10<sup>14</sup> = 100000000000000.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">There will be no leading or trailing zeros in <b>digits</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{3,21,30}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 36</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">36 and 15 NC-Multiply together to make {3,21,30}, as seen above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{15,3,6}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 512</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{4,20,25}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 25</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">25 NC-Multiplied by 25.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{6,61,124,129,90,27}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6773</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{8,14,22,95,125,120,73,9,9}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{6, 5, 32, 68, 113, 143, 143, 124, 100, 75, 48, 23, 7, 1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 65864431</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,31 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Given a starting point and a finishing point on a square grid, along with some
+grid points that are forbidden, determine the length of the shortest path
+from start to finish. In one step you may move one unit horizontally, 
+vertically, or diagonally (but not onto a forbidden point).
+<p>
+Create a class ShortPath with a method steps that is given int[] <b>x</b> and int[] <b>y</b> as input. Corresponding elements of <b>x</b> and <b>y</b> give the coordinates of a point.  The first elements of 
+<b>x</b> and <b>y</b> give the start, the second elements give the finish, and additional corresponding
+pairs of elements from <b>x</b> and <b>y</b> specify forbidden points.  Your method should return the minimum
+number of steps required to go from start to finish, or -1 if it is not possible to go from start
+to finish.
+</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ShortPath</td></tr><tr><td class="statText">Method:</td><td class="statText">steps</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int steps(int[] x, int[] y)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>x</b> will have between 2 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>y</b> will have the same number of elements as <b>x</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>x</b> will be between -1,000,000,000 and 1,000,000,000 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>y</b> will be between -1,000,000,000 and 1,000,000,000 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The start and finish points will be distinct from each other and from all other points given by <b>x</b> and <b>y</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{0,2,1}</pre></td></tr><tr><td class="statText"><pre>{0,2,1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>
+   3  --|--|--|--|--|--|--
+   2  --|--|--F--|--|--|--
+   1  --|--X--|--|--|--|--
+   0  --S--|--|--|--|--|--
+        0  1  2  3  4  5
+</pre>
+    In the diagram, S is the start point, F is the finish, and X is forbidden.
+    There are two different paths of length 3, one of which is S to (0,1) to (1,2) to F.
+    The direct path of length 2 is blocked by the forbidden point.
+    
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{0,1,2,2}</pre></td></tr><tr><td class="statText"><pre>{0,1,2,2}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+     Take a single diagonal step from (0,0) to (1,1). The second appearance of (2,2) on the forbidden list is legal but never matters.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1,100000,0,0,0,2,2,2,1,1}</pre></td></tr><tr><td class="statText"><pre>{1,200000,0,1,2,0,1,2,0,2}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The start point is trapped in a square of forbidden points. </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1,100000,0,0,0,2,2,2,1}</pre></td></tr><tr><td class="statText"><pre>{1,200000,0,1,2,0,1,2,0}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 199999</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

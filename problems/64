@@ -1,0 +1,28 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>Class Name: Series
+Method Name: increasingLength
+Paramaters: int[]
+Returns: int
+
+Implement a class Series, which contains a method increasingLength.
+increasingLength takes an int[] and returns the length of the largest strictly
+increasing sequence in the int[].  A strictly increasing sequence is a sequence
+of numbers such that every number in the sequence after the first is strictly
+greater than the number before it.
+
+Here is the method signature:
+public int increasingLength(int[] data);
+
+*The int[] will contain Integers between -10000 and 10000, inclusive.
+*The int[] will have at least 1 element and at most 1000 elements.
+
+Note:
+*A single element of the int[] is a strictly increasing sequence of size 1.
+*Read the int[] in the order in which element 0 is before element 1...
+
+Examples:
+*If the int[] is {-4, 5, -2, 0 , 4 , 5 , 9 ,9}, the method should return 5.
+*If the int[] is {1,0} the method should return 1.</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Series</td></tr><tr><td class="statText">Method:</td><td class="statText">increasingLength</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int increasingLength(int[] param0)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

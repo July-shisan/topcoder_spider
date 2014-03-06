@@ -1,0 +1,60 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>THIS PROBLEM WAS TAKEN FROM THE SEMIFINALS OF THE TOPCODER INVITATIONAL
+TOURNAMENT
+
+PROBLEM STATEMENT
+One of the problems that TopCoder has run into is how to parse a String[] from
+the command line. To do this, we've adopted the following convention for a
+String representation of a String[] (quotes are used for clarity only):
+"{&lt;element1&gt;, &lt;element2&gt;, ... , &lt;elementN&gt;}", where the input String begins
+with a beginning curly brace,  each String element in the input String (except
+the last one) is followed by a comma and a space, and the last one is followed
+by an end curly brace. However, there are a couple of tricks:
+
+* each individual String element may contain commas or curly braces (or both).
+In each case, an escape character ('\') will precede commas and curly braces
+that are actually *within* the String element.
+* a backslash ('\') does not necessarily mean the following character needs to
+be escaped. If it does not precede a comma or curly brace, it is to be
+considered part of the String element.
+* an empty String element is a valid parameter, and is indicated by no
+character preceding a delimiting comma and a space (see examples below).
+* "{}" returns an array with an empty String element {""}.
+
+Additionally, there are certain cases where the input String is invalid that
+you will need to catch. Those situations are:
+* if the input string doesn't begin with an open curly brace and end with a
+closed curly brace
+* if any curly brace inside the opening and closing curly braces are not
+escaped.
+* if any comma that serves as a delimiter fails to have a space after it
+
+In cases such as these, return a String[] consisting of exactly one element:
+"INVALID"
+
+Your task is to create a class ArgParser that includes a method parse. This
+method will take a String representation of a String[], and return the
+corresponding String[].
+
+DEFINITION
+Class Name:  ArgParser
+Method Name:  parse
+Parameters:  String
+Returns:  String[]
+Method signature (be sure your method is public):  String[] parse(String input);
+
+TopCoder will ensure that the input string will only contain characters A-Z,
+a-z, 0-9, '{', '}', spaces (' '), commas (',') and backslashes ('\').  The
+String should have a length between 0 and 50, inclusive.
+
+EXAMPLES
+"{a, b, c}" -&gt; {"a", "b", "c"} (3 items)
+"{a\,b, c}" -&gt; {"a,b", "c"} (2 items)
+"{, , a, }" -&gt; {"", "", "a", ""} (4 items)
+"{\\, \,\, }" -&gt; {"\, ,, "} (1 item)
+"{\ , \,, }" -&gt; {"\ ", ",", ""} (3 items)
+"{}" -&gt; {""} (1 item)
+</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ArgParser</td></tr><tr><td class="statText">Method:</td><td class="statText">parse</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] parse(String param0)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,103 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">An operation table tells you which value is produced when a particular operation is applied to two operands.  For example, <pre>
+  0123
+ +----
+0|0000                            0000
+1|0123    or more succinctly      0123
+2|0202                            0202
+3|0321                            0321</pre>
+is a table for standard integer multiplication mod 4.  In the table on the left, the first row and column refer to the operands.  This information is implicit in the more succinct form.  Looking at the table we can see that 2 is produced when the operation is applied to 2 and 3.  More precisely, if the table above defines the operation @, then <i>a</i>@<i>b</i> is the value in row <i>a</i> column <i>b</i> of the table.  
+<br><br>
+Using a table you could describe any operation by putting the correct values in the table.  In this problem you will be given 
+two String[]s <b>source</b> and <b>target</b> which are tables describing two operations.  The tables will be in 
+the succinct form shown above, where the first row and column are assumed to correspond to 0, and so forth.  For added 
+convenience, all results will be single digits, the tables will always be square, and will never have more than 10 rows.
+<br><br>
+In addition, you will be given a int[] <b>mapping</b> which will contain the same number of elements as 
+<b>source</b> and <b>target</b>.  <b>mapping</b> defines a function that maps the value <i>i</i> to <b>mapping</b>[<i>i</i>]. 
+For example, if <b>mapping</b> = {2,2,1,3} then 0 and 1 map to 2, 2 maps to 1, and 3 maps to 3.
+<br><br>
+A <i>homomorphism</i>, for the purposes of this problem, will be a mapping that preserves the following equality:
+<ul><li>mapping(a@b) = mapping(a)~mapping(b) for all a,b</li>
+</ul> 
+For all a,b means a and b can assume all values between 0 and len-1 inclusive, where len is the number of elements in <b>source</b>.  @ denotes the operation 
+defined by <b>source</b>, and ~ denotes the operation defined by <b>target</b>.
+<br><br>
+Your method will return a String[] containing all pairs <i>(a,b)</i> for which the above equality fails to hold 
+true for the given <b>mapping</b>.  The pair <i>(a,b)</i> should be denoted as (quotes for clarity) "(a,b)" where a,b have no extra leading zeros.  Note that 
+the String contains no spaces.  The returned String[] should be sorted in ascending order by 
+<i>a</i> value, with ties broken using ascending <i>b</i> values.  There should be no repeats.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">IsHomomorphism</td></tr><tr><td class="statText">Method:</td><td class="statText">numBad</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] numBad(String[] source, String[] target, int[] mapping)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>source</b> will contain between 2 and 10 elements inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>target</b> will contain the same number of elements as <b>source</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>mapping</b> will contain the same number of elements as <b>source</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>mapping</b> must be between 0 and len-1 inclusive, where len is the number of elements in <b>source</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>source</b> must contain exactly len characters, where len is the number of elements in <b>source</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>target</b> must contain exactly len characters, where len is the number of elements in <b>source</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>source</b> and <b>target</b> will be in the first len characters of (quotes for clarity) "0123456789", where len is the number of elements in <b>source</b></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0000",
+ "0123",
+ "0202",
+ "0321"}</pre></td></tr><tr><td class="statText"><pre>{"0000",
+ "0123",
+ "0202",
+ "0321"}</pre></td></tr><tr><td class="statText"><pre>{0,1,2,3}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><b>source</b> and <b>target</b> are identical, and <b>mapping</b> takes every element to itself.  Clearly all pairs will satisfy the equality.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0123456",
+ "1234560",
+ "2345601",
+ "3456012",
+ "4560123",
+ "5601234",
+ "6012345"}</pre></td></tr><tr><td class="statText"><pre>{"0123456",
+ "1234560",
+ "2345601",
+ "3456012",
+ "4560123",
+ "5601234",
+ "6012345"}</pre></td></tr><tr><td class="statText"><pre>{1,3,2,1,2,1,1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "(0,0)",
+ "(0,1)",
+ "(0,2)",
+ "(0,3)",
+ "(0,4)",
+ "(0,5)",
+ "(0,6)",
+ "(1,0)",
+ "(1,1)",
+ "(1,2)",
+ "(1,3)",
+ "(1,4)",
+ "(1,5)",
+ "(1,6)",
+ "(2,0)",
+ "(2,1)",
+ "(2,2)",
+ "(2,3)",
+ "(2,4)",
+ "(2,5)",
+ "(3,0)",
+ "(3,1)",
+ "(3,2)",
+ "(3,3)",
+ "(3,4)",
+ "(3,5)",
+ "(4,0)",
+ "(4,1)",
+ "(4,2)",
+ "(4,3)",
+ "(4,4)",
+ "(4,5)",
+ "(4,6)",
+ "(5,0)",
+ "(5,1)",
+ "(5,2)",
+ "(5,3)",
+ "(5,4)",
+ "(5,5)",
+ "(6,0)",
+ "(6,1)",
+ "(6,4)",
+ "(6,6)" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"012",
+ "120",
+ "210"}</pre></td></tr><tr><td class="statText"><pre>{"012",
+ "120",
+ "110"}</pre></td></tr><tr><td class="statText"><pre>{0,1,2}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "(2,0)" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The pair (2,0) is the only one that breaks the equality.  To verify this breakage:<br>
+mapping of 2@0 = mapping of 2 = 2<br>
+(mapping of 2)~(mapping of 0) = (2)~(0)=1</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"012",
+ "120",
+ "210"}</pre></td></tr><tr><td class="statText"><pre>{"012",
+ "120",
+ "210"}</pre></td></tr><tr><td class="statText"><pre>{1,2,0}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "(0,0)",  "(0,1)",  "(0,2)",  "(1,0)",  "(1,2)",  "(2,0)",  "(2,2)" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"01","10"}</pre></td></tr><tr><td class="statText"><pre>{"10","01"}</pre></td></tr><tr><td class="statText"><pre>{1,0}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

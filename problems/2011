@@ -1,0 +1,47 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A set of stairs consists of risers (the vertical parts of the stairs) and
+treads (the horizontal parts that you walk on).  The stairs alternate
+treads and risers, starting and ending with a riser as shown below.
+<p>
+A set of stairs with two treads would have three risers and would look 
+similar to this picture:</p><pre>
+
+                +........
+                |
+            +---+
+            |
+        +---+
+        |
+........+
+</pre>
+<p>
+We have the following 
+requirements for a set of stairs: </p><ol><li>
+
+    all risers must have the same integer height</li><li>
+    all treads must have the same integer width</li><li>
+    each riser must be less than or equal to <b>maxHeight</b></li><li>
+    each tread must be greater than or equal to <b>minWidth</b></li></ol>
+
+The <b>totalWidth</b> of the stairs is the sum of all the tread widths, while the
+<b>totalHeight</b> of the stairs is the sum of all the riser heights.  The stairs start
+with a riser and end with a riser.
+<p>
+Create a class Stairs that contains a method designs that takes as input four
+ints:  <b>maxHeight</b>, <b>minWidth</b>, <b>totalHeight</b>, <b>totalWidth</b>. It returns the number
+of different designs that meet the design criteria.
+</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Stairs</td></tr><tr><td class="statText">Method:</td><td class="statText">designs</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int designs(int maxHeight, int minWidth, int totalHeight, int totalWidth)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>maxHeight</b>, <b>minWidth</b>, <b>totalHeight</b>, and <b>totalWidth</b> will be between 1 and 1000 inclusive</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>22</pre></td></tr><tr><td class="statText"><pre>25</pre></td></tr><tr><td class="statText"><pre>100</pre></td></tr><tr><td class="statText"><pre>100</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   The only design is to have each riser be 20, each tread be 25.
+   </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>25</pre></td></tr><tr><td class="statText"><pre>25</pre></td></tr><tr><td class="statText"><pre>60</pre></td></tr><tr><td class="statText"><pre>100</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   We could have riser height 12 with tread width 25, or we could have
+   riser height 20, tread width 50. The design with just
+   one tread of width 100 would force each riser to be 30 which exceeds the
+   specified <b>maxHeight</b>, and a design with 6 risers of height 10 would 
+   result in treads of width 20 which is smaller than the specified <b>minWidth</b>.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>1000</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>600</pre></td></tr><tr><td class="statText"><pre>600</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">There are six different designs. The one with the biggest steps has just one tread of size 600, and two risers of size 300. The one with the smallest steps has 24 treads, each of width 25, and its 25 risers each have a height of 24.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

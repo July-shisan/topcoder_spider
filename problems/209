@@ -1,0 +1,170 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>THIS PROBLEM WAS TAKEN FROM THE FINALS OF THE TOPCODER INVITATIONAL TOURNAMENT
+
+PROBLEM STATEMENT
+A network consists of a system of numNodes nodes, numbered from 0 to
+numNodes-1, and connections between those nodes.  A connection has a chance of
+being up and a chance of being down. Implement a class Networking that contains
+a method getProbability which calculates the chance that there will be a path
+from node 0 to node numNodes-1 such that each connection in the path is up.
+(See the examples to see how probabilities can be calculated)
+
+DEFINITION
+Class Name: Networking
+Method Name: getProbability
+Parameters: int, String[]
+Returns: double
+Method signature (be sure your method is public):  double getProbability(int
+numNodes, String[] connections);
+
+numNodes is an int representing the number of nodes.
+connections is a String[] representing the connections.  The elements will be
+of the form "N1 N2 P" where N1 and N2 represent the numbers of the two nodes
+the connection connects, and P is the probability the connection will be up.
+There will be precisely one space between N1 and N2 and one space between N2
+and P.  The nodes are numbered from 0 to numNodes-1. Every connection connects
+two nodes (or possibly a node to itself).
+
+OUTPUT
+A double representing the probability there exists a path from node 0 to node
+numNode-1 such that every connection in the path is up. Your result must be
+within 10^-6 of our solution's result (tolerance for double inaccuracies).
+
+NOTES
+* A "path" is a series of one or more connections such that each successive
+connection starts at the node where the previous connection ended.
+* The connections are bi-directional.
+* There can be multiple (parallel) connections connecting two nodes.
+
+TopCoder will ensure the validity of the inputs.  Inputs are valid if all of
+the following criteria are met:
+* numNodes is an integer between 2 and 10, inclusive.
+* Elements of connections are of the form described in the input above.
+* connections has between 0 and 20 elements, inclusive.
+* P is a decimal value between 0 and 1 inclusive with exactly one digit before
+the decimal point and two digits after the decimal point.
+* N1 and N2 are single integer digits between 0 and numNodes-1, inclusive.
+
+EXAMPLES
+* Nodes are in series. For example, if numNodes = 3 and connections = {"0 1
+0.20", "1 2 0.10"}, the network looks as follows (letters are added for
+clarity):
+ ___             ___              ___
+|   |   0.20    |   |    0.10    |   |   
+| 0 |-----------| 1 |------------| 2 |
+|___|     a     |___|      b     |___|
+
+In this case, the probability of a connection from 0 to 2 is the probability
+that a AND b are up. The AND relationship corresponds to multiplication.
+Therefore, to calculate this all you need to do is mutliply the probability of
+0-&gt;1 by the probability of 1-&gt;2. 
+                (0.20 * 0.10) = 0.02
+So the method should return 0.02.
+
+
+* Nodes are in parallel. If numNodes = 4 and connections = {"0 1 0.10", "1 3
+0.20", "0 2 0.30", "2 3 0.40"}, the network looks as follows:
+                 ___
+                |   |
+     0.10 /-----| 1 |-----\  0.20
+         /      |___|      \
+ ___    / a               b \  ___
+|   |  /                     \|   |
+| 0 | /                       | 3 |
+|___| \                      /|___|
+       \         ___        /
+        \ c     |   |    d /
+         \------| 2 |-----/
+       0.30     |___|       0.40
+
+In order for this to happen, either a and b have to be up, or c and d have to
+be up. The probability a connection exists from 0 to 3 now becomes the
+probability that (a AND b are up) OR (c AND d are up). 
+
+This equals P(a AND b up) OR P(c AND d up) = P(a up)*P(b up) + P(c up)*P(d up)
+- P(a and b and c and d up) = 0.1 * 0.2 + 0.3 * 0.4 - 0.1 * 0.2 * 0.3 * 0.4 =
+0.1376.
+
+(The probability that they are all up is subtracted out at the end because it
+is added as both P(a AND b up) and P(c AND d up)).
+
+* If numNodes=2 and connections = {"0 1 0.80"}, there is a path from node 0 to
+node 1 when the connection is up, so the method should return 0.8.
+
+
+* If numNodes=3 and connections = {"0 2 0.50", "0 2 0.50", "0 1 0.10", "1 2
+0.20","1 1 0.60"}, there is a path from node 0 from node 2 if either of the
+first two connections are up or if both the 3rd and 4th connection are up, so
+the method should return 0.755.  Note the connection from node 1 to node 1 does
+not affect the result.
+
+
+* If numNodes=4 and connections = {"0 2 0.06", "3 1 1.00", "1 3 0.50", "1 2
+0.00"}, the method should return 0.0.
+
+
+* If numNodes=4 and connections = {"0 1 0.10", "1 3 0.20", "0 2 0.30", "2 3
+0.40", "1 2 0.60"}, the method should return 0.17048.
+This can be calculated by reducing the network as follows:
+
+The original network looks like:
+                ___
+          _____|   |_____     
+    0.10 /     | 1 |     \  0.20
+        /      |___|      \
+ ___   / a       |       b \  ___
+|   | /          |e         \|   |
+| 0 |/           |0.60       | 3 |
+|___|\           |          /|___|
+      \         _|_        /
+       \ c     |   |    d /
+        \______| 2 |_____/
+      0.30     |___|       0.40
+
+This solution can be found by reducing the network.  
+The chance the network is up is P(e up)*P(Network up, given e up) + P(e
+down)*P(Network up, given e down).
+
+P(Network up, given e up):
+
+Given e up, the network becomes:
+
+         0.10           0.20
+       ______         ________
+ ___  /  a   \  ___  /    b   \  ___
+|   |/        \|   |/          \|   |
+| 0 |\   c    /|1,2|\     d    /| 3 |
+|___| \______/ |___| \________/ |___|
+         0.30           0.40
+
+The probability this is up is :
+
+P((a OR c up) AND (b OR d up)) =
+P(a OR c up) * P(b OR d up) =
+(0.1+ 0.3- 0.1 * 0.3) * (0.2 + 0.4-0.2 * 0.4) = 0.1924
+
+Given e down, the network becomes:
+                 ___
+                |   |
+     0.10 /-----| 1 |-----\  0.20
+         /      |___|      \
+ ___    / a               b \  ___
+|   |  /                     \|   |
+| 0 | /                       | 3 |
+|___| \                      /|___|
+       \         ___        /
+        \ c     |   |    d /
+         \------| 2 |-----/
+       0.30     |___|       0.40
+
+And low and behold, this is the network from the last example, and the
+probability of it being up is: 0.1376
+
+Therefore, the probability of the entire network being up is:
+P(e up)*P(Network up, given e up) + P(e down)*P(Network up, given e down) =
+0.6 * 0.1924 + 0.4 * 0.1376 = 0.17048
+The method should return 0.17048.
+</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Networking</td></tr><tr><td class="statText">Method:</td><td class="statText">getProbability</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double getProbability(int param0, String[] param1)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

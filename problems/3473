@@ -1,0 +1,84 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">
+We want to send a soldier into a mine field with a directional metal
+detector. The field is an n x n grid, and the soldier will move horizontally (east
+or west) or
+vertically (north or south), never leaving the field.  His metal 
+detector can be pointed in any of the cardinal directions (east, north, west,
+or south) and will beep if it senses any mine in that direction, no matter
+how far away the mine is. Only mines that are exactly in the row or column down
+which the sensor is pointed
+are sensed.
+<p>
+The soldier can move one square at a time in any of the four directions, 
+pointing his sensor in various directions. But he will not move onto a square
+if his sensor beeps when pointed in that direction, unless he has previously
+visited that square. He will continue this
+process, visiting and revisiting squares as needed, until he is sure that
+he has visited every square that he can.
+</p><p> 
+We want to see how well we will be
+able to do using this type of sensor.  Create a class LandMines that 
+contains a method numClear that takes the actual <b>layout</b> of mines in a
+minefield as input and that returns the number of squares that the
+soldier can safely visit.
+</p><p>
+The <b>layout</b> shows the mine field as a String[], starting with the top row. 
+<tt>'-'</tt> denotes a square with no mine and <tt>'M'</tt> denotes a square that contains a mine. 
+The soldier will always start in the northwest corner (the leftmost square in 
+the top row), which will never contain a mine.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">LandMines</td></tr><tr><td class="statText">Method:</td><td class="statText">numClear</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int numClear(String[] layout)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>layout</b> contains between 2 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The length of each element of <b>layout</b> equals the number of elements in <b>layout</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>layout</b> will be a hyphen (<tt>'-'</tt>) or uppercase <tt>'M'</tt>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The first character in the first element of <b>layout</b> will be a hyphen.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"-M-",
+ "---",
+ "M--"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>(IN ALL THE EXAMPLES, '.' DENOTES A SQUARE THAT CAN BE VISITED)
+
+    .M-
+    ---
+    M--
+</pre> 
+The soldier cannot safely move in either direction from his
+initial position.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"-M-",
+ "-M-",
+ "--M"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>
+     .M-
+     .M-
+     .-M
+</pre>
+The soldier can safely go south from his initial position, but cannot
+head east from any of those locations.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre> {"--M-",
+  "-MM-",
+  "----",
+  "----"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 12</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>
+    .-M.
+    .MM.
+    ....
+    ....
+</pre>
+The soldier can go south, and then can move east along both of
+the bottom rows. From the easternmost location on one of the bottom rows, he
+can safely move north. But the second square in the top row can never safely
+be visited.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"-----",
+ "--M-M",
+ "-----",
+ "-M---",
+ "---M-"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 21</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>
+    .....
+    ..M.M
+    .....
+    .M...
+    ...M.
+</pre>  
+All of the squares without mines can safely be visited. For example, 
+a way to 
+visit the second square on the bottom row is as follows: go south 2, 
+go east 2. 
+From this location it is safe to go south since the
+detector indicates no mines in that direction; go south 2. Then go west 1.
+ </td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

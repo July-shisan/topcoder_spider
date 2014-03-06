@@ -1,0 +1,54 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A single elimination tournament consists of several rounds. In the first round, each competitor plays against one other competitor and the loser is eliminated. In the second round, each competitor that was not eliminated in the first round plays against another such competitor, and the loser is again eliminated. This process is repeated, eliminating half of the remaining competitors each round, until precisely one competitor remains. This competitor is declared the champion.
+<br><br>
+In practice, one is often interested in ranking all the competitors in a tournament, not just the champion. Here is one way of doing this:
+<ul><li>If competitor <i>A</i> won more games than competitor <i>B</i> did in the tournament, then <i>A</i> should be ranked higher than <i>B</i>.</li>
+  <li>If competitor <i>A</i> and competitor <i>B</i> won the same number of games in the tournament, recursively compare the ranks of the competitor <i>C</i> that eliminated
+      <i>A</i> and the competitor <i>D</i> that eliminated <i>B</i>. Then, <i>A</i> should be ranked above <i>B</i> if and only if <i>C</i> is ranked above <i>D</i>.</li>
+</ul>
+The intuition behind the second rule is that losing to a good competitor is better than losing to a bad competitor.
+<br><br>
+You must implement this scheme for ranking the competitors in a single elimination tournament. You will be given a String[] <b>names</b> and a String[] <b>lostTo</b>. The former argument gives the names of the competitors in a tournament, and the latter argument describes if and how each competitor was eliminated. Specifically, the <i>i</i><sup>th</sup> element of <b>lostTo</b> will be the name of the competitor that beat the <i>i</i><sup>th</sup> competitor in <b>names</b>, or it will be "" if that competitor never lost. You should return a String[] giving the names of the competitors, sorted from highest rank to lowest rank as described above.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TournamentRanker</td></tr><tr><td class="statText">Method:</td><td class="statText">rankTeams</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] rankTeams(String[] names, String[] lostTo)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The constraints ensure that <b>names</b> and <b>lostTo</b> uniquely specify a valid single elimination tournament.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The number of elements in <b>names</b> must be a power of 2 and must be between 2 and 32 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>names</b> will contain between 1 and 50 characters inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>names</b> will either be a space (' '), or a capital letter ('A'-'Z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No two elements of <b>names</b> will be equal.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The number of elements in <b>lostTo</b> will be equal to the number of elements in <b>names</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Exactly one element of <b>lostTo</b> will be equal to ""; each remaining element of <b>lostTo</b> will be equal to an element of <b>names</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">If competitor <i>A</i> has <i>n</i> wins, as specified by <b>names</b> and <b>lostTo</b>, then it will have eliminated exactly one competitor with <i>k</i> wins for each <i>k</i> satisfying 0 &lt;= <i>k</i> &lt; <i>n</i>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"RODDICK", "SCHUETTLER", "FERREIRA", "AGASSI"}</pre></td></tr><tr><td class="statText"><pre>{"SCHUETTLER", "AGASSI", "AGASSI", ""}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "AGASSI",  "SCHUETTLER",  "FERREIRA",  "RODDICK" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This test case represents the semifinals and finals of the 2003 Australian Open tennis tournament, illustrated below:
+<pre>
+    RODDICK ----+
+                +--- SCHUETTLER -+
+    SCHUETTLER -+                |
+                                 +--- AGASSI
+    FERREIRA ---+                |
+                +--- AGASSI -----+
+    AGASSI -----+
+</pre>
+AGASSI is ranked highest with two wins, followed by SCHUETTLER with one win. FERREIRA and RODDICK both have zero wins, so we compare the rankings of the competitors that beat them. Since FERREIRA lost to AGASSI, RODDICK lost to SCHUETTLER, and AGASSI is ranked above SCHUETTLER, we rank FERREIRA above RODDICK.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"DUKE", "SETON HALL", "ILLINOIS", "CINCINNATI",
+ "NORTH CAROLINA", "TEXAS", "XAVIER", "MISSISSIPPI STATE"}</pre></td></tr><tr><td class="statText"><pre>{"", "DUKE", "DUKE", "ILLINOIS",
+ "TEXAS", "XAVIER", "DUKE", "XAVIER"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "DUKE",
+ "XAVIER",
+ "ILLINOIS",
+ "TEXAS",
+ "SETON HALL",
+ "MISSISSIPPI STATE",
+ "CINCINNATI",
+ "NORTH CAROLINA" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This test case represents three rounds of the 2004 NCAA men's basketball tournament, illustrated below:
+<pre>
+    DUKE --------------+
+                       +--- DUKE -----+
+    SETON HALL --------+              |
+                                      +--- DUKE ---+
+    ILLINOIS ----------+              |            |
+                       +--- ILLINOIS -+            |
+    CINCINNATI --------+                           |
+                                                   +--- DUKE
+    NORTH CAROLINA ----+                           |
+                       +--- TEXAS ----+            |
+    TEXAS -------------+              |            |
+                                      +--- XAVIER -+
+    XAVIER ------------+              |
+                       +--- XAVIER ---+
+    MISSISSIPPI STATE -+
+</pre>
+DUKE is ranked first with three wins, followed by XAVIER with two wins. ILLINOIS and TEXAS come next, having one win each. Since ILLINOIS lost to DUKE and XAVIER lost to TEXAS, ILLINOIS should be ranked above TEXAS. The remaining teams are ranked similarly. SETON HALL is ranked highest among them since they lost to top-ranked DUKE, whereas NORTH CAROLINA is ranked lowest among them since they lost to fourth-ranked TEXAS.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"JAVA", "VISUAL BASIC"}</pre></td></tr><tr><td class="statText"><pre>{"VISUAL BASIC", ""}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "VISUAL BASIC",  "JAVA" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

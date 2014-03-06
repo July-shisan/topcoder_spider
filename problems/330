@@ -1,0 +1,117 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>PROBLEM STATEMENT:
+
+A Bird is considered migratory if it can be found in two regions in different
+parts of the year.  Of course, it must stay in those regions for a minimum
+amount of time (one day in Barbados does not make a migration).  The bird can
+travel inside those regions and that travel is unimportant (The bird can leave
+Alaska for Florida and spend some time in both southern and northern Florida
+but those COULD just be considered part of spending time in Florida).  The bird
+can also travel when not in those regions and that travel can be ignored (The
+bird can spend the summer in Alaska and the winter in Brazil, and if the bird
+is in England in the spring, who cares?).  In this problem we will specify that
+the time a bird must spend in a region is at least 90 days.  The distance
+between these regions must be at least 1000 miles for the bird to be considered
+migratory.
+
+To put it precisely, the bird is migratory if there exist 2 blocks of time in
+the same calendar year that are each at least 90 contiguous days in length in
+which all areas the bird is at in time period 1 are at least 1000 miles away
+from all areas the bird is at in time period 2.
+
+Write a class Birds which contains a method isMigratory.  isMigratory should
+determine whether the given set of bird moves describe a migratory bird.  If
+so, return 1, otherwise return 0.
+
+Example:
+
+If the bird is in New York in January, and in Connecticut from February through
+April, and then spends the rest of the year in Brazil, (which is at least 1000
+miles from both New York and Connecticut) that Bird would be considered
+migratory because it is spending 31 + 28 + 31 + 30 = 120 consecutive days in
+the region containing New York and Connecticut and 365 - 120 = 245 consecutive
+days in Brazil.
+
+DEFINITION:
+
+Class Name: Birds
+Method Name: isMigratory
+Parameters: String[]
+Returns: int
+
+Method Signature: int isMigratory(String[] birdMoves)
+(be sure your method is public)
+
+TopCoder will enforce the following rules:
+ *birdMoves has between 1 and 15 elements, inclusive.
+ *each element of birdMoves will contain between 1 and 50 characters, inclusive.
+*each String in birdMoves is of the form
+"&lt;gridCoordinateX&gt;,&lt;gridCoordinateY&gt;,&lt;month&gt;,&lt;day&gt;" where &lt;gridCoordinateX&gt;,
+&lt;gridCoordinateY&gt;, &lt;month&gt;, and &lt;day&gt; all represent integer values.  (The
+quotes and angle-brackets are for clarity only).
+*&lt;gridCoordinateX&gt; and &lt;gridCoordinateY&gt; will each be between 0 and 30000,
+inclusive.  The pair &lt;gridCoordinateX&gt;, &lt;gridCoordinateY&gt; represents a location
+where the bird begins to reside at the point in time represented by the pair
+&lt;month&gt;, &lt;day&gt;.
+ *&lt;month&gt; will be between 1 and 12, inclusive.
+*&lt;day&gt; will be appropriate to the month on a non leap year.  That is, if
+&lt;month&gt; is 2, then &lt;day&gt; will be restricted to being between 1 and 28, inclusive.
+ *grid coordinates represent one mile for each unit.
+*the distance between a grid cordinate (x1, y1) and (x2, y2) is given by the
+square root of the value ((x2 - x1)^2 + (y2 - y1)^2).
+ *two different elements of birdMoves cannot contain the same date.
+
+NOTES:
+ *Sort birdMoves by date.
+*Assume that the bird begins to exist on the earliest day given in the
+birdMoves.
+ *The bird begins that day at the associated grid coordinate.
+*Then, the bird moves instantly, at midnight on the date represented by the
+next element of birdMoves to the position represented by the next element of
+birdMoves.
+*The bird will exist at the location given by the last element of birdMoves
+until and including the entire day of December 31.
+*January(1), March(3), May(5), July(7), August(8), October(10), December(12)
+each have 31 days.
+ *April(4), June(6), September(9), November(11) each have 30 days.
+ *February(2) has 28 days.
+
+WORKED EXAMPLES:
+
+birdMoves = { "0,0,1,1", "1000,1000,6,1" }
+The bird is at grid coordinate (0,0) from January 1 through May 31.  Then, the
+bird is at grid coordinate (1000,1000) through December 31.  The distance
+between (0,0) and (1000,1000) is sqrt( (1000 - 0) ^ 2  +  (1000 - 0) ^ 2 ) =
+sqrt(2000000) &gt;= 1000.  The number of days spent at (0,0) is 31 + 28 + 31 + 30
++ 31 = 151 &gt;= 90, and the number of days spent at (1000,1000) is 365 - 151 =
+214 &gt;= 90.  Return 1.
+
+birdMoves = { "0,0,1,1", "100,100,6,1" }
+The bird is at grid coordinate (0,0) from January 1 through May 31.  Then, the
+bird is at grid coordinate (100,100) through December 31.  The distance between
+(0,0) and (100,100) is sqrt( (100 - 0) ^ 2  +  (100 - 0) ^ 2 ) = sqrt(20000) &lt;
+1000.  Return 0.
+
+birdMoves = { "1000,0,2,1", "1000,1000,1,1", "10000,30000,7,1" }
+The bird is at (1000,1000) for 31 days, then at (1000,0) for 150 days, then at
+(10000,30000) for 184 days.
+The distance from (1000,0) to (10000,30000) is 31320.919...
+Thus, the bird spends 150 consecutive days (at 1000,0) at least 1000 miles away
+from where the bird spends 184 consecutive days (at 10000,30000).  Return 1.
+
+{ "30000,30000,9,1", "0,0,1,1", "1000,1000,5,1" } returns 1.
+In this case, the bird is migratory based on any of three distance checks.  The
+bird spends 4 months at (0,0), 4 months at (1000,1000), and 4 months at
+(30000,30000).  Each of these three spots is at least 1000 miles from the
+others.  The amount of time spent by the bird in each spot is at least 90 days.
+ Return 1.
+
+TEST CASES:
+
+{ "0,0,1,1", "00708,708,6,1" } returns 1.
+{ "200,400,7,1", "100,0,1,1", "200,200,3,1", "0,400,11,1", "407,308,5,1",
+"100,600,9,1" } returns 0.
+</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Birds</td></tr><tr><td class="statText">Method:</td><td class="statText">isMigratory</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int isMigratory(String[] param0)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

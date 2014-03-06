@@ -1,0 +1,95 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You have a page of text that is nicely formatted in the usual fashion (like this text), but you wanted it formatted in two columns, like a magazine.  Given a String[] <b>text</b>, and an int <b>width</b>, return a String[] which is the same text but formatted such that every element contains as many words as possible without being more than <b>width</b> characters long.  Begin by putting as many words as possible in the first line of the first column without using more than <b>width</b> characters, then continue this for each subsequent line.  The elements of the return value should be organized such that every pair of elements corresponds to one line of text, spread over two columns.  Thus element 2*<i>i</i> and 2*<i>i</i>+1 (with i starting at 0) of the output will represent the <i>i</i>-th line of the first and second columns, respectively.  If the last line of the second column has no text, do not include it as part of the return value (see example 0).  Do not hyphenate words to fit them on two lines.  Also, there should only be a single space between adjacent words, and there should be no leading or trailing spaces in the lines.  A 'word' is a sequence of non-space characters that does not have non-space characters immediately before or after it.  Punctuation marks should be treated the same as other characters.  For example, "Hello,Fred", "Hello,I'mFred", and "...!?!?" are all considered to be single words, and should not be broken apart in any way.<br><br>
+For example, if <b>text</b>={"This text is now ","in two columns."} and <b>width</b>=7, the output would be {"This", "two", "text is", "columns.", "now in"}.  Making the first element of the return value the first line of the first column, the next element the first line of the second column, and then continuing in the same way for subsequent rows, the text looks like this:
+<pre>
+"This"    "two"
+"text is" "columns."
+"now in"
+</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TextEditor</td></tr><tr><td class="statText">Method:</td><td class="statText">twoColumn</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] twoColumn(String[] text, int width)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>text</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>width</b> will contain between 1 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>text</b> will be between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>text</b> will contain only upper and lower-case letters ('a'-'z','A'-'Z'), digits ('0'-'9'), spaces, and the characters ".,;:?!".  Quotes and parentheses in all cases are for clarity only.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No element of <b>text</b> will contain a string of non-space characters longer than width.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"The quick brown fox jumps over the lazy dog. "}</pre></td></tr><tr><td class="statText"><pre>7</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "The",
+ "over",
+ "quick",
+ "the",
+ "brown",
+ "lazy",
+ "fox",
+ "dog.",
+ "jumps" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Only one word can fit per line.  Making two columns with this output looks like this:
+<pre>
+"The",  "over",
+"quick","the",
+"brown","lazy",
+"fox",  "dog.",
+"jumps"
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Such a preposterous use of !punctuation! !!!","Who would write ... something like this ???"}</pre></td></tr><tr><td class="statText"><pre>17</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "Such a",
+ "write ...",
+ "preposterous use",
+ "something like",
+ "of !punctuation!",
+ "this ???",
+ "!!! Who would" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Remember not to treat punctuation marks any differently than other characters.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{" Forsaking monastic tradition,    twelve jovial",
+"  friars gave up their vocation for a questionable",
+"     existence on the flying trapeze.    "}
+</pre></td></tr><tr><td class="statText"><pre>25</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "Forsaking monastic",
+ "vocation for a",
+ "tradition, twelve jovial",
+ "questionable existence on",
+ "friars gave up their",
+ "the flying trapeze." }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">All leading, trailing, and extra whitespace is ignored.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{" "," "," "," "," "," "}</pre></td></tr><tr><td class="statText"><pre>7</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{" I WONDER by my troth, what thou,",
+"and I Did, till we lovd? were we",
+"not weand till then? But suckd on",
+"countrey pleasures, childishly? Or",
+"snorted we in the seaven sleepers",
+"den? Twas so; But this, all",
+"pleasures fancies bee. If ever any",
+"beauty I did see, Which I desird,",
+"and got, twas but a dreame of",
+"thee. And now good morrow to our",
+"waking soules, Which watch not one",
+"another out of feare; For love, all",
+"love of other sights controules,",
+"And makes one little roome, an",
+"every where. Let seadiscoverers to",
+"new worlds have gone, Let Maps to",
+"other, worlds on worlds have",
+"showne, Let us possesse one world,",
+"each hath one, and is one. My face",
+"in thine eye, thine in mine",
+"appeares, And true plaine hearts",
+"doe in the faces rest, Where can we",
+"finde two better hemispheares",
+"Without sharpe North, without",
+"declining West? What ever dyes, was",
+"not mixt equally; If our two loves",
+"be one, or, thou and I Love so",
+"alike, that none doe slacken, none",
+"can die.",
+"John Donne"}
+</pre></td></tr><tr><td class="statText"><pre>45</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "I WONDER by my troth, what thou, and I Did,",
+ "seadiscoverers to new worlds have gone, Let",
+ "till we lovd? were we not weand till then?",
+ "Maps to other, worlds on worlds have showne,",
+ "But suckd on countrey pleasures, childishly?",
+ "Let us possesse one world, each hath one, and",
+ "Or snorted we in the seaven sleepers den?",
+ "is one. My face in thine eye, thine in mine",
+ "Twas so; But this, all pleasures fancies bee.",
+ "appeares, And true plaine hearts doe in the",
+ "If ever any beauty I did see, Which I desird,",
+ "faces rest, Where can we finde two better",
+ "and got, twas but a dreame of thee. And now",
+ "hemispheares Without sharpe North, without",
+ "good morrow to our waking soules, Which watch",
+ "declining West? What ever dyes, was not mixt",
+ "not one another out of feare; For love, all",
+ "equally; If our two loves be one, or, thou",
+ "love of other sights controules, And makes",
+ "and I Love so alike, that none doe slacken,",
+ "one little roome, an every where. Let",
+ "none can die. John Donne" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

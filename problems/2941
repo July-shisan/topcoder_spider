@@ -1,0 +1,35 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+A <i>nine-patch</i> quilt is made from blocks containing nine squares of fabric arranged in a three-by-three grid.  You
+are making a nine-patch quilt from rectangular fabric scraps and want to know how many blocks you can make.  Each square
+of fabric will be two inches on each side, so each block will be six inches on each side (ignoring seam allowances).
+</p>
+
+<p>
+You will be given the <b>length</b> and <b>width</b> in inches of each fabric scrap as two int[]'s, where
+the dimensions of scrap <i>i</i> are given by element <i>i</i> of <b>length</b> and element <i>i</i> of <b>width</b>.
+You plan to cut as many squares as possible from each scrap, but the squares must all be cut with sides parallel to the sides
+of the scrap (because a square cut at an angle will stretch in unwanted ways).  You will return the maximum number of
+blocks that can be constructed using all the scraps.
+</p>
+
+<p>
+For example,
+suppose you have only a single scrap that is 13 inches long and 9 inches wide.  There is room for 6 two-inch squares lengthwise
+and 4 two-inch squares widthwise, so you could cut a total of 24 squares.  From those squares, you could make 2 blocks, with 6 squares left over.  Note that, after cutting the 24 squares, you would have some extra strips.  You might think you could sew those
+strips together into as many as 5 extra two-inch squares.  Combined with the 6 solid squares left over, you would then have
+enough squares to make another block.  However, for aesthetic reasons, you have decided that your individual squares must never
+show any seams, so you refuse to piece together squares in this fashion.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">NinePatch</td></tr><tr><td class="statText">Method:</td><td class="statText">numBlocks</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int numBlocks(int[] length, int[] width)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>length</b> contains between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>width</b> contains the same number of elements as <b>length</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>length</b> is between 1 and 1000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>width</b> is between 1 and 38, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 13 }</pre></td></tr><tr><td class="statText"><pre>{ 9 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 1, 8 }</pre></td></tr><tr><td class="statText"><pre>{ 4, 1 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">One scrap is too short to make any squares, and the other scrap is too narrow.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 7, 13, 192 }</pre></td></tr><tr><td class="statText"><pre>{ 6, 22, 31 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 168</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 606, 517, 358, 813, 522, 766, 795, 661, 572, 465,
+  729, 290, 905,  61, 187, 147, 449, 531,  44, 969,
+  337, 539, 232, 936, 117, 579, 115, 402, 486, 510,
+  952, 400, 691, 287, 919, 323, 581, 943, 730, 652,
+   48, 847, 490, 386,  21,  86,  70, 869, 415, 334 }</pre></td></tr><tr><td class="statText"><pre>{  36,  2, 35, 37,  1, 28, 11,  9,  5, 22,
+    7, 12, 34,  6, 26, 29,  5, 24, 13, 36,
+   21, 26, 37,  7,  9, 27, 35, 13,  9, 14,
+    3,  1,  8, 18,  6,  7, 20, 26,  8, 32,
+   10, 32, 20,  9, 10,  6, 19, 18, 24,  7 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 12008</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

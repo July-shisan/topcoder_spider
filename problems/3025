@@ -1,0 +1,315 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+
+<i><b>Note:</b> This problem statement includes images that may not appear
+if you are using a plugin. For best results, use the Arena editor.</i>
+
+</p>
+<p>
+
+In order to attract users of other weblog management systems, bloggo
+offers tools for content migration. Not only is bloggo capable of reading
+some of its chief competitors' back-end formats, but it can analyze the
+HTML that must by definition emerge at the front end of any weblog.
+
+</p>
+<p>
+
+An HTML document consists of <i>tags</i>, which are angle-bracketed
+strings that look like "&lt;b&gt;" or "&lt;/li&gt;",
+as well as <i>plaintext</i>, which is everything else. Each <i>opening</i>
+tag, such as "&lt;h1&gt;", has a similar <i>closing</i> tag, in
+this case "&lt;/h1&gt;". A substring that begins with an opening
+tag and ends with a similar closing tag is called a <i>span</i>. The type
+of a span is decided by its first and last tags, so a span that begins
+with "&lt;h1&gt;" and ends with "&lt;/h1&gt;" is called an "h1" span. We
+say that the substring found between the first and last tags of a span is
+<i>enclosed</i> by the span. Each span of an HTML document encloses zero
+or more plaintext characters interspersed with zero or more further spans.
+
+</p>
+<p>
+
+Thus, the spans of an HTML document form a nested structure 
+that is described by a unique <i>tag tree</i>, each node of which is
+labeled with the type of its corresponding span. The outermost span of
+an HTML document is required to be of the "html" type, so the root of
+a tag tree is always labeled "html". If a span encloses further spans,
+then its corresponding node in the tag tree has children that describe,
+in order, each of the immediately enclosed spans. A span that encloses
+no further spans corresponds to a leaf of the tag tree. For example,
+consider the following document.
+
+</p>
+<pre>
+
+  &lt;html&gt;
+    &lt;h1&gt; Snapping Turtles &lt;/h1&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;h2&gt; Common Snapping Turtle (&lt;i&gt;Chelydra serpentina&lt;/i&gt;) &lt;/h2&gt;
+        &lt;p&gt; With its dark coloring, sinuous neck, and swift lunging
+        motion, Chelydra serpentina is an adept hunter of nearly all
+        creatures that live in or near water. A fully grown specimen,
+        weighing on average 20 pounds with a 12-inch-long carapace,
+        has no enemy but man. The long lifespan of the adult, reaching
+        30 years or more, compensates for the low hatchling survival
+        rate. &lt;/p&gt;
+        &lt;p&gt; The snapping turtle rarely basks, preferring
+        to lurk at the silty bottom or among underwater
+        vegetation. Although reclusive in its element, when on
+        land it ferociously confronts larger beasts that approach
+        it, for it cannot withdraw into its undersized shell. It
+        is a solitary creature, declining to fraternize within
+        its species. &lt;/p&gt;
+        &lt;p&gt; Snapping turtle populations are jeopardized by
+        trapping, habitat loss, and by automobile traffic crossing
+        the overland routes of nesting females. &lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;h2&gt; Alligator Snapping Turtle (&lt;i&gt;Macroclemys temminckii&lt;/i&gt;) &lt;/h2&gt;
+        &lt;p&gt; Like the common snapping turtle, the alligator snapping
+        turtle has a massive head and a generally saurian aspect.
+        Whereas the common snapping turtle's talent for hibernation
+        lets it range as far north as Canada, the alligator snapping
+        turtle is restricted to the warm waters flowing into the Gulf
+        of Mexico. &lt;/p&gt;
+        &lt;p&gt; With an average shell diameter of two feet and
+        a weight of 150 pounds, this is the largest freshwater
+        turtle in the world. Macroclemys temminckii's short
+        neck requires that it lie in wait for prey, which it
+        dispatches with a sudden blow of its powerful jaws.
+        A unique feature of the alligator snapping turtle is a
+        tubular pink appendage, growing from the dark interior
+        of its mouth, which it wriggles in wormlike fashion to
+        lure fish to their doom. &lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/html&gt;
+
+</pre>
+<p>
+
+This document has the following tag tree.
+
+</p>
+<p>
+  <img src="http://www.topcoder.com/contest/problem/bloggoDocStructure/doc_tree.orig.png"></p>
+<p>
+
+For the purpose of content migration, it is useful to know how
+the tag trees of a pair of HTML documents relate to each other. One
+interesting relationship is that of the <i>intree</i>, which is defined
+recursively. First of all, every tree is an intree of itself. In addition,
+if <i>A</i> is an intree of <i>B</i> and we remove any leaf from <i>A</i>
+to obtain a smaller tree <i>A</i>', then <i>A</i>' is also an intree of
+<i>B</i>. If <i>A</i> is an intree of <i>B</i>, then <i>B</i> is called 
+an <i>outtree</i> of <i>A</i>. If <i>A</i> is both an intree and an
+outtree of <i>B</i>, then <i>A</i> and <i>B</i> are <i>equivalent</i>. If
+<i>A</i> is neither an intree nor an outtree of <i>B</i>, then <i>A</i>
+and <i>B</i> are <i>incompatible</i>.
+
+</p>
+<p>
+
+Given a pair of String[]s, <b>docA</b> and <b>docB</b>,
+each containing an HTML document, you are to determine how the tag tree
+of <b>docA</b> relates to the tag tree of <b>docB</b>. The elements of
+each String[] are concatenated to make up the respective
+document. The only tags permitted in these documents are the opening tags
+"&lt;html&gt;", "&lt;h1&gt;", "&lt;h2&gt;",
+"&lt;h3&gt;", "&lt;ul&gt;", "&lt;ol&gt;",
+"&lt;li&gt;", "&lt;p&gt;", "&lt;b&gt;",
+"&lt;i&gt;", "&lt;u&gt;", and the similar closing
+tags. Tag names are case-sensitive and may be broken over several lines,
+but must not otherwise be altered. The outermost tags of a document are
+of "html" type and may be padded with spaces on either side. Plaintext
+may only contain alphanumeric characters, space characters, and the
+punctuation symbols ',', ';', '.', '!', '?', '-', '(', and ')'.
+
+</p>
+<p>
+
+If the two documents are equivalent or incompatible, return the String
+"equivalent" or "incompatible", respectively. If
+<b>docA</b> is an intree of <b>docB</b>, return "intree X",
+where X is the number of nodes in <b>docB</b> that are not present
+in <b>docA</b> . If <b>docA</b> is an outtree of <b>docB</b>, return
+"outtree X", where X is the number of nodes in <b>docA</b>
+that are not present in <b>docB</b>.
+
+</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">bloggoDocStructure</td></tr><tr><td class="statText">Method:</td><td class="statText">compare</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String compare(String[] docA, String[] docB)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>docA</b> and <b>docB</b> each contain between 1 and 50 elements, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>docA</b> and <b>docB</b> is between 1 and 50 characters long, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">the only characters allowed in <b>docA</b> and <b>docB</b> are '&lt;', '&gt;', '/', 'a' to 'z', 'A' to 'Z', '0' to '9', the space character, ',', ';', '.', '!', '?', '-', '(', and ')'</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">if the elements of <b>docA</b> or of <b>docB</b> are concatenated into a single string, the result is an HTML document as defined above</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"&lt;html&gt; &lt;h1&gt;Snapping Turtles&lt;/h1&gt; &lt;ul&gt; &lt;li&gt; &lt;h2&gt;",
+ "Common Snapping Turtle (&lt;i&gt;Chelydra serpentina&lt;/i&gt;",
+ ") &lt;/h2&gt; &lt;p&gt; With its dark coloring, sinuous neck,",
+ "and swift lunging motion, Chelydra serpentina is a", 
+ "n adept hunter. &lt;/p&gt;&lt;p&gt; The snapping turtle rarely",
+ "basks. &lt;/p&gt;&lt;p&gt; Snapping turtle populations are jeo",
+ "pardized by automobile traffic.   &lt;/",
+ "p&gt;    &lt;/li&gt; &lt;li&gt; &lt;h2&gt; Alligator Snapping Turtle (", 
+ "&lt;i&gt;Macroclemys temminckii&lt;/i&gt;) &lt;/h2&gt; &lt;p&gt; Like the",
+ " common snapping turtle, the alligator snapping ",
+ "turtle has a massive head.&lt;/p&gt;&lt;p&gt;This is the lar",
+ "gest freshwater turtle. A tubular pink append",
+ "age grows from its mouth.&lt;/p&gt;   &lt;", 
+ "/li&gt; &lt;/ul&gt; &lt;/html&gt;"}</pre></td></tr><tr><td class="statText"><pre>{" &lt;html&gt; turtles &lt;h1&gt; snapping &lt;/h1&gt; &lt;ul&gt; &lt;li&gt; &lt;h2",
+ "&gt; common &lt;i&gt; chelydra serpentina &lt;/i&gt; &lt;/h2&gt; &lt;p&gt;",
+ "hunter &lt;/p&gt; (adept?) &lt;p&gt; rarely basks &lt;/p&gt; (hmm)",
+ "&lt;p&gt; jeopardized by traffic &lt;/p&gt;&lt;/li&gt;",
+ "&lt;li&gt; often confused with... &lt;h2&gt; alligator snapp",
+ "ing turtle &lt;i&gt;macroclemys temminckii&lt;/i&gt; &lt;/h2&gt;",
+ "&lt;p&gt; massive head &lt;/p&gt; big! &lt;p&gt;",
+ "largest freshwater turtle. pink wormlike thing &lt;", 
+ "/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;  "}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "equivalent"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">These two documents have the same structure as the example shown above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{" &lt;html&gt; turtles &lt;h1&gt; snapping &lt;/h1&gt; &lt;ul&gt; &lt;li&gt; &lt;h2",
+ "&gt; common &lt;i&gt; chelydra serpentina &lt;/i&gt; &lt;/h2&gt; &lt;p&gt;",
+ "hunter &lt;/p&gt; (adept?) &lt;p&gt; rarely basks &lt;/p&gt; (hmm)",
+ "&lt;p&gt; jeopardized by traffic &lt;/p&gt;&lt;/li&gt;",
+ "&lt;li&gt; often confused with... &lt;h2&gt; alligator snapp",
+ "ing turtle &lt;i&gt;macroclemys temminckii&lt;/i&gt; &lt;/h2&gt;",
+ "&lt;p&gt; massive head &lt;/p&gt; big! &lt;p&gt;",
+ "largest freshwater turtle. pink wormlike thing &lt;", 
+ "/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;  "}</pre></td></tr><tr><td class="statText"><pre>{"&lt;html&gt;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&lt;li&gt;&lt;h2&gt;&lt;i&gt;&lt;/i&gt;&lt;/h2&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;",
+ "&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;h2&gt;&lt;i&gt;&lt;/i&gt;&lt;/h2&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p",
+ "&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "equivalent"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The <b>docB</b> here is a minimal document with the same structure.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"&lt;html&gt;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&lt;li&gt;&lt;h2&gt;&lt;i&gt;&lt;/i&gt;&lt;/h2&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;",
+ "&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;h2&gt;&lt;i&gt;&lt;/i&gt;&lt;/h2&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p",
+ "&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;"}</pre></td></tr><tr><td class="statText"><pre>{" &lt;html&gt; snapping turtles &lt;ul&gt; &lt;li&gt; common ",
+ "snapping turtle, chelydra serpentina &lt;p&gt;",
+ "hunter &lt;/p&gt; &lt;p&gt; rarely basks &lt;/p&gt; ",
+ "&lt;p&gt; jeopardized by traffic &lt;/p&gt;&lt;/li&gt;",
+ "&lt;li&gt; often confused with... &lt;h2&gt; alligator snapp",
+ "ing turtle &lt;i&gt;macroclemys temminckii&lt;/i&gt; &lt;/h2&gt;",
+ "&lt;p&gt; massive head; largest freshwater turtle;",
+ "pink wormlike appendage lures fish &lt;/p&gt;",
+ "&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;  "}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "outtree 4"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The tag tree for <b>docB</b> is the following.
+
+<p>
+<img src="http://www.topcoder.com/contest/problem/bloggoDocStructure/doc_tree.sub.png"></p>
+
+It is evident from comparison with the earlier illustration that <b>docA</b> has four nodes not present in <b>docB</b>.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"&lt;html&gt;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&lt;li&gt;&lt;h2&gt;&lt;i&gt;&lt;/i&gt;&lt;/h2&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;",
+ "&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;h2&gt;&lt;i&gt;&lt;/i&gt;&lt;/h2&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p",
+ "&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;"}</pre></td></tr><tr><td class="statText"><pre>{" &lt;html&gt; turtles &lt;h1&gt; snapping &lt;/h1&gt; &lt;ul&gt; &lt;li&gt; &lt;h2",
+ "&gt; common &lt;i&gt; chelydra serpentina &lt;/i&gt; &lt;/h2&gt; &lt;p&gt;",
+ "hunter &lt;/p&gt; &lt;p&gt; rarely basks &lt;h3&gt;",
+ "&lt;i&gt;almost&lt;/i&gt; &lt;b&gt;never&lt;/b&gt; &lt;/h3&gt; &lt;/p&gt;",
+ "&lt;p&gt; jeopardized by traffic &lt;/p&gt;&lt;/li&gt;",
+ "&lt;li&gt; often confused with... &lt;h2&gt; alligator snapp",
+ "ing turtle &lt;i&gt;macroclemys temminckii&lt;/i&gt; &lt;/h2&gt;",
+ "&lt;p&gt; massive head &lt;/p&gt; big! &lt;p&gt;",
+ "largest freshwater turtle. &lt;/p&gt; &lt;p&gt; &lt;b&gt;pink&lt;/b&gt;",
+ " &lt;b&gt;wormlike&lt;/b&gt; lure in mouth &lt;/p&gt; &lt;p&gt; imposing",
+ "sight on land or water &lt;/p&gt; &lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;  "}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "intree 7"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">We now have the following tag tree for <b>docB</b>.
+
+<p>
+<img src="http://www.topcoder.com/contest/problem/bloggoDocStructure/doc_tree.super.png"></p>
+
+Here, <b>docB</b> has seven nodes not found in <b>docA</b>.
+<pre>
+								
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"&lt;html&gt;&lt;h1&gt;&lt;/h1&gt;&lt;ul&gt;&lt;li&gt;&lt;h2&gt;&lt;i&gt;&lt;/i&gt;&lt;/h2&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;",
+ "&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;h2&gt;&lt;i&gt;&lt;/i&gt;&lt;/h2&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p",
+ "&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;"}</pre></td></tr><tr><td class="statText"><pre>{"&lt;html&gt;&lt;ul&gt;&lt;li&gt;&lt;h2&gt;&lt;i&gt;&lt;/i&gt;&lt;/h2&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;",
+ "&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;h2&gt;&lt;i&gt;&lt;/i&gt;&lt;/h2&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p",
+ "&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h1&gt;&lt;/h1&gt;&lt;/html&gt;"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "incompatible"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"&lt;html&gt;&lt;/html&gt;"}</pre></td></tr><tr><td class="statText"><pre>{"&lt;html&gt;&lt;html&gt;&lt;html&gt;&lt;/html&gt;&lt;html&gt;&lt;/html&gt;&lt;ul&gt;",
+ "&lt;/ul&gt;&lt;ol&gt;&lt;/ol&gt;&lt;/html&gt;&lt;/html&gt;"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "intree 5"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"&lt;html&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;b&gt;&lt;/b&gt;&lt;/html&gt;"}</pre></td></tr><tr><td class="statText"><pre>{"&lt;html&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;",
+ "&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;/html&gt;"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "incompatible"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,68 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>Let an R by C (also notated as RxC) matrix mean a matrix with R rows and C columns.  Also, for x between 1 and R, inclusive, and y between 1 and C inclusive, let element (x,y) represent the element at the xth row and yth column (both 1-indexed) of a given R by C matrix.</p>
+<p>Matrix multiplication works as follows:</p>
+<p>For an L by M matrix A and an M by N matrix B, define an L by N matrix P such that A * B = P, and each element (x,y) of matrix P is equal to the sum of the product of each element of the xth row of A with the equivalently indexed element of the yth column of B.</p>
+<p>For example, say we have a 4x2 matrix A and a 2x3 matrix B:</p>
+<pre>
+A={{ a1, a2 },
+   { a3, a4 },
+   { a5, a6 },
+   { a7, a8 }}
+
+B={{ b1, b2, b3 },
+   { b4, b5, b6 }}
+
+Then 4x3 matrix P = A * B =
+{{ b1*a1+b4*a2, b2*a1+b5*a2, b3*a1+b6*a2 },
+ { b1*a3+b4*a4, b2*a3+b5*a4, b3*a3+b6*a4 },
+ { b1*a5+b4*a6, b2*a5+b5*a6, b3*a5+b6*a6 },
+ { b1*a7+b4*a8, b2*a7+b5*a8, b3*a7+b6*a8 }}
+</pre>
+<p>Matrix addition works as follows:</p>
+<p>For an L by M matrix A and an L by M matrix B, define an L by M matrix S such that A + B = S, and each element (x,y) of matrix C is equal to the sum of the two elements (x,y) in A and B.</p>
+<p>For example, say we have a 2x3 matrix A and a 2x3 matrix B:</p>
+<pre>
+A={{ a1, a2, a3 },
+   { a4, a5, a6 }}
+
+B={{ b1, b2, b3 },
+   { b4, b5, b6 }}
+
+Then 2x3 matrix S = A + B =
+{{ a1+b1, a2+b2, a3+b3 }
+ { a4+b4, a5+b5, a6+b6 }}
+</pre>
+
+<p>Write a method multiply which takes three String[] inputs representing matrix A, matrix B, and matrix C.  Each element will be a String representing a row of that matrix as follows:</p>
+<p>"I1 I2 I3 I4 I5 ... IN" (quotes added for clarity)</p>
+<p>where each I is an integer.</p>
+
+<p>The fourth argument is a String representing an equation between A, B, and C.</p>
+<p>Return the String[] represention of the solution matrix to the equation, in the same form as the inputs.</p>
+
+<p>The equation follows the standard order of operations.  That is, first do any multiplications, going left to right.  Then do any additions, going left to right.  After each multiplication or addition, put an intermediate matrix in place of the two argument matrices.  For example (quotes added for clarity):</p>
+<p>"A*B+C*A"</p>
+<p>You would first multiply A*B, and replace those two matrices with an intermediate matrix M:</p>
+<p>"M+C*A"</p>
+<p>You would then multiply C*A, and replace those two matrices with an intermediate matrix N:</p>
+<p>"M+N"</p>
+<p>You would finally add M+N, returning the final result.</p>
+<p>If the equation is not valid for the given matrices, return an empty String[].  The equation is not valid if:</p>
+<p>*at any point, two matrices (A, B, C, or any intermediates) must be multiplied, in which the number of rows in the second matrix is not equal to the number of columns in the first matrix.</p>
+<p>*at any point, two matrices (A, B, C, or any intermediates) must be added, but do not have the same dimensions.</p>
+<p>*at any point, one of the intermediate matrices contains a value that is greater than 2147483647 or less than -2147483648.</p>
+<p>In summary, given the 3 matrices and an equation involving those three matrices, return the resulting matrix in the described String[] format, or an empty String[] if the equation is not valid for the given matrices.</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">MatArith</td></tr><tr><td class="statText">Method:</td><td class="statText">calculate</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String[], String[], String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] calculate(String[] A, String[] B, String[] C, String equation)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The return must be formatted exactly as the inputs.  That means no leading/trailing or extra spaces.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each String[] will contain 1 to 10 element, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of A, B and C will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of A, B and C will be a space-delimited list of integers, with one space between integers, and no leading or trailing spaces.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of A, B and C will contain only the numbers [0-9] inclusive, the negative sign ('-') and spaces.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The number of integers represented by each element of A, B and C will be between 1 and 10, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The number of integers represented by each element of A will be the same as the number of integers represented by every other element of A.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The number of integers represented by each element of B will be the same as the number of integers represented by every other element of B.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The number of integers represented by each element of C will be the same as the number of integers represented by every other element of C.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each integer represented in A, B or C will be between -10 and 10, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each integer represented in A, B or C will be a correctly formatted integer, without leading zeros.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">equation will contain between 1 and 49 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">equation can only contain the capital letters 'A', 'B', and 'C', and the two operands '+' and '*'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The first and last characters of equation will be letters, and each pair of consecutive letters in equations will have exactly one operand between them.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"1 2 3","2 3 4"}</pre></td></tr><tr><td class="statText"><pre>{"1 2","3 4","5 6"}</pre></td></tr><tr><td class="statText"><pre>{"1"}</pre></td></tr><tr><td class="statText"><pre>"A*B"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "22 28",  "31 40" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>A*B={{ 1*1+2*3+3*5, 1*2,2*4,3*6 },
+     { 2*1+3*3+4*5, 2*2+3*4+4*6 }}</pre>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"1 2 3","2 3 4"}</pre></td></tr><tr><td class="statText"><pre>{"1 2","3 4","5 6"}</pre></td></tr><tr><td class="statText"><pre>{"1"}</pre></td></tr><tr><td class="statText"><pre>"A+B+C"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A+B is calculated first, but the two matrices do not have the same dimensions.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"3 5 7","5 4 3","-2 3 2"}</pre></td></tr><tr><td class="statText"><pre>{"3"}</pre></td></tr><tr><td class="statText"><pre>{"1 1 1","2 5 2","3 5 -3"}</pre></td></tr><tr><td class="statText"><pre>"A+C"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "4 6 8",  "7 9 5",  "1 8 -1" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>
+A+C={{ 3+1,  5+1, 7+1  },
+     { 2+5,  5+4, 2+3  },
+     { -2+3, 3+5, 2+-3 }}
+</pre>
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"10 0","0 0"}</pre></td></tr><tr><td class="statText"><pre>{"0"}</pre></td></tr><tr><td class="statText"><pre>{"0"}</pre></td></tr><tr><td class="statText"><pre>"A*A*A*A*A*A*A*A*A"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "1000000000 0",  "0 0" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"10 0","0 0"}</pre></td></tr><tr><td class="statText"><pre>{"0"}</pre></td></tr><tr><td class="statText"><pre>{"0"}</pre></td></tr><tr><td class="statText"><pre>"A*A*A*A*A*A*A*A*A*A"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">An intermediate value (10,000,000,000) is greater than 2,147,483,647.
+</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

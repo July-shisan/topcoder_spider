@@ -1,0 +1,84 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+The Shallow Alto city council has organized a special committee to review the
+traffic situation in the city.  Despite the fact that there is nothing
+whatsoever to do in the city, citizens still write complaints about the amount
+of time it takes them to get from one unexciting location to the next.
+</p><p>
+The committee has been asked to figure out how long it takes someone to travel
+down the streets of Shallow Alto given the current traffic light programming.
+To do this, they want you to write an algorithm which, given the speed a car
+travels down a road and the timing of the traffic lights, returns the amount
+of time it takes the car to travel down the street.
+</p><p>
+The traffic lights will be in an int[], with each element representing the
+amount of time in seconds between signal changes.  Initially, all traffic
+lights have just turned green, and are at the beginning of their cycle.  The order of the
+traffic lights in the int[] will be the order in which a car encounters them.
+</p><p>
+The speed you will be given is in meters per second.  Assume that the car
+starts 150 meters before the first traffic light, that there are 150 meters
+between each traffic light, and that the car stops 150 meters after the last
+traffic light.  Disregard all acceleration and deceleration; a car is either at
+its given speed or entirely stopped, and it takes no time to go from one state
+to the other.
+</p><p>
+If a car reaches a traffic light just as it turns red, it immediately stops and
+waits for it to turn green again (at which point it starts moving immediately).
+If the light just turned green, there is no
+wait and the car drives on through.
+</p><p>
+Return the time, in seconds, that it takes the car to travel the entire
+distance.  Round down any fractional parts, (for example 55.5 becomes 55 and 44.9 becomes 44), but
+do not do this until returning (see example #2 below).
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Traffic</td></tr><tr><td class="statText">Method:</td><td class="statText">time</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int time(int[] lights, int speed)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>speed</b> will be either 5, 10, 15, 20, 25, or 30.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>lights</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>lights</b> will be an integer between 10 and 60, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{10,10,10}</pre></td></tr><tr><td class="statText"><pre>30</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 30</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The car reaches the first traffic light at time = 5, so the light is still green and the car drives on through.
+<br>
+The car then reaches the second traffic light at time = 10, and the light has just turned red.  The car then waits 10 more seconds for the light to turn green.
+<br>
+At time = 20, the light is green and the car starts driving instantly at 30 meters/second.
+<br>
+At time = 25 the car hits the third traffic light, which is green.
+<br>
+At time = 30 the car reaches the end, 150 meters past the last traffic light.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{10,10,10}</pre></td></tr><tr><td class="statText"><pre>20</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 35</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">time = 7.5  - the car reaches first light, which is green.
+<br>
+time = 15   - the car reaches second light, which is red.
+<br>
+time = 20   - the light turns green, and the car continues.
+<br>
+time = 27.5 - the car reaches third light, which is green.
+<br>
+time = 35   - the car reaches the end, 150 meters past the last traffic light.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{10,20,30}</pre></td></tr><tr><td class="statText"><pre>20</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 30</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">time = 7.5  - the car reaches first light, which is green.
+<br>
+time = 15   - the car reaches second light, which is green.
+<br>
+time = 22.5 - the car reaches third light, which is green.
+<br>
+time = 30   - the car reaches the end.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{10,11,12,13,14,15}</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 240</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">time = 30  - the car reaches first light, which just turned red.
+<br>
+time = 40  - the light turns green, and the car continues.
+<br>
+time = 70  - the car reaches the second light, which is green.
+<br>
+time = 100 - the car reaches the third light, which is green.
+<br>
+time = 130 - the car reaches the fourth light, which is green.
+<br>
+time = 160 - the car reaches the fifth light, which is red.
+<br>
+time = 168 - the light turns green, and the car continues.
+<br>
+time = 198 - the car reaches the sixth light, which is red.
+<br>
+time = 210 - the light turns green, and the car continues.
+<br>
+time = 240 - the car reaches the end.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{60,60,60,60,60,60,60,60,60,60}</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 630</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{55,29,26,12,19,39,18,20,23,28,56,20,59,48,33,40,30,60,19}</pre></td></tr><tr><td class="statText"><pre>25</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 252</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

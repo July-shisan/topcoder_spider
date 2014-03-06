@@ -1,0 +1,97 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>
+ _
+/h\_    
+\_/ \_
+/v\_/ \_
+\_/ \_/ \
+/v\_/h\_/
+\_/ \_/ \
+/v\_/ \_/
+\_/ \_/ \
+  \_/ \_/
+    \_/ \
+      \_/
+</pre>
+<p>
+Above is a picture of a 4 x 4 Hex game in progress.  The board is a 4 x 4
+collection of hexagons packed together, with 4 hexagons in each vertical
+column, and 4 hexagons in each diagonal from upper left to lower right. Two
+players play against each other. One of the players ('h') tries to make
+a horizontal chain of adjacent hexagons stretching between the left and right 
+of the board.  The other player ('v') tries to make a vertical chain of adjacent
+hexagons stretching from the bottom to the top of the board.
+</p><p>
+We can refer to any position on the board by a pair of coordinates giving the 
+diagonal distance and vertical distance from the upper left hexagon. Using
+these coordinates, the two hexagons marked 'h' are located at (0,0) and at
+(2,1). 
+</p><p>
+
+Given the size of the board and a list of all the marked hexagons, we want 
+software that can draw the board using characters as shown above. 
+Create a class Hex that contains a method picture that is given <b>n</b> (the vertical
+and diagonal size of the board) and <b>marks</b> (a list of all the marked hexagons)
+and that returns a picture of the board in the format shown above.  The return
+will be a String[] that if printed one String per line in order would produce 
+the picture.  Each element of the return should have no trailing spaces, and
+at least one of the elements should have no leading spaces.
+</p><p>
+<b>marks</b> will be a String[] in which each 
+element will consist of exactly 3 characters: two digits giving the diagonal and then the vertical coordinate
+of a hexagon, followed by either 'v' or 'h', the marking of that hexagon.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Hex</td></tr><tr><td class="statText">Method:</td><td class="statText">picture</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] picture(int n, String[] marks)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>n</b> will be between 2 and 10 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>marks</b> will contain between 0 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>marks</b> will contain exactly 3 characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The first 2 characters in each element of <b>marks</b> will be digits less than <b>n</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The last character in each element of <b>marks</b> will be 'v' or 'h'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">No 2 elements of <b>marks</b> will refer to the same hexagon.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>{"00h","21h","01v","03v","02v"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ " _",
+ "/h\\_",
+ "\\_/ \\_",
+ "/v\\_/ \\_",
+ "\\_/ \\_/ \\",
+ "/v\\_/h\\_/",
+ "\\_/ \\_/ \\",
+ "/v\\_/ \\_/",
+ "\\_/ \\_/ \\",
+ "  \\_/ \\_/",
+ "    \\_/ \\",
+ "      \\_/" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Note that the elements in the returns are shown as string literals, so each backslash character in each String is shown as \\. So, for example, the second element of this return should contain just 4 characters (i.e. its length would be 4).
+
+This will print the following 4x4 picture:
+<pre>
+ _
+/h\_
+\_/ \_
+/v\_/ \_
+\_/ \_/ \
+/v\_/h\_/
+\_/ \_/ \
+/v\_/ \_/
+\_/ \_/ \
+  \_/ \_/
+    \_/ \
+      \_/
+</pre>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>{"00v","01v","02v","11h","21h"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ " _",
+ "/v\\_",
+ "\\_/ \\_",
+ "/v\\_/ \\",
+ "\\_/h\\_/",
+ "/v\\_/h\\",
+ "\\_/ \\_/",
+ "  \\_/ \\",
+ "    \\_/" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This will print the following 3x3 picture:
+<pre>
+ _
+/v\_
+\_/ \_
+/v\_/ \
+\_/h\_/
+/v\_/h\
+\_/ \_/
+  \_/ \
+    \_/
+</pre>
+</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

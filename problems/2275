@@ -1,0 +1,109 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+An OCR program (optical character recognition) needs to perform
+other things than just recognizing letters. One of these things
+is mapping out the page layout. In this problem, you should solve
+the similar, but easier task, of concatenating text spread across
+several text columns.
+</p>
+
+<p>
+The input text will be given as a String[] and
+split up into several text columns. Consider for instance the
+text below: (quotes are for clarity only)
+</p>
+
+<pre>
+{"  This is       put  it      that       ",
+ " a text          all       is           ",
+ "in  several    together      nicely     ",
+ "columns.       into  a      formatted.  ",
+ "               single                   ",
+ " Your  job        text                  ",
+ "is     to                   Good luck!  "}
+</pre>
+
+<p>
+The text above obviously has three text columns. Formally,
+text columns are always separated where there are three or more consecutive
+empty character columns (i.e. the only character in those columns are space).
+Furthermore, text columns can't be empty (see example 3).
+</p>
+
+<p>
+You should also find all paragraphs. The paragraph splits occur
+on blank lines within a text column. Only blank lines between
+the first and last row used in a text column should be considered.
+In the text above, the last line in column two is empty, but
+this is not a paragraph split because there is no text below
+this line in the same text column.
+</p>
+
+<p>
+The return value should contain the same text, in a String[],
+but where each element corresponds to one paragraph. Empty paragraphs
+should be ignored (that is, there should be no empty strings).
+Leading and trailing spaces should be removed in each paragraph,
+and consecutive spaces should be replaced by a single space.
+Line breaks within a paragraph should also be replaced by a single
+space so the last word on a line is not concatenated
+with the first word on the next line.
+</p>
+
+<p>
+Create a class TextColumns containing the method formatText which takes
+a String[] <b>text</b> containing the text and which
+returns a String[], containing the formatted text in
+the format described above. See the examples for further explanations.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TextColumns</td></tr><tr><td class="statText">Method:</td><td class="statText">formatText</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] formatText(String[] text)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>text</b> will contain between 1 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>text</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements in <b>text</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>text</b> will only contain the characters 'A'-'Z', 'a'-'z', '0'-'9', '.', ',', '!', '?' and space.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">At least one character in <b>text</b> will not be a space.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"  This is       put  it      that       ",
+ " a text          all       is           ",
+ "in  several    together      nicely     ",
+ "columns.       into  a      formatted.  ",
+ "               single                   ",
+ " Your  job        text                  ",
+ "is     to                   Good luck!  "}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "This is a text in several columns.",
+ "Your job is to put it all together into a single text that is nicely formatted.",
+ "Good luck!" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example in the problem statement.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"This is                                    ",
+ "just one                                   ",
+ "column                                     ",
+ "                                           ",
+ "a                 l                        ",
+ "   b                 m                     ",
+ "      c                 n                  ",
+ "         d                 o               ",
+ "            e                 p            ",
+ "               f                 q         ",
+ "            g                 r            ",
+ "         h                 s               ",
+ "      i                 t                  ",
+ "   j                 u                     ",
+ "k                 v                        "}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "This is just one column",  "a l b m c n d o e p f q g r h s i t j u k v" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"                                    ",
+ "                                    ",
+ " Some text                          ",
+ " here and                           ",
+ "  some                              ",
+ "                                    ",
+ "                            new     ",
+ "                                over",
+ "                             here   ",
+ "                text                ",
+ "                  there             ",
+ "                                    ",
+ "                                    ",
+ "                   And              ",
+ "             something              ",
+ "                                    ",
+ "                                    ",
+ "                             Finito ",
+ "                                    "}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "Some text here and some text there",
+ "And something new over here",
+ "Finito" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"    Column 1                                      ",
+ "                   Column 2                       ",
+ "                                   Column 3       "}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "Column 1 Column 2 Column 3" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

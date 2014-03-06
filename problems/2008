@@ -1,0 +1,41 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+A log-cabin quilt is made by sewing strips of fabric in a rectangular spiral.  All strips of fabric are
+1 inch wide.  The first two strips are 1 inch long, the second two strips are 2 inches long, the third
+two strips are 3 inches long, and so on.  Each new strip is sewn perpendicular to the previous strip in
+a counter-clockwise spiral, as shown below:
+</p>
+<pre>
+   GFFFI
+   GCBEI
+   GCAEI
+   GDDEI
+   HHHHI
+</pre>
+This quilt is made with nine strips, represented by the characters 'A' through 'I'.  The first strip
+is labeled 'A', the second strip is labeled 'B', and so on.
+
+<p>
+You want to design your quilt so that no two adjacent strips are made from the same fabric.  Two strips are
+adjacent if they share a common side.  For example, the 'C' strip in the above picture is adjacent to the 'A', 
+'B', 'D', 'F', and 'G' strips, and therefore must be a different fabric from each of those five strips.  
+It turns out that you never need more than four different fabrics to accomplish this goal.
+</p>
+
+<p>
+You have four 1-inch wide scraps of different fabrics that you will be cutting into the strips that you need.
+You want to know how big a quilt you can
+make, as measured by the number of strips in the finished quilt.  For example, the above quilt has
+nine strips.  You will be given a int[] <b>fabrics</b> containing exactly four elements.
+Each element contains the length in inches of a different scrap.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">LogCabin</td></tr><tr><td class="statText">Method:</td><td class="statText">maxStrips</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int maxStrips(int[] fabrics)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>fabrics</b> will contain exactly four elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>fabrics</b> will be between 1 and 100, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 1, 2, 3, 4 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The maximum is five strips.  For example, if we label the fabrics 1-4 according to their original length, then we could make the following quilt:
+<pre>
+   234
+   214
+   334
+</pre>
+We cut fabric 3 into two strips: one that is 1 inch long and one that is 2 inches long.
+We also cut a 3-inch strip from fabric 4.  Notice that we have 1 inch of fabric 4 left over.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 1, 1, 1, 1 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 100, 100, 100, 100 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 39</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 10, 36, 20, 38 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 16</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,78 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><i>*** You may only submit a given problem once - no resubmissions will be accepted. ***</i><br><br>
+A common image editing task is to scale an image.  For example, given an image 1024 pixels wide, and 768 pixels high, you might want to reduce it to 400x300 so it takes up less disk space.  In this problem, you will be given an image as a String[], where each element represents a row of pixels, and each character represents a single pixel (the colors are simply ASCII values between 32 and 126, inclusive).  Your task is to scale the image so that it is <b>x</b> pixels wide, and <b>y</b> pixels high.  To determine the colors of the new pixels, you should draw a grid over the image such that there are <b>x</b> columns and <b>y</b> rows.  Each region of the grid will then represent a single pixel, whose color is the weighted average of all the colors within it (0.5 rounds up).  The weight of each color is equal to the area it covers in the region.  For example, consider the input {"AB","BC"}, with <b>x</b> = <b>y</b> = 3.  Here is a zoomed in view of the scaled image (with grid):
+<pre>
+   AA | AB | BB
+   AA | AB | BB
+  ----+----+----
+   AA | AB | BB
+   BB | BC | CC
+  ----+----+----
+   BB | BC | CC
+   BB | BC | CC
+</pre>
+Now, taking the average value of each pixel in the scaled image, we end up with:
+<pre>
+   ABB
+   BBC
+   BCC
+</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Scale</td></tr><tr><td class="statText">Method:</td><td class="statText">scale</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] scale(int x, int y, String[] image)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character represents a color, as given by its ASCII value.  The average of colors is just the average of the ASCII values.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Note that grid lines may go through the pixels in the original image.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>x</b> and <b>y</b> will be between 1 and 100, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>x</b> * <b>y</b> will be less than or equal to 8000.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>image</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>image</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>image</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>image</b> will have ASCII value between 32 and 126, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>{"AB","BC"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "ABB",  "BBC",  "BCC" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>{"AB","BC"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "AB",  "AB",  "BC",  "BC" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>51</pre></td></tr><tr><td class="statText"><pre>43</pre></td></tr><tr><td class="statText"><pre>{"......",
+ ".X....",
+ ".X....",
+ ".X....",
+ ".X....",
+ ".XXXX.",
+ "......"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "...................................................",
+ "...................................................",
+ "...................................................",
+ "...................................................",
+ "...................................................",
+ "...................................................",
+ "........@RRRRRRRR..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX..................................",
+ "........CXXXXXXXX:::::::::::::::::::::::::4........",
+ "........CXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXC........",
+ "........CXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXC........",
+ "........CXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXC........",
+ "........CXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXC........",
+ "........CXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXC........",
+ "........@RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR@........",
+ "...................................................",
+ "...................................................",
+ "...................................................",
+ "...................................................",
+ "...................................................",
+ "..................................................." }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>{"...AAA...",
+ "...AAA..."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { ".;;.",  ".;;.",  ".;;.",  ".;;." }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>4</pre></td></tr><tr><td class="statText"><pre>{"......",
+ ".X....",
+ ".X....",
+ ".X....",
+ ".X....",
+ ".XXXX.",
+ "......"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "44..",  "&lt;&lt;..",  "&lt;@40",  "4@@4" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,21 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>Create a class called StringDup. Given a string made up of ONLY letters and
+digits, determine which character is repeated the most in the string ('A' is
+different than 'a'). If there is a tie, the character which appears first in
+the string (from left to right) should be returned.
+
+Examples :
+
+aaiicccnn = c
+aabbccdd = a
+ab2sbf2dj2skl = 2
+
+Here is the method signature :
+
+public char getMax(String input);
+
+We will check to make sure that the input contains only letters and digits (no
+punctuation marks or spaces).</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">StringDup</td></tr><tr><td class="statText">Method:</td><td class="statText">getMax</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">char</td></tr><tr><td class="statText">Method signature:</td><td class="statText">char getMax(String param0)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

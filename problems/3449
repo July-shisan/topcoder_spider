@@ -1,0 +1,50 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+You are planning a business trip in which you need to visit clients in three cities.
+The airline charges a separate rate for each individual leg of your journey.  
+For example, if you are flying from city A to city C, and
+you land in city B along the way, then you will pay the fare for a flight 
+from A to B plus the fare for a flight from B to C.
+The airline only sells round-trip tickets, so if you pay for a flight from A to B, then you 
+get a flight from B to A for free, whether you intend to use it or not.  You want to calculate the minimum cost 
+needed to fly to your three destination cities and return home.
+</p>
+
+<p>
+The prices of each possible flight are given as a String[] <b>fares</b>.  The <i>i</i>-th element of 
+<b>fares</b> represents the prices of flights between city <i>i</i> and each of the other cities.  In particular, character <i>j</i> of element <i>i</i> represents the price of a flight between city <i>i</i> and city <i>j</i>.  Characters with ASCII 
+values between 49 (the character '<tt>1</tt>') and 122 (the character '<tt>z</tt>') represent costs between $10 and $740, respectively.  In particular, a character with ASCII value VAL represents the cost 10*(VAL - 48), measured in dollars.  The special character '<tt>-</tt>' indicates that no flights are available between those two cities.  For example, if <b>fares</b> contains the Strings
+</p>
+<pre>
+    "-7-"
+    "7-A"
+    "-A-"
+</pre>
+then it costs $70 to travel between cities 0 and 1, and $170 to travel between cities 1 and 2 ('A' has ASCII value 65).  There are no direct flights between cities 0 and 2.  <b>fares</b> is always symmetric; the cost to travel from city <i>i</i> to city <i>j</i> is always the same as the cost to travel from city <i>j</i> to city <i>i</i>.
+
+
+<p>
+The indices of the cities you intend to visit are given in a int[] <b>destinations</b>, which always contains exactly 3 elements.  It is possible that more than one client lives in the same city, so the elements of <b>destinations</b> are not necessarily distinct.  You live in city 0, and must begin and end your trip there.
+Calculate and return the minimum cost to visit all three clients, or -1 if it is impossible to visit one or more of the clients.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Triptych</td></tr><tr><td class="statText">Method:</td><td class="statText">minCost</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int minCost(String[] fares, int[] destinations)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>fares</b> contains between 3 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>fares</b> contains exactly N characters, where N is the number of elements in <b>fares</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>fares</b> is either '<tt>-</tt>' or has an ASCII value between 49 ('<tt>1</tt>') and 122 ('<tt>z</tt>'), inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The character '<tt>\</tt>' (ASCII 92) does not appear in <b>fares</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Character <i>i</i> of element <i>j</i> of <b>fares</b> is equal to character <i>j</i> of element <i>i</i>, for all indices <i>i</i> and <i>j</i>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Character <i>i</i> of element <i>i</i> of <b>fares</b> is '<tt>-</tt>', for all indices <i>i</i>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>destinations</b> contains exactly 3 elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>destinations</b> is between 0 and N-1, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "-7-",
+  "7-A",
+  "-A-" }
+</pre></td></tr><tr><td class="statText"><pre>{ 1, 2, 1 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 240</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">You fly from city 0 to city 1 for $70, and visit both client 0 and client 2.
+Then you fly from city 1 to city 2 for $170, and visit client 1.  Finally, you 
+return home to city 0, with a layover in city 1.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "-8--9",
+  "8---7",
+  "---5-",
+  "--5--",
+  "97---" }</pre></td></tr><tr><td class="statText"><pre>{ 1, 3, 4 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">You can reach cities 1 and 4, but you can't get to city 3.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "-5777",
+  "5-555",
+  "75-88",
+  "758-8",
+  "7588-" }</pre></td></tr><tr><td class="statText"><pre>{ 2, 3, 4 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 200</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">You could fly directly to each client's city and return home in between visits for a cost of $210.
+However, you can make all the visits for only $200 by flying to city 1 and using that as a hub to fly to the other cities.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "-123",
+  "1-45",
+  "24-6",
+  "356-" }</pre></td></tr><tr><td class="statText"><pre>{ 0, 0, 0 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">All the clients live in your own city, so no flights are necessary.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

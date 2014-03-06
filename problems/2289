@@ -1,0 +1,40 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><i>Note to plugin users: This problem statement contains images.</i>
+<p>
+Farmer John has several pastures, each of which can be described as several overlapping and/or touching rectangles. For instance, the pasture in the picture below can be considered as the union of the rectangles (2,2)-(10,5) and (7,1)-(9,7). Two rectangles that only touch each other in a corner aren't counted as touching or overlapping rectangles, see example 4.
+</p>
+<br><img src="http://www.topcoder.com/contest/problem/Fences/fences.jpg"><p>
+Farmer John wants to enclose all his pastures with fences (one fence for each pasture). Help him find out the total
+length of all fences if all the borderlines must be fenced (see example 2).
+</p>
+
+<p>
+Create a class Fences containing the method fenceLength that takes a int[] <b>x1</b>, a int[] <b>y1</b>, a int[] <b>x2</b> and a int[] <b>y2</b>, describing the rectangles that make up the pastures by overlapping and/or touching, and returns an int, the total length of all fences. Element <i>i</i> in <b>x1</b>, <b>y1</b>, <b>x2</b> and <b>y2</b> describe one rectangle with the opposite corners <b>x1</b>,<b>y1</b> and <b>x2</b>,<b>y2</b>.</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Fences</td></tr><tr><td class="statText">Method:</td><td class="statText">fenceLength</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[], int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int fenceLength(int[] x1, int[] y1, int[] x2, int[] y2)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>x1</b>, <b>y1</b>, <b>x2</b> and <b>y2</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>x1</b>, <b>y1</b>, <b>x2</b> and <b>y2</b> will all contain the same number of elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>x1</b>, <b>y1</b>, <b>x2</b> and <b>y2</b> will be between 0 and 1000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Element <i>i</i> in <b>x1</b> will differ from element <i>i</i> in <b>x2</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Element <i>i</i> in <b>y1</b> will differ from element <i>i</i> in <b>y2</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{0,3,5,15}</pre></td></tr><tr><td class="statText"><pre>{0,3,7,4}</pre></td></tr><tr><td class="statText"><pre>{7,5,10,20}</pre></td></tr><tr><td class="statText"><pre>{5,8,9,8}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 60</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+Here we have four rectangles that together describes two pastures, as rectangles 0 and 1 intersect and
+rectangles 1 and 2 touch each other.
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{100,80}</pre></td></tr><tr><td class="statText"><pre>{200,230}</pre></td></tr><tr><td class="statText"><pre>{50,90}</pre></td></tr><tr><td class="statText"><pre>{250,205}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 200</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+x2 and y2 might be greater than x1 and y1.
+</p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{10,30,20,10}</pre></td></tr><tr><td class="statText"><pre>{10,10,10,40}</pre></td></tr><tr><td class="statText"><pre>{20,40,40,30}</pre></td></tr><tr><td class="statText"><pre>{40,40,20,30}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 160</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+These four rectangles form a single pasture with a hole in the middle. Since there
+must be fences along the borders, there must both be an "outer" fence (length 120) and
+an "inner" fence (length 40).
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{976,823,228,463,702,515,690,252,153,
+ 525,260,356,435,369,942, 59,605,173,
+ 178, 70,420, 40,705, 38,841,430,965,
+ 312,680,188,982,160,395,219,340,225}</pre></td></tr><tr><td class="statText"><pre>{314,759, 67,232,815,882,211,839, 48,
+ 531,567,803,439,418,968, 74, 88,834,
+ 806,920,920,194,602,436,624,331,314,
+  68,421,659,653, 99,921,339,865,408}</pre></td></tr><tr><td class="statText"><pre>{835,794,980, 90,808,649,198,334,309,
+ 749,187,965,578,199,655,273,503,489,
+ 167,996,212,355, 34,430,749,527,109,
+ 501,380, 36,641,872, 47,157,433, 85}</pre></td></tr><tr><td class="statText"><pre>{306,421,283,413,466,747,882,297,790,
+ 576,695,102,655,121, 82,400, 36,236,
+ 143,108,862,400,357,386,790,732,  4,
+ 800,316,166,239,242,121, 57,111, 85}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3854</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1,5}</pre></td></tr><tr><td class="statText"><pre>{1,5}</pre></td></tr><tr><td class="statText"><pre>{5,10}</pre></td></tr><tr><td class="statText"><pre>{5,10}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 36</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The two rectangles only touch each other at one corner, and are thus considered as different pastures.
+</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,84 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>Simple driving directions usually consist of a list of instructions to turn in a particular direction on specific roads.  Having used such directions to drive from home to your friend's house, you want to reverse them so you can get back home.  Write a class DrivingDirections with a method reverse that takes a String[] <b>directions</b> and returns a String[] with the reversed directions.</p>
+
+<p><b>directions</b> will have at least one element.  The first will begin with "Start on " (quotes are for clarity).  Each element after the first will begin with either "Turn LEFT on " or "Turn RIGHT on ".  Note the single trailing space on each of these prefixes.  Assume the remaining characters of each element are properly formatted street names composed of alphanumeric, hyphen, and space characters; do not modify them when reversing the directions.  The returned String[] should be formatted the same way, with the directions reversed.  For example, if the directions are:
+</p><ul><li>Start on Pirate Street</li>
+<li>Turn LEFT on Viking Avenue</li>
+<li>Turn RIGHT on Ninja Court</li>
+</ul>
+The reversed directions would be:
+<ul><li>Start on Ninja Court</li>
+<li>Turn LEFT on Viking Avenue</li>
+<li>Turn RIGHT on Pirate Street</li>
+</ul></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">DrivingDirections</td></tr><tr><td class="statText">Method:</td><td class="statText">reverse</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] reverse(String[] directions)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>directions</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The first element of <b>directions</b> will begin with "Start on " (quotes are for clarity) and contain between 10 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All other elements of <b>directions</b> will begin with either "Turn LEFT on " or "Turn RIGHT on ", contain at least one character following the prefix, and contain at most 50 characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character will be an uppercase English character ('A' to 'Z'), a lowercase English character ('a' to 'z'), a digit ('0' to '9'), a hyphen, or a space.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Start on Pirate Street",
+"Turn LEFT on Viking Avenue",
+"Turn RIGHT on Ninja Court"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "Start on Ninja Court",
+ "Turn LEFT on Viking Avenue",
+ "Turn RIGHT on Pirate Street" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Start on planet Earth"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "Start on planet Earth" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Since there is only one instruction, the reversed directions are identical to the original.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Start on Hebron Ave",
+"Turn RIGHT on CT-2",
+"Turn LEFT on I-84",
+"Turn LEFT on I-81",
+"Turn RIGHT on I-80",
+"Turn LEFT on I-680",
+"Turn RIGHT on Mission Blvd",
+"Turn LEFT on I-880",
+"Turn RIGHT on Montague Expressway",
+"Turn RIGHT on Mission College Blvd"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "Start on Mission College Blvd",
+ "Turn LEFT on Montague Expressway",
+ "Turn LEFT on I-880",
+ "Turn RIGHT on Mission Blvd",
+ "Turn LEFT on I-680",
+ "Turn RIGHT on I-80",
+ "Turn LEFT on I-81",
+ "Turn RIGHT on I-84",
+ "Turn RIGHT on CT-2",
+ "Turn LEFT on Hebron Ave" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Start on  ",
+"Turn LEFT on  0123456789 - ",
+"Turn RIGHT on  0123456789 - ",
+"Turn LEFT on                                      ",
+"Turn RIGHT on                                     ",
+"Turn LEFT on -a0b1c2d3e4f5g6h7i8j9k ",
+"Turn RIGHT on -A0B1C2D3E4F5G6H7I8J9K ",
+"Turn LEFT on -",
+"Turn RIGHT on -"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "Start on -",
+ "Turn LEFT on -",
+ "Turn RIGHT on -A0B1C2D3E4F5G6H7I8J9K ",
+ "Turn LEFT on -a0b1c2d3e4f5g6h7i8j9k ",
+ "Turn RIGHT on                                     ",
+ "Turn LEFT on                                      ",
+ "Turn RIGHT on  0123456789 - ",
+ "Turn LEFT on  0123456789 - ",
+ "Turn RIGHT on  " }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The characters after the prefix should not be modified when reversing the directions.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Start on Duke University Rd",
+"Turn RIGHT on Swift Ave",
+"Turn LEFT on NC-147",
+"Turn LEFT on I-85",
+"Turn RIGHT on I-40",
+"Turn RIGHT on US-52",
+"Turn LEFT on I-74",
+"Turn RIGHT on I-77",
+"Turn LEFT on I-64",
+"Turn RIGHT on Martin Luther King Memorial Bridge",
+"Turn RIGHT on N 3rd St",
+"Turn LEFT on Cole St",
+"Turn LEFT on N Broadway",
+"Turn RIGHT on Convention Plz"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "Start on Convention Plz",
+ "Turn LEFT on N Broadway",
+ "Turn RIGHT on Cole St",
+ "Turn RIGHT on N 3rd St",
+ "Turn LEFT on Martin Luther King Memorial Bridge",
+ "Turn LEFT on I-64",
+ "Turn RIGHT on I-77",
+ "Turn LEFT on I-74",
+ "Turn RIGHT on US-52",
+ "Turn LEFT on I-40",
+ "Turn LEFT on I-85",
+ "Turn RIGHT on NC-147",
+ "Turn RIGHT on Swift Ave",
+ "Turn LEFT on Duke University Rd" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

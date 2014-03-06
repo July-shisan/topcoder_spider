@@ -1,0 +1,67 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Bridge is a card game in which you are dealt a collection of cards,
+called a <i>hand</i>.  You pick up your hand and hold it so that you can see the fronts
+of your cards but other players can only see the backs.  You
+are free to arrange the cards in any order, but deciding on a good
+arrangement is not always straightforward.  You
+could sort them, but that might give your opponents too many
+clues.  For example, if you pull out the leftmost card, 
+they might be able to guess that the card is either your lowest
+or your highest in that suit.  You could leave the hand completely
+unsorted, but most people find it too difficult to keep track of
+their cards that way.
+</p>
+
+<p>
+A good compromise between security and ease of use is to group the 
+cards by suit, arrange the suits in alternating colors, and 
+leave the cards within each suit unsorted.  More precisely, an
+arrangement of cards is deemed <i>valid</i> if and only if
+</p><ul><li> no two cards of the same suit are separated by a card of a different suit, </li>
+<li> no two cards of the same color but different suits are adjacent (unless no cards
+     of the opposite color are present in the hand), and </li>
+<li> no suit with more than two cards is arranged in either increasing or decreasing order. </li>
+</ul>
+In the second condition, recall that clubs ('C') and spades ('S') are
+black, while diamonds ('D') and hearts ('H') are red.
+For example, the hand
+
+<pre>
+  2C KC 4C 5H 3H 2H AH QS KS 6D TD 9D JD
+</pre>
+is valid, but none of the following hands are valid:
+<pre>
+  2C KC 5H 4C 3H 2H AH QS KS 6D TD 9D JD  (a heart is between two clubs)
+  2C KC 4C 5H 3H 2H AH 6D TD 9D JD QS KS  (hearts and diamonds are adjacent)
+  2C KC 4C 5H 3H 2H AH QS KS 6D 9D TD JD  (diamonds are sorted in increasing order)
+  2C KC 4C AH 5H 3H 2H QS KS 6D TD 9D JD  (hearts are sorted in decreasing order)
+</pre>
+Notice that, in all of these examples, the spades are allowed to be in increasing
+order because there are only two of them.  Also, notice that aces are considered high,
+so "<tt>5H 3H 2H AH</tt>" is not in decreasing order, but "<tt>AH 5H 3H 2H</tt>" is.
+
+<p>
+When arranging your hand, you move cards one at a time by pulling them out of
+their current positions and reinserting them at other positions.  Given a hand, 
+you are to calculate and return the minimum number of moves necessary to
+achieve a valid arrangement.  The hand will be represented by a String[]
+<b>cards</b>.  Each element of <b>cards</b> represents a separate card as
+a two-character string of the form <tt>&lt;rank&gt;&lt;suit&gt;</tt>.  The
+possible ranks, listed in increasing order, are {'2'-'9','T','J','Q','K','A'}.
+The possible suits are {'C','D','H','S'}.  For example, the jack of hearts
+would be written "JH".
+</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BridgeArrangement</td></tr><tr><td class="statText">Method:</td><td class="statText">minMoves</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int minMoves(String[] cards)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">In real bridge, a hand always starts with 13 cards, but in this problem, a hand might be bigger or smaller than that.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>cards</b> contains between 3 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>cards</b> contains exactly two characters, in the format described above.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>cards</b> contains no duplicate elements.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "2C", "KC", "4C", "5H", "3H", "2H", "AH", "QS", "KS", "6D", "TD", "9D", "JD" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example of a valid hand from above.  No cards need to be moved.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "2C", "3C", "8C", "TC", "KC", "AC" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here you only have one suit, but it is sorted.  You can make the suit unsorted
+by moving the 2 to the other side of the 3.  Many other moves would work equally
+well.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "9S", "AS", "2S", "JH", "TH", "KH", "3D", "QD", "5D", "AC", "6C" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The cards have been grouped by suits, but the suits do not alternate in color.
+This can be fixed by moving the clubs between the hearts and diamonds.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "3C", "7S", "5C", "5S", "8C", "2S", "TC" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The black suits are permitted to be adjacent when there are no red
+cards in the hand.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "5D", "5C", "KH", "7C", "3C", "7D", "4D", "KC", "AS", "AD",
+  "7H", "AC", "9C", "8H", "4C", "8S", "KS", "QD", "5S", "JC",
+  "KD", "9D", "JD", "JH", "8D", "JS", "QH", "2S", "3H", "QC",
+  "9S", "2C", "3S", "TS", "4H", "6D", "7S", "TC", "6C", "4S",
+  "3D", "2H", "9H", "6H", "8C", "AH", "6S", "2D", "QS", "TH" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 26</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

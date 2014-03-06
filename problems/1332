@@ -1,0 +1,111 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A government policy will lead to 
+a particular outcome for 
+each person involved. A policy is "suboptimal" if there exists an alternative 
+policy that will not worsen the outcome for anyone and that will provide 
+a better outcome for at least one person.  A policy that is not suboptimal 
+is called a "Pareto Optimum". There 
+may be many Pareto Optima.
+<p>
+Create a class Pareto that contains a method optima that takes 
+a String[] <b>policy</b> as input.
+Each element of <b>policy</b> gives the outcome from one policy 
+choice.  Your method should return the number of policy
+choices that are Pareto Optimal.
+</p><p>
+Each element of <b>policy</b> will be formatted 
+as "[feeling] [feeling] [feeling] ..."
+where each [feeling] describes the outcome for the corresponding 
+person. There will 
+be no leading or trailing spaces, and there will be exactly one space between 
+each pair of adjacent [feeling].
+</p><p>
+Each [feeling] is one of the following strings, (given 
+in order of increasing satisfaction)</p><ul><li>"awful", "bad", "fair", "fairly-happy", "happy", "ecstatic"</li> </ul></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Pareto</td></tr><tr><td class="statText">Method:</td><td class="statText">optima</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int optima(String[] policy)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">two policies with identical outcomes may both be Pareto Optimal</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>policy</b> will contain between 1 and 50 elements inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>policy</b> will contain between 3 and 50 characters, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>policy</b> will be formatted as described above</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>policy</b> will contain the same number of [feeling] elements as does every other element of <b>policy</b>.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"bad bad fairly-happy awful",
+"bad bad bad awful",
+"ecstatic awful ecstatic ecstatic"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+ There are four people affected by our choice of 
+policy. The second policy is suboptimal
+when compared to the first policy. Neither the first nor the third 
+policy is suboptimal (the second person would prefer the first 
+policy over the third policy, while the first person would prefer the third policy).
+So the first and third policies are Pareto Optimal.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"bad ecstatic","bad bad", "awful ecstatic",
+ "fair happy", "fairly-happy fair",
+"fairly-happy fairly-happy", "fair happy"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The first, fourth, sixth, and seventh are Pareto Optimal. The second is worse than the first,
+the third is worse than the first, and the fifth is worse than the sixth. The fourth and
+seventh policies lead to the same outcome, and neither is suboptimal.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"happy","bad","fairly-happy","bad","happy"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Only 1 person is affected by these 5 policy choices, and the first and last choices both leave him feeling "happy", while the other 3 policies are clearly worse.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"bad bad bad bad bad happy fairly-happy"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">When there is only one policy choice, it must be Pareto Optimal.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"fair fair fair fair fair fair fair fair",
+"bad fair fair fair fair fair fair fair",
+"fairly-happy fair fair fair fair fair fair fair",
+"happy bad bad bad bad bad bad bad",
+"bad happy happy happy happy happy happy happy"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "happy bad awful ecstatic fair bad fair awful",
+ "fair awful bad awful ecstatic awful bad awful",
+ "awful awful happy awful ecstatic awful bad fair",
+ "bad bad bad happy happy ecstatic awful ecstatic",
+ "bad bad awful awful fairly-happy fair fair happy",
+ "fair bad bad fair happy bad ecstatic fair"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 6</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "fair happy fair fairly-happy happy happy happy",
+ "happy fair fairly-happy fair fair fair happy",
+ "happy happy fair fair fairly-happy fair happy",
+ "happy fair fair fairly-happy happy happy happy",
+ "happy fair happy fairly-happy happy happy happy",
+ "fair fair happy fair fair fair fairly-happy"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">7)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "ecstatic bad fair fair fair ecstatic ecstatic",
+ "ecstatic happy ecstatic awful awful fair awful",
+ "happy fairly-happy bad happy fair fair ecstatic",
+ "awful happy fair fairly-happy fair fair bad",
+ "awful fairly-happy fair bad happy happy happy",
+ "happy happy bad fair happy ecstatic fairly-happy",
+ "fair happy ecstatic bad fairly-happy fair fair",
+ "fairly-happy bad awful bad awful bad ecstatic",
+ "fairly-happy awful bad fair ecstatic bad awful",
+ "fairly-happy bad bad bad awful awful fair",
+ "awful bad bad ecstatic ecstatic fair bad",
+ "fair bad bad fair ecstatic fair ecstatic",
+ "bad awful happy happy fairly-happy happy happy",
+ "ecstatic fair fair awful happy fair happy",
+ "fairly-happy fair awful awful happy awful fair",
+ "bad fair fair fairly-happy bad happy happy",
+ "bad bad fair ecstatic fairly-happy ecstatic bad",
+ "bad fair happy fair awful fair ecstatic",
+ "awful bad bad awful bad awful fairly-happy",
+ "fair fair ecstatic bad bad happy awful",
+ "awful bad ecstatic awful fair fairly-happy happy",
+ "happy bad fair awful awful ecstatic bad",
+ "happy bad bad ecstatic fair fair bad",
+ "bad fairly-happy bad awful fair happy ecstatic",
+ "awful awful happy bad happy ecstatic bad",
+ "awful fair awful awful ecstatic fair fair",
+ "bad fairly-happy awful happy awful bad ecstatic",
+ "ecstatic happy happy fair fairly-happy fair bad",
+ "happy awful happy bad bad fairly-happy fair",
+ "ecstatic fair awful awful awful bad fairly-happy",
+ "fair fair bad fairly-happy awful fair fair",
+ "fair fairly-happy bad happy happy awful fair",
+ "happy ecstatic awful fair fair awful ecstatic",
+ "ecstatic awful fair ecstatic ecstatic happy bad",
+ "awful bad fair ecstatic happy awful fair",
+ "ecstatic happy fair happy happy bad ecstatic",
+ "bad awful awful awful happy ecstatic bad",
+ "ecstatic fair fair bad awful ecstatic bad",
+ "bad happy bad ecstatic bad awful happy",
+ "fairly-happy bad ecstatic awful fair fair awful",
+ "fairly-happy fair awful awful ecstatic bad fair",
+ "fairly-happy bad happy bad fair happy happy",
+ "happy ecstatic fair fairly-happy fair bad bad",
+ "bad bad fairly-happy happy bad bad bad",
+ "happy happy fair fair bad fair awful",
+ "awful fair bad bad happy fair fair",
+ "fair ecstatic happy happy awful fair bad",
+ "awful fairly-happy happy fair happy awful bad",
+ "awful fair bad happy happy ecstatic ecstatic",
+ "bad bad fair ecstatic happy ecstatic ecstatic"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 35</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">8)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"fair happy fairly-happy",
+ "fair happy fair",
+ "awful ecstatic fair",
+ "awful ecstatic fair",
+ "fair happy fair",
+ "fair happy fair"
+}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

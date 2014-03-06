@@ -1,0 +1,47 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+In duplicate bridge, when cards are shuffled and dealt, they are 
+placed in boards so that different teams can play exactly the same deals, 
+greatly reducing the role of luck in the game.
+The boards and teams move around in an intricate pattern called a <i>movement</i>,
+designed in such a way that teams never play the same board twice.
+The <i>Mitchell movement</i> is one of the most commonly used movements.
+</p>
+
+<p>
+In a Mitchell movement for <b>N</b> tables, there are <b>N</b> North-South teams,
+numbered from 1 to <b>N</b>, and <b>N</b> East-West teams, also numbered from 1 to <b>N</b>.
+Each North-South team <i>K</i> sits at table <i>K</i>, and does not move for the duration
+of the tournament.  Each East-West team <i>K</i> starts at table <i>K</i> and moves to the next
+higher table at the conclusion of each round, with the East-West team at table <b>N</b>
+moving to table 1.
+</p>
+
+<p>
+In each round, three boards are played at each table.  The boards are numbered from 1 to 3<b>N</b>,
+and are initially placed in numerical order, starting at table 1.  In other words, boards 1-3 start at
+table 1, boards 4-6 start at table 2, and so on.  At the conclusion of each round, each board is moved
+to the next lower table, with the boards at table 1 being moved to table <b>N</b>.
+</p>
+
+<p>
+There is one complication to this simple story.  When there are an even number of tables, the East-West
+teams would start seeing boards they've already played halfway through the tournament.  To prevent this,
+a <i>skip</i> is called after each team has played half the boards.  When the skip is called, each East-West
+teams moves up two tables instead of one table, wrapping around from the high-numbered tables to the low-numbered
+tables as necessary.  The tournament is then halted when the East-West teams return to their original tables, which
+means that each team will have played all but three of the boards.  Keep in mind that skips are not called when there 
+are an odd number of tables.
+</p>
+
+<p>
+Given the number of tables <b>N</b>, a <b>round</b> number, and a <b>board</b> number, you must determine
+which North-South team and which East-West team play that board in that round.  Return the team numbers
+in a int[] with two elements, first the North-South team number and then the East-West team number.
+Note that the rounds are numbered starting with 1.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">MitchellMovement</td></tr><tr><td class="statText">Method:</td><td class="statText">teams</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] teams(int N, int round, int board)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>N</b> is between 7 and 20, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>round</b> is between 1 and <b>N</b>, inclusive, if <b>N</b> is odd, and between 1 and <b>N</b>-1, inclusive, if <b>N</b> is even.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>board</b> is between 1 and 3<b>N</b>, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>8</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 1,  1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In round 1, board 1 is played at table 1 by North-South team 1 and
+East-West team 1.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>7</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr><tr><td class="statText"><pre>8</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 2,  1 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Board 8 starts at table 3.  In round 2, it moves to table 2, where it is played
+by North-South team 2 and East-West team 1.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>11</pre></td></tr><tr><td class="statText"><pre>35</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 2,  11 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Don't forget the skip!</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>19</pre></td></tr><tr><td class="statText"><pre>19</pre></td></tr><tr><td class="statText"><pre>19</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 8,  9 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

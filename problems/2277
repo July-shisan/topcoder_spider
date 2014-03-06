@@ -1,0 +1,39 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">An ambigram is a (non-blank) symbol that looks unchanged when the paper on which it is 
+written is rotated 180 degrees about the axis perpendicular to the surface
+of the paper. We are given a word and want to change it
+into an ambigram, by modifying or removing its letters.
+<p>
+We will restrict our word to uppercase letters. In the font we are using,</p><ol><li>
+
+        H I N O S X Z    look unchanged after rotation</li><li>
+        M W              look like each other after rotation</li></ol><p>
+Some examples of ambigrams are  "MOW", "XXXXXXXXXXX", "XMIWX", "HXHXHXHXHXH".
+</p><p>
+We want to make minimal changes to the given word to produce an ambigram. We will measure the cost of
+changing by distance within the alphabet, so changing an 'F' to an 'H' would incur
+a cost of 2, and changing an 'I' to an 'F' would cost 3. If we 
+keep changing a letter until we run off either end of the alphabet, the
+letter disappears. (When a letter disappears, letters around it slide together.) So we can make a C disappear at a cost of 3, and can make
+a 'T' disappear at a cost of 7.
+</p><p>  
+Create a class Ambigram that contains a method ambiword that is given a String 
+<b>word</b> and that returns the ambigram that is the cheapest to construct from <b>word</b>.
+Among equally cheap ambigrams, return the longest. If a tie still exists, return the contender that comes earliest alphabetically. A String with no characters is NOT an ambigram.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Ambigram</td></tr><tr><td class="statText">Method:</td><td class="statText">ambiword</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String ambiword(String word)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>word</b> will contain between 1 and 50 characters inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>word</b> will be an uppercase letter 'A'-'Z'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"BXC"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "X"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    We can remove the 'B' at a cost of 2 and the 'C' at a cost of 3. Total cost = 5.
+    Note that "BXB" is NOT an ambigram.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"XIXHZMOAOSHXIX"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "XIXHMOOWHXIX"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+ 
+    This can be done at a cost of 6 (make the 'A' disappear, make the 
+    'Z' disappear, change 'S' to 'W' at a cost of 4).</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"C"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "H"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    We could make the 'C' disappear at a cost of 3, but the result would be the
+    empty String, which is not an ambigram. At a cost of 5 we can change the 'C' into an 'H'.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"AMWZ"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "MW"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Note that we cannot change the 'A' to 'Z' cheaply by treating the alphabet as a circle.
+"ZMWZ" would be a longer ambigram than "MW" but it would cost 25.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

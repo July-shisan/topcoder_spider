@@ -1,0 +1,50 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Our computer clock is not continuous.  It "ticks" every millisecond and keeps
+track of how many ticks have occurred since the beginning of the "epoch"
+(Jan 1, 1970). The clocktime does not change between ticks.
+<p>
+Time is continuous, and events (such as interrupts from hardware devices and
+the starting of a program) can happen anytime. We have a program that 
+experiences a sequence of events. At each event in our program, our logic gets 
+the current clocktime and compares it with the clocktime stored from the
+previous event. It outputs either 'D' or 'S' indicating whether the current
+clocktime is Different or the Same as the previous event's clocktime. (The first event
+after the program starts generates the first 'S' or 'D' based on comparison 
+with the clocktime at the start of the program.)
+</p><p>
+Because the first tick during our program can occur anytime within one millisecond after the
+start of the program, the string of 'D's and 'S's output from our program
+cannot be predicted, even given the exact timing of the program.  Create a
+class TickTick that contains a method count that is given <b>event</b>, a String[] 
+of the times of events relative to the start of the program, and returns 
+the number of different output sequences
+that might be generated. The <b>event</b> times are given in milliseconds elapsed 
+since the start of the program, formatted to contain digits and exactly one 
+decimal point. 
+</p><p>
+Time is continuous, so exact coincidences do not occur (or occur with probability 0). You should not consider the
+possibility that a tick occurs at exactly the same time as an event or at the exact 
+start of the program. The constraints on <b>event</b> guarantee that two 
+different events can never be exactly an integral number of
+milliseconds apart. 
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TickTick</td></tr><tr><td class="statText">Method:</td><td class="statText">count</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int count(String[] events)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>events</b> has between 1 and 50 elements inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>events</b> has length between 2 and 8, and contains exactly one decimal point '.'. All the other characters are digits '0'-'9'</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">no element of <b>events</b> has a value equal to an integer</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">no two elements of <b>events</b> have values that differ by an integer</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">the elements of <b>events</b> have values that are strictly increasing</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".222","00.223","1.221","4.220"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+If the clock's first tick occurs approximately .100 milliseconds after the start of
+the program,  then the clocktime at time .222
+will be Different from the clocktime at the start. The clocktime at .223 will
+be the same as at .222, the clocktime at 1.221 will be different from the
+clocktime at .223 since a tick occurs at 1.100. The clocktime at 4.220 will 
+always be different from the clocktime at 1.221. So in this case, the 
+program generates DSDD.  Similarly, <pre>
+   if the clock's first tick is at .2215, DSSD
+   if the clock's first tick is at .2225, SDSD
+   if the clock's first tick is at .2235, SSDD </pre>
+These are the only possible sequences that can be generated. 
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"4.220112","4.221","4.222","4.223"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+    DSSS, DSSD, DSDS, DDSS</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"123456.1","123456.7"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">If the first tick occurs at .05 after the program starts, the 
+output would be DS while if it occurs .5 after the program starts, then
+the output would be DD. These are the only possible results.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

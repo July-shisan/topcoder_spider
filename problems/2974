@@ -1,0 +1,58 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">In genetics, most large animals have two copies of every gene - one from each
+parent.  In the simplest genetic model, each of the genes takes on one of two
+forms, <i>dominant</i> or <i>recessive</i>, usually represented by an uppercase
+and lowercase letter of the same value, respectively ('A' and 'a', for example).
+The pair of genes typically contributes to the external qualities of the animal
+in one of two ways.  If one or two genes are uppercase, the dominant gene is
+said to be <i>expressed</i>.  If both genes are lowercase, then the recessive
+gene is said to be expressed.<br><br>
+
+Additionally, there may be some gene dependencies.  If one pair of genes is
+dependent on another pair of genes, then the first gene may only be expressed
+dominantly if the gene it depends on is also expressed dominantly.  These
+dependencies are indicated by a int[], <b>dependencies</b>.  If
+element i of <b>dependencies</b> is j, it means that gene i can only be
+expressed dominantly if gene j also is (both i and j are indexed from 0).  If gene j is expressed recessively,
+then gene i must be also, regardless of the actual genes at position i.  If an
+element of <b>dependencies</b> is -1, it means that the gene is not dependent on
+any other gene, and is expressed as described in the first paragraph.  Chains
+may exist within <b>dependencies</b> where i depends on j, which in turn depends
+on k.  However, a gene may not depend on itself, and there will be no looping
+dependencies.  <br><br>
+
+In this problem you are to predict a certain quality about an animal, given N
+pairs of genes from each of its parents, and some information about those N
+genes.  The first parent's two copies of the genes are given by <b>p1a</b> and <b>p1b</b>,
+while the second parent's are given by <b>p2a</b> and <b>p2b</b>.  For each of the N genes, each parent contributes one of its two genes to its children (characters with the same indices in <b>p1a</b>, <b>p1b</b>, <b>p2a</b>, and <b>p2b</b> correspond to the same gene).  For example, if <b>p1a</b> = "ABC" and <b>p1b</b> = "abc", the first parent would contribute an 'A' or an 'a' to its child's first pair of genes, a 'B' or a 'b' to its child's second pair and so on.  Similarly, the second parent would also contribute a single gene to its child's first pair of genes, one to its second pair and so on.<br><br>
+
+Thus, the offspring end up with N genes from each parent.  Each pair of
+corresponding genes contributes in some way to a certain quality we are
+interested in.  If the i<sup>th</sup> pair of genes is expressed dominantly, we
+add <b>dom[i]</b> to a running sum (which is initialized to 0), otherwise we add
+<b>rec[i]</b>.  Given that each parent contributes one of its two genes entirely
+at random (with a 50% chance of either), you are to determine the expected value
+the offspring will have for the quality we are interested in (the running sum), and return that
+value.
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">GeneticCrossover</td></tr><tr><td class="statText">Method:</td><td class="statText">cross</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, String, String, String, int[], int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double cross(String p1a, String p1b, String p2a, String p2b, int[] dom, int[] rec, int[] dependencies)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Your return must have a relative or absolute error less than 1e-9.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Let N be the number of genes, where N is between 1 and 50, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>p1a</b>, <b>p1b</b>, <b>p2a</b> and <b>p2b</b> will each contain exactly N characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>dom</b>, <b>rec</b>, and <b>dependencies</b> will each contain exactly N elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Corresponding characters of <b>p1a</b>, <b>p1b</b>, <b>p2a</b> and <b>p2b</b> will have the same value (but may be uppercase or lowercase).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>dependencies</b> will be between -1 and N-1, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>dependencies</b> will not contain any cycles.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>dom</b> and <b>rec</b> will be between -100 and 100, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"AaaAA"</pre></td></tr><tr><td class="statText"><pre>"AaaAA"</pre></td></tr><tr><td class="statText"><pre>"AaaAA"</pre></td></tr><tr><td class="statText"><pre>"AaaAA"</pre></td></tr><tr><td class="statText"><pre>{1,2,3,4,5}</pre></td></tr><tr><td class="statText"><pre>{-1,-2,-3,-4,-5}</pre></td></tr><tr><td class="statText"><pre>{-1,-1,-1,-1,1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -5.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Since every copy is the same, the animal is guaranteed to have two pairs of "AaaAA".  This means that the first and fourth genes will be dominantly expressed, while the others will be recessively expressed.  Note that the last gene is dependent on gene 1, which is recessively expressed.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"AbegG"</pre></td></tr><tr><td class="statText"><pre>"ABEgG"</pre></td></tr><tr><td class="statText"><pre>"aBEgg"</pre></td></tr><tr><td class="statText"><pre>"abegG"</pre></td></tr><tr><td class="statText"><pre>{5,5,5,5,5}</pre></td></tr><tr><td class="statText"><pre>{1,1,1,1,1}</pre></td></tr><tr><td class="statText"><pre>{-1,0,1,2,3}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 14.25</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here, we have a chain of dependencies, where gene 1 depends on gene 0, 2 depends on 1, and so on.  For the first 
+gene, the animal is guaranteed to get an 'A' from its first parent, and an 'a' from its second parent.  This means 
+that gene 0 will be expressed dominantly, contributing 5 to the sum.  The next gene has a 75% chance of being 
+expressed dominantly (it will only be expressed recessively if a 'b' comes from each parent).  The third gene also 
+has a 75% chance of being expressed dominantly, assuming that the second gene was expressed dominantly.  The fourth 
+gene is guaranteed to be expressed recessively, and hence so is the final gene.<br><br>
+This gives us 3 possible scenarios, denoted below, where a 'D' indicates a gene is expressed dominantly, and an 'R' 
+means recessively:<br><pre>
+Genes | Sum | Prob
+------+-----+-------
+DDDRR | 17  | 0.5625
+DDRRR | 13  | 0.1875
+DRRRR | 9   | 0.25
+</pre>
+The expected value is thus 17*0.5625+13*0.1875+9*.25 = 14.25</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"XyMpdnVsbinDvqBpcWGDLfsmQtZpeirvTmoRmBASfqqrFS"</pre></td></tr><tr><td class="statText"><pre>"xYmpdnVsBINdvQBPCwgDlFSmQTzpEIrVtmoRmbaSfqQRfS"</pre></td></tr><tr><td class="statText"><pre>"XYMpdnvsBINdVQbpCWgDlfSMqTzPeIrVTMOrmbaSfQqrFs"</pre></td></tr><tr><td class="statText"><pre>"XYMpDnVSBIndvQBPCWGDlFsMqtzpEiRVTMORMBASFqQrfS"</pre></td></tr><tr><td class="statText"><pre>{-82,-35,-51,52,87,25,8,27,-12,-10,-63,-36,-95,-35,-98,95,-76,7,36,-35,92,23,-94,
+ -31,-30,36,51,-49,-19,-3,19,32,58,82,-36,-87,-54,-17,-40,32,-91,-56,0,-16,70,42}</pre></td></tr><tr><td class="statText"><pre>{-36,77,90,50,83,66,-94,-66,-22,-83,-86,-89,-55,-3,-51,18,-41,-91,91,32,-25,-60,
+ 5,79,100,85,60,98,55,95,-67,-46,-26,48,-64,16,-36,-95,-54,19,96,79,78,-91,-12,35}</pre></td></tr><tr><td class="statText"><pre>{-1,-1,1,-1,3,-1,-1,1,3,5,4,0,-1,-1,2,8,5,4,-1,10,11,14,3,-1,
+15,-1,7,-1,8,-1,-1,15,-1,-1,30,-1,26,26,-1,-1,-1,-1,-1,31,0,3}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -356.875</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"fOai"</pre></td></tr><tr><td class="statText"><pre>"Foai"</pre></td></tr><tr><td class="statText"><pre>"fOAI"</pre></td></tr><tr><td class="statText"><pre>"FOAi"</pre></td></tr><tr><td class="statText"><pre>{96,21,-34,-81}</pre></td></tr><tr><td class="statText"><pre>{77,-2,20,25}</pre></td></tr><tr><td class="statText"><pre>{-1,0,-1,-1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 44.5</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

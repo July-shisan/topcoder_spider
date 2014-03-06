@@ -1,0 +1,41 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A six-sided die has each of its sides labeled with a distinct letter.  We
+repeatedly roll it and record the result.  We can only see three sides,
+so each roll is recorded as a String of 3 letters, denoting the labels on
+the visible sides in the order top,front,right.
+<pre> 
+        ______   
+       / A   /| 
+      /_____/ | 
+      |     |C|  
+      | B   | /   
+      |_____|/     
+</pre>
+For the above roll, we should record "ABC" 
+<p>
+We want to check the data for consistency -- we know that the data recording
+process is error-prone.
+Create a class AlphaDice that 
+contains a method badData that is given a String[] <b>roll</b> giving the recorded
+data, and that returns
+the (0-based) index of the first entry in <b>roll</b> that, when combined with its 
+predecessors, is inconsistent.
+</p><p>
+If all the roll data are consistent with some distinct labeling of the 
+die, return -1.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">AlphaDice</td></tr><tr><td class="statText">Method:</td><td class="statText">badData</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int badData(String[] roll)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>roll</b> will contain between 1 and 50 elements inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>roll</b> will have length 3 and will contain only 'A'-'Z'</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABC","ZCB"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   This is the example above where there is a Z on the bottom.  On the
+second roll the die was oriented so the Z was on the top, the C at the front,
+and the B on our right. These data are consistent with a distinctly labeled
+die.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABC","DEF","BCA","GHI","ABC"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+    The first 3 were consistent with a die with 6 distinct labels, but
+ the "GHI" must be bad data since we could not possibly observe more than 6
+ different labels.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABA","CDE","CDE","CDE","CDE"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The first observation shows two sides labeled with 'A'</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ABC","DEF","BCF"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,48 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">
+Two equal length sequences of nucleic acids (A,C,T,or G) are judged based on 
+a 4x4 score 
+matrix. The homology score for the sequences is just the sum of the scores
+at each position in the sequence, looked up in the matrix.
+For example, if the two sequences were ACTA and GATC then their homology
+score would be score(A,G) + score(C,A) + score(T,T) + score(A,C).
+
+<p>
+Our problem is to construct the score matrix. It has the following restrictions:
+</p><ul><li>
+    1) All entries must be integers between -10 and 10 inclusive</li><li>
+    2) It must be symmetric ( score(x,y) = score(y,x) )</li><li>
+    3) Diagonal entries must be positive ( score(x,x)&gt;0 )</li><li>
+    4) The sum of the 16 entries must be 0.</li></ul>
+
+We are given a set of equal length sequences that are known to be homologous.
+We want to fill in the score matrix so that the average homology score for all
+the pairs from the set is maximized. If there are n sequences in the set, then
+there are n*(n-1)/2 pairs to consider.
+<p>
+Create a class BioScore that contains a method maxAvg that is given <b>knownSet</b>,
+the list of sequences known to be homologous. The method computes the optimum
+scoring matrix and returns the resulting maximal average homology score for the
+pairs from <b>knownSet</b>.
+</p>
+
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BioScore</td></tr><tr><td class="statText">Method:</td><td class="statText">maxAvg</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double maxAvg(String[] knownSet)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>knownSet</b> will contain between 2 and 50 elements inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>knownSet</b> will contain only the uppercase letters A,C,T, and G.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>knownSet</b> will contain between 1 and 50 characters inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">all elements of <b>knownSet</b> will contain the same number of characters.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"AAA","AAA","AAC"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 30.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   Make score(A,A) and score(A,C) be 10. It is then easy to satisfy the 
+   remaining requirements. All three pairwise comparisons score 30.0.
+
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ACTGACTGACTG","GACTTGACCTGA"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -4.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"> 
+   Here, there are no positions in which the letters in the two strings match each other. So we should give each exact match (each diagonal entry of the score matrix) the 
+   smallest
+   possible score, 1.  The remaining 12 pairs are each present at one position
+   in the comparison
+   so the best we can do is to choose those 12 scores so they add up to -4 in
+   any manner. Now the sum of all the matrix entries is 0, and the resulting
+   score for the one pairwise comparison is -4.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ACTAGAGAC","AAAAAAAAA","TAGTCATAC","GCAGCATTC"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 50.5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

@@ -1,0 +1,43 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>THIS PROBLEM WAS TAKEN FROM THE SEMIFINALS OF THE TOPCODER INVITATIONAL
+TOURNAMENT
+
+PROBLEM STATEMENT 
+Create a class LongCalc that will perform arithmetic operations on two whole
+numbers, represented by Strings. The operation to be performed is indicated by
+op, which will be 1 for addition, 2 for subtraction, 3 for multiplication, and
+4 for integer division. The value returned from this operation will be a
+numeric value held in a String (which may begin with a negative sign if
+necessary).
+
+DEFINITION
+Class Name: LongCalc
+Method Name: process
+Parameters: String, String, int
+Returns: String
+Method signature (be sure your method is public): String process(String a,
+String b, int op);  
+
+The operation that will be performed is &lt;a op b&gt;.
+
+TopCoder will ensure the validity of the inputs.  Inputs are valid if all of
+the following criteria are met:
+- Both a and b will consist of only digits, and that the first digit of each
+number is greater than 0.
+- Both a and b will have length between 1 and 50, inclusive.
+- op will be either 1, 2, 3, or 4
+
+JAVA NOTE
+java.math.* will not be allowed
+
+EXAMPLES
+process("100", "50", 1) -&gt; "150"
+process("100000000000000000000000000000000",
+"400000000000000000000000000000000", 1) -&gt; "500000000000000000000000000000000"
+process("3", "4", 2) -&gt; "-1"
+process("29", "465", 3) -&gt; "13485"
+process("15", "2", 4) -&gt; "7"
+</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">LongCalc</td></tr><tr><td class="statText">Method:</td><td class="statText">process</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, String, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String process(String param0, String param1, int param2)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

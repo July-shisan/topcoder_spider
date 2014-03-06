@@ -1,0 +1,43 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+
+In the grafix file format, a bitmap is encoded as a
+sequence of lowercase alphabetic words. All of these words are drawn from
+a dictionary that has been built specially for the bitmap by a compression
+algorithm. Each word in the dictionary has the same length.
+
+
+</p>
+<p>
+
+It can occur that words in a grafix file are corrupted by poor
+transmission or storage media. In such cases, grafix attempts to
+reconstruct the original file by matching each corrupted word to a
+dictionary word that contains one or more of the same characters at the same
+positions.
+
+</p>
+<p>
+
+You are given a String[], <b>dictionary</b>, containing
+every word in a grafix file's dictionary, and a String,
+<b>candidate</b>, which is a possibly corrupted word in that file. If
+there is no dictionary word that has at least one character in the
+same position as <b>candidate</b>, then return the int
+value -1. Otherwise, return the zero-based index of the dictionary word
+that has the greatest number of characters at the same positions as
+<b>candidate</b>. In the event of a tie, favor the lowest index.
+
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">grafixCorrupt</td></tr><tr><td class="statText">Method:</td><td class="statText">selectWord</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int selectWord(String[] dictionary, String candidate)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>dictionary</b> contains between 1 and 50 elements, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>candidate</b> is between 1 and 20 characters long, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>dictionary</b> has the same length as <b>candidate</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">only the characters 'a' to 'z' are permitted in <b>candidate</b> and <b>dictionary</b></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"cat", "cab", "lab"}</pre></td></tr><tr><td class="statText"><pre>"dab"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The word "dab" has two letters in the same position as both "cab" and "lab", but "cab" comes first.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"cat", "cab", "lab"}</pre></td></tr><tr><td class="statText"><pre>"lag"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Here, "lab" is the best fit.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"cat", "cab", "lab"}</pre></td></tr><tr><td class="statText"><pre>"bic"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The word "bic" contains a 'c' and a 'b', but neither character is at the same position in any dictionary word.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"zkv", "izs", "fed", "waa", "ttx", "bgt", "quy", "dtq", "dgo", "yrs",
+ "cid", "nln", "pvz", "txt", "zun", "erd", "jen", "klh", "kxy", "emf",
+ "mqt", "lza", "dzb", "ndx", "vfr", "jhs", "dkm", "elb"}</pre></td></tr><tr><td class="statText"><pre>"cwd"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"zhadjsg", "vzptftx", "fbaslxs", "ejejncm", "xpxkeae", "ixrrtzw",
+ "ovctbzx", "sfzekhh", "lxzixjk", "jixdpik", "bkianck", "laclyin",
+ "uqmdkfx", "dimswqo", "fojhetr", "grntrce", "obdtqwx", "bhojwcy",
+ "zuuuvst", "mvqtoly", "aftmupx", "govuidx", "qklpret", "yptccki",
+ "uxdnslh", "wudrusz", "uwxbvou", "ouytqun", "pjdexqe", "xraaqdw",
+ "lxmoncl", "sjnjfgb", "qrlqgvc", "fgvoadm", "yohsrxw", "udpvrsr",
+ "mklucgt"}</pre></td></tr><tr><td class="statText"><pre>"vklikgf"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 36</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

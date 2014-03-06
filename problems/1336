@@ -1,0 +1,39 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A certain business maintains a list of all its customers' names.  The list is arranged in
+order of importance, with the last customer in the list being the most important.
+We want to create a new list sorted alphabetically according to customers' last names, but among
+customers with the same last name we want the more important ones to appear 
+earlier in the new list. Alphabetical order (and equality of last names) should <b>not</b> be
+case sensitive. 
+<p>
+Create a class NameSort that contains a method newList that 
+takes a String[] <b>list</b> of 
+names as input and returns the
+new sorted list as a String[]. The last name of a customer is defined to be the part of the name following
+the last space character, or the whole name if it has no space characters. The last name of "Bob E Jones" is "Jones". The last name of "Madona" is "Madona".
+</p><p>The names in the
+new sorted list should retain the same capitalization as they had in the original list.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">NameSort</td></tr><tr><td class="statText">Method:</td><td class="statText">newList</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] newList(String[] list)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>list</b> will contain between 1 and 50 elements, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>list</b> will contain between 1 and 20 characters, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each character in each element of <b>list</b> will be a space, ' ', or a letter ('A'-'Z' or 'a'-'z')</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">no element of <b>list</b> will contain leading or trailing spaces</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">no element of <b>list</b> will contain two or more adjacent spaces</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Tom Jones","ADAMS","BOB ADAMS",
+"Tom Jones","STEVE jONeS"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "BOB ADAMS",  "ADAMS",  "STEVE jONeS",  "Tom Jones",  "Tom Jones" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"> 
+ADAMS comes before JONES. The ADAMS names are listed in reverse order as compared to the original list. Likewise for the JONES names.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"C A R Hoare","Kenny G",
+"A DeForest Hoar","Kenny Gee"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "Kenny G",  "Kenny Gee",  "A DeForest Hoar",  "C A R Hoare" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">No two of these names have the same last name.  So the final list is the case-insensitive alphabetically ordered by last name version of the original.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Trudy","Trudy","TRUDY"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "TRUDY",  "Trudy",  "Trudy" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">All three have the same last name. So they are sorted by importance, which corresponds to the reverse order as compared with the original list.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"tIm JoNeS", "Tim Jones", "tom JoNes", "tim joness", "tiM joneS"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "tiM joneS",  "tom JoNes",  "Tim Jones",  "tIm JoNeS",  "tim joness" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Alan","aLan","alAn","alaN","ALan","AlAn","AlaN","aLAn","aLaN","alAN"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "alAN",
+ "aLaN",
+ "aLAn",
+ "AlaN",
+ "AlAn",
+ "ALan",
+ "alaN",
+ "alAn",
+ "aLan",
+ "Alan" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Al Thompson","Bob Johnson", "John Thompson", "John D Thompson","Bob D Johnson"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "Bob D Johnson",
+ "Bob Johnson",
+ "John D Thompson",
+ "John Thompson",
+ "Al Thompson" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

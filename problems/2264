@@ -1,0 +1,26 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">Proposals arrive at our office in a sequence. We give each one a score. We then
+calculate its "rank" based on comparison with the scores of the most recent submissions.
+Its rank is 1 + the number of recent scores that are greater than it. So a rank of 1
+is the best possible rank and indicates that no recent score was greater. A rank of 2
+would mean that exactly one recent score was greater.
+We need software that can calculate the rank of each score.
+<p>
+Create a class OnLineRank that contains a method calcRanks that is given
+<b>k</b>, the number of recent scores to use in each rank calculation, and
+int[] <b>scores</b>, the sequence of scores of the arriving proposals.  The
+method should calculate the rank for each score and return the sum of 
+all the ranks.
+</p><p>
+Each rank should be calculated based on the preceding <b>k</b> scores. If fewer
+than <b>k</b> scores have preceded this score, base the calculation on all the preceding
+scores. (The first proposal is thus guaranteed a rank of 1.)
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">OnLineRank</td></tr><tr><td class="statText">Method:</td><td class="statText">calcRanks</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int calcRanks(int k, int[] scores)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>k</b> will be between 1 and 100 inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>scores</b> will contain between 1 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>scores</b> will be between 0 and 1000 inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>3</pre></td></tr><tr><td class="statText"><pre>{6,9,8,15,7,12}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 11</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+The 6 is the first score and earns a rank of 1. The 9 is compared with the 6, which does not exceed it, so it earns a rank of 1. The 8 is compared with the 6 and 9, and is beaten by the 9, so it earns a rank of 2. The 15 is compared with 6, 9, and 8, and earns a rank of 1. The 7 is compared with 9, 8, and 15, but not with 6, which is not recent. Its rank is 4. The 12 is beaten by the 15, earning a rank of 2. 1+1+2+1+4+2 = 11</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>80</pre></td></tr><tr><td class="statText"><pre>{3,3,3,3,3,3,3}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   No score is exceeded by even one of its predecessors, so each of the seven scores
+   earns a rank of 1. </td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

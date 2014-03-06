@@ -1,0 +1,43 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">We are studying sub-atomic particles. At regular time intervals, all the particles 
+simultaneously undergo a transformation.  The state of each particle can be
+represented by an integer value (which can be arbitrarily large), and each 
+transformation changes the state of 
+a particle by one of 4 values.  At each transformation time, each of the particles independently 
+undergoes one of the 4 changes. Each of the four possibilities is equally likely to occur to each particle.
+<p>  
+We believe that whenever two adjacent particles transform to have identical states,
+they annihilate each other.
+We will call a pair of particles "unstable" if there is a
+sequence of transformations that could lead to an annihilation. 
+</p><p>
+We need to estimate the probability that two adjacent particles are unstable.
+To make this specific, we will choose two
+particles and assume that each is equally likely to have any initial state between
+-4999 and 5000 inclusive (a state of 0 is possible). Create a class AntiMatter
+that contains a method unstable that receives a int[] <b>xform</b> containing the 
+4 legal transformation amounts and returns the probability that there
+exists a sequence of transformations for the two particles that would lead to mutual
+annihilation.
+</p><p>
+The method should return the probability as a String with a decimal point, 
+exactly eight digits to the right of the decimal point, and no leading zeros. 
+Since there are 100,000,000 equally likely pairs, this probability will be exact.
+</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">AntiMatter</td></tr><tr><td class="statText">Method:</td><td class="statText">unstable</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String unstable(int[] xform)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>xform</b> will contain exactly 4 elements (not necessarily distinct).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>xform</b> will be between -10,000 and 10,000 inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{6,6,6,6}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: ".00010000"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">        Every transition of each particle increases its state by 6, so unless the two
+   particles start with identical states and annihilate immediately, they can
+   never reach identical states.  There are 10,000 pairs of particles that
+   immediately annihilate.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{1,-1,1,-1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: ".50000000"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"> If two particles initially have states that differ by an odd number, then
+   after every transition they will still differ by an odd number, so they can
+   never annihilate.  But if they start with an even difference in their states,
+   then the lower one can always increase its state by 1 while the higher one 
+   decreases by 1, leading eventually to annihilation.
+   Since half of the
+   100,000,000 pairs are either even-even or odd-odd, 50,000,000 are unstable.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{0,1,-1,1}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "1.00000000"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"> The lower particle can stay at its initial state by transforming by 0 each 
+   time, while the higher particle transforms by -1 until annihilation occurs.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{0,0,0,792}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: ".00126448"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

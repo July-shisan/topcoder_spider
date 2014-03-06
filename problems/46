@@ -1,0 +1,32 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>Given that January 1, 1990 falls on a Monday, determine which weekday a given
+date (restricted to the years 1990-1999) falls on.
+
+The program will take as input three integers representing a valid month, day,
+and year, from the years 1990-1999. The output will be a string containing a
+case sensitive day of the week :
+
+         (Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday)
+
+Here are the number of days for each month in 1990-1999 :
+
+(Jan, Mar, May, Jul, Aug, Oct, Dec) = 31; (Apr, Jun, Sep, Nov) = 30;
+(Feb)=28 except on 1992, 1996 (Feb)=29  (leap year)
+
+NOTE : You are not allowed to use any external libraries for this problem
+       (ie no import statements)
+
+Here is the method signature :
+
+public String getDay(int month, int day, int year);
+
+We will check to make sure the input to this problem is valid.
+(ie date validity, year restriction, etc)
+
+Example :
+
+Input : 4 26 1999
+Output : Monday</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Weekday</td></tr><tr><td class="statText">Method:</td><td class="statText">getDay</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String getDay(int param0, int param1, int param2)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

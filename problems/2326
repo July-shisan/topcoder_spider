@@ -1,0 +1,94 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Your task is to convert a black-and-white image into the compressed format described below.
+Your method should return the shortest possible encoding for the image.  If more than
+one encoding achieves the minimum length, return the one that comes first alphabetically.
+</p>
+
+<p>
+The encoding format is based on the idea of recursively decomposing an image into subimages 
+until each subimage is composed of a single color.  For example, the image
+</p>
+<pre>
+   BBBWWW
+   BBBWWW
+</pre>
+might be decomposed into two 2-by-3 subimages:
+<pre>
+   BBB   WWW
+   BBB   WWW
+</pre>
+The black subimage could then be encoded as '<tt>B</tt>' and the white subimage could be encoded as '<tt>W</tt>'.
+The entire decomposition would be encoded as "<tt>LBW</tt>".
+
+<p>
+An image can be decomposed in four different ways, each indicated by a single character:
+</p><ul><li> '<tt>L</tt>' indicates that the image is decomposed into its left half and its right half (if the
+     image contains an odd number of columns, the center column is considered part of the left half).</li>
+<li> '<tt>U</tt>' indicates that the image is decomposed into its upper half and its lower half (if
+     the image contains an odd number of rows, the center row is considered part of the upper half).</li>
+<li> '<tt>C</tt>' indicates that the image is decomposed into even columns and odd columns (the leftmost
+     column is considered column 0, and is therefore even).</li>
+<li> '<tt>R</tt>' indicates that the image is decomposed into even rows and odd rows (the topmost row
+     is considered row 0, and is therefore even).</li>
+</ul>
+The letters '<tt>B</tt>' and '<tt>W</tt>' indicate that the image is completely black or completely
+white, respectively.  If the image contains a mix of black and white, then it is decomposed in one of the four
+ways.  The image is encoded as the single letter for the decomposition pattern, followed by the encoding of the
+left/upper/even subimage, followed by the encoding of the right/lower/odd subimage.  An image that contains a single
+column will never be decomposed using '<tt>L</tt>' or '<tt>C</tt>', and an image that contains a
+single row will never be decomposed using '<tt>U</tt>' or '<tt>R</tt>'.
+
+
+<p>
+For example, the image
+</p>
+<pre>
+    BWB
+    WWW
+</pre>
+could be encoded in a minimum of 5 characters in any of the following ways: "<tt>CRBWW</tt>", "<tt>CUBWW</tt>", "<tt>RCBWW</tt>", or 
+"<tt>UCBWW</tt>".  Of these, "<tt>CRBWW</tt>" is the first alphabetically, so it is the preferred answer.  The '<tt>C</tt>'
+indicates that the original image is decomposed into the two subimages
+<pre>
+    BB   W
+    WW   W
+</pre>
+The 2-by-2 subimage is then encoded as "<tt>RBW</tt>" and the all-white 2-by-1 subimage is encoded simply as '<tt>W</tt>'.
+
+<p>
+The image will be given as a rectangular <tt>String[]</tt> <b>image</b> containing the characters 'B' and 'W'.
+Each element of <b>image</b> represents a row of the image.  For example, the image
+</p>
+<pre>
+    BBBWWW
+    WWWBBB
+    BBWWBB
+</pre>
+would be represented as
+<pre>
+  { "BBBWWW", "WWWBBB", "BBWWBB" }
+</pre>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ImageCompress</td></tr><tr><td class="statText">Method:</td><td class="statText">compress</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String compress(String[] image)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Decompressing a compressed image requires knowledge of the original image's size, as well as the information in the format described here.  Do not be concerned that the size is not encoded in the compressed format.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>image</b> contains between 1 and 30 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>image</b> contains between 1 and 30 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>image</b> contains the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Every character in <b>image</b> is a 'B' or a 'W'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "BBBWWW",
+  "BBBWWW" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "LBW"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The first example above.  The left subimage is completely black, and the
+right subimage is completely white.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "BWB",
+  "WWW" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "CRBWW"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The second example above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "BWBWBWBW",
+  "WBWBWBWB",
+  "BWBWBWBW",
+  "WBWBWBWB",
+  "BWBWBWBW" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "CRBWRWB"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">A checkerboard pattern.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "WWBWBWBW",
+  "WBWBWBWB",
+  "BWBWBWBW",
+  "WBWBWBWB",
+  "BWBWBWBB" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "CRCCRRWBBBBWRCWCWUWBB"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Another checkerboard, but with the upper left and lower right corners swapped.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "WWWWWWWWWW",
+  "WWBBWWBBWW",
+  "WBBBBBBBBW",
+  "WBBBBBBBBW",
+  "WWBBBBBBWW",
+  "WWWBBBBWWW",
+  "WWWWBBWWWW",
+  "WWWWWWWWWW" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "UURWCCWBCWBCCCCWBBBCLBWBRCCCWBRBWCCWBRBWRLLWBLLBWWW"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

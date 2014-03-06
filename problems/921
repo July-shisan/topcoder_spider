@@ -1,0 +1,51 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+At TC University, there are a number of different majors.  People in these
+majors occasionally switch from one major to another each year.  Additionally,
+TCU is famous for having students who never graduate.  Your task is, given a
+list of majors, the starting number of people in each major, and the
+percentages of people who switch from each major to each other major,
+determine the expected number of people who are in each major after a certain
+number of years.
+</p><p>
+The input String[] will be a list of the
+<b>percentages</b> of people who change to each other major, each year.  Element <i>i</i> of <b>percentages</b> is a single space delimited list of integers, where the <i>j</i><sup>th</sup> integer in the list represents the percentage of people in major <i>i</i> who switch to major <i>j</i> each year (the <i>i</i><sup>th</sup> integer in element <i>i</i> is the percentage of people in major <i>i</i> who stay in that major).  You will also be given a int[], <b>start</b> representing the intial number of students in each major (the <i>i</i><sup>th</sup> element of <b>start</b> represents the number of people starting in major <i>i</i>).
+</p><p>
+Thus, if the input String[] were {"90 10","05 95"} this would mean that each
+year 10% of the people with major 0 become people with major 1, while the
+remaining 90% keep major 0.  Similarly, every year 5% of people with major 1
+switch to major 0, while the other 95% of them remain in major 1.
+</p><p>
+If a fractional number of people would switch majors, add the fractional part onto the number of people who remain in the same major they started in.  Thus there are always the same number of total people at TCU.  For example, if you end up with 4.7 people switching from one major 0 to major 1, and 3.3 people staying in major 0, then take the 0.7 people, and add them to the number of people who stay in the same major.  Thus, in this example, 4 people would switch from major 0 to major 1, and 4 people would stay in the major 0.
+</p><p>
+Given this information, and the number of <b>years</b> that people are switching,
+determine how many people there are in each major after the given number of years have passed.
+</p>
+
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TCU</td></tr><tr><td class="statText">Method:</td><td class="statText">majors</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] majors(String[] percentages, int[] start, int years)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>percentages</b> will contain between 1 and 20 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>percentages</b> will contain between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>percentages</b> will be a space delimited list of integers (which may have leading 0's and extra, leading, or trailing spaces).</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>percentages</b> will have a number corresponding to every major.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The sum of all the numbers in each element of <b>percentages</b> will be 100.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each number in each element of <b>percentages</b> will be between 0 and 100, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>start</b> will be between 0 and 1,000,000, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>start</b> will contain the same number of elements as <b>percentages</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>years</b> will be between 0 and 10,000 inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"99 01","99   001"}</pre></td></tr><tr><td class="statText"><pre>{1000000,0}</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 990000,  10000 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+At the start there are 1,000,000 people in major 0, and none in major 1.
+</p><p>
+During the first year, 1% of the people in major 0 switch to major 1.  Thus, after one year there are 990,000 people in major 0 and 10,000 people in major 1.
+</p><p>
+During the second year, 1% of the people in major 0 (0.01 * 990,000 = 9900)
+switch to major 1.  At the same time, 99 percent of the people in major 1
+switch to major 0 (0.99 * 10,000 = 9900).  Since the same number of people
+switch from major 0 to major 1 as switch from major 1 to major 0, there is no
+net change in the number of people in the two majors.  Thus, after two years
+(and after any number of years greater than two), there are 990,000 people in
+major 0, and 10,000 people in major 1.
+</p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"80 1 5 14","2 76 19 3","1 3 45 51","30 32 26 12"}</pre></td></tr><tr><td class="statText"><pre>{1237,625,9618,13476}</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 7497,  7212,  5533,  4714 }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+After 1 year: {5141, 5089, 8011, 6715}
+<br>
+After 2 years: {6309, 6309, 6574, 5764}
+<br>
+After 3 years: {6968, 6900, 5971, 5117}
+<br>
+After 4 years: {7308, 7129, 5677, 4842}
+<br>
+After 5 years: {7497, 7212, 5533, 4714}
+</p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"80 1 5 14","2 76 19 3","1 3 45 51","30 32 26 12"}</pre></td></tr><tr><td class="statText"><pre>{1237,625,9618,134760}</pre></td></tr><tr><td class="statText"><pre>500</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 46162,  41768,  31364,  26946 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{" 00 100 "," 100 0 "}</pre></td></tr><tr><td class="statText"><pre>{23,37}</pre></td></tr><tr><td class="statText"><pre>999</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { 37,  23 }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

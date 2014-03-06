@@ -1,0 +1,129 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+Trees are common in computer science and in the business world: search trees, inheritance diagrams, 
+organization charts, etc.  Anytime we work with trees, we inevitably end up wanting to draw pictures
+of them.  In this problem, you will write a method that draws textual pictures of trees.  For example,
+here is a sample picture of the kind that you will draw:
+</p>
+<pre>
+         ALICE         
+           |           
+    BOB-------CONROY   
+     |          |      
+DENISE-EDITH FRANCINE  
+                |      
+          GILBERT-HARRY 
+</pre>
+Notice that every node has a label that is a sequence of one or more uppercase letters ('A'-'Z').
+Sibling nodes are connected by dashes ('<tt>-</tt>'), and each parent node is connected to its children by
+a single vertical bar ('|').  Nodes are limited to at most two children.
+For example,
+in the above picture, "BOB" has two children but "CONROY" has only one child (all quotes for clarity
+only).
+
+<p>
+The layout of a picture is controlled by the following rules:
+</p><ol><li> A child node is always drawn two rows below its parent. </li>
+<li> Within a row, nodes are drawn from left to right in the same order that they appear in the input.  (See below for the format of the input.) </li>
+<li> Sibling nodes are separated by one or more dashes ('<tt>-</tt>').  Adjacent non-sibling nodes in the same row are separated
+     by one or more spaces ('<tt> </tt>'). </li>
+<li> The vertical bar ('|') connecting a parent to its children is drawn directly below the middle character of the parent's label and
+     directly above the character midway between the first character of the first child's label and the last character of the last
+     child's label.  When the middle of the parent's label and/or the children's labels falls between characters, the vertical bar
+     is aligned with the character immediately to the left of the true center.</li>
+<li> Sibling nodes are drawn as close together as possible without violating Rules 1-4.  Placing siblings lower in
+     the tree close together takes precedence over siblings higher in the tree (see Example 1).</li>
+</ol><p>
+A tree will be specified by a String in the following format:
+</p>
+<pre>
+     &lt;tree&gt;     = &lt;label&gt; "[" &lt;treelist&gt; "]"
+     &lt;treelist&gt; = "" | &lt;tree&gt; | &lt;tree&gt; &lt;tree&gt;
+     &lt;label&gt;    = <i>one or more uppercase letters</i></pre>
+Note that spaces in the grammar are for clarity only, and do not appear in the input.
+In words, a tree is written as the label of its root followed by its subtrees in square brackets.
+For example, a one-node tree with the label "FRED" would be written "FRED[]" while a three-node tree with labels "ROOT", "LEFTCHILD", and "RIGHTCHILD" would be written "ROOT[LEFTCHILD[]RIGHTCHILD[]]".
+The tree drawn above would be written
+<pre>
+  "ALICE[BOB[DENISE[]EDITH[]]CONROY[FRANCINE[GILBERT[]HARRY[]]]]"
+</pre>
+In practice, the written form of a tree may be too long to fit comfortably in a single String.
+The actual input will be a String[] <b>tree</b>.  However, you should think of all the elements of
+<b>tree</b> as being concatenated together.  For example, the written form of the tree drawn above might be
+input as the String[]
+<pre>
+  { "ALICE[BOB[DENISE[]EDITH[]]CONR",
+    "OY[FRANCINE[GILBERT[]HARRY[]]]]" }
+</pre>
+Given the String[] <b>tree</b>, you are to generate and return a rectangular String[] containing
+the picture of the tree.
+Pad each row on the front and/or back with spaces as needed to make the return value rectangular, but be careful to 
+maintain the alignment of your picture.  Your picture should not contain any rows or columns that are entirely spaces.
+
+
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TreeDrawing</td></tr><tr><td class="statText">Method:</td><td class="statText">draw</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] draw(String[] tree)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>tree</b> contains between 1 and 3 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>tree</b> contains between 1 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>tree</b> contains only uppercase letters ('A'-'Z') and square brackets ('[' and ']').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The concatenation of the elements of <b>tree</b> contains at least 3 characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The concatenation of the elements of <b>tree</b> satisfies the grammar shown above.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "ALICE[BOB[DENISE[]EDITH[]]CONR",
+  "OY[FRANCINE[GILBERT[]HARRY[]]]]" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "         ALICE         ",
+ "           |           ",
+ "    BOB-------CONROY   ",
+ "     |          |      ",
+ "DENISE-EDITH FRANCINE  ",
+ "                |      ",
+ "          GILBERT-HARRY" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "A[B[C[DDDDDDDDDDDDDDD[]]E[]]F[G[H[]]I[]]]" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "            A      ",
+ "            |      ",
+ "        B--------F ",
+ "        |        | ",
+ "       C-E      G-I",
+ "       |        |  ",
+ "DDDDDDDDDDDDDDD H  " }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Notice that by moving C and E farther apart, we could draw B and F closer
+together, as in
+<pre>
+                A      
+                |      
+             B------F   &lt;&lt;&lt; B and F are now separated by 6 dashes instead of 8
+             |      | 
+          C-----E  G-I  &lt;&lt;&lt; C and E are now separated by 5 dashes instead of 1
+          |        |  
+   DDDDDDDDDDDDDDD H  
+</pre>
+However, priority is given to the lower siblings, so we keep C and E close together.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "A[BBBBB[]C[D[FFFFFFFFF[]]E[]]]" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "   A      ",
+ "   |      ",
+ "BBBBB-C   ",
+ "      |   ",
+ "     D-E  ",
+ "     |    ",
+ " FFFFFFFFF" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Notice that by drawing D and E farther apart, we could make the overall picture narrower,
+as in
+<pre>
+      A     
+      |     
+   BBBBB-C  
+         |  
+       D---E   &lt;&lt;&lt; D and E are now separated by 3 dashes instead of 1
+       |    
+   FFFFFFFFF   &lt;&lt;&lt; the overall picture is now 9 characters wide instead of 10
+</pre>
+However, making the overall picture narrower is not our goal, so we keep D and E close
+together.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ "TOPCODERCOLLEGIATECHALLENGE[SEMIFINALROOMONE[",
+  "TOMEK[ERYX[]ADRIANKUEGEL[MICKLE[]]]BSTANES",
+  "CU[LARS[RALPHFURMANIAK[]]RUBERIK[]]]]" }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "    TOPCODERCOLLEGIATECHALLENGE ",
+ "                 |              ",
+ "          SEMIFINALROOMONE      ",
+ "                 |              ",
+ "      TOMEK----------BSTANESCU  ",
+ "        |                |      ",
+ "ERYX-ADRIANKUEGEL   LARS-RUBERIK",
+ "          |          |          ",
+ "        MICKLE RALPHFURMANIAK   " }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A[B[]C[ABCDEFGHIJK[]]]"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 
+{ "    A      ",
+ "    |      ",
+ "   B-C     ",
+ "     |     ",
+ "ABCDEFGHIJK" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

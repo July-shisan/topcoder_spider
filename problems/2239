@@ -1,0 +1,133 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+<i>
+
+<b>Warning</b>: Embedded in this problem statement are images that may
+not be visible if you are using a plugin. For best results, view this
+problem in the standard Arena editor.
+
+</i>
+</p><p>
+
+"To heck with this quipu!" exclaimed Tupac the Incan philosopher. He
+was trying to record the contents of his household using the knot
+language of Peru, but the rules were too complicated. Who besides a
+tax collector could keep track of all the fixed knots, transient knots,
+and rhetorical knots?
+
+</p><p>
+
+After some thought, Tupac contrived a simpler scheme that would encode
+each inventory item on a length of string using a sequence of square
+knots and bow knots. For one particular collection of four items, he
+tied the following four strings, where 's' stands for a square knot and
+'b' for a bow knot: {"bsb", "bbs", "sbbs", "sbs"}.
+
+</p><p>
+
+This took 13 knots. Tupac now gathered the strings into a quipu by tying
+them at one end with a top knot, making a grand total of 14 knots. The
+result of his efforts is depicted in the following image, where the bow
+knots are colored blue; the square knots, red; and the top knot, black.
+
+</p><p>
+
+</p><center><img src="http://www.topcoder.com/contest/problem/BinaryQuipu/trie_dreads.gif"></center>
+
+<p>
+
+"The top knot is important," explained Tupac to his wife, Cuxi, "because
+it shows me where to start reading each item."
+
+</p><p>
+
+"Let me see that," said Cuxi, reaching for the quipu. "I can record the
+same four items using fewer knots."
+
+</p><p>
+
+Once Cuxi had cut off some parts of the quipu and reknotted a few
+others, it emerged like so.
+
+</p><p>
+
+</p><center><img src="http://www.topcoder.com/contest/problem/BinaryQuipu/trie_full.gif"></center>
+
+<p>
+
+Her husband goggled at this feat. "Three knots fewer!" he cried. "And
+it encodes exactly the same inventory!"
+
+</p><p>
+
+Tupac saw that if he began from the top knot and followed a path through
+the quipu from left to right until the end of a string, he could spell out
+any inventory item, but nothing that wasn't in the inventory. This was an
+improvement over the original quipu, in which he sometimes found himself
+reading the wrong item and therefore having to backtrack to the top knot.
+
+</p><p>
+
+"I can do better yet," said Cuxi, "if I join some strings at the other
+end of the quipu. Watch this."
+
+After some more cutting and reknotting, she produced the following
+configuration.
+
+</p><p>
+
+</p><center><img src="http://www.topcoder.com/contest/problem/BinaryQuipu/trie_compressed.gif"></center>
+
+<p>
+
+Cuxi stated emphatically that you weren't supposed to pursue a looping 
+path through the quipu. "Follow the grain of the string from beginning
+to end," she said, "and make sure you don't double back. The quipu only
+works in one direction."
+
+</p><p>
+
+She also pointed out that the paths were deterministic: at every
+knot where the quipu bifurcated, there was a choice of two different
+knots. This guaranteed that any inventory item could be found without
+backtracking or pursuing several paths at once.
+
+</p><p>
+
+Tupac was pleased to confirm that Cuxi's abbreviated quipu was
+functionally equivalent to the original. He could begin reading from
+the top knot and proceed strictly from left to right through the knots,
+following one of four distinct paths that spelled out exactly the items
+of the inventory.
+
+</p><p>
+
+"I can't make it any smaller," said Cuxi, "but a quipu with eight knots
+is an improvement over the original fourteen. So I'm pretty good. I'm
+only worried about cases where one item in the inventory is a prefix
+of another." 
+
+</p><p>
+
+"There will never be such a case,"  said Tupac. "As it happens, my
+inventory encoding has the property that no item can be a prefix of
+another."
+
+</p><p>
+
+You are given a String[] describing a collection of inventory
+items encoded under Tupac's system. Calculate the smallest number of
+knots, including the top knot, that must be tied to make a deterministic
+binary quipu for this inventory.
+
+</p> 
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BinaryQuipu</td></tr><tr><td class="statText">Method:</td><td class="statText">fewestKnots</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int fewestKnots(String[] inventory)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Since Tupac's encoding precludes any inventory where one item is a prefix of another, there will be no duplicates.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>inventory</b> contains between 1 and 50 elements, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>inventory</b> is between 1 and 50 characters long, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">no element of <b>inventory</b> is a prefix of any other element</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each character in every element of <b>inventory</b> is either 's' or 'b'</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"bsb", "bbs", "sbbs", "sbs"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 8</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example shown above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"s", "b"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><center><img src="http://www.topcoder.com/contest/problem/BinaryQuipu/trie_case01.gif"></center></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"bs", "sb"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><center><img src="http://www.topcoder.com/contest/problem/BinaryQuipu/trie_case02.gif"></center></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"bs", "sb", "bb", "ss"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><center><img src="http://www.topcoder.com/contest/problem/BinaryQuipu/trie_case03.gif"></center></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"bssbs", "ssbs", "sbb", "bbs", "sbs", "ssbb"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><center><img src="http://www.topcoder.com/contest/problem/BinaryQuipu/trie_case04.gif"></center></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"bbbsssbbsbbssbbbbs",
+"bssssbbbbsbbsbbbbbbsbbsbsssbbbsbbbbbsbbssbsb",
+"sbbbbbsbbbsbsssbssssbssbbsssssssbbssss",
+"sbbbbbsbsbssbssbsssbsbbsbssbsbbbsbsbs",
+"bsbbbbbssbsbbbbsbbs",
+"bbsbbsbsssbsbbsbbssbbbsbsssbsbbsbsbssbsbsssbsbsbs"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 181</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

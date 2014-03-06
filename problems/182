@@ -1,0 +1,92 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>PROBLEM STATEMENT
+
+When a binary message is transmitted across a network, there is always a chance
+that the message might be corrupted by the time it is received.  In order for
+the receiver to determine if an error occurred during transmission, the
+transmitter sends an additional shorter message, called the key.  The key is
+functionally derived from the first message and is used by the receiver to
+perform a check based on both of these messages.
+
+Suppose there is an original binary message M, and the derived binary message
+key K. The verification check is accomplished by performing a bitwise
+operation. Let R be the "residue", which is the result of performing this
+bitwise operation on M and K. The bitwise operation is performed as follows:
+
+1. Align K beneath M, starting with the left-most nonzero bit of M. 
+2. Execute an XOR operation on M and K where XOR(x,y)=0 (zero) if x is the same
+as y, and XOR(x,y)=1 (one) if x is different than y.  Let R equal the result of
+this step.
+3. Repeat steps 1 and 2 on each newly derived R until |R| is equal to |K|-1. If
+|R| is less than |K|-1, left-pad R with 0's (zeros) until the final |R| is
+equal to |K|-1.
+
+If the final residue is all zeros, the message was transmitted correctly.
+Otherwise, an error occurred.
+
+Create a class BitChecker that contains the method getResidue, which takes two
+binary Strings, M and K as input and returns a binary String representing the
+final residue. 
+
+DEFINITION
+Class: BitChecker
+Parameters: String, String
+Returns: String
+Method signature (be sure your method is public):  String getResidue(String M,
+String K);
+
+
+NOTES
+- Assume the key message is always received correctly.
+- Let |K| be the length of K.
+- Let |M| be the length of M counting from the leftmost nonzero bit to the
+right most bit (inclusive).
+- Let |R| be the length of R counting from the leftmost nonzero bit to the
+right most bit (inclusive).
+
+
+
+TopCoder will ensure the validity of the inputs.  Inputs are valid if all of
+the following criteria are met:
+- The |M| &gt; |K|.
+- The leftmost bit in K must be 1.
+- Each bit of both M and K can only be a 1 (one) or 0 (zero).
+- M can be of length 3 - 50 (inclusive) counting from the leftmost nonzero bit
+to the rightmost bit (inclusive).
+- K can be of length 2 - 49 (inclusive) counting from the leftmost nonzero bit
+to the rightmost bit (inclusive).
+	
+EXAMPLES
+Here's an example, with M = 10011010010011 and K = 10011:
+
+10011010010011
+10011
+-----
+00000010010011
+      10011
+      -----
+00000000001011 
+          Method returns 1011 
+
+Here's another example, with M = 11010110111110 and K = 10011:
+11010110111110
+10011
+-----
+01001110111110
+ 10011
+ -----
+00000010111110
+      10011
+      -----
+00000000100110
+        10011
+        -----
+00000000000000 
+
+Method returns 0000
+
+
+</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BitChecker</td></tr><tr><td class="statText">Method:</td><td class="statText">getResidue</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String getResidue(String param0, String param1)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

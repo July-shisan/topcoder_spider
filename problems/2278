@@ -1,0 +1,111 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p><i>Plugin users: There is a picture in the problem statement.</i></p>
+
+<p>
+Mhing is a card game based on the more famous Mah Jong. The deck of cards
+contains <i>suit cards</i>, <i>honor cards</i> and <i>mhing cards</i>. In this problem,
+we will assume there is an infinite supply of each type of card.
+</p>
+
+<p>
+There are three different suits: <i>bamboo</i>, <i>characters</i> and <i>dots</i>.
+A suit card belongs to one of these suits and has a value between
+1 and 9, inclusive. The shorthand notation for suit cards will
+be (quotes for clarity) "&lt;suit&gt;&lt;value&gt;" where &lt;suit&gt; is the first letter of the suit.
+<tt>"b5"</tt> and <tt>"d9"</tt> will thus represent "suit bamboo, value 5" and "suit dots, value 9", respectively.
+</p>
+
+<p>
+There are two types of honor cards: <i>dragons</i> and <i>winds</i>.
+There are three different dragons: red, green and white. The shorthand
+notation for these cards will be <tt>"dr"</tt>, <tt>"dg"</tt> and <tt>"dw"</tt>, respectively.
+There are also four different winds: north, south, east and west,
+with their respective shorthand notations <tt>"wn"</tt>, <tt>"ws"</tt>, <tt>"we"</tt> and <tt>"ww"</tt>.
+</p>
+
+<br><img src="http://172.16.100.15/contest/problem/Mhing/mhing.jpg"><p>
+A mhing card works like a joker in regular card games. That is,
+the player with the card decides which suit card or honor card
+it should represent. The shorthand notation for a mhing card is <tt>"mh"</tt>.
+</p>
+
+<p>
+At the start of the game, each player has 13 cards. During a player's
+turn, he first gets a new card. If the 14 cards form a <i>mhing hand</i>
+(see below), he wins the game. Otherwise he throws away one card, and the turn ends.
+A mhing hand is a partioning of the 14 cards into five <i>groups</i>, four of the
+them containing exactly three cards, and one containing exactly two cards (a pair).
+Each card must belong to exactly one group.
+</p>
+
+<p>
+A group can either be a <i>triplet</i>, a <i>sequence</i> or a <i>pair</i>. A <i>triplet</i>
+contains three identical cards, either suit cards or honor cards.
+So, {<tt>"c5"</tt>, <tt>"mh"</tt>, <tt>"c5"</tt>} and {<tt>"dw"</tt>, <tt>"dw"</tt>, <tt>"dw"</tt>}
+are two possible triplets (remember that a mhing card can be any other card) while
+{<tt>"b2"</tt>, <tt>"d2"</tt>, <tt>"d2"</tt>} and {<tt>"wn"</tt>, <tt>"ws"</tt>, <tt>"we"</tt>}
+are not triplets. A <i>sequence</i> contains three suit cards in the same suit where the values
+form a sequence of three consecutive numbers. For instance, {<tt>"d6"</tt>, <tt>"d7"</tt>, <tt>"d8"</tt>} is a sequence, while
+{<tt>"b8"</tt>, <tt>"b9"</tt>, <tt>"b1"</tt>} is not (wrapping around is thus not allowed).
+A <i>pair</i> is just like a triplet except it only contains two cards instead of three (remember that
+exactly one group should be a pair).
+</p>
+
+<p>
+Create a class Mhing containing the method howMany which takes a
+String[] <b>cards</b> containing the initial 13 cards, and returns
+an int, the minimum number of cards the player
+needs to get a mhing hand.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Mhing</td></tr><tr><td class="statText">Method:</td><td class="statText">howMany</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int howMany(String[] cards)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Since the player starts with 13 cards, he will always need at least one extra card.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Remember that a player always throws away a card after he gets one, unless the 14 cards form a mhing hand.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>cards</b> will contain exactly 13 elements.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element in <b>cards</b> will be one of the shorthand notations described in the problem statement.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"c2","c3","c5","c5","c5","ww","dw","mh","mh","b4","b5","d7","d9"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+This input corresponds to the picture in the problem statement.
+If the player for instance gets the cards <tt>"c4"</tt> and <tt>"ww"</tt>
+and throws away <tt>"dw"</tt>, the 14 cards can be partitioned
+into groups like this:
+</p>
+
+<ul><li>{<tt>"c2"</tt>, <tt>"c3"</tt>, <tt>"c4"</tt>}</li>
+<li>{<tt>"c5"</tt>, <tt>"c5"</tt>, <tt>"c5"</tt>}</li>
+<li>{<tt>"b4"</tt>, <tt>"b5"</tt>, <tt>"mh"</tt>}</li>
+<li>{<tt>"d7"</tt>, <tt>"mh"</tt>, <tt>"d9"</tt>}</li>
+<li>{<tt>"ww"</tt>, <tt>"ww"</tt>}</li>
+</ul></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"dr","b3","c1","d1","d4","d8","we","dw","dw","ww","dw","ww","ww"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+The player must throw away 4 cards (for instance <tt>"dr"</tt>, <tt>"b3"</tt>, <tt>"c1"</tt> and <tt>"we"</tt>)
+and get 5 new cards (for instance <tt>"d1"</tt>, <tt>"d1"</tt>, <tt>"d4"</tt>, <tt>"d4"</tt> and <tt>"d8"</tt>)
+to get a mhing hand.
+</p>
+
+<ul><li>{<tt>"dw"</tt>,<tt>"dw"</tt>,<tt>"dw"</tt>}</li>
+<li>{<tt>"ww"</tt>,<tt>"ww"</tt>,<tt>"ww"</tt>}</li>
+<li>{<tt>"d1"</tt>,<tt>"d1"</tt>,<tt>"d1"</tt>}</li>
+<li>{<tt>"d4"</tt>,<tt>"d4"</tt>,<tt>"d4"</tt>}</li>
+<li>{<tt>"d8"</tt>,<tt>"d8"</tt>}</li>
+</ul></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"c5","c9","c6","c5","c8","c9","c9","c5","c5","c4","c7","c5","c2"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+The player only needs one card, <tt>"c3"</tt>, to get a mhing hand:
+</p>
+
+<ul><li>{<tt>"c2"</tt>,<tt>"c3"</tt>,<tt>"c4"</tt>}</li>
+<li>{<tt>"c5"</tt>,<tt>"c5"</tt>,<tt>"c5"</tt>}</li>
+<li>{<tt>"c6"</tt>,<tt>"c7"</tt>,<tt>"c8"</tt>}</li>
+<li>{<tt>"c9"</tt>,<tt>"c9"</tt>,<tt>"c9"</tt>}</li>
+<li>{<tt>"c5"</tt>,<tt>"c5"</tt>}</li>
+</ul></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"c9","c9","c6","c9","c8","c9","c9","c5","c5","c4","c7","c5","c2"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+These are the same cards as in the previous example, except that a <tt>"c5"</tt>
+has been changed into a <tt>"c9"</tt>. The player still only needs one more card, although
+the groups must be partitioned a bit differently. The needed card is <tt>"c2"</tt>.
+</p>
+
+<ul><li>{<tt>"c4"</tt>,<tt>"c5"</tt>,<tt>"c6"</tt>}</li>
+<li>{<tt>"c5"</tt>,<tt>"c5"</tt>,<tt>"c5"</tt>}</li>
+<li>{<tt>"c7"</tt>,<tt>"c8"</tt>,<tt>"c9"</tt>}</li>
+<li>{<tt>"c9"</tt>,<tt>"c9"</tt>,<tt>"c9"</tt>}</li>
+<li>{<tt>"c2"</tt>,<tt>"c2"</tt>}</li>
+</ul></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"c2","d6","b4","c3","b9","d6","d4","b5","b3","d3","b6","b3","b3"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"ws","mh","mh","mh","mh","mh","mh","b1","mh","b3","b2","dr","ws"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+Here the player can afford to make groups consisting of only mhing cards!
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"wn","ws","ww","we","dw","dr","dg","mh","mh","wn","ws","dr","dg"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+Only honor cards and mhing cards.
+</p>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">7)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"b1","b4","b7","c1","c4","c7","d1","d4","d7","wn","ws","we","ww"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

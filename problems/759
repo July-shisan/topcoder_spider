@@ -1,0 +1,103 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>A river can flow either downhill, or at a level elevation for a certain distance.  Given a topographical map (a map representing elevations) and a maximum level flow distance, write a method to determine the largest area that a river can cover, if it starts at any location on the map.</p>
+<p>The map will be a String[] representing the elevations of each coordinate, with each elevation being a single digit number between 0 (lowest) and 9 (highest).</p>
+<p>The maximum level flow distance, <b>maxDist</b>, will be the longest a river can travel on level ground.  So if the distance is 0, a river must flow downhill.  If the distance is 1, it can flow to 1 adjacent coordinate of the same altitude, in each direction, before it must flow downhill.  If the distance is 2, immediately after flowing downhill (or from the starting point), the river can flow to any adjacent coordinate of the same altitude, and then once again to any coordinate adjacent to the new one and of the same altitude, before it must go down hill.  For this calculation, the river flows in the 4 primary directions (north, south, east, and west).  Notice that since a river will go in any direction it can, it's more of a "flood" than a "river".  Thus when determining the area covered by a river starting at a certain point, you must find the area of all the points that can be reached following the above constraints.</p>
+<pre>
+For example:
+0000000000
+0111111110
+0122222210
+0123333210
+0123443210
+0123443210
+0123333210
+0122222210
+0111111110
+0000000000
+</pre>
+<p>Represents a peak with an elevation of 4.</p>
+<p>If <b>maxDist</b> = 2 and the river starts flowing at the '*' then the river can cover an area of 16, shown by '~'.
+</p>
+<pre>
+~~~~~~~000
+~~*~~11110
+~~22222210
+~123333210
+~123443210
+0123443210
+0123333210
+0122222210
+0111111110
+0000000000
+</pre>
+However this isn't the largest area. If the river starts flowing at the peak, then the river can cover the entire area of 100.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">RiverHill</td></tr><tr><td class="statText">Method:</td><td class="statText">largest</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int largest(String[] map, int maxDist)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The river can only flow north, south, east, and west in determining the maximum level flow distance.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each coordinate has an area of 1.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>map</b> will contain between 2 and 40 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>map</b> will contain between 2 and 40 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>map</b> will contain the same number of characters as every other element of <b>map</b>.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>map</b> will contain only the characters '0'-'9' inclusive.  There will be no spaces.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>maxDist</b> will be an integer between 0 and 10, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0000000000"
+,"0111111110"
+,"0122222210"
+,"0123333210"
+,"0123443210"
+,"0123443210"
+,"0123333210"
+,"0122222210"
+,"0111111110"
+,"0000000000"}</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 100</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">By starting the river at the peak (in either position), the river will be able to flow over the whole mountain.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0000000000"
+,"0111111110"
+,"0122222210"
+,"0123333210"
+,"0123443210"
+,"0123443210"
+,"0123333210"
+,"0122222210"
+,"0111111110"
+,"0000000000"}</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 95</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">If you started at the northwest corner of the peak, the only spaces not reachable would be the 5 spaces diagonally southeast from the start.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"0000000000"
+,"0111111110"
+,"0122222210"
+,"0123333210"
+,"0123443210"
+,"0123443210"
+,"0123333210"
+,"0122222210"
+,"0111111110"
+,"0000000000"}</pre></td></tr><tr><td class="statText"><pre>0</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 9</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">By starting the river at the peak (at any of the four elevation 4 positions), the river will only be able to flow downward in the 4 main directions, thus it will be two straight streams, with an area of 9.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"555505555"
+,"555515555"
+,"555525555"
+,"555535555"
+,"555545555"
+,"555545555"
+,"555555555"}</pre></td></tr><tr><td class="statText"><pre>1</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 11</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><pre>
+5555~5555
+5555~5555
+5555~5555
+5555~5555
+55~5~5555
+5~*~~5555
+55~555555
+One of the best rivers starts at the asterix (*).
+</pre>
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"5565236785012472"
+,"3469912625904101"
+,"5943545942017700"
+,"9109166568720711"
+,"6136079994373860"
+,"4129136148916755"
+,"2975832922074121"
+,"4674050103662805"
+,"2494729679116165"
+,"1611964958059846"
+,"2384128690120444"
+,"1010697089697114"
+,"0089682613597732"
+,"4971774663111966"
+,"8543141293776080"
+,"4298494798935152"
+,"5202757354375791"
+,"5376161470010537"
+,"5696381123743171"
+,"1446566116127226"}</pre></td></tr><tr><td class="statText"><pre>2</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 32</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">One of the best rivers (possibly uniquely the best) starts at the space on the 4th row, 6th column (both 0-indexed).  The method returns 32.
+</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

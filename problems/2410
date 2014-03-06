@@ -1,0 +1,97 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">
+<p>
+
+If you've driven much on North American highways, especially west of the
+prairies, you're familiar with the sight of trucks hauling great stacks of
+logs. In the old days, before internal combustion was a going concern,
+logs were transported at a more sedate pace by floating them down a
+river. This was all very picturesque until the logs jammed together so
+tightly that no movement was possible. Then they had to send someone out
+on the river to loosen up the works with dynamite. Skipping nimbly from
+log to log, a lumberjack would find the crux of the logjam and set an
+explosive charge. After lighting the fuse, he had to skip quickly back
+to shore. The lumberjack was prepared to plunge briefly into the river
+as a shortcut, but he really didn't like to get wet. The main thing was
+to get away quickly.
+
+</p><p>
+
+You are given a String[] describing a stretch of river in
+which the character '|' stands for a log, '.' stands for water, and '+'
+is where the lumberjack is standing on a log. The lumberjack can reach
+safety by stepping up, down, left, or right between adjacent logs until he
+reaches the far left or far right, at which point he is immediately safe
+from the blast. (The "far left" is the first character in each String,
+and the "far right" is the last character in each String.) Stepping up or
+down onto a log takes him one second, while stepping left or right onto 
+a log takes two seconds. The lumberjack may step on no more than one
+square of water in his entire trip, at a cost of three seconds instead
+of the usual one or two. Return the minimal number of seconds it will
+take the lumberjack to reach safety, or -1 if he cannot do so.
+
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">LumberjackHack</td></tr><tr><td class="statText">Method:</td><td class="statText">timeToShore</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int timeToShore(String[] riverMap)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>riverMap</b> contains between 1 and 50 elements, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">the first element of <b>riverMap</b> is between 3 and 50 characters long</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">every element of <b>riverMap</b> has the same length as the first element of <b>riverMap</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">for every element of <b>riverMap</b>, each character must be '|', '.', or '+'</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>riverMap</b> contains exactly one occurrence of the character '+'</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".+.",
+ "||."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The lumberjack can reach safety in 1+2 = 3 seconds by stepping down and to the left.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"..+",
+ "||."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The lumberjack is already safe at the right edge.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"....|||",
+ "....|..",
+ "...||..",
+ "||.+...",
+ "...|...",
+ "...||||"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 7</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The lumberjack could reach the upper right corner in 1+2+1+1+2+2 = 9 seconds or the lower right in 1+1+2+2+2 = 8 seconds, but his best choice is to reach the left border in 3+2+2 = 7 seconds.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"||.|....",
+ "........",
+ ".|.+|..|",
+ "...|....",
+ "|..|.|.|"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The lumberjack had better not light that fuse.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".........|.|.|.|.|..||...||.|..|.||...|.|.|||...||",
+ ".||.||...||..|||.....|.||||...|.|.|.|.|..|...|.|||",
+ "||.|.|..||.||....|.....|.||.|||||.|.|.||.|||||.|..",
+ "|.....|.|.||||.||..|.|..|..|.|||||.....||.|.||....",
+ "..|..||...||.|.......|||+||.||||....||||.....|..||",
+ "...||..||||.|......||..|.|||||.|.|||||.||..|||...|",
+ "|||...|..|..|.|||.||.|..|...||.|||..|..||.|.||....",
+ "|..|||||||||.||.....|..|.|.|||||...||...|.|.|||||.",
+ ".|..||...|||............|.|..|||.||.|||.||..||.|||",
+ ".|.|||...||..|..|...||.||..|..|||||.|.|...||..||.|",
+ "||||.|||.|..||||..|..||...|..||.|.||||...|...|.|..",
+ ".||..||...|.....|||.|||||..||......|.||.||.|..||..",
+ "|.|||....|||||.|..|..|.|||..|.||.||.|.|.|.|..||...",
+ ".||.||||||...||||||..||....|..||.|||..||...|.|||||",
+ ".||||.|....|...|.||..||..|||.|||||....|...||.|.||.",
+ ".|...|..||....||...|.||||.....||||.||.|||||||..|||",
+ ".||||...|...|..||...|...|...|.|..|.|.|..|..|||.||.",
+ ".|.|||..||||||||........|||||||||.|.|........|||||",
+ ".....|...||.||...|||...||||..|||...||....||..||.||",
+ "||...||..||.||...||...||||..|.|..|...|||..||..|||.",
+ "|..||||.||..|...|....||||||...|||.|.|||||..|||...|",
+ ".....|||..||.|||.....||..||||...|||||.||.|.||..|||",
+ "|..|.||..|..||..||..|...|..|.||..||||..|...||..|..",
+ "||.|..|.|||||...|...|.|..|||||...|.......|.||.||||",
+ ".|.....|.|||||.....|||...|..|||||...|.||..||.|||.|",
+ ".|...||....|||...|||.||.|.|......|........|.||||||",
+ "..|.|.|.|||||..|||..|.........|...|.|.|...||.....|",
+ ".|.|.|.|..|.|||||||||||.|.|||....|||||...|.||||.|.",
+ "|.|||....|.||||..||......|..|||||.....||.|..||..|.",
+ "||.||.|||.|......|..|.|...|..||.|||..||.....|.|..|",
+ ".||||..|.|.||||.|||.||.||.....|....|....||...|..||",
+ ".....|||...||.||.||....|.||..||....|....|||||.|..|",
+ "|.|.|||||...|.||..|..|..|.|..|.|........||..|.|.||",
+ "....|..|.|..|.||||||....||||.|.||||||.|.|.|.......",
+ "||||....|..|...||..||||||||...|.|||||.|.|||.|...||",
+ "|...|.|..|..|..|....|..||..|||....||..||..|..|..|.",
+ "|||||....|.||.|..|.||..|||..|.|.|..||.|...|.|..||.",
+ "..|.|||.|.||..|...|||.|..|||..||...||...||||.....|",
+ "..||||.|.|.....|||..||||..|.||||..|..|||.....||.||",
+ "|..|||||....|........|.||||.||..||||.|....|||||||.",
+ ".|...||.|.||..|.|....|.||..|.|....|.|.||.||.||.|..",
+ ".|..|..|.||||.||||....|||.....|.|...|.|...|...||..",
+ "|..|||..|.||.|||..||.....|.|..|.|.|...|.....|.....",
+ "||..||.|...|.||...|..|..||.|||.||.|.||...|....|||.",
+ ".|....|.|||.|..|||..|.....|.||.||...|...||.......|",
+ ".||..|||.|.|....|||...|..|.||.||.|.|...|||||.|.|.|",
+ "|.|.||.||.|.|.||.|||.||....||.|||||.||.|.|||......",
+ "|...|||...|.||||....|.||.||.|.........|..||.|..||.",
+ ".|.....|.|.|....||.||...|||.|..||...||.|||.||.|.|.",
+ "||.||.|||.|||..||......|......||..||||.|..||.||||."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 63</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".+."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"..+.."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

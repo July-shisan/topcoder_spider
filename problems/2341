@@ -1,0 +1,58 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">In basketball, players can attempt either two point or three point field goals, and if they are fouled, they can also attempt one point free throws. Since missing a free throw or a field goal often results in losing possession of the ball, it is important to make the most of each shot attempt. Traditionally, this efficiency has been measured by shooting percentage, which is defined as:
+<br><pre>
+                            Field goals made
+   Shooting percentage = ---------------------
+                         Field goals attempted
+</pre>
+<br>
+Unfortunately, this formula is problematic since it does not account for either free throws or the different types of field goals. Therefore, a new formula, called points per shot, is gaining prominence. This is given by:
+<br><pre>
+                                         Total points
+   Points per shot = -----------------------------------------------------
+                     (Field goals attempted) + 0.5*(Free throws attempted)
+</pre>
+<br>
+Consider, for example, a player that makes 4 of 5 two point field goals, 3 of 7 three point field goals, and 7 of 9 free throws. The player has earned 4*2 + 3*3 + 7*1 = 24 points with 5+7=12 field goal attempts and 9 free throw attempts. Thus, the player has earned 24/16.5 = 1.45454545... points per shot.
+
+<p></p>
+
+Create a class ScoringEfficiency that contains a method getPointsPerShot, which is given a String[] <b>gameLog</b>. This will give the history of one player's shot attempts, with each element being equal to one of the following strings (quotes for clarity):
+<ul><li>- "Made 2 point field goal"</li>
+  <li>- "Missed 2 point field goal"</li>
+  <li>- "Made 3 point field goal"</li>
+  <li>- "Missed 3 point field goal"</li>
+  <li>- "Made free throw"</li>
+  <li>- "Missed free throw"</li>
+</ul>
+Given this history, the method should return the player's points per shot, as computed above.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">ScoringEfficiency</td></tr><tr><td class="statText">Method:</td><td class="statText">getPointsPerShot</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double getPointsPerShot(String[] gameLog)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Return values with either a relative or absolute error less than 1.0E-9 will be accepted.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>gameLog</b> will contain between 1 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>gameLog</b> will be one of the six strings listed above.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Made 3 point field goal",
+ "Missed 2 point field goal"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This player has 3 total points, 2 field goals attempted, and 0 free throws attempted, so he has earned 3/2 = 1.5 points per shot.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Made free throw",
+ "Missed free throw",
+ "Missed free throw",
+ "Missed free throw",
+ "Made free throw"}
+</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.8</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This player has 2 total points, 0 field goals attempted, and 5 free throws attempted, so he has earned 2/2.5 = 0.8 points per shot.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Made 2 point field goal", "Made 2 point field goal", "Made 2 point field goal", 
+ "Made 2 point field goal", "Missed 2 point field goal",
+ "Made 3 point field goal", "Made 3 point field goal", "Made 3 point field goal",
+ "Missed 3 point field goal", "Missed 3 point field goal", 
+ "Missed 3 point field goal", "Missed 3 point field goal",
+ "Made free throw", "Made free throw", "Made free throw", 
+ "Made free throw", "Made free throw", "Made free throw", 
+ "Made free throw", "Missed free throw", "Missed free throw"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1.4545454545454546</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"Made 2 point field goal", "Missed free throw",
+ "Made free throw", "Missed free throw", "Made free throw", 
+ "Made 2 point field goal", "Made 2 point field goal",
+ "Missed 2 point field goal", "Missed 2 point field goal",
+ "Made 3 point field goal", "Missed 2 point field goal",
+ "Made 2 point field goal", "Missed 2 point field goal",
+ "Made 3 point field goal", "Missed 2 point field goal",
+ "Missed 2 point field goal", "Missed 3 point field goal",
+ "Made free throw", "Made free throw", 
+ "Missed 3 point field goal", "Missed 2 point field goal",
+ "Missed 2 point field goal", "Made 2 point field goal",
+ "Missed 2 point field goal", "Made 2 point field goal",
+ "Missed 3 point field goal"}
+ </pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.9565217391304348</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This log is from a game by NBA superstar Vince Carter. He had 22 points, 20 field goals attempted, and 6 free throws attempted, so he earned 22/23 = 0.956521739... points per shot.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

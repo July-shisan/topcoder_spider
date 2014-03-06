@@ -1,0 +1,62 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+
+Many elections are decided by plurality voting, which means that
+the winning candidate is the one who earns more votes than any other
+candidate. Such elections are susceptible to the phenomenon of vote splitting. Several
+candidates with similar views may draw support from the same voting base,
+thereby losing to a single candidate who holds less popular views. One
+remedy for vote splitting is a runoff election, where the field of
+candidates is narrowed down through successive rounds of voting until
+one candidate wins a majority of the vote.
+
+</p><p>
+
+The scheme known as instant runoff voting, or IRV, is intended to
+accomplish the same result as a runoff election without incurring the
+expense of multiple voting rounds. In an IRV election, each voter uses a
+slip of paper called a ballot to rank the slate of <i>n</i> candidates
+from 1 to <i>n</i>. The ballots are tallied as follows.
+
+</p><p>
+
+1. If one candidate is ranked first on more than half of all ballots,
+this candidate is declared the winner.
+
+</p><p>
+
+2. Otherwise, the candidate with the fewest number-one rankings is
+eliminated from all ballots, and each voter's ranking is adjusted as
+necessary. If a voter ranked this candidate first, for instance, the
+number-one rank on her ballot is now reallocated to her second-ranked 
+candidate, and so on down the line. If several candidates are tied for
+fewest number-one rankings, all of them are eliminated in this fashion.
+
+</p><p> 
+
+3. If no candidates remain, the election is declared void. Otherwise,
+return to step 1.
+
+</p><p>
+
+For an election with <i>n</i> candidates, you are given a
+String containing <i>n</i> distinct upper-case
+letters, each of which represents a candidate. You are also given a
+String[] encoding all ballots cast by the voting public. Each
+ballot ranks the candidates from most favored to least favored. If
+<i>n</i> is 5, for example, the candidates might be encoded as "PQRST", 
+and some voter may rank them on her ballot as "SRTQP", signifying that she
+ranks candidate S first and candidate P fifth. 
+
+</p><p>
+
+Tally the ballots as described above to determine the outcome
+of the election. If the election is void, return an empty
+String. Otherwise, return a single-character
+String containing the candidate's code.
+
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">InstantRunoff</td></tr><tr><td class="statText">Method:</td><td class="statText">outcome</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String outcome(String candidates, String[] ballots)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>candidates</b> contains between 1 and 10 characters, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each character in <b>candidates</b> is an upper-case letter between 'A' and 'Z', inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>candidates</b> contains no duplicate characters</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>ballots</b> contains between 1 and 50 elements, inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>ballots</b> is exactly as long as <b>candidates</b></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>ballots</b> contains the same characters as <b>candidates</b>, without duplication, but not necessarily in the same order</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"ABC"</pre></td></tr><tr><td class="statText"><pre>{"ACB", "BCA", "ACB", "BCA", "CBA"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "B"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">In the first round, candidates A and B earn two votes each, and C has only one. C is therefore eliminated. In the second round, B has three votes to A's two.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"DCBA"</pre></td></tr><tr><td class="statText"><pre>{"ACBD", "ACBD", "ACBD", "BCAD", "BCAD", "DBCA", "CBDA"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "B"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"ACB"</pre></td></tr><tr><td class="statText"><pre>{"ACB", "BCA", "ACB", "BCA", "ACB", "BCA", "CBA", "CAB"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: ""</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Candidates A and B have three votes each to C's two. C is eliminated. A and B now have four votes each, so both are eliminated. The election is void.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"CAB"</pre></td></tr><tr><td class="statText"><pre>{"ACB", "BCA", "ACB", "BCA", "ACB", "BCA", "CAB", "CAB"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "A"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">C is eliminated in the first round. In the second round, candidate A has five votes to B's three. A wins.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"Z"</pre></td></tr><tr><td class="statText"><pre>{"Z"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "Z"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Z wins by unanimous vote.</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

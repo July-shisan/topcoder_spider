@@ -1,0 +1,30 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>Create a class called Syntax. Given a String that contains, among other
+characters, parentheses '()', square brackets '[ ]' and curly
+ braces '{}',
+create a solution that will determine if the string is balanced.  The String is
+considered balanced if all of the parentheses,
+ brackets, and braces are
+nested, opened, and closed properly.  The rules are as follows:
+
+There must be equal numbers of beginning and ending delimiters for each type.
+Any time a closing delimiter occurs, it must match the most recent unmatched
+open delimiter.
+An ending delimiter can never occur without a cooresponding begining delimiter
+of the same type.
+
+EXAMPLES:
+
+x(y(z{test})abc)  - should return true
+()                - should return true
+([)]              - should return false
+[[]](()){{{}}}    - should return true
+abc(def(ghi)      - should return false
+
+Here is the method signature:
+boolean match(String input)
+
+We will check to make sure the input is valid.</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Syntax</td></tr><tr><td class="statText">Method:</td><td class="statText">match</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">boolean</td></tr><tr><td class="statText">Method signature:</td><td class="statText">boolean match(String param0)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

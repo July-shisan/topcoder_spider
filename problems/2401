@@ -1,0 +1,54 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+You are opening a robotic coffeehouse ("Untouched by human hands!" will be your motto).
+Your customers can order regular or decaffeinated coffee by the ounce.  The machinery processes
+two orders at once: one order of regular and one order of decaffeinated.  Upon receiving the orders,
+the machinery measures and pours the two drinks into serving cups.  Your task is to calculate how
+many seconds the customers will have to wait for their drinks.
+</p>
+
+<p>
+The machinery includes measuring cups of several sizes, but not enough sizes to directly measure all
+the drink sizes on the menu.  Instead, the machinery may measure each of the drinks in several steps.
+For example, to fulfill an order of 1 ounce of decaffeinated coffee using measuring cups that
+hold 4, 6, and 9 ounces, respectively, the machinery might follow these steps:
+</p><ol><li> Pour 4 ounces of coffee from the reservoir into the 4-ounce cup. </li>
+<li> Pour 4 ounces of coffee from the 4-ounce cup into the 9-ounce cup. </li>
+<li> Pour 6 ounces of coffee from the reservoir into the 6-ounce cup. </li>
+<li> Pour 5 ounces of coffee from the 6-ounce cup into the 9-ounce cup, filling the 9-ounce cup to capacity and leaving 1 ounce in the 6-ounce cup. </li>
+<li> Pour the remaining ounce from the 6-ounce cup into the serving cup. </li>
+</ol>
+All pouring actions take 1 second to complete, but actions that involve different cups may be performed simultaneously.
+In this example, step 2 could be performed at the same time as step 3, so the drink could be served after 4 seconds.
+
+
+<p>
+A single pouring action can pour coffee from the reservoir to a measuring cup, from a measuring cup to another measuring cup, from
+a measuring cup to the reservoir, or from a measuring cup to the serving cup.  No measuring cup, serving cup, or reservoir may be
+involved in more than one pouring action simultaneously.  For example, you cannot pour coffee from two different measuring cups into
+the same reservoir at the same time.
+A pouring action ends when the source cup is empty or
+when the destination cup is filled to capacity, whichever comes first.  The reservoir is large enough that you can
+neither empty it nor fill it to capacity.  
+A serving cup has more capacity than needed by the order (to leave room for cream), but you cannot pour coffee out 
+of a serving cup, so you must be careful not to pour more coffee into the serving cup than was ordered.
+</p>
+
+<p>
+The system handles regular and decaffeinated coffee simultaneously.  There are separate reservoirs and serving cups for the
+two kinds of coffee, but they both use the same measuring cups.  Naturally, however, no measuring cup is permitted to hold 
+both kinds of coffee at the same time.  Similarly, regular coffee may not be poured into the decaffeinated reservoir or serving cup, 
+and vice versa.
+</p>
+
+<p>
+You will be given the sizes of the measuring cups in a int[] <b>cups</b>.  In addition, you will be given
+the sizes of the two orders, <b>regular</b> and <b>decaf</b>.  You must calculate and return the minimum time in seconds
+needed to complete both orders.  If it is impossible to complete one or both orders, return -1.
+</p>
+
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Decaffeinated</td></tr><tr><td class="statText">Method:</td><td class="statText">wait</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int, int</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int wait(int[] cups, int regular, int decaf)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">You may not pour coffee on the floor.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>cups</b> contains between 1 and 3 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>cups</b> is between 1 and 12, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>regular</b> and <b>decaf</b> are both between 1 and 16, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 1 }</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>6</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 22</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Pouring 1 ounce of coffee first from the reservoir into the measuring cup, and then from the measuring cup into the serving cup, takes 2 seconds.  Repeat this process a total of 11 times for a total 
+of 22 seconds.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 1, 1 }</pre></td></tr><tr><td class="statText"><pre>5</pre></td></tr><tr><td class="statText"><pre>6</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 12</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The same as the previous example, but now you can use two measuring cups simultaneously.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 3, 6, 12}</pre></td></tr><tr><td class="statText"><pre>9</pre></td></tr><tr><td class="statText"><pre>13</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 10, 11, 12 }</pre></td></tr><tr><td class="statText"><pre>8</pre></td></tr><tr><td class="statText"><pre>7</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 11</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 11, 12, 11}</pre></td></tr><tr><td class="statText"><pre>6</pre></td></tr><tr><td class="statText"><pre>6</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 31</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

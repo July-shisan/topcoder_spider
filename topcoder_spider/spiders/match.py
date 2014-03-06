@@ -11,7 +11,7 @@ class MatchSpider(LoginSpider):
     name = "match"
 
     def crawl(self, response):
-	for i in xrange(0, 1000, 200):
+	for i in xrange(1, 1000, 200):
 		yield Request(url=match_list_url % i,callback=self.extract)
 
     def extract(self, response):
@@ -26,8 +26,6 @@ class MatchSpider(LoginSpider):
 		#print names[i], index_url + hrefs[i], dates[i]
 		item = MatchItem()
 		item['name'] = names[i]
-		if names[i] == 'SRM 611':
-			print response.request.url
 		item['href'] = urljoin(index_url, hrefs[i])
 		item['match_id'] = int({param.split('=')[0]: param.split('=')[1] for param in urlparse(item['href']).query.split('&')}['rd'])
 		item['date'] = '.'.join([dates[i][0].split('.')[2]] + dates[i][0].split('.')[:2])

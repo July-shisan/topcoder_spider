@@ -1,0 +1,49 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>PROBLEM STATEMENT
+Implement a class Clock, which contains a method getAngles.  getAngles takes a
+String in the form "HH:MM:SS" representing a time of day.  getAngles returns an
+int[] holding the angles that the hour hand, minute hand, and the seconds hand
+make, clockwise, from 12:00:00 to the hand.  At 12:00:00 all hands are at 0
+degrees. If the angle is not a whole number of degrees, simply truncate the
+decimal part. 
+
+DEFINITION
+Class Name: Clock
+Method Name: getAngles
+Parameters: String
+Returns: int[]
+Method signature (be sure your method is public):  int[] getAngles(String time);
+
+TopCoder will ensure the validity of the inputs.  Inputs are valid if all of
+the following criteria are met:
+- The input String is in the form "HH:MM:SS"
+- HH is an integer between 01 and 12, inclusive, representing hours.
+- MM is an integer between 00 and 59, inclusive, representing minutes.
+- SS is an integer between 00 and 59, inclusive, representing seconds.
+
+NOTES
+-  The element located at index zero of the return int[] should represent the
+angle that the hour hand made from 12:00:00 to the hour hand.
+-  The element located at index one of the return int[] should represent the
+angle that the minute hand made from 12:00:00 to the minute hand.
+-  The element located at index two of the return int[] should represent the
+angle that the seconds hand made from 12:00:00 to the seconds hand.
+-  The seconds hand makes one full rotation every minute, the minute hand makes
+one full rotation every hour, and the hour hand makes one full rotation every
+twelve hours. 
+-  Keep in mind that the hour and minute hands are continuously moving.  For
+example, the number of degrees returned for the minute and hour hands at
+01:07:00 will not be the same as the number of degrees returned for the minute
+and hour hands at 01:08:00. 
+
+
+EXAMPLES
+"06:00:00" getAngles returns [180, 0, 0]
+"08:30:00" getAngles returns [255, 180, 0]
+"10:17:55" getAngles returns [308, 107, 330]
+
+
+</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Clock</td></tr><tr><td class="statText">Method:</td><td class="statText">getAngles</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">int[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int[] getAngles(String param0)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

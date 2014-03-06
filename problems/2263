@@ -1,0 +1,50 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">The lake where we vacation sometimes floods. As soon as the level reaches the 
+maximum level that
+can be contained by the banks of the lake, the additional water covers a fixed 
+floodplain area, which enlarges the area of the lake. Below are views of the
+lake from the side, with water indicated by X's.
+<pre>
+
+   |              |          |              |
+   |___        ___|          |XXXXXXXXXXXXXX|
+       |      |                  |XXXXXX|
+       |      |                  |XXXXXX|
+       |XXXXXX|                  |XXXXXX|
+       |XXXXXX|                  |XXXXXX|
+
+       (not flooded)             (flooded)
+
+</pre>
+The amount of evaporation depends on the surface area. When the lake is not
+flooded, the evaporation is <b>evapNormal</b> units of water per day. When the lake is
+flooded, the evaporation is <b>evapFlood</b> units per day. The lake never goes dry and never
+extends beyond the floodplain.
+<p>
+Assume that the lake is initially full but not flooded. Create a class WaterLevel
+that contains a method netAmt that is given <b>evapNormal</b>, <b>evapFlood</b>, and int[] <b>rain</b>,
+the amounts of rain that fell on each day during our vacation. The method returns the net 
+increase (a positive value) or decrease (a negative value) in the units of water in the lake during 
+our vacation. The i-th element of <b>rain</b> tells how many units of water fell during the  
+entire i-th day. You should assume that it rains at a constant rate throughout the day. 
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">WaterLevel</td></tr><tr><td class="statText">Method:</td><td class="statText">netAmt</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int, int, int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">double</td></tr><tr><td class="statText">Method signature:</td><td class="statText">double netAmt(int evapNormal, int evapFlood, int[] rain)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">A return value with either an absolute or relative error of less than 1.0E-9 is considered correct.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>evapNormal</b> will be between 0 and 1000 inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>evapFlood</b> will be between <b>evapNormal</b> and 1000 inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>rain</b> will contain between 1 and 50 elements inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">each element of <b>rain</b> will be between 0 and 1000 inclusive</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>40</pre></td></tr><tr><td class="statText"><pre>{0,60,0,0}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -35.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+    After the first day, 20 units have evaporated so we are 20 units below flood stage.
+    After the first half of the second day, 30 units of rain have
+    fallen while 10 units have evaporated, so we have reached flood stage.  By
+    the end of the day another 30 have fallen and 20 (40 / 2) have evaporated
+    leaving us 10 units above flood stage.
+    On the third day, we leave flood stage after 1/4 of a day. By the end of the
+    day we are 15 units below flood stage.
+    On the fourth day 20 units evaporate leaving us 35 units below flood stage.
+
+
+ </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>39</pre></td></tr><tr><td class="statText"><pre>{0,60}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 10.5</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+    After the first day, we are 20 units below flood stage.
+    We reach flood stage after half of the next day. During the last half
+    of the day 30 units of rain fall while 19.5 units evaporate.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>20</pre></td></tr><tr><td class="statText"><pre>40</pre></td></tr><tr><td class="statText"><pre>{0}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -20.0</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>200</pre></td></tr><tr><td class="statText"><pre>800</pre></td></tr><tr><td class="statText"><pre>{0,600}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0.0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">After the first day, the level is 200 below flood stage due to evaporation. Halfway through the second day, 300 units have rain have fallen and 100 units have evaporated so we have just reached flood stage. After that we are at a stable equilibrium in which the level does not change.
+</td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

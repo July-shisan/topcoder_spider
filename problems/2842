@@ -1,0 +1,39 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+<i>Sortitaire</i> is a solitaire card game in which you try to arrange a sequence of cards in
+non-decreasing order.  You start by dealing a sequence of cards face up.  This sequence is
+called the <b>tableau</b>.  The remaining cards are placed in a pile called the <b>stock</b>.
+On each turn, you draw the top card from the stock.  You can then either discard the card, or
+play it face up over one of the cards in the tableau, completely covering the existing card.  You
+win when the cards showing in the tableau are arranged in non-decreasing order.  For simplicity,
+the cards will be represented as integers between 1 and 99, inclusive.
+</p>
+
+<p>
+For example, suppose you began with the tableau
+</p>
+<pre>
+   25  19  41  36  28  40
+</pre>
+and the stock contained the cards 27, 36, 24, 39, and 30, in that order.  You could win in five turns by 
+playing the 27 on the 19, playing the 36 on the 28, discarding the 24, discarding the 39, 
+and playing the 30 on the 41, yielding the tableau
+<pre>
+   25  27  30  36  36  40
+</pre>
+Alternatively, you could win in four turns by playing the 27 on the 19, playing the 36 on
+the 41, discarding the 24, and playing the 39 on the 28, yielding the tableau
+<pre>
+   25  27  36  36  39  40
+</pre>
+
+<p>
+Given the <b>tableau</b> and the <b>stock</b>, your task is to calculate and return the minimum number of turns needed
+to win.  If it is impossible to win, return -1.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Sortitaire</td></tr><tr><td class="statText">Method:</td><td class="statText">turns</td></tr><tr><td class="statText">Parameters:</td><td class="statText">int[], int[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int turns(int[] tableau, int[] stock)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Notes</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><i>Non-decreasing order</i> is the same as <i>increasing</i> order, except that adjacent cards are allowed to be equal.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>tableau</b> contains between 2 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>tableau</b> is between 1 and 99, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>stock</b> contains between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>stock</b> is between 1 and 99, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 25, 19, 41, 36, 28, 40 }</pre></td></tr><tr><td class="statText"><pre>{ 27, 36, 24, 39, 30 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The example above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 1, 1, 1, 1, 1 }</pre></td></tr><tr><td class="statText"><pre>{ 2, 3, 4 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The tableau is already in non-decreasing order.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 5, 4, 3, 2, 1 }</pre></td></tr><tr><td class="statText"><pre>{ 20, 40 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: -1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This game cannot be won.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 40, 50, 60, 70, 1 }</pre></td></tr><tr><td class="statText"><pre>{ 7, 6, 5, 4, 3, 2 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{ 19, 7, 23, 38, 23, 90, 81, 22, 71, 30, 87,
+  32, 99, 5, 80, 17, 19, 43, 67, 50, 88, 11 }</pre></td></tr><tr><td class="statText"><pre>{ 24, 89, 70, 35, 55, 43, 92, 10, 33, 18, 8,
+  40, 14, 22, 56, 4, 98, 57, 89, 31, 30, 14 }</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 19</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

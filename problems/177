@@ -1,0 +1,80 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><pre>Class name: TCMLParser
+Method name: replaceTag
+Parameters: String, int, String
+Returns: String
+
+You are in charge of a document system that utilizes numeric code tags to
+render documents for printing.  There is a batch of documents that have text
+based tags that you must parse for input into the system.  Implement a class
+TCMLParser that contains a method replaceTag to convert the text based tags
+into a specified numeric code tag.
+The method parameters are: String tagstring, int code, String toParse
+* tagstring is a String containing letters (a-z and A-Z, inclusive)
+representing the TCML tag string to replace.  Its length is between 1 and 10,
+inclusive.
+* code is an int between 1 and 1000, inclusive, representing the code with
+which to replace the tag string.
+* toParse is a String containing between 1 and 50, inclusive, letters (a-z and
+A-Z, inclusive), numbers (0-9, inclusive), less than signs (&lt;), greater than
+signs (&gt;), equal signs (=), slashes(/) or spaces.  The '&lt;' and '&gt;' may only be
+used as part of a tag.
+
+A tag is defined as a '&lt;' that may be followed by letters, numbers, slashes or
+spaces and then a '&gt;'.  A  tag always starts with a '&lt;' and ends with a '&gt;'.
+Tags may not be nested.
+
+The following toParse Strings are not valid:
+"&gt;HI"   "&lt;a&lt;b&gt;c&gt;"   "&lt;a b c&gt;&lt;"   "&lt;a&lt;b&gt;"
+
+The following toParse Strings are valid:
+"/=&lt;&gt;HI"  "/&lt;&gt;H=I&lt;&gt;/"  "&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;"   "&lt;a=/&gt;&lt;b==//bb&gt;&lt;c223&gt;"   "&lt;a b c&gt;"
+
+The method returns a String that is toParse, except every occurrence of
+tagstring within a tag should be replaced with code.
+
+Note:
+- The string should be processed from the left most character to the right.
+- The replace is not case sensitive.  If the tagstring is "BODY": "BODY",
+"body", and "BoDy" should all be replaced.  However, characters not replaced
+should be returned in the same case they were inputted.
+- Only replace the tagstring if it is between a '&lt;' and before the next '&gt;'.
+There can, however, be characters between the '&lt;' and '&gt;' that are not replaced.
+- tagstring is not defined by space (' ') boundaries.  For example, if
+tagstring="b", code=2 and toParse="&lt;b b abc ab c&gt;" then the output would be "&lt;2
+2 a2c a2 c&gt;". 
+
+The method signature is (be sure your method is public):
+
+String replaceTag(String tagstring, int code, String toParse);
+
+TopCoder will check the following:
+* tagstring is a String containing letters (a-z and A-Z, inclusive)
+representing the TCML tag string to replace.  Its length is between 1 and 10,
+inclusive.
+* code is an int between 1 and 1000, inclusive, representing the code with
+which to replace the tag string.
+* toParse is a String containing between 1 and 50, inclusive, letters (a-z and
+A-Z, inclusive), numbers (0-9, inclusive), less than signs (&lt;), greater than
+signs (&gt;), equal signs (=), slashes(/) or spaces.
+* All '&lt;' and '&gt;' are used only in tags
+* Tags are not nested
+
+Examples:
+
+If tagstring="BODY", code=10, and toParse="&lt;&gt;&lt;BODY garbage&gt;body&lt;/BODY&gt;", the
+method should return "&lt;&gt;&lt;10 garbage&gt;body&lt;/10&gt;".
+If tagstring="aBc", code=923, and toParse="&lt;dont replace
+this&gt;abcabc&lt;abcabcde&gt;", the method should return "&lt;dont replace
+this&gt;abcabc&lt;923923de&gt;".
+If tagstring="table", code=1, and toParse="&lt;ta&gt;bLe&lt;TaBle
+width=100&gt;&lt;/table&gt;&lt;/ta&gt;", the method should return "&lt;ta&gt;bLe&lt;1
+width=100&gt;&lt;/1&gt;&lt;/ta&gt;"
+.
+If tagstring="replace", code=323, and toParse="nothing inside", the method
+should return "nothing inside"
+.
+</pre></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TCMLParser</td></tr><tr><td class="statText">Method:</td><td class="statText">replaceTag</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, int, String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String replaceTag(String param0, int param1, String param2)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

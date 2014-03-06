@@ -1,0 +1,39 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">You have been working with a macro processor that has rules of the following form:<pre>
+   VarChar : VarOrTextChar VarOrTextChar
+   where VarChar is an uppercase letter, 
+   and VarOrTextChar is an uppercase or lowercase letter
+</pre>
+The macro processor only recognizes 2 kinds of characters, namely Variable Characters (uppercase letters) and Text Characters (lowercase letters).  If it finds a Variable Character in the text that matches the left side of one of its rules it can replace it with the characters on the right side of that rule.  If more than one rule has a left side that matches, the processor can arbitrarily choose which rule to use.  This process continues until the processor gets rid of all the Variable Characters.  For example, let's say the processor had the following rules:<pre>
+<b>rules</b> = {"S:aA",
+         "A:Sb",
+         "S:ab",
+	 "D:aA"}
+</pre>
+Then given the string "S" it could do the following actions:<br>
+S =&gt; <i>replace S with aA</i> =&gt; aA =&gt; <i>replace A with Sb</i> =&gt; aSb =&gt; <i>replace S with ab</i> =&gt; aabb<br>
+or perhaps<br>
+S =&gt; <i>replace S with ab</i> =&gt; ab.<br>
+These are just two possible sequences of actions out of an infinite number of possible sequences that the processor could follow with the above rules.  Our problem is, we have only been given the <b>output</b> and are clueless as to the initial input.  Given the <b>rules</b> of the processor, and the <b>output</b> text, your method will return all of the Variable Characters that could have produced the given output, in lexicographic ('A' to 'Z') order.  Using the rules in the above example, if given <b>output</b> "aabb", your method would return {"D","S"}.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Macros</td></tr><tr><td class="statText">Method:</td><td class="statText">whichOnes</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[], String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String[]</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String[] whichOnes(String[] rules, String output)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>rules</b> will contain between 1 and 50 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>rules</b> will have 4 characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The first character of each element of <b>rules</b> will be an uppercase letter ('A'-'Z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The second character of each element of <b>rules</b> will be a colon (':').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The third and fourth characters of each element of <b>rules</b> will be uppercase or lowercase letters ('A'-'Z','a'-'z').</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>output</b> will have between 2 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>output</b> will contain only lowercase letters ('a'-'z').</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"S:aA",
+ "A:Sb",
+ "S:ab",
+ "D:aA"}</pre></td></tr><tr><td class="statText"><pre>"aabb"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "D",  "S" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example from the problem statement.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"S:aA",
+ "A:Sb",
+ "S:ab",
+ "D:aA"}</pre></td></tr><tr><td class="statText"><pre>"ab"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "S" }</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The only way to produce "ab" is to start with "S" and immediately replace "S" with "ab", using the third rule. </td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"S:aA",
+ "A:Sb",
+ "S:ab",
+ "D:aA"}</pre></td></tr><tr><td class="statText"><pre>"aaaaabbbb"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A:aB",
+ "C:dE",
+ "Z:FG",
+ "B:dd"}</pre></td></tr><tr><td class="statText"><pre>"qqqq"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A:aB",
+ "C:dE",
+ "Z:FG",
+ "B:dd"}</pre></td></tr><tr><td class="statText"><pre>"add"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "A" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"A:BC",
+ "B:BC",
+ "C:BC",
+ "B:aa",
+ "C:bb"}</pre></td></tr><tr><td class="statText"><pre>"aaaaaaaaaabbbbbbbbbb"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: { "A",  "B",  "C" }</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

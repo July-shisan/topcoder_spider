@@ -1,0 +1,29 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">We are going to sell a collection of individual plastic characters that
+customers will buy and place on their mailboxes to spell out their addresses.   
+We have a String[] of "typical" addresses and want to be able to compare a proposed
+collection to these addresses and determine how many are impossible to form from
+our collection. 
+<p>
+We will count an address as impossible if it cannot be formed from our entire collection
+of characters. Space characters in an address can always be formed because the customer can form spaces by placing our plastic characters as he
+wishes.
+</p><p>
+Create a class Mailbox that contains a method impossible that is given a String
+<b>collection</b> and a String[] <b>address</b> and that returns the number of elements in <b>address</b> that
+are impossible to form from the given <b>collection</b> of characters. 
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Mailbox</td></tr><tr><td class="statText">Method:</td><td class="statText">impossible</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String, String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int impossible(String collection, String[] address)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>collection</b> will contain between 1 and 50 characters inclusive</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in <b>collection</b> will be an uppercase letter 'A'-'Z' or a digit '0'-'9'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>address</b> will contain between 1 and 50 elements inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>address</b> will contain between 1 and 50 characters inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character in each element of <b>address</b> will be an uppercase letter 'A'-'Z' or a digit '0'-'9' or a space ' '.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"AAAAAAABBCCCCCDDDEEE123456789"</pre></td></tr><tr><td class="statText"><pre>{"123C","123A","123 ADA"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+   All these can be formed. The space in "123 ADA" can never be a problem,
+   and collection contains two 'A's. 
+   We only consider one address at a time so it doesn't matter that we
+   cannot form both "123C" and "123A" at the same time from this collection.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"ABCDEFGHIJKLMNOPRSTUVWXYZ1234567890"</pre></td></tr><tr><td class="statText"><pre>{"2 FIRST ST"," 31 QUINCE ST", "606 BAKER"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+
+   We cannot form any of these. The first address requires two 'S's, the second 
+   address requires a 'Q', and the third address requires two '6's. 
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"ABCDAAST"</pre></td></tr><tr><td class="statText"><pre>{"111 A ST", "A BAD ST", "B BAD ST"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">"111 A ST" cannot be formed since <b>collection</b> does not contain any digits. "B BAD ST" cannot be formed because it requires 2 'B's. </td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

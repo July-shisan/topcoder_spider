@@ -1,0 +1,25 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText">A deck of cards contains 52 cards. Each card has a suit (Clubs, Diamonds, Hearts, or Spades) and a 
+value (2, 3, ..., 9, 10, Jack, Queen, King, or Ace).
+<p>
+In the game of bridge a hand consists of 13 or fewer cards from the deck. The values of the cards are ordered as shown above, with Ace having the highest value.
+Suppose that <b>hand</b> is given as a String giving the cards in the hand. Each card
+is represented by a suit character C, D, H, or S followed by a value character 2, 3, 
+..., 9, T, J, Q, K, or A. There are no spaces separating adjacent cards in <b>hand</b>.
+</p><p>  
+Create a class BridgeSort that contains a method sortedHand that is given a
+String <b>hand</b> and that returns the String that represents the hand in sorted order. The
+proper order is to list all the cards that are Clubs, then all the Diamonds,
+then all the Hearts, and finally all the Spades, with the cards within each suit listed in order of ascending value.
+</p>
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">BridgeSort</td></tr><tr><td class="statText">Method:</td><td class="statText">sortedHand</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">String</td></tr><tr><td class="statText">Method signature:</td><td class="statText">String sortedHand(String hand)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>hand</b> will contain an even number of characters between 2 and 26 characters inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>hand</b> will contain a sequence of cards, each being a suit character followed by a value character as described in the problem statement.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The cards in <b>hand</b> will be distinct.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"HAH2H3C4D5ST" </pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "C4D5H2H3HAST"</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">
+    This <b>hand</b> contains the 4 of Clubs, which must come before all the other
+cards because Clubs comes before all the other suits. The 5 of Diamonds is
+next because Diamonds are the next suit. Next come the three Heart cards, in
+order of ascending value, namely 2 then 3 then Ace (which is represented by the A).
+Finally the 10 of Spades is last because of its suit.
+
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"H3SAHA"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: "H3HASA"</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

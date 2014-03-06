@@ -1,0 +1,37 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><p>
+The Incas used a sophisticated system of record keeping consisting of bundles of knotted cords.
+Such a bundle of cords is called a <i>quipu</i>.  Each individual cord represents a single number.
+Surprisingly, the Incas used a base-10 positional system, just like we do today.  Each digit of a number 
+is represented by a cluster of adjacent knots, with spaces between neighboring clusters.  The digit is 
+determined by the number of knots in the cluster.
+For example, the number 243 would be represented by a cord with knots tied in the following pattern
+</p>
+<pre>
+     -XX-XXXX-XXX-
+</pre>
+where each uppercase '<tt>X</tt>' represents a knot and each '<tt>-</tt>' represents an unknotted segment of cord (all quotes for clarity only).
+
+<p>
+Unlike many ancient civilizations, the Incas were aware of the concept of zero, and used it in their quipus.
+A zero is represented by a cluster containing no knots.
+For example, the number 204003 would be represented by a cord with knots tied in the following pattern
+</p>
+<pre>
+     -XX--XXXX---XXX-
+        ^^    ^^^
+        ^^    ^^^
+        ^^    two zeros between these three segments
+        ^^
+        one zero between these two segments
+</pre>
+Notice how adjacent dashes signal the presence of a zero.
+
+<p>
+Your task is to translate a single quipu cord into an integer.  The cord will be given as a String <b>knots</b>
+containing only the characters '<tt>X</tt>' and '<tt>-</tt>'.  There will be a single '<tt>-</tt>' between each cluster 
+of '<tt>X</tt>'s, as well as a leading '<tt>-</tt>' and a trailing '<tt>-</tt>'.  The first cluster will not be empty.
+</p></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">Quipu</td></tr><tr><td class="statText">Method:</td><td class="statText">readKnots</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String</td></tr><tr><td class="statText">Returns:</td><td class="statText">int</td></tr><tr><td class="statText">Method signature:</td><td class="statText">int readKnots(String knots)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>knots</b> contains between 3 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>knots</b> contains only the characters '<tt>X</tt>' and '<tt>-</tt>'.  Note that '<tt>X</tt>' is uppercase.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">The first and last characters of <b>knots</b> are '<tt>-</tt>'s.  The second character is '<tt>X</tt>'.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>knots</b> does not contain 10 consecutive '<tt>X</tt>'s.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>knots</b> will represent a number between 1 and 1000000, inclusive.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"-XX-XXXX-XXX-"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 243</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The first example above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"-XX--XXXX---XXX-"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 204003</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">The second example above.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"-X-"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"-X-------"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1000000</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>"-XXXXXXXXX--XXXXXXXXX-XXXXXXXXX-XXXXXXX-XXXXXXXXX-"</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 909979</pre></td></tr><tr><td class="statText"></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>
