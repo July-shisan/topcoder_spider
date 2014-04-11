@@ -34,3 +34,9 @@ class ProblemItem(Item):
     rate_div2 = Field()
     content = Field()
     
+class SolutionItem(Item):
+    solution_id = Field()
+    problem_id = Field()
+    match_id = Field()
+    language = Field()
+    

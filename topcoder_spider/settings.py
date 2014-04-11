@@ -11,5 +11,8 @@ BOT_NAME = 'topcoder_spider'
 SPIDER_MODULES = ['topcoder_spider.spiders']
 NEWSPIDER_MODULE = 'topcoder_spider.spiders'
 
+CONCURRENT_REQUESTS_PER_DOMAIN = 1
+CONCURRENT_SPIDERS = 1
+DOWNLOAD_DELAY = 1	
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'topcoder_spider (+http://www.yourdomain.com)'
