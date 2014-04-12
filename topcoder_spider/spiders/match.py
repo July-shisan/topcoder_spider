@@ -10,9 +10,29 @@ from urlparse import urljoin,urlparse
 class MatchSpider(LoginSpider):
     name = "match"
 
+    stop = False
+
+    def get_crawled(self):
+	r = set()
+	import os
+	if not os.path.exists('match.csv'):
+		return r
+	import io
+	f = io.open('match.csv', 'r', encoding='utf-8')
+	lines = f.readlines()
+	f.close()
+	for line in lines[1:]:
+		match_id = line.split(',')[2]
+		r.add(int(match_id))
+	return r
+
+    crawled = None
+
     def crawl(self, response):
+	self.crawled = self.get_crawled()
 	for i in xrange(1, 1000, 200):
-		yield Request(url=match_list_url % i,callback=self.extract)
+		if not self.stop:
+			yield Request(url=match_list_url % i,callback=self.extract)
 
     def extract(self, response):
 	items = []
@@ -28,6 +48,9 @@ class MatchSpider(LoginSpider):
 		item['name'] = names[i]
 		item['href'] = urljoin(index_url, hrefs[i])
 		item['match_id'] = int({param.split('=')[0]: param.split('=')[1] for param in urlparse(item['href']).query.split('&')}['rd'])
+		if item['match_id'] in self.crawled:
+			self.stop = True
+			break
 		item['date'] = '.'.join([dates[i][0].split('.')[2]] + dates[i][0].split('.')[:2])
 		items.append(item)
 	return items

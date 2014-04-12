@@ -8,13 +8,32 @@ from tools import extract_text
 class MatchDetailSpider(LoginSpider):
     name = "match_detail"
 
+    crawled = None
+    def get_crawled(self):
+	r = set()
+	import os
+	if not os.path.exists('match_detail.csv'):
+		return r
+	import io
+	f = io.open('match_detail.csv', 'r', encoding = 'utf-8')
+	lines = f.readlines()
+	f.close()
+
+	for line in lines[1:]:
+		match_id = line.split(',')[-1].strip()
+		r.add(match_id)
+	return r
+
     def crawl(self, response):
+	self.crawled = self.get_crawled()
 	f = open('match.csv', 'r')
 	lines = f.readlines()
 	f.close()
 	self.start_url = []  
 	for line in lines[1:]:
 		date, href, match_id, name = [item.strip() for item in line.split(',')]
+		if match_id in self.crawled:
+			continue
 		meta = {'date':date, 'href':href, 'name':name, 'match_id':match_id}
 		yield Request(url=href, callback=self.extract, meta=meta)
 

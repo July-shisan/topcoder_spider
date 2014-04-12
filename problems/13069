@@ -1,0 +1,97 @@
+<td class="problemText" valign="middle" align="left">
+                      
+              		<table><tr><td colspan="2" class="statText"><h3>Problem Statement</h3></td></tr><tr><td class="statText">    </td><td class="statText"><i>Please note that this problem has a non-standard time limit: 3 seconds.</i>
+<br><br>
+A yet unknown "LL Company" wants to design a logo. After a long discussion, company designers decided that the logo should consist of two letters L drawn in some way.
+<br><br>
+To start with something, designers drew N rows of M points each, one under another, so that these points form a rectangular grid. They also painted each point either white or black. Here is an example of what they could get for N = 4 and M = 5:
+<br><br><img src="http://www.topcoder.com/contest/problem/TwoLLogo/1.png"><br><br>
+Designers agreed to draw each letter L as a union of a horizontal and a vertical line segment intersecting at their left and bottom ends, respectively. The segments must have positive lengths, and their endpoints must be white grid points. All grid points that lie on the segments must be white as well. For example, here are two valid placements of a letter:
+<br><br><img src="http://www.topcoder.com/contest/problem/TwoLLogo/2.png"> 
+<img src="http://www.topcoder.com/contest/problem/TwoLLogo/3.png"><br><br>
+Note that neither the letters nor the grid can be rotated.
+<br><br>
+The final requirement is that the two letters should be disjoint. That is, no white point should lie on two segments belonging to different letters.
+<br><br>
+You are given the grid with N rows and M columns, encoded as a String[] <b>grid</b> with N elements, each containing M characters. Each character is either '.' or '#', meaning that the corresponding point is either white or black, respectively.
+<br><br>
+Return the number of different possible logos with two L's drawn on them according to the requirements. Two logos are considered different if there is a pair of points that is connected by a line segment in exactly one of the logos.
+</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Definition</h3></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText">Class:</td><td class="statText">TwoLLogo</td></tr><tr><td class="statText">Method:</td><td class="statText">countWays</td></tr><tr><td class="statText">Parameters:</td><td class="statText">String[]</td></tr><tr><td class="statText">Returns:</td><td class="statText">long</td></tr><tr><td class="statText">Method signature:</td><td class="statText">long countWays(String[] grid)</td></tr><tr><td colspan="2" class="statText">(be sure your method is public)</td></tr></table></td></tr><tr><td class="statText">    </td></tr><tr><td class="statText"></td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText"><b>grid</b> will contain between 2 and 30 elements, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">All elements of <b>grid</b> will contain the same number of characters.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each element of <b>grid</b> will contain between 2 and 30 characters, inclusive.</td></tr><tr><td align="center" valign="top" class="statText">-</td><td class="statText">Each character of <b>grid</b> will be either '.' or '#'.</td></tr><tr><td colspan="2" class="statText"> </td></tr><tr><td colspan="2" class="statText"><h3>Examples</h3></td></tr><tr><td align="center" nowrap class="statText">0)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"....",
+ "...."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+<img src="http://www.topcoder.com/contest/problem/TwoLLogo/4.png"></p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">1)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".##..",
+ "...#.",
+ ".#.#.",
+ "#...#"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 3</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">This is the example from the problem statement. The three possible logos look as follows:
+<br><br><img src="http://www.topcoder.com/contest/problem/TwoLLogo/5.png"> 
+<img src="http://www.topcoder.com/contest/problem/TwoLLogo/6.png"> 
+<img src="http://www.topcoder.com/contest/problem/TwoLLogo/7.png"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">2)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"..#.",
+ "#.#.",
+ "....",
+ "..#."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 4</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"><p>
+<img src="http://www.topcoder.com/contest/problem/TwoLLogo/8.png"> 
+<img src="http://www.topcoder.com/contest/problem/TwoLLogo/9.png"> 
+<img src="http://www.topcoder.com/contest/problem/TwoLLogo/10.png"> 
+<img src="http://www.topcoder.com/contest/problem/TwoLLogo/11.png"></p></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">3)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"..",
+ ".."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 0</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Too small for a logo.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">4)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{".#.#",
+ "....",
+ ".#.#",
+ "...."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 34</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">5)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"##############",
+ "##############",
+ "#.############",
+ "#.############",
+ "#.############",
+ "#.############",
+ "#.############",
+ "#.############",
+ "#.#####.######",
+ "#.#####.######",
+ "#.#####.######",
+ "#....##.######",
+ "#######.######",
+ "#######.######",
+ "#######.######",
+ "#######.######",
+ "#######.######",
+ "#######.######",
+ "#######......#",
+ "##############"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 1350</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText">Corners of L's are identified uniquely in this case, but line segment lengths can vary.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">6)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"#......",
+ ".#....#",
+ ".#.#...",
+ "#....#.",
+ ".##..#.",
+ ".#.....",
+ ".....#.",
+ ".#.#...",
+ ".#...#.",
+ "..##..."}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 2386</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap class="statText">7)</td><td class="statText"></td></tr><tr><td class="statText">    </td><td class="statText"><table><tr><td class="statText"><table><tr><td class="statText"><pre>{"...#..........................",
+ "..............................",
+ "..............................",
+ "..................#...#.......",
+ "..................#...........",
+ "..............................",
+ "...........#..................",
+ "..............................",
+ ".....#..#.....................",
+ ".......................#......",
+ "..................#.....#.....",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "..#...........................",
+ "..............................",
+ "..............................",
+ "..............................",
+ "#............................#",
+ "..............................",
+ ".....#.........#............#.",
+ "..............................",
+ ".........................#....",
+ ".#............................",
+ ".............#................",
+ "..............................",
+ "..............................",
+ ".......................#......",
+ ".............#................"}</pre></td></tr></table></td></tr><tr><td class="statText"><pre>Returns: 5020791386</pre></td></tr><tr><td class="statText"><table><tr><td colspan="2" class="statText"></td></tr></table></td></tr></table></td></tr></table><hr><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2010, TopCoder, Inc.  All rights reserved.  </p>
+                      
+                   </td>

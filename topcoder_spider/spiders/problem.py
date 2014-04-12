@@ -13,10 +13,26 @@ from os.path import join
 class ProblemSpider(LoginSpider):
     name = "problem"
 
+    def get_crawled(self):
+	r = set()
+	import os
+	if not os.path.exists('problems.csv'):
+		return r
+	import io
+	f = io.open('problems.csv', 'r', encoding = 'utf-8')
+	lines = f.readlines()
+	f.close()
+	for line in lines[1:]:
+		match_id = line.split(',')[0]
+		r.add(int(match_id))
+	return r
+
     def crawl(self, response):
 	return Request(url=problem_list_url, callback=self.extract)
 
     def extract(self, response):
+	crawled = self.get_crawled()
+
 	sel = Selector(response)
 	trs = sel.xpath('/html/body/table[1]/tr/td[3]/table[2]/tr[1]/td/form/table[2]/table/table/tr')
 
@@ -36,7 +52,9 @@ class ProblemSpider(LoginSpider):
 			item['rate_div1'] = extract_text(tds[6].xpath('./text()'))
 			item['level_div2'] = extract_text(tds[7].xpath('./text()'))
 			item['rate_div2'] = extract_text(tds[8].xpath('./text()'))
-
+			
+			if item['match_id'] in crawled:
+				break
 			yield Request(url=item['href'], callback=self.crawl_content, meta={'item':item})
 		#except Exception,e:
 		#	log.msg(tr.extract(), level=log.ERROR)
