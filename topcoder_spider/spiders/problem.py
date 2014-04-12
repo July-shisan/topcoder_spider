@@ -9,6 +9,7 @@ from tools import extract_text
 
 from urlparse import urljoin, urlparse
 from os.path import join
+import json
 
 class ProblemSpider(LoginSpider):
     name = "problem"
@@ -16,15 +17,12 @@ class ProblemSpider(LoginSpider):
     def get_crawled(self):
 	r = set()
 	import os
-	if not os.path.exists('problems.csv'):
+	if not os.path.exists('problem.json'):
 		return r
-	import io
-	f = io.open('problems.csv', 'r', encoding = 'utf-8')
-	lines = f.readlines()
-	f.close()
-	for line in lines[1:]:
-		match_id = line.split(',')[0]
-		r.add(int(match_id))
+	l = json.loads(open('problem.json', 'r').read())
+	for d in l:
+		match_id = d['match_id']
+		r.add(match_id)
 	return r
 
     def crawl(self, response):
@@ -42,9 +40,9 @@ class ProblemSpider(LoginSpider):
 			tds = tr.xpath('.//td[@class="statText"]')
 			item['name'] = extract_text(tds[0].xpath('./a/text()'))
 			item['href'] = urljoin(index_url, extract_text(tds[0].xpath('./a/@href')))
-			item['problem_id'] = int({param.split('=')[0]: param.split('=')[1] for param in urlparse(item['href']).query.split('&')}['pm'])
+			item['problem_id'] = {param.split('=')[0]: param.split('=')[1] for param in urlparse(item['href']).query.split('&')}['pm']
 			match_href = extract_text(tds[1].xpath('./a/@href'))
-			item['match_id'] = int({param.split('=')[0]: param.split('=')[1] for param in urlparse(match_href).query.split('&')}['rd'])
+			item['match_id'] = {param.split('=')[0]: param.split('=')[1] for param in urlparse(match_href).query.split('&')}['rd']
 			item['date'] = extract_text(tds[2].xpath('./text()'))
 			item['writer'] = extract_text(tds[3].xpath('./a/text()'))
 			item['categary'] = extract_text(tds[4].xpath('./text()'))

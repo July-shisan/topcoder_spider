@@ -6,6 +6,7 @@ from login_spider import LoginSpider
 from constants import match_list_url, index_url
 
 from urlparse import urljoin,urlparse
+import json
 
 class MatchSpider(LoginSpider):
     name = "match"
@@ -15,15 +16,12 @@ class MatchSpider(LoginSpider):
     def get_crawled(self):
 	r = set()
 	import os
-	if not os.path.exists('match.csv'):
+	if not os.path.exists('match.json'):
 		return r
-	import io
-	f = io.open('match.csv', 'r', encoding='utf-8')
-	lines = f.readlines()
-	f.close()
-	for line in lines[1:]:
-		match_id = line.split(',')[2]
-		r.add(int(match_id))
+	l = json.loads(open('match.json', 'r').read())
+	for d in l:
+		match_id = d['match_id']
+		r.add(match_id)
 	return r
 
     crawled = None
@@ -47,7 +45,7 @@ class MatchSpider(LoginSpider):
 		item = MatchItem()
 		item['name'] = names[i]
 		item['href'] = urljoin(index_url, hrefs[i])
-		item['match_id'] = int({param.split('=')[0]: param.split('=')[1] for param in urlparse(item['href']).query.split('&')}['rd'])
+		item['match_id'] = {param.split('=')[0]: param.split('=')[1] for param in urlparse(item['href']).query.split('&')}['rd']
 		if item['match_id'] in self.crawled:
 			self.stop = True
 			break

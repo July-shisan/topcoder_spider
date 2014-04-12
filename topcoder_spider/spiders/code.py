@@ -11,6 +11,7 @@ from urlparse import urljoin, urlparse
 from os.path import join
 
 from scrapy import log
+import json
 
 class CodeSpider(LoginSpider):
     name = "code"
@@ -18,47 +19,32 @@ class CodeSpider(LoginSpider):
     def get_failed(self):
 	r = set()
 	from os.path import exists
-	if not exists('codes.csv'):
+	if not exists('code.json'):
 		return r
-	import io
-	f = io.open('codes.csv', 'r', encoding = 'utf-8')
-	lines = f.readlines()
-	f.close()
-	for line in lines[1:]:
-		items = line.split(',')
-		pid = items[-1].strip()
-		status = items[0]
-		if status.find('Failed') != -1:
-			r.add(pid)
+	l = json.loads(open('code.json', 'r').read())
+	for d in l:
+		if d['status'].find('Failed') != -1:
+			r.add(d['problem_id'])
 	return r
 
     def get_already_crawled(self):
 	r = set()
 	from os.path import exists
-	if not exists('codes.csv'):
+	if not exists('code.json'):
 		return r
-	import io
-	f = io.open('codes.csv', 'r', encoding = 'utf-8')
-	lines = f.readlines()
-	f.close()
-	for line in lines[1:]:
-		items = line.split(',')
-		pid = items[-1].strip()
-		r.add(pid)
+	l = json.loads(open('code.json', 'r').read())
+	for d in l:
+		r.add(d['problem_id'])
 	return r
 
     def crawl(self, response):
-	import io
-	f = io.open('problems.csv', 'r', encoding = 'utf-8')
-	lines = f.readlines()
-	f.close()
+	l = json.loads(open('code.json', 'r').read())
 
 	crawled_set = self.get_already_crawled()
 	#failed = self.get_failed()
-	for line in lines[1:]:
-		items = line.split(',')
-		match_id = items[0]
-		problem_id = items[-2]
+	for d in l:
+		match_id = d['match_id']
+		problem_id = d['problem_id']
 		if problem_id not in crawled_set:
 			yield Request(url=(problem_detail_url % (match_id, problem_id)), callback=self.extract, meta={'match_id':match_id, 'problem_id':problem_id})
 

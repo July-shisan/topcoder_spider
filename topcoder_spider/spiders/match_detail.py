@@ -4,6 +4,7 @@ from scrapy.http import Request
 from topcoder_spider.items import MatchDetailItem
 from login_spider import LoginSpider
 from tools import extract_text
+import json
 
 class MatchDetailSpider(LoginSpider):
     name = "match_detail"
@@ -12,26 +13,20 @@ class MatchDetailSpider(LoginSpider):
     def get_crawled(self):
 	r = set()
 	import os
-	if not os.path.exists('match_detail.csv'):
+	if not os.path.exists('match_detail.json'):
 		return r
-	import io
-	f = io.open('match_detail.csv', 'r', encoding = 'utf-8')
-	lines = f.readlines()
-	f.close()
-
-	for line in lines[1:]:
-		match_id = line.split(',')[-1].strip()
+	l = json.loads(open('match_detail.json','r').read())
+	for d in l:
+		match_id = d['match_id']
 		r.add(match_id)
 	return r
 
     def crawl(self, response):
 	self.crawled = self.get_crawled()
-	f = open('match.csv', 'r')
-	lines = f.readlines()
-	f.close()
+	l = json.loads(open('match.json', 'r').read())
 	self.start_url = []  
-	for line in lines[1:]:
-		date, href, match_id, name = [item.strip() for item in line.split(',')]
+	for d in l:
+		date, href, match_id, name = [d['date'],d['href'],d['match_id'],d['name']]
 		if match_id in self.crawled:
 			continue
 		meta = {'date':date, 'href':href, 'name':name, 'match_id':match_id}
