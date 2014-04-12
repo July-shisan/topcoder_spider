@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class AlephNull<br>{<br>public int[] rational(int gen, int n)<br>{<br>   if (n &gt;= (1 &lt;&lt; (gen-1)) + 1) return new int[]{0,0};<br>   if (gen == 1) {<br>      if (n == 0) return new int[]{0,1};<br>      else return new int[]{1,0};<br>   }<br>   if ((n % 2) == 0)<br>      return rational(gen - 1, n/2);<br>   else {<br>      int[] a = rational(gen - 1, n/2);<br>      int[] b = rational(gen - 1, n/2 + 1);<br>      return new int[]{a[0]+b[0], a[1]+b[1]};<br>   }<br>}<br>}<br></td>

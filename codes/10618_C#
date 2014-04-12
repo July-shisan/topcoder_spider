@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br><br>public class TheCardShufflingDivTwo {<br>    public int shuffle(int n, int m) {<br>    int result = 1;<br>    for (int i = 0; i &lt; m; i++) {<br>        if (result &lt;= n / 2) {<br>            result *= 2;<br>        } else {<br>            result = (result - n/2 - 1) * 2 + 1;<br>        }<br>    }<br>    return result;<br>    }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class TopCan {<br>  public double minSurface(int volume) {<br>    double PI = 3.1415926535897932384626433832795028841971693993751058209749445923078164;<br>    double r = Math.pow((volume/(2.0*PI)),1.0/3.0);<br>    double h = 2.0*r;<br>    double area = 2.0 * PI * r * (r + h);<br>    return area;<br>  }<br>}<br></td>

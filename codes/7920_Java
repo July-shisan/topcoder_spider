@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class MissingDigits<br>{<br>  public String isAllowed(int[] notAllowed, int roomNumber)<br>  {<br>    String avoid = "", rm = Integer.toString(roomNumber);<br>    for(int a = 0; a &lt; notAllowed.length; a++)<br>    {<br>      avoid = Integer.toString(a) + Integer.toString(notAllowed[a]);<br>      if(rm.contains(avoid)) return "NO";<br>    }<br>    <br>    return "YES";<br>  }<br>}<br></td>

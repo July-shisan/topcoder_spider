@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class TopFox {<br>   public int possibleHandles(String fa, String gi) {<br>      int r = 0, n = fa.length(), m = gi.length();<br>      Set&lt;String&gt; se = new HashSet&lt;String&gt;();<br>      for (int i = 1; i &lt;= n; ++i) {<br>         for (int j = 1; j &lt;= m; ++j)<br>            se.add(fa.substring(0, i) + gi.substring(0, j));<br>         }<br>      return se.size();<br>   }<br>}<br></td>

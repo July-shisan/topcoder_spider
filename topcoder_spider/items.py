@@ -39,4 +39,5 @@ class SolutionItem(Item):
     problem_id = Field()
     match_id = Field()
     language = Field()
+    status = Field()
     

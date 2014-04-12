@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class PiCalculator<br>    Public Function calculate(ByVal precision As Integer) As String<br>        Dim pi As Decimal = "3.141592653589793238462643383279"<br>        Return pi.Round(pi, precision).ToString<br>    End Function<br>End Class<br></td>

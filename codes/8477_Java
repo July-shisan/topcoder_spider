@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class TrueSpace  {<br>  public long calculateSpace(int[] sizes, int clusterSize)  {<br>    long n = 0;<br>    for(int x: sizes)  {<br>      if(x % clusterSize == 0)<br>        n += x/clusterSize;<br>      else<br>        n += x/clusterSize+1;<br>    }<br>    return n * clusterSize;<br>  }<br>}<br></td>

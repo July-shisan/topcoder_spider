@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br> <br> <br>public class FoxAndFencingEasy<br>{<br>  public String WhoCanWin(int mov1, int mov2, int d)<br>  {<br>    if(d &lt;= mov1){<br>      return "Ciel";<br>    } else if(mov1 &gt; 2*mov2) return "Ciel";<br>    else if(2*mov1 &lt; mov2) return "Liss";<br>    return "Draw";<br>  }<br>  <br> <br>}<br>//Powered by KawigiEdit 2.1.4 (beta) modified by pivanof!<br></td>

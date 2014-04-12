@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports Microsoft.VisualBasic<br>Imports System<br>Imports System.Collections<br>Imports System.Text<br> <br>Public Class MonstersAndBunnies<br>  Public Function survivalProbability(ByVal M As Integer, ByVal B As Integer) As Double<br>    if M = 0 then return 1.0<br>    if M mod 2 = 0 then <br>      return 1/(M+1)<br>    else<br>      return 0<br>    end if<br>    <br>  End Function<br> <br>End Class<br> <br>'Powered by [KawigiEdit] 2.0!<br></td>

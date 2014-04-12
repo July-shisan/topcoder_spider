@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;math.h&gt;<br> <br>class FastSpider<br>{<br>  public:<br>  int findTime(double spiderSpeed, double manSpeed)<br>  {<br>    double s = spiderSpeed, m = manSpeed;<br>    //sln(1+mt)/m = 1;<br>    double result = (exp(m/s)-1)/m;<br>    if(result&lt;=0) return -1;<br>    return int(result+.5);<br>  }  <br>};<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>public class Inchworm {<br>  public Inchworm()<br>  {<br><br>  }<br>  public int lunchtime(int branch, int rest, int leaf) {<br>    int current = 0;<br>        int count = 0;<br>        while(current &lt;= branch)<br>        {<br>            if(current % leaf == 0)<br>                count++;<br><br>            current += rest;<br>        }<br><br>        return count;<br>  }<br>}<br><br><br>// Powered by FileEdit<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br> <br>public class FingerCounting<br>{<br>  public int maxNumber(int w, int m)<br>  {  int i=0;<br>    int x=1, d=-1;<br>    while(true){<br>      if(x==1 || x==5) d=-d;<br>      if(x==w &amp;&amp; m==0) return i;<br>      if(x==w) m--;<br>      x=x+d; i++;<br>    }<br>    <br>  }<br>  <br>  <br>}<br>//Powered by [KawigiEdit] 2.0!<br></td>

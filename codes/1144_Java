@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class FleasFleas<br>{<br>public int population(int n, int k)<br>{<br>   if (k &lt;= 0) return n;<br>   int p = population(n, k - 5);<br>   if (p &lt; 0) return p;<br>   int pop = n + k * population(n, k - 5);<br>   if (pop &gt; 10000000) return -1;<br>   return pop;<br>}<br>}<br></td>

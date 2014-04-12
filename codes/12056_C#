@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>public class MinimalTriangle<br>{<br>  public double maximalArea(int length)<br>  {<br>    return Math.Sqrt(3) * length * length / 4;<br>  }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class InsertionSortCount {<br>    public int countMoves(int[] A) {<br>        int res = 0;<br>        for (int i = 0; i &lt; A.length - 1; i++) {<br>          for (int j = i+1; j &lt; A.length; j++) {<br>            if (A[j] &lt; A[i]) {<br>              res++;<br>            }<br>          }<br>        }<br>        return res;<br>    }<br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class SquareDigitNumbers{<br>  public int getNumber(final int n){<br>    return Integer.parseInt(Integer.toString(n,4).replace('3','9').replace('2','4'));<br>  }<br>}<br></td>

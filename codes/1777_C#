@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Text;<br>using System.Collections;<br> <br>public class DiskSpace<br>{<br>  public int minDrives(int[] used, int[] total)<br>  {<br>    int u = 0;<br>    for(int i = 0; i &lt; used.Length; i++)<br>    {<br>      u += used[i];<br>    }<br>    Array.Sort(total);<br>    int ret = 1;<br>    for(int i = total.Length - 1; i &gt;= 0; i--, ret++)<br>    {<br>      u -= total[i];<br>      if(u &lt;= 0)<br>        break;<br>    }<br>    return ret;<br>  }<br>}<br></td>

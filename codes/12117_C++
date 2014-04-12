@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include&lt;algorithm&gt;<br>#include&lt;string&gt;<br>#include&lt;iostream&gt;<br>using namespace std;<br>class LittleElephantAndDouble<br>{<br>  public:<br>  string getAnswer(vector &lt;int&gt; A)<br>  {<br>    for ( int i = 0 ; i &lt; A.size() ; i++ )<br>    {<br>      while ( A[i] % 2 == 0 )<br>      {<br>        A[i] /= 2;<br>      }<br>    }<br>    sort(A.begin() , A.end());<br>    if ( A[0] == A[A.size() - 1]) return "YES";<br>    else return "NO";<br>  }<br>};<br></td>

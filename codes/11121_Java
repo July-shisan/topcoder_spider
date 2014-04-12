@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class AverageAverage {<br> <br>  public double average(int[] numList) {<br>    <br>    double acumulador=0.0;<br>    int contador=0;<br>    double respuesta=0.0;<br>    while(contador&lt;numList.length){<br>      acumulador=acumulador+numList[contador];<br>      contador++;<br>    }<br>    respuesta=acumulador/numList.length;<br>    return respuesta;<br>  }<br> <br>}<br></td>

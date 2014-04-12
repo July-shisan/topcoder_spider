@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br> <br>public class PseudoPrimeTest<br>{<br>  public int getPow(int a, int n, int p)<br>  {<br>    int r = 1;<br>    while (n &gt; 0)<br>    {<br>      if ((n &amp; 1) == 1) r = (r * a) % p;<br>      n &gt;&gt;= 1;<br>      a = (a * a) % p;<br>    }<br>    return r;<br>  }<br> <br>  public int firstFail(int q)<br>  {<br>    int i;<br>    for (i = 2; i &lt; q; i++)<br>      if (getPow(i, q - 1, q) != 1)<br>        return i;<br>    return q;<br>  }<br>}<br></td>

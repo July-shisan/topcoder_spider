@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class LittleElephantAndBallsAgain {<br>  public int getNumber(String s) {<br>    char last = ' ';<br>    int ans = 0;<br>    int lol = 0;<br>    for(int i = 0; i &lt; s.length(); i++) {<br>      char c = s.charAt(i);<br>      if(last == c) {<br>        ans++;<br>      } else {<br>        ans = 0;<br>      }<br>      last = c;<br>      lol = Math.max(lol, ans);<br>    }<br>    return s.length() - lol  - 1;<br>  }<br>}<br></td>

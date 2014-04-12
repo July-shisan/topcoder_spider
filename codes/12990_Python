@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            # -*- coding: utf-8 -*-<br> <br>class BoundingBox:<br>    def smallestArea(self, X, Y):<br>        l = abs(min(X) - max(X))<br>        w = abs(min(Y)-max(Y))<br>        return l*w<br> <br># Powered by Greed 1.5<br></td>

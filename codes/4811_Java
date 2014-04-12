@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            // Powered by radeclipse!<br>import java.util.* ;<br>public class TriCount {<br>  public int count(int minLength, int maxLength) {<br>    long s = 0 ;<br>    for (int c=maxLength; c&gt;=minLength; c--) {<br>      for (int a=minLength; a&lt;=c; a++) {<br>  long bmin = a ;<br>  if (c - a &gt;= bmin)<br>    bmin = c - a + 1 ;<br>  if (bmin &lt;= c)<br>    s += c - bmin + 1 ;<br>  if (s &gt; 1000000000L)<br>    return -1 ;<br>      }<br>    }<br>    return (int)s ;<br>  }<br>}<br></td>

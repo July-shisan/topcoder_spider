@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Text;<br>public class CeyKaps {<br>public string decipher(string typed, string[] switches) {<br>  StringBuilder sb = new StringBuilder(typed);<br>  foreach (string s in switches) {<br>    char from = s[0];<br>    char to = s[2];<br>    for (int i = 0; i &lt; typed.Length; i++) {<br>      if (sb[i] == from)<br>        sb[i] = to;<br>      else if (sb[i] == to)<br>        sb[i] = from;<br>    }<br>  }<br>  return sb.ToString();<br>}<br>}<br></td>

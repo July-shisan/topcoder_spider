@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class GardenHose<br>{<br> public int countDead(int n, int rowDist, int colDist, int hoseDist)<br>  {<br>   int w = 0;<br>   int ileK=0;int ileW=0;<br>   ileW=hoseDist/rowDist *2;<br>   ileK=hoseDist/colDist*2;<br>   if(ileW&gt;=n || ileK&gt;=n) return 0;<br>   return  (n-ileK) * (n-ileW);<br>   <br>  }<br>}<br></td>

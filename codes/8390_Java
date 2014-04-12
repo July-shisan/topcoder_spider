@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class TrueStatements {<br>        public int numberTrue(int[] s) {<br>            int[] b = new int[51];<br>            for (int i = 0; i &lt; s.length; ++i) {<br>                ++b[s[i]];<br>            }<br>            int res = -1;<br>            for (int i = 0; i &lt; 51; ++i) {<br>                if (i == b[i]) res = i;<br>            }<br>            return res;<br>        }<br>    }<br></td>

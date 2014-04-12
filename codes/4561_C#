@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br> <br>public class Straights<br>{<br>  public int howMany(int[] hand, int k)<br>  {<br>    int ret=0;<br>    for (int i=0; i&lt;=hand.Length-k; i++)<br>    {<br>      int cur=1;<br>      for (int j=0; j&lt;k; j++)<br>      {<br>        cur*=hand[i+j];<br>      }<br>      ret+=cur;<br>    }<br>    return ret;<br>  }<br>}<br> <br> <br>// Powered by TCGen for C#<br></td>

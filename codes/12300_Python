@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class JumpFurther:<br>    def furthest(_, N, badStep):<br>        ans = 0<br>        for i in xrange(1, N+1):<br>            ans += i<br>            if ans == badStep: ans -= 1<br>        return ans<br></td>

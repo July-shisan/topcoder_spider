@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br> <br>public class Refactoring{<br>  //int z = 0;<br> <br>  public int refactor(int n){<br>    return refactor(n, 2) - 1;<br>  }<br> <br>  public int refactor(int n, int m){<br>    //for(int i = 0; i &lt; z; i++)Console.Write("  ");<br>    //Console.WriteLine(m + " " + n);<br>    //z++;<br>    int count = 1;<br>    for(int i = m; i * i &lt;= n; i++)<br>      if((n % i) == 0)<br>        count += refactor(n / i, i);<br>    //z--;<br>    return count;<br>  }<br>}<br></td>

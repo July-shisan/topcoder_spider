@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            struct DinkyFish{<br>   int monthsUntilCrowded( int tankVolume, int maleNum, int femaleNum ) {<br>      int month=0;<br>      while( maleNum+femaleNum &lt;= tankVolume*2 ) {<br>  month++;<br>  int min = ( maleNum&lt;femaleNum ? maleNum : femaleNum );<br>        maleNum+=min;<br>        femaleNum+=min;<br>      }<br>      return month;<br>   }<br>};<br></td>

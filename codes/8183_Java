@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class LameKnight {<br> <br>  public int maxCells(int height, int width) {<br>    if (height &gt;=3)<br>    {<br>      if (width &gt;=7)<br>        return width-2;<br>      else if (width&gt;4)<br>        return 4;<br>      else return width;<br>    }<br>    else if (height ==2)<br>    {<br>      if (width&gt;=7)<br>        return 4;<br>      else return (width+1)/2;<br>    }<br>    else if (height ==1)<br>      return 1;<br>    return 0;<br>  }<br> <br>}<br></td>

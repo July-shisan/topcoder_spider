@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class SpreadsheetColumn{<br>  public String getLabel(int col){<br>    int let = (col-1) / 26;<br>    String ret = "";<br>    if(let &gt; 0) ret += (char)(let + 64);<br>    int mod = (col - 1) % 26;<br>    ret += (char)(mod + 65);<br>    return ret;<br>  }<br>}<br></td>

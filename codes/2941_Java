@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class NinePatch {<br>  public int numBlocks(int[] l, int[] w) {<br>    int ret=0;<br>    for(int i=0; i&lt;l.length;i++) ret += (l[i]/2)*(w[i]/2);<br>    return ret/9;<br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

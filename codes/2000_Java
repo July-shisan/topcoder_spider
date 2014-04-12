@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class FontSize {<br>  public int getPixelWidth(String sentence, int[] uppercase, int[] lowercase)<br>  {<br>    int count=0;<br>    for(int i=0;i&lt;sentence.length();i++)<br>    {<br>      char ch=sentence.charAt(i);<br>      if(ch==' ')<br>        count+=3;<br>      else if(ch&gt;=97)<br>        count+=lowercase[ch-97];<br>      else if(ch&gt;=65)<br>        count+=uppercase[ch-65];<br>      count++;<br>    }<br>    return count-1;<br>  }<br> <br> <br>}<br></td>

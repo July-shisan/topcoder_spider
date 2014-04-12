@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class AdditionCycles<br>{<br>public:<br>  int cycleLength( int n )<br>  {<br>    int t = n;<br>    int answer = 0;<br>    do<br>    {<br>      int t2 = t/10 + t%10;<br>      t = (t%10)*10 + t2%10;<br>      answer++;<br>    } while ( t != n );<br>    return answer;<br>  }<br>};<br></td>

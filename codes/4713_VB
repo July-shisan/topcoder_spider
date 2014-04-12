@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class SubstitutionCode<br>  Public Function getValue(key As String, code As String) As Integer<br>    dim i as long<br>    for i=0 to code.length()-1<br>      if key.indexOf(code.substring(i,1))&gt;=0 then<br>      if key.indexOf(code.substring(i,1))=9 then<br>               getValue=getValue &amp; 0<br>      else<br>             getValue=getValue &amp; key.indexOf(code.substring(i,1))+1<br>      end if<br> <br>      end if<br>    next i<br>  End Function<br> <br>End Class<br></td>

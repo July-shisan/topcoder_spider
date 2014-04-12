@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class PlatypusDuckAndBeaver<br>{<br>  public int minimumAnimals(int webbedFeet, int duckBills, int beaverTails)<br>  {<br>    int pla2duck2bea = webbedFeet / 2;<br>    int plabea = beaverTails;<br>    return pla2duck2bea - plabea;<br>  }<br>}<br></td>

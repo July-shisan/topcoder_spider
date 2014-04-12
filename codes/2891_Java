@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class RedSquare {<br>    public int countTheEmptyReds(int mr, int mf, int[] r, int[] f) {<br>        int num = 0;<br>        int d = (1 + mf) % 2;<br>        for(int i = 0; i &lt; r.length; i++) {<br>            int s = r[i] + f[i];<br>            if(s % 2 != d)<br>                num++;<br>        }<br>        return mr * mf / 2 - num;<br>    }<br>}<br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

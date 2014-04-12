@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class BadVocabulary {<br>    public int count(String badPrefix, String badSuffix, String badSubstring, String[] vocabulary) {<br> <br>        int res = 0;<br> <br>        for (String s : vocabulary)<br>          if (s.startsWith(badPrefix) || s.endsWith(badSuffix) || s.matches("^.+"+badSubstring+".+$"))<br>            res++;<br> <br>        return res;<br>    <br>    }<br> <br> <br> <br>}<br> <br> <br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class Refactoring {<br>  int fun(int n, int m) {<br>    int t = 0;<br>    while (m * m &lt;= n) {<br>      if (n % m == 0) t += fun(n / m, m);<br>      m++;<br>    }<br>    return t + 1;<br>  }<br>  public int refactor(int n) {<br>    return fun(n, 2) - 1;<br>  }<br>}<br> <br> <br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

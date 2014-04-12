@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class CardsShuffle<br>        Public Function shuffle(ByVal cards As String, ByVal first As Integer, ByVal last As Integer, ByVal times As Integer) As String<br>            For i As Integer = 1 To times<br>                cards = cards.Substring(first - 1, last - first + 1) &amp; cards.Substring(0, first - 1) &amp; cards.Substring(last)<br>            Next<br>            Return cards<br>        End Function<br>    End Class<br></td>

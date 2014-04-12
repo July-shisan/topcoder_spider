@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports Microsoft.VisualBasic<br> <br>Public Class CheckFunction<br> <br>    Private dashes() As Integer = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6}<br> <br>    Public Function newFunction(ByVal code As String) As Integer<br>        Dim ttl As Integer<br>        For i As Integer = 1 To code.Length<br>            ttl += dashes(CInt(Mid(code, i, 1)))<br>        Next<br>        Return ttl<br>    End Function<br> <br>End Class<br></td>

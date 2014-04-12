@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports Microsoft.VisualBasic<br> <br>Public Class Rounder<br>    Public Function round(ByVal n As Integer, ByVal b As Integer) As Integer<br>        Dim remain As Double = n Mod b<br>        If remain &gt;= (b / 2) Then<br>            Return b * CInt(Fix(n / b) + 1)<br>        Else<br>            Return b * CInt(Fix(n / b))<br>        End If<br>    End Function<br>End Class<br></td>

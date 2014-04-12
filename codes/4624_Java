@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class SMS {<br>public String compress(String originalMessage) {<br>    String K = "[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]";<br>    return originalMessage.replaceAll("(?&lt;="+K+")[aeiouAEIOU]+(?="+K+")","");<br>}}<br></td>

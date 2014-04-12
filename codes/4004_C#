@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>public class FastSpider<br>{<br>   public int findTime(double spiderSpeed, double manSpeed)<br>   {<br>      if (spiderSpeed &lt;= 0) return -1;<br>      else return (int) Math.Round((Math.Exp(manSpeed/spiderSpeed)-1)/manSpeed);<br>   }<br>}<br></td>

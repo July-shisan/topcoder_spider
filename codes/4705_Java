@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class MissileTarget {<br>  public int[] bestFit(int[] x, int[] y) {<br>    double sumx = 0;<br>    double sumy =0;<br>    for (int i=0; i&lt;x.length; i++){<br>      sumx+=x[i];<br>      sumy+=y[i];<br>    }<br>    sumx = sumx/x.length;<br>    sumy = sumy/y.length;<br>    int ret[] = new int[2];<br>    ret[0]=(int)Math.round(sumx);<br>    ret[1]=(int)Math.round(sumy);<br>    return ret;<br>    <br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

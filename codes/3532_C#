@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public  class StringCompare {<br>       <br>        public int simpleDifference(string a, string b) {<br>            int len = a. Length &gt; b. Length ? b. Length : a. Length;<br>            int same = 0;<br>            for (int i = 0; i &lt; len; i++) {<br>                if (a[i] == b[i]) {<br>                    same++;<br>                }<br>            }<br>            return same;<br>        }<br>    }<br></td>

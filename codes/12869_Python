@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import sys<br> <br>class MiniatureDachshund:<br>    def maxMikan(self, mikan, weight):<br>        mikan = sorted(mikan)<br>        count = 0 <br>        for item in mikan:<br>            if weight + item &lt;= 5000:<br>                weight += item<br>                count += 1<br>            else:<br>                break<br>        return count<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections.Generic;<br>using System.Text;<br> <br>public class TheQuestionsAndAnswersDivTwo<br>{<br>  public int find(string[] questions)<br>  {<br>    Dictionary&lt;string, int&gt; D = new Dictionary&lt;string, int&gt;();<br>    foreach(string s in questions) {<br>      if(!D.ContainsKey(s)) D[s] = 0;<br>    }<br>    return (int)Math.Pow(2, D.Count);<br>  }<br> <br> <br>}<br></td>

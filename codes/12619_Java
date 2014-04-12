@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class PyramidSequences {<br>  public long distinctPairs(int N, int M) {<br>    long n=N-1;<br>    long m=M-1;<br>    long k=gcd(n,m);<br>    return ((n/k+1)*(m/k+1)/2+(k-1)*(n/k)*(m/k));<br>  }<br>  <br>  long gcd(long n, long m) {<br>    long t=n%m;<br>    if(t==0) return m;<br>    return gcd(m,t);<br>  }<br>}<br></td>

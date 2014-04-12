@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;vector&gt;<br>using namespace std;<br> <br>class grafixClick<br>{<br>public:<br> vector&lt; int &gt; checkSaveButton( vector&lt; int &gt; rows, vector&lt; int &gt; cols )<br> {<br>   vector&lt; int &gt; vec_Ret;<br>   for ( int i = 0; i &lt; rows.size( ); ++i )<br>   {<br>     if ( rows[i]&gt;=20 &amp;&amp; rows[i]&lt;=39 &amp;&amp; cols[i]&gt;=50 &amp;&amp; cols[i]&lt;=99 )<br>       vec_Ret.push_back( i );<br>   }<br>   return vec_Ret;<br> }<br>};<br></td>

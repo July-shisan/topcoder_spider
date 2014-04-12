@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class StrangeComputer<br>    Public Function setMemory(ByVal mem As String) As Integer<br>        Dim RetVal As Integer = 0<br>        Dim lastDigit As Integer = 0<br><br>        For i As Integer = 0 To mem.Length - 1<br>            If lastDigit &lt;&gt; Integer.Parse(mem(i)) Then<br>                lastDigit = Integer.Parse(mem(i))<br>                RetVal = RetVal + 1<br>            End If<br>        Next<br>        Return RetVal<br><br>    End Function<br>End Class<br></td>

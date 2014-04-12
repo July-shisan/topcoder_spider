@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class BiggestRectangleEasy<br>{<br>  public:<br>    int findArea(int N)<br>    {<br>      return N/4 * (N/2 - N/4);<br>    }<br>};<br></td>

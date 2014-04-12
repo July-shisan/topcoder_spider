@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>public class CrossWordPuzzle {<br>  public int count(string s, int n) {<br>    int c = 0;<br>    string[] a = s.Split("X".ToCharArray());<br>    for (int i = 0; i &lt; a.Length; i++) {<br>      if (a[i].Length == n) c++;<br>    }<br>    return c;<br>  }<br>  public int countWords(string[] w, int n) {<br>    int c = 0;<br>    for (int i = 0; i &lt; w.Length; i++) {<br>      c = c + count(w[i], n);<br>    }<br>    return c;<br>  }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br> <br> <br>public class PowerOfThreeEasy<br>{<br>  public String ableToGet(int x, int y)<br>  {<br>    while ((x!=0) || (y!=0)) {<br>      int dx = x%3;<br>      int dy = y%3;<br>      x /= 3;<br>      y /= 3;<br>      if (dx+dy != 1) return "Impossible";<br>    }<br>    return "Possible";<br>  }<br>  <br> <br>}<br>//Powered by KawigiEdit 2.1.4 (beta) modified by pivanof!<br></td>

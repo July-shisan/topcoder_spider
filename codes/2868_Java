@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.lang.*;<br> <br>public class NoOrderOfOperations<br>{<br>  public static int evaluate(String e)<br>  {<br>    int r = 0;<br>    r += e.charAt(0) - '0';<br>    for (int k = 1;k &lt; e.length();k++) {<br>      char s = e.charAt(k);<br>      k++;<br>      int n = e.charAt(k) - '0';<br>      if (s == '+') r += n;<br>      if (s == '-') r -= n;<br>      if (s == '*') r *= n;<br>    }<br>    return r;<br>  }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class PrimePolynom {<br>  boolean prime(int n){<br>    if(n&lt;2)return false;<br>    for(int i=2;i*i&lt;=n;i++){<br>      if(n%i==0)<br>        return false;<br>    }<br>    return true;<br>  }<br>  public int reveal(int A, int B, int C) {<br>    int k=0;<br>    while(prime(A*k*k+B*k+C))k++;<br>    return k;<br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class RainyRoad<br>{<br>  public String isReachable(String[] road)<br>  {<br>    for(int index=0;index&lt;road[0].length()-1;index++)<br>    {<br>      if(road[0].charAt(index+1)=='.' || road[1].charAt(index+1)=='.')<br>        continue;<br>      return "NO";<br>    }<br>    return "YES";<br>  }<br>}<br></td>

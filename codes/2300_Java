@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class DinkyFish{<br><br>public int monthsUntilCrowded(int tankVolume, int maleNum, int femaleNum){<br><br>  int fishLimit = tankVolume*2;<br>  for(int i=0;i&gt;=0;i++){<br>    if( maleNum + femaleNum &gt; fishLimit ) return i;<br>    int mates = Math.min( maleNum, femaleNum );<br>    maleNum += mates;<br>    femaleNum += mates;<br>  }<br><br>  return -5;<br>}<br><br><br><br>}<br>// Powered by CodeProcessor<br></td>

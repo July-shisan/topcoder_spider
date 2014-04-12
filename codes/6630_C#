@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>using System.Collections.Generic;<br><br>public class DigitsSum <br>{<br>  public int lastDigit(int n) <br>  {<br>    while (n &gt;= 10)<br>    {<br>      string foo = n.ToString();<br>      int nn = 0;<br>      foreach (char c in foo)<br>      {<br>        nn += c - '0';<br>      }<br>      n = nn;<br>    }<br>    return n;<br>  }<br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

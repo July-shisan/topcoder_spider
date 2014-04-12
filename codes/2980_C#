@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class FuelConsumption<br>  {<br> <br>    public double maximalDistance(int[] velocities, int[] consumptions, int fuel)<br>    {<br>      int i,j;<br>      double d,maxd = -1;<br>      for(i=0;i&lt;velocities.Length;i++)<br>      {<br>        d = fuel*1.0/consumptions[i]*velocities[i];<br>        if (d&gt; maxd) maxd = d;<br>      }<br>      return maxd;<br>    }<br> <br> <br>  }<br></td>

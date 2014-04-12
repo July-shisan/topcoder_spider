@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class MissedCall {<br>  public:<br>  <br>  int waitingTime(int N, int songDuration, int delay) {<br>    long i,j,k;<br>    <br>    for (i=0;i&lt;N;i++) {<br>      j = i * (songDuration + 5) + songDuration;<br>      for (k=0;k&lt;5;k++)<br>        if ((j + k) % delay == 0)<br>          return j + k;<br>      }<br>    j = N * (songDuration + 5);<br>    while (j % delay != 0)<br>      j ++;<br>    return j;<br>    }<br>  };<br></td>

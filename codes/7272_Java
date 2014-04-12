@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class AnswerEvaluation{<br>  int n;<br>  public int getScore(String[] ks, int[] ss, String ans){<br>    n = ks.length;<br>    String []t = ans.split(" ");<br>    boolean b[] = new boolean [n];<br>    for(int i=0;i&lt;n;++i) b[i]=false;<br>    for(int i=0;i&lt;t.length;++i){<br>      for(int j=0;j&lt;n;++j) if(t[i].equals(ks[j])) b[j]=true;<br>    }<br>    int res=0;<br>    for(int i=0;i&lt;n;++i) if(b[i]) res+=ss[i];<br>    return res;<br>  }<br>}<br></td>

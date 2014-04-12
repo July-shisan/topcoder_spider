@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class CultureShock <br>{<br>  public String translate(String text)<br>  {<br>    String res = "";<br>    StringTokenizer st = new StringTokenizer(text, " ", true);<br>    <br>    while(st.hasMoreTokens())<br>    {<br>      String s = st.nextToken();<br>      res += (s.equals("ZEE") ? "ZED" : s);<br>    }<br>    <br>    return res;<br>  }<br> <br>  <br>}<br> <br>// Powered by PopsEdit<br>// Powered by CodeProcessor<br></td>

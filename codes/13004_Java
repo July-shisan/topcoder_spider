@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class MagicalStringDiv2 {<br> <br>  public int minimalMoves(String S){<br>    int len = S.length();<br>    int count = 0;<br>    if(S.length()%2 != 0){<br>      return 0;<br>    }<br>    for (int i = 0; i &lt; len; i++) {<br>      if(i &lt; len/2 &amp;&amp; "&lt;".equals(S.charAt(i)+"")){<br>        count ++;<br>      }<br>      if(i &gt;= len/2 &amp;&amp; "&gt;".equals(S.charAt(i)+"")){<br>        count ++;<br>      }<br>    }<br>    return count;<br>  }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br> <br>public class TaliluluCoffee<br>{<br>  public int maxTip(int[] tips)<br>  {<br>    int size = tips.length;<br>    for(int n=0; n&lt;size; n++) tips[n]*=-1;<br>    Arrays.sort(tips);<br>    for(int n=0; n&lt;size; n++) tips[n]*=-1;<br>    int ans = 0;<br>    for(int n=0; n&lt;size; n++) ans+=(Math.max(0,tips[n]-n));<br>    return ans;<br>  }<br>}<br></td>

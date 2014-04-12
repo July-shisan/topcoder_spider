@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;string&gt;<br>#include &lt;vector&gt;<br><br>using namespace std;<br><br>#define min(a,b) ((a)&lt;(b)?(a):(b))<br>#define fo(i,a,b) for(i=(a);i&lt;=(b);i++)<br>#define sz size()<br><br>class StringCompare <br>{<br>  public:<br>      <br><br>  int simpleDifference(string a, string b) <br>  {<br>    int ret=0,i;    <br>    fo(i,0,min(a.sz-1,b.sz-1))<br>      if(a[i]==b[i]) ret++;<br>    return ret;<br>  }<br><br>  <br> <br>};<br></td>

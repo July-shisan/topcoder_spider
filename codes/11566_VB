@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class RowAndCoins<br>    Public Function getWinner(ByVal cells As String) As String<br>        If cells(0) = cells(cells.Length - 1) AndAlso cells(0) = "B"c Then Return "Bob" Else Return "Alice"<br>    End Function<br>End Class<br></td>

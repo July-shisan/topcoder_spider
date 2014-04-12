@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import math,string,itertools,fractions,heapq,collections,re,array,bisect,random<br> <br>class WinterAndMandarins:<br>    def getNumber(self, bags, K):<br>    bags = list(bags)<br>    bags.sort()<br>    i = 0<br>    j = K-1<br>    ans = 1000000000000<br>    while j!=len(bags):<br>      ans = min(ans,bags[j]-bags[i])<br>      i += 1<br>      j += 1<br>    return ans<br> <br> <br>#Powered by KawigiEdit-pf 2.3.0!<br></td>

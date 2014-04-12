@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class EsperantoNumbers<br>{<br>public String nameThisNumber(int x)<br>{<br>String[] a={"unu", "du", "tri", "kvar", "kvin", "ses", "sep", "ok", "nau", "dek"};<br>String ret="";<br>int y= x%10;<br>x=x/10;<br>if(x!=0&amp;&amp;x!=1)<br>ret+=a[x-1]+"dek";<br>else if(x==1)<br>ret+="dek";<br>if(y!=0&amp;&amp;x!=0)<br>ret+=(" "+a[y-1]);<br>else if(y!=0)<br>ret+=a[y-1];<br>return ret;<br><br><br><br>}<br><br><br>};<br></td>

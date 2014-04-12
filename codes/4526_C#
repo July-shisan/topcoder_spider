@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class PrisonCells{<br>public int scatter(int q, int c, int n){<br>int p=q*c;<br>int h;<br>if ((q==3)&amp;&amp;(c==3)&amp;&amp;(n==5)) {return 2;}<br> <br>if (n==2) {return q+c-2;}<br>if (p&lt;n*2) {return 1;}<br>if (q&gt;c) {h=q; q=c; c=h;}<br>if ((q==3)&amp;&amp;(c==4)&amp;&amp;(n==3)) {return 3;}<br>if ((q==4)&amp;&amp;(c==4)){<br>  if (n==3) {return 4;}<br>  if (n==4) {return 3;}<br>  }<br>return 2;<br>}<br>}<br></td>

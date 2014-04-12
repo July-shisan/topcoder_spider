@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>using System.Collections.Specialized;<br>using System.Text;<br>using System.Text.RegularExpressions;<br> <br>public class ChatTranscript<br>{<br>  public int howMany(string[] transcript, string name)<br>  {<br>    int count=0;<br>    foreach (string s in transcript) {<br>      if (s.StartsWith(name + ":"))<br>        ++count;<br>    }<br>    return count;<br>  }<br>  <br>  #region Testing<br>  #endregion<br>}<br> <br>//Powered by [KawigiEdit]<br></td>

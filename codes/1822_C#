@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class LetterFreq<br>{<br>  public int[] getFreqs (string[] d)<br>  {<br>    int[] i = new int[26];<br> <br>    foreach (string s in d)<br>      foreach (char c in s.ToUpper())<br>        if (c &gt;= 'A' &amp;&amp; c &lt;= 'Z')<br>          i[c-'A']++;<br> <br>    return i;<br>  }<br>}<br></td>

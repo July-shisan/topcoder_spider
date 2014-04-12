@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;vector&gt;<br>using namespace std;<br><br>struct BinaryPolynomialDivTwo<br>{  <br>  int countRoots(vector &lt;int&gt; a)<br>  {<br>    int cnt=0;<br>    int lc=0;<br>    int n=a.size();<br>    for(int i=0;i&lt;n;i++)<br>    {<br>      if(a[i]==1)<br>        lc++;<br>    }<br>    if(lc%2==0) cnt++;<br>    if(a[0]==0) cnt++;<br>    return cnt;<br>  }<br>};<br></td>

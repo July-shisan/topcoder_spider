@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br> <br>public class CardsShuffle<br>{<br>  public String shuffle(String cards, int first, int last, int times)<br>  {<br>    while(times--&gt;0)<br>      cards = cards.substring(first-1, last) + cards.substring(0, first-1) + cards.substring(last, cards.length());<br>    return cards;<br>  }<br>  <br>  <br>}<br>//Powered by [KawigiEdit] 2.0!<br></td>

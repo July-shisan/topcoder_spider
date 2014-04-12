@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class BestDecomposition{<br>public int maxProduct(int n){<br>int k=n;<br>int res=1;<br>if (n==0) {return 0;}<br>if (n==1) {return 1;}<br>while (k&gt;4) {k-=3; res=res*3; res=res%10007;}<br>res=res*k; res=res%10007;<br>return res;<br>}<br>}<br></td>

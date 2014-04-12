@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Class TheBeauty<br>  Public Function find(ByVal n As Integer) As Integer<br>        Dim ty As String = CStr(n)<br>        Dim diff As Integer = 0<br>        While ty.Length &gt; 0<br>            Dim n1 As String = ty(0)<br>            ty = Replace(ty, n1, "")<br>            diff += 1<br>        End While<br>        Return diff<br>    End Function<br> End Class<br></td>

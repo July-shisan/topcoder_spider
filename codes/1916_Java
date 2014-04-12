@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class Carbon14{<br>  public int[] dateRange(int conc, int err){<br>    double min = (conc+err)/10000.0;<br>    double max = (conc-err)/10000.0;<br>    return new int[]{(int)(-Math.log(min)*8267),(int)Math.ceil(-Math.log(max)*8267)};<br>  }<br>}<br></td>

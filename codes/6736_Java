@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class AdditionCycles {<br>  public int cycleLength(int n) {<br>    int count = 1;<br>    int start = n;<br>    <br>    for (; ; count++) {<br>      int m = n/10 + n%10;<br>      n = (n%10)*10 + m%10;<br>      if (n == start) {<br>        return count;<br>      }<br>    }<br>  }<br>}<br></td>

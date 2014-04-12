@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class Soccer <br>{<br>  public int maxPoints(int[] wins, int[] ties)<br>  {<br>    int max = 0;<br>    <br>    for(int i = 0; i &lt; wins.length; i++)<br>    {<br>      int tmp = (3 * wins[i]) + ties[i];<br>      <br>      max = Math.max(max, tmp);<br>    }<br>    <br>    return max;<br>  }<br> <br>  <br>}<br> <br>// Powered by PopsEdit<br>// Powered by CodeProcessor<br></td>

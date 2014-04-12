@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class StairClimb {<br>  public int stridesTaken(int[] f, int s) {<br>    int r=0,i,j;<br>    for(i=0;i&lt;f.length;i++) {<br>      r+=f[i]/s;<br>      if(f[i]%s&gt;0)r++;<br>      r+=2;<br>    }<br>    r-=2;<br>    return(r);<br>  }<br>}<br></td>

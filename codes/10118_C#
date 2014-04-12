@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System.Collections;<br>class InverseFactoring<br>    {<br>        public static int getTheNumber(int[] factors)<br>        {<br>            ArrayList a1 = new ArrayList(factors);<br>            a1.Sort();<br>            return ((int)a1[0]*(int)a1[a1.Count - 1]);<br><br>        }<br>    }<br></td>

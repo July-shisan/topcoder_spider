@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class MysticAndCandiesEasy<br>{<br>  public int minBoxes(int C, int X, int[] high)<br>  {<br>    System.Array.Sort(high);<br>    <br>    int n = high.Length;<br>    <br>    int suma = 0;<br>    for(int i=0;i&lt;n;i++)<br>    {<br>      suma+=high[i];<br>      if (C-suma&lt;X)<br>        return (n-i);<br>    }<br>    return n;<br>  }<br>}<br></td>

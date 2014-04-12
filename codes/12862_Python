@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class BinPackingEasy(object):<br>    def minBins(self, item):<br>      item = list(item)<br>        bins = []<br>        while item:<br>            n = max(item)<br>            item.remove(n)<br>            for idx, b in enumerate(bins):<br>                if b + n &lt;= 300:<br>                    bins[idx] = b + n<br>                    break<br>            else:<br>                bins.append(n)<br>        return len(bins)<br></td>

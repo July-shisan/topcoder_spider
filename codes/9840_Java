@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class Subway2 {<br>  <br>  public double minTime(int length, int maxAcceleration, int maxVelocity){<br>    double s = length;<br>    double x = s / 2.0;<br>    double a = maxAcceleration;<br>    double v = maxVelocity;<br>    <br>    if(x &lt; v*v /2.0/a){<br>      return 2.0 * Math.sqrt(2.0 * x / a);<br>    }<br>    return 2.0*(v / a + (x - v*v/2.0/a)/v);<br>  }<br><br>}<br></td>

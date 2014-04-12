@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class WinterAndCandies:<br>  def getNumber(self,numbers):<br>    arr = [0 for i in xrange(100)]<br>    for n in numbers:<br>      arr[n]+=1<br>    ans=0<br>    pres = 1<br>    for n in arr[1:]:<br>      pres = pres*n<br>      ans += pres<br>    return ans<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br><br>public class TheNumberGame {<br>  public String determineOutcome(Int32 a, Int32 b) {<br>    String one = a.ToString(), two = b.ToString();<br>    Char[] r = one.ToCharArray();<br>    Array.Reverse(r);<br>    String oner = new String(r);<br>    return one.IndexOf(two) &gt;= 0 || oner.IndexOf(two) &gt;= 0<br>      ? "Manao wins"<br>      : "Manao loses";<br>  }<br>}<br></td>

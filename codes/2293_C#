@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class Commission  <br>    {<br>      public double equivalentSales(double sales, double cost, double commission)  <br>      {<br>        return sales *(1-(cost/100+0.2)) / (1-(cost/100+commission/100));<br>      }<br>    }<br></td>

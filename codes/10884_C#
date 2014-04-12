@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System.Collections.Generic;<br><br>public class VacationTime<br>{<br>  public int bestSchedule(int N, int K, int[] wd)<br>  {<br>    List&lt;int&gt; w = new List&lt;int&gt;(wd);<br>    int min = N;<br>    for (int i=1; i&lt;=N-K+1; i++)<br>    {<br>      int cm = 0;<br>      for (int j=0; j&lt;K; j++)<br>      {<br>        if (w.Contains(i+j)) cm++;<br>      }<br>      <br>      if (min&gt;cm) min=cm;<br>    }<br>    <br>    return min;<br>  }<br>}<br></td>

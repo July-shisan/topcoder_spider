@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class FallingFactorialPower{<br><br>  public double compute(int n, int k){<br>    if(k&gt;=0){<br>      double res = 1;<br>      for(int i=0;i&lt;k;i++){<br>        res *= (double)(n-i);<br>      }<br>      return res;<br>    }<br>    else{<br>      return compute(n,k+1) / (double) (n-k);<br>    }<br>  }<br>}<br></td>

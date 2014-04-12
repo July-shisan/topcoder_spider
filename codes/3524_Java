@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class SyllableCounter<br>{<br>    public int countSyllables (String word)<br>    {<br>        int ret = 0;<br>        String ns[] = word.toLowerCase ().split ("[^aeiou]{1,}");<br>        for (int i = 0 ; i &lt; ns.length ; i++)<br>            if (!ns [i].equals (""))<br>                ret++;<br>        return ret;<br> <br>    }<br>    }<br></td>

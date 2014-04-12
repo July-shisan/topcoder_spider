@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class RedundantStrings<br>public function howMany(length as integer) As Integer<br>  dim i,j,k as integer<br>  for i=1 to length - 1<br>    if length mod i = 0 then j = j + ((2 ^ i) - howMany(i))<br>  next i<br>  howMany = j<br>end function<br>end class<br></td>

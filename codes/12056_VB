@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class MinimalTriangle<br>    Public Function maximalArea(ByVal length As Integer) As Double<br>        Return (Math.Pow(3.0, 0.5) * length * length) / 4.0<br>    End Function<br>End Class<br></td>

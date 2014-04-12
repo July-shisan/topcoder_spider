@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class TheSimilarNumbers {<br> <br>  public int find(int lower, int upper) {<br>    int res = 0;<br>    int i = lower;<br>    while (i &lt;= upper) {<br>      i *= 10;<br>      i++;<br>      res++;<br>    }<br>    return res;<br>  }<br> <br>}<br></td>

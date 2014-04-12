@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports Microsoft.VisualBasic<br>Imports System<br> <br>Public Class TypingDistance<br>    Public Function minDistance(ByVal keyboard As String, ByVal word As String) As Integer<br>        Dim ans As Integer = 0<br>        Dim m As Integer = word.Length<br>        For i As Integer = 0 To m - 2<br>            ans += Math.Abs(keyboard.IndexOf(word(i)) - keyboard.IndexOf(word(i + 1)))<br>        Next<br> <br>        Return ans<br>    End Function<br>End Class<br></td>

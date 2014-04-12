@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class ProseFlip<br>{<br> public String[] getFlip(String[] text)<br> {<br>  int len=text.length;<br>  int n = text[0].length();<br>  String[] ret = new String[n];<br>  for(int i=0;i&lt;n;i++)<br>  {<br>   String temp="";<br>   for(int j=0;j&lt;len;j++)<br>   {<br>    char sub=text[j].charAt(i);<br>    temp=temp+sub;<br>   }<br>   ret[i]=temp;<br>  }<br>  return ret;<br> }<br>}<br></td>

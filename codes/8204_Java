@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br> <br>public class WhiteCells<br>{<br>  public int countOccupied(String[] board)<br>  {<br>    int res=0;<br>    for (int i=0; i&lt;board.length; i++)    <br>      for (int j=0; j&lt;board[i].length(); j++)<br>        if (board[i].charAt(j)=='F'&amp;&amp;(i+j)%2==0)<br>          res++;<br>    return res;<br>  }<br>  <br>  <br>}<br>//Powered by [KawigiEdit] 2.0!<br></td>

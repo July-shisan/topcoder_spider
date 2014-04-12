@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class CompetitionStatistics<br>{<br>  public int consecutiveGrowth(int[] ratingChanges)<br>  {<br>    int longest=0;<br>    int cur=0;<br>    for (int x=0; x&lt;ratingChanges.length; x++)<br>    {<br>      if (ratingChanges[x] &gt; 0)<br>        cur++;<br>      else<br>        cur = 0;<br>      if (cur &gt; longest) longest = cur;<br>    }<br>    return longest;<br>  }<br>}<br></td>

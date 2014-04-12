@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class CarrotBoxesEasy<br>{<br>public int theIndex(int[] carrots, int K)<br>{<br>int l=carrots.length;<br>int max=0,pos=0;<br>while(K!=0)<br>{<br>max=0;<br>pos=0;<br>for(int i=0;i&lt;l;i++)<br>{<br>if(max&lt;carrots[i])<br>{<br>max=carrots[i];<br>pos=i;<br>}<br>}<br>carrots[pos]--;<br>K--;<br>}<br>return pos;<br>}<br>}<br></td>

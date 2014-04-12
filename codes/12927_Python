@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            # -*- coding: utf-8 -*-<br>import math,string,itertools,fractions,heapq,collections,re,array,bisect<br> <br>class TypoCoderDiv2:<br>    def count(self, rating):<br>        n,prev = 0,500<br>        for i in rating:<br>            if (prev&lt;1200 and i&gt;=1200) or (prev&gt;=1200 and i&lt;1200): n += 1<br>            prev = i<br>        return n<br> <br># Powered by Greed 2.0-beta<br></td>

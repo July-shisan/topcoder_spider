@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class TheArray<br>    Public Function find(n As Integer, d As Integer, first As Integer, last As Integer) As Integer<br>        Dim res As Integer<br><br>        If d = 0 Then Return Math.Max(first, last)<br><br>        Dim x As Double<br>        x = (last - first + (n - 1) * d) / (2 * d)<br>        res = CInt(Math.Max(first + Math.Floor(x) * d, last + (n - 1 - Math.Ceiling(x)) * d))<br>        Return res<br><br>    End Function<br>End Class<br></td>

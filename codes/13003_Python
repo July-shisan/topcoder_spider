@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class MagicalStringDiv1:<br>  def getLongest(self, S):<br>    a = 0<br>    b = S.count('&lt;')<br>    res = 0<br>    for c in S:<br>      if c == '&gt;':<br>        a += 1<br>      else:<br>        b -= 1<br>      res = max(res, 2*min(a,b))<br>    return res<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class ReversingPrefixes {<br>  public String getMinimal(String s) {<br>    if(s.length()==0) return "";<br>    int bind=-1;<br>    char min = 'Z'+1;<br>    for(int i=s.length()-1;i&gt;=0;i--){<br>      if(s.charAt(i)&lt;min){<br>        min=s.charAt(i);<br>        bind = i;<br>      }<br>    }<br>    return min+getMinimal(s.substring(0,bind))+s.substring(bind+1);<br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

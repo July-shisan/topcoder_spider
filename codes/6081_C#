@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br> <br>public class BootsExchange<br>{<br>  public static int leastAmount(int[] left, int[] right)<br>  {<br>    int cnt = right.Length;<br>    foreach (int i in left)<br>    {<br>      for (int j = 0; j &lt; cnt; j++)<br>      {<br>        if (right[j] == i)<br>        {<br>          right[j] = right[cnt - 1];<br>          cnt--;<br>          break;<br>        }<br>      }<br>    }<br>    return cnt;<br>  }<br> <br>  static void Main(string[] args)<br>  {<br>  }<br>}<br></td>

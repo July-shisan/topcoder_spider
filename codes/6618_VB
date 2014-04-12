@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Text;<br>using System.Text.RegularExpressions;<br>using System.Collections;<br><br>public class HiddenMessage {<br>    public string getMessage(string text) {<br>        string res = "";<br>        string[] w = text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);<br>        for (int i = 0; i &lt; w.Length; i++)<br>            res += w[i][0];<br>        return res;<br>    }<br>    }<br></td>

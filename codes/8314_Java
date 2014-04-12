@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br> <br>public class DreamingAboutCarrots<br>{<br>    public int gcd(int a, int b) {<br>        if (b == 0) return a;<br>        else return gcd(b, a%b);<br>    }<br>    public int carrotsBetweenCarrots(int x1, int y1, int x2, int y2)<br>  {<br>      return gcd(Math.abs(x2-x1), Math.abs(y1-y2))-1;  <br>  }<br>}<br>//Powered by [KawigiEdit] 2.0!<br></td>

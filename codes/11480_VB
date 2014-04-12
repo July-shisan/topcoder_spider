@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class TwiceString<br>Public Function getShortest(s As String) As String<br>Dim i as integer<br>For i = s.length()-1 to 1 step -1<br>  if Right(s,i) = Left(s,i) Then <br>    return s + Right(s,s.length()-i) <br>  end if<br>next i <br>return s + s<br>End Function <br>End Class<br></td>

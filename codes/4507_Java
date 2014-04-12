@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.lang.reflect.*;<br> <br>public class CircleDance {<br>  public int arrangeDancers( int[] heights ) {<br>    Arrays.sort(heights);<br>    int max = heights[1] - heights[0];<br>    for (int i = 2; i &lt; heights.length; i++) {<br>      max = Math.max(max, heights[i] - heights[i-2]);<br>    }<br>    max = Math.max(max, heights[heights.length-1] - heights[heights.length-2]);<br>    return max;<br>  }<br>}<br></td>

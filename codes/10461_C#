@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections.Generic;<br> <br> <br>public class ToolsBox<br>{<br>  public int countTools(string[] need)<br>  {<br>    Dictionary&lt;string, bool&gt; D = new Dictionary&lt;string, bool&gt;();<br>    foreach(string s in need) {<br>      foreach(string a in s.Split()) D[a] = true;<br>    }<br>    return D.Count;<br>  }<br> <br> <br>}<br></td>

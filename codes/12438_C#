@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>using System.Collections.Generic;<br>using System.Collections.Specialized;<br>using System.Text;<br>using System.Text.RegularExpressions;<br> <br>public class FoxAndGame<br>{<br>  public int countStars(string[] result)<br>  {<br>    int count=0;<br>    foreach(string cc in result)foreach(char t in cc)if(t=='o')count++;<br>    return count;<br>  }<br> <br> <br>}<br>//Powered by [KawigiEdit] 2.0!<br></td>

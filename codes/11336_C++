@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include&lt;iostream&gt;<br>#include &lt;string&gt;<br>#include &lt;vector&gt;<br>using namespace std;<br><br><br>class GogoXBallsAndBinsEasy {<br>  public:<br>  int solve(vector &lt;int&gt; T) {<br>    int sz=T.size();<br>    int i;<br>    int count=0;<br>    int temp;<br>    temp=sz-1;<br><br>    for(i=0;i&lt;sz;i++,temp--)<br>    {<br>      count=count+abs(T[i]-T[temp]);<br>    }<br><br>    return count/2;<br>  <br>  }<br>};<br><br><br>// Powered by FileEdit<br></td>

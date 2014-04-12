@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            // FilterJava<br><br>import java.util.*;<br>public class CutoffRounder {<br>     public int round(String num, String cutoff) {<br>          double n = Double.parseDouble(num);<br>          double c = Double.parseDouble(cutoff);<br>          if( n - c &gt; (int)n )<br>               return (int)n+1;<br>          return (int)n;<br>     }<br>}<br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class BallAndHats {<br><br><br>public int getHat(string hats, int numSwaps) {<br>  int init = 0;<br>  for (int i = 0; i &lt; 3; i++) {<br>    if (hats[i] == 'o') init = i;<br>  }<br>  <br>  if (numSwaps == 0) return init;<br>  <br>  if (init == 1) {<br>    if (numSwaps % 2 == 0) return 1;<br>    else return 0;<br>  }<br><br>  if (numSwaps % 2 == 0) return 0;<br>  else return 1;<br>}<br><br><br>}<br></td>

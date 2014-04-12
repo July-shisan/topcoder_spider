@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class ShorterSuperSum {<br>  public int calculate(int k, int n){<br>    int sum=0;<br>    if(k==0) return n;<br>    else<br>      for (int i = 1; i &lt;= n; i++) {<br>        sum+=calculate(k-1,i);<br>      }<br>    return sum;<br>  }<br>}<br></td>

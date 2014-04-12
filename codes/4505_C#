@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>public class RedundantStrings {<br> <br>Int64 [] nonRed=new Int64[61];<br>Int64 [] Red=new Int64[61];<br>public void getNo(int len) {<br> nonRed[1]=2;<br> nonRed[2]=2; <br> Red[1]=0;<br> Red[2]=2;<br> int ll,tt;<br> for(ll=3;ll&lt;=len;ll++) {<br>  for(tt=1;tt&lt;=ll/2;tt++) if(ll%tt==0)<br>   Red[ll]+=nonRed[tt];<br>  nonRed[ll]=(Int64)(1&lt;&lt;ll) - Red[ll];<br> }<br>}<br>public int howMany(int len) {<br> getNo(len);<br> return (int)Red[len];<br>}<br>}<br></td>

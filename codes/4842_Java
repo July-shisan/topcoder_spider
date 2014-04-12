@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class SimpleDuplicateRemover {<br>  public int[] process(int[] a) {<br>    LinkedList&lt;Integer&gt; list = new LinkedList();<br>    for (int i = a.length-1; i&gt;=0; i--) {<br>      if (!list.contains(a[i])) list.addFirst(a[i]);<br>    }<br>    int[] ret = new int[list.size()];<br>    for (int i = 0; i &lt; list.size(); i++) ret[i] = list.get(i);<br>    return ret;<br>  }<br>}<br></td>

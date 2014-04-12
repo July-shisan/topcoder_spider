@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            # -*- coding: utf-8 -*-<br>import math,string,itertools,fractions,heapq,collections,re,array,bisect<br> <br>class MagicalStringDiv2:<br>    def minimalMoves(self, S):<br>        return sum(i!=j for i,j in zip(S,'&gt;'*(len(S)&gt;&gt;1) + '&lt;'*(len(S)&lt;&lt;1)))<br> <br># Powered by Greed 2.0-beta<br></td>

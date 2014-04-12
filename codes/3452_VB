@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports Microsoft.VisualBasic<br>Imports Microsoft.VisualBasic.Strings<br> <br>Public Class InsideOut<br> <br>Public Function unscramble(line As String) As String<br>Dim A as string<br>Dim B as string<br> <br>A=Left(line,len(line)/2)<br>B=Right(line,len(line)/2)<br>dim X as long<br>for x = len(A) to 1 step -1<br>unscramble=unscramble &amp; mid(A,x,1)<br>next<br> <br>for x = len(B) to 1 step -1<br>unscramble=unscramble &amp; mid(B,x,1)<br>next<br> <br>end function<br>end class<br></td>

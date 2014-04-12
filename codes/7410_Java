@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br> <br>public class DegreesToRadians<br>{<br>  public double convertToRadians(int degrees, int minutes, int seconds)<br>  {<br>    double deg = degrees + minutes / 60.0 + seconds / (60.0 * 60.0);<br>    return deg*Math.PI/180.0;  <br>  }<br>  <br>  <br>}<br>//Powered by [KawigiEdit] 2.0!<br></td>

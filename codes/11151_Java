@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.lang.*;<br>import java.util.*;<br>import java.math.*;<br><br>public class ToastXRaspberry{<br> public int apply(int upper_limit, int layer_count){<br>  double ul,lc;<br>  ul = (double) upper_limit; lc = (double) layer_count;<br>  return (int) Math.ceil(lc/ul);<br> }<br>}<br></td>

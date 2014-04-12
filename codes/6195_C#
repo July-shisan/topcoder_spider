@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>public class RugSizes<br>  {<br>    public int rugCount(int area)<br>    {<br>      int count = 0;<br>      int cnt = (int)(Math.Sqrt(area) + 1);<br>      for(int i = 1; i &lt;= cnt; i++)<br>      {<br>        int j = area / i;<br>        if(i * j == area)<br>        {<br>          if(i == j)count++;else if(i &lt; j)<br>          {<br>            if((i%2 != 0) || (j %2 != 0))count++;<br>          }<br>        }<br>      }<br>      return count;<br>    }<br>  }<br></td>

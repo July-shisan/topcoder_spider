@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class LinearPolyominoCovering {<br>    public String findCovering(String region) {<br>        region = region.replace("XX", "BB");<br>        region = region.replace("BBBB", "AAAA");<br>        if (region.contains("X")) {<br>            return "impossible";<br>        } else {<br>            return region;<br>        }<br>    }<br>}<br></td>

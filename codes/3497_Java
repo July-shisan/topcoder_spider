@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class Hiking{<br>public int meet(int[] a, int[] b){<br>  int s=0;<br>  for (int i=0; i&lt;a.length; i++) s=s+a[i];<br>  int sa=0,sb=0;<br>  for (int i=0; i&lt;a.length; i++){<br>    sa=sa+a[i]; sb=sb+b[i];<br>    if (sa+sb==s) return i+1;<br>    if (sa+sb&gt;s) return i;<br>  }<br>  return 0;<br>}<br>}<br></td>

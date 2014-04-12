@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class StringDup {<br>  char[] stat = new char[256];<br>  public char getMax(String s) {<br>    for (int x = 0; x &lt; s.length(); x++) {<br>      stat[s.charAt(x)]++;<br>    }<br>    int max = 0;<br>    for (int x = 0; x &lt; 256; x++) {<br>      if (stat[x] &gt; max)<br>        max = stat[x];<br>    }<br>    for (int x = 0; x &lt; s.length(); x++) {<br>      if (stat[s.charAt(x)] == max)<br>        return s.charAt(x);<br>    }<br>    return 'z';<br>  }<br>}<br></td>

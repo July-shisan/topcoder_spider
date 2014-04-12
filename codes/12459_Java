@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class EllysNewNickname {<br> <br>  public int getLength(String nickname) {<br>    return nickname.replaceAll("[aiueoy]+", "a").length();<br>  }<br> <br>}<br></td>

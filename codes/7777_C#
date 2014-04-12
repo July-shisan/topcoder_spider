@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br><br>public class AttendanceShort {<br>public string[] shortList (string[] names, string[] mm) {<br>ArrayList arr = new ArrayList();<br>for(int i = 0; i &lt; names.Length; i++) {<br>string s = names[i];<br>double tot = .0, abs =.0;<br>foreach(char c in mm[i]) {<br>if(c == 'A') {tot++; abs++;};<br>if(c == 'P') tot++;<br>}<br>if((tot-abs)/tot &lt; 0.75) arr.Add(s);<br>}<br>return (string[])arr.ToArray(typeof(string));<br>}<br>}<br></td>

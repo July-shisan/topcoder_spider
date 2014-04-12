@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class RandomizedQuickSort<br>{<br>public:<br>  double getExpectedTime(int listSize, int S, int a, int b)<br>  {<br>    double calc_t[1001];<br>    int i,j,k;<br> <br>    for (i=0;i&lt;=S;i++) calc_t[i]=b*i*i;<br>    for (j=S+1;j&lt;=listSize;j++)<br>    {<br>      double total_time=a*j*j;<br>      for (k=0;k&lt;j;k++)<br>        total_time = total_time + calc_t[k] + calc_t[j-k-1];<br>      calc_t[j]=total_time/j;<br>    }<br>    return calc_t[listSize];<br>  }<br>};<br></td>

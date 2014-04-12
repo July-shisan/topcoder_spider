@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;string&gt;<br>#include &lt;vector&gt;<br>#include &lt;cmath&gt;<br>using namespace std;<br> <br>class ManhattanMovement {<br>  public:<br>  double getDistance(int a, int b, int x0, int y0) {<br>    if (a==0) return fabs(y0-1.0/b);<br>    if (b==0) return fabs(x0-1.0/a);<br>    return min(fabs(y0-(1.0-1.0*a*x0)/b), fabs(x0-(1.0-1.0*b*y0)/a));<br>  }<br>};<br> <br>// Powered by PopsEdit<br></td>

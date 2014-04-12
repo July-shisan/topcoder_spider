@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.io.*;<br>import java.util.*;<br>import java.text.*;<br>import java.math.*;<br>public class AlmostBipartiteMatching{<br>  public int maxMatching(int na,int nb,int[] edgesa,int[] edgesb)<br>  {<br>    int res=na/2+nb/2;<br>    if (na%2==0 || nb%2==0)<br>      return res;<br>    int i,j;<br>    for (i=0;i&lt;edgesa.length;i++)<br>      if (edgesa[i]%2==0 &amp;&amp; edgesb[i]%2==0)<br>        return res+1;<br>    return res;<br>  }<br>}<br></td>

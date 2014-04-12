@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class FountainOfLife<br>{<br>  public double elixirOfDeath(int elixir, int poison, int pool)<br>  {<br>    int gain=poison-elixir;<br>    if(gain&lt;1)<br>      return -1;<br>    return ((double)pool)/gain;<br>  }<br>}<br></td>

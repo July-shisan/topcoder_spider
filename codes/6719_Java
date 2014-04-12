@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class UsingStats<br>{<br>public int getMedian(int[] vals, int mean)<br>{<br><br>int temp=(mean*(vals.length+1)),i=0;<br>int[] abc=new int[vals.length+1];<br>for(i=0;i&lt;vals.length;i++)<br>{<br> <br> temp=temp-vals[i];<br> abc[i]=vals[i];<br><br> }<br> abc[i]=temp;<br> Arrays.sort(abc);<br> return abc[(vals.length/2)];<br> <br>}<br><br>}<br></td>

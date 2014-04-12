@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            # -*- coding: utf-8 -*-<br>import math,string,itertools,fractions,heapq,collections,re,array,bisect<br> <br>class EllysSubstringSorter:<br>    def getMin(self, S, L):<br>        return min(S[:i]+''.join(sorted(S[i:i+L]))+S[i+L:] for i in range(len(S)-L+1))<br> <br># Powered by Greed 2.0-beta<br></td>

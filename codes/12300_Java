@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.math.*;<br><br>public class JumpFurther<br>{<br><br><br>    public int furthest (int N, int badStep)<br>    {<br>        int res=0;<br>        for(int i=1;i&lt;=N;i++)<br>        {<br>            res+=i;<br>            if(res==badStep)<br>                res--;<br>        }<br>        return res;<br>    }<br>}<br></td>

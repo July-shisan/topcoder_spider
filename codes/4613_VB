@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            imports Microsoft.VisualBasic<br> <br>public class ChatTranscript<br>  Public Function howMany(transcript As String(), name As String) As Integer<br>    Dim count as integer<br>    Dim i as integer<br> <br>    count = 0<br>    for i = 0 to transcript.GetUpperBound(0)<br>      if instr(transcript(i), name + ":") = 1 then<br>        count = count + 1<br>      end if<br>    next<br>    <br>    return count<br>  End Function<br>end class<br></td>

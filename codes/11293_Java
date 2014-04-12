@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class AnagramFree {<br> <br>  public int getMaximumSubset(String[] S) {<br>    Set&lt;String&gt; result = new HashSet&lt;String&gt;();<br>    for(String s : S){<br>      char[] cs = s.toCharArray();<br>      Arrays.sort(cs);<br>      result.add(new String(cs));<br>    }<br>    return result.size();<br>  }<br> <br>}<br></td>

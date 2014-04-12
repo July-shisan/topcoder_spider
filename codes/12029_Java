@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class ANDEquation {<br> <br>  public int restoreY(int[] A) {<br>    for(int i=0; i&lt;A.length; i++){<br>      int val=-1;;<br>      for(int j=0; j&lt;A.length; j++){<br>        if(j!=i)<br>          if(val==-1)<br>            val=A[j];<br>          else<br>            val &amp;= A[j];<br>      }<br>      if(val==A[i])<br>        return val;<br>    }<br>        <br>    return -1;<br>  }<br> <br>}<br></td>

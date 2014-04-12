@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.math.*;<br>import java.io.*;<br>import java.lang.*;<br>import java.text.*;<br><br>public class TheSequencesLevelTwo {<br>  public int[] find(int[] sequence)<br>  {<br>    int[] x = sequence;<br>    Arrays.sort(x);<br>    for(int i = 1;i&lt;x.length-1;i+=2)<br>    {<br>      int temp = x[i];<br>      x[i] = x[i+1];<br>      x[i+1] = temp;<br>    }<br>    return x;<br>  }<br>}<br></td>

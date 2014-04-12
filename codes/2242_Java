@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br><br>public class CodeRed<br>{<br>  public int count(String text)<br>  {<br>    String temp = text.toLowerCase();<br>    int i = 0;<br>    int res = 0;<br>    while((i = (temp.indexOf("red", i))) &gt;= 0)<br>    {<br>      ++res;<br>      ++i;<br>    }<br>    return res;<br>  }<br>  <br>  <br>}<br>//Powered by [KawigiEdit] 2.0!<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports System.Collections.Generic <br><br>Class TrappingRabbit<br>  Public Function findMinimumTime(trapX As Integer(), trapY As Integer()) As Integer<br>    Dim MinSum As Integer = 10000<br>    For Index As Integer = 0 To trapX.Length() - 1<br>      If trapX(Index) + trapY(Index) &lt; MinSum Then<br>        MinSum = trapX(Index) + trapY(Index)<br>      End If<br>    Next<br>    Return MinSum - 2<br>  End Function<br>End Class<br></td>

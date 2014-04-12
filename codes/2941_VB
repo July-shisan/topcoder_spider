@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class NinePatch<br>    Public Function numBlocks(ByVal length As Integer(), ByVal width As Integer()) As Integer<br>        Dim i, patches, scraps, patchesLeft As Integer<br>        For i = 0 To length.Length - 1<br>            patches = patchesLeft + (length(i) \ 2) * (width(i) \ 2)<br>            scraps += patches \ 9<br>            patchesLeft = patches Mod 9<br>        Next<br> <br>        Return scraps<br>    End Function<br>End Class<br></td>

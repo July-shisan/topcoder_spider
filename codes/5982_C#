@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class SpeedTyper {<br>  public string lettersToPractice(string letters, int[] times) {<br>    int avg = times[times.Length - 1] / times.Length;<br>    string s = "";<br>    for (int i = 0; i &lt; letters.Length; i++) {<br>      int d = times[0];<br>      if (i &gt; 0)<br>        d = times[i] - times[i - 1];<br>      if (d &gt; avg)<br>        s += letters[i];<br>    }<br>    return s;<br>  }<br>}<br></td>

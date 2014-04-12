@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>public class SequenceOfNumbers {<br>  public string[] rearrange(string[] sequence) {<br>    int[] a=new int[sequence.Length];<br>    for (int i=0;i&lt;a.Length;i++) a[i]=int.Parse(sequence[i]);<br>    Array.Sort(a);<br>    for (int i=0;i&lt;a.Length;i++) sequence[i]=a[i].ToString();<br>    return sequence;<br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

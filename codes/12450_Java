@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br> <br> <br>public class EllysPairs<br>{<br>  public int getDifference(int[] arr)<br>  {<br>    Arrays.sort(arr);<br>    int tmp[]=new int[arr.length/2];<br>    for(int i=0;i&lt;arr.length/2;i++)<br>      tmp[i]=arr[i]+arr[arr.length-i-1];<br>    Arrays.sort(tmp);<br>    return tmp[tmp.length-1]-tmp[0];  <br>  }<br>  <br> <br>}<br>//Powered by KawigiEdit 2.1.8 (beta) modified by pivanof!<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.math.BigInteger;<br><br>public class Starport {<br>  public double getExpectedTime(int N, int M) {<br>    int g = BigInteger.valueOf(N).gcd(BigInteger.valueOf(M)).intValue();<br>    return ((double)(N - g)) / 2;<br>  }<br><br>}<br><br><br><br>// Powered by FileEdit<br>// Powered by moj 4.12 [modified TZTester]<br>// Powered by CodeProcessor<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>public class PipeCuts {<br>public double probability(int[] wl,int L) {<br>Array.Sort(wl);<br>double nt=0.0;<br>for(int i=0;i&lt;wl.Length;i++)<br> for(int j=i+1;j&lt;wl.Length;j++)<br>  if(wl[i]&gt;L || wl[j]-wl[i]&gt;L || 100-wl[j]&gt;L)<br>   nt++;<br>return (double)2.0*nt/(wl.Length*wl.Length-wl.Length);<br>}<br>}<br></td>

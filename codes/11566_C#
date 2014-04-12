@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Text;<br>using System.Text.RegularExpressions;<br>using System.Collections;<br>using System.Collections.Generic;<br><br>public class RowAndCoins {<br>    public string getWinner(string cells) {<br>        if (cells[0] == 'A' || cells[cells.Length - 1] == 'A')<br>            return "Alice";<br>        string res = "Bob";<br>        return res;<br>    }<br><br>}<br><br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

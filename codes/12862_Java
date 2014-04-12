@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class BinPackingEasy {<br>  public int minBins(int[] item) {<br>        Arrays.sort(item);<br>        int l=0;<br>        int r=item.length-1;<br>        int ans=0;<br>        while(l&lt;=r){<br>            if(item[l]+item[r]&gt;300){<br>                r--;<br>            }<br>            else{<br>                r--;<br>                l++;<br>            }<br>            ans++;<br>        }<br>    return ans;<br>  }<br>}<br></td>

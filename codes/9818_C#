@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class DNAConstruction<br>{<br>  public int maxLength(string nucleotides)<br>  {<br>    int A =0;<br>    int T=0;<br>    int C=0;<br>    int G=0;<br>    for(int i=0;i&lt;nucleotides.Length;i++)<br>    {<br>      if(nucleotides[i]=='A') { A++; }<br>      else if(nucleotides[i]=='T') { T++; }<br>      else if(nucleotides[i]=='C') { C++; }<br>      else if(nucleotides[i]=='G') { G++; }<br>    }<br>    <br>    return System.Math.Min(A,T) + System.Math.Min(C,G);<br>  }<br>}<br></td>

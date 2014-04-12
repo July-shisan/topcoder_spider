@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports Microsoft.VisualBasic<br> <br>Public Class TheAirTripDivTwo<br>  Public Function find(ByVal flights As Integer(), ByVal fuel As Integer) As Integer<br>        Dim ans As Integer = 0<br> <br>        For Each f As Integer In flights<br>            If fuel &gt;= f Then<br>                ans += 1<br>                fuel -= f<br>            Else<br>                Exit For<br>            End If<br>        Next<br> <br>    Return ans<br>  End Function<br>End Class<br></td>

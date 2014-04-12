@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br><br>public class TheSequencesLevelTwo<br>{<br>    public int[] find(int[] sequence)<br>    {<br>        Array.Sort&lt;int&gt;(sequence);<br>        if (sequence.Length &lt; 3) return sequence;<br>        for (int i = 1; i &lt; sequence.Length-1; i += 2)<br>        {<br>            int temp = sequence[i];<br>            sequence[i] = sequence[i + 1];<br>            sequence[i + 1] = temp;<br>        }<br>        return sequence;<br>    }<br>}<br></td>

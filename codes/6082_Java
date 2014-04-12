@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class DollSets{<br>public int maximumQuantity(int[] ds, int k) {<br>  Arrays.sort(ds);<br>  int n=ds.length;<br>  int ret=0;<br>  int[] m=new int[n];<br>  Arrays.fill(m, 0);<br>  for (int i=0; i&lt;n; i++)<br>  for (int j=i+1; j&lt;n; j++) {<br>    if (m[i]+m[j]==0) <br>    if (ds[j]==k*ds[i]) {ret++; m[i]=1; m[j]=1;}<br>  }<br>  return ret;<br>  }<br>}<br></td>

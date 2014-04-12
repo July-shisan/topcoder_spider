@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class GooseTattarrattatDiv1:<br> <br>  def getmin(self, S):<br>    n = len(S)<br>    cnt = dict()<br>    time = 0<br>    for c in S:<br>      cnt[c] = cnt.get(c, 0) + 1<br>    for i in range(n):<br>      j = (n - 1) - i<br>      if S[i] == S[j]:<br>        continue<br>      X, Y = S[i], S[j]<br>      if cnt[X] &gt; cnt[Y]:<br>        X, Y = Y, X<br>      time += cnt[X]<br>      cnt[X] = 0<br>      S = "".join([Y if c == X else c for c in S])<br>    return time<br></td>

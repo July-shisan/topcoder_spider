@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>class SolvingEquation<br>{<br> public int solve(int A, int B, int C, int W)<br> {<br>  int min=1000000;<br>  for(int x=0;x&lt;1000;x++)<br>  for(int y=0;y&lt;1000;y++)<br>  for(int z=0;z&lt;1000;z++)<br>  {<br>    if (A*x+B*y+C*z==W)<br>    {<br>     if (x+y+z&lt;min)<br>      min=x+y+z;<br>    }<br>  }<br>  if (min!=1000000)<br>   return min;<br>   else return -1;<br> }<br>}<br></td>

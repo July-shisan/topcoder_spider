@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class AkariDaisukiDiv2<br>{public int countTuples(string S)<br>{<br>int ans=0;<br><br>for(int i=1;i&lt;S.Length-3;++i)<br>{<br>for(int j=i;j&lt;S.Length-3;++j)<br>{<br>int length=j-i+1;<br>for(int k=j+2;k&lt;S.Length-length;++k)<br>{<br>int true1=1;<br>for(int q=k,w=i;q&lt;k+length;++q,++w)<br>{if(S[q]!=S[w]){true1=0;break;}<br>}<br>if(true1==1)ans++;<br>}<br>}<br>}<br>return ans;<br><br>}<br><br>}<br></td>

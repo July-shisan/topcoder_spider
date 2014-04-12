@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class ErasingCharacters:<br>    def simulate(self,s):<br>        s=list(s)<br>        cont=True<br>        while(cont):<br>            x=list(s)<br>            for i in range(1,len(s)):<br>                if(s[i]==s[i-1]):<br>                    s.pop(i)<br>                    s.pop(i-1)<br>                    break<br>            if(len(x)==len(s)):<br>                break<br>        h=""<br>        for item in s:<br>            h+=item<br>        return h<br></td>

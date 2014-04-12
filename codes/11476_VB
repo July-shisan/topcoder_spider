@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports System.Collections.Generic<br>Imports System.Array<br> <br>Public Class MagicalGirlLevelOneDivOne<br>    Public Function isReachable(ByVal jumpTypes As Integer(), ByVal x As Integer, ByVal y As Integer) As String<br>        For Each j As Integer In jumpTypes<br>            If j Mod 2 - 1 Then Return "YES"<br>        Next<br>        If (x + y) Mod 2 Then Return "NO" Else Return "YES"<br>    End Function<br> <br>End Class<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class PlatypusDuckAndBeaver {<br>    public int minimumAnimals(int webbedFeet, int duckBills, int beaverTails) {<br>        int dp = beaverTails;<br>        int duckWeb = webbedFeet - beaverTails*4;<br>        int ducks = duckWeb/2;<br>        int plat = duckBills - ducks;<br>        int beavers = beaverTails - plat;<br>        return ducks+plat+beavers;<br>    }<br> <br>}<br> <br> <br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

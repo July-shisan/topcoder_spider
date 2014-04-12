@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class RosePetals {<br>    public int getScore(int[] dice) {<br>        int res=0;<br>        for (int i=0; i&lt;dice.length; i++) {<br>      int d=dice[i];<br>      if (d==3) res+=2;<br>      if (d==5) res+=4;<br>    }<br>        return res;<br>    }<br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

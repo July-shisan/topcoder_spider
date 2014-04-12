@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections.Generic;<br>using System.Linq;<br>using System.Text;<br>using System.Numerics;<br><br>class TheArithmeticProgression<br>{<br>    public double minimumChange(int a, int b, int c)<br>    {<br>        return Math.Abs((a + c - b * 2) / 2.0);<br>    }<br>}<br><br><br>// Powered by FileEdit<br>// Powered by TZTester 1.01 [25-Feb-2003] Modified for C# by ysn<br>// Powered by CodeProcessor<br></td>

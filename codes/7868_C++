@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            struct HandsShaking<br>{<br>  long long countPerfect(int n) {<br>    long long dp[100];<br>    dp[0] = 1;<br>    for (int i = 1; i &lt;= n / 2; i++)<br>    {<br>      dp[i] = 0;<br>      for (int j = 0; j &lt; i; j++)<br>      {<br>        dp[i] += dp[j] * dp[i - j - 1];<br>      }<br>    }<br>    return dp[n / 2];<br>  }<br>};<br></td>

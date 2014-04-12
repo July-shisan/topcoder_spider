@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class MassiveNumbers {<br> <br>    public static String getLargest(String numberA, String numberB) {<br>        String[] A=numberA.replace('^', 'a').split("a");<br>        String[] B=numberB.replace('^', 'a').split("a");<br>        double a,b;<br>        a=Integer.parseInt(A[1])*Math.log(Integer.parseInt(A[0]));<br>        b=Integer.parseInt(B[1])*Math.log(Integer.parseInt(B[0]));<br>        return a&gt;b?numberA:numberB;<br>    }<br>}<br></td>

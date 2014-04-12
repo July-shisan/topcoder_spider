@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>public class SortEstimate {<br> <br>public double ln2(double x) {<br>  return Math.Log(x) / Math.Log(2);<br>}<br> <br>public double howMany (int c, int time) {<br>  double ret = 0;<br>  double inc = 2000000000;<br>  while (inc &gt; 0.0000000000000001) {<br>    if (c * (ret + inc) * ln2(ret + inc) &lt;= (double)time)<br>      ret += inc;<br>    inc /= 2;<br>  };<br>  return ret;<br>}<br> <br>}<br></td>

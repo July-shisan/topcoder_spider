@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;iostream&gt;<br>#include &lt;math.h&gt;<br>using namespace std;<br>class RugSizes{<br>public:<br>  int rugCount(int area){<br>    int result=1;<br>    for(int i=2;i&lt;=sqrt(area);i++){<br>      if(area%i==0){<br>        if(i%2==0&amp;&amp;(area/i)%2==0){<br>          if(i*i==area)<br>            result++;<br>        }<br>        else<br>          result++;<br>      }<br>    }<br>    return result;<br>  }<br>};<br></td>

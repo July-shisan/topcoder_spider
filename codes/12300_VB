@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class JumpFurther<br>    Public Function furthest(ByVal N As Integer, ByVal badStep As Integer) As Integer<br>        furthest = 0<br>        For i As Integer = 1 To N<br>            furthest += i<br>            If badStep = furthest Then furthest -= 1<br>        Next<br>    End Function<br> <br>End Class<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            // Penu thoophanu thalonchi choose !  tholi nippukanam nene !!<br>import java.util.*;<br>import static java.lang.Math.*;<br>public class ColumnDiagramPerimeter<br>{<br>  public int getPerimiter(int[] a)<br>  {<br>    int ret=2*a.length,n=a.length;<br>    ret+=a[0]+a[n-1];<br>    for(int i=1;i&lt;n;i++) ret+=abs(a[i]-a[i-1]);<br>    return ret;<br>  }<br>  <br>  void sopl(Object o){ System.out.println(o); }<br>}<br>// * RedAnt *<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include&lt;vector&gt;<br>using namespace std;<br>class DerivativeSequence<br>{<br>public:<br>vector &lt;int&gt; derSeq(vector &lt;int&gt; a, int n)<br>{<br>for (int p=0;p&lt;n;p++)<br>{<br>vector&lt;int&gt; vinit;<br>for (int m=0;m&lt;a.size()-1;m++)<br>{<br>int l=a[m+1]-a[m];<br>vinit.push_back(l);<br>}<br>a=vinit;<br>}<br>return a;<br>}<br>};<br></td>

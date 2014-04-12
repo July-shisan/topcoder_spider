@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>public class ExerciseMachine<br>{<br>  public int getPercentages( string time )<br>  {<br>    int seconds;<br>    string[] TimeSplit = time.Split( ':' );<br>    seconds = Convert.ToInt32( TimeSplit[2] ) + 60*Convert.ToInt32( TimeSplit[1] ) + 3600*Convert.ToInt32( TimeSplit[0] );<br>    int percentJump = 1;<br>    while( ( (seconds*percentJump)%100 != 0 ) &amp;&amp; percentJump &lt; 100 )<br>    {<br>      percentJump++;<br>    }<br>    return 99/percentJump;<br>  }<br>}<br></td>

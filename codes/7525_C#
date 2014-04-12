@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class SearchDisks<br>{<br>  public int numberToTakeOut(string diskNames, string searchingDisk)<br>  {<br>    char[] sc = { ' ' };<br>    string[] dn = diskNames.Split(sc);<br>    int c = 0;<br>    for(int i = dn.Length - 1; i &gt;= 0; i--)<br>      if(dn[i] == searchingDisk) return c;<br>      else c++;<br>    return 0;<br>  }<br>}<br></td>

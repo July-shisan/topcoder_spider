@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class EyeDrops<br>{<br>  public double closest(int sleeptime, int k)<br>  {<br>    if (sleeptime &lt; 24d / k)<br>    {<br>      return 60d * 24d / k;<br>    }<br>    else<br>      return 60 * (24 - sleeptime) / (k - 1d);<br>  }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class ChildlessNumbers{<br><br>public int howMany(int A, int B){<br>  int n = 0;<br>  childless:<br>  for(long i = (long) A; i &lt;= B; i++ ){<br>  for(long j = 1; j &lt;= 100; j++ ){<br>  long x = i*j;<br>  if(D(x) == (int) j){continue childless;}<br>  }//j<br>  n++;<br>  }//i<br>  return n;<br>  }// howmany<br>  <br>public int D(long x){<br>  int s = 0;<br>  while(x &gt; 0){<br>  s += x % 10;<br>  x/=10;<br>  }<br>  return s;<br>  }<br><br>}<br></td>

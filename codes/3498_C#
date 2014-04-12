@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>using System.Text;<br> <br>public class ManhattanMovement<br>{<br>    public double getDistance(int a1,int b1,int x01,int y01)<br>    {<br>        double min=double.MaxValue;<br>        long a=a1,b=b1,x0=x01,y0=y01;<br>        if (a*x0+b*y0==1) return 0.0;<br>        if (b!=0) min=Math.Min(min,Math.Abs((1.0-a*x0)/b-y0));<br>        if (a!=0) min=Math.Min(min,Math.Abs((1.0-b*y0)/a-x0));<br>        return min;<br>    }<br>}<br></td>

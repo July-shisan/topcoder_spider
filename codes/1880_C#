@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System; using System.Collections; public class Workshop { public int pictureFrames(int[] p) {<br> <br>Hashtable map = new Hashtable();<br>Array.Sort(p);<br>int N = p.Length;<br>for (int i=0; i&lt;N; i++) for (int j=i+1; j&lt;N; j++) for (int k=j+1; k&lt;N; k++)<br> if (p[i] + p[j] &gt; p[k])<br> {<br> long index = (long) p[i] * 400000000 + p[j]*20000 + p[k];<br> map[index] = true;<br> }<br> <br>return map.Count;<br> <br>}}<br></td>

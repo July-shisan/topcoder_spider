@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class Quipu<br>    Public Function readKnots(ByVal knots As String) As Integer<br>        Dim c As Integer = 0<br>        Dim a As Integer = 1<br>        Dim val As Integer = 0<br>        Do<br>            If knots.Chars(a) = "-" Then<br>                val = 10*val + c<br>                c = 0<br>            Else<br>                c += 1<br>            End If<br>            a += 1<br>        Loop Until a = knots.Length<br>        Return val<br>    End Function<br>End Class<br></td>

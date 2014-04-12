@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class DocumentSearch {<br> <br>  public int nonIntersecting(String[] doc, String search) {<br>    String s = "";<br>    for (String string : doc) {<br>      s+=string;<br>    }<br>    int count=0;<br>    int pos=-1;<br>    while((pos=s.indexOf(search))&gt;-1){<br>      count++;<br>      s=s.substring(pos+search.length());<br>    }<br>    return count;<br>  }<br> <br>}<br></td>

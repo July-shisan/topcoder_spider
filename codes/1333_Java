@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.lang.*;<br>import java.util.*;<br> <br>public class Substitute<br>{<br> <br>public int getValue(String key, String code)<br>{<br>  int  value, i;<br> <br>  value = 0;<br>  for (i = 0; i &lt; code.length(); i ++)<br>  {<br>    int  index = key.indexOf(code.charAt(i));<br>    if (index &gt;= 0)<br>      value = (value * 10) + ((index + 1) % 10);<br>  }<br> <br>  return value;<br>}<br> <br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>using System.Collections.Specialized;<br>using System.Text;<br>using System.Text.RegularExpressions;<br> <br>public class MedianOfNumbers<br>{<br>    public int findMedian(int[] numbers)<br>    {<br>        if (numbers.Length % 2 == 0) return -1;<br>        Array.Sort(numbers);<br>        return numbers[(numbers.Length / 2)];<br>    }<br>}<br></td>

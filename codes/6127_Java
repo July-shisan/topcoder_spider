@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class LastStone {<br>  public int numWins(int[] turns, int m, int n) {<br>    boolean win[] = new boolean[n+1];<br>    Arrays.fill(win, true);<br>    for (int i=1; i&lt;=n; i++)<br>    for (int t : turns) if (i &gt;= t) win[i] &amp;= !win[i-t];<br>    int result = 0;<br>    for (int i=m; i&lt;=n; i++) if (!win[i]) result++;<br>    return result;<br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

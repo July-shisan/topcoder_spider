@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class FoxAndFencingEasy:<br>  def WhoCanWin(self, mov1, mov2, d):<br>    if(d &lt;= mov1):<br>      return 'Ciel'<br>    elif(d + mov1 &lt;= mov2):<br>      return 'Liss'<br>    else:<br>      if(mov1 &gt; 2*mov2):<br>        return 'Ciel'<br>      elif(mov2 &gt; 2*mov1):<br>        return 'Liss'<br>      else:<br>        return 'Draw'<br></td>

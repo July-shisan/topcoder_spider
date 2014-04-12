@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class LittleElephantAndIntervalsDiv2:<br>    def getNumber(self, M, L, R):<br>        n=len(L)<br>        Explored=[False]*(M+1)<br>        p=1<br>        for i in range(n-1,-1,-1):<br>            case=False<br>            for z in range(L[i],R[i]+1):<br>                if(not Explored[z]):<br>                    case=True<br>                    Explored[z]=True<br>            if(case):<br>                p*=2<br>        return p<br></td>

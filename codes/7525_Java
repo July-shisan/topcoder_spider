@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class SearchDisks {<br>    public int numberToTakeOut(String diskNames, String searchingDisk) {<br>        String s[] = diskNames.split(" ");<br>        int i = 0;<br>        for(i = 0; i &lt; s.length; i++)<br>          if(s[i].equals(searchingDisk))break;<br>        return s.length - i - 1;<br>    }<br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br> <br>public class ClockWalk<br>{<br>  public int finalPosition(string flips)<br>  {<br>    int x = 0;<br>    for (int i = 0; i &lt; flips.Length; i++)<br>    {<br>      char c = flips[i];<br>      if (c == 'h') x += (i+1); else x -= (i+1);<br>    }<br>    while (x &lt; 0) x += 12;<br>    x %= 12;<br>    if (x == 0) return 12; else return x;<br>  }<br>}<br></td>

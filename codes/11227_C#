@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>using System.Collections.Generic;<br>using System.Collections.Specialized;<br>using System.Text;<br>using System.Text.RegularExpressions;<br> <br>public class Starport<br>{<br>    int gcd(int a, int b)<br>    {<br>        return (b == 0) ? a : gcd(b, a % b);<br>    }<br>  public double getExpectedTime(int n, int m)<br>  {<br>        int d = gcd(n, m);<br>        return (double)(n / d - 1) / 2.0 * d;<br>  }<br>}<br></td>

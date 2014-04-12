@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class DartThrow<br>{<br>public double bestScore(int[] A, int prob)<br>{<br>double p = prob * 0.01, res = 0;<br>double p1 = (1.0 - p) * 0.5;<br>int N = A.length;<br>for ( int i = 0; i &lt; N; ++i )<br>{<br>double m = A[i] * p + A[(i - 1 + N) % N] * p1 + A[(i + 1) % N] * p1;<br>if ( res &lt; m ) res = m;<br>}<br>return res;<br>}<br>}<br></td>

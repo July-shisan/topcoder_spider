@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br>import static java.lang.System.*;<br> <br>public class ManyNumbers<br>{<br>  public int getSums(int[] numbers, int K)<br>  {<br>    int a, b;<br>    a = b= 0;<br>    for(int j : numbers)<br>    {<br>      if(j%K==0)a+=j;<br>      else b+=j;<br>    }<br>    return (int)Math.abs(a-b);<br>    <br>  }<br>  <br>  <br>}<br>//Powered by [KawigiEdit] 2.0!<br></td>

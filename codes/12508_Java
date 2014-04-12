@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class TheExperimentDiv2{<br>  public int[] determineHumidity(int[] intensity, int L, int[] leftEnd){<br>    int drops[]=new int[leftEnd.length];<br>    <br>    for(int i=0;i&lt;intensity.length;i++){<br>      for(int j=0;j&lt;leftEnd.length;j++){<br>        if(i&gt;=leftEnd[j] &amp;&amp; i&lt;leftEnd[j]+L){<br>          //here<br>          drops[j]+=intensity[i];<br>          break;<br>        }<br>      }<br>    }<br>    <br>    return drops;<br>  }<br> <br>}<br></td>

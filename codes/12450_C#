@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br><br>public class EllysPairs<br>{<br>  public int getDifference( int[] k )<br>  {<br>    Array.Sort( k );<br>    int h = 0;<br>    int l = 99999;<br>    for( int i = 0; i &lt; k.Length / 2; ++i )<br>    {<br>      int t = k[k.Length-i-1] + k[i];<br>      if ( t &gt; h ) h = t;<br>      if( t &lt; l ) l = t;<br>    }<br>    return h - l;<br>  }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br> <br>public class KiloMan {<br>  public int hitsTaken(int[] pat, string jumps) {<br>    int ret = 0;<br>    for (int i = 0;i&lt;pat.Length;i++) {<br>      if ((pat[i] &lt;=2 &amp;&amp; jumps[i] == 'S')<br>         || (pat[i] &gt;2 &amp;&amp; jumps[i] == 'J'))<br>        ret++;<br>    }<br>    return ret;<br>  }<br>}<br></td>

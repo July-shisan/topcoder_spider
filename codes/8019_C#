@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class SearchBox<br>    {<br>        public int find(string text, string search, string wholeWord, int start) <br>        {<br>            if (wholeWord == "Y")<br>            {<br>                search = " " + search + " ";<br>                text = " " + text + " ";<br>            }<br>            return text.IndexOf(search, start);<br><br>        }<br>    }<br></td>

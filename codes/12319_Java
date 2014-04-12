@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.Arrays;<br><br><br>public class CucumberMarket {<br><br>  <br>  public String  check(int[] price, int budget, int k)<br>  {<br>    String ans="YES";<br>    <br>    Arrays.sort(price);<br>    <br>    int len=price.length;<br>    long tmp=0;<br>    for(int i=len-1;i&gt;len-1-k;i--)<br>    {<br>      tmp+=price[i];<br>    }<br>    if(tmp&gt;budget)<br>      return "NO";<br>    return ans;<br>  }<br>  <br>}<br></td>

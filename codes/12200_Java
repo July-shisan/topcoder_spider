@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class BlockTower {<br>  public int getTallest(int[] blockHeights) {<br>    int len=blockHeights.length;<br>    int res=0;<br>    for (int i=0;i&lt;=len;++i) {<br>      int j=0;<br>      int tr=0;<br>      for (;j&lt;i;++j) {<br>        if (blockHeights[j]%2==0)tr+=blockHeights[j];<br>      }<br>      for (;j&lt;len;++j) {<br>        if (blockHeights[j]%2==1)tr+=blockHeights[j];<br>      }<br>      res=Math.max(res,tr);<br>    }<br>    return res;<br>  }<br>}<br></td>

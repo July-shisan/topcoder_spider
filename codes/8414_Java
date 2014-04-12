@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class TheDiceGame {<br>  <br>  public double expectedThrows(int candies) {<br>    double[] expecteds = new double[candies + 1];<br>    expecteds[0] = 0;<br>    for (int i = 1; i &lt;= candies; i++) {<br>      double current = 1.0;<br>      for (int j = i - 6; j &lt; i; j++) {<br>        if (j &gt; 0) {<br>          current += expecteds[j] / 6;<br>        }<br>      }<br>      expecteds[i] = current;<br>    }<br>    return expecteds[candies];<br>    <br>  }<br><br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            from fractions import gcd<br> <br>class FoxAndClassroom:<br>  def ableTo(self, a, b):<br>    if(gcd(a,b) == 1):<br>      return 'Possible'<br>    else:<br>      return 'Impossible'<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class Bits<br> <br>    Public Function minBits(ByVal n As Integer) As Integer<br>        Dim i, j As Integer<br>        i = 0<br>        j = 0<br>        Do<br>            i += 1<br>            n -= 2 ^ j<br>            If n &lt;= 0 Then Return i<br>            j += 1<br>        Loop<br> <br>    End Function<br> <br>End Class<br></td>

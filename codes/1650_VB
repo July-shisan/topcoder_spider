@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class Soccer<br>    Public Function maxPoints(ByVal wins As Integer(), ByVal ties As Integer()) As Integer<br>        Dim i, points, max As Integer<br> <br>        max = 0<br>        For i = 0 To wins.GetUpperBound(0)<br>            points = wins(i) * 3 + ties(i)<br>            If points &gt; max Then<br>                max = points<br>            End If<br>        Next<br> <br>        Return max<br>    End Function<br>End Class<br></td>

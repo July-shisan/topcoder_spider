@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>class IncredibleMachineEasy {<br>  public double gravitationalAcceleration(int[] height, int T) {<br>    double sum = 0;<br>    for (int i = 0; i &lt; height.Length; i++) {<br>      sum += Math.Sqrt(2 * height[i]);<br>    }<br>    sum /= T;<br>    return sum * sum;<br>  }<br>}<br></td>

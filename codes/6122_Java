@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class BuildBridge {<br>    public int howManyCards(int D, int L) {<br>        double len = L / 2.0;<br>        int answer = 0;<br>        double s = 0;<br>        while (s &lt; D) {<br>            answer++;<br>            s += len / answer;<br>        }<br>        return answer;<br>    }<br> <br>}<br> <br> <br>// Powered by PopsEdit<br> <br>// Powered by CodeProcessor<br></td>

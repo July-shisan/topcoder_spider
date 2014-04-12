@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class SubwayTrip  {<br>  public double earlierTrain(int vE, int vY, int L, int T)  {<br>    double a = 1.0 * L / vE;<br>    double b = 1.0 * L / (vE+vY);<br>    double p = Math.abs((a-b)/T);<br>    if(p &gt; 1)<br>      return 1;<br>    return p;<br>  }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class FountainOfLife{<br>public double elixirOfDeath(int qq, int cc, int pp){<br>double q=qq,c=cc,p=pp;<br>if (qq&gt;=cc) {return -1.0;}<br>double res=0.0+p/(c-q);<br>return res;<br>}<br>}<br></td>

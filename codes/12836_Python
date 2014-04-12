@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            def abs(x):<br>  if x &lt; 0:<br>    return -x<br>  return x<br>class FoxAndSightseeing:<br>  def getMin(self, ps):<br>    minn = -1<br>    for m in xrange(1, len(ps) - 1):<br>      d = self.getDis(ps, m)<br>      if d &lt; minn or minn == -1:<br>        minn = d<br>    return minn<br>  <br>  def getDis(self, ps, m):<br>    psl = list(ps[:])<br>    psl.pop(m)<br>    dis = 0<br>    for i in xrange(1, len(psl)):<br>      dis += abs(psl[i] - psl[i-1])<br>    return dis<br></td>

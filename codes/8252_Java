@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class YoungBrother{<br>  public String[] restoreWords(String[] lines, int n, int k){<br>    String s = "";<br>    for(int i =0; i&lt;lines.length; i++){<br>      s+=lines[i];<br>    }<br>    String[] ret = new String[n];<br>    for(int i = 0; i&lt;ret.length; i++){<br>      ret[i] = s.substring(0,k);<br>      s = s.substring(k);<br>    }<br>    return ret;<br>  }<br>}<br></td>

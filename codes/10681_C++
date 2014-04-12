@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include&lt;stdio.h&gt;<br>#include&lt;cmath&gt;<br>using namespace std;<br>class RecursiveFigures<br>{<br>    public: <br>    double getArea(int sideLength,int K)<br>    {<br>      int i;<br>      double sq=sideLength;<br>      double r=sq/2;<br>      double sum=M_PI*r*r;<br>      for(i=1;i&lt;K;i++)<br>      {<br>        sq=r*sqrt(2);<br>        r=sq/2;<br>        sum=sum-sq*sq+M_PI*r*r;<br>      }<br>      return sum;<br>    }<br>};<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System; using System.Collections; public class ConvexPolygon { public double findArea(int[] x, int[] y) {<br> <br>double area = 0;<br> <br>for (int i=0; i&lt;x.Length; i++)<br>{<br>int j = (i+1) % x.Length;<br>double xdel = x[j] - x[i];<br>double avgy = ((double)y[i] + y[j]) / 2.0;<br>area += xdel * avgy;<br>}<br> <br>if (area &lt; 0) area = -area;<br>return area;<br> <br>}}<br></td>

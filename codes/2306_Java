@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class IBEvaluator{<br>public int[] getSummary(int[] predictedGrades, int[] actualGrades){<br>int [] answer = new int [7];<br> <br>for(int i=0;i&lt;predictedGrades.length;i++){<br>  answer [ Math.abs(predictedGrades[i]-actualGrades[i]) ] ++;<br>}<br>for(int i=0;i&lt;answer.length;i++)<br>answer[i] = answer[i]*100/predictedGrades.length;<br> <br>return answer;}}<br></td>

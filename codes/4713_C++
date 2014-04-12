@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;string&gt;<br>#include &lt;vector&gt;<br>#include &lt;algorithm&gt;<br>#include &lt;numeric&gt;<br>#include &lt;functional&gt;<br>using namespace std;<br><br>class SubstitutionCode<br>{<br>public:<br>  int getValue(string key, string code)<br>  {<br>    int i,j,val=0;<br>    for(i=0;i&lt;code.size();++i)<br>      for(j=0;j&lt;key.size();++j)<br>  if(code[i]==key[j])<br>    val=10*val+(j+1)%10;<br>    return val;<br>  }<br>};<br><br><br>// Powered by FileEdit<br></td>

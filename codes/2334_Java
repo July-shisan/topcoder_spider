@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class FunctionIter {<br>  public int compute(int[] f, int bound, int x) {<br>    int m=x,n=0;<br>    while (n &lt;= bound || m != x) {<br>      m = f[m];<br>      n++;<br>    }<br>    return n;<br>  }<br>}<br></td>

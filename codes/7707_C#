@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>using System.Text.RegularExpressions;<br>public class CricketScores {<br>  public int[] totalRuns(int[] runs) {<br>    int[] pos=new int[2];<br>    int p=1;<br>    for(int i=0;i&lt;runs.Length;i++)<br>    {<br>      if(i%6==0)<br>        p=(p+1)%2;<br>      pos[p]+=runs[i];<br>      p=(p+runs[i]%2)%2;<br>    }<br>    return pos;<br>  }<br>}<br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

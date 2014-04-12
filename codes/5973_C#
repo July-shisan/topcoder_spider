@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br><br>public class MooresLaw {<br>  public double shortestComputationTime(int years) {<br>    double y = years;<br>    double k = -1.5 / Math.Log(2) * Math.Log(1.5 / (Math.Log(2) * y));<br>    if (k &lt; 0)<br>      return years;<br>    else<br>      return k + y * Math.Exp(-k * Math.Log(2) / 1.5);<br>  }<br><br>  <br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by TZTester 1.01 [25-Feb-2003] [modified for C# by Petr]<br>// Powered by CodeProcessor<br></td>

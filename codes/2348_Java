@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class BagOfHolding {<br> <br>    public double oddsReachable(int sizes[], int item) {<br>  double ans;<br> <br>  int n=0;<br> <br>  for (int i = 0; i &lt; sizes.length; i++)<br>      if (sizes[i] &gt;= sizes[item])<br>    n++;<br> <br>  return (double) (1.0/n);<br> <br> <br>    }<br> <br> <br>}<br></td>

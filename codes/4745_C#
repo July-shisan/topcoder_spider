@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class TippingWaiters{<br>public int possiblePayments(int q, int c){<br>long qq=q;<br>long cc=c;<br>long p=104*qq/100;<br>while (p%5!=0) {p++;}<br>while (p*19&lt;20*qq) {p+=5;}<br>long min=p;<br>p=qq*108/100;<br>while (p%5!=0) {p++;}<br>while (9*p&lt;=10*qq) {p+=5;}<br>long max=p-1;<br>if (max&gt;cc) {max=cc;}<br>while (max%5!=0) {max--;}<br>max=max/5;<br>min=min/5;<br>long r=max-min+1;<br>int res;<br>res=(int)r;<br>if (res&lt;0) {res=0;}<br>return res;<br>}<br>}<br></td>

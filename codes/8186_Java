@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.io.*;<br>import java.util.*;<br><br>public class Containers {<br>  public int wastedSpace(int[] containers, int[] packages) {<br>    int r = 0;<br>    for (int x : containers)<br>      r += x;<br>    for (int y : packages)<br>      r -= y;<br>    return r;<br>  }<br>}<br></td>

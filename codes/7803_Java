@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.Arrays;<br><br>public class SortInsideNumber {<br>  public int sort(int x) {<br>    String s = String.valueOf(x);<br>    char[] arr = new char[s.length()];<br>    for (int i = 0; i &lt; s.length(); i++) {<br>      arr[i] = s.charAt(i);<br>      <br>    }<br>    Arrays.sort(arr);<br>    String res = "";<br>    for (int i = 0; i &lt; s.length(); i++) {<br>      res = arr[i] + res;<br>    }<br>    return Integer.parseInt(res);<br>  }<br>}<br></td>

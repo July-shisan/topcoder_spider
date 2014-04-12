@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class JoshSum {<br>  public:<br>  <br>  int getJoshSum(int n) {<br>    int a, b, c, i, s = 0;<br>    <br>    a = b = 1;<br>    for (i = 0; i &lt; n; i ++) {<br>      s += a;<br>      c = (a + b) % 10;<br>      a = b;<br>      b = c;<br>      }<br>    return s;<br>    }<br>  };<br></td>

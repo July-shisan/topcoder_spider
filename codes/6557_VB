@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class ReverseSums<br>        Public Function getSum(ByVal N As Integer) As Integer<br>            Dim ret As Integer<br>            Dim rev As String = ""<br>            Dim orig As String = N.ToString<br>            For ret = 0 To orig.Length - 1<br>                rev &amp;= orig.Substring(orig.Length - 1 - ret, 1)<br>            Next<br>            Return Integer.Parse(rev) + N<br>        End Function<br>    End Class<br></td>

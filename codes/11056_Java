@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class P8XMatrixTransformation {<br> <br>  public String solve(String[] original, String[] target) {<br>    int count1=0,count2=0;<br>    for(int i=0;i&lt;original.length;i++)<br>    {<br>      for(int j=0;j&lt;original[i].length();j++)<br>      {<br>        if(original[i].charAt(j)=='1')<br>          count1++;<br>        if(target[i].charAt(j)=='1')<br>          count2++;<br>      }<br>    }<br>    if(count1==count2)<br>      return "YES";<br>    return "NO";<br>  }<br> <br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class ConstitutiveNumbers {<br>  public int count(int A, int B) {<br>    int tot = 0;<br>    for (int i=A; i&lt;=B; i++) {<br>      int j = 2*i;<br>      for (long x=3; x*x&lt;=j; x++) {<br>        if (j%x==0 &amp;&amp; ((j/x)%2 != x%2)) {<br>          tot++;<br>          break;<br>        }<br>      }<br>    }<br>    return tot;<br>  }<br>}<br></td>

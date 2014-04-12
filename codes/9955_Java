@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class VeryInterestingMovie  {<br>  public int maximumPupils(String[] seats)  {<br>    int n = 0;<br>    for(int i = 0; i &lt; seats.length; i++)  {<br>      for(int j = 0; j &lt; seats[i].length(); j++)  {<br>        if(seats[i].charAt(j) == 'Y')  {<br>          n++;<br>          j++;<br>        }<br>      }<br>    }<br>    return n;<br>  }<br>}<br></td>

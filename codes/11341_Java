@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            //Bismillah<br>import java.util.*;<br>import java.lang.*;<br>import java.math.*;<br><br>public class SRMCards{<br> public int maxTurns(int[] cards){<br>  int i,turns = 0;<br>  Arrays.sort(cards);<br>  for(i = 0; i&lt;cards.length-1; ++i){<br>   if(cards[i] != 0)<br>   ++turns;<br>   if(cards[i]+1 == cards[i+1])<br>    cards[i+1] = 0;<br>  }<br>  if(cards[i]!=0)<br>   ++turns;<br>  return turns;<br> }<br>}<br></td>

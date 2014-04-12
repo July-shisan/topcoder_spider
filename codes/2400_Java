@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class OfficeParking{<br><br>public int spacesUsed(String[] events){<br><br>  int ret = 0;<br>  int there = 0;<br>  for(int i=0;i&lt;events.length;i++){<br>  if( events[i].endsWith( "arrives" ) ){<br>    there++;<br>    ret = Math.max(ret, there );<br>  }else{<br>    there--;<br>  }<br>  }<br><br>  return ret;<br>}<br><br>}<br>// Powered by CodeProcessor<br></td>

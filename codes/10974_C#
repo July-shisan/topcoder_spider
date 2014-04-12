@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br> <br>public class OnTheFarmDivTwo {<br>  public int[] animals(int heads, int legs) {<br>    for (int ch = 0; ch &lt;= heads; ++ch)<br>    {<br>      int cows = heads - ch;<br>      if (ch * 2 + cows * 4 == legs)<br>        return new int[] { ch, cows };<br>    }<br>    return new int[0];<br>  }<br><br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by TZTester 1.01 [25-Feb-2003] [modified for C# by Petr]<br>// Powered by CodeProcessor<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>using System.Text;<br><br>public class   SalaryCalculator  <br>{<br><br>    public static double calcHours(int P1, int P2, int salary)<br>    {<br>        if (P1 * 200 &gt;= salary)<br>            return (double)salary / P1;<br>        double ret = 200;<br>        salary -= 200 * P1;<br>        ret += (double)salary / P2;<br>        return ret;<br>    }<br>}<br></td>

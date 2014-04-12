@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports Microsoft.VisualBasic<br>Imports System<br>Imports System.Collections<br>Imports System.Text<br> <br>Public Class MagicalSource<br>  Public Function calculate(ByVal x As Long) As Long<br>    Dim I As Integer<br>    For I = math.Ceiling(math.log10(x))+1 to 0 step -1<br>      If Int(9*x/(10^I - 1)) = 9*x/(10^I - 1) Then<br>        Return 9*x/(10^I - 1)<br>      End If<br>    Next I<br>  End Function<br>End Class<br></td>

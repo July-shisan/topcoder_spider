@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include&lt;vector&gt;<br>#include&lt;string&gt;<br>using namespace std;<br>class BettingStrategy<br>{<br>public:<br>  int finalSum(int initSum, string outcome)<br>  {<br>    int s,i,j,k;<br>    s=initSum;k=1;<br>    for (i=0;i&lt;outcome.length();i++)<br>    {<br>      if (outcome[i]=='W') {s=s+k;k=1;}<br>      else {s=s-k;k=k*2;if (s&lt;k) return s;}<br>    }<br>    return s;<br>  }  <br>};<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class DivToZero {<br> <br>  public String lastTwo(int num, int factor){    <br>    num = num - num%100;<br>    System.out.println(num);<br>    int count =0 ;<br>    while(num%factor != 0){<br>      count++;<br>      num++;      <br>    }<br>    String string = null;<br>    if(count&lt;10){<br>      string = "0"+String.valueOf(count);<br>    } else {<br>      string = String.valueOf(count);<br>    }<br>    <br>    return string;<br>  }<br>  <br>  <br>}<br></td>

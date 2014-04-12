@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class WaiterTipping{<br>  public int maxPercent(int total, int taxPercent, int money){<br>     int tip = -1;<br>     while(total + System.Math.Floor(total*taxPercent/100) + System.Math.Floor(total*tip/100)&lt;=money){<br>        tip++;<br>     }<br>     if(tip!=-1)tip--;<br>     return tip;<br>     }<br>};<br></td>

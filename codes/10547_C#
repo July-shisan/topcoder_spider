@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>  using System.Collections.Generic;<br>  using System.Text;<br>  public class OddDivisors<br>  {<br>    public long findSum(int N)<br>    {<br>      if (N == 0) return 0;<br><br>      //evens<br>      long sum = findSum(N / 2);<br><br>      //odds<br>      long huh = N + 1;<br>      huh /= 2;<br>      huh *= huh;<br><br>      sum += huh;<br><br>      return sum;<br>    }}<br></td>

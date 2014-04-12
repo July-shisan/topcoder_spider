@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class ChatTranscript {<br>  public int howMany(String[] transcript, String name) {<br>    int count = 0;<br>    <br>    for(int i = 0; i &lt; transcript.length; i++) {<br>      if (transcript[i].startsWith(name + ":")) {<br>        count++;<br>      }<br>    }<br>    <br>    return count;<br>  }<br>  <br>}<br> <br>// Powered by PopsEdit<br>// Powered by CodeProcessor<br></td>

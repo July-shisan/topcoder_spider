@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class MaxMinTreeGame:<br>    def findend(self, edges, costs):<br>        res = 0<br>        deg = [0] * len(costs)<br>        for i, e in enumerate(edges):<br>            deg[i + 1] += 1<br>            deg[e] += 1<br>        for i in xrange(len(costs)):<br>            if deg[i] == 1:<br>                res = max(res, costs[i])<br>        return res<br></td>

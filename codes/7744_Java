@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br> <br>public class NotationLength<br>{<br>  public double avgRatio(int radix, int low, int high)<br>  {<br>    double avg = 0;<br>    int sz = high - low + 1;<br>    for(int i = low; i &lt;= high; i++)<br>      avg += 1./(Integer.toString(i).length()*1./Integer.toString(i,radix).length());<br>    return avg/sz;<br>  }<br>  <br>  <br>}<br>//Powered by [KawigiEdit] 2.0!<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br> <br> <br>public class LinearTravellingSalesman<br>{<br>  public int findMinimumDistance(int[] x, int[] y)<br>  {<br>      int n = x.length - 1;<br>    Arrays.sort(x);<br>    Arrays.sort(y);<br>    return abs(x[0]-x[n]) + abs(y[0]-y[n]);<br>  }<br>  <br>  private int abs(int a) {<br>      return a&lt;0?-a:a;<br>  }<br>  <br> <br>}<br>//Powered by KawigiEdit 2.1.8 (beta) modified by pivanof!<br></td>

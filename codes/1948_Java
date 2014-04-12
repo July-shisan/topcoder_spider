@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class TwoTurtledoves {<br>  public int presentType(int n) {<br>    for(int i = 1;;i++){<br>      for(int j = i; j &gt;= 1; j--){<br>        if(j &gt;= n) return j;<br>        n -= j;<br>      }<br>    }<br>  }<br> <br> <br>}<br> <br>// Powered by PopsEdit<br>// Powered by CodeProcessor<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            // FilterJava<br><br>import java.util.*;<br>public class YahtzeeScore {<br>    int[] n = new int[6];<br>    public int maxPoints(int[] toss) {<br>        for( int i=0; i&lt;toss.length; i++ ) {<br>            n[toss[i]-1] += toss[i];<br>        }<br>        Arrays.sort(n);<br>        return n[n.length-1];<br>    }<br>}<br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

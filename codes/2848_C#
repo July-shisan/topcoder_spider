@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>public class ShoelaceLength<br>{<br>  public <br>  double calculate(int startWidth, int endWidth, int spread, int numPairs)<br>  {<br>    double x;<br>    double dist = 0;<br>    double delta = (double)(endWidth - startWidth ) / (numPairs - 1);<br>    for (int e=0; e &lt; numPairs-1; e++) {<br>      x = (startWidth + startWidth + ((e+e+1) * delta)) / 2;<br>      dist += 2 * Math.Sqrt((x*x)+ (spread*spread));<br>    }<br>    return dist+ startWidth;<br>  }<br>}<br></td>

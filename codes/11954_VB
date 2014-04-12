@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class GreatFairyWar<br>Public Function minHP(dps As Integer(), hp As Integer()) As Integer<br>Dim dpsT ,i,j,retint As Integer<br>dpsT=0<br><br>For i=0 To dps.length-1<br>dpsT=dpsT+dps(i)<br>Next <br><br>retint=0<br>System.Console.Writeline(dpsT)<br>For i=0 To dps.Length-1<br>retint = retint + dpsT*hp(i)<br>dpsT=dpsT - dps(i)<br>Next<br>Return retint<br>End Function<br>End Class<br></td>

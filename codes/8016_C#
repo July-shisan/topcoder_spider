@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br><br>public class DrawingMarbles<br>{<br>  public double sameColor(int[] colors, int n)<br>  {<br>    double rv=0;<br>    int sum=0;<br>    for(int i=0;i&lt;colors.Length;i++)<br>      sum+=colors[i];<br>    for(int i=0;i&lt;colors.Length;i++)<br>    {<br>      double rv2=1;<br>      for(int j=0;j&lt;n;j++)<br>        rv2*=(double)(colors[i]-j)/(sum-j);<br>      rv+=rv2;<br>    }<br>    return rv;<br>  }<br>}<br></td>

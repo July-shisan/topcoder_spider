@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class Mandelbrot {<br>  public int iterations(int max, double a, double b) {<br>    double za = a, zb = b;<br>    for(int i = 0; i &lt;= max; i++) {<br>      if(za*za + zb*zb &gt; 4)<br>        return i;<br>      double zna = za * za - zb * zb + a;<br>      double znb = za * zb * 2 + b;<br>      za = zna;<br>      zb = znb;<br>    }<br>    return -1;<br>  }<br>}<br></td>

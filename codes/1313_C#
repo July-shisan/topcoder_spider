@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Text;<br> <br>public class FormatAmt {<br>public string amount(int dollars, int cents) {<br>  double d = dollars;<br>  d += ((double) cents) / 100;<br>  return d.ToString("C");<br>}<br>}<br></td>

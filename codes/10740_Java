@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class BunnyPuzzle{<br>  public int theCount(int[] bunnies){<br>  int n=bunnies.length;<br>  int count=0;<br>    for (int i=0;i&lt;n-1;i++) {<br>      int j=i+1;<br>      int a=bunnies[i];<br>      int b=bunnies[i+1];<br>      int c=2*b-a;<br>      if ((i+2 &gt;= n) || (bunnies[i+2] &gt; c)) count++;<br>      int d=2*a-b;<br>      if ((i-1 &lt; 0) || (bunnies[i-1] &lt; d)) count++;<br>    }<br>    return count;<br>  }<br>}<br></td>

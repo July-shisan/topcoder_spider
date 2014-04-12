@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.Arrays;<br> <br>public class TeamSplit {<br> <br>  public int difference(int[] strengths) {<br>    int diff = 0, teamA = 0, teamB = 0;<br>    <br>    Arrays.sort(strengths);<br>    for(int i = strengths.length - 1, j = 0; i &gt;= 0; i--, j++) {<br>      if(j % 2 == 0) teamA += strengths[i];<br>      else teamB += strengths[i];<br>    }<br>    <br>    diff = teamA &gt;= teamB ? teamA - teamB : teamB - teamA;<br>    return diff;<br>  }<br> <br>}<br></td>

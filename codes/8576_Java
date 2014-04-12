@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br><br><br><br>public class NextNumber<br>{<br>    public int getNextNumber(int x)<br>    {<br>        <br>        int smallest, ripple, ones;<br>        smallest = x &amp; -x;  <br>        ripple = x + smallest; <br>        ones = x ^ ripple;   <br>        ones = (ones &gt;&gt; 2) / smallest; <br>        return ripple | ones;        <br>        <br>    }<br>    <br>}<br></td>

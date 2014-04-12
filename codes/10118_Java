@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class InverseFactoring<br>{  public int getTheNumber(int[] factors)<br>  {<br>  int len=factors.length;<br>  Arrays.sort(factors);<br>  return(factors[0]*factors[len-1]);  <br>  }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br> <br>public class CompetitionStatistics<br>  {<br>    public int consecutiveGrowth(int[] ratingChanges)<br>    {<br>      int ret = 0;<br>      int tmp = 0;<br>      foreach(int t in ratingChanges)<br>      {<br>        if (t&gt;0)<br>        {<br>          tmp++;<br>        }<br>        else<br>        {<br>          ret=Math.Max(ret,tmp);<br>          tmp=0;<br>        }<br>      }<br>      ret=Math.Max(ret,tmp);<br>      return ret;<br>    }<br>  }<br></td>

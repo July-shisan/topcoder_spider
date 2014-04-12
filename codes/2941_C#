@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>public class NinePatch <br>{<br>  public int numBlocks(int[] length, int[] width) <br>  {<br>    int b=0;<br>    for( int i=0; i&lt;length.Length; i++ )<br>    {<br>      int w = width[i];<br>      int l = length[i];<br>      b += (w/2) * (l/2);<br>    }<br>    return b/9;<br>  }<br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports System<br>Imports System.Collections<br> <br>Public Class EyeDrops<br>    Public Shared Function closest(ByVal s As Integer, ByVal k As Integer) As Double<br>        Dim Time As Integer = 24 - s<br> <br>        k -= 1<br> <br>        If (24 / (k + 1)) &lt; (Time / k) Then<br>            Return 60 * 24 / (k + 1)<br>        Else<br>            Return 60 * Time / k<br>        End If<br> <br>    End Function<br>End Class<br></td>

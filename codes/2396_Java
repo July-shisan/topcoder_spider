@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class Cyberline {<br>  public String lastCyberword(String cyberline) {<br>    cyberline = cyberline.replaceAll("-", "");<br>    String[] s = cyberline.split("[^a-zA-Z0-9@]+");<br>    return s[s.length - 1];<br>  }<br>}<br> <br> <br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

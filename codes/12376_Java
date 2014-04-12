@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.math.*;<br><br>public class NinjaTurtles {<br>  public int countOpponents(int P, int K) {<br>    for (int i = 0; i &lt; 5000000; i++) {<br>      if (3*(i / K) + i / 3 == P)<br>        return i;<br>    }<br><br>    return -1;<br>  }<br><br>}<br><br><br><br>// Powered by FileEdit<br>// Powered by moj 4.16 [modified TZTester]<br>// Powered by CodeProcessor<br></td>

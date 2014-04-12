@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import static java.lang.Math.*;<br> <br>public class FoxAndVacation {<br> <br>  public int maxCities(int total, int[] d) {<br>    Arrays.sort(d);<br>    int count = 0;<br>    for (int i = 0; i &lt; d.length; i++) {<br>      if (d[i] &lt;= total) {<br>        total -= d[i];<br>        count++;<br>      }<br>    }<br>    return count;<br>  }<br> <br>}<br></td>

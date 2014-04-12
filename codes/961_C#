@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class LetterStrings {<br>public int sum(string []arr) {<br>int ret=0;<br>foreach(string s in arr) {<br>ret+=s.Replace("-","").Length;<br>}<br>return ret;<br>}<br>}<br></td>

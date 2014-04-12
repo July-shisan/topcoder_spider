@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class SwappingMarbles<br>{<br>public int swaptions(String a, String b)<br>{<br>  int res = 0;<br>  for ( int i = 1; i &lt; a.length() - 1; ++i )<br>  for ( int j = 1; j &lt; b.length() - 1; ++j )<br>    if ( a.charAt(i) == b.charAt(j - 1) &amp;&amp; a.charAt(i) == b.charAt(j + 1) )<br>      if ( b.charAt(j) == a.charAt(i - 1) &amp;&amp; b.charAt(j) == a.charAt(i + 1) )    <br>        ++res;<br>      return res;<br>}<br>}<br></td>

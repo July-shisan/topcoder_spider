@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class Alliteration {<br><br>  public int count(String[] words) {<br>    int cnt = 0;<br>    for (int i = 1; i &lt; words.length; i++) {<br>      if (words[i].substring(0, 1).equalsIgnoreCase(<br>          words[i - 1].substring(0, 1)))<br>        cnt++;<br>      while (i &lt; words.length<br>          &amp;&amp; words[i].substring(0, 1).equalsIgnoreCase(<br>              words[i - 1].substring(0, 1)))<br>        i++;<br>    }<br>    return cnt;<br>  }<br><br>}<br></td>

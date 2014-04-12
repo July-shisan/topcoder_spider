@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class DayPlanner {<br>  public String getEnds(String[] tasks) {<br>    Arrays.sort(tasks);<br>    StringTokenizer t1 = new StringTokenizer(tasks[0]); t1.nextToken();<br>    StringTokenizer t2 = new StringTokenizer(tasks[tasks.length-1]); t2.nextToken();<br>    return t1.nextToken() + "-" + t2.nextToken();<br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

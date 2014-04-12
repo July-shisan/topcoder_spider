@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class TemperatureScales{<br>public:<br>  double convert(int f1,int b1,int f2,int b2,int t){<br>    return (t-f1)*1.0*(b2-f2)*1.0/(b1-f1) + f2;<br>  }<br>};<br></td>

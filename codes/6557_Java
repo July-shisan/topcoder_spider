@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br> <br>public class ReverseSums<br>{<br>  public int getSum(int N)<br>  {<br>    StringBuffer b = new StringBuffer(String.valueOf(N));<br>    String s = b.reverse().toString();<br>    <br>    return N+Integer.parseInt(s);<br>  }<br>  <br>  <br>}<br>//Powered by [KawigiEdit] 2.0!<br></td>

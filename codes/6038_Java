@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br> <br>public class TemperatureScales<br>{<br>  public double convert(int f1, int b1, int f2, int b2, int t)<br>  {<br>    double a = (double)(f2-b2)/(f1-b1);<br>    double b = f2-a*f1;<br>    return a*t+b;<br>  }<br>  }<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class PrefixCode {<br>  public String isOne(String [] w) {<br>    for(int i =0; i&lt; w.length; i++) {<br>      for(int j = 0; j&lt;w.length; j++) {<br>        if(i==j) continue;<br>        if(w[j].startsWith(w[i])) return "No, " + i;<br>      }<br>    }<br>    return "Yes";<br>  }<br>}<br></td>

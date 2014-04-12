@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Text;<br>using System.Collections;<br><br>public class Bullets {<br>  public int match(string[] a, string b) {<br>  for (int k = 0; k &lt; a.Length; k ++) {<br>    string s = a[k];<br>    for (int i = 0; i &lt; s.Length; i++) {<br>      if (s.Substring(i) + s.Substring(0,i) == b) return k;<br>    }<br>  }<br>    return -1;<br>  }<br><br>}<br><br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

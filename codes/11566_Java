@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class RowAndCoins<br>{<br>  public static String getWinner(String x)<br>  {<br>    String ans="";<br>    char[]arr = x.toCharArray();<br>     if ((int)arr[0]==66 &amp;&amp;(int)arr[x.length()-1]==66)<br>      ans="Bob";<br>    else<br>      ans="Alice";<br><br>    return ans;<br>  }<br>  }<br></td>

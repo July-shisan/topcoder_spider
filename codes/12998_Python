@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import math,string,itertools,fractions,heapq,collections,re,array,bisect,random<br> <br>class MysticAndCandiesEasy:<br>    def minBoxes(self, C, X, high):<br>        high = sorted(high)<br>        num = len(high)<br>        cand = C<br>        for h in high:<br>          if cand-h&lt;X:<br>            break<br>          else:<br>            cand -= h<br>            num -= 1<br>        return num<br> <br> <br>#Powered by KawigiEdit-pf 2.3.0!<br></td>

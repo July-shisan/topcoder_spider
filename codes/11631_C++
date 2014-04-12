@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;iostream&gt;<br>#include &lt;vector&gt;<br>#include &lt;algorithm&gt;<br>using namespace std;<br>class DengklekTryingToSleep<br>{<br>      public:<br>             int minDucks(vector&lt;int&gt; ducks)<br>             {<br>                 sort(ducks.begin(),ducks.end());<br>                 int count=ducks[ducks.size()-1]-ducks[0]+1;<br>                 return (count-(ducks.size()));<br>                 }<br>};<br></td>

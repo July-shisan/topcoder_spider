@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class LittleElephantAndDouble:<br>  def getAnswer(self, A):<br>    <br>    mx = max(A)<br>    for i in A:<br>      while(i &lt; mx):<br>        i = 2 * i<br>      if(i &gt; mx):<br>        return "NO"<br>    <br>    return "YES"<br></td>

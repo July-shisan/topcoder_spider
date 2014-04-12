@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.Arrays;<br><br>public class TriangleConstruction {<br>  public int greatestPerimeter(int[] len) {<br>    Arrays.sort(len);<br>    for (int i = len.length-1; i &gt;= 0; i--) {<br>      for (int j = i-1; j &gt;= 0; j--) {<br>        for (int k = j-1; k &gt;= 0; k--) {<br>          if (len[j]+len[k] &gt; len[i]) {<br>            return (len[j]+len[i]+len[k]);<br>          }<br>        }<br>      }<br>    }<br>    return -1;<br>  }<br>}<br></td>

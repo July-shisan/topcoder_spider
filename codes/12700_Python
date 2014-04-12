@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class InsertZ:<br>    def canTransform(self, init, goal):<br>        return "Yes" if goal.replace("z", "") == init else "No"<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class DeerInZooDivTwo {<br><br>  public int[] getminmax(int N, int K) {<br>    int[] r = new int[2];<br>    r[0] = Math.max(N-K, 0);<br>    r[1] = Math.max(N-(K+1)/2, 0);<br>    return r;<br>  }<br><br>}<br></td>

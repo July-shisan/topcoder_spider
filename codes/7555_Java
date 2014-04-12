@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br> <br>public class BrokenKeyboardRepair<br>{<br>  public int minimalNumberOfKeys(String word)<br>  {<br>    TreeSet&lt;Character&gt; t = new TreeSet&lt;Character&gt;();<br>    for (int i = 0;  i &lt; word.length(); ++i) {<br>      t.add(word.charAt(i));<br>    }<br>    return t.size();<br>    <br>  }<br>  <br>  <br>}<br>//Powered by [KawigiEdit] 2.0!<br></td>

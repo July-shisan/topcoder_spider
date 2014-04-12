@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class TheArithmeticProgression():<br>  def minimumChange(self, a, b, c):<br>    if b - a == c - b:<br>      return 0.0<br>    else:<br>      d = (a + c) / 2.0<br>      return abs(d - b)<br></td>

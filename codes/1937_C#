@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class StairClimb {<br>  public int stridesTaken(int[] flights, int stairsPerStride) {<br>    int strides = 0;<br>    for (int i =0; i &lt; flights.Length; i++)<br>    {<br>      while (flights[i] &gt; 0) {<br>        flights[i] -= stairsPerStride;<br>        strides++;<br>      }<br>      strides += 2;<br>    }<br>    return strides -2;<br>}<br>}<br></td>

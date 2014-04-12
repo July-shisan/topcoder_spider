@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class LargestCountry<br>{<br>public String getLargest(String[] A)<br>{<br>  int m = -10;<br>  char res = 'A';<br>  for ( char ch = 'A'; ch &lt;= 'Z'; ++ch )<br>  {<br>    int k = 0;<br>    for ( int r = 0; r &lt; A.length; ++r )<br>      for ( int c = 0; c &lt; A[0].length(); ++c )<br>        if ( A[r].charAt(c) == ch ) ++k;<br>      if ( m &lt; k )<br>      {<br>      m = k;<br>      res = ch;<br>      }<br>  }<br>  String a = "" + res;<br>  return a;<br>}<br>}<br></td>

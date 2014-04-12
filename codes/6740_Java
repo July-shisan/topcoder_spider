@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class Apportionment<br>{<br><br>  public long numberOfSquares(int N, int M)<br>  {<br>    long res = 0;<br>    for ( long a = 1; a &lt;= N; ++a )<br>      if ( (a * M) % N == 0 )<br>      {<br>        long b = (a * M) / N;<br>        res += (N - a + 1) * (M - b + 1);<br>      }<br>    return res;<br>  }<br><br>}<br></td>

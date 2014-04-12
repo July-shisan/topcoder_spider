@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>public class FleasFleas {<br>  public int population(int n, int k) {<br>    // Start Coding Here..<br>    int ret = n, prev = n;<br>    while (k &gt; 0) <br>    {<br>      int t = k*prev;<br>      if (t &gt; 10000000) return -1;<br>      ret += t;<br>      prev = t;<br>      k -= 5;<br>    }<br>    return (ret &gt; 10000000) ? -1 : ret;<br>  }<br>}<br><br><br>// Powered by FileEdit<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class MagicalGirlLevelOneDivOne {<br>  public String isReachable(int[] jumpTypes, int x, int y) {<br>        boolean haveEven = false;<br>        for (int a : jumpTypes) if (a % 2 == 0) haveEven = true;<br>        if ((x + y) % 2 == 0 || haveEven)<br>            return "YES";<br>        else<br>            return "NO";<br>  }<br> <br>}<br> <br> <br>// Powered by FileEdit<br>// Powered by RETester [based on ExampleBuilder]<br>// Powered by CodeProcessor<br></td>

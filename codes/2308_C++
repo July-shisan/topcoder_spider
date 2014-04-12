@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;string&gt;<br>#include &lt;vector&gt;<br> <br>using namespace std;<br> <br>class SlayingDeer {<br>  public:<br>  int getTime(int A, int B, int C) {<br>    <br>    int r = 0;<br>    for (int t = 0; t &lt; 1000000; t++)<br>      {<br>        if (r &gt;= C)<br>    return t;<br>        r += A;<br>        if (t % 45 &lt; 30)<br>    C += B;<br>      }<br>    return -1;<br> <br>  }<br>};<br> <br> <br>// Powered by FileEdit<br></td>

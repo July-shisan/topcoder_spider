@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.text.*;<br> <br>public class FormatAmt {<br>  public String amount(int dollars, int cents) {<br>    double money  = dollars + ((double)cents/100.0);<br>    DecimalFormat df = new DecimalFormat("$#,###,###,##0.00");<br>    return df.format(money);<br>  }<br>  <br>}<br> <br>// Powered by PopsEdit<br>// Powered by CodeProcessor<br></td>

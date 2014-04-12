@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports System<br>Public Class StairClimb<br>  Public Function stridesTaken(st As Integer(), ti As Integer) As Integer<br>    Dim Res, I As Integer<br>    For I = 0 To st.GetLength(0) - 1<br>      Res += Math.Ceiling(st(I)/ti)<br>      If I &lt;&gt; 0 Then<br>        Res += 2<br>      End If<br>    Next<br>    Return Res<br> <br>  End Function<br>End Class<br></td>

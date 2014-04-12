@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class ManyNumbers<br>{<br>  public int getSums(int[] n, int K)<br>  {<br>    int q=0,e=0;<br>    foreach(int i in n) if(i%K==0)q+=i; else e+=i;<br>    return System.Math.Abs(e-q);<br>  }<br>}<br></td>

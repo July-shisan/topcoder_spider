@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class TVSize<br>{<br>  public int[] calcSize(int diagonal, int height, int width)<br>  {<br>    double diag2=Math.sqrt((double)height*height+width*width);<br>    double ratio=diagonal/diag2;<br>    int[] ret=new int[]{(int)(height*ratio),(int)(width*ratio)};<br>    return ret;<br>  }<br>}<br></td>

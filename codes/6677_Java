@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class BiggestRectangleEasy {<br>  public int findArea(int N){<br>    N=N/2;<br>    if(N%2==0)<br>      return (N/2)*(N/2);<br>  else<br>    return ((N+1)/2)*((N-1)/2);<br>  }<br>}<br></td>

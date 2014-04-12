@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>public class InsertionSortCount<br>{<br>  public int countMoves( int[] arr )<br>  {<br>    int count = 0;<br>    for( int i = 0; i &lt; arr.Length; i++ )<br>    {<br>      for( int j = 0; j &lt; i; j++ )<br>      {<br>        if( arr[j] &gt; arr[i] )<br>          count++;<br>      }<br>    }<br>    <br>    return count;<br>  }<br>}<br></td>

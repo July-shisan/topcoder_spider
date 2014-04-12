@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class TheAlmostLuckyNumbersDivTwo<br>{<br>  public int find(int a, int b)<br>  {<br>    int ret=0;<br>    for (int i = a; i &lt;=b; i++) {<br>      int k=i;<br>      int nld=0;<br>      while(k&gt;0){<br>        int d=k%10;<br>        if(d!=4&amp;&amp;d!=7)nld++;<br>        k/=10;<br>      }<br>      if(nld&lt;2)ret++;<br>    }<br>    <br>    return ret;<br>  }<br>  }<br></td>

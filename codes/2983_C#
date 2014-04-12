@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class CultureShock<br>    {<br>      public string translate(string str)<br>      {<br>        string[] arr = str.Split(new char[]{ });<br>        string ret = "";<br>        foreach(string s in arr)<br>        {<br>          if(s == "ZEE")<br>          {<br>            ret += "ZED";<br>          }<br>          else<br>          {<br>            ret += s;<br>          }<br>          ret += " ";<br>        }<br>        return ret.Trim();<br>      }<br>    }<br></td>

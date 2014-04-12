@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class StringSegment<br>Public Function average(s As String) As Double<br>  Dim i,p As Integer<br>  Dim a As String<br>  a = s(0)<br>  For i=0 To s.Length()-1<br>    If a = s(i)  <br>      Continue For<br>    Else <br>      p = p + 1<br>      a = s(i)  <br>    End If<br>  Next i  <br>  Return s.Length()/(p+1)<br>End Function<br>End Class<br></td>

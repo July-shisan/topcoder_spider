@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class UnsortedSequence {<br>  public int[] getUnsorted(int[] s) {<br>    Arrays.sort(s);<br>        boolean was = false;<br>        for (int i = s.length - 1; i &gt; 0; --i) {<br>            if (s[i] != s[i - 1]) {<br>                was = true;<br>                int  t = s[i];<br>                s[i] = s[i - 1];<br>                s[i - 1]  = t;<br>                break;<br>            }<br>        }<br>        return (was ? s : new int[0]);<br>  }<br>}<br></td>

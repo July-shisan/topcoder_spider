@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            imports microsoft.visualbasic<br>imports system.math<br>public class SwimmersDelight<br>public function longestJump(x as integer(), y as integer()) as integer<br>dim a,b,c,d,e,f,g as integer<br> <br>a=max(x(0),10-x(0))<br>b=max(x(1),10-x(1))<br>c=round(system.math.sqrt((x(0)-x(1))^2+(y(0)-y(1))^2))<br>d=max(x(0),10-x(1))<br>e=max(x(1),10-x(0))<br>f=min(d,e)<br> <br>return min(min(a,b),max(c,f))<br>end function<br>end class<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class ConvexPolygon<br> <br>    Public Function findArea(ByVal x As Integer(), ByVal y As Integer()) As Double<br>        Dim i As Integer<br>        Dim a As Double<br> <br>        For i = 0 To x.Length - 2<br>            a += x(i) * y(i + 1) - x(i + 1) * y(i)<br>        Next<br> <br>        a += x(x.Length - 1) * y(0) - x(0) * y(y.Length - 1)<br>  If a &lt; 0 Then<br>          Return - a / 2<br>  Else<br>    Return a / 2<br>  End If<br>    End Function<br> <br>End Class<br></td>

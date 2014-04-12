@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class CountGame<br>{<br> <br>public int howMany(int maxAdd, int goal, int next)<br>{<br>int n=(goal-next+1)%(maxAdd+1);<br>if(n==0)<br>return -1;<br>else return n;<br> <br>}<br>}<br></td>

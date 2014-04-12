@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.Arrays;<br> <br>public class DengklekTryingToSleep {<br> <br>  public int minDucks(int[] ducks) {<br>    Arrays.sort(ducks);<br>    int n = ducks.length;<br>    return ducks[n - 1] - ducks[0] - n + 1;<br>  }<br> <br>}<br></td>

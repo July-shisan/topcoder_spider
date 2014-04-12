@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br> <br>public class DeckRearranging<br>{<br>  public String rearrange(String deck, int[] above)<br>  {<br>    StringBuffer res = new StringBuffer();<br>    for(int i = 0; i &lt; deck.length(); i++) {<br>      char c = deck.charAt(i);<br>      res.insert(above[i], c);<br>    }<br>    return res.toString();<br>  }<br>  <br>  <br>}<br>//Powered by [KawigiEdit] 2.0!<br></td>

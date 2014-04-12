@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            /**<br> * Built using CHelper plug-in<br> * Actual solution is at the top<br> */<br>public class TheNumberGameDivOne {<br>    public String find(long n) {<br>        long second = 2;<br>        while (second &lt; n) {<br>            second *= 4;<br>        }<br>        if (n % 2 == 1 || n == second)<br>            return "Brus";<br>        else<br>            return "John";<br>    }<br>}<br></td>

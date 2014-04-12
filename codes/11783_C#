@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections.Generic;<br>using System.Text.RegularExpressions;<br><br>public class PikachuEasy<br>{<br>    public string check(string word)<br>    {<br>        return Regex.IsMatch(word, @"^(pi|ka|chu)*$") ? "YES" : "NO";<br>    }<br>}<br></td>

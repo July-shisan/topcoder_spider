@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports Microsoft.VisualBasic<br>Imports System<br>Imports System.Collections<br>Imports System.Text<br> <br>Public Class ColumnDiagramPerimeter<br>  Public Function getPerimiter(ByVal a As Integer()) As Integer<br>    Dim Ans As Integer = a(0), I As Integer<br>    For I = 1 to a.getupperbound(0)<br>      Ans += math.abs(a(I)-a(I-1))<br>    Next I<br>    Return Ans + 2*(a.getupperbound(0)+1)  + a(a.getupperbound(0))<br>  End Function<br>End Class<br></td>

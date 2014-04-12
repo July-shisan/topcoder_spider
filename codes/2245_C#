@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br> <br>public class Piglets<br>{<br>  public int choose(string trough)<br>  {<br>    if (trough.IndexOf('-') &lt; 0) return -1;<br>    if (trough[0] == '-') return 0;<br>    if (trough[trough.Length-1] == '-') return trough.Length-1;<br>    if (trough.IndexOf("--") &lt; 0) return trough.IndexOf('-');<br>    return trough.LastIndexOf("--");<br>  }<br>}<br>//Powered by [KawigiEdit]<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class NotTwo {<br>    public int maxStones(int width, int height) {<br>        int res = 0;<br>        for (int r = 0; r &lt; width; ++r)<br>            for (int c = 0; c &lt; height; ++c)<br>                if ((r / 2) % 2 == 0 ^ (c / 2) % 2 != 0)<br>                    ++res;<br>        return res;<br>    }<br>}<br> <br> <br>// Powered by FileEdit<br>// Powered by RETester [based on ExampleBuilder]<br>// Powered by CodeProcessor<br></td>

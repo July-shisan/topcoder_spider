@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class KiloMan{<br><br>public int hitsTaken(int[] pattern, String jumps){<br><br>  int count = 0;<br>  for(int i=0;i&lt;pattern.length;i++){<br>    if( jumps.charAt( i ) == 'J' &amp;&amp; pattern[i] &gt; 2 ) count++;<br>    if( jumps.charAt( i ) == 'S' &amp;&amp; pattern[i] &lt;= 2 ) count++;<br>  }<br><br>  return count;<br>}<br><br><br><br>}<br>// Powered by CodeProcessor<br></td>

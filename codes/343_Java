@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class Multiples <br>{<br>  public int number(int min, int max, int factor)<br>  {<br>    int count = 0;<br>    <br>    for(int i = min; i &lt;= max; i++)<br>    {<br>      if(i % factor == 0)<br>      {<br>        count++;<br>      }<br>    }<br>    <br>    return count;<br>  }<br> <br>  <br>}<br> <br>// Powered by PopsEdit<br>// Powered by CodeProcessor<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;string&gt;<br>using namespace std;<br><br>struct ColorfulTilesEasy {<br> int theMin(string s) {<br>  int i, c = 0;<br>  for(i = 1; i &lt; s.size(); ++i) {<br>   if(s[i - 1] ==s[i]) {<br>    c++;<br>    i++;<br>   }<br>  }<br>  return c;<br> }<br>};<br></td>

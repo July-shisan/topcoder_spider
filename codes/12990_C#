@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections.Generic;<br>using System.Collections;<br>using System.Linq;<br>using System.Text;<br><br>   public class BoundingBox<br>   {<br>    public int smallestArea(int[] X, int[] Y)<br>     {<br>         int xmax = X.Max();<br>        int xmin =  X.Min();<br>        int ymax = Y.Max();<br>        int ymin = Y.Min();<br>        int res = (xmax - xmin) * (ymax - ymin);<br>        return Math.Abs(res);<br><br>     }<br><br>   }<br></td>

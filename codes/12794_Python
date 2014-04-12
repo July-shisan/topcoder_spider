@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #-*- coding: utf-8 -*-<br> <br>class LittleElephantAndBallsAgain:<br>    def getNumber(self, S):<br>        for i in range (len (S), 0, -1):<br>            if (S.count ('R' * i) &gt;= 1 or S.count ('G' * i) &gt;= 1 or S.count ('B' * i) &gt;= 1):<br>                return len (S) - i<br>        return 0<br> <br># Powered by Greed [1.5]<br></td>

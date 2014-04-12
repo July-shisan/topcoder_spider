@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br> class Stick<br>    {<br>        public int pieces(int x)<br>        {<br>            int ans = 0;<br>            while (true)<br>            {<br>                if((x &amp; 1) == 1)<br>                ans++;<br>              x=  x &gt;&gt; 1;<br>                if (x == 0) break;<br><br>            }<br>            return ans;<br>        }<br>    }<br></td>

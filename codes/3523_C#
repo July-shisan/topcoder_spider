@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>public class WordPattern {<br>  public long countWords(string word) {<br>    int n = word.Length;<br><br>    if (n == 1)<br>      return 1;<br>    else<br>      return 4 * ((((long) 1) &lt;&lt; (n - 1)) - 1);<br>  }<br>  <br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by TZTester 1.01 [25-Feb-2003] [modified for C# by Petr]<br>// Powered by CodeProcessor<br></td>

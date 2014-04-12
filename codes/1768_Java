@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class ProfitCalculator {<br>  public int percent(String[] items){<br>    double total = 0;<br>    double cost = 0; <br>    for (int count = 0; count &lt; items.length; count++){<br>      total += Double.parseDouble(items[count].substring(0, 6));<br>      cost += Double.parseDouble(items[count].substring(7));<br>    }<br>    return (int) (100*(total-cost)/total);<br>  }<br>}<br></td>

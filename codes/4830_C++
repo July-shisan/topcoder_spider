@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class AccessChanger {<br>  public String[] convert(String[] oc) {<br>    for(int i = 0; i &lt; oc.length; i++) {<br>      for(int j = 1; j &lt; oc[i].length(); j++) {<br>        if(oc[i].charAt(j) == '/' &amp;&amp; oc[i].charAt(j-1) == '/') break;<br>        if(oc[i].charAt(j) == '&gt;' &amp;&amp; oc[i].charAt(j-1) == '-') {<br>          oc[i] = oc[i].substring(0,j-1) + "." + oc[i].substring(j+1);<br>        }<br>      }<br>    }<br>    return oc;<br>  }<br>}<br></td>

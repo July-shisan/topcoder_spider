@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class SalaryCalculator<br>    Public Function calcHours(ByVal P1 As Integer, ByVal P2 As Integer, ByVal salary As Integer) As Double<br>        If P1 * 200 &gt;= salary Then<br>            Return salary / P1<br>        Else<br>            Return (salary - (P1 * 200)) / P2 + 200<br>        End If<br>    End Function<br>End Class<br></td>

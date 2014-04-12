@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class ReadingBooks<br>{<br>  public int countBooks(string[] readParts)<br>  {<br>    int b = 0;<br>    <br>    for (int i = 2; i &lt; readParts.Length; i++)<br>    {<br>      if (string.Compare(readParts[i], readParts[i-1]) != 0 &amp;&amp; string.Compare(readParts[i], readParts[i-2]) != 0 &amp;&amp; string.Compare(readParts[i-1], readParts[i-2]) != 0)<br>      {<br>        b++;<br>        i += 2;<br>      }<br>    }<br>    <br>    return b;<br>  }<br>}<br></td>

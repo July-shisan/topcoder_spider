@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>public class Thimbles {<br>public int thimbleWithBall(string[] swp) {<br>  int tp = 1;<br>  foreach(string s in swp) {<br>    int s1 = s[0] - '0';<br>    int s2 = s[2] - '0';<br>    if(s1 == tp) tp = s2;<br>    else if(s2 == tp) tp = s1;<br>  }<br>  return tp;<br>}<br>}<br></td>

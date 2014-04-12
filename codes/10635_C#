@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class MagicalSource<br>{<br>  public long calculate(long x)<br>  {<br>    long res = 11111111111111L;<br>    while (x % res != 0)<br>      res /= 10;<br>    return x / res;<br>  }<br>}<br></td>

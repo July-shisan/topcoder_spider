@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class SpiralRoute {<br> <br>  public int[] thronePosition(int width, int length)<br>  {<br>    int a[] = new int[2];<br>    a[0]=0; a[1]=0;<br>    <br>    if ((width&lt;2) || (length&lt;2)) {a[0]=width-1; a[1]=length-1;}<br>    else<br>    if ((length==2) || (width==2)) {a[0]=0; a[1]=1;}<br>    else<br>      { int[] b = thronePosition(width-2,length-2);<br>                      a[0]=b[0]+1; a[1]=b[1]+1;}<br>     <br>    <br>    return (a);<br>  }<br>  <br>  <br>}<br></td>

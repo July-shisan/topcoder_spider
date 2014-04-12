@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class LISNumberDivTwo {<br> <br>  public int calculate(int[] seq) {<br>    int count = 1;<br>    for(int i = 0; i &lt; seq.length - 1;++i){<br>      if (seq[i] &gt;= seq[i + 1]){<br>        ++count;<br>      }<br>    }<br>    return count;<br>  }<br> <br>}<br></td>

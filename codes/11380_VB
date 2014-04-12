@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            PUblic Class SRMRoomAssignmentPhase<br>Public Function countCompetitors(ratings As Integer(), K As Integer) As Integer<br>Dim i as integer, idx as integer, r as integer = ratings(0)<br>Array.Sort(ratings)<br>for i =0 to ratings.length()-1<br>if ratings(i) = r then idx = i <br>next<br>return ( ratings.length() - (idx+1) ) \ K<br><br>End Function <br>End CLass<br></td>

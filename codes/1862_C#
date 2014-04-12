@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>using System.Collections.Specialized;<br><br>public class BritishCoins {<br>  public int[] coins(int pence) {<br>    int[] res = new int[3];<br>        res[0] = pence / 240;<br>        pence = pence % 240;<br>        res[1] = pence / 12;<br>        res[2] = pence % 12;<br>        return res;<br>  }<br>}<br><br><br>// Powered by FileEdit<br></td>

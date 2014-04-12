@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Text;<br>using System.Collections;<br> <br>public class PowSum<br>{<br>  public int getSum(int low, int high, int pow)<br>  {<br>    int ret = 0;<br>    for(int i = low; i &lt;= high; i++)<br>    {<br>      for(int j = 1; j &lt;= pow; j++)<br>      {<br>        ret += (int)Math.Pow(i, j);<br>        }<br>        }<br>    return ret;<br>  }<br>}<br></td>

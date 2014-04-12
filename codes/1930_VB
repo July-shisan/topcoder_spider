@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class LevelUp<br> <br>public function toNextLevel(expNeeded() as integer,received as integer) as integer<br>        Dim i As Integer<br>        Dim lastOne As Integer<br> <br>        For i = 0 To expNeeded.Length - 1<br>            If received &lt; expNeeded(i) Then<br>                Return expNeeded(i) - received<br>                Exit For<br>            End If<br>        Next<br> <br>end function<br> <br>end class<br></td>

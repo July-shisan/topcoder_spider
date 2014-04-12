@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class RaiseThisBarn:<br>  def calc(self, str):<br>    total = 0<br>    for i in xrange(len(str)):<br>      if str[i] == 'c':<br>        total += 1<br>    choice = 0<br>    count = 0<br>    for i in xrange(len(str)-1):<br>      if str[i] == 'c':<br>        count += 1<br>      if count == total - count:<br>        choice += 1<br>    return choice<br></td>

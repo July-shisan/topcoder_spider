@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class Clock {<br>public int[] getAngles(String t) {<br>  int[] o = new int[3];<br>  int h = Integer.parseInt(t.substring(0,2));<br>  int m = Integer.parseInt(t.substring(3,5));<br>  int s = Integer.parseInt(t.substring(6));<br>  o[2] = s * 6;<br>  m = m * 60 + s;<br>  o[1] = m / 10;<br>  h = h * 3600 + m;<br>  o[0] = (h / 120) % 360;<br>  return o;<br>}}<br></td>

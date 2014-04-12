@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class CCipher {<br>  public String decode(String cipherText, int shift) {<br>    char[] c = cipherText.toCharArray();<br>    for (int i=0; i&lt;c.length; ++i)<br>    {<br>      c[i] -= shift;<br>      if (c[i] &lt; 'A') c[i] += 26;<br>    }<br>    return new String(c);<br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

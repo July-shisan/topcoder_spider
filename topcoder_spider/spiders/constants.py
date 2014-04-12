@@ -9,4 +9,5 @@ match_list_url = 'http://community.topcoder.com/tc?module=MatchList&sc=&sd=&nr=2
 problem_list_url = 'http://community.topcoder.com/tc?module=ProblemArchive&sr=0&er=10000'
 problem_content_path = 'problems'
 problem_detail_url = 'http://community.topcoder.com/tc?module=ProblemDetail&rd=%s&pm=%s'
+problem_solution_url = 'http://community.topcoder.com/stat?c=problem_solution&cr=%s&rd=%s&pm=%s'
 code_path = 'codes'

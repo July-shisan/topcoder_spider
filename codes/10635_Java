@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br> <br> <br>public class MagicalSource<br>{<br>  public long calculate(long x)<br>  {<br>    long best = Long.MAX_VALUE;<br>    long t = 0;<br>    while(t &lt; x)  {<br>      t *= 10;<br>      t++;<br>      if(x%t==0)  {<br>        best = x/t;<br>      }<br>    }<br>    return best;<br>  }<br>  <br> <br>}<br>//Powered by KawigiEdit 2.1.4 (beta) modified by pivanof!<br></td>

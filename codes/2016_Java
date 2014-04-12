@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.lang.*;<br>public class Rounder <br>  {<br>  public int round(int n, int b) <br>    {<br>    int res;<br>    int r = n / b;<br>    r = r * b;<br>    int r1 = r + b;<br>    if (  (n - r) &lt; ( r1-n) )<br>      return r;<br> <br>    return r1;<br>    }<br> <br> <br>  <br> <br>  }<br> <br> <br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

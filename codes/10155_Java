@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.math.BigInteger;<br> <br>public class DesignCalendar {<br>    public int shortestPeriod(int dayLength, int yearLength) {<br>        int z = yearLength % dayLength;<br>        int d = BigInteger.valueOf(z).gcd(BigInteger.valueOf(dayLength)).intValue();<br>        return dayLength / d;<br>    }<br> <br>}<br> <br> <br>// Powered by FileEdit<br>// Powered by RETester [based on ExampleBuilder]<br>// Powered by CodeProcessor<br></td>

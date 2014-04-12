@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class WordFilter<br>{<br>  public String strip(String search, String buffer)<br>  {<br>    for (int n = 0; n &lt; buffer.length(); n++)<br>    {<br>      if (buffer.regionMatches(true, n,  search, 0, search.length()))<br>      {<br>        return strip(search, buffer.substring(0, n) + buffer.substring(n+search.length()));<br>      };<br>    };<br>    return buffer;<br>  };<br>}<br></td>

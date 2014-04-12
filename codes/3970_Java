@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class AutoLoan {<br>// no algebra today :-)<br>public double interestRate(double price, double monthlyPayment, int loanTerm) {<br>  double r = 50, diff = 25;<br>  while(diff &gt; 1e-12) {<br>    double s = 0, loan = price, x = 1 + (r/1200);<br>    for(int i=loanTerm;i--&gt;0;) {<br>      loan = loan * x - monthlyPayment;<br>    }<br>    if(loan&gt;0) r -= diff;<br>    else r += diff;<br>    <br>    diff /= 2;<br>  }<br>  return r;<br>}}<br></td>

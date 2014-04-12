@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;string&gt;<br>#include &lt;vector&gt;<br>using namespace std;<br> <br>class LCMRange {<br>  public:<br>  int lcm(int first, int last) {<br>    bool a;<br>    for (int i = 1;; i++) {<br>      a = true;<br>      for (int j = first; j &lt;= last; j++) {<br>        if (i%j != 0) {<br>          a = false;  <br>        }<br>      }<br>      if(a){<br>        return i;  <br>      }<br>    }<br>  }<br>};<br> <br>// Powered by PopsEdit<br></td>

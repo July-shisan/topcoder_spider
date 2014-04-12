@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class SRMCards<br>    Public Function maxTurns(ByVal cards As Integer()) As Integer<br>        System.Array.Sort(cards)<br>        maxTurns = cards.Length<br>        Dim i As Integer = 0<br>        Do While i + 1 &lt; cards.Length<br>            If cards(i) + 1 = cards(i + 1) Then maxTurns -= 1 : i += 1<br>            i += 1<br>        Loop<br>    End Function<br>End Class<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br><br>public class TriangleCount {<br>  public int count(int N) {<br>        if (N % 2 == 0)<br>        {<br>            return N*(N+2)*(2*N+1) / 8;<br>        }<br>        else<br>        {<br>            return (N * (N + 2) * (2 * N + 1) - 1) / 8;<br>        }<br>   }<br>}<br><br><br>// Powered by FileEdit<br></td>

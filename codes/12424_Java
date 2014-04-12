@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import static java.lang.Math.*;<br> <br>public class Chopsticks {<br> <br>  public int getmax(int[] length) {<br>    int [] cnt = new int [101];<br>    for (int i : length)<br>      cnt[i]++;<br>    int count = 0;<br>    for (int i : cnt)<br>      count += i/2;<br>    return count;<br>  }<br> <br>}<br></td>

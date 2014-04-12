@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>public class DivisorDigits<br>{<br>  public int howMany(int num)<br>  {<br>    int r = 0;<br>    foreach (char c in num.ToString())<br>      if (c!= '0' &amp;&amp; num % Int32.Parse(new string(c, 1)) == 0)<br>        r++;<br> <br>    return r;<br>  }<br>}<br></td>

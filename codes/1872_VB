@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class BadSubstring<br>public function howMany(length as integer) as long<br>  if length = 0 then<br>    howMany = 1<br>    exit function<br>  end if<br>  dim i,j,k as integer<br>  dim a(length),b(length),c(length) as long<br>  a(1)=1<br>  b(1)=1<br>  c(1)=1<br>  for i = 2 to length<br>    a(i) = a(i-1) + c(i-1)<br>    b(i) = a(i-1) + b(i-1) + c(i-1)<br>    c(i) = b(i)<br>  next i<br>  howMany = a(length) + b(length) + c(length)<br>end function<br>end class<br></td>

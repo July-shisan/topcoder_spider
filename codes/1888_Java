@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class Swimmers {<br>  public int[] getSwimTimes(int[] x, int[] y, int z ) {<br>    int[] res = new int[x.length];<br>    for( int i = 0; i &lt; x.length; i++ ) {<br>      if( x[i] == 0 ) { res[i] = 0; }<br>      else if( y[i] &lt;= z ) { res[i] = -1; }<br>      else res[i] = (int)(((double) x[i] / (y[i] + z) + (double)x[i] / (y[i]-z)));<br>    }<br>    return res;<br>  }<br>}<br></td>

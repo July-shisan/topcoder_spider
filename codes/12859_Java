@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class WinterAndCandies {<br><br>  public int getNumber(int[] type) {<br>    int[] count = new int[51];<br>    for(int i = 0; i &lt; type.length; i++) {<br>      count[type[i]]++;<br>    }<br>    int sum = 0;<br>    int prod = 1;<br>    for(int i = 1; i &lt; count.length; i++) {<br>      prod *= count[i];<br>      sum += prod;<br>    }<br>    return sum;<br>  }<br><br>}<br></td>

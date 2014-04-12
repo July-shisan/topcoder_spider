@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class DiskSpace {<br>  public int minDrives(int[] used, int[] total) {<br>    int s = 0;<br>    for(int i = 0; i &lt; used.length; i++)<br>      s += used[i];<br>    Arrays.sort(total);<br>    for(int i = total.length-1; i &gt;= 0; i--){<br>      s -= total[i];<br>      if(s&lt;=0) return total.length-i;<br>    }<br>    return total.length;<br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import sys<br> <br>class AlienAndPassword:<br>    def getNumber(self, S):<br>        res = {S[:i] + S[i+1:] for i in range(len(S))}<br>        return len(res)<br></td>

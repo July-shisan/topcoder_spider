@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br><br>    class WhiteCells<br>    {<br>        public int countOccupied(String[] board)<br>        {<br>            int num = 0;<br>            for (int i = 0; i &lt; 8; i++)<br>                for (int j = 0; j &lt; 8; j++)<br>                    if (board[i][j] == 'F' &amp;&amp; (i + j) % 2 == 0)<br>                        num++;<br><br>            return num;<br><br>        }<br>    }<br></td>

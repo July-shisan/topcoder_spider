@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class BirthdayOdds {<br>  public int minPeople(int minOdds, int daysInYear) {<br>    double odds = 1.0;<br>    <br>    for ( int i = 0; true; i++ ) {<br>      if ( odds * 100.0 &lt;= 100-minOdds )<br>        return i;<br>      odds *= (double)( daysInYear - i  ) / (double)(daysInYear);<br>    }<br>  }<br>  <br>}<br> <br>// Powered by PopsEdit<br>// Powered by CodeProcessor<br></td>

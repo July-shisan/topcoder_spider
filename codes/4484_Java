@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class Cards<br>{<br>  public String[] deal(int numPlayers, String deck)<br>  {<br>    String[] d = new String[numPlayers];<br>    for (int i=0; i&lt;numPlayers; i++)<br>      d[i] = "";<br>    for (int i=0; i&lt;deck.length()/numPlayers; i++)<br>      for (int j=0; j&lt;numPlayers; j++)<br>        d[j] += deck.charAt(i*numPlayers+j);<br>    return d;<br>  }<br>}<br> <br> <br>// Powered by FileEdit<br></td>

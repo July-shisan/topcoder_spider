@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class NoZero<br>{<br>  public int nth(int n)<br>  {<br>    if(n&lt;10) return n;<br>    return Integer.parseInt(""+nth((n-1)/9)+((n%9==0)?9:n%9));<br>  }<br>  public int getN(int n)<br>  {<br>    if(n&lt;10) return n;<br>    return 9*getN(n/10)+getN(n%10);<br>  }<br>  public int subtract(int big, int small)<br>  {<br>    return nth(getN(big)-getN(small));<br>  }<br>}<br></td>

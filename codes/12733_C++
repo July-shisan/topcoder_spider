@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;iostream&gt;<br>#include &lt;algorithm&gt;<br>using namespace std;<br>struct GooseTattarrattatDiv2 {<br>int getmin(string S){<br>  char y =S[0];<br>  int i;  <br>  for(i =1;i&lt;S.length();i++) if (y != S[i]) break;<br>  if(i==S.length()) return 0;  <br>  int largest = 0;<br>  <br>  for(int i=0;i&lt;S.length();i++) {  int n = count(S.begin(), S.end(), S[i]); largest = max(largest , n);}<br>  <br>  return S.length()-largest;<br>}<br>};<br></td>

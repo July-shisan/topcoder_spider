@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;vector&gt;<br>using namespace std;<br>struct AdvertisingAgency {int numberOfRejections(vector &lt;int&gt; r){<br>int ret=0;<br>  for(int i=0;i&lt;r.size();i++)<br>    if(r[i]!=-1)<br>      for(int j=i+1;j&lt;r.size();j++)<br>        if(r[i]==r[j]){ <br>          r[j]=-1;ret++;<br>          }<br>          return ret;<br>}};<br></td>

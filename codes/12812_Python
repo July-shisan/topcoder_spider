@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class AstronomicalRecordsEasy:<br>  def minimalPlanets(self, A, B):<br>    m=len(A)<br>    n=len(B)<br>    ans=m+n<br>    for i in range(m):<br>      for j in range(n):<br>        ai=A[i]<br>        bj=B[j]<br>        h={}<br>        for x in A:<br>          h[x*bj]=1<br>        for x in B:<br>          h[x*ai]=1<br>        minl=len(h)<br>        if(minl&lt;ans):<br>          ans=minl<br>    return ans<br></td>

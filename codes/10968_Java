@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            /**<br> * Built using CHelper plug-in<br> * Actual solution is at the top<br> */<br>public class KnightCircuit2 {<br>  public int maxSize(int w, int h) {<br>        if (Math.min(w, h) == 1) return 1;<br>        if (Math.min(w, h) == 2) return (Math.max(w, h) + 1) / 2;<br>        if (w == 3 &amp;&amp; h == 3) return 8;<br>        return w * h;<br>  }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include&lt;iostream&gt;<br>#include&lt;string.h&gt;<br>using namespace std;<br>class PowerOfThreeEasy<br>  {<br>  public:<br>  string ableToGet(int x, int y)<br>    {<br>    return check(x, y, 1)?"Possible":"Impossible";<br>    }<br>  bool check(int x, int y, int step)<br>    {<br>    if(x==0 &amp;&amp; y==0)<br>      return true;<br>    if(x&lt;0 || y&lt;0)<br>      return false;<br>    return (check(x-step, y, 3*step) || check(x, y-step, 3*step));<br>    }<br>  };<br></td>

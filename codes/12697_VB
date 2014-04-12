@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class TrafficCongestionDivTwo<br>Public Function theMinCars(treeHeight As Integer) As Long<br>Dim i As Integer <br>Dim res(62) As Long<br>If treeHeight = 0 Then Return 1<br>If treeHeight = 1 Then Return 1<br>For i = 0 To treeHeight<br>  res(i) = 1<br>  For j = 0 To i - 2   <br>    res(i) +=  2*res(j)<br>  Next j<br>Next i<br>Return res(treeHeight)<br> <br>End Function<br>End Class<br></td>

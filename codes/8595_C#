@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections.Generic;<br>using System.Text;<br><br>public class MonstersAndBunnies<br>{<br>  public double survivalProbability(int M, int B)<br>  {<br>    if (M % 2 == 0)<br>    {<br>      return 1.0 / (M + 1);<br>    }<br><br>    return 0;<br>  }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;iostream&gt;<br>#include &lt;cstdio&gt;<br>#include &lt;cmath&gt;<br>#include &lt;vector&gt;<br>#include &lt;sstream&gt;<br>using namespace std;<br>int oo=1&lt;&lt;30;<br>class ShippingCubes{<br>public:<br>  int minimalCost(int N)<br>  {<br>    int minc=oo;<br>    for(int a=1;a&lt;201;a++)<br>      for(int b=1;b&lt;201;b++)<br>        if(N%(a*b)==0) minc=min(minc,a+b+(N/(a*b)));<br>    return minc;<br>  }<br>};<br></td>

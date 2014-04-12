@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class BouncingBalls {<br>  public double expectedBounces(int[] x, int T) {<br>    int n = x.length;<br>    double ans = 0;<br>    for (int i = 0; i &lt; n; i++) {<br>      for (int j = i + 1; j &lt; n; j++) {<br>        if (Math.abs(x[i] - x[j]) &lt;= 2 * T)<br>          ans += .25;<br>      }<br>    }<br>    return ans;<br>  }<br><br>}<br><br><br><br>// Powered by FileEdit<br>// Powered by moj 4.12 [modified TZTester]<br>// Powered by CodeProcessor<br></td>

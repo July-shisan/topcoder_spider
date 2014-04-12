@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System; using System.Collections; public class NumberGuesser { public int guess(String s) {<br>int x = 99;<br>foreach (char c in s)<br> x -= (int)c - 48;<br> <br>if ((x%9) == 0) return 9;<br> <br>return x%9;<br>}}<br></td>

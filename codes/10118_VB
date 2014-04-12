@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Class InverseFactoring<br>    Public Function getTheNumber(ByVal factors As Integer()) As Integer<br>        Array.Sort(factors)<br>        If factors.Length = 1 Then Return factors(0) * factors(0)<br><br>        Return factors(0) * factors(factors.Length - 1)<br><br>    End Function<br>End Class<br></td>

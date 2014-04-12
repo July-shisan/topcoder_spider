@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.Arrays;<br> <br>public class BoundingBox {<br> <br>  public int smallestArea(int[] X, int[] Y) {<br>    Arrays.sort(X);<br>    Arrays.sort(Y);<br>    int n = X.length;<br>    return (X[n-1] - X[0]) * (Y[n-1] - Y[0]);<br> <br>  }<br> <br>}<br></td>

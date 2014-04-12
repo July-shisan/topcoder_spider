@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class BoxesOfBooks<br>{<br>public int boxes(int[] w,int mw)<br>{<br><br>  int co=1;<br>  int in=0;<br>  int L=w.length;<br>  if(L==0)return 0;<br>  for(int i=0;i&lt;L;i++)<br>  {<br>    if(in+w[i]&lt;=mw)<br>    in+=w[i];<br>    else<br>    {<br>      co++;<br>      in=w[i];<br>    }<br>  }<br>  return co;<br>}<br><br>}<br></td>

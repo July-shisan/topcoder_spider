@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;cstdio&gt;<br>using namespace std;<br> <br>class FloorTiling {<br>  public:<br>int tile (int s, int of, int w, int h) {<br>  int r, T = 0;<br>  for (r = 0; r &lt; h; r++) {<br>    int init = (of*r)%s;<br>    T += init;<br>    T += (w-init)%s;<br>  }<br>  return T;<br>}<br>};<br></td>

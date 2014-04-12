@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class LeapAge {<br>    public int getAge(int year, int born) {<br>        int res=0;<br>        for(int i=born+1;i&lt;=year;i++) if (i%100==0) {<br>            if (i%400==0) res++;<br>        } else if (i%4==0) res++;<br>        return res;<br>    }<br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

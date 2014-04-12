@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>using System.Text;<br><br>public class Superking {<br>    public long squares(int type1, int type2) {<br>  long t1 = type1;<br>  long t2 = type2;<br><br>  if (t1 == 0)<br>      return (t2+1)*(t2+1);<br><br>  if (t1 == 1)<br>      return 3*((t2+1)*(t2+1)+t2*t2)+2*(4*t2+3)-1;<br><br>  long h = 2*t1 - 1;<br>  long l = h + 4 * t2 + 2;<br><br>  return 2*h*l-h*h+4*((t2+1)*(t2+1)+t2*t2);<br>    }<br>}<br><br><br>// Powered by FileEdit<br></td>

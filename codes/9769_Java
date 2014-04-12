@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class FunnyBirds  {<br>  public int gameTime(int n)  {<br>    int time = 0;<br>    for(int i = 1; n &gt; 0; i++)  {<br>      if(i &gt; n)  {<br>        i = 1;<br>      }<br>      time++;<br>      n-=i;<br>    }<br>    return time;<br>  }<br>}<br></td>

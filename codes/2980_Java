@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class FuelConsumption {<br>  public double maximalDistance(int[] velocities, int[] consumptions, int fuel) {<br>    double ret = 0.0;<br>    for(int i = 0; i &lt; velocities.length; i++){<br>      double currentd = (((double)fuel)/consumptions[i])*velocities[i];<br>      ret = Math.max(ret,currentd);<br>    }<br>    return ret;<br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

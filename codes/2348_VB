@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            imports microsoft.visualbasic<br>imports system.math<br> <br>Public Class BagOfHolding<br> <br>Public Function oddsReachable(sizes As Integer(), item As Integer) As Double<br> <br>dim counter as integer<br>dim result as double<br>dim hides as integer<br>hides=0<br> <br>for counter = 0 to sizes.length - 1<br>  if sizes(counter) &gt;= sizes(item) then hides = hides + 1<br>next counter<br> <br>result = 1 / hides<br> <br>oddsReachable = result<br> <br>end Function<br> <br>end Class<br></td>

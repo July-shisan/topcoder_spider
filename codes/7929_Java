@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class SMSLanguage {<br> <br>  public String translate(String text) {<br>    text = text.replace(",", "");<br>    text = text.replace(".", "");<br>    text = text.replace("?", "");<br>    text = text.replace("!", "");<br>    text = text.toLowerCase();<br>    text = text.replace("and", "&amp;");<br>    text = text.replace("ate", "8");<br>    text = text.replace("at", "@");<br>    text = text.replace("you", "U");<br>    return text;<br>  }<br> <br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class BiggestRectangleEasy<br>  Public Function findArea(N As Integer) As Integer<br>  Dim ResultValue As Integer, x As Integer, y As Integer, MyN As Integer<br>    x = Fix(N/4)<br>    MyN = N - (4*x)<br>    y = x<br>    If N Mod 4 &gt;= 2 Then<br>      Do While myN Mod 4 &gt;= 2 <br>      myN = N - 2<br>      y = y + 1<br>      Loop<br>    End If<br>  ResultValue = x * y<br>  Return ResultValue<br>  End Function<br>End Class<br></td>

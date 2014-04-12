@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.text.*;<br>public class PowSum<br>{<br>  public int getSum(int low, int high, int pow) <br>  {<br>    double answer = 0;<br>    for (int i = low; i &lt;= high; ++i)<br>    {<br>      for (int j = 1; j &lt;= pow; ++j)<br>      {<br>        answer += Math.pow(i, j);<br>      }<br>    }<br>    return (int)answer;<br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br><br> public class ProductOfDigits {<br>  public int smallestNumber(int N) {<br>    if (N == 1)<br>      return 1;<br>    int res = 0;<br>    for (int i = 9; i &gt;= 2; i--)<br>      while (N % i == 0) {<br>        res++;<br>        N /= i;<br>      }<br>    if (N != 1)<br>      return -1;<br>    return res;<br>        }<br> <br> }<br><br><br>// Powered by FileEdit<br>// Powered by RETester [based on ExampleBuilder]<br>// Powered by CodeProcessor<br></td>

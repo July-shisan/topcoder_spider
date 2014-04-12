@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;algorithm&gt;<br>#include &lt;vector&gt;<br>using namespace std;<br>#define all(v) v.begin(),v.end()<br>#define sz size()<br> <br>class OlympicCandles {<br>public:<br>  int numberOfNights(vector &lt;int&gt;);<br>};<br> <br>int OlympicCandles::numberOfNights(vector &lt;int&gt; c) {<br>    for(int i=1;;i++)<br>    {<br>        sort(all(c));<br>        reverse(all(c));<br>        if(c.sz&lt;i)return i-1;<br>        for(int j=0;j&lt;i;j++)if(c[j]--==0)return i-1;<br>    }<br>}<br></td>

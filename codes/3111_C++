@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;vector&gt;<br>#include &lt;string&gt;<br>#include &lt;algorithm&gt;<br>#include &lt;cmath&gt;<br>#include &lt;iostream&gt;<br> <br>using namespace std;<br> <br>class WaiterTipping {<br>  public:<br>  int maxPercent(int total, int taxPercent, int money) {<br>    int tip = 0;<br>    <br>    while(((int) total+floor((double) total*taxPercent/100)+floor((double) total*tip/100))&lt;=money)<br>    tip++;<br>    <br>    return tip-1;<br>  }<br>};<br> <br>// Powered by PopsEdit<br></td>

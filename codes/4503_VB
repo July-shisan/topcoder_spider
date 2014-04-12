@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            imports microsoft.visualbasic<br>public class ArrayHash<br>Public Function getHash(input As String()) As Integer<br>  dim i,j,k as integer<br>  for i=0 to input.length-1<br>    input(i) = ucase(input(i))<br>    for j=1 to input(i).length<br>      k = Asc(mid(input(i),j,1)) - asc("A") + i + j - 1 + k<br>    next j<br>  next i<br>  getHash = k<br>end function<br>end class<br></td>

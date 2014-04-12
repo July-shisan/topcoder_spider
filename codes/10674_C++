@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include&lt;iostream&gt;<br>#include&lt;vector&gt;<br>#include&lt;string&gt;<br>#include&lt;math.h&gt;<br>#include&lt;algorithm&gt;<br>#include&lt;stdlib.h&gt;<br><br>using namespace std;<br><br>class ReverseMagicalSource{<br>public:<br><br>int find(int source, int A)<br>{<br>if(source&gt;A)<br>return source;<br>int sm=source,i=1;<br>while(1)<br>{<br>sm+=pow(10,i++)*source;<br>if(sm&gt;A)<br>return sm;<br>}<br>}<br>};<br></td>

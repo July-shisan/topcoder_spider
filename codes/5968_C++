@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class SnailRace{<br>public:<br>  double shortestTime(int n,int dis,int ss,int gs){<br>    double time;<br>    if(ss&gt;=gs)<br>      return (dis-1)*1.0/ss;<br>    time = (dis-1)*1.0/(gs+(n-1)*ss*1.0+ss*1.0*(gs-ss)*(n-1)/(gs+ss));<br>    time = n*time*1.0+(n-1)*1.0*(gs-ss)/(gs+ss)*time;<br>    return time;<br>  }<br>};<br></td>

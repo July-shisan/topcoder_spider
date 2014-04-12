@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class PairingPawns<br>    Public Function savedPawnCount(ByVal start As Integer()) As Integer<br>        For i As Integer = start.Length - 1 To 1 Step -1<br>            start(i - 1) += start(i) \ 2<br>        Next<br>        Return start(0)<br>    End Function<br>End Class<br></td>

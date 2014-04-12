@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            //<br>import java.util.*;<br>public class TransportCounting {<br>    public int countBuses(int speed, int[] positions, int[] velocities, int time) {<br>        int cnt =0;<br>  int pos =speed*time;<br>  for(int i=0;i&lt;velocities.length;i++){<br>      if(velocities[i]*time + positions[i] &lt;= pos || positions[i] == 0) cnt++;<br>      <br>  }<br>      <br>        return cnt;<br>    }<br> <br>}<br> <br> <br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

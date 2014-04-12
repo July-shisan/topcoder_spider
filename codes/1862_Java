@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class BritishCoins<br>{<br>    public int[] coins(int pence)<br>    {<br>        int[] res = new int[3];<br>        res[0] = pence/(20*12);<br>        pence %= (20*12);<br>        res[1] = pence/12;<br>        res[2] = (pence%12);        <br>        return res;<br>    }    <br>}<br></td>

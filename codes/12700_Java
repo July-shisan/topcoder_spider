@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class InsertZ {<br>  public String canTransform(String init, String goal) {<br>    return goal.replace("z", "").equals(init) ? "Yes" : "No";<br>  }<br>}<br></td>

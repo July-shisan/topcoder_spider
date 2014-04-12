@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br> <br>public class TheQuestionsAndAnswersDivTwo<br>{<br>  public int find(String[] questions)<br>  {<br>    HashSet&lt;String&gt; set = new HashSet&lt;String&gt;();<br>    for(int i = 0; i &lt; questions.length; i++)<br>      set.add(questions[i]);<br>    return 1&lt;&lt;set.size();<br>  }<br>  <br>  <br>}<br>//Powered by [KawigiEdit] 2.0!<br></td>

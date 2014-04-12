@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class TheTree:<br>    def maximumDiameter(self, cnt):<br>        D = len(cnt)<br>        cnt = list(cnt)<br>        res = D<br>        for v in xrange(D):<br>            if 1 in cnt[v:]:<br>                res = max(res, D - v + cnt[v:].index(1))<br>            else:<br>                res = max(res, (D - v) * 2)<br>        return res<br></td>

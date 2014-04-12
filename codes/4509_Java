@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class Polyline {<br>    int n=0;<br>    public double length(int a, int b, int x0, int y0, int x1, int y1) {<br>        double res;<br>        int i=0,j=0;<br>    int x = a + Math.min( x0 + a - x1, x1 + a-x0);<br>    int y = b + Math.min( y0 + b - y1, y1 + b-y0);<br><br>        return Math.sqrt( x*x + y*y);<br>    }<br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

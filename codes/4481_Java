@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class DivisibilityCriteria {<br>    public int[] multipliers(int N, int P) {<br>        int[] res = new int[N];<br>    for(int i = 0;i&lt;N;i++)<br>      res[N - 1 - i ] = (int)(Math.pow(10,i)%P);<br>        return res;<br>    }<br><br>}<br><br><br>// Powered by FileEdit<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br> <br>class RobotHerbDiv2<br>{<br>  public int getdist(int T, int[] a)<br>  {<br>    int dir = 0;<br>    int x = 0, y = 0;<br>    for (int i = 0; i &lt; T; i++)<br>    {<br>      for (int com = 0; com &lt; a.Length; com++)<br>      {<br>        x += (int)Math.Cos(dir * Math.PI / 2) * a[com];<br>        y += (int)Math.Sin(dir * Math.PI / 2) * a[com];<br>        dir += a[com] % 4;<br>      }<br>    }<br>    return Math.Abs(x) + Math.Abs(y);<br>  }<br>}<br></td>

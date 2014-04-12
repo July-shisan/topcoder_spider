@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br><br> public class AdvertisingAgency {<br>   public int numberOfRejections(int[] requests) {<br>     bool[] b = new bool[101];<br>     int res = 0;<br>       for (int ctr = 0; ctr &lt; requests.Length; ++ctr)<br>         if (b[requests[ctr]])<br>           ++res;<br>         else<br>           b[requests[ctr]] = true;<br>     return res;<br>   }<br>  }<br></td>

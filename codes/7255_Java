@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class PrefixFreeSubsets {<br>  public long cantPrefFreeSubsets(String[] words) {<br>    Arrays.sort(words);<br>    long[] ans = new long[words.length+1];<br>    ans[words.length]=1;<br>    for (int i=words.length-1; i&gt;=0; i--) {<br>      // if we choose i<br>      int j = i+1;<br>      while (j&lt;words.length &amp;&amp; words[j].startsWith(words[i])) j++;<br>      ans[i] = ans[i+1] + ans[j];<br>    }<br>    return ans[0];<br>  }<br>}<br></td>

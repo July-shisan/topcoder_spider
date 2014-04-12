@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br><br>public class GridPointsOnCircle {<br>  public int countPoints(int rSquare) {<br>    int cnt = 0;<br>    for(long y=0; y*y &lt;= rSquare; y++)<br>    {<br>      long x = (long) Math.Sqrt(rSquare-y*y);<br>      long x1 = x+1;<br>      if ((x*x+y*y==rSquare &amp;&amp; x&gt;0) || x1*x1+y*y==rSquare)<br>        cnt++;<br>    }<br>    return cnt*4;<br>  }<br>}<br><br><br>// Powered by FileEdit<br></td>

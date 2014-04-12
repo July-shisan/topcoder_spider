@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br><br>public class ImprovingStatistics {<br>  public int howManyGames(int played, int won) {<br>    long p = played;<br>    long w = won;<br>    long a = (w * 100) / p + 1;<br>    if (a &gt;= 100)<br>      return -1;<br>    return (int) ((a * p - 100 * w + 99 - a) / (100 - a));<br>  }<br><br>  <br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by TZTester 1.01 [25-Feb-2003] [modified for C# by Petr]<br>// Powered by CodeProcessor<br></td>

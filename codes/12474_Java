@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            /**<br> * Built using CHelper plug-in<br> * Actual solution is at the top<br> */<br>public class TheNumberGame {<br>    public String determineOutcome(int A, int B) {<br>        String sa = "" + A;<br>        String sb = "" + B;<br>        if (sa.contains(sb) || sa.contains(new StringBuilder(sb).reverse().toString()))<br>            return "Manao wins";<br>        else<br>            return "Manao loses";<br>    }<br>}<br></td>

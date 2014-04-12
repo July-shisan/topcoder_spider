@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class ExcitingGame<br>{<br>  public int howMany(int nClassmates, int nTimes, int who)<br>  {<br>    int retVal = 0;<br>    for(int i = 1; i &lt;= nTimes; i++)<br>    {<br>      if(((i - 1)%nClassmates == who) &amp;&amp; ((i%3) == 0))<br>      {<br>        retVal++;<br>      }  <br>    }<br>    return retVal;<br>  }<br>}<br></td>

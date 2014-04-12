@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class NinjaTurtles<br>    {<br>        public static int countOpponents(int P, int K)<br>        {<br>            for (int i = 0; i &lt; 5000000; i++)<br>                if (3 * (i / K) + i / 3 == P)<br>                    return i;<br>            return -1;<br>        }<br>    }<br></td>

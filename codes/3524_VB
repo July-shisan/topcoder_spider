@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            imports microsoft.visualbasic<br> <br>public class SyllableCounter<br>public function countSyllables(word as string) as integer<br>  dim i as integer, j as integer, vo as boolean<br>  for i = 1 to word.length<br>    if instr("AEIOU",mid(word,i,1)) &gt; 0 then<br>      if vo = false then j = j + 1<br>      vo = true<br>    else<br>      vo = false<br>    end if<br>  next i<br>  countSyllables = j<br>end function<br>end class<br></td>

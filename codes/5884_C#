@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include&lt;string&gt;<br>#include&lt;vector&gt;<br> <br>using namespace std;<br> <br>class HammingDistance<br>{<br> <br>public:int minDistance(vector&lt;string&gt; ns)<br>{<br>int n=ns.size(),hd=50,m=ns[0].size();<br>for(int i=0;i&lt;n;i++)<br>for(int k=i+1;k&lt;n;k++)<br>{<br>  int d=0;<br>  <br>  for(int j=0;j&lt;m;j++)<br>  { if(ns[i][j]!=ns[k][j])  d++;<br>  }<br>  if(d&lt;hd) hd=d;<br>}<br>return hd;<br>}<br>};<br></td>

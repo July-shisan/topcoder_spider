@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System.Collections.Generic;<br>using System;<br><br>public class TwoTrains<br>{<br>  public int passengerNewVasyuki(int t1, int t2, int[] ts)<br>  {<br>    int dt1 = 0, dt2 = 0;<br>    int res = 0;<br>    foreach(int i in ts)<br>    {<br>      dt1 = 0;<br>      dt2 = 0;<br>      while(dt1 &lt; i) dt1 += t1;<br>      while(dt2 &lt; i) dt2 += t2;<br>      if(dt1 - i &lt;= dt2 - i) res++;<br>    }<br>    return res; <br>  }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br><br>public class LaserShooting {<br>  public double numberOfHits(int[] x, int[] y1, int[] y2) {<br>        double res = 0.0;<br>        for (int i = 0; i &lt; x.Length; ++i)<br>            res += Math.Abs(Math.Atan2(y2[i], x[i]) - Math.Atan2(y1[i], x[i]));<br>        return res / Math.PI;<br>    }<br><br><br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by TZTester 1.01 [25-Feb-2003] [modified for C# by Petr]<br>// Powered by CodeProcessor<br></td>

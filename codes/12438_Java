@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class FoxAndGame {<br>  public int countStars(String[] result) {<br>    Map&lt;String,Integer&gt; res = new HashMap&lt;String,Integer&gt;();<br>    res.put("---",0);<br>    res.put("o--",1);<br>    res.put("oo-",2);<br>    res.put("ooo",3);<br>    int count = 0;<br>    for(String s:result) {<br>      count+=res.get(s);<br>    }<br>    return count;<br>  }<br>}<br></td>

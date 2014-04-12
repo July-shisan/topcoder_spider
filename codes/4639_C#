@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class ProseFlip<br>{<br>    public string[] getFlip(string[] text)<br>    {<br>        string[] o = new string[text[0].Length];<br>        for (int i = 0; i &lt; text[0].Length; i++)<br>        {<br>            o[i] = "";<br>            for (int j = 0; j &lt; text.Length; j++)<br>            {<br>                o[i] += text[j][i];<br>            }<br>        }<br>        return o;<br>    }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class SwitchingBits<br>{<br>  public int minSwitches(String[] s)<br>  {<br>    String S = new String(s[0]);<br>    int i;<br>    int N=0;<br>    <br>    for(i=1; i&lt;s.length; i++)<br>    {<br>      S = new String(S.concat(s[i]));<br>    }<br>    <br>    for(i=1; i&lt;S.length(); i++)<br>    {<br>      if(S.charAt(i) != S.charAt(i-1))<br>        N++;<br>    }<br>    <br>    return (N+1)/2;<br>  }<br>}<br></td>

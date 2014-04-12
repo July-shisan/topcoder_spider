@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            double PI = 3.14159265358979323;<br><br>class DegreesToRadians{<br>public:<br>  double convertToRadians(int d,int m,int s){<br>    return (d+m/60.0+s/3600.0)*PI/180.0;<br>  }<br>};<br></td>

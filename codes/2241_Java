@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class ClockWalk {<br>  public int finalPosition(String flips) {<br>        int c=12;<br>    for (int i=0;i&lt;flips.length();i++) {<br>            boolean on=flips.charAt(i)=='h';<br>            if (on) {<br>                c+=(i+1);<br>                while (c&gt;12) c-=12;<br>            }<br>            else {<br>                c-=(i+1);<br>                while (c&lt;1) c+=12;<br>            }<br>        }<br>        return c;<br>  }<br>}<br></td>

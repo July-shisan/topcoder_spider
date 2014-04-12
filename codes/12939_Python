@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class SplitIntoPairs:<br> <br>  def makepairs(self, A, x):<br>    n = 0<br>    a = list(A)<br>    a.sort()<br>    i = 0<br>    while i &lt; len(a) - 1:<br>      if (a[i] &lt; 0 and a[i+1] &lt; 0) or (a[i] &gt;= 0 and a[i+1] &gt;= 0):<br>        n += 1<br>      else:<br>        if a[i] * a[i+1] &gt;= x:<br>          n += 1<br>      i += 2<br> <br>    return n<br></td>

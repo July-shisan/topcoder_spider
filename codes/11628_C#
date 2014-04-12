@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class CheatingQuiz<br>{<br>  public int[] howMany(string answers)<br>  {<br>    int[] r = new int[answers.Length];<br>    <br>    for(int i = 0; i &lt; answers.Length; ++i)<br>    {<br>      if(answers.IndexOf('A', i) != -1)<br>        r[i]++;<br>        <br>      if(answers.IndexOf('B', i) != -1)<br>        r[i]++;<br>        <br>      if(answers.IndexOf('C', i) != -1)<br>        r[i]++;<br>    }<br>    <br>    return r;<br>  }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports Microsoft.VisualBasic<br>Imports System<br>Imports System.Collections<br>Imports System.Text<br> <br>Public Class MergersDivOne<br>    Public Function findMaximum(ByVal revenues As Integer()) As Double<br>        Array.Sort(revenues)<br>        findMaximum = revenues(0)<br>        For i As Integer = 1 To revenues.Length - 1<br>            findMaximum += revenues(i)<br>            findMaximum /= 2<br>        Next<br>    End Function<br> <br>End Class<br></td>

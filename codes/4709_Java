@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            // Powered by radeclipse!<br>import java.util.* ;<br>public class FloorTiling {<br>  public int tile(int size, int offset, int width, int height) {<br>    int r = 0 ;<br>    for (int i=0; i&lt;height; i++) {<br>      int t = (offset * i) % size ;<br>      r += t ;<br>      t = (((width - offset * i) % size) + size) % size ;<br>      r += t ;<br>    }<br>    return r ;<br>  }<br>}<br></td>

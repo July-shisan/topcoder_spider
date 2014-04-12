@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class IncrementAndDoubling:<br>    def getMin(self, desiredArray):<br>        a = list(desiredArray)<br>        n = len(a)<br>        res = 0<br>        while any(a):<br>            if all(map(lambda x: x % 2 == 0, a)):<br>                a = map(lambda x: x / 2, a)<br>                res += 1<br>            for i in xrange(n):<br>                if a[i] % 2 == 1:<br>                    a[i] -= 1<br>                    res += 1<br>        return res<br></td>

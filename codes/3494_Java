@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class BridgePts<br>{<br>public int pointValue(int[] hand)<br>{<br>int res = 0;<br>int[] cc = new int[13];<br>int[] sc = new int [4];<br>for (int i =0;i&lt;hand.length;i++)<br>{<br>cc[(hand[i]-1)%13]++;<br>sc[(hand[i]-1)/13]++;<br>}<br>res+=4*cc[0];<br>res+=3*cc[12];<br>res+=2*cc[11];<br>res+=1*cc[10];<br>for (int i =0;i&lt;4;i++)<br>{<br>  if (sc[i] == 2)<br>  res+=1;<br>  if (sc[i] == 1)<br>  res+=2;<br>  if (sc[i] == 0)<br>  res+=3;<br>}<br>return res;<br>}<br>}<br></td>

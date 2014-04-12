@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class Conglutination {<br>  public String split(String conglutination, int expect) {<br>    for (int i = 1; i &lt; conglutination.length(); ++i) {<br>      try {<br>        int a = Integer.parseInt(conglutination.substring(0, i));<br>        int b = Integer.parseInt(conglutination.substring(i));<br>        if (a + b == expect) return conglutination.substring(0, i) + "+" + conglutination.substring(i);<br>      } catch(NumberFormatException e) {}<br>    }<br>    return "";<br>  }<br>}<br></td>

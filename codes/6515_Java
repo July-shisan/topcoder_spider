@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br> <br>public class IndictDates<br>{<br>  public int getYear(int ax, int bx, int cx)<br>  {<br>    int ans = 1; int a=1; int b=1; int c=1;<br>    for(;; ans++)<br>    {<br>      if(a==ax&amp;&amp;b==bx&amp;&amp;c==cx)<br>        return ans;<br>      a++;b++;c++;<br>      if(a&gt;15) a=1;<br>      if(b&gt;28) b=1;<br>      if(c&gt;19) c=1;<br>    }<br>    <br>  }<br>}<br></td>

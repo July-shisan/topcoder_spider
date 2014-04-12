@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class StringMult {<br>  public String times(String sFactor, int iFactor) {<br>    if( sFactor.length() == 0 ) return "";<br>    if( iFactor == 0 ) return  "";<br>    if( iFactor &gt; 0 ) return sFactor + times( sFactor, iFactor - 1 );<br>    String rev = (new StringBuffer( sFactor )).reverse().toString();<br>    return rev + times( sFactor, iFactor + 1 );<br>  }<br>  <br> <br>}<br> <br> <br>// Powered by PopsEdit<br>// Powered by CodeProcessor<br></td>

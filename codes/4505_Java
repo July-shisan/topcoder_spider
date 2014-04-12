@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class RedundantStrings{<br>public int howMany(int n){<br>  long[][] ret=new long[2][n+1];<br>  ret[0][1]=0;<br>  ret[1][1]=2;<br>  for (int i=2; i&lt;=n; i++){<br>    for (int j=1; j&lt;i; j++){<br>      if (i%j==0){ <br>        ret[0][i]=ret[0][i]+ret[1][j];<br>      }<br>    }<br>    ret[1][i]=(long)(Math.pow((double)2.0,(double)(i)))-ret[0][i];<br>  }<br>  return (int)(ret[0][n]);<br>}<br>}<br></td>

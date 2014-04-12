@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import math<br>import string<br> <br>class InterestingNumber:<br>    def isInteresting(self, x):<br>        for i,ltr in enumerate(x):<br>          occ=[j for j,t in enumerate(x) if t==ltr]<br>          print occ<br>          if len(occ) != 2:<br>            return "Not interesting"<br>          elif occ[1]-occ[0] != int(ltr)+1:<br>            return "Not interesting"<br>        return "Interesting"<br> <br> <br>#Powered by KawigiEdit-pfx 2.1.9!<br></td>

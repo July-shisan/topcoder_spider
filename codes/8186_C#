@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class Containers {<br>  public int wastedSpace(int[] containers, int[] packages) {<br>    int s = 0;<br>    foreach (int c in containers) <br>      s+=c;<br>    foreach (int p in packages)<br>      s-=p;<br>    return s;    <br>  }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br><br>public class SRMCards<br>{<br>  public int maxTurns(int[] cards)<br>  {<br>    Array.Sort(cards);<br>    int x = cards.Length - 1;<br>    int r = 0;<br>    while (x &gt;= 0)<br>    {<br>      if (x &gt; 0 &amp;&amp; cards[x-1] + 1 == cards[x])<br>        x--;      <br>      x--;<br>      r++;<br>    }<br>    return r;<br>  }<br>}<br></td>

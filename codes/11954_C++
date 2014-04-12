@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include&lt;iostream&gt;<br>#include&lt;vector&gt;<br>using namespace std;<br>class GreatFairyWar<br>{<br>public:<br>  int minHP(vector &lt;int&gt; dps, vector &lt;int&gt; hp)<br>  {<br>  int l,ans;<br>  l=dps.size();<br>  ans=0;<br>    int arr[l];<br>    arr[l-1]=dps[l-1];<br>    for(int i=l-2;i&gt;=0;i--)<br>    arr[i]=arr[i+1]+dps[i];<br>    for(int i=0;i&lt;l;i++)<br>    {<br>        ans+=(arr[i]*hp[i]);<br>    }<br>    return ans;<br>  }<br>};<br></td>

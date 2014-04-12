@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;string&gt;<br>#include &lt;vector&gt;<br> <br>using namespace std;<br> <br>class CeyKaps<br>{<br>  public:<br>  string decipher(string typed, vector&lt;string&gt; switches)<br>  {<br>    for(int i=0; i&lt;switches.size(); i++)<br>      for(int j=0; j&lt;typed.length(); j++)<br>        if(typed[j] == switches[i][0])<br>          typed[j] = switches[i][2];<br>        else if(typed[j]  == switches[i][2])<br>          typed[j] = switches[i][0];<br>    return typed;<br>  }<br>};<br></td>

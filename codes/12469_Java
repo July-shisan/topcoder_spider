@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class SkiResortsEasy {<br> <br>  /**<br>   * @param args<br>   */<br>  public static void main(String[] args) {<br>    // TODO Auto-generated method stub<br> <br>  }<br>  public int minCost(int[] altitude)<br>  {<br>    <br>    int last=altitude[0];<br>    int output=0;<br>    for(int i=1;i&lt;altitude.length;i++)  if(last&lt;altitude[i]) output+=altitude[i]-last; else last=altitude[i];   return output;<br>  }<br> <br>}<br></td>

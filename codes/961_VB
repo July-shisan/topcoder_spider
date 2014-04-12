@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            imports microsoft.visualbasic<br>public class LetterStrings<br>Public Function sum(s As String()) As Integer<br>  dim i,j,k as integer<br>  for i = 0 to s.length-1<br>    for j=1 to s(i).length<br>      if getChar(s(i),j) &lt;&gt; "-" then k = k + 1<br>    next j<br>  next i<br>  sum = k<br>end function<br>end class<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            imports microsoft.visualbasic<br>public class CrossWord<br>public function countWords(board as string(), sizeb as integer) as integer<br>  dim i,j,k as integer<br>  dim row() as string<br>  for i=0 to board.length-1<br>    row = Split(board(i),"X")<br>    for j=0 to row.length-1<br>      if row(j).length = sizeb then k = k + 1<br>    next j<br>  next i<br>  countWords=k<br>end function<br>end class<br></td>

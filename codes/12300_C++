@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            struct JumpFurther {<br>public: int furthest(int n, int broken) {<br>  int sum = n * (n + 1) / 2;<br>  int cur = 0;<br>  for(int i = 1; i &lt;= n; ++i) {<br>    cur += i;<br>    if (cur == broken) return sum - 1;<br>  }<br>  return sum;<br>}<br>};<br></td>

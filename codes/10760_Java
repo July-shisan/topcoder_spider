@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br><br>public class Nisoku {<br>  public double theMax(double[] cards) {<br>    Arrays.sort(cards);<br>    double res = 0.0;<br>    for (int i=0; i&lt;=cards.length; i += 2) {<br>      double ans = 1.0;<br>      for (int j=0; j&lt;i/2; j++) {<br>        ans *= cards[j]+cards[i-j-1];<br>      }<br>      for (int j=i; j&lt;cards.length; j++) {<br>        ans *= cards[j];<br>      }<br>      res = Math.max(ans, res);<br>    }<br>    return res;<br>  }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Class DeckRearranging<br>    Public Function rearrange(ByVal deck As String, ByVal above As Integer()) As String<br>        Dim s As New System.Collections.Generic.List(Of Char)<br>        For i As Int32 = 0 To deck.Length - 1<br>            s.Insert(above(i), deck(i))<br>        Next<br>        Dim sss As String = ""<br>        For i As Int32 = 0 To deck.Length - 1<br>            sss += s(i)<br>        Next<br>        Return sss<br>    End Function<br>End Class<br></td>

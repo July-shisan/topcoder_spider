@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class Inchworm<br>    Public Function lunchtime(ByVal branch As Integer, ByVal rest As Integer, ByVal leaf As Integer) As Integer<br>        Dim i As Integer, ret As Integer<br>        For i = 0 To branch<br>            If (i Mod rest = 0 And i Mod leaf = 0) Then<br>                ret += 1<br>            End If<br>        Next<br>  Return Ret<br>    End Function    <br>End Class<br></td>

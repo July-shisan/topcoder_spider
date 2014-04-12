@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class KnockoutTourney {<br>  public int meetRival(int N, int you, int rival) {<br>    int count = 0;<br>    while (you != rival) {<br>      count++;<br>      you = divby2(you);<br>      rival = divby2(rival);<br>    }<br>    return count;<br>  }<br><br>  public int divby2(int n) {<br>    if (n % 2 == 0) {<br>      return n / 2;<br>    } else {<br>      return (n + 1) / 2;<br>    }<br>  }<br>}<br></td>

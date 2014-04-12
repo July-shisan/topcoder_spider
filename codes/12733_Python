@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class GooseTattarrattatDiv2:<br>  def getmin(self, S):<br>    letters = []<br>    maxCount = 0<br>    for ch in S:<br>      if not ch in letters:<br>        letters.append(ch)<br>        count = S.count(ch)<br>        if count &gt; maxCount:<br>          maxCount = count<br>    return len(S) - maxCount<br></td>

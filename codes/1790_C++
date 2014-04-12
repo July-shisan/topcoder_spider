@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #define TRUE 1<br>#define FALSE 0<br> <br> <br>class GuessTheNumber<br>{<br>public:<br>  int noGuesses(int upper, int answer)<br>  {<br>    int ret = 1;<br>    int g = 0;<br>    int l,u;<br> <br>    u = upper;<br>    l = 1;<br> <br>    g = (u+l)/2;<br>    while(g != answer)<br>    {<br>      if(g &lt; answer)<br>        l = g+1;<br>      else<br>        u = g -1;<br>      g = (u+l)/2;<br>      ret ++;<br>    }<br>    return ret;<br>  }<br>};<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Class TrueSpace<br>    Public Function calculateSpace(ByVal sizes As Integer(), ByVal clusterSize As Integer) As Long<br>        Dim i As Integer<br>        Dim sum As Long<br>        Dim tmp As Long<br><br>        sum = 0<br>        For i = 0 To sizes.Length - 1<br>            tmp = Math.Ceiling(sizes(i) / clusterSize) * clusterSize<br>            sum = sum + tmp<br>        Next<br><br>        Return sum<br>    End Function<br>End Class<br></td>

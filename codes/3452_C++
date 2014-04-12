@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;iostream&gt;<br>#include &lt;vector&gt;<br>#include &lt;string&gt;<br>#include &lt;map&gt;<br>#include &lt;algorithm&gt;<br>using namespace std;<br> <br>class InsideOut<br>{<br>  public:<br>  string unscramble(string line)<br>  {<br>    int mid = line.length()/2;<br>    string r;<br>    int i;<br>    <br>    for (i = mid-1; i &gt;= 0; --i)<br>      r += line[i];<br>    for (i = line.length()-1; i &gt;= mid; --i)<br>      r += line[i];<br>    return r;<br>  }<br>};<br></td>

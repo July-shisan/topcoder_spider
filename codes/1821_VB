@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports Microsoft.VisualBasic<br>Imports System.Math<br>Imports System<br>Imports System.Collections<br> <br>Public Class PowSum<br>    Public Function getSum(ByVal low As Integer, ByVal high As Integer, ByVal pow As Integer) As Integer<br>        Dim ret As Long<br>        Dim i, j As Integer<br>        For j = 1 To pow<br>            For i = low To high<br>                ret += i ^ j<br>            Next<br>        Next<br>        Return ret<br>    End Function<br>End Class<br></td>

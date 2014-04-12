@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class TheThe {<br>public int check(String[] lines) {<br>for (int i = 0; i &lt; lines.length-1; i++) {<br>String[] s1 = lines[i].split(" ");<br>String[] s2 = lines[i+1].split(" ");<br>if (s1[s1.length-1].equals(s2[0])) return i;<br>}<br>return -1;<br>}<br>}<br></td>

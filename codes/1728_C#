@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br> <br>public class ImageDithering{<br> <br>  public int count(string d, string[] sa){<br>    string s = string.Concat(sa);<br>    foreach(char c in d) s = s.Replace(c.ToString(),"");<br>    return string.Concat(sa).Length - s.Length;<br> <br>  }<br> <br> <br>}<br></td>

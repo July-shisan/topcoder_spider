@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class ArrayHash {<br> <br>    public int getHash(String[] input) {<br>      int result = 0;<br>      for (int element = 0; element &lt; input.length; element++) {<br>        for (int pos = 0; pos &lt; input[element].length(); pos++) {<br>          result += (input[element].charAt(pos) - 'A') + element + pos;<br>        }<br>      }<br>        return result; <br>    }<br> <br>}<br> <br>// Powered by EclipseCoder<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class PackingBallsDiv2(object):<br>  def minPacks(self, R, G, B):<br>    x = 0<br>    l = [R,G,B]<br>    for i in range(0,3):<br>      x += l[i] / 3<br>      l[i] = l[i] % 3<br>    l.sort()<br>    m = max(l)<br>    if m == 0:<br>      pass<br>    elif m == 1:<br>      x += 1<br>    elif l[1] == 0:<br>      x += 1<br>    elif l[0] == 0:<br>      x += 2<br>    else:<br>      x += m<br>    return x<br></td>

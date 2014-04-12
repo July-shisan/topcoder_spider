@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class MysticAndCandiesEasy {<br>  public int minBoxes(int c, int x, int[] h) {<br>    Arrays.sort(h);<br>    for (int i = 0; i &lt; h.length; i++) {<br>      c-=h[i];<br>      if (c &lt; x) {<br>        return h.length-i;<br>      }<br>    }<br>    return -1;<br>  }<br>}<br></td>

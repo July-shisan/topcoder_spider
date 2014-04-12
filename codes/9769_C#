@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class FunnyBirds<br>{<br>  public int gameTime(int n)<br>  {<br>    int count = 0;<br>    while (n &gt; 0)<br>    {<br>      for (int currentNum = 1; currentNum &lt;= n; currentNum++)<br>      {<br>        n -= currentNum;<br>        count++;<br>      }<br>    }<br>    return count;<br>  }<br>}<br></td>

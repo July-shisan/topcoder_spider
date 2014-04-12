@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class LittleElephantAndBalls:<br>    def getNumber(_, S):<br>        r, g, b = 0, 0, 0<br>        ans = 0<br> <br>        for c in S:<br>            ans += min(r, 2) + min(g, 2) + min(b, 2)<br> <br>            if c == 'R': r += 1<br>            elif c == 'G': g += 1<br>            else: b += 1<br> <br>        return ans<br></td>

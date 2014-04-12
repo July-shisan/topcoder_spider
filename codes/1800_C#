@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br> <br> <br>public class  CardCount{<br> <br>  public string[] dealHands(int np, string d)  {<br>    int m = d.Length/np;<br>    string[] h = new string[np];<br>    for(int i = 0; i &lt; np; i++)h[i]="";<br>    for(int i = 0; i &lt; m * np; i++){<br>      h[i%np] = h[i%np] + d[i];<br>    }<br>    return h;<br>  }<br>}<br></td>

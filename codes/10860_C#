@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class LotteryTicket<br>{<br>public string buy(int price, int b1, int b2, int b3, int b4)<br>    {<br>    for (int i1 = 0; i1 &lt;= 1; i1++)<br>    for (int i2 = 0; i2 &lt;= 1; i2++)<br>    for (int i3 = 0; i3 &lt;= 1; i3++)<br>    for (int i4 = 0; i4 &lt;= 1; i4++)<br>        if (price == i1*b1 + i2*b2 + i3*b3 +i4*b4)<br>            return "POSSIBLE";<br>    return "IMPOSSIBLE";<br>    }<br>}<br></td>

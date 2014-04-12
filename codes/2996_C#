@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br> <br>public class grafixClick<br>{<br>  public int[] checkSaveButton(int[] x, int[] y)<br>  {<br>    ArrayList al = new ArrayList();<br>    for (int i = 0; i &lt; x.Length; i++)<br>    {<br>      if (x[i] &gt;= 20 &amp;&amp; x[i] &lt;= 39 &amp;&amp; y[i] &gt;= 50 &amp;&amp; y[i] &lt;= 99)<br>        al.Add(i);<br>    }<br> <br>    return (int[]) al.ToArray(typeof(int));<br>  }<br>}<br></td>

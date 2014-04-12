@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class EscapeFromRectangle {<br>  public int shortest(int x, int y, int w, int h) {<br>    return Math.min(Math.min(x, w - x), Math.min(y, h - y));  <br>  }  <br>}<br></td>

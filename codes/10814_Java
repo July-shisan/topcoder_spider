@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br> <br>public class Cryptography<br>{<br>  public long encrypt(int[] numbers)<br>  {<br>    long p=1L;<br>    Arrays.sort(numbers);<br>    for(int i=1;i&lt;numbers.length;i++){<br>       p*=(long)numbers[i];<br>    }<br>    return p*(numbers[0]+1L);<br>  }<br>  <br>  <br>}<br>//Powered by [KawigiEdit] 2.0!<br></td>

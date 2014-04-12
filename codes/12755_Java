@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class TheArithmeticProgression<br>{<br>  public double minimumChange(int a, int b, int c)<br>  {<br>    double r = (double)(a + c) / 2;<br>    r = Math.abs(r - (double)b);<br>    return r;<br>  }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class DownloadingFiles <br>{<br>  public double actualTime(String[] tasks) <br>  {<br>    double totalData = 0;<br>    double band = 0;<br>    <br>    for (int i = 0; i &lt; tasks.length; i++)<br>    {<br>      String[] ss = tasks[i].split(" ");<br>      int sp = Integer.parseInt(ss[0]);<br>      int time = Integer.parseInt(ss[1]);<br>      <br>      totalData += (sp * time);<br>      band += sp;<br>    }<br>    <br>    return totalData/band;<br>  }<br> <br>}<br></td>

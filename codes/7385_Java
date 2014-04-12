@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class BinaryIncrementation {<br> <br>  public String plusOne(String x) {<br>    int digit = 0; int msk = 1;<br>    for(int i = x.length()-1;i&gt;=0;i--){<br>      if(x.charAt(i) == '1') digit |= msk;<br>      msk &lt;&lt;=1;<br>    }<br>    digit++;<br>    return Integer.toBinaryString(digit);<br>  }<br> <br>}<br></td>

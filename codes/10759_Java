@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br> <br> <br>public class PotatoGame<br>{<br>  public String theWinner(int n)<br>  {<br>    int q = n%10;<br>    if (q==0||q==2||q==5||q==7)<br>    {<br>      return "Hanako";<br>    }<br>    else<br>    {<br>      return "Taro";<br>    }<br>  }<br>  <br> <br>}<br>//Powered by KawigiEdit 2.1.4 (beta) modified by pivanof!<br></td>

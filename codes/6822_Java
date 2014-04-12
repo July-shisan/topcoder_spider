@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br> <br>public class SalaryCalculator<br>{<br>  public double calcHours(int P1, int P2, int salary)<br>  {<br>    if(((double)salary)/P1 &lt;= 200) return ((double)salary)/P1;<br>    else {<br>      salary-=200*P1;<br>      return ((double)salary)/P2+200;<br>    }<br>  }<br>  <br>  <br>}<br>//Powered by [KawigiEdit] 2.0!<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br> <br> <br>public class MinimalTriangle<br>{<br>  public double maximalArea(int length)<br>  {<br>    return (double)length*length*0.43301270189221935;<br>  }<br>  <br> <br>}<br>//Powered by KawigiEdit 2.1.7 (beta) modified by pivanof!<br></td>

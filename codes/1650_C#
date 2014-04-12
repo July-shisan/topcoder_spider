@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>public class Soccer {<br>  public int maxPoints(int[] wins, int[] ties) {<br>    int max = -99999;<br>    <br>    for (int j = 0; j &lt; wins.Length; j++)<br>    {<br>      int s = wins[j]*3 + ties[j];<br>      if (s &gt;= max) max = s;<br>    }<br>    return max;<br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

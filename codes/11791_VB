@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports Microsoft.VisualBasic<br>Imports System<br>Imports System.Collections<br>Imports System.Text<br> <br>Public Class EllysCheckers<br>    Public Function getWinner(ByVal board As String) As String<br>        Dim distance As Integer = 0<br>        For i As Integer = 0 To board.Length - 1<br>            If board(i) = "o"c Then distance += board.Length - 1 - i<br>        Next<br>        If distance Mod 2 Then Return "YES" Else Return "NO"<br>    End Function<br> <br>End Class<br></td>

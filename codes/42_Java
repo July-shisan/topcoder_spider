@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class Football {<br>  public int fetchCombinations (int input) {<br>    int s, f, t;<br>    int c = 0;<br>    for (s=0; s&lt;40; s++)<br>      for (f=0; f&lt;30; f++)<br>        for (t=0; t&lt;13; t++)<br>          if ( (s*2+f*3+t*7) == input )<br>            c++;<br>    return c;<br>  }<br>}<br></td>

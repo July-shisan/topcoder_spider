@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class Chessboard {<br> <br>  public String changeNotation(String cell) {<br>    if (Character.isDigit(cell.charAt(0))) {<br>      int i = Integer.valueOf(cell) - 1;<br>      return String.valueOf((char) ('a' + i % 8)) + String.valueOf(i / 8 + 1);<br>    } else {<br>      int col = cell.charAt(0) - 'a';<br>      int row = cell.charAt(1) - '1';<br>      return String.valueOf(row * 8 + col + 1);<br>    }<br>  }<br> <br>}<br></td>

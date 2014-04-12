@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class MissingLetters {<br>  public String getMissingLetters (String s) {<br>    String ret = "";<br>    s = s.toUpperCase();<br>    for (char d = 'A'; d &lt;= 'Z'; d++) {<br>      if (s.indexOf(d) == -1) ret += d;<br>    }<br>    return ret;<br>  }<br>}<br></td>

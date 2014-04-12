@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class MedianProcess {<br>  public int getScore(int[] vals) {<br>    Vector&lt;Integer&gt; v = new Vector&lt;Integer&gt;();<br>    for (int i : vals) v.add(i);<br>    Collections.sort(v);<br>    int score = 0;<br>    while (v.size()&gt;0) {<br>      if (v.size()%2==0) {<br>        score -= v.remove(v.size()-1);<br>      } else score += v.remove(v.size()/2);<br>    }<br>    return score;<br>  }<br>}<br></td>

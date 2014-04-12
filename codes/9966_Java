@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class TheSimpleGame {<br> <br>  public int count(int n, int[] x, int[] y) {<br>    int count = 0;<br>    for(int i = 0; i &lt; x.length; i++){<br>      count += Math.min(x[i] - 1, n-x[i]);<br>      count += Math.min(y[i] - 1, n-y[i]);<br>    }<br>    <br>    return count;<br>  }<br> <br>}<br></td>

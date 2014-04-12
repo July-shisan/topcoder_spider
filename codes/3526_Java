@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class MultiRead{<br>  public int minCycles(String trace,int procs){<br>    int tot=0;<br>    int consec=0;<br>    for(int i=0;i&lt;trace.length();i++){<br>      if(trace.charAt(i)=='R'){consec++;}<br>      else{tot++;tot+=consec/procs;if(consec%procs!=0)tot++;consec=0;}<br>    }<br>    tot+=consec/procs;if(consec%procs!=0)tot++;<br>    return tot;<br>  }<br>}<br></td>

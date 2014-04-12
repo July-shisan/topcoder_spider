@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Text;<br>using System.Text.RegularExpressions;<br>using System.Collections;<br><br>public class BuildBridge {<br><br><br><br>    public int howManyCards(int D, int L) {<br>        double p = 0;<br>        for (int i = 1; ; i++)<br>        {<br>            p += 1.0 * L / 2 / i;<br>            if (p &gt;= D) return i;<br>        }<br>    }<br><br><br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

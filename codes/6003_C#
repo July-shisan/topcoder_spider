@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class DiagonalDisproportion<br>{<br>  public int getDisproportion(string[] matrix)<br>  {<br>    int x=0;<br>    int y=0;<br>    int n=matrix.Length;<br>    for(int i=0;i&lt;n;i++)<br>    {<br>      x+=System.Convert.ToInt32(matrix[i].Substring(i,1));<br>      y+=System.Convert.ToInt32(matrix[i].Substring(n-i-1,1));<br>    }<br>    return(x-y);<br>  }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class DiamondHunt {<br>    public int countDiamonds(String mine) {<br>        int res = 0;<br>        while(mine.contains("&lt;&gt;"))<br>        {<br>            mine = mine.replaceFirst("&lt;&gt;", "");<br>            res++;<br>        }<br>        return res;<br>    }<br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

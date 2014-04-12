@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.io.*;<br> <br> <br>public class ReverseMagicalSource {<br>    public int find(int source, int A) {<br>        int ret = source;<br>        while(ret &lt;= A) {<br>            source *=10;<br>            ret += source;<br>        }<br> <br> <br>        return ret;<br>        }<br> <br>}<br> <br> <br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

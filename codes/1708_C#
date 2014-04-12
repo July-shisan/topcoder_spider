@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>public class Time <br>{<br>  public string whatTime(int seconds)<br>  {<br>    int h = seconds/60/60;<br>    int m = (seconds-h*60*60)/60;<br>    int s = seconds-h*60*60-m*60;<br>    string ret = h+":"+m+":"+s;<br>    return ret;<br>  }<br>/////////////////////////////////////////////<br>}<br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

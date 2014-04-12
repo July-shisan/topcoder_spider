@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class MostProfitable{<br>  public String bestItem(int[] costs, int[] prices, int[] sales, String[] items){<br>    int maxProfit = 0;<br>    String res = "";<br>    for (int i = 0; i &lt; items.length; i++) {<br>      String name = items[i];<br>      int profit = (prices[i] - costs[i]) * sales[i];<br>      if(profit &gt; maxProfit){<br>        maxProfit = profit;<br>        res = name;<br>      }<br>    }<br>    return res;<br>    <br>  }<br>}<br></td>

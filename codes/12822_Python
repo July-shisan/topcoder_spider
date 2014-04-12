@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class LittleElephantAndIntervalsDiv1:<br>    def getNumber(self, M, L, R):<br>        c = [0] * M<br>        for i in xrange(len(L)):<br>            for j in xrange(L[i] - 1, R[i]):<br>                c[j] = i + 1<br>        return 2 ** len(set(c) - set([0]))<br></td>

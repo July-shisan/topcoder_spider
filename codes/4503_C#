@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br> <br>public class ArrayHash<br>{<br>  public int getHash(string[] input)<br>  {<br>    int ret=0;<br>    for (int i=0; i&lt;input.Length; i++)<br>    {<br>      string cur=input[i];<br>      for (int j=0; j&lt;cur.Length; j++)<br>      {<br>        char c=cur[j];<br>        int x=c-65;<br>        ret+=i+j+x;<br>      }<br>    }<br>    <br>    return ret;<br>  }<br>}<br> <br> <br>// Powered by TCGen for C#<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class WordNumber {<br>  public String theWord(int alpha, int n) {<br>    String ret = "";<br>    n--;<br>    while (true) {<br>      ret = (char) ('a' + (n % alpha)) + ret;<br>      if (n &lt; alpha) break;<br>      n /= alpha;<br>      n--;<br>    }<br>    <br>    return ret;<br>  }<br>}<br></td>

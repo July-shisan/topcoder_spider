@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class Highscore<br>{<br>  public int getRank(int[] scores, int newscore, int places)<br>  {<br>    int place = 1;<br>    int count = 0;<br> <br>    for (int i = 0; i &lt; scores.Length; i++)<br>    {<br>      if (scores[i] &gt; newscore)<br>      {<br>        ++place;<br>      }<br>      if (scores[i] &gt;= newscore)<br>      {<br>        ++count;<br>      }<br>    }<br> <br>    if (count &gt;= places)<br>    {<br>      place = -1;<br>    }<br> <br>    return place;<br>  }<br>}<br></td>

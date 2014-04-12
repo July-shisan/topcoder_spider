@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public Class BettingMoney<br>    Public Function moneyMade(ByVal amounts As Integer(), ByVal centsPerDollar As Integer(), ByVal finalResult As Integer) As Integer<br>        Dim i, receives, pays<br> <br>        For i = 0 To amounts.GetUpperBound(0)<br>            receives += amounts(i)<br>        Next<br>        pays = amounts(finalResult) * (100 + centsPerDollar(finalResult))<br> <br>        Return receives * 100 - pays<br>    End Function<br>End Class<br></td>

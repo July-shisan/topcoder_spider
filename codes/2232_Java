@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class CrossWord {<br>  public int countWords(String[] board, int size) {<br>    int cnt = 0;<br>    for (int i=0; i&lt;board.length; i++) {<br>      String[] x = board[i].split("X");<br>      for (int j=0; j&lt;x.length; j++)  if (x[j].length() == size)  cnt++;<br>    }<br>    return cnt;<br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

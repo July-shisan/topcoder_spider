@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class  ShootingGallery<br>{<br>  public int profitableBet(int acc)<br>  {<br>    double p = 1.0 - acc * 0.01, x = 1.0;<br>    for ( int i = 0; ; ++i )            <br>    {<br>      if ( x &lt;= 0.5 ) return i - 1;<br>      x *= p;<br>    }<br>  }<br>}<br></td>

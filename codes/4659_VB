@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            imports System<br>imports System.Collections<br>public class SequenceOfNumbers<br>  Public Function rearrange(sequence As String()) As String()<br>  dim i as long, ix() as integer, ret() as String  <br>  for i=0 to sequence.length()-1<br>    redim preserve ix(i)<br>    ix(i)=sequence(i)<br>  next i<br>  Array.Sort(ix)<br>  for i=0 to ix.length()-1<br>    redim preserve ret(i)<br>    ret(i)=ix(i)<br>  next i<br>rearrange=ret<br>  End Function<br>End Class<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class TextStatistics {<br>  public double averageLength(String a) {<br>    double k = 0.0;<br>    double r = 0.0;<br>    StringTokenizer tok = new StringTokenizer(a, " ,.!?-1234567890");<br>    <br>    r = tok.countTokens();<br>    while(tok.hasMoreTokens()) k+= tok.nextToken().length();<br>    <br>    if(r==0) return 0.0;<br>    return k/=r;<br>  }<br>}<br></td>

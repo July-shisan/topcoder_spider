@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class RecursiveFigures {<br><br>  public double getArea(int sl, int K)<br>  {<br>    double sideLength = sl;<br>    double sum = sl*sl;<br>    for (int i = 0; i &lt; K; i++)<br>    {<br>      sum -= sideLength*sideLength;<br>      double cirR = (sideLength / 2.0);<br>      sum += Math.PI * cirR*cirR;<br>      sideLength = cirR*Math.sqrt(2);<br>    }<br>    return sum;<br>  }<br><br>}<br></td>

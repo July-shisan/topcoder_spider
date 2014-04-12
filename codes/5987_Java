@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.lang.*;<br> <br>public class BestDecomposition {<br>public int maxProduct(int n) {<br>  int ans = 1;<br>  if (n==0) return 0;<br>  if (n==1) return 1;<br>  if (n==2) return 2;<br>  if (n==3) return 3;<br>  if (n==4) return 4;<br>  while (n&gt;4)<br>  {<br>    ans = (ans * 3) % 10007;<br>    n -= 3;<br>  }<br>  ans = (ans*n) % 10007;<br>  return ans;<br>}<br>};<br></td>

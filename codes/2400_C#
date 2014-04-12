@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>public class OfficeParking {<br> <br>public int spacesUsed(string[] events) {<br>  int max = 0;<br>  string[] split;<br>  int count = 0;<br>  foreach(string s in events) {<br>    split = s.Split(' ');<br>    if (split[1][0] == 'd') {<br>      count --;<br>    }<br>    else {<br>      count++;<br>      if (count &gt; max)<br>        max = count;<br>    }<br>  }<br>  return max;<br>}<br>}<br></td>

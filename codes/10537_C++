@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;iostream&gt;<br>#include &lt;string&gt;<br>using namespace std;<br> <br>class StrangeComputer {<br>public:<br>  int setMemory(string m) {<br>    int c='0';<br>    int n=0;<br>    for(int i=0; i&lt;m.size(); i++) if(m[i]!=c) { c=m[i]; n++; }<br>    return n;<br>  <br>  }<br>};<br></td>

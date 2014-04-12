@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br> <br> <br>public class MagicalGirlLevelOneDivTwo<br>{<br>  public double theMinDistance(int d, int x, int y) {<br>    x = Math.abs(x);<br>    y = Math.abs(y);<br>    <br>    double amove = Math.max(0, y-d);<br>    double bmove = Math.max(0, x-d);<br>    <br>    return Math.sqrt(amove * amove + bmove *bmove);<br>  }<br>}<br>//Powered by KawigiEdit 2.1.4 (beta) modified by pivanof!<br></td>

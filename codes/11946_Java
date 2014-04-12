@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class ElectionFraudDiv2 {<br> <br>  public String IsFraudulent(int[] percentages) {<br>    <br>    double lower = 0;<br>    double upper = 0.0;<br>    for(int i : percentages){<br>      lower += i &gt; 0 ? (i-0.5) : 0;<br>      upper += 0.49 + i;<br>    }<br>    <br>    if(lower &gt; 100 || upper &lt; 100)<br>      return "YES";<br>    return "NO";<br>  }<br> <br>}<br></td>

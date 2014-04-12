@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;iostream&gt;<br>#include &lt;algorithm&gt;<br>using namespace std;<br> <br>class GardenHose {<br>public:<br> int countDead ( int n, int rowDist, int colDist, int hoseDist ) {<br>  int result = 0;<br>  for ( int a =1; a&lt;=n; ++a )<br>   for ( int b =1; b&lt;=n ; ++b) <br>    if ( min ( min ( a, n - a + 1 ) * rowDist, min ( b, n - b + 1 ) * colDist ) &gt; hoseDist ) ++result;<br>  return result;<br> };<br> <br>};<br></td>

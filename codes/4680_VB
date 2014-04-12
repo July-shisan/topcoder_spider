@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class VideoEncode<br> <br>    Public Function bitrate(ByVal length As String, ByVal desiredSize As Integer) As Double<br>        Dim seconds As Integer = length.Substring(6, 2)<br>        seconds += length.Substring(3, 2) * 60<br>        seconds += length.Substring(0, 2) * 60 * 60<br> <br>        Return ((desiredSize / seconds) / 1000) * 1024 * 1024 * 8<br>    End Function<br>End Class<br></td>

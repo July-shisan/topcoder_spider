@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class WordPattern<br>    Public Function countWords(ByVal word As String) As Long<br>        Dim ans, i As Long<br>        ans = 0<br>        For i = 2 To word.Length<br>            ans = ans * 2 + 4<br>        Next<br>        If word.Length = 1 Then ans = 1<br>        Return ans<br>    End Function<br>End Class<br></td>

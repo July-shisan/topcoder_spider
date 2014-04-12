@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br><br>public class EllysCheckers {<br><br>  public String getWinner(String board) {<br>    char[] s = board.toCharArray();<br>    int n = s.length;<br>    <br>    int sum = 0;<br>    <br>    for (int i = n - 2; i &gt;= 0; i--)<br>      if (s[i] == 'o')<br>        sum += (n - 1 - i);<br>    <br>    return sum % 2 == 1 ? "YES" : "NO";<br>        <br>  }<br><br>}<br></td>

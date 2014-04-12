@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class TwoTurtledoves<br>    Public Function presentType(ByVal n As Integer) As Integer<br>        Dim presents, day, i As Integer<br>        Do While presents &lt; n<br>            day += 1<br>            presents += day * (day + 1) \ 2<br>        Loop<br>        n -= presents - day * (day + 1) \ 2<br>        For i = day To 1 Step -1<br>            If n &lt;= i Then Return i<br>            n -= i<br>        Next<br>    End Function<br>End Class<br></td>

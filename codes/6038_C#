@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>using System.Text;<br> <br>public class TemperatureScales <br>{<br> <br>    public static double convert(int f1, int b1, int f2, int b2, int t)<br>    {<br>        double ret;<br>        ret = (t - f1) / (double)(b1 - f1);<br>        ret = f2 + ret * (b2 - f2);<br>        return ret;<br>    }<br>}<br></td>

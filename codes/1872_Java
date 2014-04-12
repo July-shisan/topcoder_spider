@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class BadSubstring{<br>  public  long howMany(int length){<br>     long i,s0,s1,t0,t1;<br>     if (length==0) return 1;<br>     if (length==1) return 3;<br>     s0=2;t0=1;<br>     for(i=1;i&lt;length;i++){<br>       s1=s0*2+t0;<br>       t1=s0+t0;<br>       s0=s1;<br>       t0=t1;<br>     }<br>     return s0+t0;<br>  }<br>}<br></td>

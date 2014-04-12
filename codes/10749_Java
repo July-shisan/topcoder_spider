@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br> <br>public class TrappingRabbit<br>{<br>  public int findMinimumTime(int[] x, int[] y)<br>  {<br>    int m=2000;<br>    int i=0,mm=0;<br>    for(i=0;i&lt;x.length;i++)<br>    {<br>      mm=x[i]+y[i]-2;<br>      m=Math.min(mm,m);<br>    }<br>    return m;<br>  }<br>  <br>  <br>}<br>//Powered by [KawigiEdit] 2.0!<br></td>

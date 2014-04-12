@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class NumberofFiboCalls {<br>    public int[] fiboCallsMade(int n) {<br>        int[] o = new int[41];<br>        int[] z = new int[41];<br>        o[1] = 1;<br>        z[0] = 1;<br>        for (int i = 2; i &lt;= 40; i++) {<br>            z[i] = z[i - 1] + z[i - 2];<br>            o[i] = o[i - 1] + o[i - 2];<br>        }<br>        return new int[]{z[n], o[n]};<br>    }<br> <br>}<br> <br> <br>// Powered by PopsEdit<br> <br>// Powered by CodeProcessor<br></td>

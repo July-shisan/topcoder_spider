@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>public class MissingLetters{<br>  public string getMissingLetters(string sentence)  {<br>    string sout="ABCDEFGHIJKLMNOPQRSTUVWXYZ";<br>    sentence=sentence.ToUpper();<br>    for(int i=0; i&lt;=sentence.Length-1; i++) {<br>      int j=sout.IndexOf(sentence[i]);<br>      if(j!=-1) sout=sout.Remove(j,1);<br>    }<br>    return sout;<br>  }<br>}<br></td>

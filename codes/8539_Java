@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class GuessingNextElement {<br>    public int guess(int[] s) {<br>        if (s[2] - s[1] == s[1] - s[0]) {<br>            return s[s.length - 1] + s[1] - s[0];<br>        } else {<br>            return s[s.length - 1] * (s[1] / s[0]);<br>        }<br>    }<br>}<br></td>

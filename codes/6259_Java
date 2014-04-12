@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.lang.*;<br><br>public class FussySleeper {<br>public int[] nextTime(int[] currentTime, int elephants) {<br>  int h = currentTime[0];<br>  int m = currentTime[1];<br>  for (;;)<br>  {<br>    m++;<br>    if (m==60) { m=0; h++; if (h==24) h=0; }<br>    int v = h*100 + m;<br>    if (v%elephants==0)<br>      break;<br>  }<br>  int[] ans = new int[2];<br>  ans[0] = h;<br>  ans[1] = m;<br>  return ans;<br>}};<br></td>

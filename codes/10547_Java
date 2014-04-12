@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br><br>public class OddDivisors {<br>  public long findSum(int N) {<br>    long res = find(N);<br>    return res;<br>  }<br><br>    long find(long n) {<br>        if (n == 0) return 0;<br>        long k = (n + 1) / 2;<br>        return k * k + find(n / 2);<br>    }<br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by RETester [based on ExampleBuilder]<br>// Powered by CodeProcessor<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import static java.lang.Math.abs;<br>import static java.lang.Math.max;<br>import static java.lang.Math.min;<br> <br>public class TestCurve<br>{<br>  public int[] determineGrades(int[] s)<br>  {<br>    int ma=-1;<br>    int n=s.length;<br>    for(int i=0; i&lt;n; i++)<br>      ma=max(ma,s[i]);<br>      <br>     for(int i=0; i&lt;n; i++)<br>       s[i]=s[i]*100/ma;<br>     return s;   <br>    <br>  }<br>  <br> <br>}<br> <br>//Powered by [KawigiEdit]<br></td>

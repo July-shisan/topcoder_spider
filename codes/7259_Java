@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class ChessboardPattern {<br>  public String[] makeChessboard(int rows, int columns) {<br>    String[] res = new String[rows];<br>    for (int i = 0; i &lt; rows; i++) {<br>      res[i] = "";<br>    }<br>    for (int i = 0; i &lt; rows; i++) {<br>      for (int j = 0 ; j &lt; columns; j++) {<br>        if ((i+j)%2 == 0) res[rows-i-1]+='.'; else res[rows-i-1]+='X';<br>      }<br>    }<br>    return res;<br>  }<br>}<br></td>

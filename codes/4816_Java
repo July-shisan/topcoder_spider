@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class DivisibilityRules {<br>  public int similar(int base, int divisor) {<br>    int cnt = 0;<br>    for(int p=1; p&lt;base; p++) {<br>      int t=0, x = 1;<br>      while(t &lt; divisor &amp;&amp; (x % divisor) == (x % p)) {<br>        t++;<br>        x = (x * base) % (divisor * p);<br>      }<br>      if(t==divisor) cnt++;<br>    }<br>      return cnt;<br>  }<br>}<br></td>

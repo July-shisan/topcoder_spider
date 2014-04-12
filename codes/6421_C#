@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class WinningTrick{<br>public double minimumSpeed(int[] s, int y){<br>int max=0;<br>double res=0;<br>int i;<br>for (i=0;i&lt;s.Length;i++){<br>  if (s[i]&gt;max) {max=s[i];}<br>  }<br>res=0.5*(max-y);<br>if (res&lt;0) {res=0.0;}<br>return res;<br>}<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class AccessLevel {<br>    public String canAccess(int[] rights, int minPermission) {<br>        String res = "";<br>        for (int i = 0; i &lt; rights.length; i++)<br>        {<br>          if (rights[i] &gt;= minPermission)<br>            res += "A";<br>          else<br>            res += "D";<br>        }<br>        return res;<br>    }<br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

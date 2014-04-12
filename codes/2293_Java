@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class Commission {<br>  public double equivalentSales(double sales, double cost, double commission) {<br>    double mybit=100-cost-20;<br>    double iget=sales*(mybit/100);<br>    double mybit2=100-cost-commission;<br>    double thesales=iget*100/mybit2;<br>    return thesales;<br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

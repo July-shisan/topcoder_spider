@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class HingedDoor{<br>  public int numSwings(int a, int r){<br>    double n=a;<br>    double rr=r;<br>    int i=0;<br>    while(n&gt;5.0){<br>      n = n * (1/rr);  <br>      i++;<br>    }<br>    return i;<br>  }<br>}<br></td>

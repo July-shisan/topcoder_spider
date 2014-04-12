@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class PaperAndPaintEasy {<br>  public long computeArea(int w, int h, int xf, int cnt, int x1, int y1, int x2, int y2) {<br>    long xx = x2 - x1;<br>    long yy = y2 - y1;<br>    xf = Math.min(xf, w-xf);<br>    xx += Math.max(Math.min(xf,x2)-x1,0);<br>    System.out.println(xx);<br>    long S = h;<br>    S = S*w;<br>    S -= xx*yy*(cnt+1);<br>    return S;<br>  }<br>  <br>}<br></td>

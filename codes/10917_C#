@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections.Generic;<br><br>public class LinearTravellingSalesman<br>{<br>    public int findMinimumDistance(int[] x, int[] y)<br>    {<br>        List&lt;int&gt; xlist = new List&lt;int&gt;(x);<br>        List&lt;int&gt; ylist = new List&lt;int&gt;(y);<br><br>        xlist.Sort();<br>        ylist.Sort();<br><br>        return xlist[xlist.Count - 1] - xlist[0] + ylist[ylist.Count - 1] - ylist[0];<br>    }<br>}<br></td>

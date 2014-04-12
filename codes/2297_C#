@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class BettingMoney<br>{<br>  public int moneyMade( int[] amounts, int[] centsPerDollar, int finalResult )<br>  {<br>    int gain = 0;<br>    for( int i =0; i &lt; amounts.Length; i++ )<br>    {<br>      if( i != finalResult )<br>      {<br>        gain = gain + amounts[i] * 100;<br>      }<br>      else<br>      {<br>        gain = gain - amounts[i] * centsPerDollar[i];<br>      }<br>    }<br>return gain;<br>  }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class CardCount<br>{<br>  public String[] dealHands(int numPlayers, String deck)<br>  {<br>    String[] re = new String[numPlayers];<br>    Arrays.fill(re, "");<br>    for(int i = 0; i &lt; (deck.length() / numPlayers) * numPlayers; i++)<br>    {<br>      re[i % numPlayers] += deck.charAt(i);<br>    }<br>    return re;<br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

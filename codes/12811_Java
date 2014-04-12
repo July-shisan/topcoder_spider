@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br><br>public class FoxAndClassroom{<br>    public String ableTo(int n, int m){<br>        for(int i = 2; i &lt;= Math.min(n, m); i++){<br>            if (n % i == 0 &amp;&amp; m % i == 0) return "Impossible";<br>        }<br>        return "Possible";<br>    }<br>}<br></td>

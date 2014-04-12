@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports Microsoft.VisualBasic<br>Imports System.Math<br> <br>Public Class Multiples<br> <br>Public Function number(min As Integer, max As Integer, factor As Integer) As Integer<br>  Dim Count as Integer<br>  Dim iCtr as Integer<br> <br>  Count = 0<br>  For iCtr = min To max<br>    If Floor(iCtr/factor) = iCtr/ factor Then<br>      Count = Count + 1<br>    End If<br>  Next iCtr<br>  <br>  number = count<br>End Function<br> <br>End Class<br></td>

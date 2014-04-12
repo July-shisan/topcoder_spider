@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class SemiPerfectSquare {<br><br>  public String check(int N) {<br>    for (int b = 2; b &lt;= 1000; b++) {<br>      int c = b * b;<br>      for (int a = 1; a &lt; b; a++) {<br>        if (a * c  == N) {<br>          return "Yes";<br>        }<br>      }<br>    }<br>    return "No";<br>  }<br><br>}<br></td>

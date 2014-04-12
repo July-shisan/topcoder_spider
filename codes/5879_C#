@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>using System.Collections.Specialized;<br>using System.Text;<br>using System.Text.RegularExpressions;<br> <br>public class AimToTen<br>{<br>  public int need(int[] marks)<br>  {<br>    int total=0;<br>    for(int i=0; i&lt;marks.Length; i++){<br>      total+=marks[i];}<br>    int c=0;<br>    while(((double)total)/(double)(marks.Length+c)&lt;9.5){<br>      total+=10;<br>      c++;<br>    }<br>    <br>    return c;<br>  }<br>  <br>  }<br></td>

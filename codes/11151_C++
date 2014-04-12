@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include&lt;cstdio&gt;<br>#include&lt;vector&gt;<br>#include&lt;string&gt;<br>#include&lt;cmath&gt;<br><br>using namespace std;<br><br>class ToastXRaspberry<br>{<br>  public : int apply(int n, int m)<br>  {    <br>    long r;       <br>       <br>    r=m/n;<br>    if (m%n!=0) r++;<br>    return r;   <br>  }<br>};<br></td>

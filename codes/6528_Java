@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class MedianOfNumbers {<br>    public int findMedian(int[] numbers) {<br>        Arrays.sort(numbers);<br>        int length = numbers.length;<br>        return length % 2 == 0 ? -1 : numbers[length / 2];<br>    }<br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

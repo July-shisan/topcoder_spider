@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class BettingMoney {<br>  public int moneyMade(int[] amounts, int[] centsPerDollar, int finalResult) {<br>    int gain=0;<br>    for(int i=0;i&lt;amounts.length;i++){<br>      if(i!=finalResult)  <br>      gain+=amounts[i];<br>    }<br>    return gain*100-amounts[finalResult]*centsPerDollar[finalResult];<br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

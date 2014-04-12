@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class StringCompare {<br>  public int simpleDifference(String a, String b) {<br>    int ret = 0, i=0, N=Math.min(a.length(), b.length());<br>    for(i=0;i&lt;N;i++)<br>      if(a.charAt(i) == b.charAt(i))<br>        ret++;<br>    return ret;<br>  }<br>}<br><br><br>// Powered by FileEdit<br></td>

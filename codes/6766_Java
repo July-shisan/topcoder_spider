@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.math.*;<br><br>public class PalindromeEncoding {<br><br>public int getLength(String s)<br>  {<br>    int res;<br><br>    int i, n;<br>    n = s.length();<br>    res = 1;<br>    for (i=1; i&lt;n; i++)<br>      if (s.charAt(i)!=s.charAt(i-1))<br>      {<br>        res++;<br>      } else if (res&gt;1) break;<br><br>    return res;  <br>  }<br>  }<br></td>

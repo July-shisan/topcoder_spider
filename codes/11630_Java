@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class ShippingCubes{<br>  public int minimalCost(int N){<br>    int ret = Integer.MAX_VALUE;<br>    for(int i = 1; i &lt;= N; i++){<br>      for(int j = 1; j &lt;= N; ++j){<br>        for(int k = 1; k &lt;= N; ++k){<br>          if(i*j*k == N)<br>            ret = Math.min(ret, i+j+k);<br>        }<br>      }<br>    }<br>    return ret;<br>  }<br>}<br></td>

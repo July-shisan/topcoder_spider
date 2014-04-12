@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;vector&gt;<br>#include &lt;string&gt;<br>#include &lt;algorithm&gt;<br>#include &lt;set&gt;<br> <br>using namespace std;<br> <br>typedef vector&lt;int&gt; VI;<br>typedef vector&lt;string&gt; VS;<br> <br>class LevelUp {<br>public:<br>  int toNextLevel(VI expNeeded, int received) {<br>    for(int i = 0; i &lt; expNeeded.size(); i++) {<br>      if(expNeeded[i] &gt; received) {<br>        return expNeeded[i] - received;<br>      }<br>    }<br>    return 0;<br>  }<br>};<br></td>

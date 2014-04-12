@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;string&gt;<br>#include &lt;vector&gt;<br>#include &lt;iostream&gt;<br>#include &lt;algorithm&gt;<br>#include &lt;sstream&gt;<br>using namespace std;<br><br>class Time { <br>public: <br>  string whatTime(int seconds) { <br>    char temp[20];<br><br>    sprintf(temp, "%u:%u:%u", seconds/(60*60), (seconds/60)%60, (seconds%60));<br>    return temp;<br>  } <br>  <br> <br>}; <br><br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

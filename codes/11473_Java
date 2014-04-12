@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.math.*;<br>public class CoinReversing <br>  {<br>  public double expectedHeads(int N, int[] a) <br>    {<br>    double numHeads=N;<br>    double numTails=0;<br>    for(int i=0;i&lt;a.length;i++)<br>      {<br>      double heads=((double)a[i]/N)*numHeads;<br>      double tails=((double)a[i]/N)*numTails;<br>      numHeads=numHeads-heads+tails;<br>      numTails=numTails-tails+heads;<br>      }<br>    return numHeads;<br>    }<br>  }<br></td>

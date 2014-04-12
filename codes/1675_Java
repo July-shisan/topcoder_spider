@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class ExerciseMachine {<br>  public int getPercentages(String time) {<br>    int total = Integer.parseInt(time.substring(0, 2)) * 60 * 60<br>      + Integer.parseInt(time.substring(3, 5)) * 60<br>      + Integer.parseInt(time.substring(6, 8));<br>    int count = 0;<br>    for (int i = 1; i &lt;= 99; i++) {<br>      int x = (total * i) / 100;<br>      if (x * 100 == total * i)<br>        count++;<br>    }<br>    return count;<br>  }<br> <br>}<br></td>

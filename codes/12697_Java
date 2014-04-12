@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class TrafficCongestionDivTwo {<br><br>  public long theMinCars(int treeHeight) {<br>    boolean t = (treeHeight &amp; 1) ==0;<br>    long r=0;<br>    for (int i = 0; i &lt; treeHeight; i++){<br>      r&lt;&lt;=1;<br>      if ((i &amp; 1) ==0){<br>        r++;<br>      }<br>    }<br>    if (t)r++;<br>    return r;<br>  }<br><br>}<br></td>

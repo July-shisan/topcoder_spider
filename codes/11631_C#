@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>using System.Collections.Generic;<br>using System.Collections.Specialized;<br>using System.Text;<br>using System.Text.RegularExpressions;<br> <br>public class DengklekTryingToSleep<br>{<br>  public int minDucks(int[] ducks)<br>  {<br>    Array.Sort(ducks);<br>    int ret = 0;<br>    ret = ducks[ducks.Length - 1] - ducks[0];<br>    ret -= ducks.Length;<br>    ret++;<br>    return ret;<br>  }<br> <br> <br>}<br>//Powered by [KawigiEdit] 2.0!<br></td>

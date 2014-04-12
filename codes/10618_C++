@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;set&gt;<br>#include &lt;map&gt;<br>#include &lt;vector&gt;<br>#include &lt;string&gt;<br>#include &lt;iostream&gt;<br>#include &lt;algorithm&gt;<br>using namespace std;<br><br>class TheCardShufflingDivTwo{<br>public:<br>  int shuffle(int n, int m){<br>    int ans=1;<br>    for(int i=0;i&lt;m;i++){<br>      if(ans&lt;=(n/2)) ans*=2;<br>      else ans=(ans-n/2)*2-1;<br>    }<br>    return ans;<br>  }<br>};<br></td>

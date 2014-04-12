@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports Microsoft.VisualBasic<br> <br>Public Class DivisorDigits<br>    Public Function howMany(ByVal number As Integer) As Integer<br>        Dim sNum As String<br>        sNum = number.ToString<br>        Dim iCount As Integer<br> <br>        Dim i As Integer<br>        For i = 0 To sNum.Length - 1<br>            If number Mod sNum.Substring(i, 1) = 0 Then<br>                iCount += 1<br>            End If<br>        Next<br>        Return iCount<br>    End Function<br>End Class<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.text.*;<br>import java.math.*;<br>import java.awt.geom.*;<br> <br>public class MaximalProduct<br>{<br>  public long maximalProduct(int s, int k)<br>  {<br>    int base = s/k;<br>    int rem = s-base*k;<br>    <br>    long ans=1;<br>    for (int i=0; i&lt;k; i++)<br>      if (i&lt;rem) ans*=(base+1);<br>      else ans*= base;<br>    <br>    return ans;<br>  }<br> <br>}<br>//Powered by evan's mom! :D<br></td>

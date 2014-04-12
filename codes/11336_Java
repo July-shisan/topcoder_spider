@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class GogoXBallsAndBinsEasy {<br> <br>  public int solve(int[] t) {<br>    int ans = 0;<br>    int n = t.length;<br>    for(int i=0;i&lt;(n/2);i++)<br>    {<br>      ans+=t[n-i-1]-t[i];<br>    }<br>    <br>    return ans;<br>  }<br> <br>}<br></td>

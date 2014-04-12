@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class InsideOut{<br>public String unscramble(String line) {<br>  String ret="";<br>  int n=line.length();<br>  for (int i=n/2-1; i&gt;=0; i--) ret+=line.charAt(i);<br>  for (int i=n-1; i&gt;=n/2; i--) ret+=line.charAt(i);<br>  return ret;<br>}<br>}<br></td>

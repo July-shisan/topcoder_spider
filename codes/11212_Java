@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class DiceRotation {<br>  public int theCount(int x, int y) {<br>    int ans = 0;<br>    if (x &gt;= 2 &amp;&amp; y &gt;= 2)<br>      ans += 2;<br>    if (x == 4)<br>      ans += y + 1;<br>    if (y == 4)<br>      ans += x + 1;<br>    return ans;<br>  }<br><br>}<br><br><br><br>// Powered by FileEdit<br>// Powered by moj 4.12 [modified TZTester]<br>// Powered by CodeProcessor<br></td>

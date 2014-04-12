@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class MinskyMysteryDiv2 {<br>  public long computeAnswer(long N){<br>    if(N&lt;2)return -1;<br>    for(int i=2;i&lt;Math.sqrt(N)+2;i++)if(N%i==0)return N/i+i;<br>    return N+1;<br>  }<br>}<br></td>

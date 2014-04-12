@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class CyclesInPermutations<br>Public Function maxCycle(b As Integer()) As Integer<br>  Dim i,max,c,j As Integer<br>  max=1<br>  For i=0 To b.length()-1<br>  j=i+1<br>  c=1<br>    While b(j-1)&lt;&gt;i+1<br>      j=b(j-1)<br>      c=c+1<br>      If c&gt;max Then<br>        max=c<br>      End If<br>    End While<br>  Next i<br>  Return max<br>End Function<br>End Class<br></td>

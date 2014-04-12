@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class LittleElephantAndBooks:<br>  def getNumber(self, pages, number):<br>    L = list(pages)<br>    L.sort()<br>    S = 0<br>    for i in xrange(number-1):<br>      S += L[i]<br>    S += L[number]<br>    return S<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class WorkingRabbits {<br><br>  public double getEfficiency(String[] p) {<br>    double c = 0;<br>    double s = 0;<br>    int n = p.length;<br>    for (int i = 0; i &lt; n; i++)<br>      for (int j = i + 1; j &lt; n; j++) {<br>        c++;<br>        s += (p[i].charAt(j) - '0');<br>      }<br>    return s / c;<br>  }<br><br>}<br></td>

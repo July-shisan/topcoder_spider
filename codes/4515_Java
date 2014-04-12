@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.math.*;<br>public class PowerDigit {<br>    public int digitK(int x, int y, int k) {<br>      BigInteger bi = new BigInteger("" + x);<br>      bi = bi.pow(y);<br>      String s = bi.toString();<br>      if (k &lt; s.length()) {<br>        return s.charAt(s.length()-1-k)-'0';<br>      }<br>      return -1;<br>    }<br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

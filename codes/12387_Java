@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class EasyHomework {<br> <br>  public String determineSign(int[] A)<br>  {<br>    int minus=0;<br>    for(int i=0;i&lt;A.length;i++)<br>    {<br>      if(A[i]&lt;0) minus++;<br>      else if(A[i]==0) return "ZERO";<br>    }<br>    if(minus%2==0) return "POSITIVE";<br>    else return "NEGATIVE";<br>  }<br> <br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class ColorfulTilesEasy <br>{ <br>  int ret;<br><br>  public int theMin(String room) {<br>    char[] c = room.toCharArray();<br><br>    for (int i = 1; i &lt; c.length; i++) {<br>      if (c[i] == c[i - 1]) {<br>        c[i] = 'C';<br>        ret++;<br>      }<br>    }<br>    return ret;<br>  }<br> <br><br><br><br><br>} // Powered by ExampleBuilder <br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class TaliluluCoffee<br>        Public Function maxTip(ByVal tips As Integer()) As Integer<br>            Array.Sort(tips)<br>            Dim res As Integer = 0<br>            For i As Integer = 0 To tips.Length - 1<br>                If tips(tips.Length - 1 - i) &gt; i Then<br>                    res += tips(tips.Length - 1 - i) - i<br>                End If<br>            Next<br>            Return res<br>        End Function<br>    End Class<br></td>

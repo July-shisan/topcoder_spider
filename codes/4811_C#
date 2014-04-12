@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br> <br>public class TriCount<br>{<br>  public int count(int minLength, int maxLength)<br>  {<br>    int cnt=0;<br>    <br>    for(int a=minLength; a&lt;=maxLength; a++)<br>      for(int b=a; b&lt;=maxLength; b++)<br>    {<br>      cnt+=Math.Min(a+b-1, maxLength)-b+1;<br>      <br>      if(cnt&gt;1000000000)<br>        return -1;<br>    }<br>    <br>    return cnt;<br>  }<br>}<br> <br> <br>// Powered by FileEdit<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class FoxAndHandleEasy {<br> <br>  public String isPossible(String S, String T) {<br>    <br>    for (int i = 0; i &lt; S.length(); i++) {<br>      String str = S.substring(0, i+1) + S + S.substring(i+1, S.length());<br>      if (T.equals(str)) {<br>        return "Yes";<br>      }<br>      <br>    }<br>    <br>    return "No";<br>  }<br> <br>}<br></td>

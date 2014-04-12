@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class EllipseCoverage {<br>  int sqr(int x) {return x*x; }<br>  public int calculateCoverage(int x1, int y1, int x2, int y2, int d) {<br>    int res = 0;    <br>    for (int x=-200; x&lt;=200; x++)<br>      for (int y=-200; y&lt;=200; y++) {<br>        double dist = Math.sqrt(sqr(x-x1)+sqr(y-y1))+Math.sqrt(sqr(x-x2)+sqr(y-y2));<br>        if (dist&lt;d) res++;<br>      }    <br>    return res;    <br>  }  <br>}<br></td>

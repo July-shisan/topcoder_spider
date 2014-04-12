@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class FibonacciPositioning {<br>    public double getFPosition(int n) {<br>      int[] F = new int[50];<br>      F[1] = 1;<br>      F[2] = 1;<br>      for (int i=3; i &lt;= 45; i++)<br>        F[i] = F[i-1] + F[i-2];<br>      int pos=2;<br>      while (F[pos+1] &lt;= n)<br>        pos++;<br>      return pos + (n - F[pos]) / (double)(F[pos+1] - F[pos]);<br>    }<br><br>}<br><br><br><br>// Powered by FileEdit<br>// Powered by CodeProcessor<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class DeerInZooDivTwo<br>    {<br>        public int[] getminmax(int N, int K)<br>        {<br>            int min = K &gt;= N ? 0 : N - K;<br>            int max = N - ((K / 2) + (K % 2));<br>            return new int[] { min, max };<br>        }<br>    }<br></td>

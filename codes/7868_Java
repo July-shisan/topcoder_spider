@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br> <br>public class HandsShaking {<br>    public long countPerfect(int n) {<br>        long[] a = new long[n + 1];<br>        a[0] = 1;<br>        for (int i = 2; i &lt;= n; i++) {<br>            for (int j = 1; j &lt; i; j++) {<br>                a[i] += a[j - 1] * a[i - j - 1];<br>            }<br>        }<br>        return a[n];<br>    }<br> <br> <br>}<br> <br> <br>// Powered by PopsEdit<br> <br>// Powered by CodeProcessor<br></td>

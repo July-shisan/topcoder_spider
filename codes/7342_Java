@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class BadExam<br>{<br>public double newAverage(int[] marks)<br>{<br>  double m = 0;<br>  for ( int i = 0; i &lt; marks.length; ++i )<br>    m = Math.max(m, marks[i]);<br>  double res = 0;<br>  for ( int i = 0; i &lt; marks.length; ++i )    <br>    res += (marks[i]/m) * 100;<br>    return res / marks.length;<br>  <br>}<br>}<br></td>

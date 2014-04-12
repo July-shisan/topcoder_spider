@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class CellularPhoneTarif<br>{<br>  public int calculatePrice(int seconds)<br>  {<br>    int min = seconds / 60 + 1;<br>    int cost = 5;<br>    if (min &lt;= 5)<br>    {<br>      return cost + min * 10;<br>    }<br>    else<br>    {<br>      return cost + 5 * 10 + (min-5) * 3;<br>    }<br>  }<br>}<br></td>

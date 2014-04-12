@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class LittleElephantAndString:<br>    def getNumber(self, A, B):<br>        if sorted(A) != sorted(B):<br>            return -1<br>        for i in xrange(len(A)):<br>            j = i<br>            for a in A:<br>                if a == B[j]:<br>                    j += 1<br>                    if j == len(A):<br>                        return i<br>        return len(A)<br></td>

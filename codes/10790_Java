@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br>import java.math.*;<br> <br> <br>public class FlatCatsBreeding<br>{<br>  public int days(int D, int K, int T)<br>  {<br>    long c = 1;<br>    int n = 0;<br>    while(c &lt; T)  {<br>      c *= (K+1);<br>      n++;<br>    }<br>    return n * D;<br>  }<br>  <br> <br>}<br>//Powered by KawigiEdit 2.1.8 (beta) modified by pivanof!<br></td>

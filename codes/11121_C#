@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br><br>public class AverageAverage {<br>  public double average(int[] numList) {<br>    double rtn = 0;<br>    for (int i = 0; i &lt; numList.Length; i++)<br>      rtn += numList[i];<br>    return rtn / numList.Length;<br>  }<br>}<br></td>

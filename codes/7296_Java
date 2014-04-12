@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class DifDif<br>{<br>  public int predict(int[] seq)<br>  {<br>    int n=seq.length;<br>    int p=0;<br>    for (int m=n;m&gt;0;m--)<br>    {<br>      p+=seq[m-1];<br>      for (int i=0;i&lt;m-1;i++) <br>        seq[i]=seq[i+1]-seq[i];<br>    }<br>    return p;<br>  }<br>}<br></td>

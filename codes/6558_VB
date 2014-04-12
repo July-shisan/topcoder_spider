@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports System<br>Imports System.Math<br>Public Class EscapeFromRectangle<br>Public Function shortest(x As Integer, y As Integer, w As Integer, h As Integer) As Integer<br>Dim r1,r2,r3,r4,m,m1,m2 As Integer<br>r1=h-y<br>r2=w-x<br>r3=x-0<br>r4=y-0<br>m1=Math.min(r1,r2)<br>m2=Math.min(r3,r4)<br>m=Math.Min(m1, m2)<br> <br> <br> <br>Return m<br> <br>End Function<br>End Class<br></td>

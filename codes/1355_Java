@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class GoldenChain {<br>  public int minCuts(int[] sections) {<br>    int ret=0;<br>    int  noLinks=sections.length;<br>    if (noLinks==1) return 1;<br>    Arrays.sort(sections);<br>    int x=0;<br>    for (int i=0;i&lt;noLinks;i++){<br>      ret++;<br>      sections[x]--;<br>      if (sections[x]==0){<br>        noLinks--;<br>        x++;<br>      }<br>    }<br> <br>    return ret;<br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

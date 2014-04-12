@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class SumAndProduct{<br>  public int smallestSet(int S, int P){<br>    double i = 0;<br>    double root;<br>    if(S &gt; P)  return 2;<br>    while(true){<br>      i += 1;<br>      root = Math.pow(P,(1/i));<br>      if(S/i &gt;= root){<br>        return (int)(i + 0.1);<br>      }<br>      if(i &gt; S)<br>        return -1;<br>    }<br>  }<br>}<br></td>

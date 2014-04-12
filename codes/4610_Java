@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class TriangleType {<br>  public String type(int a, int b, int c) {<br>    int[] arr = new int[]{a, b, c};<br>    Arrays.sort(arr);<br>    a = arr[0];<br>    b = arr[1];<br>    c = arr[2];<br>    if(a+b&lt;=c) return "IMPOSSIBLE";<br>    if(a*a + b*b == c*c) return "RIGHT";<br>    if(a*a + b*b &lt; c*c) return "OBTUSE";<br>    return "ACUTE";<br>  }<br>}<br><br><br>// Powered by FileEdit<br></td>

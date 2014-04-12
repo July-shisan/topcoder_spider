@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Public Class HiddenMessage<br><br>    Public Function getMessage(ByVal text As String) As String<br>        Dim hm As String = ""<br><br>        Dim wArr() As String = text.Split(" ")<br><br>        For Each word As String In wArr<br>           If word.Length &gt; 0 Then<br>                hm &amp;= word.Chars(0)<br>            End If<br>        Next<br>        Return hm<br>    End Function<br>End Class<br></td>

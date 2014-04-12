@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            // Powered by radeclipse!<br>import java.util.* ;<br>public class SchoolAssembly {<br>  public int getBeans(int k, int q) {<br>    return (k * q + (q-1) * 4 + 19) / 20 ;<br>  }<br>}<br></td>

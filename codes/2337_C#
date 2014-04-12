@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>public class CountGame {<br>  public int howMany(int MA, int goal, int next) {<br>    if ((goal - next+1)%(MA+1) == 0)<br>      return -1;<br>    else<br>      return (goal - next+1)%(MA+1);<br>  }<br>}<br></td>

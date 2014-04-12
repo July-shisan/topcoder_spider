@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Imports Microsoft.VisualBasic<br>Imports System<br>Imports System.Collections<br>Imports System.Text<br> <br>Public Class TemperatureScales<br>  Public Function convert(ByVal f1 As Integer, ByVal b1 As Integer, ByVal f2 As Integer, ByVal b2 As Integer, ByVal t As Integer) As Double<br>    Dim m As Double = (f2-b2)/(f1-b1)<br>    Dim n As Double = (f1*b2-f2*b1)/(f1-b1)<br>    Return m*t+n<br>  End Function<br>End Class<br></td>

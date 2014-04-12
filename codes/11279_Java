@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class SlimeXSlimeRancher2 {<br>  public int train(int[] attributes){<br>    int i=0; <br>    int max=attributes[0];<br>    int value=0;<br>    for(i=0;i&lt;attributes.length;i++){<br>      if(max&lt;attributes[i])<br>        max=attributes[i];<br>    }<br>    for(i=0;i&lt;attributes.length;i++){<br>      value+=max-attributes[i];<br>    }<br>    return value;<br>  }  <br>}<br></td>

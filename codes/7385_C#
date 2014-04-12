@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections.Generic;<br>using System.Text;<br><br>public class BinaryIncrementation<br>{<br>  public static string plusOne(string x)<br>  {<br>    int i = Convert.ToInt32(x, 2);<br>    i++;<br>    return Convert.ToString(i, 2);<br>  }<br>}<br></td>

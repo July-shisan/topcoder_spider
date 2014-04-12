@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class OnLineRank {<br>  public int calcRanks(int k, int[] sc) {<br>    int ret=0;<br>    <br>    for(int i=0;i&lt;sc.length;i++){<br>      int t=1;<br>      for(int j=Math.max(0,i-k);j&lt;i;j++)<br>        if(sc[j]&gt;sc[i]) t++;<br>      ret+=t;<br>    }<br>    return ret;<br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

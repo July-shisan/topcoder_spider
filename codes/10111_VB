@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            'Greedy<br>Public Class CorruptMages<br><br>Public Function minimalNumber(power As Integer()) As Integer<br>dim Mages as integer,Running as integer,i as integer<br>Running = 0<br>i = 0<br>Mages = Ubound(power) + 1 <br>Array.sort(power)<br>while Mages &gt; 0:<br>  Running = Running + 1<br>  Mages = Mages - 1 - power(Ubound(power) - i)<br>  i = i + 1<br>end while<br>minimalNumber = Running<br><br>End Function<br><br><br>End Class<br></td>

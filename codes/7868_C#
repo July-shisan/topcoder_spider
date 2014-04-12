@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br><br>public class HandsShaking {<br>  public long countPerfect(int n) {<br>    long[] res = new long[n + 1];<br>    res[0] = 1;<br>    for (int i = 1; i &lt;= n; ++i)<br>    {<br>      for (int j = 0; j &lt;= i - 2; j += 2)<br>        res[i] += res[j] * res[i - j - 2];<br>    }<br>    return res[n];<br>  }<br><br><br>}<br><br><br>// Powered by FileEdit<br>// Powered by TZTester 1.01 [25-Feb-2003] [modified for C# by Petr]<br>// Powered by CodeProcessor<br></td>

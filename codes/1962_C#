@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>public class PassingGrade<br>{<br>  public int pointsNeeded(int[] earned, int[] pos, int fin)<br>  {<br>    int tote = 0, totp = 0;<br>    for (int i = 0; i &lt; earned.Length; i++)<br>    {<br>      tote += earned[i];<br>      totp += pos[i];<br>    }<br>    totp += fin;<br>    double x = 0.65 * totp;<br>    double z =x - (double)tote;<br>    if ((int)Math.Ceiling(z) &gt; fin)<br>      return -1;<br>    else<br>      return z &lt; 0 ? 0 : (int)Math.Ceiling(z);<br>  }<br>}<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;algorithm&gt;<br>#include &lt;iostream&gt;<br>#include &lt;sstream&gt;<br>#include &lt;vector&gt;<br>#include &lt;string&gt;<br><br>using namespace std;<br><br>class Bits { <br>public: <br>  int minBits(int n)  { <br>    int sol = 0;<br>    for ( ; n; n &gt;&gt;= 1 ) sol++;<br>    return sol;<br>  } <br>  <br> <br>}; <br><br><br><br>// Powered by FileEdit<br>// Powered by TZTester 1.01 [25-Feb-2003]<br>// Powered by CodeProcessor<br></td>

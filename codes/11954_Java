@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class GreatFairyWar {<br><br>  public int minHP(int[] dps, int[] hp) {<br>    int tot = hp[0] * dps[0];<br>    int pre = hp[0];<br>    for (int i = 1; i &lt; dps.length; ++i) {<br>      pre += hp[i];<br>      tot += pre * dps[i];<br>    }<br>    return tot;<br>  }<br>}<br></td>

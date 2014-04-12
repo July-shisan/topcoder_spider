@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;vector&gt;<br>#include &lt;algorithm&gt;<br><br>using namespace std;<br><br>class PipePatcher {<br>  public:<br>  <br>  int patches(int L, vector &lt;int&gt; leaks) {<br>    int i,j,s;<br>    <br>    sort(leaks.begin(),leaks.end());<br>    s = 0;<br>    for (i = 0; i &lt; leaks.size(); ) {<br>      s ++;<br>      j = i;<br>      while (leaks[i] - leaks[j] &lt; L)<br>        i ++;<br>      }<br>    return s;<br>    }<br>  };<br></td>

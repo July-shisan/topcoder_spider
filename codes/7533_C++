@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class PersistentNumber<br>{<br>public:<br>  int getPersistence(int n)<br>  {<br>    int t;<br>    int c=0;<br>for(;n&gt;=10;++c)<br>{<br>  t=1;<br>  do <br>    {<br>      t*=n%10;<br>      n/=10;<br>    } while(0!=n);<br>    n=t;<br>}<br>return c;  }<br>};<br></td>

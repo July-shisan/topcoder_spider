@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>public class Inchworm {<br>  public int lunchtime(int branch, int rest, int leaf) {<br>    int ct = 0 ;<br>    int i = 0 ;<br>    for (;;) {<br>      if (i &gt; branch) {<br>        return ct ;<br>      }<br>      if (i % leaf == 0) ct++ ;<br>      i += rest ;<br>    }<br>  }<br>}<br> <br>// Powered by PopsEdit<br></td>

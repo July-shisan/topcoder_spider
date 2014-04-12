@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import java.util.*;<br>import java.util.regex.*;<br>import java.text.*;<br> <br>public class TriangleCount {<br>  public int count(int N) {<br>    int i, j, A=0;<br>    for (i=1; i&lt;=N; i++)<br>      for (j=1; j&lt;=N; j++) {<br>        A+=Math.max(j-i+1, 0);<br>        A+=Math.max((j-i)-i+1, 0);<br>      }<br>    return A;<br>  }<br>}<br></td>

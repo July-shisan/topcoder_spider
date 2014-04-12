@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class Workshop{<br>public int pictureFrames(int[] p){<br>int n = p.length;<br>int count = 0;<br>for (int i = 0; i &lt; n; i++)<br>for (int j = i+1; j &lt; n; j++)<br>for (int k = j+1; k &lt; n; k++)<br>if (p[i] + p[j] &gt; p[k] &amp;&amp; p[i] + p[k] &gt; p[j] &amp;&amp; p[j] + p[k] &gt; p[i]) count++;<br>return count;<br> <br>}<br>}<br></td>

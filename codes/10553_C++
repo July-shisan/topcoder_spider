@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include&lt;iostream&gt;<br><br>using namespace std;<br>class TheSimilarNumbers{<br>public:<br>int find(int lower, int upper){<br>  int count = 1;<br>  while(1){<br>  lower=lower*10+1;<br>    if(lower&lt;=upper)count++;<br>    else return count;<br>  }<br>}<br>};<br></td>

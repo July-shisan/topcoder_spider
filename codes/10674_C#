@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class ReverseMagicalSource<br>{<br>  public int find(int source, int A)<br>  {<br>    int sum = 0;<br>    while(sum&lt;=A)<br>    {<br>      sum+=source;<br>      source*=10;<br>    }<br>    return sum;<br>  }<br>}<br></td>

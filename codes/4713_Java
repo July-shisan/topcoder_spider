@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class SubstitutionCode<br>{<br>    public int getValue (String key, String code)<br>    {<br>        String ret = "";<br>        for (int i = 0 ; i &lt; code.length() ; i++){<br>            int idx = key.indexOf (code.charAt (i));<br>            if (idx == -1) continue;<br>            ret += idx==key.length()-1?"0":(idx+1)+"";<br>        }<br>        return Integer.parseInt (ret);<br>    }<br>}<br></td>
