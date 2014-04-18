@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class MicroStrings {<br> <br>  public String makeMicroString(int A, int D) {<br>    String a = "";<br> <br>    while (true) {<br>      int t = A;<br>      if(t &lt; 0)<br>        break;<br>      a += t;<br>      A -= D;<br>    }<br>    return a;<br>  }<br> <br>}<br></td>

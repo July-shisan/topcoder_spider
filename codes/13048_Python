@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import math,string,itertools,fractions,heapq,collections,re,array,bisect,random<br> <br>class MicroStrings:<br>    def makeMicroString(self, A, D):<br>        res = ''<br>        i = A<br>        while i &gt;= 0:<br>          res += str(i)<br>          i -= D<br>        return res<br> <br> <br>#Powered by KawigiEdit-pf 2.3.0!<br></td>

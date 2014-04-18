@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class WakingUpEasy:<br>    def countAlarms(self, volume, S):<br>        i = 0<br>        x = 0<br>        while S&gt;0:<br>            if i==len(volume):<br>                i = 0<br>            S -= volume[i]<br>            x +=1<br>            i +=1<br>        return x<br></td>

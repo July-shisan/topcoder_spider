@@ -38,7 +38,7 @@ class CodeSpider(LoginSpider):
 	return r
 
     def crawl(self, response):
-	l = json.loads(open('code.json', 'r').read())
+	l = json.loads(open('problem.json', 'r').read())
 
 	crawled_set = self.get_already_crawled()
 	#failed = self.get_failed()

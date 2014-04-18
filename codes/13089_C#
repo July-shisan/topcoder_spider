@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Text;<br>using System.Text.RegularExpressions;<br>using System.Collections;<br>using System.Collections.Generic;<br>using System.Linq;<br>using System.Globalization;<br> <br> <br>public partial class AmebaDiv2 {<br>  public int simulate(int[] X, int A) {<br> <br>        int res = A;<br>        for (int i = 0; i &lt; X.Length; i++)<br>        {<br>            if (X[i] == res) res *= 2;<br>        }<br> <br>        return res;<br>  }<br>}<br></td>

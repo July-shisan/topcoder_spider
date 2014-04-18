@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class TorusSailingEasy:<br>    def expectedTime(self,n,m,x,y):<br>        path=[[k%n,k%m] for k in range(n*m)]<br>        if [x,y] not in path: return -1<br>        k=0<br>        while (k%n,k%m) != (x,y):<br>            k+=1<br>        pdist=k<br>        k=0<br>        while (k%n,k%m) != (x,y):<br>            k-=1<br>        ndist=-k<br>        return pdist*ndist<br></td>

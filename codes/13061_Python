@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class ColorfulCoins:<br>    def minQueries(self, values):<br>        N = len(values)<br>        ratios = [values[i + 1] / values[i] for i in xrange(N - 1)]<br>        res = 1<br>        k = 0<br>        for r in sorted(set(ratios)):<br>            c = ratios.count(r)<br>            t = 1<br>            while r ** t &lt;= c + k:<br>                t += 1<br>            res = max(res, t)<br>            k += c<br>        return res<br></td>

@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import math,string,itertools,fractions,heapq,collections,re,array,bisect,random<br> <br>class LongLongTripDiv2:<br>    def isAble(self, D, T, B):<br>        k = (D - T) // (B - 1)<br>        return 'Possible' if k &gt;= 0 and k &lt;= T and (T-k) + k * B == D else 'Impossible'<br> <br> <br>#Powered by KawigiEdit-pf 2.3.0!<br></td>

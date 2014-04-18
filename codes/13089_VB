@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            Class AmebaDiv2<br><br>Public Function simulate(X As Integer(), A As Integer) As Integer<br><br>For Each gel As Integer In X<br>    If A = gel Then A = A + gel<br>Next<br><br>Return A<br><br>End Function<br><br>End Class<br></td>

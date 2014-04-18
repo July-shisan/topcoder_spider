@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class LongLongTripDiv2<br>{<br>  public String isAble(long D, int T, int B)<br>  {<br>    long count = D / (long)B + D % (long)B;<br>    while (count &lt;= D &amp;&amp; count &lt;= T) {<br>      if (count == T)<br>        return "Possible";<br>      count += (long)(B - 1);<br>    }<br>    return "Impossible";<br>  }<br>}<br></td>

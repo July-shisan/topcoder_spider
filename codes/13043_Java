@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            /**<br> * Built using CHelper plug-in<br> * Actual solution is at the top<br> * @author nasko<br> */<br>public class LeftAndRightHandedDiv2 {<br>    public int count(String S) {<br>        <br>        int ret = 0;<br>        for(int i = 0; i &lt; S.length(); ++i) {<br>            if(i-1 &gt;=0 &amp;&amp; S.charAt(i) == 'L' &amp;&amp; S.charAt(i-1) == 'R') ++ret;<br>        }<br>        return ret;<br>    }<br>}<br></td>

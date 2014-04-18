@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class EmoticonsDiv2 {<br>  public int printSmiles(int smiles) {<br>    int actions=2,len=2,copy=1;<br>    smiles-=2;<br>    while(smiles&gt;0) {<br>      if(smiles%len==0)<br>      {<br>        copy=len;<br>        smiles-=copy;<br>        len+=copy;<br>        actions+=2;<br>      } else<br>      {<br>        smiles-=copy;<br>        len+=copy;<br>        actions++;<br>      }<br>      System.out.println(smiles);<br>    }<br>    return actions;<br>  }<br>}<br></td>

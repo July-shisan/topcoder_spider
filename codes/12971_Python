@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class EllysSortingTrimmer:<br>    def getMin(self, S, L):<br>        res = list(S)<br>        for i in reversed(xrange(len(S) - L + 1)):<br>            res = res[:i] + sorted(res[i:i+L])<br>        return ''.join(res)<br></td>

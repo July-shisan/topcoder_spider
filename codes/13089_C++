@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;string&gt;<br>#include &lt;vector&gt;<br>using namespace std;<br><br>class AmebaDiv2 {<br>public:<br>   int simulate( vector &lt;int&gt; X, int A ) {<br>     int size = X.size();<br>     for (int i = 0; i &lt; size; i++) {<br>       if (A == X[i])<br>         A += A;<br>     }<br><br>     return A;<br>   }<br>};<br><br><br><br>// Powered by FileEdit<br>// Powered by moj 4.18 [modified TZTester]<br>// Powered by CodeProcessor<br></td>

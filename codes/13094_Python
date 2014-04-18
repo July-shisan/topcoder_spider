@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class ColorfulCoinsEasy:<br>  def isPossible(self, values):<br>    most = []<br>    for i in range(len(values)-1):<br>      most.append(values[i+1]/values[i]-1)<br>    most.sort()<br>    for i in range(1, len(most)+1):<br>      if i &gt; most[i-1]:<br>        return "Impossible"<br>    return "Possible"<br></td>

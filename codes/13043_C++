@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include&lt;iostream&gt;<br>using namespace std;<br><br>class LeftAndRightHandedDiv2<br>{<br>  public:<br>    <br>int count(string S)<br>{  <br>  int i,ans=0;<br>  for(i=0;i&lt;S.size();i++)<br>  if(S[i]=='R' &amp;&amp; S[i+1]=='L') ans++;<br>  return ans;<br><br>}<br>};<br></td>

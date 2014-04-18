@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            #include &lt;string&gt;<br>#include &lt;vector&gt;<br>using namespace std;<br><br>class LongLongTripDiv2 {<br>public:<br><br>   string isAble( long long D, int T, int B ) {<br>     double x = (double)(D - T) / (B - 1);<br>     if (x &gt; T || x &lt; 0 || x != (long long)x) {<br>       return "Impossible";<br>     }<br>     return "Possible";<br>   }<br>};<br><br><br><br>// Powered by FileEdit<br>// Powered by moj 4.18 [modified TZTester]<br>// Powered by CodeProcessor<br></td>

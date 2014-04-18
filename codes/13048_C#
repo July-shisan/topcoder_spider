@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            using System;<br>using System.Collections;<br>using System.Collections.Generic;<br><br>public class MicroStrings<br>{<br>  public string makeMicroString(int A, int D)<br>  {<br>    String re = "";<br>     while(A &gt;= 0)<br>    {<br>      re += A.ToString();<br>      A -= D;<br>    }<br><br>    return re;<br>  }<br>  <br><br>}<br><br><br><br>// Powered by FileEdit<br>// Powered by TZTester 1.01 [25-Feb-2003] [modified for C# by Petr]<br>// Powered by CodeProcessor<br></td>

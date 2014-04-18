@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            public class LongLongTripDiv2<br>{<br>    public string isAble(long D, int T, int B)<br>    {<br>        double X = (double)(D - (long)B * (long)T) / (1 - B);<br>        if (X &lt; 0 || X &gt; T)<br>            return "Impossible";<br>        if (X == (int)X)<br>            return "Possible";<br>        return "Impossible";<br>    }<br>}<br></td>

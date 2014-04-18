@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            import math<br> <br>class LeftAndRightHandedDiv2:<br> <br>  def count(self, S):<br>    count = 0<br>    for i in range(len(S)):<br>      if i &gt; 0:<br>        if S[i] == 'L' and S[i-1] == 'R':<br>          count = count + 1<br>    return count<br></td>

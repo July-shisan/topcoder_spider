@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class AmebaDiv2:<br>    def simulate(self, X, A):<br>        for i in X:<br>            if i == A:<br>                A += i<br>        return A<br> <br># Powered by Greed 2.0-RC<br></td>

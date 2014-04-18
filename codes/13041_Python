@@ -1,0 +1,2 @@
+<td class="problemText" colspan="8" valign="middle" align="left">
+            class EmoticonsDiv2:<br>  def printSmiles(self, smiles): <br>    f = []<br>    i=2<br>    while i*i&lt;=smiles:<br>      if smiles % i == 0:<br>        smiles /= i<br>        f.append(i)<br>      else:<br>        i+=1<br>    if smiles &gt; 1:<br>      f.append(smiles)<br>    <br>    return sum(f)<br></td>
